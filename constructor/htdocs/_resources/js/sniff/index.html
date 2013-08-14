@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>jQuery Sniff</title>
+
+	<style type="text/css" media="screen">
+		body { font-family: sans-serif; }
+		table,td,th {
+			border: 1px solid #eee;
+			border-collapse: collapse;
+			padding: .3em .5em .2em .5em;
+		}
+		.ie .ie, .ie6 .ie6, .ie7 .ie7, .ie8 .ie8,
+		.ff .ff, .ff2 .ff2, .ff3 .ff3, .ff3-5 .ff3-5,
+		.mz .mz,
+		.sf .sf, .sf2 .sf2, .sf3 .sf3, .sf4 .sf4,
+		.ch .ch, .ch1 .ch1, .ch2 .ch2,
+		.op .op,
+		.windows .windows, .mac .mac, .linux .linux { background: #0f0; }
+	</style>
+	
+	<script src="../jquery-1.4.2.min.js" type="text/javascript"></script>
+	
+	<script type="text/javascript">
+	
+		jQuery(function($) {
+		
+			// init the sniff
+			$("html").sniff();
+			
+		});		
+		
+		jQuery.fn.sniff = function(s) {
+			
+			// placeholders for complete class
+			var snuff,
+				platform,
+				v = function(s){
+					var ua = navigator.userAgent.toLowerCase();
+					ua = ua.substring(ua.indexOf(s+'/') +(s.length + 1));
+					return ua.substring(0,1);				
+				};
+			
+			// enable chrome sniffing
+			jQuery.browser.chrome = /chrome/.test(navigator.userAgent.toLowerCase());
+
+			// ie
+			if ($.browser.msie) {
+		        snuff = "ie ie" + jQuery.browser.version.substring(0,1);
+		    }
+
+		    // mozilla
+		    else if ($.browser.mozilla) {
+
+		        // firefox
+		        if (navigator.userAgent.toLowerCase().indexOf('firefox') != -1){  
+					// firefox 3-5 has significant improvements over 3. check for it by detecting video element 
+		            var temp = v("firefox") == 3 && !!document.createElement('video').canPlayType ? "3-5" : v("firefox");
+					snuff = "ff ff" + temp;
+		        }
+		        // other mozilla
+		        else {
+		            snuff = "mz";
+		        }
+		    }
+		
+			// chrome
+		    else if ($.browser.chrome) {		
+				snuff = "ch ch" + v("chrome");
+		        // If it is chrome then jQuery thinks it's safari so we have to tell it it isn't
+		        $.browser.safari = false;
+		    }
+
+			// safari
+			else if ($.browser.safari) {
+		        snuff = "sf sf" + v("version");
+		    }
+		
+		    // opera
+		    else if ($.browser.opera) {
+		    	snuff = "op";
+		    }
+			
+			// platform
+			if (navigator.platform.indexOf("Win")!=-1) {
+				platform = "windows";
+			}			
+			else if (navigator.platform.indexOf("Mac")!=-1) {
+				platform = "mac";
+			}
+			else if (navigator.platform.indexOf("Linux")!=-1) {
+				platform = "linux";
+			}
+			
+			// return
+			return this.each(function() {
+				jQuery(this).addClass("js " + platform + " " + snuff);
+			});			
+			
+		};	
+		
+	</script>
+	
+	
+</head>
+<body>
+	
+<h1>Sniffles</h1>
+
+<table>
+	<thead>
+		<tr>
+			<th>OS</th>
+			<th>Browser</th>
+			<th colspan="3">Version</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="windows">Win</td>
+			<td class="ie">ie</td>
+			<td class="ie6">ie6</td>
+			<td class="ie7">ie7</td>
+			<td class="ie8">ie8</td>
+		</tr>
+		<tr>
+			<td class="mac">Mac</td>
+			<td class="ff">ff</td>
+			<td class="ff2">ff2</td>
+			<td class="ff3">ff3</td>
+			<td class="ff3-5">ff3-5</td>
+		</tr>
+		<tr>
+			<td class="linux">Linux</td>
+			<td class="mz" colspan="4">mz</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td class="sf">sf</td>
+			<td class="sf2">sf2</td>
+			<td class="sf3">sf3</td>
+			<td class="sf4">sf4</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td class="ch">ch</td>
+			<td class="ch1">ch1</td>
+			<td class="ch2">ch2</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td class="op" colspan="4">op</td>
+		</tr>
+	</tbody>	
+</table>
+	
+</body>
+</html>

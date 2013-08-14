@@ -1,0 +1,571 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>UT-7 : Regulatory : Pacific Power</title>
+
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+
+	<meta name="author" content="ISITE Design" />
+	<link rel="shortcut icon" href="favicon.ico" />
+
+   	<link rel="stylesheet" type="text/css" media="all" href="_resources/css/global.css" />
+	<link rel="stylesheet" type="text/css" media="print" href="_resources/css/print.css" />
+	<script type="text/javascript" src="_resources/js/prototype-1.6.0.3.js"></script><!-- for testing only, no code dependencies -->
+	<script type="text/javascript" src="_resources/js/jquery.js"></script>
+	<script type="text/javascript" src="_resources/js/jquery.tooltip.min.js"></script>
+	<script type="text/javascript" src="_resources/js/jquery.pagination.js"></script>
+	<script type="text/javascript" src="_resources/js/contentfilter.js"></script>
+	<script type="text/javascript" src="_resources/js/sifr.js"></script>
+	<script type="text/javascript" src="_resources/js/jquery.datepicker.js"></script>
+	<script type="text/javascript" src="_resources/js/global.js"></script>
+
+	<!-- script generated serverside -->
+	<script type="text/javascript">	
+	
+		// <![CDATA[
+		
+		// define for use in all filtering
+		var ContentFilter;
+	
+		// ContentFilter object defined in contentfilter.js	
+		// use "_" instead of " " for internal object names if needed
+		ContentFilter.records = [
+			{
+				'number': 'Advice 07-06<br />Docket 20000-311-ET-07',
+				'numberurl': '#filing-url',
+				'title': 'Rule 12 - Line Extensions'
+			},
+			{			
+				'number': 'Advice 08-02',
+				'numberurl': '#filing-url',     
+				'title': 'Rule 26 - Network Performance Standards for Revised Baselines'
+			},
+			{			
+				'number': 'Docket 20000-324-ET-08',
+				'numberurl': '#filing-url',     
+				'numberpdf': 1,
+				'title': 'Application for a CPCN Expansion of Chappel Creek Substation and Installation and Testimonies and Something Else'
+			},
+			{			
+				'number': 'Docket 20000-365-ET-17',
+				'numberurl': '#filing-url',     
+				'title': 'Another Filing Name That&#8217;s a Little Longer Than Most',
+				'titleurl': '#title-url'
+			},
+			{			
+				'number': 'Advice 08-02b',
+				'numberurl': '#filing-url',     
+				'numberpdf': 1,
+				'title': 'Rule 26 - Network Performance Standards for Revised Baselines',
+				'titleurl': '#title-url',
+				'titlepdf': 1
+			},
+			{			
+				'number': 'N/A',
+				'title': 'Load Growth and Pricing Collaborative Reports',
+				'titleurl': '#title-url',
+				'titlepdf': 1
+			},
+			{			
+				'number': 'N/A',
+				'title': 'Report on Research',
+				'titleurl': '#title-url',
+				'titlepdf': 1
+			}             
+		];
+		
+		// getItemContent
+		// defines HTML structure for each item
+		// REQUIRED	------------------------------	
+		var getItemContent = function(item) {
+		
+			var numberpdf = {
+				classname : item.numberpdf && item.numberpdf == 1 ? ' class="pdf"' : "",
+				img : item.numberpdf && item.numberpdf == 1 ? '<img src="'+ContentFilter.imgpathfiles+'/pdf.gif" alt="PDF" />' : ""
+			};
+			var titlepdf = {
+				classname : item.titlepdf && item.titlepdf == 1 ? ' class="pdf"' : "",
+				img : item.titlepdf && item.titlepdf == 1 ? '<img src="'+ContentFilter.imgpathfiles+'/pdf.gif" alt="PDF" />' : ""
+			};
+		
+			var itemContent = "";
+			
+			itemContent += '<tr>';
+			itemContent += '<td>';
+			itemContent += item.numberurl && item.numberurl!= "" ? '<a' + numberpdf.classname + ' href="'+item.numberurl+'">' + numberpdf.img + item.number + '</a>' : item.number;
+			itemContent += '</td>';
+			itemContent += '<td>';
+			itemContent += item.titleurl && item.titleurl!= "" ? '<a' + titlepdf.classname + ' href="'+item.titleurl+'">' + titlepdf.img + item.title + '</a>' : item.title;
+			itemContent += '</td>';
+			itemContent += '</tr>';
+		
+			return itemContent;
+		
+		};	
+
+		// callback
+		// defines action to take on callback and determines proper record set
+		// REQUIRED	------------------------------	
+		ContentFilter.pagination.options.callback = function(page_index, jq){
+			 
+			var newcontent = getNewContent(ContentFilter.currentrecord, page_index);
+			 
+			// Replace old content with new content
+			$j('#Filing-Pagination-Content').html(newcontent);
+			
+			// add striping
+			$j('#Filing-Pagination-Content tr:odd').addClass("alt");
+			
+			// Prevent click eventpropagation
+			return false;
+		};	
+			
+		// ]]>
+				
+	</script>	
+	
+</head>
+
+<!--
+
+	body id's and classes are used to highlight nav items and control page layouts
+	
+	available ids match the nav item ids:
+	
+		page-home			- no nav item highlighted, special homepage layout
+		page-youraccount
+		page-residential
+		page-business
+		page-contractors
+		page-efficiency
+		page-education
+		page-general		- no nav item highlighted, general content page layout
+		
+	available classes:
+		interior			- all interior pages
+		landing				- each main nav item has a landing page with special layout
+		wide				- full width #primary. replaces #tertiary
+	
+-->
+<body id="page-efficiency" class="interior">
+<div id="wrapper">
+
+	<div id="header">
+	
+		<a href="/"><img id="brand" src="_resources/img/source/logo_pacificpower.gif" alt="Pacific Power" /></a>
+		
+		<ul class="accessibility">
+			<li><a href="#content" tabindex="1" accesskey="2">Skip to Content</a></li>
+			<li><a href="#nav" tabindex="2" accesskey="3">Skip to Navigation</a></li>
+			<li><a href="/" tabindex="3" accesskey="1">Return to Homepage</a></li>
+		</ul>
+		
+		<div id="utility">
+			<ul class="nav inline">
+				<li><a href="#">Careers</a> : </li>
+				<li><a href="#">About Us</a> : </li>
+				<li><a href="#">News</a></li>
+			</ul>
+			
+			<form id="sitesearch" method="post" action="#">
+				
+				<fieldset>
+					
+					<legend>Search</legend>
+					<label for="q">Search Site</label>
+					<input id="q" name="q" type="text" />
+					<button class="btn go" type="submit" value="Go">Go</button>
+				</fieldset>				
+			</form><!-- /sitesearch -->
+			
+			<a class="advancedsearch" href="#">Advanced Search</a>
+			
+		</div><!-- /utility -->
+	</div>
+	<!-- /header -->
+
+	<div id="content">
+			
+		<div id="breadcrumb">
+		
+			<ul>
+				<li id="breadcrumb-home"><a href="#">Home</a></li>
+				<li><a href="#">About Us</a></li>
+				<li><a href="#">Rates &amp; Regulation</a></li>
+				<li><a href="#">Regulatory</a></li>
+				<li>California</li>
+			</ul>
+		
+		</div><!-- /breadcrumb -->
+	
+		<div id="primary">
+			
+			<span class="fill-top"></span><!-- this is used to add the top of the drop shadow wrapper -->
+				
+			<div class="inner">	
+			
+				<h1>California Regulatory Information</h1>
+				
+				<ul class="tabs">
+					<li><a href="ut-18.html"><span>Approved Tariffs</span></a></li>
+					<li class="current"><a href="ut-7-regulatory.html"><span>Regulatory Filings</span></a></li>
+				</ul>
+				
+				<h2>Regulatory Fillings</h2>
+				<p>
+					Advice filings, applications and associated testimony &amp; selected exhibits filed by the company
+					and submitted to the Commission for approval can be found in this section. Information in this section
+					is organized by Docket Number and/or Advice Number.
+				</p>
+				
+				<hr />
+				
+	
+				<!-- top pagination -->
+				<div class="pagination"></div>
+				
+				<!-- 
+				
+					One column's link should have either asc or dsc class as the default view set by server
+				
+					Each th also has a col-xxxx class used to set a fixed width to avoid any jump caused by pagination.
+				
+					Any content in the table below will be visible without JS enabled, but no pagination/filtering/sorting will be available
+
+					use class no-sort instead of sortable to prevent sorting on that column
+				
+				-->
+
+				<table>
+					<thead>
+						<tr>
+							<th class="col-number linked sortable key-number"><a class="asc" href="#">Filing #</a></th>
+							<th class="col-title linked sortable key-title"><a href="#">Filing Title</a></th>
+						</tr>
+					</thead>
+					<tbody id="Filing-Pagination-Content">
+						<tr>
+							<td><a href="#">Advice 07-06<br />Docket 20000-311-ET-07</a></td>
+							<td>Rule 12 - Line Extensions</td>
+						</tr>
+						<tr class="alt">
+							<td><a href="#">Advice 08-02</a></td>
+							<td>Rule 26 - Network Performance Standards for Revised Baselines</td>
+						</tr>
+						<tr>
+							<td><a class="pdf" href="#"><img src="_resources/img/source/filetypes/pdf.gif" alt="PDF" /> Docket 20000-324-ET-08</a></td>
+							<td>Application for a CPCN Expansion of Chappel Creek Substation and Installation and Testimonies and Something Else</td>
+						</tr>
+						<tr class="alt">
+							<td><a href="#">Docket 20000-365-ET-17</a></td>
+							<td>Another Filing Name That&#8217;s a Little Longer Than Most</td>
+						</tr>
+						<tr>
+							<td>N/A</td>
+							<td><a class="pdf" href="#"><img src="_resources/img/source/filetypes/pdf.gif" alt="PDF" /> Load Growth and Pricing Collaborative Reports</a></td>
+						</tr>
+						<tr class="alt">
+							<td>N/A</td>
+							<td><a class="pdf" href="#"><img src="_resources/img/source/filetypes/pdf.gif" alt="PDF" /> Report on Research</a></td>
+						</tr>
+					</tbody>					
+				</table>
+
+				<!-- bottom pagination -->
+				<div class="pagination"></div>					
+			
+			</div><!-- /.inner -->
+			
+			<span class="fill-bottom"></span><!-- this is used to add the bottom of the drop shadow wrapper -->
+			
+		</div><!-- /primary -->
+
+		<div id="secondary">
+			
+			<div class="block">
+			
+				<div class="inner">
+				
+					<h3 class="hdr" id="hdr-signin">Sign In</h3>
+					<p>
+						24-hour account access! Set up, manage &amp; pay your bill!
+					</p>
+				
+					<form id="signin" action="#" method="post">
+					
+						<fieldset>
+							
+							<legend>Account Sign In</legend>
+							
+							<label for="userid">User ID</label>
+							<input id="userid" name="userid" type="text" />
+							
+							<label for="password">Password</label>
+							<input id="password" name="password" type="password" />
+							
+								<div class="wrapper-rememberme">
+								<label class="checkradio" for="rememberme">
+									<input id="rememberme" name="rememberme" type="checkbox" />
+									Remember me 
+								</label>
+								<span class="tooltip" title="Checking this option will allow you to stay logged in between visits. Real text to be filled in here and here and here.">What&#8217;s this?</span>
+							</div>							
+							<button class="btn go" type="submit" value="Go">Go</button>
+							
+						</fieldset>
+					
+					</form>
+				
+					<p>
+						<a href="#">Forgot User ID?</a><br />
+						<a href="#">Forgot Password?</a>	
+						<a class="btn newuser" href="#">New User</a>					
+					</p>
+				
+				</div><!-- /.inner -->
+				
+				<span class="fill-bottom"></span><!-- this is used to add the bottom of the gradient wrapper -->
+				
+			</div><!-- /.block -->
+			
+			<div class="block">
+				
+				<div class="inner">
+				
+					<!-- 
+						Header gets id to set image replacement 				
+					-->
+				
+					<h3 class="hdr" id="hdr-accountquicklinks">Account Quick Links</h3>
+					<ul class="nav">
+						<li><a href="#">Pay Your Bill</a></li>
+						<li><a href="#">Start Service</a></li>
+						<li><a href="#">Stop Service</a></li>
+						<li><a href="#">Transfer Service</a></li>
+						<li><a href="#">View Usage History</a></li>
+						<li><a href="#">Compare Payment Options</a></li>
+					</ul>	
+				
+				</div><!-- /.inner -->
+				
+				<span class="fill-bottom"></span><!-- this is used to add the bottom of the gradient wrapper -->			
+				
+			</div><!-- /.block -->	
+			
+			<div class="block callout">
+				
+				<span class="top"></span><!-- create top border with shadow -->
+				
+				<h3 class="hdr" style="background-image:url(_resources/img/css/hdr_renewableenergy.gif);height:22px;">Renewable Energy</h3>
+				<img src="_resources/img/source/renewableenergy_interior.jpg" alt="" />
+				<p>
+					Choose Blue Sky and help create a more self-sufficient energy supply for today and tomorrow.
+				</p>
+				<p>
+					<a href="#">Sign up today</a>
+				</p>				
+				
+			</div><!-- /.block .callout -->
+			
+			<div class="block callout">
+				
+				<span class="top"></span><!-- create top border with shadow -->
+				
+				<h3 class="hdr" id="hdr-customerservice">Customer Service</h3>
+				<img src="_resources/img/source/customerservice_interior.jpg" alt="" />
+				<ul class="listing">
+					<li>
+						<a href="#">Customer service</a><br />
+						1-888-221-7070
+					</li>
+					<li>
+						<a href="#">Report a power outage</a><br />
+						1-877-LITESOUT
+					</li>
+					<li>
+						<a href="#">Report a streetlight outage</a>
+					</li>
+				</ul>				
+				
+			</div><!-- /.block .callout-->
+			
+		</div><!-- /secondary -->
+
+		<div id="tertiary">
+			
+			<div class="block">
+				
+				<div class="inner">
+				
+					<!-- 
+						Header gets id to set image replacement - matches nav ids
+						Nav: 
+							a.open: show down arrow. Used for main topics
+							a.current: change text to black for current page
+							
+							A link can be both open and current.					
+					-->
+				
+					<h3 class="hdr" id="hdr-aboutus">About Us</h3>
+					<ul class="nav">
+						<li><a href="#">Company Facts</a></li>
+						<li><a href="#">Service Area Map</a></li>
+						<li>
+							<a class="open" href="#">Rates &amp; Regulation</a>
+							<ul>
+								<li><a href="#">Rates</a></li>
+								<li>
+									<a class="open" href="#">Regulatory</a>
+									<ul>
+										<li><a class="current" href="#">California</a></li>
+										<li><a href="#">Oregon</a></li>
+										<li><a href="#">Washington</a></li>
+										<li><a href="#">Wholesale Energy Business at FERC</a></li>
+										<li><a href="#">Transmission Business at FERC</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#">In the Community</a></li>
+						<li><a href="#">Careers</a></li>
+						<li><a href="#">Recreation</a></li>
+						<li><a href="#">Newsroom</a></li>
+						<li><a href="#">Contact Us</a></li>
+					</ul>
+					<a class="return" href="#">&laquo; Return to the full Efficiency &amp; Environment menu</a>
+				
+				</div><!-- /.inner -->
+				
+				<span class="fill-bottom"></span><!-- this is used to add the bottom of the gradient wrapper -->			
+				
+			</div><!-- /.block -->
+			
+			<div class="block callout">
+				
+				<span class="top"></span><!-- create top border with shadow -->
+				
+				<img src="_resources/img/source/10simpleways.jpg" alt="" />
+				<p>
+					Ten simple ways to lessen your impact on the planet.
+				</p>
+				<p>
+					<a href="#">Learn more</a>
+				</p>
+				
+			</div><!-- /.block -->
+			
+			<div class="block callout">
+				
+				<span class="top"></span><!-- create top border with shadow -->
+				
+				<a href="#"><img src="_resources/img/source/videothumbnail.jpg" alt="" /></a>
+				<p>
+					View clips from renewable energy experts.
+				</p>
+				<p>
+					<a href="#">Watch videos</a>
+				</p>
+				
+			</div><!-- /.block -->		
+			
+		</div><!-- /tertiary -->
+
+	</div><!-- /content -->
+
+	<div id="footer">
+		<ul class="nav inline">
+			<li><a href="#">Home</a> :</li>
+			<li><a href="#">Espa&ntilde;ol</a> :</li>
+			<li><a href="#">Site Map</a> :</li>
+			<li><a href="#">Terms of Use</a> :</li>
+			<li><a href="#">Request Information</a> :</li>
+			<li><a href="#">Contact Us</a></li>
+		</ul>
+		<p>
+			&#169; 2009 <a href="#">PacifiCorp</a>, a subsidiary of <a href="#">MidAmerican Energy Holdings Company</a>
+		</p>
+		
+	</div><!-- /footer -->
+
+	<ul id="nav">
+		<li id="nav-youraccount">
+			<a href="#">Your Account</a>
+			<ul>
+				<li><a href="#">Account Overview</a></li>
+				<li><a href="#">Pay Your Bill</a></li>
+				<li><a href="#">Your Service</a></li>
+				<li><a href="#">Your Bill</a></li>
+				<li><a href="#">Payment Plan Options</a></li>
+				<li><a href="#">Your Online Profile</a></li>
+			</ul>
+		</li>
+		<li id="nav-residential">
+			<a href="#">Residential</a>
+			<ul>
+				<li><a href="#">Energy Efficiency Programs &amp; Incentives</a></li>
+				<li><a href="#">Energy Efficiency Resources</a></li>
+				<li><a href="#">Rates &amp; Regulations</a></li>
+				<li><a href="#">Power Outages</a></li>
+				<li><a href="#">Landlord Link</a></li>
+				<li><a href="#">Voices Newsletter</a></li>
+				<li><a href="#">Your Payment Options</a></li>
+			</ul>
+		</li>
+		<li id="nav-business">
+			<a href="#">Business</a>
+			<ul>
+				<li><a href="#">Energy Efficiency Programs &amp; Incentives</a></li>
+				<li><a href="#">Energy Efficiency Resources</a></li>
+				<li><a href="#">Business Solutions Team</a></li>
+				<li><a href="#">Rates &amp; Regulations</a></li>
+				<li><a href="#">Operational Upgrades</a></li>
+				<li><a href="#">Your Energy Data</a></li>
+				<li><a href="#">Newsletters</a></li>
+				<li><a href="#">Streetlights</a></li>
+				<li><a href="#">Oregon Direct Access</a></li>
+				<li><a href="#">Your Payment Options</a></li>
+				<li><a href="#">Understanding Your Electricity Charges</a></li>
+				<li><a href="#">Customer Case Studies</a></li>
+			</ul>
+		</li>
+		<li id="nav-contractors">
+			<a href="#">Contractors</a>
+			<ul>
+				<li><a href="#">Contractor Information</a></li>
+				<li><a href="#">Procurement</a></li>
+			</ul>
+		</li>
+		<li id="nav-efficiency">
+			<a href="#">Efficiency &amp; Environment</a>
+			<ul>
+				<li><a href="#">Our Environmental Commitment</a></li>
+				<li><a href="#">Reduce Your Carbon Footprint</a></li>
+				<li><a href="#">Blue Sky Renewable Energy Program</a></li>
+				<li><a href="#">Energy Efficiency Programs &amp; Incentives</a></li>
+				<li><a href="#">Net Metering &amp; Customer Generation</a></li>
+				<li><a href="#">Energy Efficiency Resources</a></li>
+				<li><a href="#">News</a></li>
+			</ul>	
+		</li>
+		<li id="nav-education">
+			<a href="#">Education &amp; Safety</a>
+			<ul>
+				<li><a href="#">Home Safety</a></li>
+				<li><a href="#">Call Before You dig</a></li>
+				<li><a href="#">Farm &amp; Ranch Safety</a></li>
+				<li><a href="#">Contractor Safety</a></li>
+				<li><a href="#">Power Outages</a></li>
+				<li><a href="#">How Electricity Works</a></li>
+				<li><a href="#">Safety Education</a></li>
+				<li><a href="#">Tree Planting &amp; Maintenance</a></li>
+				<li><a href="#">Streetlights</a></li>
+			</ul>	
+		</li>
+	</ul><!-- /nav -->
+
+</div><!-- /wrapper -->
+</body>
+</html>

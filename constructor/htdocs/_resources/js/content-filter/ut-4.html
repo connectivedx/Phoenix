@@ -1,0 +1,615 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>UT-4 : Pacific Power</title>
+
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+
+	<meta name="author" content="ISITE Design" />
+	<link rel="shortcut icon" href="favicon.ico" />
+
+   	<link rel="stylesheet" type="text/css" media="all" href="_resources/css/global.css" />
+	<link rel="stylesheet" type="text/css" media="print" href="_resources/css/print.css" />
+	<script type="text/javascript" src="_resources/js/prototype-1.6.0.3.js"></script><!-- for testing only, no code dependencies -->
+	<script type="text/javascript" src="_resources/js/jquery.js"></script>
+	<script type="text/javascript" src="_resources/js/jquery.tooltip.min.js"></script>
+	<script type="text/javascript" src="_resources/js/jquery.pagination.js"></script>
+	<script type="text/javascript" src="_resources/js/contentfilter.js"></script>
+	<script type="text/javascript" src="_resources/js/sifr.js"></script>
+	<script type="text/javascript" src="_resources/js/global.js"></script>
+	
+	<!-- script generated serverside -->
+	<script type="text/javascript">
+	
+		// <![CDATA[
+	
+		// define for use in all filtering
+		var ContentFilter;
+	
+		// ContentFilter object defined in contentfilter.js	
+		// use "_" instead of " " for internal object names if needed
+		ContentFilter.records = {
+			"2007" : [
+						{
+							'title': 'Story Headline\' Goes Here1',
+							'content': 'Story abstract goes here. Vivamus consequat tristique lectus. Suspendisse potenti.',     
+							'date': 'May 12, 2007',
+							'url': '/pagelink.jsp'
+						},
+						{
+							'title': 'Story Headline Goes Here2',
+							'content': 'Story abstract goes here. Vivamus consequat tristique lectus. Suspendisse potenti.',     
+							'date': 'May 12, 2007',
+							'url': '/pagelink.jsp'
+						},
+						{
+							'title': 'Story Headline Goes Here3',
+							'content': 'Story abstract goes here. Vivamus consequat tristique lectus. Suspendisse potenti.',     
+							'date': 'May 12, 2007',
+							'url': '/pagelink.jsp'
+						},
+						{
+							'title': 'Story Headline Goes Here4',
+							'content': 'Story abstract goes here. Vivamus consequat tristique lectus. Suspendisse potenti.',     
+							'date': 'May 12, 2007',
+							'url': '/pagelink.jsp'
+						},
+						{
+							'title': 'Story Headline Goes Here5',
+							'content': 'Story abstract goes here. Vivamus consequat tristique lectus. Suspendisse potenti.',     
+							'date': 'May 12, 2007',
+							'url': '/pagelink.jsp'
+						},
+						{
+							'title': 'Story Headline Goes Here6',
+							'content': 'Story abstract goes here. Vivamus consequat tristique lectus. Suspendisse potenti.',     
+							'date': 'May 12, 2007',
+							'url': '/pagelink.jsp'
+						},
+						{
+							'title': 'Story Headline Goes Here7',
+							'content': 'Story abstract goes here. Vivamus consequat tristique lectus. Suspendisse potenti.',     
+							'date': 'May 12, 2007',
+							'url': '/pagelink.jsp'
+						}                      
+					],
+			"2008" : [
+						{
+							'title': 'Story Headline Goes Here1',
+							'content': 'Story abstract goes here. Vivamus consequat\' tristique lectus. Suspendisse potenti.', 	
+							'date': 'May 12, 2008',
+							'url': '/pagelink.jsp'
+						},
+						{
+							'title': 'Story Headline Goes Here2',
+							'content': 'Story abstract goes here. Vivamus consequat tristique lectus. Suspendisse potenti.',     
+							'date': 'May 12, 2008',
+							'url': '/pagelink.jsp'
+						},
+						{
+							'title': 'Story Headline Goes Here3',
+							'content': 'Story abstract goes here. Vivamus consequat tristique lectus. Suspendisse potenti.',     
+							'date': 'May 12, 2008',
+							'url': '/pagelink.jsp'
+						},
+						{
+							'title': 'Story Headline Goes Here4',
+							'content': 'Story abstract goes here. Vivamus consequat tristique lectus. Suspendisse potenti.',     
+							'date': 'May 12, 2008',
+							'url': '/pagelink.jsp'
+						},
+						{
+							'title': 'Story Headline Goes Here5',
+							'content': 'Story abstract goes here. Vivamus consequat tristique lectus. Suspendisse potenti.',     
+							'date': 'May 12, 2008',
+							'url': '/pagelink.jsp'
+						},
+						{
+							'title': 'Story Headline Goes Here6',
+							'content': 'Story abstract goes here. Vivamus consequat tristique lectus. Suspendisse potenti.',     
+							'date': 'May 12, 2008',
+							'url': '/pagelink.jsp'
+						},
+						{
+							'title': 'Story Headline Goes Here7',
+							'content': 'Story abstract goes here. Vivamus consequat tristique lectus. Suspendisse potenti.',     
+							'date': 'May 12, 2008',
+							'url': '/pagelink.jsp'
+						}                      
+					]
+		}; // ContentFilter.records
+				
+		// ContentFilter resets. If not set, will be empty
+		ContentFilter.contentstart 	= '<ul class="news-listing">',
+		ContentFilter.contentend 	= '</ul>';
+		
+		// getItemContent
+		// defines HTML structure for each item
+		// REQUIRED	------------------------------	
+		var getItemContent = function(item) {
+		
+			 var itemContent = "";
+			
+			itemContent += '<li>';
+			itemContent += '<h3>';
+			itemContent += '  <a href="'+item.url+'">' + item.title + '</a>';
+			itemContent += '</h3>';
+			itemContent += '<p class="date">' + item.date + '</p>';
+			itemContent += '<p>' + item.content + '</p>';
+			itemContent += '</li>';
+		
+			return itemContent;
+		};		
+		
+		// callback
+		// defines action to take on callback and determines proper record set
+		// REQUIRED	------------------------------	
+		ContentFilter.pagination.options.callback = function(page_index, jq){
+			 
+			var newcontent = getNewContent(ContentFilter.currentrecord, page_index);
+			
+			// Replace old content with new content
+			$j('#News-Release-Pagination-Content').html(newcontent);
+			
+			// Prevent click eventpropagation
+			return false;
+		};
+		
+		// ]]>
+		
+	</script>	
+	
+
+</head>
+
+<!--
+
+	body id's and classes are used to highlight nav items and control page layouts
+	
+	available ids match the nav item ids:
+	
+		page-home			- no nav item highlighted, special homepage layout
+		page-youraccount
+		page-residential
+		page-business
+		page-contractors
+		page-efficiency
+		page-education
+		page-general		- no nav item highlighted, general content page layout
+		
+	available classes:
+		interior			- all interior pages
+		landing				- each main nav item has a landing page with special layout
+		wide				- full width #primary. replaces #tertiary
+	
+-->
+<body id="page-general" class="interior">
+<div id="wrapper">
+
+	<div id="header">
+	
+		<a href="/"><img id="brand" src="_resources/img/source/logo_pacificpower.gif" alt="Pacific Power" /></a>
+		
+		<ul class="accessibility">
+			<li><a href="#content" tabindex="1" accesskey="2">Skip to Content</a></li>
+			<li><a href="#nav" tabindex="2" accesskey="3">Skip to Navigation</a></li>
+			<li><a href="/" tabindex="3" accesskey="1">Return to Homepage</a></li>
+		</ul>
+		
+		<div id="utility">
+			<ul class="nav inline">
+				<li><a href="#">Careers</a> : </li>
+				<li><a href="#">About Us</a> : </li>
+				<li><a href="#">News</a></li>
+			</ul>
+			
+			<form id="sitesearch" method="post" action="#">
+				
+				<fieldset>
+					
+					<legend>Search</legend>
+					<label for="q">Search Site</label>
+					<input id="q" name="q" type="text" />
+					<button class="btn go" type="submit" value="Go">Go</button>
+				</fieldset>				
+			</form><!-- /sitesearch -->
+			
+			<a class="advancedsearch" href="#">Advanced Search</a>
+			
+		</div><!-- /utility -->
+	</div>
+	<!-- /header -->
+
+	<div id="content">
+			
+		<div id="breadcrumb">
+		
+			<ul>
+				<li id="breadcrumb-home"><a href="#">Home</a></li>
+				<li><a href="#">About Us</a></li>
+				<li><a href="#">Newsroom</a></li>
+				<li>News</li>
+			</ul>
+		
+		</div><!-- /breadcrumb -->
+	
+		<div id="primary">
+			
+			<span class="fill-top"></span><!-- this is used to add the top of the drop shadow wrapper -->
+				
+			<div class="inner">	
+			
+				<h1>News</h1>	
+				
+				<!--
+					containers generated by server based on current year set
+					
+					.content-filter-toggle content gets replaced with full toggle for all years present in records
+					Include default year in HTML for non javascript users (no javascript = only gets one year, no choice).
+				
+					If left blank, shows first sorted item by default
+				
+				-->
+				<p class="date-select content-filter-toggle">2008</p>
+	
+	
+				<!-- top pagination -->
+				<div class="pagination"></div>
+	
+				
+				<!-- content container. Fill with default set for non js users -->
+				<div id="News-Release-Pagination-Content">
+				
+					<ul class="news-listing">
+						<li>						
+							<h3><a href="#">Story Headline Goes Here</a></h3>
+							<p class="date">May 15, 2008</p>
+							<p>
+								Story abstract goes here. Vivamus consequat tristique lectus. Suspendisse potenti. Donec dignissim aliquam risus.
+								Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam mauris.
+							</p>						
+						</li>	
+						<li>						
+							<h3><a href="#">Story Headline Goes Here. This one is real long as an example of how this line wraps with many characters</a></h3>
+							<p class="date">May 12, 2008</p>
+							<p>
+								Story abstract goes here. Vivamus consequat tristique lectus. Suspendisse potenti. Donec dignissim aliquam risus.
+								Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam mauris.
+							</p>						
+						</li>
+						<li>						
+							<h3><a href="#">Story Headline Goes Here</a></h3>
+							<p class="date">May 9, 2008</p>
+							<p>
+								Story abstract goes here. Vivamus consequat tristique lectus. Suspendisse potenti. Donec dignissim aliquam risus.
+								Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam mauris.
+							</p>						
+						</li>
+						<li>						
+							<h3><a href="#">Story Headline Goes Here</a></h3>
+							<p class="date">May 1, 2008</p>
+							<p>
+								Story abstract goes here. Vivamus consequat tristique lectus. Suspendisse potenti. Donec dignissim aliquam risus.
+								Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam mauris.
+							</p>						
+						</li>
+						<li>						
+							<h3><a href="#">Story Headline Goes Here</a></h3>
+							<p class="date">April 4, 2008</p>
+							<p>
+								Story abstract goes here. Vivamus consequat tristique lectus. Suspendisse potenti. Donec dignissim aliquam risus.
+								Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam mauris.
+							</p>						
+						</li>
+						<li>						
+							<h3><a href="#">Story Headline Goes Here</a></h3>
+							<p class="date">May 15, 2008</p>
+							<p>
+								Story abstract goes here. Vivamus consequat tristique lectus. Suspendisse potenti. Donec dignissim aliquam risus.
+								Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam mauris.
+							</p>						
+						</li>	
+						<li>						
+							<h3><a href="#">Story Headline Goes Here. This one is real long as an example of how this line wraps with many characters</a></h3>
+							<p class="date">May 12, 2008</p>
+							<p>
+								Story abstract goes here. Vivamus consequat tristique lectus. Suspendisse potenti. Donec dignissim aliquam risus.
+								Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam mauris.
+							</p>						
+						</li>
+						<li>						
+							<h3><a href="#">Story Headline Goes Here</a></h3>
+							<p class="date">May 9, 2008</p>
+							<p>
+								Story abstract goes here. Vivamus consequat tristique lectus. Suspendisse potenti. Donec dignissim aliquam risus.
+								Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam mauris.
+							</p>						
+						</li>
+						<li>						
+							<h3><a href="#">Story Headline Goes Here</a></h3>
+							<p class="date">May 1, 2008</p>
+							<p>
+								Story abstract goes here. Vivamus consequat tristique lectus. Suspendisse potenti. Donec dignissim aliquam risus.
+								Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam mauris.
+							</p>						
+						</li>
+						<li>						
+							<h3><a href="#">Story Headline Goes Here</a></h3>
+							<p class="date">April 4, 2008</p>
+							<p>
+								Story abstract goes here. Vivamus consequat tristique lectus. Suspendisse potenti. Donec dignissim aliquam risus.
+								Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam mauris.
+							</p>						
+						</li>			
+					</ul>
+				
+				</div>
+				
+				
+				<!-- bottom pagination -->
+				<div class="pagination"></div>	
+			
+			</div><!-- /.inner -->
+			
+			<span class="fill-bottom"></span><!-- this is used to add the bottom of the drop shadow wrapper -->
+			
+		</div><!-- /primary -->
+
+		<div id="secondary">
+			
+			<div class="block">
+			
+				<div class="inner">
+				
+					<h3>
+						Welcome,<br />
+						John!
+					</h3>
+					<p>
+						You are logged in.
+					</p>
+					<a class="btn logout" href="#">Log Out</a>
+					
+					<ul>
+						<li><a href="#">Change your password</a></li>
+						<li><a href="#">Edit your online profile</a></li>
+					</ul>
+				
+				</div><!-- /.inner -->
+				
+				<span class="fill-bottom"></span><!-- this is used to add the bottom of the gradient wrapper -->
+				
+			</div><!-- /.block -->	
+			
+			<div class="block">
+				
+				<div class="inner">
+				
+					<!-- 
+						Header gets id to set image replacement 				
+					-->
+				
+					<h3 class="hdr" id="hdr-accountquicklinks">Account Quick Links</h3>
+					<ul class="nav">
+						<li><a href="#">Pay Your Bill</a></li>
+						<li><a href="#">Start Service</a></li>
+						<li><a href="#">Stop Service</a></li>
+						<li><a href="#">Transfer Service</a></li>
+						<li><a href="#">View Usage History</a></li>
+						<li><a href="#">Compare Payment Options</a></li>
+					</ul>	
+				
+				</div><!-- /.inner -->
+				
+				<span class="fill-bottom"></span><!-- this is used to add the bottom of the gradient wrapper -->			
+				
+			</div><!-- /.block -->	
+			
+			<div class="block callout">
+				
+				<span class="top"></span><!-- create top border with shadow -->
+				
+				<h3 class="hdr" style="background-image: url(_resources/img/css/hdr_renewableenergy.gif); height: 22px;">Renewable Energy</h3>
+				<img src="_resources/img/source/renewableenergy_interior.jpg" alt="" />
+				<p>
+					Choose Blue Sky and help create a more self-sufficient energy supply for today and tomorrow.
+				</p>
+				<p>
+					<a href="#">Sign up today</a>
+				</p>				
+				
+			</div><!-- /.block .callout -->
+			
+			<div class="block callout">
+				
+				<span class="top"></span><!-- create top border with shadow -->
+				
+				<h3 class="hdr" id="hdr-customerservice">Customer Service</h3>
+				<img src="_resources/img/source/customerservice_interior.jpg" alt="" />
+				<ul class="listing">
+					<li>
+						<a href="#">Customer service</a><br />
+						1-888-221-7070
+					</li>
+					<li>
+						<a href="#">Report a power outage</a><br />
+						1-877-LITESOUT
+					</li>
+					<li>
+						<a href="#">Report a streetlight outage</a>
+					</li>
+				</ul>				
+				
+			</div><!-- /.block .callout-->
+			
+		</div><!-- /secondary -->
+
+		<div id="tertiary">
+			
+			<div class="block">
+				
+				<div class="inner">
+				
+					<!-- 
+						Header gets id to set image replacement - matches nav ids
+						Nav: 
+							a.open: show down arrow. Used for main topics
+							a.current: change text to black for current page
+							
+							A link can be both open and current.					
+					-->
+				
+					<h3 class="hdr" id="hdr-aboutus">About Us</h3>
+					<ul class="nav">
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">Company Facts</a></li>
+						<li><a href="#">In the Community</a></li>
+						<li><a href="#">Recreation</a></li>
+						<li>
+							<a class="open" href="#">Newsroom</a>
+							<ul>
+								<li><a class="current" href="#">News</a></li>
+								<li><a href="#">Press Releases</a></li>
+								<li><a href="#">Media Infor</a></li>
+								<li><a href="#">Newsletters</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Contact Us</a></li>
+						<li><a class="current" href="#">Careers</a></li>
+					</ul>
+				
+				</div><!-- /.inner -->
+				
+				<span class="fill-bottom"></span><!-- this is used to add the bottom of the gradient wrapper -->			
+				
+			</div><!-- /.block -->
+			
+			<div class="block callout">
+				
+				<span class="top"></span><!-- create top border with shadow -->
+				
+				<img src="_resources/img/source/10simpleways.jpg" alt="" />
+				<p>
+					Ten simple ways to lessen your impact on the planet.
+				</p>
+				<p>
+					<a href="#">Learn more</a>
+				</p>
+				
+			</div><!-- /.block -->
+			
+			<div class="block callout">
+				
+				<span class="top"></span><!-- create top border with shadow -->
+				
+				<a href="#"><img src="_resources/img/source/videothumbnail.jpg" alt="" /></a>
+				<p>
+					View clips from renewable energy experts.
+				</p>
+				<p>
+					<a href="#">Watch videos</a>
+				</p>
+				
+			</div><!-- /.block -->			
+			
+		</div><!-- /tertiary -->
+
+	</div><!-- /content -->
+
+	<div id="footer">
+		<ul class="nav inline">
+			<li><a href="#">Home</a> :</li>
+			<li><a href="#">Espa&ntilde;ol</a> :</li>
+			<li><a href="#">Site Map</a> :</li>
+			<li><a href="#">Terms of Use</a> :</li>
+			<li><a href="#">Request Information</a> :</li>
+			<li><a href="#">Contact Us</a></li>
+		</ul>
+		<p>
+			&#169; 2009 <a href="#">PacifiCorp</a>, a subsidiary of <a href="#">MidAmerican Energy Holdings Company</a>
+		</p>
+		
+	</div><!-- /footer -->
+
+	<ul id="nav">
+		<li id="nav-youraccount">
+			<a href="#">Your Account</a>
+			<ul>
+				<li><a href="#">Account Overview</a></li>
+				<li><a href="#">Pay Your Bill</a></li>
+				<li><a href="#">Your Service</a></li>
+				<li><a href="#">Your Bill</a></li>
+				<li><a href="#">Payment Plan Options</a></li>
+				<li><a href="#">Your Online Profile</a></li>
+			</ul>
+		</li>
+		<li id="nav-residential">
+			<a href="#">Residential</a>
+			<ul>
+				<li><a href="#">Energy Efficiency Programs &amp; Incentives</a></li>
+				<li><a href="#">Energy Efficiency Resources</a></li>
+				<li><a href="#">Rates &amp; Regulations</a></li>
+				<li><a href="#">Power Outages</a></li>
+				<li><a href="#">Landlord Link</a></li>
+				<li><a href="#">Voices Newsletter</a></li>
+				<li><a href="#">Your Payment Options</a></li>
+			</ul>
+		</li>
+		<li id="nav-business">
+			<a href="#">Business</a>
+			<ul>
+				<li><a href="#">Energy Efficiency Programs &amp; Incentives</a></li>
+				<li><a href="#">Energy Efficiency Resources</a></li>
+				<li><a href="#">Business Solutions Team</a></li>
+				<li><a href="#">Rates &amp; Regulations</a></li>
+				<li><a href="#">Operational Upgrades</a></li>
+				<li><a href="#">Your Energy Data</a></li>
+				<li><a href="#">Newsletters</a></li>
+				<li><a href="#">Streetlights</a></li>
+				<li><a href="#">Oregon Direct Access</a></li>
+				<li><a href="#">Your Payment Options</a></li>
+				<li><a href="#">Understanding Your Electricity Charges</a></li>
+				<li><a href="#">Customer Case Studies</a></li>
+			</ul>
+		</li>
+		<li id="nav-contractors">
+			<a href="#">Contractors</a>
+			<ul>
+				<li><a href="#">Contractor Information</a></li>
+				<li><a href="#">Procurement</a></li>
+			</ul>
+		</li>
+		<li id="nav-efficiency">
+			<a href="#">Efficiency &amp; Environment</a>
+			<ul>
+				<li><a href="#">Our Environmental Commitment</a></li>
+				<li><a href="#">Reduce Your Carbon Footprint</a></li>
+				<li><a href="#">Blue Sky Renewable Energy Program</a></li>
+				<li><a href="#">Energy Efficiency Programs &amp; Incentives</a></li>
+				<li><a href="#">Net Metering &amp; Customer Generation</a></li>
+				<li><a href="#">Energy Efficiency Resources</a></li>
+				<li><a href="#">News</a></li>
+			</ul>	
+		</li>
+		<li id="nav-education">
+			<a href="#">Education &amp; Safety</a>
+			<ul>
+				<li><a href="#">Home Safety</a></li>
+				<li><a href="#">Call Before You dig</a></li>
+				<li><a href="#">Farm &amp; Ranch Safety</a></li>
+				<li><a href="#">Contractor Safety</a></li>
+				<li><a href="#">Power Outages</a></li>
+				<li><a href="#">How Electricity Works</a></li>
+				<li><a href="#">Safety Education</a></li>
+				<li><a href="#">Tree Planting &amp; Maintenance</a></li>
+				<li><a href="#">Streetlights</a></li>
+			</ul>	
+		</li>
+	</ul><!-- /nav -->
+
+</div><!-- /wrapper -->
+</body>
+</html>

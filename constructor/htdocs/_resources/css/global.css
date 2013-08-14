@@ -1,0 +1,244 @@
+          /*
+--=.._/(        CLIENT NAME GLOBAL STYLES      )\_..=--
+    	  */
+
+
+/*
+
+Author: ISITE Design
+
+--------- Notes -----------
+* html {anything} addresses IE < 6 browser bugs
+*+html {anything} addresses IE 7 browser bugs
+
+------- typography ---------
+font-sizes are set in em for resizable goodness.  Here's a basic guide for the stylesheet.
+font-size: .75em;   = 9px
+font-size: 0.835em; = 10px
+font-size: .9175em; = 11px
+font-size: 1em;     = 12px
+font-size: 1.085em; = 13px
+font-size: 1.165em; = 14px
+font-size: 1.25em;  = 15px
+font-size: 1.335em; = 16px
+font-size: 1.415em; = 17px
+font-size: 1.5em;   = 18px
+font-size: 1.585em; = 19px
+font-size: 1.665em; = 20px
+font-size: 1.75em;  = 21px
+font-size: 1.835em; = 22px
+font-size: 1.915em; = 23px
+font-size: 2em;     = 24px
+
+font colors:
+	base body color: #333333;
+		
+link colors:
+	main content a: #0000ff;
+	main content hover: #999999;
+
+*/
+
+/* Basic browser reset */
+body,div,h1,h2,h3,h4,h5,h6,p,ul,ol,li,dl,dd,dt,blockquote,fieldset,legend,form { margin:0;padding:0;border:0; }
+html,input,textarea,select { font-size: 100% } /* keep ie happy */
+
+body 					{ font: 75%/1.335 Arial, Helvetica, sans-serif; }
+h1, h2, h3, h4, h5, h6	{ font-weight: normal; margin: 0 0 .25em 0;}
+
+h1	{ font-size: 2em; } 	/* 24px */
+h2	{ font-size: 1.665em; } /* 20px */
+h3	{ font-size: 1.415em; } /* 17px */
+h4	{ font-size: 1.25em; } 	/* 15px */
+h5	{ font-size: 1em; } 	/* 12px; */
+h6	{ font-size: .9175em; } /* 11px; */
+
+p				{ margin-bottom: 1em; }
+abbr,acronym	{ border-bottom: 1px dotted #999; cursor: help; }
+ul, ol 			{ margin: 0 0 1em 3em; }
+table			{ border-collapse: collapse; }
+th, td			{ border: 1px solid #ccc; padding: .5em;  }
+
+
+/* temp for layout purposes*/
+div		{ background-color: rgba(200,200,200, .4); border: 1px solid #aaa; border-width: 1px 0px;} 
+body 	{ background: url(../img/css/grid.gif) center 0 repeat-y; }
+#wrapper	{border-right: 1px solid #ccc;}
+#secondary, #tertiary	{ background-color: rgba(180,180,180, .4);} 
+/* end temp for layout purposes*/
+
+
+
+/*----------------------------------- Site Structure --------------------*/
+#wrapper {
+	margin: auto;
+	position: relative;
+    width: 960px;
+}
+#header {
+    height: 115px;
+	margin-bottom: 2em; /* make room for absolutley position nav */
+}
+#content {
+	float: left;
+	width: 960px;
+	border: none;
+}
+
+
+/* three col, secondary on left, tertiary on right   */
+#primary {
+	display: inline;
+	float: left;
+    margin-left: 240px;
+	width: 520px;
+}
+#secondary {
+	display: inline;
+	float: left;
+	margin-left: -760px;
+	width: 220px;
+}
+#tertiary {
+    float: left;
+	margin-left: 20px;
+	width: 160px;
+}
+
+
+/* two col, secondary on right */
+/*
+#primary {
+	float: left;
+	width: 700px;
+}
+#secondary {
+	float: left;
+	width: 220px;
+}
+*/
+
+
+/* two col, secondary on left   */
+/*
+#primary {
+	display: inline;
+	float: left;
+    margin-left: 250px;
+	width: 700px;
+}
+#secondary {
+	display: inline;
+	float: left;
+	margin-left: -940px;
+	width: 220px;
+}
+*/
+
+
+#footer { 
+	clear: both; 
+}
+
+
+/*----------------------------------- Type, Links and Lists----------*/
+a, a:visited		{ color: #00f; }
+a:hover, a:focus 	{ color: #999; }
+
+a#brand {
+    /*background: #eee;
+	display: block;
+	height: 70px;
+	text-indent: -9999em;
+	width: 70px;*/
+}
+a#brand img {border:none;}
+
+/*---------------------------------- Navigation --------------------*/
+ul#nav, ul.nav, ul.meta {
+    list-style-type: none;
+    margin: 0;
+	overflow:hidden;
+    padding: 0;
+}
+#nav {
+	height: 1.5em;
+    overflow: hidden;
+	position: absolute;
+	top:120px;
+}
+	#nav a, #nav li, .meta li {
+	    display: block;
+		float: left;
+		padding: 0 1em;
+		text-decoration: none;
+		width: auto;
+	}
+
+
+/*----------------------------------- Forms -------------------------*/
+
+fieldset ol, fieldset ol ul {
+	list-style-type: none;
+	margin: 0;
+}
+fieldset li {
+    margin-bottom: 1em;
+}
+input, select, textarea, label, button {
+    display: block;
+}
+label input {
+	display: inline;
+}
+#wrapper input[type=hidden] {
+    display: none;	
+}
+button {
+    cursor: pointer;
+}
+
+
+#search {
+	position:absolute;
+	right:2em;
+	top:1.5em;
+}
+	#search input, #search button { display:inline-block;}
+	
+/*----------------------------------- Randoms/dev utility styles ---*/
+.accessibility { height:0;left:-9999em;line-height:0;position:absolute;text-indent:-9999em; }
+.column {
+    float: left;
+	width: 45%;
+	margin-right: 2%;
+}
+
+.small 			{ width: 25%; }
+.medium 		{ width: 48%; }
+.large 			{ width: 90%; }
+.error, .red 	{ color: red; }
+
+
+/* there's always a better way than using these. */
+.hide			{ display: none; }
+.left 			{ float: left; margin: 10px 5px 10px 0; }
+* html .left 	{ margin-right: 0; }
+.right 			{ float: right; }
+.clear 			{ clear: both; }
+.clearleft 		{ clear: left; }
+.clearright 	{ clear: right; }
+
+
+/* self-clear floats */
+.group:after {
+	content: "."; 
+	display: block; 
+	height: 0; 
+	clear: both; 
+	visibility: hidden;
+}
+
+*:first-child+html .group {
+	min-height: 1px;
+}
