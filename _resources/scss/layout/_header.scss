@@ -1,0 +1,14 @@
+header {
+	background: $lightGrey;
+	@include box-sizing();
+
+	.column, .columns {
+		margin-top: 0;
+	}
+
+	// ie8 and older height needed for mobile header size
+	// max-width needed because border-box isn't supported for the header element
+	.oldie & {
+		max-width: $rowMaxWidth - ($gutterInPx * 2);
+	}
+}

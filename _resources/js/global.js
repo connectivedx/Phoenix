@@ -20,7 +20,7 @@ jQuery(function ($) {
 	var NS = IX.getProjectNamespace(); // alias to project namespace.
 	body = $('body');
 	body.on('click',function(e){
-		IX.toogleOptions(e);
+		IX.toggleOptions(e);
 		IX.optionsResize(e);
 	});
 	var typeWait;
@@ -50,7 +50,7 @@ jQuery(function ($) {
 });// document ready
 
 // application logic
-IX.toogleOptions = function(e){
+IX.toggleOptions = function(e){
 	var target = jQuery(e.target);
 	var isOpen = (target.is(':not(.open)'))?'addClass':'removeClass';
 	

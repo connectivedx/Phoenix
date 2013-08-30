@@ -1,0 +1,12 @@
+footer {
+	background: $lightGrey;
+
+	.column, .columns {
+		margin-top: 0;
+	}
+
+	// max-width needed because border-box isn't supported for the footer element
+	.oldie & {
+		max-width: $rowMaxWidth - ($gutterInPx * 2);
+	}
+}

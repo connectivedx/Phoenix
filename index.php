@@ -25,7 +25,7 @@
 								<input type="text" data-key="meta-title" />
 							</li>
 							<li>
-								<label>Prject Meta Description</label>
+								<label>Project Meta Description</label>
 								<input type="text" data-key="meta-description" />
 							</li>
 						</ol>
@@ -44,9 +44,13 @@
 									<option value="index-html5-responsive.php">HTML5 Responsive</option>
 								</select>
 							</li>
-							<li id="dimenstion-options">
+							<li id="dimension-options">
 								<label>Template's Max Width</label>
 								<input type="text" data-key="maxWidth" name="maxWidth" value="960px" />
+								<label>Column Count</label>
+								<input type="text" data-key="columnCount" name="columnCount" value="12" />
+								<label>Gutter Width</label>
+								<input type="text" data-key="gutterWidth" name="gutterWidth" value="20px" />
 							</li>
 						</ol>
 					</fieldset>
@@ -120,7 +124,40 @@
 							</li>																								
 						</ol>
 					</fieldset>
-				</li>				
+				</li>
+				<!-- Sass code is going to stay commented out until it's ready
+				<li>
+					<fieldset>
+						<legend>Sass Options</legend>
+						<ol>
+							<?php
+								if ($outerHandle = opendir('_resources/scss')) {
+									while (false !== ($outerEntry = readdir($outerHandle))) {
+										if ($outerEntry != "." && $outerEntry != ".." && $outerEntry != ".DS_Store" && $outerEntry != "style.scss") {
+											echo '<li>';
+												echo '<fieldset>';
+													echo '<legend>' . ucfirst($outerEntry) . '</legend>';
+												echo '<ol>';
+													if ($innerHandle = opendir('_resources/scss/' . (string)$outerEntry)) {
+														while (false !== ($innerEntry = readdir($innerHandle))) {
+															if ($innerEntry != "." && $innerEntry != ".." && $innerEntry != "_all.scss") {
+																echo '<li>';
+																	echo '<label><input type="checkbox" value="" name="scss[' . ucfirst($innerEntry) . ']" />' . ucfirst($innerEntry) . '</label>';
+																echo '</li>';
+															}
+														}
+													}
+												echo '</ol>';
+												echo '</fieldset>';
+											echo '</li>';
+										}
+									}
+								}
+							?>
+						</ol>
+					</fieldset>
+				</li>		
+				-->		
 				<li>
 					<fieldset>
 						<legend>JavaScript Options</legend>
@@ -287,7 +324,7 @@
 		</fieldset>
 	</form>
 	<iframe id="constructor-preview" src="constructor/htdocs/_resources/html/index-html5-elements.php"></iframe>
-	<script type="text/javascript" src="_resources/js/jquery1.9.1.min.js"></script>
+	<script type="text/javascript" src="_resources/js/jquery.min.js"></script>
 	<script src="_resources/js/global.js"></script>
 </body>
 </html>

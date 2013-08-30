@@ -1,0 +1,24 @@
+// Grid Settings
+$gutterInPx: 20px !default;
+$smallGutterInPx: 20px !default;
+$rowMaxWidth: 960px !default;
+$cols: 12 !default;
+$hybrid: 16 !default;
+
+// Responsiveness Settings
+$minDeviceWidth: 320px;
+$phoneLandscapeWidth: 480px;
+$tabletPortraitWidth: 768px;
+$documentWidth: $rowMaxWidth;
+$maxDeviceWidth: 2880px;
+
+// Floats
+$defaultFloat: left;
+$switchFloat: right;
+
+// Form elements
+$buttonBorderRadius: 4px;
+$badgeBorderRadius: 8px;
+$widgetBorderRadius: 8px;
+$tooltipArrowSize: 8px;
+$tooltipPadding: 5px;

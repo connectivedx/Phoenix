@@ -1,0 +1,19 @@
+// Responsive Mixins
+
+@mixin respond($media) {
+	@if $media == phoneLandscape {
+		@media only screen and (min-width: $phoneLandscapeWidth) { @content; }
+	}
+	@else if $media == tabletPortrait {
+		@media only screen and (min-width: $tabletPortraitWidth) { @content; }
+	}
+	@else if $media == print {
+		@media print { @content; }
+	}
+	@else if $media == rotateDevice {
+		@media only screen and (max-width: $phoneLandscapeWidth) and (orientation: portrait) { @content; }
+	}
+	@else {
+		@media only screen and ($media) { @content; }
+	}
+}

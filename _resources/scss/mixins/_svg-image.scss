@@ -1,0 +1,7 @@
+@mixin svg-image($imageName, $property: background-image) {
+	#{$property}: url('#{$svgFolder}#{$imageName}.svg');
+
+	.no-svg & {
+		#{$property}: url('#{$imagesFolder}#{$imageName}.png');
+	}
+}

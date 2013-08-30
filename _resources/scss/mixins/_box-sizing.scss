@@ -1,0 +1,4 @@
+@mixin box-sizing($bs: border-box) {
+	-moz-box-sizing: unquote($bs);
+	box-sizing: unquote($bs);
+}

@@ -1,0 +1,108 @@
+.responsive-tabs-wrapper { 
+	clear: both;
+	zoom: 1;
+
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+.responsive-tabs__heading {
+	background: $lightGrey;
+	border: 1px solid $black;
+	border-radius: $buttonBorderRadius;
+	cursor: pointer;
+	display: block;
+	padding: em(9, 18);
+	position: relative;
+
+	&:after {
+		@include svg-image(arrow-down);
+		background-size: 20px 12px;
+		content:" ";
+		display: block;
+		height: 12px; 
+		position: absolute;
+		right: 20px;
+		top: 40%;
+		width: 20px;
+	}
+
+	@include respond(tabletPortrait) {
+		display: none;    
+	}
+}
+	.responsive-tabs__heading--active {
+		background: $white;
+		border-bottom: 1px dashed $black;
+		border-radius: $buttonBorderRadius $buttonBorderRadius 0 0;
+		margin-bottom: 0;
+
+		&:after {
+			@include svg-image(arrow-up);
+		}
+	}
+	.responsive-tabs__heading:hover,
+	.responsive-tabs__heading--active:hover {
+		background-color: $black;
+	}
+
+.responsive-tabs__panel {
+	border-bottom: 1px solid $black;
+	border-left: 1px solid $black;
+	border-right: 1px solid $black;
+	margin-bottom: em(5);
+	padding: em(16);
+}
+	.responsive-tabs__panel--closed-accordion-only {
+		display: none;
+
+		@include respond(tabletPortrait) {
+			display: block;
+		}
+	}
+
+.responsive-tabs__list {
+	border-bottom: 1px solid $black;
+	display: none;
+	@include font-size(19);
+	margin: 0;
+	padding: em(11, 19) 0 em(11, 19);
+
+	@include respond(tabletPortrait) {
+		display: block;
+	}
+}
+
+.responsive-tabs__list__item {
+	background: $lightGrey;
+	border: 1px solid $lightGrey;
+	border-top-left-radius: $buttonBorderRadius;
+	border-top-right-radius: $buttonBorderRadius;
+	cursor: pointer;
+	display: inline;
+	margin-right: 1px;
+	padding: em(10, 19) em(20, 19);
+
+	&:hover {
+		background: $black;
+	}
+}
+	.responsive-tabs__list__item--active, 
+	.responsive-tabs__list__item--active:hover {
+		background: $white;
+		border-color: $black;
+		border-bottom-color: $white;
+	}
+
+.responsive-tabs__heading:focus,
+.responsive-tabs__list__item:focus,
+.responsive-tabs__heading--active:focus,
+.responsive-tabs__list__item--active:focus {
+	outline: none !important;
+}

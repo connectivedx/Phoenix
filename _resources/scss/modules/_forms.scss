@@ -1,0 +1,125 @@
+// IE9 and newer supported; IE8 and lower will have standard form elements
+// :not() targets > IE8, #foo is just a random ID
+fieldset:not(#foo) {
+	input[type='radio'],
+	input[type='checkbox'] {
+		float: left;
+		height: 1px;
+		margin: 0;
+		opacity: 0;
+		padding: 0;
+		width: 1px;
+
+		& + span {
+			background-position: left 2px;
+			background-repeat: no-repeat;
+			background-size: 16px 16px;
+			clear: none;
+			cursor: default;
+			display: block;
+			min-height: 20px;
+			padding-left: 20px;
+		}
+	}
+
+	input[type='radio'] {
+		& + span {
+			@include svg-image(radio-unchecked);
+		}
+		&:active + span,
+		&:focus + span {
+			@include svg-image(radio-unchecked-active);
+		}
+		&:checked + span {
+			@include svg-image(radio-checked);
+		}
+		&:checked:active + span,
+		&:checked:focus + span {
+			@include svg-image(radio-checked-active);
+		}
+	}
+
+	input[type='checkbox'] {
+		& + span {
+			@include svg-image(checkbox-unchecked);
+		}
+		&:active + span,
+		&:focus + span {
+			@include svg-image(checkbox-unchecked-active);
+		}
+		&:checked + span {
+			@include svg-image(checkbox-checked);
+		}
+		&:checked:active + span,
+		&:checked:focus + span {
+			@include svg-image(checkbox-checked-active);
+		}
+	}
+}
+
+.oldie {
+	fieldset {
+		input[type='radio'],
+		input[type='checkbox'] {
+			& + span {
+				margin-left: em(4);
+				min-height: 20px;
+			}
+		}
+	}
+}
+
+fieldset {
+	label {
+		&.inline {
+			display: inline-block;
+			padding-right: 5px;
+		}
+	}
+}
+
+// selects
+.decorator-select {
+	background: -moz-linear-gradient(top,  #ffffff 0%, #f2f2f2 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f2f2f2)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffffff 0%, #f2f2f2 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffffff 0%, #f2f2f2 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffffff 0%, #f2f2f2 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ffffff 0%, #f2f2f2 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f2f2f2',GradientType=0 ); /* IE6-9 */
+	border: 1px solid $black;
+	border-radius: $buttonBorderRadius;
+	@include box-sizing();
+	display: inline-block;
+	height: auto;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+
+	&:after {
+		@include svg-image(select-arrow, content);
+		height: 34px;
+		pointer-events: none;
+		position: absolute;
+		right: 8px;
+		top: 0;
+		width: 25px;
+		z-index: 100;
+	}
+	&:first-child {
+		margin-left: 0;
+	}
+	select {
+		-webkit-appearance: none;
+		background: transparent;
+		border: none;
+		color: black;
+		display: block;
+		height: 34px;
+		outline: none;
+		padding: 6px 10px 6px 10px;
+		position: relative;
+		width: 100%;
+		z-index: 99;
+	}
+}

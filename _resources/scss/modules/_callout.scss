@@ -1,0 +1,9 @@
+.callout {
+	background: $lightGrey;
+	margin-top: em(10);
+	padding: $smallGutterInPx;
+
+	&:first-child {
+		margin-top: 0;
+	}
+}

@@ -1,0 +1,30 @@
+.btn {
+	border-radius: $buttonBorderRadius;
+	border-style: none;
+	display: inline-block;
+	@include font-size(18);
+	margin-right: em(5, 18);
+	padding: em(6, 18) em(12, 18);
+	text-align: center;
+	text-decoration: none;
+
+	// sibling buttons may be too wide on low resolutions and wrap to multiple lines
+	& + .btn {
+		margin-top: em(5);
+
+		@include respond(tabletPortrait) {
+			margin-top: 0;
+		}
+	}
+
+	&.btn-full-width {
+		display: block;
+		margin-right: 0;
+		margin-top: em(16);
+		text-align: left;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+}
