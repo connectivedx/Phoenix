@@ -1,6 +1,6 @@
 header {
 	background: $lightGrey;
-	@include box-sizing();
+	@include row();
 
 	.column, .columns {
 		margin-top: 0;

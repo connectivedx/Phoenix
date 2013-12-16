@@ -5,6 +5,10 @@ html {
 body {
 	background: $white;
 	color: $black;
+	min-width: 0;
+	-ms-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	width: 100%;
 }
 
 // typography
@@ -88,7 +92,7 @@ h6 {
 // lists
 ul, ol {
 	line-height: $lineHeight;
-	margin: em(10) 0 0 em(25);
+	margin: em(10) 0 0;
 	padding: 0;
 
 	&.plain {
@@ -230,4 +234,12 @@ img, object, embed {
 
 img {
 	-ms-interpolation-mode: bicubic;
+}
+
+.accessibility {
+	height:0;
+	left:-9999em;
+	line-height:0;
+	position:absolute;
+	text-indent:-9999em;
 }

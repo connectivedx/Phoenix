@@ -1,5 +1,6 @@
 footer {
 	background: $lightGrey;
+	@include row();
 
 	.column, .columns {
 		margin-top: 0;
@@ -9,4 +10,8 @@ footer {
 	.oldie & {
 		max-width: $rowMaxWidth - ($gutterInPx * 2);
 	}
+}
+
+.meta {
+	list-style: none;
 }

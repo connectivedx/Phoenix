@@ -14,15 +14,7 @@
 		padding: 0;
 	}
 	@else {
-		padding: 0 $gutterInPx $gutterInPx;
-	}
-
-	> *:first-child {
-		margin-left: 0px;
-	}
-
-	&:first-child {
-		padding-top: $gutterInPx;
+		padding: $gutterInPx;
 	}
 
 	@include respond(tabletPortrait) {
@@ -44,6 +36,7 @@
 
 // Mixin for rows that are nested within columns
 @mixin nestedRow() {
+	margin-top: $gutterInPx;
 	max-width: none;
 	min-width: 0px;
 	width: auto;
@@ -92,6 +85,7 @@
 		}
 	}
 	@else {
+		@extend %columnconfig;
 		float: left;
 		margin-left: 0;
 		margin-top: $gutterInPx;
@@ -192,7 +186,7 @@
 	}
 }
 
-@mixin pull($direction: false, $columns: 0, $width: 0, $hybrid-grid: false) {
+@mixin pull($direction: left, $columns: 0, $width: 0, $hybrid-grid: false) {
 	@if $direction == left {
 		@extend %pull-left;
 		@if ($columns > 0 and $width > 0) {
@@ -247,7 +241,7 @@
 
 // Row placeholders
 %row { @include row(); }
-%nestedrow { @include row(); }
+%nestedrow { @include row(nested); }
 
 // Column Configuration placeholder
 %columnconfig {

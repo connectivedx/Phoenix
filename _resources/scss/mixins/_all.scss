@@ -2,6 +2,16 @@
 @import "clearfix";
 @import "font-size";
 @import "respond";
-@import "semantic-grid";
 @import "svg-image";
 @import "transition";
+
+// the grids rely on above mixins and need to be last
+@import "grid";
+@if ($enableGrid) {
+	@include grid;
+}
+@import "semantic-grid";
+@import "colgrid-image";
+@if ($enableColgridImage) {
+	@include colgrid-image;
+}

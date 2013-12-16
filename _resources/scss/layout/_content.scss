@@ -1,0 +1,17 @@
+#content {
+	@include row();
+}
+.primary {
+	@include column(9);
+	@include push(4);
+}
+.secondary {
+	@include column(4);
+	@include pull(left, 9, 4);
+}
+.tertiary {
+	@include column(3);
+}
+.two-up {
+	@include column(8);
+}

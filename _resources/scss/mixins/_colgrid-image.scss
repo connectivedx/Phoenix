@@ -1,0 +1,10 @@
+@mixin colgrid-image {
+	.colgrid-image {
+		@include respond(tabletPortrait) {
+			background-image: -webkit-linear-gradient(left, $visibleGridColumnColor oneColRatio(), $visibleGridGutterColor oneColRatio());
+			background-image: linear-gradient(90deg, $visibleGridColumnColor oneColRatio(), $visibleGridGutterColor oneColRatio());
+			background-size: oneCol() + $gutter;
+			@include clearfix();
+		}
+	}
+}

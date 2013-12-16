@@ -2,4 +2,6 @@ $enableCentered: true;
 $enablePush: true;
 $enablePull: true;
 $enableHybrid: true;
-$enabledColumns: ();	// set value to () to include all possible columns
+$enabledColumns: ();	// comma separated value list of column widths you want to support; set to () to include all possible columns
+$enableGrid: true;
+$enableColgridImage: true;

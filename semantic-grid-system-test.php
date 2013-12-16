@@ -17,16 +17,6 @@
 	<title>Semantic Grid System Test</title>    
 </head>
 <body>
-	<style type="text/css">
-		article, nav, aside {
-			border: 1px solid black;
-		}
-	</style>
-	
-	<?php
-		$numbers = array('one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen');
-		$gridSize = 12;
-	?>
 	<section class="content">
 		<div class="row">
 			<h2>Three column, semantic example</h2>
@@ -35,26 +25,26 @@
 		<section class="wrapper colgrid-visible">
 			<article class="primary">
 				<h3>Primary</h3>
-				<p>This is an eight column container.  It will hold your primary content.  It has been pushed to be placed in the appropriate place in the layout.</p>
+				<p>This is a nine column container.  It will hold your primary content.  It has been pushed to be placed in the appropriate place in the layout.</p>
 
 				<section class="nested wrapper">
 					<div class="two-up">
-						This is a six column sub-layout using a class of "two-up".
+						This is an eight column sub-layout using a class of "two-up".
 					</div>
 					<div class="two-up">
-						This is a six column sub-layout using a class of "two-up".
+						This is an eight column sub-layout using a class of "two-up".
 					</div>
 				</section>
 			</article>
 
 			<nav class="secondary">
 				<h5>Secondary</h5>
-				<p>This is a two column container.  It will hold navigation content.  It has been pulled to be placed in the left rail on desktops and tablets, but will be below the main content on mobile.</p>
+				<p>This is a four column container.  It will hold navigation content.  It has been pulled to be placed in the left rail on desktops and tablets, but will be below the main content on mobile.</p>
 			</nav>
 
 			<aside class="tertiary">
 				<h5>Tertiary</h5>
-				<p>This is another two column container.  It will hold tertiary content in the right rail on desktops and tablets, but will be at the bottom on mobile because it has not been pushed or pulled.</p>
+				<p>This is a three column container.  It will hold tertiary content in the right rail on desktops and tablets, but will be at the bottom on mobile because it has not been pushed or pulled.</p>
 			</aside>
 		</section>
 	</section>
