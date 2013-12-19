@@ -15,3 +15,7 @@
 .two-up {
 	@include column(8);
 }
+
+aside {
+	@include row(nested);
+}
