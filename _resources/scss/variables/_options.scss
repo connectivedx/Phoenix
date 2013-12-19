@@ -1,7 +1,19 @@
+// enables centered, push, and pull classes for the grid system's columns
+// NOTE: this does not affect the semantic grid
 $enableCentered: true;
 $enablePush: true;
 $enablePull: true;
-$enableHybrid: true;
-$enabledColumns: ();	// comma separated value list of column widths you want to support; set to () to include all possible columns
+
+// enable or disable the grid systems
+// if enableGrid is false, the hybrid grid will automatically be disabled
+// NOTE: this does not affect the semantic grid
 $enableGrid: true;
+$enableHybridGrid: true;
+
+// comma separated value list of column widths you want to support in the standard grid system; set to () to include all possible columns
+// if enableGrid/enableHybridGrid are set to false, this is a moot option since no column classes will be output
+// NOTE: this does not affect the semantic grid, it only minimizes the output of classes for the grid system
+$enabledColumns: ();
+
+// enables the class that displays the grid system background image
 $enableColgridImage: true;

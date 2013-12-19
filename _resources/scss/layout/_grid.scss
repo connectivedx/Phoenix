@@ -194,7 +194,7 @@
 	/* Hybrid Grid Columns */
 
 	// Generate Hybrid Grid Column Classes
-	@if ($enableHybrid) {
+	@if ($enableHybridGrid) {
 		.#{number-as-word($hybrid)}.colgrid .row {
 			@for $i from 1 through $hybrid{
 				@if $i == 1{
@@ -234,7 +234,7 @@
 	/* Hybrid Push Classes */
 
 	// Generate Hybrid Push Classes
-	@if ($enableHybrid) {
+	@if ($enableHybridGrid) {
 		.#{number-as-word($hybrid)}.colgrid .row {
 			@for $i from 1 through $hybrid - 1 {
 				@if ($enablePush) {
@@ -281,7 +281,7 @@
 	/* Hybrid Centered Classes */
 
 	// Generate Centered Classes
-	@if ($enableHybrid) {
+	@if ($enableHybridGrid) {
 		.#{number-as-word($hybrid)}.colgrid .row {
 			@for $i from 1 through $hybrid - 1 {
 				@if ($enableCentered) {
