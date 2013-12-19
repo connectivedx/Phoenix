@@ -1,5 +1,5 @@
 // Calculate grid values
-$gutter: percentage($gutterInPx / $rowMaxWidth); // 2.1276596
+$gutter: percentage($gutterInPx / $rowMaxWidth);
 
 // Return single column width
 @function oneCol($hybrid-grid: false) {
