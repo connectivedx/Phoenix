@@ -1,27 +1,21 @@
 <html lang="en" class="js"><head>
-	<title></title>
+	<title>Template Test</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="author" content="ISITE Design">
-    <meta name="apple-mobile-web-app-title" content="CUSTOM SHORT NAME">
+	<meta name="apple-mobile-web-app-title" content="CUSTOM SHORT NAME">
 	
-    <!-- icon and tile color in hex # for Windows phones -->
-    <meta name="msapplication-TileImage" content="http://fed.isitedesign.us/content/fed-template/img/apple-touch-icon-144x144.png">
+	<!-- icon and tile color in hex # for Windows phones -->
+	<meta name="msapplication-TileImage" content="/path/to/touch-icon.png">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	
 	<link rel="stylesheet" media="all" href="_resources/css/style.css">
 		
 	<!-- For everything else --> 
-	<link rel="shortcut icon" href="../img/favicon.png"> 
-    <!-- 57x57 (precomposed) for iPhone 3GS, 2011 iPod Touch and older Android devices -->
-	<link rel="apple-touch-icon-precomposed" href="../img/apple-touch-icon-precomposed.png"> 
-	<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
-    <!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and 2012 iPod Touch -->
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
-	<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../img/apple-touch-icon-144x144.png">
+	<link rel="shortcut icon" href="/path/to/shortcut-icon.png"> 
+	<!-- Serve one icon for all Apple devices -->
+	<link rel="apple-touch-icon-precomposed" href="/path/to/touch-icon.png"> 
 </head>
 
 <body class="">
@@ -78,7 +72,7 @@
 	<footer role="contentinfo">
 		<h2>footer</h2>		
 		<ul class="meta">
-			<li>Copyright © 2013 Client Name</li>
+			<li>Copyright &copy; 2013 Client Name</li>
 		</ul>
 	</footer>
 	
