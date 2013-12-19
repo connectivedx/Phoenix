@@ -23,5 +23,5 @@ aside {
 }
 
 .flex-grid > li {
-	@include flex(3, 2, 1);
+	@include multiGrid(3, 2, 1);
 }

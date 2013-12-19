@@ -7,7 +7,7 @@
 @if ($enableColgridImage) {
 	@include colgrid-image;
 }
-@import "flex-grid";
+@import "multi-grid";
 
 @import "content";
 @import "header";

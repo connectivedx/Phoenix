@@ -2,7 +2,7 @@
 	@return 100%/$colNum;
 }
 
-@mixin flex($desktopColumns, $tabletColumns: $desktopColumns, $mobileColumns: 1, $smallBreak: mobile, $mediumBreak: tabletPortrait, $largeBreak: desktop) {
+@mixin multiGrid($desktopColumns, $tabletColumns: $desktopColumns, $mobileColumns: 1, $smallBreak: mobile, $mediumBreak: tabletPortrait, $largeBreak: desktop) {
 	// These styles apply to all shift-columns
 	@include box-sizing();
 	display: inline-block;
