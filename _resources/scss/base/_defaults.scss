@@ -11,9 +11,9 @@ body {
 	width: 100%;
 }
 
-@import "defaults/typography";
-@import "defaults/lists";
 @import "defaults/forms";
-@import "defaults/tables";
+@import "defaults/lists";
 @import "defaults/media";
+@import "defaults/tables";
+@import "defaults/typography";
 @import "defaults/utility";

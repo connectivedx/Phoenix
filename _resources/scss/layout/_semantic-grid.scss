@@ -3,6 +3,7 @@
 
 // Mixin for rows
 @mixin row($nested: false) {
+	@include box-sizing();
 	@extend %clearfix;
 	margin-left: 0; 
 	margin-right: 0;
@@ -12,6 +13,10 @@
 	@if $nested == nested {
 		margin-top: $gutterInPx;
 		padding: 0;
+
+		&:first-child {
+			margin-top: 0;
+		}
 	}
 	@else {
 		padding: $gutterInPx;
@@ -25,7 +30,6 @@
 			width: auto;
 		}
 		@else {
-			@include box-sizing();
 			margin: 0 auto;
 			max-width: $rowMaxWidth;
 			min-width: $minDeviceWidth;
@@ -34,17 +38,8 @@
 	}
 }
 
-// Mixin for rows that are nested within columns
-@mixin nestedRow() {
-	margin-top: $gutterInPx;
-	max-width: none;
-	min-width: 0px;
-	width: auto;
-	@extend %clearfix;
-}
-
 @mixin column($columns: $columns, $alignment: false, $behavior: false) {
-	@if $alignment == center   {
+	@if $alignment == center {
 		@extend %columnconfig;
 		float: left;
 		margin-left: 0;
