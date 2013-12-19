@@ -14,7 +14,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="robots" content="index, follow" />
 	<link rel="stylesheet" type="text/css" media="all" href="_resources/css/style.css" />
-	<title>Semantic Grid System Test</title>    
+	<title>Semantic Grid System Test</title>
 </head>
 <body>
 	<div class="row">
