@@ -1,0 +1,31 @@
+ul, ol {
+	line-height: $lineHeight;
+	margin: em(10) 0 0;
+	padding: 0;
+
+	&.plain {
+		list-style-image: none;
+		list-style: none;
+		margin-left: 0;
+		text-align: left;
+
+		.no-svg & {
+			list-style-image: none;
+			list-style: none;
+			margin: 0;
+		}
+	}
+
+	ul {
+		@include svg-image(list-circle-warm-brown, list-style-image);
+		margin-left: em(18);
+		margin-top: 0;
+	}
+}
+ul {
+	@include svg-image(list-dot-modern-aqua, list-style-image);
+}
+dd {
+	line-height: $lineHeight;
+	margin: 0;
+}

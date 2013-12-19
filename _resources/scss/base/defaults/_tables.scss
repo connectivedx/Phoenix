@@ -1,0 +1,39 @@
+table {
+	@include font-size(12);
+	width: 100%;
+
+	th {
+		vertical-align: middle;
+	}
+
+	th, td {
+		padding: em(8);
+		text-align: center;
+	}
+
+	// zebra striping code needs to repeat because IE < 8 will ignore the code if an nth-child selector is in it
+	tr:nth-child(2n) {
+		> td {
+			background-color: $lightGrey;
+
+			&.empty,
+			&.plain {
+				background-color: transparent;
+			}
+		}
+	}
+	tr.even {
+		> td {
+			background-color: $lightGrey;
+
+			&.empty,
+			&.plain {
+				background-color: transparent;
+			}
+		}
+	}
+
+	@include respond(tabletPortrait) {
+		@include font-size(14);
+	}
+}
