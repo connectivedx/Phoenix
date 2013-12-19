@@ -7,6 +7,9 @@
 	@else if $media == tabletPortrait {
 		@media only screen and (min-width: $tabletPortraitWidth) { @content; }
 	}
+	@else if $media == desktop {
+		@media only screen and (min-width: $documentWidth) { @content; }
+	}
 	@else if $media == print {
 		@media print { @content; }
 	}

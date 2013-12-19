@@ -17,36 +17,53 @@
 	<title>Semantic Grid System Test</title>    
 </head>
 <body>
-	<section class="content">
-		<div class="row">
-			<h2>Three column, semantic example</h2>
-		</div>
+	<div class="row">
+		<h2>Three column, semantic example</h2>
+	</div>
 
-		<section class="wrapper colgrid-visible">
-			<article class="primary">
-				<h3>Primary</h3>
-				<p>This is a nine column container.  It will hold your primary content.  It has been pushed to be placed in the appropriate place in the layout.</p>
+	<section class="wrapper colgrid-visible">
+		<article class="primary">
+			<h3>Primary</h3>
+			<p>This is a nine column container.  It will hold your primary content.  It has been pushed to be placed in the appropriate place in the layout.</p>
 
-				<section class="nested wrapper">
-					<div class="two-up">
-						This is an eight column sub-layout using a class of "two-up".
-					</div>
-					<div class="two-up">
-						This is an eight column sub-layout using a class of "two-up".
-					</div>
-				</section>
-			</article>
+			<section class="nested wrapper">
+				<div class="two-up">
+					This is an eight column sub-layout using a class of "two-up".
+				</div>
+				<div class="two-up">
+					This is an eight column sub-layout using a class of "two-up".
+				</div>
+			</section>
+		</article>
 
-			<nav class="secondary">
-				<h5>Secondary</h5>
-				<p>This is a four column container.  It will hold navigation content.  It has been pulled to be placed in the left rail on desktops and tablets, but will be below the main content on mobile.</p>
-			</nav>
+		<nav class="secondary">
+			<h5>Secondary</h5>
+			<p>This is a four column container.  It will hold navigation content.  It has been pulled to be placed in the left rail on desktops and tablets, but will be below the main content on mobile.</p>
+		</nav>
 
-			<aside class="tertiary">
-				<h5>Tertiary</h5>
-				<p>This is a three column container.  It will hold tertiary content in the right rail on desktops and tablets, but will be at the bottom on mobile because it has not been pushed or pulled.</p>
-			</aside>
-		</section>
+		<aside class="tertiary">
+			<h5>Tertiary</h5>
+			<p>This is a three column container.  It will hold tertiary content in the right rail on desktops and tablets, but will be at the bottom on mobile because it has not been pushed or pulled.</p>
+		</aside>
+	</section>
+
+	<div class="row">
+		<h2>Flexible Grid</h2>
+		<p>The flexible grid allows you to define element widths at multiple breakpoints.  Below there are 3 columns on desktops, 2 on tablets, and 1 on phones.</p>
+	</div>
+
+	<section class="wrapper colgrid-visible">
+		<ul class="flex-grid">
+			<li>
+				Column 1
+			</li>
+			<li>
+				Column 2
+			</li>
+			<li>
+				Column 3
+			</li>
+		</ul>
 	</section>
 
 	<script type="text/javascript" src="_resources/js/jquery.min.js"></script>

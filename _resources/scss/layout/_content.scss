@@ -1,4 +1,5 @@
-#content {
+#content,
+.wrapper {
 	@include row();
 }
 .primary {
@@ -16,6 +17,11 @@
 	@include column(8);
 }
 
+.nested,
 aside {
 	@include row(nested);
+}
+
+.flex-grid > li {
+	@include flex(3, 2, 1);
 }
