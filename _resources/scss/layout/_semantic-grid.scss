@@ -163,8 +163,8 @@
 	}
 }
 
-@mixin push($columns, $hybrid-grid: false) {
-	@if $hybrid-grid == hybrid {
+@mixin push($columns, $hybridGrid: false) {
+	@if $hybridGrid == hybrid {
 		margin-left: 0;
 
 		@include respond(tabletPortrait) {
@@ -186,11 +186,11 @@
 	}
 }
 
-@mixin pull($direction: left, $columns: 0, $width: 0, $hybrid-grid: false) {
+@mixin pull($direction: left, $columns: 0, $width: 0, $hybridGrid: false) {
 	@if $direction == left {
 		@extend %pull-left;
 		@if ($columns > 0 and $width > 0) {
-			@if ($hybrid-grid == hybrid) {
+			@if ($hybridGrid == hybrid) {
 				margin-left: 0;
 
 				@include respond(tabletPortrait) {
@@ -247,7 +247,6 @@
 %columnconfig {
 	@include box-sizing();
 	float: $defaultFloat;
-	margin-left: $gutter;
 	min-height: 1px;
 	position: relative;
 }
