@@ -3,11 +3,11 @@
 	@include row();
 }
 .primary {
-	@include column(9);
+	@include column(9, shifted);
 	@include push(4);
 }
 .secondary {
-	@include column(4);
+	@include column(4, shifted);
 	@include pull(left, 9, 4);
 }
 .tertiary {

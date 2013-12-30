@@ -38,11 +38,14 @@
 	}
 }
 
-@mixin column($columns: $columns, $alignment: false, $behavior: false) {
+// set $shifted to shifted if you will be pushing or pulling the column; this minimizes property (e.g. margin-left) overrides the browser performs
+@mixin column($columns: $columns, $shifted: false, $alignment: false, $behavior: false) {
 	@if $alignment == center {
 		@extend %columnconfig;
 		float: left;
-		margin-left: 0;
+		@if $shifted == false {
+			margin-left: 0;
+		}
 		margin-top: $gutterInPx;
 		width: 100%;
 
@@ -82,7 +85,9 @@
 	@else {
 		@extend %columnconfig;
 		float: left;
-		margin-left: 0;
+		@if $shifted == false {
+			margin-left: 0;
+		}
 		margin-top: $gutterInPx;
 		width: 100%;
 
@@ -91,7 +96,9 @@
 		}
 
 		@include respond(tabletPortrait) {
-			margin-left: $gutter;
+			@if $shifted == false {
+				margin-left: $gutter;
+			}
 			margin-top: 0;
 			width: columns($columns);
 
