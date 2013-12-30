@@ -2,7 +2,7 @@
 // Adjusted by ISITE Design to be mobile-first
 
 // Mixin for rows
-@mixin row($nested: false) {
+@mixin row($nested: false, $padding: $gutterInPx) {
 	@include box-sizing();
 	@extend %clearfix;
 	margin-left: 0; 
@@ -19,7 +19,7 @@
 		}
 	}
 	@else {
-		padding: $gutterInPx;
+		padding: $padding;
 	}
 
 	@include respond(tabletPortrait) {
