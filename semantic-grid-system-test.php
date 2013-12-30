@@ -48,8 +48,8 @@
 	</section>
 
 	<div class="row">
-		<h2>Flexible Grid</h2>
-		<p>The flexible grid allows you to define element widths at multiple breakpoints.  Below there are 3 columns on desktops, 2 on tablets, and 1 on phones.</p>
+		<h2>Multi-Grid</h2>
+		<p>The multi-grid allows you to define element widths at multiple breakpoints.  Below there are 3 columns on desktops, 2 on tablets, and 1 on phones.</p>
 	</div>
 
 	<section class="wrapper colgrid-visible">
