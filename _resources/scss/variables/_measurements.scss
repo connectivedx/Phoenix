@@ -1,5 +1,6 @@
 // Grid Settings
 $gutterInPx: 20px !default;
+$gutterInteger: $gutterInPx / 1px;
 $smallGutterInPx: 20px !default;
 $rowMaxWidth: 960px !default;
 $cols: 16 !default;
