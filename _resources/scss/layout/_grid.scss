@@ -53,13 +53,12 @@
 	}
 	.column, .columns {
 		float: none;
-		margin-left: 0;
-		margin-right: 0;
+		margin: 0;
+		padding: $gutterInPx;
 		width: auto;
 
 		&:last-child {
 			float: none;
-			margin-right: 0;
 		}
 	}
 
@@ -71,15 +70,9 @@
 			display: table;
 		}
 		&:after {
-			display: table;
 			clear: both;
+			display: table;
 		}
-	}
-	[class^="push_"],
-	[class*="push_"],
-	[class^="pull_"],
-	[class*="pull_"] {
-		margin-left: 0;
 	}
 
 	// Tablets and up
@@ -101,16 +94,11 @@
 		.column, .columns {
 			@include box-sizing();
 			float: $defaultFloat !important;
-			margin-left: $gutter;
 			min-height: 1px;
 
 			&.flush {
 				margin-left: 0;
 			}
-		}
-
-		.column:first-child, .columns:first-child, .alpha {
-			margin-left: 0px;
 		}
 
 		.column.omega, .columns.omega {
@@ -150,9 +138,6 @@
 				@if ($enablePush) {
 					.push_#{number-as-word($i)} {
 						margin-left: push_x($i);
-							&:first-child {
-							margin-left: push_x($i, true);
-						}
 					}
 				}
 				@if ($enablePull) {
@@ -240,10 +225,7 @@
 				@if ($enablePush) {
 					.push_#{number-as-word($i)} {
 						@include respond(tabletPortrait) {
-							margin-left: push_x($i, false, true);
-							&:first-child {
-								margin-left: push_x($i, true, true);
-							}
+							margin-left: push_x($i, true);
 						}
 					}
 				}

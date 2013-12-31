@@ -2,13 +2,12 @@
 	@return 100%/$colNum;
 }
 
-@mixin multiGrid($desktopColumns, $tabletColumns: $desktopColumns, $mobileColumns: 1, $smallBreak: mobile, $mediumBreak: tabletPortrait, $largeBreak: desktop) {
+@mixin multiGrid($mobileColumns, $tabletColumns, $desktopColumns, $padding: $gutterInPx, $smallBreak: mobile, $mediumBreak: tabletPortrait, $largeBreak: desktop) {
 	// These styles apply to all shift-columns
 	@include box-sizing();
 	display: inline-block;
 	float: left;
-	padding-left: $gutter / 2;
-	padding-right: $gutter / 2;
+	padding: $padding;
 
 	// IE8 fallback
 	width: divide-cols($mobileColumns);

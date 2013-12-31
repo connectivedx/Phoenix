@@ -1,20 +1,23 @@
-#content,
-.wrapper {
-	@include row();
+.wrapper,
+[role="banner"] {
+	@include row(false, 0);
 }
 .primary {
-	@include column(9, shifted);
+	@include column(9);
 	@include push(4);
+	background-color: lavender;
 }
 .secondary {
-	@include column(4, shifted);
-	@include pull(left, 9, 4);
+	@include column(4);
+	@include pull(9, 4);
+	background-color: orange;
 }
 .tertiary {
 	@include column(3);
+	background-color: chartreuse;
 }
 .two-up {
-	@include column(8);
+	@include column(8, 0, nested);
 }
 
 .nested,
@@ -23,5 +26,5 @@ aside {
 }
 
 .flex-grid > li {
-	@include multiGrid(3, 2, 1);
+	@include multiGrid(1, 2, 3);
 }

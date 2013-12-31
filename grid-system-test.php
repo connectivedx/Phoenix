@@ -14,13 +14,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="robots" content="index, follow" />
 	<link rel="stylesheet" type="text/css" media="all" href="_resources/css/style.css" />
+	<script type="text/javascript" src="_resources/js/modernizr.js"></script>
+	<script type="text/javascript" src="_resources/js/respond.js"></script>
 	<title>Grid System Test</title>    
 </head>
 <body>
 	<style type="text/css">
 		.column, .columns {
 			border: 1px solid black;
-			padding: 5px;
 			text-align: center;
 		}
 	</style>
@@ -44,7 +45,7 @@
 				$firstColumnWidth = $numbers[$i];
 				$secondColumnWidth = $numbers[$gridSize - $i - 2];
 
-				echo '<div class="row colgrid-visible">';
+				echo '<div class="row">';
 
 				// adjust text
 				if ($i == 0) {
@@ -81,7 +82,7 @@
 				$firstColumnWidth = $numbers[$i];
 				$secondColumnWidth = $numbers[$gridSize - $i - 2];
 
-				echo '<div class="row colgrid-visible">';
+				echo '<div class="row">';
 
 				// adjust text
 				if ($i == 0) {
@@ -190,8 +191,5 @@
 	</section>
 
 	<script type="text/javascript" src="_resources/js/jquery.min.js"></script>
-	<script type="text/javascript">
-		$('.colgrid-visible').wrapInner('<div class="colgrid-image" />');
-	</script>
 </body>
 </html>

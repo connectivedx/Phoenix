@@ -15,6 +15,8 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
 	
 	<link rel="stylesheet" media="all" href="_resources/css/style.css">
+	<script type="text/javascript" src="_resources/js/modernizr.js"></script>
+	<script type="text/javascript" src="_resources/js/respond.js"></script>
 		
 	<!-- For everything else --> 
 	<link rel="shortcut icon" href="/path/to/shortcut-icon.png"> 
@@ -49,7 +51,7 @@
 			</form>
 		</div><!-- /.site-utility -->
 	</header>
-	<section id="content"> 
+	<section class="wrapper"> 
 		<div class="primary" role="main">
 			<article>
 				<h1>Main Heading</h1>
@@ -64,14 +66,14 @@
 		</div><!-- /.primary -->
 		
 		<div class="secondary" role="complementary">
-			<h2>Secondary</h2>
+			<h3>Secondary</h3>
 		</div><!-- /.secondary -->
 		
 		<div class="tertiary">
-			<h2>Tertiary</h2>
+			<h3>Tertiary</h3>
 		</div><!-- /.tertiary -->
  
-	</section><!-- /#content -->
+	</section><!-- /.wrapper -->
 	
 	<footer role="contentinfo">
 		<h2>footer</h2>		
@@ -83,7 +85,6 @@
 	<script src="_resources/js/jquery.min.js"></script>
 	<script type="text/javascript">
 		$(function() {
-			$('.colgrid-visible').wrapInner('<div class="colgrid-image" />');
 			$('.nav-handle').click(function() {
 				$('.nav-list').toggleClass('expanded');
 			});

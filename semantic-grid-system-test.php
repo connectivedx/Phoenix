@@ -14,6 +14,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="robots" content="index, follow" />
 	<link rel="stylesheet" type="text/css" media="all" href="_resources/css/style.css" />
+	<script type="text/javascript" src="_resources/js/modernizr.js"></script>
+	<script type="text/javascript" src="_resources/js/respond.js"></script>
 	<title>Semantic Grid System Test</title>
 </head>
 <body>
@@ -67,8 +69,5 @@
 	</section>
 
 	<script type="text/javascript" src="_resources/js/jquery.min.js"></script>
-	<script type="text/javascript">
-		$('.colgrid-visible').wrapInner('<div class="colgrid-image" />');
-	</script>
 </body>
 </html>

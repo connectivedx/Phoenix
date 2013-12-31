@@ -1,7 +1,3 @@
-// Gumby Semantic Grid Mixin
-// Adjusted by ISITE Design to be mobile-first
-
-// Mixin for rows
 @mixin row($nested: false, $padding: $gutterInPx) {
 	@include box-sizing();
 	@extend %clearfix;
@@ -38,15 +34,11 @@
 	}
 }
 
-// set $shifted to shifted if you will be pushing or pulling the column; this minimizes property (e.g. margin-left) overrides the browser performs
-@mixin column($columns: $columns, $shifted: false, $alignment: false, $behavior: false) {
+@mixin column($columns: $columns, $padding: $gutterInPx, $nested: false, $alignment: false) {
 	@if $alignment == center {
 		@extend %columnconfig;
 		float: left;
-		@if $shifted == false {
-			margin-left: 0;
-		}
-		margin-top: $gutterInPx;
+		margin: 0;
 		width: 100%;
 
 		&:first-child {
@@ -61,44 +53,22 @@
 			width: columns($columns);
 		}
 	}
-	@else if $behavior == collapse {
-		@extend %columnconfig;
-		@extend %collapse;
-		float: left;
-		margin-top: $gutterInPx;
-		width: 100%;
-
-		&:first-child {
-			margin-top: 0;
-		}
-
-		@include respond(tabletPortrait) {
-			float: none;
-			margin-top: 0;
-			width: columns($columns);
-
-			&:first-child {
-				margin-left: 0;
-			}
-		}
-	}
 	@else {
 		@extend %columnconfig;
 		float: left;
-		@if $shifted == false {
-			margin-left: 0;
-		}
-		margin-top: $gutterInPx;
+		margin: 0;
+		padding: $padding;
 		width: 100%;
 
-		&:first-child {
-			margin-top: 0;
+		@if $nested == nested {
+			margin-top: $gutterInPx;
+
+			&:first-child {
+				margin-top: 0;
+			}
 		}
 
 		@include respond(tabletPortrait) {
-			@if $shifted == false {
-				margin-left: $gutter;
-			}
 			margin-top: 0;
 			width: columns($columns);
 
@@ -109,7 +79,7 @@
 	}
 }
 
-@mixin hybrid($columns:$columns, $alignment: false, $behavior: false) {
+@mixin hybrid($columns:$columns, $alignment: false, $padding: $gutterInPx) {
 	@if $alignment == center   {
 		@extend %columnconfig;
 		float: left;
@@ -129,27 +99,11 @@
 			width: columns($columns, true);
 		}
 	}
-	@else if $behavior == collapse {
-		@extend %collapse;
-		float: left;
-		margin-top: $gutterInPx;
-		width: 100%;
-
-		&:first-child {
-			margin-top: 0;
-		}
-		
-		@include respond(tabletPortrait) {
-			float: none;
-			margin-top: 0;
-			width: columns($columns, true);
-		}
-	}
 	@else {
 		@extend %columnconfig;
 		float: left;
-		margin-left: 0;
 		margin-top: $gutterInPx;
+		padding: $padding;
 		width: 100%;
 
 		&:first-child {
@@ -158,7 +112,6 @@
 
 		@include respond(tabletPortrait) {
 			float: none;
-			margin-left: $gutter;
 			margin-top: 0;
 			width: columns($columns, true);
 		}
@@ -170,10 +123,7 @@
 		margin-left: 0;
 
 		@include respond(tabletPortrait) {
-			margin-left: push_x($columns, false, true);
-			&:first-child {
-				margin-left: push_x($columns, true, true);
-			}
+			margin-left: push_x($columns, true);
 		}
 	}
 	@else {
@@ -188,52 +138,33 @@
 	}
 }
 
-@mixin pull($direction: left, $columns: 0, $width: 0, $hybridGrid: false) {
-	@if $direction == left {
-		@extend %pull-left;
-		@if ($columns > 0 and $width > 0) {
-			@if ($hybridGrid == hybrid) {
-				margin-left: 0;
+@mixin pull($columns: 0, $width: 0, $hybridGrid: false) {
+	@if ($columns > 0 and $width > 0) {
+		@if ($hybridGrid == hybrid) {
+			margin-left: 0;
 
-				@include respond(tabletPortrait) {
-					margin-left: pull_x($columns, $width, true);
-					&:first-child {
-						margin-left: 0;
-					}
-				}
-			}
-			@else {
-				margin-left: 0;
-
-				@include respond(tabletPortrait) {
-					margin-left: pull_x($columns, $width);
-					&:first-child {
-						margin-left: 0;
-					}
+			@include respond(tabletPortrait) {
+				margin-left: pull_x($columns, $width, true);
+				&:first-child {
+					margin-left: 0;
 				}
 			}
 		}
-	}
-	@elseif $direction == none {
-		@extend %pull-none;
-	}
-	@else {
-		@extend %pull-right;
+		@else {
+			margin-left: 0;
+
+			@include respond(tabletPortrait) {
+				margin-left: pull_x($columns, $width);
+				&:first-child {
+					margin-left: 0;
+				}
+			}
+		}
 	}
 }
 
 
 // Placeholders for the Semantic Grid
-
-%container {
-	margin-left: 0;
-	margin-right: 0;
-	min-width: 0;
-
-	@include respond(tabletPortrait) {
-		padding: 0px $gutterInPx + px;
-	}
-}
 
 // Clearfix placeholder
 %clearfix { @include clearfix(); }
@@ -251,13 +182,4 @@
 	float: $defaultFloat;
 	min-height: 1px;
 	position: relative;
-}
-
-%pull-right { float: right; }
-%pull-left { float: left; }
-%pull-none { float: none; }
-
-// Collapse Gutters
-%collapse {
-	margin-left: 0px;
 }

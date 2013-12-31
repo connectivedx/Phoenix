@@ -14,7 +14,7 @@
 
 .brand {
 	@include column(6);
-	@include pull(left, 10, 6);
+	@include pull(10, 6);
 }
 
 #nav {
