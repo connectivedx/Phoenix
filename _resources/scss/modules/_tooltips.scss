@@ -12,7 +12,6 @@
 
 .tipsy {
 	@include font-size(14);
-	line-height: $lineHeight;
 	padding: $tooltipPadding;
 	position: absolute;
 	z-index: 100000;

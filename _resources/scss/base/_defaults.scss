@@ -1,5 +1,5 @@
 html {
-	font: $baseFontPercentage $baseFontFamily;
+	font: #{$baseFontPercentage}/#{$lineHeight} $baseFontFamily;
 }
 
 body {

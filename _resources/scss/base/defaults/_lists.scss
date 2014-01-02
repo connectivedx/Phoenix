@@ -1,5 +1,4 @@
 ul, ol {
-	line-height: $lineHeight;
 	margin: em(10) 0 0;
 	padding: 0;
 
@@ -26,6 +25,5 @@ ul {
 	@include svg-image(list-dot-modern-aqua, list-style-image);
 }
 dd {
-	line-height: $lineHeight;
 	margin: 0;
 }
