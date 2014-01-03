@@ -2,19 +2,19 @@
 
 @mixin respond($media) {
 	@if $media == phoneLandscape {
-		@media only screen and (min-width: $phoneLandscapeWidth) { @content; }
+		@media only screen and (min-width: em($phoneLandscapeWidth)) { @content; }
 	}
 	@else if $media == tabletPortrait {
-		@media only screen and (min-width: $tabletPortraitWidth) { @content; }
+		@media only screen and (min-width: em($tabletPortraitWidth)) { @content; }
 	}
 	@else if $media == desktop {
-		@media only screen and (min-width: $documentWidth) { @content; }
+		@media only screen and (min-width: em($documentWidth)) { @content; }
 	}
 	@else if $media == print {
 		@media print { @content; }
 	}
 	@else if $media == rotateDevice {
-		@media only screen and (max-width: $phoneLandscapeWidth) and (orientation: portrait) { @content; }
+		@media only screen and (max-width: em($phoneLandscapeWidth)) and (orientation: portrait) { @content; }
 	}
 	@else {
 		@media only screen and ($media) { @content; }
