@@ -8,7 +8,8 @@ $cols: 16 !default;
 $hybrid: 16 !default;
 
 // Responsive Settings
-$minDeviceWidth: 320;
+$minDeviceWidth: 320px;
+$minDeviceWidthInteger: $minDeviceWidth / 1px;
 $phoneLandscapeWidth: 480;
 $tabletPortraitWidth: 768;
 $documentWidth: $rowMaxWidthInteger;

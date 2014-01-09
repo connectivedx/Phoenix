@@ -1,9 +1,3 @@
-// enables centered, push, and pull classes for the grid system's columns
-// NOTE: this does not affect the semantic grid
-$enableCentered: true;
-$enablePush: true;
-$enablePull: true;
-
 // enable or disable the grid systems
 // if enableGrid is false, the hybrid grid will automatically be disabled
 // NOTE: this does not affect the semantic grid
@@ -14,6 +8,12 @@ $enableHybridGrid: true;
 // if enableGrid/enableHybridGrid are set to false, this is a moot option since no column classes will be output
 // NOTE: this does not affect the semantic grid, it only minimizes the output of classes for the grid system
 $enabledColumns: ();
+
+// enables centered, push, and pull classes for the grid system's columns
+// NOTE: this does not affect the semantic grid
+$enableCentered: true;
+$enablePush: true;
+$enablePull: true;
 
 // enables the class that displays the grid system background image
 $enableColgridImage: true;
