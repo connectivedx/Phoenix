@@ -1,0 +1,4 @@
+// http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+@function parseInt($n) { /* 2 */
+	@return $n / ($n * 0 + 1);
+}

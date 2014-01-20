@@ -1,19 +1,16 @@
 // Grid Settings
 $gutterInPx: 20px !default;
-$gutterInteger: $gutterInPx / 1px;
 $smallGutterInPx: 20px !default;
 $rowMaxWidth: 960px !default;
-$rowMaxWidthInteger: $rowMaxWidth / 1px;
 $cols: 16 !default;
 $hybrid: 16 !default;
 
 // Responsive Settings
 $minDeviceWidth: 320px;
-$minDeviceWidthInteger: $minDeviceWidth / 1px;
-$phoneLandscapeWidth: 480;
-$tabletPortraitWidth: 768;
-$documentWidth: $rowMaxWidthInteger;
-$maxDeviceWidth: 2880;
+$phoneLandscapeWidth: 480px;
+$tabletPortraitWidth: 768px;
+$documentWidth: $rowMaxWidth;
+$maxDeviceWidth: 2880px;
 
 // Floats
 $defaultFloat: left;
