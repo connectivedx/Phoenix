@@ -1,14 +1,16 @@
 // primary palette
-$white: #ffffff;
-$black: #000000;
+$colorPrimary: #1177bb;
+$colorSecondary: #ffaa00;
+$colorTertiary: #cc6633;
 $lightGrey: #eeeeee;
 $mediumGrey: #cccccc;
+$darkGrey: #6d6d6d;
 
 // secondary / extended
 
 // miscellaneous
-$tooltipBackgroundColor: $black;
-$tooltipTextColor: $white;
-$tooltipShadowColor: $black;
+$tooltipBackgroundColor: black;
+$tooltipTextColor: white;
+$tooltipShadowColor: black;
 $visibleGridColumnColor: rgba(255, 0, 0, 0.25);
 $visibleGridGutterColor: rgba(255, 243, 54, 0.25);

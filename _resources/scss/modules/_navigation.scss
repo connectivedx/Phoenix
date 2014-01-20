@@ -1,6 +1,6 @@
 .nav-handle {
-	background-color: $black;
-	color: $white;
+	background-color: black;
+	color: white;
 	cursor: pointer;
 	display: block;
 	@include font-size(24);
@@ -23,7 +23,7 @@
 }
 
 .nav-list {
-	background-color: $black;
+	background-color: black;
 	list-style: none;
 	margin: 0 (-$gutterInPx);
 	max-height: 0;
@@ -35,7 +35,7 @@
 	}
 
 	a {
-		color: $white;
+		color: white;
 		display: block;
 		padding: em(12);
 
@@ -60,7 +60,7 @@
 		}
 
 		a {
-			color: $black;
+			color: black;
 			padding: 0;
 		}
 	}

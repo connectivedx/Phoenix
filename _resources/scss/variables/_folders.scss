@@ -1,4 +1,4 @@
-$resourcesFolder: '/_resources/';
-$imagesFolder: $resourcesFolder + 'img/';
+$resourcesFolder: '../';
+$imagesFolder: $resourcesFolder + 'img/css/';
 $svgFolder: $imagesFolder + 'svg/';
 $fontsFolder: $resourcesFolder + 'fonts/';

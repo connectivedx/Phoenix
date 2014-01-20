@@ -1,8 +1,8 @@
 // IE9 and newer supported; IE8 and lower will have standard form elements
 // :not() targets > IE8, #foo is just a random ID
 fieldset:not(#foo) {
-	input[type='radio'],
-	input[type='checkbox'] {
+	input[type="radio"],
+	input[type="checkbox"] {
 		float: left;
 		height: 1px;
 		margin: 0;
@@ -10,49 +10,47 @@ fieldset:not(#foo) {
 		padding: 0;
 		width: 1px;
 
-		& + span {
-			background-position: left 2px;
+		& + label {
+			background-image: url('#{$imagesFolder}bg-form-elements.png');
 			background-repeat: no-repeat;
-			background-size: 16px 16px;
 			clear: none;
-			cursor: default;
 			display: block;
-			min-height: 20px;
-			padding-left: 20px;
+			padding: 6px 5px 4px 27px;
+
+			&.inline {
+				display: inline-block;
+			}
 		}
 	}
 
-	input[type='radio'] {
-		& + span {
-			@include svg-image(radio-unchecked);
+	$horizontalDisplacement: 5px;
+	$radioImagePosition: -234px;
+
+	input[type="radio"] {
+		& + label {
+			background-position: $horizontalDisplacement $radioImagePosition;
 		}
-		&:active + span,
-		&:focus + span {
-			@include svg-image(radio-unchecked-active);
+		&:active + label,
+		&:focus + label {
+			background-position: $horizontalDisplacement $radioImagePosition - 80px;
 		}
-		&:checked + span {
-			@include svg-image(radio-checked);
-		}
-		&:checked:active + span,
-		&:checked:focus + span {
-			@include svg-image(radio-checked-active);
+		&:checked + label {
+			background-position: $horizontalDisplacement $radioImagePosition - 160px;
 		}
 	}
 
-	input[type='checkbox'] {
-		& + span {
-			@include svg-image(checkbox-unchecked);
+	$checkboxImagePosition: 6px;
+
+	input[type="checkbox"] {
+		& + label {
+			background-position: $horizontalDisplacement $checkboxImagePosition;
 		}
-		&:active + span,
-		&:focus + span {
-			@include svg-image(checkbox-unchecked-active);
+		&:active + label,
+		&:focus + label {
+			background-position: $horizontalDisplacement $checkboxImagePosition - 80px;
 		}
-		&:checked + span {
-			@include svg-image(checkbox-checked);
-		}
-		&:checked:active + span,
-		&:checked:focus + span {
-			@include svg-image(checkbox-checked-active);
+		&:checked + label {
+			background-position: $horizontalDisplacement $checkboxImagePosition - 160px;
 		}
 	}
 }
@@ -80,14 +78,15 @@ fieldset {
 
 // selects
 .decorator-select {
-	background: -moz-linear-gradient(top,  #ffffff 0%, #f2f2f2 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f2f2f2)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #ffffff 0%, #f2f2f2 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #ffffff 0%, #f2f2f2 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #ffffff 0%, #f2f2f2 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #ffffff 0%, #f2f2f2 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f2f2f2',GradientType=0 ); /* IE6-9 */
-	border: 1px solid $black;
+	background-image: -moz-linear-gradient(top, #fbfaf9 0%, #979694 100%); /* FF3.6+ */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fbfaf9), color-stop(100%,#979694)); /* Chrome,Safari4+ */
+	background-image: -webkit-linear-gradient(top, #fbfaf9 0%,#979694 100%); /* Chrome10+,Safari5.1+ */
+	background-image: -o-linear-gradient(top, #fbfaf9 0%,#979694 100%); /* Opera 11.10+ */
+	background-image: -ms-linear-gradient(top, #fbfaf9 0%,#979694 100%); /* IE10+ */
+	background-image: linear-gradient(to bottom, #fbfaf9 0%,#979694 100%); /* W3C */
+	background-size: 100%;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfaf9', endColorstr='#979694',GradientType=0 ); /* IE6-9 */
+	border: 1px solid black;
 	border-radius: $buttonBorderRadius;
 	@include box-sizing();
 	display: inline-block;
@@ -97,12 +96,12 @@ fieldset {
 	width: 100%;
 
 	&:after {
-		@include svg-image(select-arrow, content);
+		content: url('#{$imagesFolder}bg-select-arrow.png');
 		height: 34px;
 		pointer-events: none;
 		position: absolute;
 		right: 8px;
-		top: 0;
+		top: 3px;
 		width: 25px;
 		z-index: 100;
 	}

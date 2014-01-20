@@ -5,16 +5,17 @@
 .layout-primary {
 	@include column(9);
 	@include push(4);
-	background-color: lavender;
+	background-color: lighten($colorPrimary, 35%);
 }
 .layout-secondary {
 	@include column(4);
 	@include pull(9, 4);
-	background-color: orange;
+	background-color: $colorSecondary;
 }
 .layout-tertiary {
 	@include column(3);
-	background-color: chartreuse;
+	background-color: $colorTertiary;
+	color: white;
 }
 .two-up {
 	@include column(8, 0, nested);

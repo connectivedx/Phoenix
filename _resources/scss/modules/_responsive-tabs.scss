@@ -14,7 +14,7 @@
 
 .responsive-tabs__heading {
 	background: $lightGrey;
-	border: 1px solid $black;
+	border: 1px solid black;
 	border-radius: $buttonBorderRadius;
 	cursor: pointer;
 	display: block;
@@ -38,8 +38,8 @@
 	}
 }
 	.responsive-tabs__heading--active {
-		background: $white;
-		border-bottom: 1px dashed $black;
+		background: white;
+		border-bottom: 1px dashed black;
 		border-radius: $buttonBorderRadius $buttonBorderRadius 0 0;
 		margin-bottom: 0;
 
@@ -49,13 +49,13 @@
 	}
 	.responsive-tabs__heading:hover,
 	.responsive-tabs__heading--active:hover {
-		background-color: $black;
+		background-color: black;
 	}
 
 .responsive-tabs__panel {
-	border-bottom: 1px solid $black;
-	border-left: 1px solid $black;
-	border-right: 1px solid $black;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
 	margin-bottom: em(5);
 	padding: em(16);
 }
@@ -68,7 +68,7 @@
 	}
 
 .responsive-tabs__list {
-	border-bottom: 1px solid $black;
+	border-bottom: 1px solid black;
 	display: none;
 	@include font-size(19);
 	margin: 0;
@@ -90,14 +90,14 @@
 	padding: em(10, 19) em(20, 19);
 
 	&:hover {
-		background: $black;
+		background: black;
 	}
 }
 	.responsive-tabs__list__item--active, 
 	.responsive-tabs__list__item--active:hover {
-		background: $white;
-		border-color: $black;
-		border-bottom-color: $white;
+		background: white;
+		border-color: black;
+		border-bottom-color: white;
 	}
 
 .responsive-tabs__heading:focus,

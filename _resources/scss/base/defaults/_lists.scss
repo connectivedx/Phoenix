@@ -1,4 +1,5 @@
 ul, ol {
+	list-style-position: inside;
 	margin: em(10) 0 0;
 	padding: 0;
 
@@ -16,13 +17,9 @@ ul, ol {
 	}
 
 	ul {
-		@include svg-image(list-circle-warm-brown, list-style-image);
 		margin-left: em(18);
 		margin-top: 0;
 	}
-}
-ul {
-	@include svg-image(list-dot-modern-aqua, list-style-image);
 }
 dd {
 	margin: 0;
