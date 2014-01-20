@@ -52,7 +52,7 @@
 		</div><!-- /.site-utility -->
 	</header>
 	<section class="wrapper"> 
-		<div class="primary" role="main">
+		<div class="layout-primary" role="main">
 			<article>
 				<h1>Main Heading</h1>
 				<h2>Subheading</h2>
@@ -65,11 +65,11 @@
 			</article>
 		</div><!-- /.primary -->
 		
-		<div class="secondary" role="complementary">
+		<div class="layout-secondary" role="complementary">
 			<h3>Secondary</h3>
 		</div><!-- /.secondary -->
 		
-		<div class="tertiary">
+		<div class="layout-tertiary">
 			<h3>Tertiary</h3>
 		</div><!-- /.tertiary -->
  

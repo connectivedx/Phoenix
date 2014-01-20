@@ -2,17 +2,17 @@
 [role="banner"] {
 	@include row(false, 0);
 }
-.primary {
+.layout-primary {
 	@include column(9);
 	@include push(4);
 	background-color: lavender;
 }
-.secondary {
+.layout-secondary {
 	@include column(4);
 	@include pull(9, 4);
 	background-color: orange;
 }
-.tertiary {
+.layout-tertiary {
 	@include column(3);
 	background-color: chartreuse;
 }
@@ -25,6 +25,6 @@ aside {
 	@include row(nested);
 }
 
-.flex-grid > li {
+.multi-grid > li {
 	@include multiGrid(1, 2, 3);
 }
