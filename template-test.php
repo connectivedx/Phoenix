@@ -232,6 +232,21 @@
 				</fieldset>
 			</form>
 
+			<h1 class="divider">Responsive Tabs</h1>
+			<!--start tabs-->
+			<div class="responsive-tabs">
+				<h3>Tab 1</h3>
+				<div class="responsive-tabs__panel--active">
+					Tab 1 content
+				</div>
+
+				<h3>Tab 2</h3>
+				<div>Tab 2 content</div>
+
+				<h3>Tab 3</h3>
+				<div>Tab 3 content</div>
+			</div><!--end tabs-->
+
 		</div><!-- /.layout-primary -->
 		
 		<div class="layout-secondary" role="complementary">
@@ -252,12 +267,15 @@
 	</footer>
 	
 	<script src="_resources/js/jquery.min.js"></script>
+	<script src="_resources/js/tabs/jquery.responsive-tabs.js"></script>
 	<script type="text/javascript">
 		$(function() {
 			$('.nav-handle').click(function() {
 				$('.nav-list').toggleClass('expanded');
 			});
 			$('select').wrap('<div class="decorator-select"></div>');
+
+			RESPONSIVEUI.responsiveTabs();
 		});
 	</script>
 </body>

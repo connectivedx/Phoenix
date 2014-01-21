@@ -20,12 +20,12 @@
 </head>
 <body>
 	<div class="row">
-		<h2>Three column, semantic example</h2>
+		<h1>Three column, semantic example</h1>
 	</div>
 
 	<section class="wrapper colgrid-visible">
 		<article class="layout-primary">
-			<h3>Primary</h3>
+			<h2>Primary</h2>
 			<p>This is a nine column container.  It will hold your primary content.  It has been pushed to be placed in the appropriate place in the layout.</p>
 
 			<section class="nested wrapper">
@@ -39,12 +39,12 @@
 		</article>
 
 		<nav class="layout-secondary">
-			<h5>Secondary</h5>
+			<h3>Secondary</h3>
 			<p>This is a four column container.  It will hold navigation content.  It has been pulled to be placed in the left rail on desktops and tablets, but will be below the main content on mobile.</p>
 		</nav>
 
 		<aside class="layout-tertiary">
-			<h5>Tertiary</h5>
+			<h3>Tertiary</h3>
 			<p>This is a three column container.  It will hold tertiary content in the right rail on desktops and tablets, but will be at the bottom on mobile because it has not been pushed or pulled.</p>
 		</aside>
 	</section>

@@ -1,3 +1,9 @@
+$tabBackgroundColor: $colorPrimary;
+$tabHoverBackgroundColor: lighten($tabBackgroundColor, 10%);
+$tabActiveBackgroundColor: $colorSecondary;
+$tabActiveHoverBackgroundColor: lighten($tabActiveBackgroundColor, 10%);
+$tabPanelBackgroundColor: $lightGrey;
+
 .responsive-tabs-wrapper { 
 	clear: both;
 	zoom: 1;
@@ -13,23 +19,24 @@
 }
 
 .responsive-tabs__heading {
-	background: $lightGrey;
+	background: $tabBackgroundColor;
 	border: 1px solid black;
 	border-radius: $buttonBorderRadius;
+	color: white;
 	cursor: pointer;
 	display: block;
 	padding: em(9, 18);
 	position: relative;
 
 	&:after {
-		@include svg-image(arrow-down);
+		background-image: url('#{$imagesFolder}arrow-down.png');
 		background-size: 20px 12px;
 		content:" ";
 		display: block;
 		height: 12px; 
 		position: absolute;
 		right: 20px;
-		top: 40%;
+		top: 35%;
 		width: 20px;
 	}
 
@@ -38,25 +45,28 @@
 	}
 }
 	.responsive-tabs__heading--active {
-		background: white;
+		background: $tabActiveBackgroundColor;
 		border-bottom: 1px dashed black;
 		border-radius: $buttonBorderRadius $buttonBorderRadius 0 0;
 		margin-bottom: 0;
 
 		&:after {
-			@include svg-image(arrow-up);
+			background-image: url('#{$imagesFolder}arrow-up.png');
 		}
 	}
-	.responsive-tabs__heading:hover,
+	.responsive-tabs__heading:hover {
+		background-color: $tabHoverBackgroundColor;
+	}
 	.responsive-tabs__heading--active:hover {
-		background-color: black;
+		background-color: $tabActiveHoverBackgroundColor;
 	}
 
 .responsive-tabs__panel {
+	background-color: $tabPanelBackgroundColor;
 	border-bottom: 1px solid black;
 	border-left: 1px solid black;
 	border-right: 1px solid black;
-	margin-bottom: em(5);
+	margin-bottom: em(12);
 	padding: em(16);
 }
 	.responsive-tabs__panel--closed-accordion-only {
@@ -80,22 +90,23 @@
 }
 
 .responsive-tabs__list__item {
-	background: $lightGrey;
+	background: $tabBackgroundColor;
 	border: 1px solid $lightGrey;
 	border-top-left-radius: $buttonBorderRadius;
 	border-top-right-radius: $buttonBorderRadius;
+	color: white;
 	cursor: pointer;
 	display: inline;
 	margin-right: 1px;
 	padding: em(10, 19) em(20, 19);
 
 	&:hover {
-		background: black;
+		background: $tabHoverBackgroundColor;
 	}
 }
 	.responsive-tabs__list__item--active, 
 	.responsive-tabs__list__item--active:hover {
-		background: white;
+		background: $tabActiveBackgroundColor;
 		border-color: black;
 		border-bottom-color: white;
 	}
