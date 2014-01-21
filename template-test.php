@@ -247,6 +247,13 @@
 				<div>Tab 3 content</div>
 			</div><!--end tabs-->
 
+			<h1 class="divider">Fancybox</h1>
+			<ul>
+				<li>
+					<a href="http://www.youtube.com/embed/sVxT0vrHeyM" class="fancybox fancybox.iframe">Youtube (iframe)</a>
+				</li>
+			</ul>
+
 		</div><!-- /.layout-primary -->
 		
 		<div class="layout-secondary" role="complementary">
@@ -268,6 +275,7 @@
 	
 	<script src="_resources/js/jquery.min.js"></script>
 	<script src="_resources/js/tabs/jquery.responsive-tabs.js"></script>
+	<script src="_resources/js/lightboxes/jquery.fancybox.pack.js"></script>
 	<script type="text/javascript">
 		$(function() {
 			$('.nav-handle').click(function() {
@@ -276,6 +284,8 @@
 			$('select').wrap('<div class="decorator-select"></div>');
 
 			RESPONSIVEUI.responsiveTabs();
+
+			$('.fancybox').fancybox();
 		});
 	</script>
 </body>
