@@ -39,8 +39,8 @@ $tablPanelTextColor: black;
 	&:after {
 		content: $iconArrowDown;
 		display: block;
-		font-family: $iconFontFamily;
 		@include font-size(32);
+		@include icon();
 		position: absolute;
 		right: 20px;
 		top: 3px;

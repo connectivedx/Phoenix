@@ -1,18 +1,21 @@
 $iconArrowDown: "\e600";
 $iconArrowUp: "\e601";
+$iconFontFamily: 'icomoon';
 
-[class^="icon-"], [class*=" icon-"] {
+@mixin icon() {
 	font-family: $iconFontFamily;
-	speak: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
-	text-transform: none;
 	line-height: 1;
+	speak: none;
+	text-transform: none;
+}
 
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+[class^="icon-"], [class*=" icon-"] {
+	@include icon();
 }
 
 .icon-arrow-down:before {
