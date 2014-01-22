@@ -71,7 +71,7 @@ $tabPanelBackgroundColor: $lightGrey;
 	padding: em(16);
 
 	@include respond(tabletPortrait) {
-		margin-top: -2px;
+		margin-bottom: 0;
 	}
 }
 	.responsive-tabs__panel--closed-accordion-only {
@@ -105,6 +105,8 @@ $tabPanelBackgroundColor: $lightGrey;
 	display: inline;
 	margin-right: 1px;
 	padding: em(10, 19) em(20, 19);
+	position: relative;
+	top: 1px;
 
 	&:hover {
 		background: $tabHoverBackgroundColor;
@@ -116,6 +118,8 @@ $tabPanelBackgroundColor: $lightGrey;
 		border-color: black;
 		border-bottom: none;
 		color: black;
+		padding-top: em(14, 19);
+		top: 2px;
 	}
 
 .responsive-tabs__heading:focus,
