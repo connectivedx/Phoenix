@@ -217,7 +217,22 @@
 		<div class="row divider">
 			<div class="sixteen columns">
 				<h1>Responsive Tabs</h1>
-				<div class="responsive-tabs">
+				<h2 class="divider-secondary">Horizontal</h2>
+				<div class="responsive-tabs responsive-tabs-horizontal">
+					<h3>Tab 1</h3>
+					<div class="responsive-tabs__panel--active">
+						Tab 1 content
+					</div>
+
+					<h3>Tab 2</h3>
+					<div>Tab 2 content</div>
+
+					<h3>Tab 3</h3>
+					<div>Tab 3 content</div>
+				</div>
+
+				<h2 class="divider-secondary">Vertical</h2>
+				<div class="responsive-tabs responsive-tabs-vertical">
 					<h3>Tab 1</h3>
 					<div class="responsive-tabs__panel--active">
 						Tab 1 content

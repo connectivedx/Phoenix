@@ -1,3 +1,7 @@
+// general settings
+$tabBorderColor: black;
+$tabBorderRadius: $buttonBorderRadius;
+
 // tab
 $tabBackgroundColor: $colorPrimary;
 $tabHoverBackgroundColor: lighten($tabBackgroundColor, 10%);
@@ -10,7 +14,7 @@ $tabActiveTextColor: black;
 
 // tab panel
 $tabPanelBackgroundColor: $lightGrey;
-$tablPanelTextColor: black;
+$tabPanelTextColor: black;
 
 .responsive-tabs-wrapper { 
 	clear: both;
@@ -28,8 +32,8 @@ $tablPanelTextColor: black;
 
 .responsive-tabs__heading {
 	background: $tabBackgroundColor;
-	border: 1px solid black;
-	border-radius: $buttonBorderRadius;
+	border: 1px solid $tabBorderColor;
+	border-radius: $tabBorderRadius;
 	color: $tabTextColor;
 	cursor: pointer;
 	display: block;
@@ -54,7 +58,7 @@ $tablPanelTextColor: black;
 	.responsive-tabs__heading--active {
 		background: $tabActiveBackgroundColor;
 		border-bottom: 1px dashed black;
-		border-radius: $buttonBorderRadius $buttonBorderRadius 0 0;
+		border-radius: $tabBorderRadius $tabBorderRadius 0 0;
 		color: $tabActiveTextColor;
 		margin-bottom: 0;
 
@@ -72,14 +76,23 @@ $tablPanelTextColor: black;
 
 .responsive-tabs__panel {
 	background-color: $tabPanelBackgroundColor;
-	border-bottom: 1px solid black;
-	border-left: 1px solid black;
-	border-right: 1px solid black;
+	border: 1px solid $tabBorderColor;
+	border-top: none;
+	color: $tabPanelTextColor;
 	margin-bottom: em(12);
 	padding: em(16);
 
 	@include respond(tabletPortrait) {
 		margin-bottom: 0;
+
+		.responsive-tabs-vertical & {
+			border-top: 1px solid $tabBorderColor;
+			@include box-sizing();
+			display: inline-block;
+			float: left;
+			min-height: 300px;
+			width: 75%;
+		}
 	}
 }
 	.responsive-tabs__panel--closed-accordion-only {
@@ -91,43 +104,74 @@ $tablPanelTextColor: black;
 	}
 
 .responsive-tabs__list {
-	border-bottom: 1px solid black;
 	display: none;
 	@include font-size(19);
 	margin: 0;
-	padding: em(11, 19) 0 em(11, 19);
 
 	@include respond(tabletPortrait) {
-		display: block;
+		.responsive-tabs-horizontal & {
+			border-bottom: 1px solid $tabBorderColor;
+			display: block;
+		}
+
+		.responsive-tabs-vertical & {
+			display: inline-block;
+			float: left;
+			left: 1px;
+			margin-left: -1px;
+			position: relative;
+			width: 25%;
+		}
 	}
 }
 
 .responsive-tabs__list__item {
 	background: $tabBackgroundColor;
-	border: 1px solid black;
+	border: 1px solid $tabBorderColor;
 	border-bottom: none;
-	border-top-left-radius: $buttonBorderRadius;
-	border-top-right-radius: $buttonBorderRadius;
+	border-top-left-radius: $tabBorderRadius;
+	border-top-right-radius: $tabBorderRadius;
 	color: $tabTextColor;
 	cursor: pointer;
-	display: inline;
-	margin-right: 1px;
 	padding: em(10, 19) em(20, 19);
-	position: relative;
-	top: 1px;
 
 	&:hover {
 		background: $tabHoverBackgroundColor;
+	}
+
+	@include respond(tabletPortrait) {
+		.responsive-tabs-horizontal & {
+			display: inline-block;
+			margin-right: 2px;
+		}
+
+		.responsive-tabs-vertical & {
+			border-bottom: 1px solid $tabBorderColor;
+			border-bottom-left-radius: $tabBorderRadius;
+			border-top-right-radius: 0;
+			display: block;
+			margin-bottom: 2px;
+		}
 	}
 }
 	.responsive-tabs__list__item--active, 
 	.responsive-tabs__list__item--active:hover {
 		background: $tabActiveBackgroundColor;
-		border-color: black;
-		border-bottom: none;
+		border-color: $tabBorderColor;
 		color: $tabActiveTextColor;
-		padding-top: em(14, 19);
-		top: 2px;
+		
+		@include respond(tabletPortrait) {
+			.responsive-tabs-horizontal & {
+				border-bottom: none;
+				padding-top: em(11, 19);
+				position: relative;
+				top: 1px;
+			}
+
+			.responsive-tabs-vertical & {
+				border-right: none;
+			}
+		}
 	}
 
 .responsive-tabs__heading:focus,
