@@ -23,9 +23,10 @@ fieldset {
 
 	li {
 		margin-top: em(12);
+		// ----- NOTE:  I am keeping this rule here temporarily for posterity; this has been fixed in iOS7 ------
 		// overflow is set due to an iOS6 bug related to the usage of the placeholder attribute
 		// http://stackoverflow.com/questions/12515058/ios6-safari-orientation-change-bug
-		overflow: hidden;
+		// overflow: hidden;
 
 		&:first-child {
 			margin-top: 0;
