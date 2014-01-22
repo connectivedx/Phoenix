@@ -1,8 +1,16 @@
+// tab
 $tabBackgroundColor: $colorPrimary;
 $tabHoverBackgroundColor: lighten($tabBackgroundColor, 10%);
+$tabTextColor: white;
+
+// active tab
 $tabActiveBackgroundColor: $lightGrey;
 $tabActiveHoverBackgroundColor: lighten($tabActiveBackgroundColor, 10%);
+$tabActiveTextColor: black;
+
+// tab panel
 $tabPanelBackgroundColor: $lightGrey;
+$tablPanelTextColor: black;
 
 .responsive-tabs-wrapper { 
 	clear: both;
@@ -22,7 +30,7 @@ $tabPanelBackgroundColor: $lightGrey;
 	background: $tabBackgroundColor;
 	border: 1px solid black;
 	border-radius: $buttonBorderRadius;
-	color: white;
+	color: $tabTextColor;
 	cursor: pointer;
 	display: block;
 	padding: em(9, 18);
@@ -47,11 +55,11 @@ $tabPanelBackgroundColor: $lightGrey;
 		background: $tabActiveBackgroundColor;
 		border-bottom: 1px dashed black;
 		border-radius: $buttonBorderRadius $buttonBorderRadius 0 0;
-		color: black;
+		color: $tabActiveTextColor;
 		margin-bottom: 0;
 
 		&:after {
-			color: black;
+			color: $tabActiveTextColor;
 			content: $iconArrowUp;
 		}
 	}
@@ -100,7 +108,7 @@ $tabPanelBackgroundColor: $lightGrey;
 	border-bottom: none;
 	border-top-left-radius: $buttonBorderRadius;
 	border-top-right-radius: $buttonBorderRadius;
-	color: white;
+	color: $tabTextColor;
 	cursor: pointer;
 	display: inline;
 	margin-right: 1px;
@@ -117,7 +125,7 @@ $tabPanelBackgroundColor: $lightGrey;
 		background: $tabActiveBackgroundColor;
 		border-color: black;
 		border-bottom: none;
-		color: black;
+		color: $tabActiveTextColor;
 		padding-top: em(14, 19);
 		top: 2px;
 	}
