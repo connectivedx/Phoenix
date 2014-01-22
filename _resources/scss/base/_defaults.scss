@@ -1,17 +1,7 @@
-html {
-	font: #{$baseFontPercentage}/#{$lineHeight} $baseFontFamily;
-}
-
-body {
-	background: white;
-	color: black;
-	min-width: 0;
-	-ms-text-size-adjust: none;
-	-webkit-text-size-adjust: none;
-	width: 100%;
-}
+@import "defaults/root";
 
 @import "defaults/forms";
+@import "defaults/icons";
 @import "defaults/lists";
 @import "defaults/media";
 @import "defaults/tables";

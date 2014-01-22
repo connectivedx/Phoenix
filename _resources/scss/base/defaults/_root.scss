@@ -1,0 +1,12 @@
+html {
+	font: #{$baseFontPercentage}/#{$lineHeight} $baseFontFamily;
+}
+
+body {
+	background: white;
+	color: black;
+	min-width: 0;
+	-ms-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	width: 100%;
+}

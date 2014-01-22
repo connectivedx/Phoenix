@@ -1,6 +1,6 @@
 $tabBackgroundColor: $colorPrimary;
 $tabHoverBackgroundColor: lighten($tabBackgroundColor, 10%);
-$tabActiveBackgroundColor: $colorSecondary;
+$tabActiveBackgroundColor: $lightGrey;
 $tabActiveHoverBackgroundColor: lighten($tabActiveBackgroundColor, 10%);
 $tabPanelBackgroundColor: $lightGrey;
 
@@ -29,14 +29,13 @@ $tabPanelBackgroundColor: $lightGrey;
 	position: relative;
 
 	&:after {
-		background-image: url('#{$imagesFolder}arrow-down.png');
-		background-size: 20px 12px;
-		content:" ";
+		content: $iconArrowDown;
 		display: block;
-		height: 12px; 
+		font-family: $iconFontFamily;
+		@include font-size(32);
 		position: absolute;
 		right: 20px;
-		top: 35%;
+		top: 3px;
 		width: 20px;
 	}
 
@@ -48,10 +47,12 @@ $tabPanelBackgroundColor: $lightGrey;
 		background: $tabActiveBackgroundColor;
 		border-bottom: 1px dashed black;
 		border-radius: $buttonBorderRadius $buttonBorderRadius 0 0;
+		color: black;
 		margin-bottom: 0;
 
 		&:after {
-			background-image: url('#{$imagesFolder}arrow-up.png');
+			color: black;
+			content: $iconArrowUp;
 		}
 	}
 	.responsive-tabs__heading:hover {
@@ -68,6 +69,10 @@ $tabPanelBackgroundColor: $lightGrey;
 	border-right: 1px solid black;
 	margin-bottom: em(12);
 	padding: em(16);
+
+	@include respond(tabletPortrait) {
+		margin-top: -2px;
+	}
 }
 	.responsive-tabs__panel--closed-accordion-only {
 		display: none;
@@ -91,7 +96,8 @@ $tabPanelBackgroundColor: $lightGrey;
 
 .responsive-tabs__list__item {
 	background: $tabBackgroundColor;
-	border: 1px solid $lightGrey;
+	border: 1px solid black;
+	border-bottom: none;
 	border-top-left-radius: $buttonBorderRadius;
 	border-top-right-radius: $buttonBorderRadius;
 	color: white;
@@ -108,7 +114,8 @@ $tabPanelBackgroundColor: $lightGrey;
 	.responsive-tabs__list__item--active:hover {
 		background: $tabActiveBackgroundColor;
 		border-color: black;
-		border-bottom-color: white;
+		border-bottom: none;
+		color: black;
 	}
 
 .responsive-tabs__heading:focus,
