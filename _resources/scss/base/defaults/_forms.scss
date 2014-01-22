@@ -63,4 +63,22 @@ fieldset {
 	& + button {
 		margin-top: em(12);
 	}
+
+	.radio-list,
+	.checkbox-list {
+		> li {
+			margin: 0 0 0 em(12);
+		}
+	}
+
+	.ie8 & {
+		input[type="radio"],
+		input[type="checkbox"] {
+			& + label {
+				display: inline;
+				margin-left: em(4);
+				min-height: 20px;
+			}
+		}
+	}
 }

@@ -1,4 +1,10 @@
-<html lang="en" class="js"><head>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7" manifest="default.appcache?v=1"><![endif]-->
+<!--[if lt IE 7 ]><html class="no-js ie6" lang="en"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8" lang="en"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
 	<title>Pattern Primer</title>
 	<meta charset="UTF-8">
 	<meta charset="utf-8" />
@@ -148,10 +154,16 @@
 									<li>
 										<label for="options">Label for the radio options</label>
 										<p class="label-secondary">Secondary label for the radio</p>
-										<input type="radio" name="options" id="radio-option-1" value="option 1">
-										<label for="radio-option-1">Option 1</label>
-										<input type="radio" name="options" id="radio-option-2" value="option 2">
-										<label for="radio-option-2">Option 2</label>
+										<ol class="radio-list">
+											<li>
+												<input type="radio" name="options" id="radio-option-1" value="option 1">
+												<label for="radio-option-1">Option 1</label>
+											</li>
+											<li>
+												<input type="radio" name="options" id="radio-option-2" value="option 2">
+												<label for="radio-option-2">Option 2</label>
+											</li>
+										</ol>
 									</li>
 								</ol>
 							</fieldset>
@@ -163,10 +175,16 @@
 										<li>
 											<label for="checkbox">Label for the checkbox</label>
 											<p class="label-secondary">Secondary label for the checkbox</p>
-											<input type="checkbox" name="checkbox" id="checkbox-option-1" value="option 1">
-											<label for="checkbox-option-1">Option 1</label>
-											<input type="checkbox" name="checkbox" id="checkbox-option-2" value="option 2">
-											<label for="checkbox-option-2">Option 2</label>
+											<ol class="checkbox-list">
+												<li>
+													<input type="checkbox" name="checkbox" id="checkbox-option-1" value="option 1">
+													<label for="checkbox-option-1">Option 1</label>
+												</li>
+												<li>
+													<input type="checkbox" name="checkbox" id="checkbox-option-2" value="option 2">
+													<label for="checkbox-option-2">Option 2</label>
+												</li>
+											</ol>
 										</li>
 									</ol>
 								</fieldset>
@@ -178,18 +196,26 @@
 									<li>
 										<label for="options">Label for the radio options</label>
 										<p class="label-secondary">Secondary label for the radio</p>
-										<input type="radio" name="inline-options" id="inline-radio-option-1" value="option 1">
-										<label for="inline-radio-option-1" class="inline">Option 1</label>
-										<input type="radio" name="inline-options" id="inline-radio-option-2" value="option 2">
-										<label for="inline-radio-option-2" class="inline">Option 2</label>	
+										<ol class="radio-list">
+											<li>
+												<input type="radio" name="inline-options" id="inline-radio-option-1" value="option 1">
+												<label for="inline-radio-option-1" class="inline">Option 1</label>
+												<input type="radio" name="inline-options" id="inline-radio-option-2" value="option 2">
+												<label for="inline-radio-option-2" class="inline">Option 2</label>	
+											</li>
+										</ol>
 									</li>
 									<li>
 										<label for="checkbox">Label for the checkbox</label>
 										<p class="label-secondary">Secondary label for the checkbox</p>
-										<input type="checkbox" name="inline-checkbox" id="inline-checkbox-option-1" value="option 1">
-										<label for="inline-checkbox-option-1" class="inline">Option 1</label>
-										<input type="checkbox" name="inline-checkbox" id="inline-checkbox-option-2" value="option 2">
-										<label for="inline-checkbox-option-2" class="inline">Option 2</label>
+										<ol class="checkbox-list">
+											<li>
+												<input type="checkbox" name="inline-checkbox" id="inline-checkbox-option-1" value="option 1">
+												<label for="inline-checkbox-option-1" class="inline">Option 1</label>
+												<input type="checkbox" name="inline-checkbox" id="inline-checkbox-option-2" value="option 2">
+												<label for="inline-checkbox-option-2" class="inline">Option 2</label>
+											</li>
+										</ol>
 									</li>
 								</ol>
 								</fieldset>
@@ -220,7 +246,7 @@
 				<h2 class="divider-secondary">Horizontal</h2>
 				<div class="responsive-tabs responsive-tabs-horizontal">
 					<h3>Tab 1</h3>
-					<div class="responsive-tabs__panel--active">
+					<div>
 						Tab 1 content
 					</div>
 
@@ -228,18 +254,18 @@
 					<div>Tab 2 content</div>
 
 					<h3>Tab 3</h3>
-					<div>Tab 3 content</div>
+					<div class="responsive-tabs__panel--active">Tab 3 content</div>
 				</div>
 
 				<h2 class="divider-secondary">Vertical</h2>
 				<div class="responsive-tabs responsive-tabs-vertical">
 					<h3>Tab 1</h3>
-					<div class="responsive-tabs__panel--active">
+					<div>
 						Tab 1 content
 					</div>
 
 					<h3>Tab 2</h3>
-					<div>Tab 2 content</div>
+					<div class="responsive-tabs__panel--active">Tab 2 content</div>
 
 					<h3>Tab 3</h3>
 					<div>Tab 3 content</div>
