@@ -1,3 +1,13 @@
+// measurements
+$tooltipArrowSize: 5px;
+$tooltipPadding: 10px;
+
+// colors
+$tooltipBackgroundColor: $colorPrimary;
+$tooltipTextColor: white;
+$tooltipShadowColor: black;
+$tooltipShadowBlurRadius: 10px;
+
 .tooltip {
 	cursor: help;
 
@@ -21,12 +31,12 @@
 		border-radius: 3px;
 		color: $tooltipTextColor;
 		max-width: 200px;
-		padding: 5px 8px 4px 8px;
+		padding: $tooltipPadding;
 		text-align: center;
 	}
 
 	.tipsy-inner {
-		box-shadow: 0 0 10px $tooltipShadowColor;
+		box-shadow: 0 0 $tooltipShadowBlurRadius $tooltipShadowColor;
 	}
 	
 	.tipsy-arrow {

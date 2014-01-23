@@ -274,11 +274,19 @@
 		</div>
 
 		<div class="row divider">
-			<div class="sixteen columns">
-				<h1>Fancybox</h1>
+			<div class="eight columns">
+				<h1>Modals</h1>
 				<ul>
 					<li>
-						<a href="http://www.youtube.com/embed/sVxT0vrHeyM" class="fancybox fancybox.iframe">Youtube (iframe)</a>
+						<a href="http://www.youtube.com/embed/sVxT0vrHeyM" class="fancybox fancybox.iframe">Fancybox - Youtube (iframe)</a>
+					</li>
+				</ul>
+			</div>
+			<div class="eight columns">
+				<h1>Tooltips</h1>
+				<ul>
+					<li>
+						<a href="#" title="This is a tooltip" class="tooltip-tipsy">Tipsy</a>
 					</li>
 				</ul>
 			</div>
@@ -289,6 +297,7 @@
 	<script src="_resources/js/jquery.min.js"></script>
 	<script src="_resources/js/tabs/jquery.responsive-tabs.js"></script>
 	<script src="_resources/js/lightboxes/jquery.fancybox.pack.js"></script>
+	<script src="_resources/js/tooltips/jquery.tipsy.js"></script>
 	<script type="text/javascript">
 		$(function() {
 			$('.nav-handle').click(function() {
@@ -299,6 +308,10 @@
 			RESPONSIVEUI.responsiveTabs();
 
 			$('.fancybox').fancybox();
+
+			$('.tooltip-tipsy').tipsy({
+				gravity: 'w'
+			});
 		});
 	</script>
 </body>
