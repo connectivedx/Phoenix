@@ -20,8 +20,8 @@
 	<meta name="msapplication-TileImage" content="/path/to/touch-icon.png">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	
-	<link rel="stylesheet" media="all" href="_resources/css/style.css">
 	<script type="text/javascript" src="_resources/js/modernizr.js"></script>
+	<link rel="stylesheet" media="all" href="_resources/css/style.css">
 	<script type="text/javascript" src="_resources/js/respond.js"></script>
 		
 	<!-- For everything else --> 

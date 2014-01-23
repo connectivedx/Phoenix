@@ -87,7 +87,7 @@ fieldset {
 	background-size: 100%;
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfaf9', endColorstr='#979694',GradientType=0 ); /* IE6-9 */
 	border: 1px solid black;
-	border-radius: $buttonBorderRadius;
+	border-radius: $formElementBorderRadius;
 	@include box-sizing();
 	display: inline-block;
 	height: auto;
@@ -104,6 +104,10 @@ fieldset {
 		top: 3px;
 		width: 25px;
 		z-index: 100;
+
+		.ie8 & {
+			content: '';
+		}
 	}
 	&:first-child {
 		margin-left: 0;

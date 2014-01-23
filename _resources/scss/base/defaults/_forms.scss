@@ -54,7 +54,7 @@ fieldset {
 	input[type="tel"],
 	textarea {
 		@include box-sizing();
-		border-radius: $buttonBorderRadius;
+		border-radius: $formElementBorderRadius;
 		max-width: 100%;
 		padding: em(8);
 		width: 100%;
