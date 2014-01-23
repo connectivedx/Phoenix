@@ -126,3 +126,16 @@ fieldset {
 		z-index: 99;
 	}
 }
+
+.custom-file-upload {
+	.no-js & {
+		display: none;
+	}
+}
+
+input[type="file"] {
+	.js & {
+		visibility: hidden;
+		width: 0px;
+	}
+}

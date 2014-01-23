@@ -236,6 +236,16 @@
 							</li>
 						</ol>
 					</fieldset>
+					<fieldset>
+						<legend>File Uploads</legend>
+						<h2>File Uploads</h2>
+						<ol>
+							<li>
+								<button class="custom-file-upload">Select file</button>
+								<input type="file" />
+							</li>
+						</ol>
+					</fieldset>
 				</form>
 			</div>
 		</div>
@@ -311,6 +321,12 @@
 
 			$('.tooltip-tipsy').tipsy({
 				gravity: 'w'
+			});
+
+			$('.custom-file-upload').click(function(e) {
+				e.preventDefault();
+
+				$(this).next('input[type="file"]').click();
 			});
 		});
 	</script>
