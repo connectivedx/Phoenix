@@ -22,7 +22,9 @@
 	
 	<script type="text/javascript" src="_resources/js/modernizr.js"></script>
 	<link rel="stylesheet" media="all" href="_resources/css/style.css">
+	<!--[if lte IE8]>
 	<script type="text/javascript" src="_resources/js/respond.js"></script>
+	<![endif]-->
 		
 	<!-- For everything else --> 
 	<link rel="shortcut icon" href="/path/to/shortcut-icon.png"> 
