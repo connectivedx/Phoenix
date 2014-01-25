@@ -1,19 +1,16 @@
-// enable or disable the grid systems
-// if enableGrid is false, the hybrid grid will automatically be disabled
-// NOTE: this does not affect the semantic grid
+// @category variables
+
+// @function options
+// Options for enabling or disabling features, including the grid system, push, and pull.
+// @param $enableGrid {Boolean} Enable or disable the grid system.  If this is false, the hybrid grid will automatically be disabled.  NOTE: this does not affect the semantic grid.
+// @param $enableHybridGrid {Boolean} Enable or disable the hybrid grid system.  If enableGrid is false, this will automatically be disabled.  NOTE: this does not affect the semantic grid.
+// @param $enabledColumns {List} Comma separated value list of column widths you want to support in the standard grid system; set to ( ) to include all possible columns.  If enableGrid/enableHybridGrid are set to false, this is a moot option since no column classes will be output.  NOTE: this does not affect the semantic grid, it only minimizes the output of classes for the grid system
+// @param $enableCentered {Boolean} Enable or disable centering of columns.  NOTE: this does not affect the semantic grid.
+// @param $enablePush {Boolean} Enable or disable pushing of columns.  NOTE: this does not affect the semantic grid.
+// @param $enablePull {Boolean} Enable or disable pulling of columns.  NOTE: this does not affect the semantic grid.
 $enableGrid: true;
 $enableHybridGrid: true;
-
-// comma separated value list of column widths you want to support in the standard grid system; set to () to include all possible columns
-// if enableGrid/enableHybridGrid are set to false, this is a moot option since no column classes will be output
-// NOTE: this does not affect the semantic grid, it only minimizes the output of classes for the grid system
 $enabledColumns: ();
-
-// enables centered, push, and pull classes for the grid system's columns
-// NOTE: this does not affect the semantic grid
 $enableCentered: true;
 $enablePush: true;
 $enablePull: true;
-
-// enables the class that displays the grid system background image
-$enableColgridImage: true;

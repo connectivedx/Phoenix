@@ -1,22 +1,10 @@
-// Grid Settings
-$gutterInPx: 20px !default;
-$smallGutterInPx: 20px !default;
-$rowMaxWidth: 960px !default;
-$cols: 16 !default;
-$hybrid: 16 !default;
+// @category variables
 
-// Responsive Settings
-$minDeviceWidth: 320px;
-$phoneLandscapeWidth: 480px;
-$tabletPortraitWidth: 768px;
-$documentWidth: $rowMaxWidth;
-$maxDeviceWidth: 2880px;
-
-// Floats
-$defaultFloat: left;
-$switchFloat: right;
-
-// Miscellaneous
+// @function measurements
+// Various measurements used throughout the project.
+// @param $formElementBorderRadius {String} The default border radius for all form elements. [pixels|percentage]
+// @param $badgeBorderRadius {String} The default border radius for all badge elements. [pixels|percentage] 
+// @param $widgetBorderRadius {String} The default border radius for all widgets.  [pixels|percentage]
 $formElementBorderRadius: 0px;
 $badgeBorderRadius: 8px;
 $widgetBorderRadius: 8px;

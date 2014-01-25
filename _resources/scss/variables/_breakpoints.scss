@@ -1,0 +1,13 @@
+// @category variables
+
+// @function breakpoints
+// @param $minDeviceWidth {Integer} The number of columns in the hybrid grid system.
+// @param $phoneLandscapeWidth {Integer} The number of columns in the hybrid grid system.
+// @param $tabletPortraitWidth {Integer} The number of columns in the hybrid grid system.
+// @param $documentWidth {Integer} The number of columns in the hybrid grid system.
+// @param $maxDeviceWidth {Integer} The number of columns in the hybrid grid system.
+$minDeviceWidth: 320px;
+$phoneLandscapeWidth: 480px;
+$tabletPortraitWidth: 768px;
+$documentWidth: $rowMaxWidth;
+$maxDeviceWidth: 2880px;
