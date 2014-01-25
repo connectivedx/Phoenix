@@ -1,3 +1,11 @@
+// @category functions
+
+// @function rem
+// Converts a target value in pixels to its associated value in rems based on the $baseFontSize.
+// @param $target {String} The target size in either pixels or its integer equivalent. [px|integer]
+// @return {Rem} The target's value in rems based on the $baseFontSize.
+// @usage:
+// =rem(12) will return 0.75rem if the $baseFontSize is 16
 @function rem($target) {
 	@return (parseInt($target) / $baseFontSize) * 1rem;
 }

@@ -1,3 +1,12 @@
+// @category functions
+
+// @function em
+// Converts a target value in pixels to its associated value in ems based on a context.
+// @param $target {String} The target size in either pixels or its integer equivalent. [px|integer]
+// @param $context {String} The context size in either pixels or its integer equivalent. [px|integer]
+// @return {Em} The target's value in ems within the given context.
+// @usage:
+// =em(12, 16) will return 0.75em
 @function em($target, $context: $baseFontSize) {
-	@return (parseInt($target) / $context) * 1em;
+	@return (parseInt($target) / parseInt($context)) * 1em;
 }
