@@ -1,11 +1,11 @@
 // @category variables
 
 // @function breakpoints
-// @param $minDeviceWidth {Integer} The number of columns in the hybrid grid system.
-// @param $phoneLandscapeWidth {Integer} The number of columns in the hybrid grid system.
-// @param $tabletPortraitWidth {Integer} The number of columns in the hybrid grid system.
-// @param $documentWidth {Integer} The number of columns in the hybrid grid system.
-// @param $maxDeviceWidth {Integer} The number of columns in the hybrid grid system.
+// @param $minDeviceWidth {String} The minimum device width supported. [px]
+// @param $phoneLandscapeWidth {String} The breakpoint for phone-sized devices in landscape mode. [px]
+// @param $tabletPortraitWidth {String} The breakpoint for tablet-sized devices in portrait mode. [px]
+// @param $documentWidth {String} The maximum width of documents.  This defaults to the value of $rowMaxWidth. [px]
+// @param $maxDeviceWidth {String} The maximum width device width supported. [px]
 $minDeviceWidth: 320px;
 $phoneLandscapeWidth: 480px;
 $tabletPortraitWidth: 768px;
