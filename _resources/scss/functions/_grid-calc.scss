@@ -4,7 +4,7 @@ $gutter: percentage($gutterInPx / $rowMaxWidth);
 // Return single column width
 @function oneCol($hybrid-grid: false) {
 	@if ($hybrid-grid == true){
-		@return (100% / $hybrid);
+		@return (100% / $hybridCols);
 	}
 	@else{
 		@return (100% / $cols);

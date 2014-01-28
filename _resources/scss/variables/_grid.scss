@@ -6,13 +6,13 @@
 // @param $secondaryGutterInPx {String} A secondary gutter size in pixels. [px]
 // @param $rowMaxWidth {String} The maximum width of a row on the page.  This should be a multiple of the below variable $cols. [px]
 // @param $cols {Integer} The number of columns in the grid system.
-// @param $hybrid {Integer} The number of columns in the hybrid grid system.
+// @param $hybridCols {Integer} The number of columns in the hybrid grid system.
 // @param $defaultFloat {String} The default direction in which to float content.
 // @param $switchFloat {String} The opposite float of $defaultFloat.
 $gutterInPx: 20px !default;
 $secondaryGutterInPx: 20px !default;
 $rowMaxWidth: 960px !default;
 $cols: 16 !default;
-$hybrid: 16 !default;
+$hybridCols: 16 !default;
 $defaultFloat: left;
 $switchFloat: right;

@@ -1,2 +1,3 @@
 *.DS_Store
 *._*
+/_resources/.sass-cache

@@ -1,7 +1,3 @@
-@function divide-cols($colNum) {
-	@return 100%/$colNum;
-}
-
 @mixin multiGrid($mobileColumns, $tabletColumns, $desktopColumns, $padding: $gutterInPx, $smallBreak: mobile, $mediumBreak: tabletPortrait, $largeBreak: desktop) {
 	// These styles apply to all shift-columns
 	@include box-sizing();
@@ -10,17 +6,17 @@
 	padding: $padding;
 
 	// IE8 fallback
-	width: divide-cols($mobileColumns);
+	width: divideCols($mobileColumns);
 
 	@include respond($smallBreak) {
-		width: divide-cols($mobileColumns);
+		width: divideCols($mobileColumns);
 	}
 
 	@include respond($mediumBreak) {
-		width: divide-cols($tabletColumns);
+		width: divideCols($tabletColumns);
 	}
 
 	@include respond($largeBreak) {
-		width: divide-cols($desktopColumns);
+		width: divideCols($desktopColumns);
 	}
 }

@@ -36,17 +36,6 @@
 				padding: 0;
 			}
 		}
-		.column, .columns {
-			margin-top: $gutterInPx;
-
-			&:first-child {
-				margin-top: 0;
-			}
-
-			@include respond(tabletPortrait) {
-				margin-top: 0;
-			}
-		}
 		.centered {
 			margin: 0;
 		}
@@ -180,8 +169,8 @@
 
 	// Generate Hybrid Grid Column Classes
 	@if ($enableHybridGrid) {
-		.#{number-as-word($hybrid)}.colgrid .row {
-			@for $i from 1 through $hybrid{
+		.#{number-as-word($hybridCols)}.colgrid .row {
+			@for $i from 1 through $hybridCols{
 				@if $i == 1{
 					.one.column {
 						@include box-sizing();
@@ -220,8 +209,8 @@
 
 	// Generate Hybrid Push Classes
 	@if ($enableHybridGrid) {
-		.#{number-as-word($hybrid)}.colgrid .row {
-			@for $i from 1 through $hybrid - 1 {
+		.#{number-as-word($hybridCols)}.colgrid .row {
+			@for $i from 1 through $hybridCols - 1 {
 				@if ($enablePush) {
 					.push_#{number-as-word($i)} {
 						@include respond(tabletPortrait) {
@@ -232,7 +221,7 @@
 				@if ($enablePull) {
 					.pull_#{number-as-word($i)} {
 						// pull classes need to know the width of the container being pulled
-						@for $j from 1 through $hybrid - 1 {
+						@for $j from 1 through $hybridCols - 1 {
 							@if $j == 1 {
 								@include respond(tabletPortrait) {
 									&.one.column {
@@ -264,8 +253,8 @@
 
 	// Generate Centered Classes
 	@if ($enableHybridGrid) {
-		.#{number-as-word($hybrid)}.colgrid .row {
-			@for $i from 1 through $hybrid - 1 {
+		.#{number-as-word($hybridCols)}.colgrid .row {
+			@for $i from 1 through $hybridCols - 1 {
 				@if ($enableCentered) {
 					.#{number-as-word($i)}.centered {
 						margin-left: centered($i, true);
