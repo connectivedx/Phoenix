@@ -118,7 +118,9 @@
 					<li><a href="#">Short Item in the list</a></li>
 				</ol>
 			</div>
+		</div>
 
+		<div class="row divider">
 			<div class="eight columns">
 				<h1>Form Styles</h1>
 				<form action="#">
@@ -249,6 +251,15 @@
 						</ol>
 					</fieldset>
 				</form>
+			</div>
+		</div>
+
+		<div class="row divider">
+			<div class="sixteen columns">
+				<h1>Badges</h1>
+				<span class="badge-primary">Primary badge</span>
+				<span class="badge-secondary">Secondary badge</span>
+				<span class="badge-tertiary">Tertiary badge</span>
 			</div>
 		</div>
 

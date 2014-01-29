@@ -1,0 +1,25 @@
+%badge-config {
+	border-radius: $badgeBorderRadius;
+	cursor: default;
+	display: inline-block;
+	@include font-size(12);
+	margin: em(6, 12) em(6, 12) 0 0;
+	padding: em(6, 12);
+}
+
+.badge-primary {
+	@extend %badge-config;
+	background-color: $colorPrimary;
+	color: white;
+}
+
+.badge-secondary {
+	@extend %badge-config;
+	background-color: $colorSecondary;
+}
+
+.badge-tertiary {
+	@extend %badge-config;
+	background-color: $colorTertiary;
+	color: white;
+}

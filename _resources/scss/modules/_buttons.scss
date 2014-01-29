@@ -53,6 +53,7 @@ button,
 	@extend %button-config;
 	background-color: $colorSecondary;
 	border: 1px solid darken($colorSecondary, 10%);
+	color: black;
 
 	&:hover,
 	&:active,
