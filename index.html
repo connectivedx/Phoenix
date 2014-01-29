@@ -1,45 +1,80 @@
 <!DOCTYPE html>
 
-<html>
+<html ng-app="FEDTemplateDocApp">
 <head>
 	<meta charset='utf-8'>
 	<meta content="chrome=1" http-equiv="X-UA-Compatible">
 	<meta content="FED Template Engine by ISITE Design" name="description">
-	<link href="css/stylesheet.css" media="screen" rel="stylesheet" type="text/css">
-
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+	<link href="css/style.css" media="screen" rel="stylesheet" type="text/css">
+	<script src="js/angular.min.js"></script>
+	<script src="js/main.js"></script>
 	<title>FED Template Engine</title>
 </head>
 
 <body>
-	<!-- HEADER -->
-
-	<div class="outer" id="header_wrap">
-		<header class="inner">
-			<a href="https://github.com/isitedesign/FED-Template-Engine" id="forkme_banner" target="_blank">View on GitHub</a>
-
+	<header class="doc-header">
+		<a href="https://github.com/isitedesign/FED-Template-Engine" class="fork-me">
+			<img src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub">
+		</a>
+	
+		<div class="row">
 			<h1 id="project_title">FED Template Engine</h1>
 
 			<h2 id="project_tagline">ISITE Design</h2>
 
-			<section id="downloads">
-				<a class="zip_download_link" href="https://github.com/isitedesign/FED-Template-Engine/zipball/master" target="_blank">Download this project as a .zip file</a>
-				<a class="tar_download_link" href="https://github.com/isitedesign/FED-Template-Engine/tarball/master" target="_blank">Download this project as a tar.gz file</a>
+			<section class="doc-downloads">
+				<a class="zip-download-link" href="https://github.com/isitedesign/FED-Template-Engine/zipball/master" target="_blank">Download this project as a .zip file</a>
+				<a class="tar-download-link" href="https://github.com/isitedesign/FED-Template-Engine/tarball/master" target="_blank">Download this project as a tar.gz file</a>
 			</section>
-		</header>
-	</div><!-- MAIN CONTENT -->
+		</div>
+	</header>
 
-	<div class="outer" id="main_content_wrap">
-		<section class="inner" id="main_content">
-			<h3><a href="documentation-sassdoc/">SCSS Documentation</a></h3>
-		</section>
-	</div><!-- FOOTER  -->
+	<section class="row" role="main">
+		<h1>SCSS</h1>
 
-	<div class="outer" id="footer_wrap">
-		<footer class="inner">
+		<div ng-controller="SCSSCtrl">
+			<h2 class="divider">Functions</h2>
+			<div class="doc-functions" ng-repeat="function in objects.functions">
+				<div class="doc-callout">
+					<h2 class="doc-function-name">
+						{{function.function[0]}} (<span class="function-parameters" ng-repeat="param in function.param">{{param.name}}, </span>)
+					</h2>
+					<h3 class="divider-secondary">Description</h3>
+					<p class="doc-function-description">{{function.function[1]}}</p>
+					<h3 class="divider-secondary">Parameters</h3>
+					<ul class="plain">
+						<li ng-repeat="param in function.param">
+							<span class="badge-primary">{{param.name}}</span>
+							<span class="badge-secondary">{{param.type}}</span>
+							<span>{{param.description}}</span>
+						</li>
+					</ul>
+					<h3 class="divider-secondary">Returns</h3>
+					<ul class="plain">
+						<li ng-repeat="return in function.return">
+							{{return.type}} - {{return.description}}
+						</li>
+					</ul>
+					<h3 class="divider-secondary">Usage</h3>
+					<ol>
+						<li ng-repeat="usage in function.usage">
+							{{usage}}
+						</li>
+					</ol>
+					<h3 class="divider-secondary">Source</h3>
+					<span class="badge-primary">{{function.source}}: {{function.linenum}}</span>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<footer class="doc-footer">
+		<div class="row">
 			<p class="copyright">FED Template Engine maintained by <a href="https://github.com/isitedesign" target="_blank">isitedesign</a></p>
 
 			<p>Published with <a href="http://pages.github.com" target="_blank">GitHub Pages</a></p>
-		</footer>
-	</div>
+		</div>
+	</footer>
 </body>
 </html>
