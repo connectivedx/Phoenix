@@ -1,0 +1,73 @@
+.doc-header {
+	background-color: $colorPrimary;
+	color: white;
+	max-width: none;
+	position: relative;
+}
+
+.doc-downloads {
+	display: none;
+
+	@include respond(tabletPortrait) {
+		background: url('#{$imagesFolder}github-icon-download.png') no-repeat 0% 90%;
+		bottom: -40px;
+		display: block;
+		height: 70px;
+		position: absolute;
+		right: 0;
+		width: 210px;
+		z-index: 10;	
+	}
+}
+
+.fork-me {
+	position: absolute;
+	right: 0;
+	top: 0;
+
+	> img {
+		border: 0;
+	}
+}
+
+%download-link-config {
+	background-image: url('#{$imagesFolder}github-download-sprite.png');
+	background-repeat: no-repeat;
+	display: block;
+	float: right;
+	height: 70px;
+	overflow: hidden;
+	text-indent: -5000px;
+	width: 90px;
+}
+
+.tar-download-link {
+	@extend %download-link-config;
+	background-position: bottom right;
+	margin-left: 10px;
+
+	&:hover {
+		background-position: top right;
+	}
+}
+
+.zip-download-link {
+	@extend %download-link-config;
+	background-position: bottom left;
+
+	&:hover {
+		background-position: top left;
+	}
+}
+
+.doc-callout {
+	background-color: $lightGrey;
+	margin-top: $gutterInPx;
+	padding: $gutterInPx;
+}
+
+.doc-footer {
+	background-color: $colorSecondary;
+	color: white;
+	max-width: none;
+}

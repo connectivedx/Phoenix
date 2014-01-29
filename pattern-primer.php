@@ -21,11 +21,12 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
 	
 	<script type="text/javascript" src="_resources/js/modernizr.js"></script>
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" media="all" href="_resources/css/style.css">
 	<!--[if lte IE8]>
 	<script type="text/javascript" src="_resources/js/respond.js"></script>
 	<![endif]-->
-		
+
 	<!-- For everything else --> 
 	<link rel="shortcut icon" href="/path/to/shortcut-icon.png"> 
 	<!-- Serve one icon for all Apple devices -->
@@ -36,7 +37,7 @@
 	<section class="wrapper">
 		<div class="row">
 			<h1>Level 1 heading</h1>
-			<h2>Leven 2 heading</h2>
+			<h2>Level 2 heading</h2>
 			<h3>Level 3 heading</h3>
 			<h4>Level 4 heading</h4>
 			<p>

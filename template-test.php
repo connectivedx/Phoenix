@@ -14,6 +14,7 @@
 	<meta name="msapplication-TileImage" content="/path/to/touch-icon.png">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" media="all" href="_resources/css/style.css">
 	<script type="text/javascript" src="_resources/js/modernizr.js"></script>
 	<script type="text/javascript" src="_resources/js/respond.js"></script>
