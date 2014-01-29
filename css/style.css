@@ -3780,7 +3780,7 @@ button,
       display: block;
       height: 70px;
       position: absolute;
-      right: 0;
+      right: 1.25em;
       width: 210px;
       z-index: 10; } }
 
