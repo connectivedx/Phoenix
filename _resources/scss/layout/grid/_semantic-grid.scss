@@ -79,7 +79,7 @@
 	}
 }
 
-@mixin hybrid($columns:$columns, $alignment: false, $padding: $gutterInPx) {
+@mixin hybrid($columns: $columns, $padding: $gutterInPx, $nested: false, $alignment: false) {
 	@if $alignment == center   {
 		@extend %columnconfig;
 		float: left;
