@@ -35,12 +35,26 @@
 		<h1>SCSS</h1>
 
 		<div ng-controller="SCSSCtrl">
+			<h2 class="divider">Variables</h2>
+			<div class="doc-variables" ng-repeat="variableType in objects.variables">
+				<div class="doc-callout">
+					<h2 class="doc-variable-type">
+						{{variableType.function[0]}}
+					</h2>
+					<span class="badge-primary">{{variableType.source}}</span>
+					<h3 class="divider-secondary" ng-repeat-start="variable in variableType.param">{{variable.name}}</h3>
+					<span class="badge-secondary">{{variable.type}}</span>
+					<span ng-repeat-end>{{variable.description}}</span>
+				</div>
+			</div>
+
 			<h2 class="divider">Functions</h2>
 			<div class="doc-functions" ng-repeat="function in objects.functions">
 				<div class="doc-callout">
 					<h2 class="doc-function-name">
 						{{function.function[0]}} (<span class="function-parameters" ng-repeat="param in function.param">{{param.name}}, </span>)
 					</h2>
+					<span class="badge-primary">{{function.source}}</span>
 					<h3 class="divider-secondary">Description</h3>
 					<p class="doc-function-description">{{function.function[1]}}</p>
 					<h3 class="divider-secondary">Parameters</h3>
@@ -63,8 +77,6 @@
 							{{usage}}
 						</li>
 					</ol>
-					<h3 class="divider-secondary">Source</h3>
-					<span class="badge-primary">{{function.source}}: {{function.linenum}}</span>
 				</div>
 			</div>
 		</div>
