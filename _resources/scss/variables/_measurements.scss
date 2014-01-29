@@ -2,9 +2,9 @@
 
 // @function measurements
 // Various measurements used throughout the project.
-// @param $formElementBorderRadius {String} The default border radius for all form elements. [px|percentage]
-// @param $badgeBorderRadius {String} The default border radius for all badge elements. [px|percentage] 
-// @param $widgetBorderRadius {String} The default border radius for all widgets.  [px|percentage]
+// @param $formElementBorderRadius {Number} The default border radius for all form elements.  [px|percentage]
+// @param $badgeBorderRadius {Number} The default border radius for all badge elements.  [px|percentage] 
+// @param $widgetBorderRadius {Number} The default border radius for all widgets.   [px|percentage]
 $formElementBorderRadius: 0px;
 $badgeBorderRadius: 8px;
 $widgetBorderRadius: 8px;

@@ -2,11 +2,11 @@
 
 // @function grid
 // The properties of the grid system to be used.
-// @param $gutterInPx {String} The default gutter size in pixels. [px]
-// @param $secondaryGutterInPx {String} A secondary gutter size in pixels. [px]
-// @param $rowMaxWidth {String} The maximum width of a row on the page.  This should be a multiple of the below variable $cols. [px]
-// @param $cols {Integer} The number of columns in the grid system.
-// @param $hybridCols {Integer} The number of columns in the hybrid grid system.
+// @param $gutterInPx {Number} The default gutter size in pixels.  [px]
+// @param $secondaryGutterInPx {Number} A secondary gutter size in pixels.  [px]
+// @param $rowMaxWidth {Number} The maximum width of a row on the page.  This should be a multiple of the below variable $cols.  [px]
+// @param $cols {Number} The number of columns in the grid system.  [integer]
+// @param $hybridCols {Number} The number of columns in the hybrid grid system.  [integer]
 // @param $defaultFloat {String} The default direction in which to float content.
 // @param $switchFloat {String} The opposite float of $defaultFloat.
 $gutterInPx: 20px !default;

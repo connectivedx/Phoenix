@@ -1,11 +1,11 @@
 // @category variables
 
 // @function breakpoints
-// @param $minDeviceWidth {String} The minimum device width supported. [px]
-// @param $phoneLandscapeWidth {String} The breakpoint for phone-sized devices in landscape mode. [px]
-// @param $tabletPortraitWidth {String} The breakpoint for tablet-sized devices in portrait mode. [px]
-// @param $documentWidth {String} The maximum width of documents.  This defaults to the value of $rowMaxWidth. [px]
-// @param $maxDeviceWidth {String} The maximum width device width supported. [px]
+// @param $minDeviceWidth {Number} The minimum device width supported.  [px]
+// @param $phoneLandscapeWidth {Number} The breakpoint for phone-sized devices in landscape mode.  [px]
+// @param $tabletPortraitWidth {Number} The breakpoint for tablet-sized devices in portrait mode.  [px]
+// @param $documentWidth {Number} The maximum width of documents.  This defaults to the value of $rowMaxWidth.  [px]
+// @param $maxDeviceWidth {Number} The maximum width device width supported.  [px]
 $minDeviceWidth: 320px;
 $phoneLandscapeWidth: 480px;
 $tabletPortraitWidth: 768px;

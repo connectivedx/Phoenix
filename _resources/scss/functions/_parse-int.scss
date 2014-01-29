@@ -2,8 +2,8 @@
 
 // @function parseInt
 // Returns a unitless integer equivalent a measurement.
-// @param $n {String} A measurement of any kind. [px|em|percentage]
-// @return {Integer} Integer equivalent of $n.
+// @param $n {Number} A measurement of any kind.  [px|em|percentage]
+// @return {Number} Integer equivalent of $n.  [integer]
 // @usage:
 // =parseInt(16px) will return 16
 // @link http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
