@@ -516,25 +516,26 @@ table {
   table th {
     background-color: #1177bb;
     color: white;
+    font-weight: normal;
     vertical-align: middle; }
-  /* line 11, ../scss/base/defaults/_tables.scss */
+  /* line 12, ../scss/base/defaults/_tables.scss */
   table td {
     background-color: white; }
-  /* line 15, ../scss/base/defaults/_tables.scss */
+  /* line 16, ../scss/base/defaults/_tables.scss */
   table th, table td {
     border: 1px solid black;
     padding: 0.5em;
     text-align: left; }
-  /* line 23, ../scss/base/defaults/_tables.scss */
+  /* line 24, ../scss/base/defaults/_tables.scss */
   table tr:nth-child(2n) > td {
     background-color: #d0eafb; }
-    /* line 27, ../scss/base/defaults/_tables.scss */
+    /* line 28, ../scss/base/defaults/_tables.scss */
     table tr:nth-child(2n) > td.empty, table tr:nth-child(2n) > td.plain {
       background-color: transparent; }
-  /* line 33, ../scss/base/defaults/_tables.scss */
+  /* line 34, ../scss/base/defaults/_tables.scss */
   table tr.even > td {
-    background-color: #eeeeee; }
-    /* line 37, ../scss/base/defaults/_tables.scss */
+    background-color: #d0eafb; }
+    /* line 38, ../scss/base/defaults/_tables.scss */
     table tr.even > td.empty, table tr.even > td.plain {
       background-color: transparent; }
   @media only screen and (min-width: 48em) {

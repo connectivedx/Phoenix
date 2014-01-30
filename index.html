@@ -47,107 +47,101 @@
 
 		<div ng-controller="SCSSCtrl">
 			<h2 class="divider">Functions</h2>
-			<div class="doc-functions" ng-repeat="function in objects.functions">
-				<div class="doc-callout">
-					<h2 class="doc-function-name">
-						{{function.function[0]}} (<span class="function-parameters" ng-repeat="param in function.param">{{param.name}}<span ng-if="$index < (function.param.length - 1)">, </span></span>)
-					</h2>
-					<span class="badge-primary">{{function.source}}</span>
-					<h3 class="divider-secondary">Description</h3>
-					<p class="doc-function-description">{{function.function[1]}}</p>
-					<h3 class="divider-secondary">Parameters</h3>
-					<table ng-if="function.param.length > 0">
-						<thead>
-							<tr>
-								<th>Parameter Name</th>
-								<th>Data Type</th>
-								<th>Description</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr ng-repeat="param in function.param">
-								<td><span class="badge-primary">{{param.name}}</span></td>
-								<td><span class="badge-secondary">{{param.type}}</span></td>
-								<td><span>{{param.description}}</span></td>
-							</tr>
-						</tbody>
-					</table>
-					<h3 class="divider-secondary">Returns</h3>
-					<ul class="plain">
-						<li ng-repeat="return in function.return">
-							{{return.type}} - {{return.description}}
-						</li>
-					</ul>
-					<h3 class="divider-secondary">Usage</h3>
-					<ol>
-						<li ng-repeat="usage in function.usage" ng-if="$index > 0">
-							{{usage}}
-						</li>
-					</ol>
-				</div>
+			<div class="doc-callout" ng-repeat="function in objects.functions">
+				<h2>
+					{{function.function[0]}} (<span ng-repeat="param in function.param">{{param.name}}<span ng-if="$index < (function.param.length - 1)">, </span></span>)
+				</h2>
+				<span class="badge-primary">{{function.source}}</span>
+				<h3 class="divider-secondary">Description</h3>
+				<p>{{function.function[1]}}</p>
+				<h3 class="divider-secondary">Parameters</h3>
+				<table ng-if="function.param.length > 0">
+					<thead>
+						<tr>
+							<th>Parameter Name</th>
+							<th>Data Type</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="param in function.param">
+							<td><span class="badge-primary">{{param.name}}</span></td>
+							<td><span class="badge-secondary">{{param.type}}</span></td>
+							<td><span>{{param.description}}</span></td>
+						</tr>
+					</tbody>
+				</table>
+				<h3 class="divider-secondary">Returns</h3>
+				<ul class="plain">
+					<li ng-repeat="return in function.return">
+						{{return.type}} - {{return.description}}
+					</li>
+				</ul>
+				<h3 class="divider-secondary">Usage</h3>
+				<ol>
+					<li ng-repeat="usage in function.usage" ng-if="$index > 0">
+						{{usage}}
+					</li>
+				</ol>
 			</div>
-			
+
 			<h2 class="divider">Mixins</h2>
-			<div class="doc-mixins" ng-repeat="mixin in objects.mixins">
-				<div class="doc-callout">
-					<h2 class="doc-mixin-name">
-						{{mixin.mixin[0]}} (<span class="mixin-parameters" ng-repeat="param in mixin.param">{{param.name}}<span ng-if="$index < (mixin.param.length - 1)">, </span></span>)
-					</h2>
-					<span class="badge-primary">{{mixin.source}}</span>
-					<h3 class="divider-secondary">Description</h3>
-					<p class="doc-mixin-description">{{mixin.mixin[1]}}</p>
-					<h3 class="divider-secondary" ng-if="mixin.param.length > 0">Parameters</h3>
-					<table ng-if="mixin.param.length > 0">
-						<thead>
-							<tr>
-								<th>Parameter Name</th>
-								<th>Data Type</th>
-								<th>Description</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr ng-repeat="param in mixin.param">
-								<td><span class="badge-primary">{{param.name}}</span></td>
-								<td><span class="badge-secondary">{{param.type}}</span></td>
-								<td><span>{{param.description}}</span></td>
-							</tr>
-						</tbody>
-					</table>
-					<h3 class="divider-secondary">Usage</h3>
-					<ol>
-						<li ng-repeat="usage in mixin.usage" ng-if="$index > 0">
-							{{usage}}
-						</li>
-					</ol>
-				</div>
+			<div class="doc-callout" ng-repeat="mixin in objects.mixins">
+				<h2>
+					{{mixin.mixin[0]}} (<span ng-repeat="param in mixin.param">{{param.name}}<span ng-if="$index < (mixin.param.length - 1)">, </span></span>)
+				</h2>
+				<span class="badge-primary">{{mixin.source}}</span>
+				<h3 class="divider-secondary">Description</h3>
+				<p>{{mixin.mixin[1]}}</p>
+				<h3 class="divider-secondary" ng-if="mixin.param.length > 0">Parameters</h3>
+				<table ng-if="mixin.param.length > 0">
+					<thead>
+						<tr>
+							<th>Parameter Name</th>
+							<th>Data Type</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="param in mixin.param">
+							<td><span class="badge-primary">{{param.name}}</span></td>
+							<td><span class="badge-secondary">{{param.type}}</span></td>
+							<td><span>{{param.description}}</span></td>
+						</tr>
+					</tbody>
+				</table>
+				<h3 class="divider-secondary">Usage</h3>
+				<ol>
+					<li ng-repeat="usage in mixin.usage" ng-if="$index > 0">
+						{{usage}}
+					</li>
+				</ol>
 			</div>
 
 			<h2 class="divider">Variables</h2>
-			<div class="doc-variables" ng-repeat="variableType in objects.variables">
-				<div class="doc-callout">
-					<h2 class="doc-variable-type">
-						{{variableType.function[0]}}
-					</h2>
-					<span class="badge-primary">{{variableType.source}}</span>
-					<hr class="divider-secondary" />
-					<table ng-if="variableType.param.length > 0">
-						<thead>
-							<tr>
-								<th>Variable Name</th>
-								<th>Data Type</th>
-								<th>Description</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr ng-repeat="variable in variableType.param">
-								<td><span class="badge-primary">{{variable.name}}</span></td>
-								<td><span class="badge-secondary">{{variable.type}}</span></td>
-								<td><span>{{variable.description}}</span></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>			
+			<div class="doc-callout" ng-repeat="variableType in objects.variables">
+				<h2>
+					{{variableType.function[0]}}
+				</h2>
+				<span class="badge-primary">{{variableType.source}}</span>
+				<h3 class="divider-secondary">Variables</h3>
+				<table ng-if="variableType.param.length > 0">
+					<thead>
+						<tr>
+							<th>Variable Name</th>
+							<th>Data Type</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="variable in variableType.param">
+							<td><span class="badge-primary">{{variable.name}}</span></td>
+							<td><span class="badge-secondary">{{variable.type}}</span></td>
+							<td><span>{{variable.description}}</span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</section>
 	
