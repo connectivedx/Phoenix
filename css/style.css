@@ -3774,31 +3774,30 @@ button,
 .doc-logo {
   display: none;
   height: 150px;
-  position: relative;
   width: 150px; }
   @media only screen and (min-width: 48em) {
     /* line 9, ../scss/modules/_documentation.scss */
     .doc-logo {
       display: table-cell; } }
-  /* line 28, ../scss/modules/_documentation.scss */
+  /* line 27, ../scss/modules/_documentation.scss */
   .doc-logo:hover .logo-cake-plate {
     bottom: 0; }
-  /* line 28, ../scss/modules/_documentation.scss */
+  /* line 27, ../scss/modules/_documentation.scss */
   .doc-logo:hover .logo-cake-bottom {
     bottom: 30px; }
-  /* line 28, ../scss/modules/_documentation.scss */
+  /* line 27, ../scss/modules/_documentation.scss */
   .doc-logo:hover .logo-cake-filling {
     bottom: 46px; }
-  /* line 28, ../scss/modules/_documentation.scss */
+  /* line 27, ../scss/modules/_documentation.scss */
   .doc-logo:hover .logo-cake-top {
     bottom: 64px; }
-  /* line 28, ../scss/modules/_documentation.scss */
+  /* line 27, ../scss/modules/_documentation.scss */
   .doc-logo:hover .logo-cake-frosting {
     bottom: 88px; }
-  /* line 28, ../scss/modules/_documentation.scss */
+  /* line 27, ../scss/modules/_documentation.scss */
   .doc-logo:hover .logo-cake-candle {
     bottom: 118px; }
-  /* line 35, ../scss/modules/_documentation.scss */
+  /* line 34, ../scss/modules/_documentation.scss */
   .doc-logo .logo-cake-plate {
     background: url("../img/css/logo-cake-plate.png") no-repeat center center;
     bottom: 0;
@@ -3808,7 +3807,7 @@ button,
     transition: all 0.1s ease-in-out;
     width: 150px;
     z-index: 1; }
-  /* line 35, ../scss/modules/_documentation.scss */
+  /* line 34, ../scss/modules/_documentation.scss */
   .doc-logo .logo-cake-bottom {
     background: url("../img/css/logo-cake-bottom.png") no-repeat center center;
     bottom: 10px;
@@ -3818,7 +3817,7 @@ button,
     transition: all 0.1s ease-in-out;
     width: 150px;
     z-index: 2; }
-  /* line 35, ../scss/modules/_documentation.scss */
+  /* line 34, ../scss/modules/_documentation.scss */
   .doc-logo .logo-cake-filling {
     background: url("../img/css/logo-cake-filling.png") no-repeat center center;
     bottom: 16px;
@@ -3828,7 +3827,7 @@ button,
     transition: all 0.1s ease-in-out;
     width: 150px;
     z-index: 3; }
-  /* line 35, ../scss/modules/_documentation.scss */
+  /* line 34, ../scss/modules/_documentation.scss */
   .doc-logo .logo-cake-top {
     background: url("../img/css/logo-cake-top.png") no-repeat center center;
     bottom: 24px;
@@ -3838,7 +3837,7 @@ button,
     transition: all 0.1s ease-in-out;
     width: 150px;
     z-index: 4; }
-  /* line 35, ../scss/modules/_documentation.scss */
+  /* line 34, ../scss/modules/_documentation.scss */
   .doc-logo .logo-cake-frosting {
     background: url("../img/css/logo-cake-frosting.png") no-repeat center center;
     bottom: 28px;
@@ -3848,7 +3847,7 @@ button,
     transition: all 0.1s ease-in-out;
     width: 150px;
     z-index: 5; }
-  /* line 35, ../scss/modules/_documentation.scss */
+  /* line 34, ../scss/modules/_documentation.scss */
   .doc-logo .logo-cake-candle {
     background: url("../img/css/logo-cake-candle.png") no-repeat center center;
     bottom: 38px;
@@ -3859,16 +3858,21 @@ button,
     width: 150px;
     z-index: 6; }
 
-/* line 47, ../scss/modules/_documentation.scss */
+/* line 48, ../scss/modules/_documentation.scss */
+.doc-logo-inner {
+  position: relative;
+  top: 100%; }
+
+/* line 53, ../scss/modules/_documentation.scss */
 .doc-project-title {
   display: table-cell;
   vertical-align: middle; }
 
-/* line 52, ../scss/modules/_documentation.scss */
+/* line 58, ../scss/modules/_documentation.scss */
 .doc-downloads {
   display: none; }
   @media only screen and (min-width: 48em) {
-    /* line 52, ../scss/modules/_documentation.scss */
+    /* line 58, ../scss/modules/_documentation.scss */
     .doc-downloads {
       background: url("../img/css/github-icon-download.png") no-repeat 0% 90%;
       bottom: -40px;
@@ -3879,16 +3883,16 @@ button,
       width: 210px;
       z-index: 10; } }
 
-/* line 67, ../scss/modules/_documentation.scss */
+/* line 73, ../scss/modules/_documentation.scss */
 .fork-me {
   position: absolute;
   right: 0;
   top: 0; }
-  /* line 72, ../scss/modules/_documentation.scss */
+  /* line 78, ../scss/modules/_documentation.scss */
   .fork-me > img {
     border: 0; }
 
-/* line 77, ../scss/modules/_documentation.scss */
+/* line 83, ../scss/modules/_documentation.scss */
 .tar-download-link, .zip-download-link {
   background-image: url("../img/css/github-download-sprite.png");
   background-repeat: no-repeat;
@@ -3899,28 +3903,28 @@ button,
   text-indent: -5000px;
   width: 90px; }
 
-/* line 88, ../scss/modules/_documentation.scss */
+/* line 94, ../scss/modules/_documentation.scss */
 .tar-download-link {
   background-position: bottom right;
   margin-left: 10px; }
-  /* line 93, ../scss/modules/_documentation.scss */
+  /* line 99, ../scss/modules/_documentation.scss */
   .tar-download-link:hover {
     background-position: top right; }
 
-/* line 98, ../scss/modules/_documentation.scss */
+/* line 104, ../scss/modules/_documentation.scss */
 .zip-download-link {
   background-position: bottom left; }
-  /* line 102, ../scss/modules/_documentation.scss */
+  /* line 108, ../scss/modules/_documentation.scss */
   .zip-download-link:hover {
     background-position: top left; }
 
-/* line 107, ../scss/modules/_documentation.scss */
+/* line 113, ../scss/modules/_documentation.scss */
 .doc-callout {
   background-color: #eeeeee;
   margin-top: 20px;
   padding: 20px; }
 
-/* line 113, ../scss/modules/_documentation.scss */
+/* line 119, ../scss/modules/_documentation.scss */
 .doc-footer {
   background-color: #ffaa00;
   color: white;
