@@ -2,7 +2,51 @@
 	background-color: $colorPrimary;
 	color: white;
 	max-width: none;
+	padding: 0;
 	position: relative;
+}
+
+.doc-logo {
+	$logoHeight: 150px;
+	$logoWidth: 150px;
+
+	display: none;
+	height: $logoHeight;
+	position: relative;
+	width: $logoWidth;
+
+	@include respond(tabletPortrait) {
+		display: table-cell;
+	}
+
+	$logoPieces: logo-cake-plate, logo-cake-bottom, logo-cake-filling, logo-cake-top, logo-cake-frosting, logo-cake-candle;
+	$logoPieceDisplacement: 0, 10px, 16px, 24px, 28px, 38px;
+	$logoPieceHoverDisplacement: 0, 30px, 46px, 64px, 88px, 118px;
+
+	&:hover {
+		@for $i from 1 through length($logoPieces) {
+			.#{nth($logoPieces, $i)} {
+				bottom: #{nth($logoPieceHoverDisplacement, $i)};
+			}
+		}
+	}
+
+	@for $i from 1 through length($logoPieces) {
+		.#{nth($logoPieces, $i)} {
+			background: url('#{$imagesFolder}#{nth($logoPieces, $i)}.png') no-repeat center center;
+			bottom: #{nth($logoPieceDisplacement, $i)};;
+			height: $logoHeight;
+			position: absolute;
+			@include transition(all, 0.1s, ease-in-out);
+			width: $logoWidth;
+			z-index: $i;
+		}
+	}
+}
+
+.doc-project-title {
+	display: table-cell;
+	vertical-align: middle;
 }
 
 .doc-downloads {
