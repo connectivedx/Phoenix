@@ -44,7 +44,6 @@
 }
 
 // this inner element fixes the issue with absolutely positioned elements within a table-cell displayed element
-// this happened in Firefox
 .doc-logo-inner {
 	height: 100%;
 	position: relative;

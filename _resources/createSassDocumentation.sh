@@ -1,1 +1,0 @@
-watcher -depth=2 sassdoc scss -d ../documentation-sassdoc -n "FED Template Engine Documentation"
