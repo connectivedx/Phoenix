@@ -1,7 +1,12 @@
-.divider {
-	border-top: 1px solid black;
+%divider-config {
+	border: none;	// reset border to none; this allows the class to be used on horizontal rules
 	margin-top: $gutterInPx;
 	padding-top: $gutterInPx;
+}
+
+.divider {
+	@extend %divider-config;
+	border-top: 1px solid black;
 
 	&.row {
 		margin-top: 0;
@@ -9,7 +14,6 @@
 }
 
 .divider-secondary {
+	@extend %divider-config;
 	border-top: 1px dashed $mediumGrey;
-	margin-top: $gutterInPx;
-	padding-top: $gutterInPx;
 }

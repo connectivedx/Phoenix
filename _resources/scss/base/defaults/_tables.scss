@@ -3,18 +3,25 @@ table {
 	width: 100%;
 
 	th {
+		background-color: $colorPrimary;
+		color: white;
 		vertical-align: middle;
 	}
 
+	td {
+		background-color: white;
+	}
+
 	th, td {
+		border: 1px solid black;
 		padding: em(8);
-		text-align: center;
+		text-align: left;
 	}
 
 	// zebra striping code needs to repeat because IE < 8 will ignore the code if an nth-child selector is in it
 	tr:nth-child(2n) {
 		> td {
-			background-color: $lightGrey;
+			background-color: lighten($colorPrimary, 50%);
 
 			&.empty,
 			&.plain {
