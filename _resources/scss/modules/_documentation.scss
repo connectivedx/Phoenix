@@ -12,7 +12,6 @@
 
 	display: none;
 	height: $logoHeight;
-	position: relative;
 	width: $logoWidth;
 
 	@include respond(tabletPortrait) {
@@ -42,6 +41,13 @@
 			z-index: $i;
 		}
 	}
+}
+
+// this inner element fixes the issue with absolutely positioned elements within a table-cell displayed element
+// this happened in Firefox
+.doc-logo-inner {
+	height: 100%;
+	position: relative;
 }
 
 .doc-project-title {

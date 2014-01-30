@@ -315,6 +315,23 @@
 				</ul>
 			</div>
 		</div>
+
+		<div class="row divider">
+			<div class="sixteen columns">
+				<h1>Animations and Transitions</h1>
+				<h2>Exploding Cake Logo</h2>
+				<div class="doc-logo">
+					<div class="doc-logo-inner">
+						<div class="logo-cake-candle"></div>
+						<div class="logo-cake-frosting"></div>
+						<div class="logo-cake-top"></div>
+						<div class="logo-cake-filling"></div>
+						<div class="logo-cake-bottom"></div>
+						<div class="logo-cake-plate"></div>
+					</div>
+				</div>
+			</div>
+		</div>
  
 	</section><!-- /.wrapper -->
 	
