@@ -1,4 +1,12 @@
-@mixin box-sizing($bs: border-box) {
-	-moz-box-sizing: unquote($bs);
-	box-sizing: unquote($bs);
+// @category mixins
+
+// @mixin box-sizing
+// Alters the box-sizing property with the provided value.
+// @param $box-sizing {String} The value of the box-sizing property you wish to set.  Default value: border-box.
+// @usage
+// =box-sizing()
+// =box-sizing(padding-box)
+@mixin box-sizing($box-sizing: border-box) {
+	-moz-box-sizing: unquote($box-sizing);
+	box-sizing: unquote($box-sizing);
 }

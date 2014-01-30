@@ -169,9 +169,6 @@
 // Clearfix placeholder
 %clearfix { @include clearfix(); }
 
-// Clearfix placeholder for mobile
-%mobilefix { @include mobilefix(); }
-
 // Row placeholders
 %row { @include row(); }
 %nestedrow { @include row(nested); }

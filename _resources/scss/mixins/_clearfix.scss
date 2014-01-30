@@ -1,4 +1,11 @@
-@mixin clearfix() { 
+// @category mixins
+
+// @mixin clearfix
+// Applies Nicolas Gallagher's clearfix.
+// @usage
+// =clearfix()
+// @link http://nicolasgallagher.com/micro-clearfix-hack/
+@mixin clearfix() {
 	*zoom:1;
 	&:before, &:after {
 		content: "";
@@ -6,20 +13,5 @@
 	}
 	&:after {
 		clear: both;
-	}
-}
-
-@mixin mobilefix() {
-	@include respond(all-phones) { 
-		&:before, &:after {
-			content: " ";
-			display: table;
-		}
-		&:after {
-			clear: both;
-		}
-		&:last-child {
-			float: none;
-		}
 	}
 }

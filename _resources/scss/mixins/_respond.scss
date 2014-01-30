@@ -1,5 +1,10 @@
-// Responsive Mixins
+// @category mixins
 
+// @mixin respond
+// Adds a media query at the pre-defined breakpoint for the given content.
+// @param $media {String} The name of the breakpoint for which the styles are to be applied.
+// @usage
+// =respond(tabletPortrait)
 @mixin respond($media) {
 	@if $media == phoneLandscape {
 		@media only screen and (min-width: em($phoneLandscapeWidth)) { @content; }
