@@ -514,21 +514,27 @@ table {
   width: 100%; }
   /* line 5, ../scss/base/defaults/_tables.scss */
   table th {
+    background-color: #1177bb;
+    color: white;
     vertical-align: middle; }
-  /* line 9, ../scss/base/defaults/_tables.scss */
+  /* line 11, ../scss/base/defaults/_tables.scss */
+  table td {
+    background-color: white; }
+  /* line 15, ../scss/base/defaults/_tables.scss */
   table th, table td {
+    border: 1px solid black;
     padding: 0.5em;
-    text-align: center; }
-  /* line 16, ../scss/base/defaults/_tables.scss */
+    text-align: left; }
+  /* line 23, ../scss/base/defaults/_tables.scss */
   table tr:nth-child(2n) > td {
-    background-color: #eeeeee; }
-    /* line 20, ../scss/base/defaults/_tables.scss */
+    background-color: #d0eafb; }
+    /* line 27, ../scss/base/defaults/_tables.scss */
     table tr:nth-child(2n) > td.empty, table tr:nth-child(2n) > td.plain {
       background-color: transparent; }
-  /* line 26, ../scss/base/defaults/_tables.scss */
+  /* line 33, ../scss/base/defaults/_tables.scss */
   table tr.even > td {
     background-color: #eeeeee; }
-    /* line 30, ../scss/base/defaults/_tables.scss */
+    /* line 37, ../scss/base/defaults/_tables.scss */
     table tr.even > td.empty, table tr.even > td.plain {
       background-color: transparent; }
   @media only screen and (min-width: 48em) {
@@ -3406,22 +3412,22 @@ h4 {
 /* line 311, ../scss/layout/grid/_grid.scss */
 .clearfix {
   *zoom: 1; }
-  /* line 3, ../scss/mixins/_clearfix.scss */
+  /* line 10, ../scss/mixins/_clearfix.scss */
   .clearfix:before, .clearfix:after {
     content: "";
     display: table; }
-  /* line 7, ../scss/mixins/_clearfix.scss */
+  /* line 14, ../scss/mixins/_clearfix.scss */
   .clearfix:after {
     clear: both; }
 
 /* line 315, ../scss/layout/grid/_grid.scss */
 .row {
   *zoom: 1; }
-  /* line 3, ../scss/mixins/_clearfix.scss */
+  /* line 10, ../scss/mixins/_clearfix.scss */
   .row:before, .row:after {
     content: "";
     display: table; }
-  /* line 7, ../scss/mixins/_clearfix.scss */
+  /* line 14, ../scss/mixins/_clearfix.scss */
   .row:after {
     clear: both; }
 
@@ -3444,7 +3450,7 @@ header, .wrapper,
 [role="banner"], .nested,
 aside, footer {
   *zoom: 1; }
-  /* line 3, ../scss/mixins/_clearfix.scss */
+  /* line 10, ../scss/mixins/_clearfix.scss */
   header:before, .wrapper:before,
   [role="banner"]:before, .nested:before,
   aside:before, footer:before, header:after, .wrapper:after,
@@ -3452,13 +3458,13 @@ aside, footer {
   aside:after, footer:after {
     content: "";
     display: table; }
-  /* line 7, ../scss/mixins/_clearfix.scss */
+  /* line 14, ../scss/mixins/_clearfix.scss */
   header:after, .wrapper:after,
   [role="banner"]:after, .nested:after,
   aside:after, footer:after {
     clear: both; }
 
-/* line 180, ../scss/layout/grid/_semantic-grid.scss */
+/* line 177, ../scss/layout/grid/_semantic-grid.scss */
 .layout-primary, .layout-secondary, .layout-tertiary, .two-up, .brand, #nav {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -3666,26 +3672,26 @@ footer {
 .meta {
   list-style: none; }
 
-/* line 1, ../scss/modules/_badges.scss */
+/* line 3, ../scss/modules/_badges.scss */
 .badge-primary, .badge-secondary, .badge-tertiary {
   border-radius: 8px;
   cursor: default;
   display: inline-block;
   font-size: 12px;
   font-size: 0.75rem;
-  margin: 0.5em 0.5em 0 0;
+  margin-right: 0.5em;
   padding: 0.5em; }
 
-/* line 10, ../scss/modules/_badges.scss */
+/* line 12, ../scss/modules/_badges.scss */
 .badge-primary {
   background-color: #1177bb;
   color: white; }
 
-/* line 16, ../scss/modules/_badges.scss */
+/* line 18, ../scss/modules/_badges.scss */
 .badge-secondary {
   background-color: #ffaa00; }
 
-/* line 21, ../scss/modules/_badges.scss */
+/* line 23, ../scss/modules/_badges.scss */
 .badge-tertiary {
   background-color: #cc6633;
   color: white; }
@@ -3803,8 +3809,8 @@ button,
     bottom: 0;
     height: 150px;
     position: absolute;
-    -webkit-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s 0s ease-in-out;
+    transition: all 0.1s ease-in-out 0s;
     width: 150px;
     z-index: 1; }
   /* line 34, ../scss/modules/_documentation.scss */
@@ -3813,8 +3819,8 @@ button,
     bottom: 10px;
     height: 150px;
     position: absolute;
-    -webkit-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s 0s ease-in-out;
+    transition: all 0.1s ease-in-out 0s;
     width: 150px;
     z-index: 2; }
   /* line 34, ../scss/modules/_documentation.scss */
@@ -3823,8 +3829,8 @@ button,
     bottom: 16px;
     height: 150px;
     position: absolute;
-    -webkit-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s 0s ease-in-out;
+    transition: all 0.1s ease-in-out 0s;
     width: 150px;
     z-index: 3; }
   /* line 34, ../scss/modules/_documentation.scss */
@@ -3833,8 +3839,8 @@ button,
     bottom: 24px;
     height: 150px;
     position: absolute;
-    -webkit-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s 0s ease-in-out;
+    transition: all 0.1s ease-in-out 0s;
     width: 150px;
     z-index: 4; }
   /* line 34, ../scss/modules/_documentation.scss */
@@ -3843,8 +3849,8 @@ button,
     bottom: 28px;
     height: 150px;
     position: absolute;
-    -webkit-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s 0s ease-in-out;
+    transition: all 0.1s ease-in-out 0s;
     width: 150px;
     z-index: 5; }
   /* line 34, ../scss/modules/_documentation.scss */
@@ -3853,26 +3859,26 @@ button,
     bottom: 38px;
     height: 150px;
     position: absolute;
-    -webkit-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s 0s ease-in-out;
+    transition: all 0.1s ease-in-out 0s;
     width: 150px;
     z-index: 6; }
 
-/* line 48, ../scss/modules/_documentation.scss */
+/* line 47, ../scss/modules/_documentation.scss */
 .doc-logo-inner {
   height: 100%;
   position: relative; }
 
-/* line 53, ../scss/modules/_documentation.scss */
+/* line 52, ../scss/modules/_documentation.scss */
 .doc-project-title {
   display: table-cell;
   vertical-align: middle; }
 
-/* line 58, ../scss/modules/_documentation.scss */
+/* line 57, ../scss/modules/_documentation.scss */
 .doc-downloads {
   display: none; }
   @media only screen and (min-width: 48em) {
-    /* line 58, ../scss/modules/_documentation.scss */
+    /* line 57, ../scss/modules/_documentation.scss */
     .doc-downloads {
       background: url("../img/css/github-icon-download.png") no-repeat 0% 90%;
       bottom: -40px;
@@ -3883,16 +3889,16 @@ button,
       width: 210px;
       z-index: 10; } }
 
-/* line 73, ../scss/modules/_documentation.scss */
+/* line 72, ../scss/modules/_documentation.scss */
 .fork-me {
   position: absolute;
   right: 0;
   top: 0; }
-  /* line 78, ../scss/modules/_documentation.scss */
+  /* line 77, ../scss/modules/_documentation.scss */
   .fork-me > img {
     border: 0; }
 
-/* line 83, ../scss/modules/_documentation.scss */
+/* line 82, ../scss/modules/_documentation.scss */
 .tar-download-link, .zip-download-link {
   background-image: url("../img/css/github-download-sprite.png");
   background-repeat: no-repeat;
@@ -3903,28 +3909,28 @@ button,
   text-indent: -5000px;
   width: 90px; }
 
-/* line 94, ../scss/modules/_documentation.scss */
+/* line 93, ../scss/modules/_documentation.scss */
 .tar-download-link {
   background-position: bottom right;
   margin-left: 10px; }
-  /* line 99, ../scss/modules/_documentation.scss */
+  /* line 98, ../scss/modules/_documentation.scss */
   .tar-download-link:hover {
     background-position: top right; }
 
-/* line 104, ../scss/modules/_documentation.scss */
+/* line 103, ../scss/modules/_documentation.scss */
 .zip-download-link {
   background-position: bottom left; }
-  /* line 108, ../scss/modules/_documentation.scss */
+  /* line 107, ../scss/modules/_documentation.scss */
   .zip-download-link:hover {
     background-position: top left; }
 
-/* line 113, ../scss/modules/_documentation.scss */
+/* line 112, ../scss/modules/_documentation.scss */
 .doc-callout {
   background-color: #eeeeee;
   margin-top: 20px;
   padding: 20px; }
 
-/* line 119, ../scss/modules/_documentation.scss */
+/* line 118, ../scss/modules/_documentation.scss */
 .doc-footer {
   background-color: #ffaa00;
   color: white;
@@ -4376,8 +4382,8 @@ fieldset label.inline {
   margin: 0 -20px;
   max-height: 0;
   overflow: hidden;
-  -webkit-transition: max-height 0.5s ease-in-out;
-  transition: max-height 0.5s ease-in-out; }
+  -webkit-transition: max-height 0.5s 0s ease-in-out;
+  transition: max-height 0.5s ease-in-out 0s; }
   /* line 33, ../scss/modules/_navigation.scss */
   .nav-list.expanded {
     max-height: 31.25rem; }
@@ -4710,19 +4716,21 @@ fieldset label.inline {
   top: 50%; }
 
 /* line 1, ../scss/modules/_utility.scss */
-.divider {
-  border-top: 1px solid black;
+.divider, .divider-secondary {
+  border: none;
   margin-top: 20px;
   padding-top: 20px; }
-  /* line 6, ../scss/modules/_utility.scss */
+
+/* line 7, ../scss/modules/_utility.scss */
+.divider {
+  border-top: 1px solid black; }
+  /* line 11, ../scss/modules/_utility.scss */
   .divider.row {
     margin-top: 0; }
 
-/* line 11, ../scss/modules/_utility.scss */
+/* line 16, ../scss/modules/_utility.scss */
 .divider-secondary {
-  border-top: 1px dashed #cccccc;
-  margin-top: 20px;
-  padding-top: 20px; }
+  border-top: 1px dashed #cccccc; }
 
 @media only screen and (min-width: 48em) {
   /* line 1, ../scss/modules/_utility-responsive.scss */
