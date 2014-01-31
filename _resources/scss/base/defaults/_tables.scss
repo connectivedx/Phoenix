@@ -5,6 +5,7 @@ table {
 	th {
 		background-color: $colorPrimary;
 		color: white;
+		font-weight: normal;
 		vertical-align: middle;
 	}
 
@@ -31,7 +32,7 @@ table {
 	}
 	tr.even {
 		> td {
-			background-color: $lightGrey;
+			background-color: lighten($colorPrimary, 50%);
 
 			&.empty,
 			&.plain {
