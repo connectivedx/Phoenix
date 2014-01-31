@@ -23,7 +23,7 @@
 	<script type="text/javascript" src="_resources/js/modernizr.js"></script>
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" media="all" href="_resources/css/style.css">
-	<!--[if lte IE8]>
+	<!--[if lte IE 8]>
 	<script type="text/javascript" src="_resources/js/respond.js"></script>
 	<![endif]-->
 
