@@ -1,13 +1,13 @@
 // @category mixins
 
 // @mixin rgba-background-color
-// Outputs an rgba image with an opaque fallback. If a PNG is supplied, it will be used as a fallback for older IEs, and opaque background will be overridden.  Notee:  modernizr is required for the PNG fallback.
+// Outputs an rgba background-color with an opaque fallback. If a PNG is supplied, it will be used as a fallback for older IEs, and opaque background will be overridden.  Note: modernizr is required for the PNG fallback.
 // @param $color {Color} The desired color. 
 // @param $alpha {Number} The desired level of opacity. [Decimal]
 // @param $image {String} Filename and extension of a variable transparency fallback. Default value: false.
 // @usage
-// =svg-image(logo)
-// =svg-image(bullet-blue, list-style-image)
+// =rgba-background-color(#ff0000, 0.2);
+// =rgba-background-color(red, 0.7, translucent-red);
 @mixin rgba-background-color($color, $alpha, $image: false) {
 	background-color: $color;
 	background-color: rgba($color, $alpha);
