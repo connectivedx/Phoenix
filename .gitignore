@@ -1,3 +1,4 @@
 *.DS_Store
 *._*
 /_resources/.sass-cache
+/_resources/css/style.css
