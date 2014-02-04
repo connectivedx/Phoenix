@@ -23,15 +23,16 @@
 .aspect-ratio-4-3 {
 	@include aspect-ratio(4, 3);
 }
-.aspect-ratio-311-204 {
-	@include aspect-ratio(311px, 204px);
-}
 
 .nested,
 aside {
 	@include row(nested);
 }
 
-.multi-grid > li {
-	@include multiGrid(1, 2, 3);
+.multi-grid {
+	@include clearfix();
+
+	> li {
+		@include multi-grid(1, 2, 3);
+	}
 }
