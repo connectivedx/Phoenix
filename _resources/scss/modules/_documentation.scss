@@ -70,12 +70,17 @@
 }
 
 .fork-me {
+	max-width: 100px;
 	position: absolute;
 	right: 0;
 	top: 0;
 
 	> img {
 		border: 0;
+	}
+
+	@include respond(breakpointMedium) {
+		max-width: none;
 	}
 }
 
