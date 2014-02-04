@@ -46,6 +46,18 @@
 		<h1>SCSS</h1>
 
 		<div ng-controller="SCSSCtrl" class="responsive-tabs responsive-tabs-horizontal">
+			<h2>Base</h2>
+			<div class="responsive-tabs-content">
+				<div class="doc-callout" ng-repeat="base in objects.base" ng-class="{divider: $index > 0}">
+					<h2>
+						{{base.function[0]}}
+					</h2>
+					<span class="badge-primary">{{base.source}}</span>
+					<h3 class="divider-secondary">Description</h3>
+					<p>{{base.function[1]}}</p>
+				</div>
+			</div><!-- /.responsive-tabs-content -->
+
 			<h2>Functions</h2>
 			<div class="responsive-tabs-content">
 				<div class="doc-callout" ng-repeat="function in objects.functions" ng-class="{divider: $index > 0}">
