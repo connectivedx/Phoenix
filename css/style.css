@@ -3927,11 +3927,9 @@ button,
 
 /* line 112, ../scss/modules/_documentation.scss */
 .doc-callout {
-  background-color: #eeeeee;
-  margin-top: 20px;
-  padding: 20px; }
+  padding: 10px; }
 
-/* line 118, ../scss/modules/_documentation.scss */
+/* line 116, ../scss/modules/_documentation.scss */
 .doc-footer {
   background-color: #ffaa00;
   color: white;
