@@ -99,6 +99,18 @@
 				</div>
 			</div><!-- /.responsive-tabs-content -->
 
+			<h2>Layout</h2>
+			<div class="responsive-tabs-content">
+				<div class="doc-callout" ng-repeat="layout in objects.layout" ng-class="{divider: $index > 0}">
+					<h2>
+						{{layout.function[0]}}
+					</h2>
+					<span class="badge-primary">{{layout.source}}</span>
+					<h3 class="divider-secondary">Description</h3>
+					<p>{{layout.function[1]}}</p>
+				</div>
+			</div><!-- /.responsive-tabs-content -->
+
 			<h2>Mixins</h2>
 			<div class="responsive-tabs-content">
 				<div class="doc-callout" ng-repeat="mixin in objects.mixins" ng-class="{divider: $index > 0}">
