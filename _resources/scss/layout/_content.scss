@@ -34,9 +34,5 @@ aside {
 }
 
 .multi-grid {
-	@include clearfix();
-
-	> li {
-		@include multi-grid(1, 2, 3);
-	}
+	@include multi-grid("> li", 1, 2, 3, true);
 }

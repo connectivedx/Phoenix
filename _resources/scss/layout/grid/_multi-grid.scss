@@ -1,22 +1,31 @@
-@mixin multi-grid($mobileColumns, $tabletColumns, $desktopColumns, $padding: $gutterInPx, $smallBreak: mobile, $mediumBreak: breakpointMedium, $largeBreak: desktop) {
-	// These styles apply to all shift-columns
-	@include box-sizing();
-	display: inline-block;
-	float: left;
-	padding: $padding;
+@mixin multi-grid($selector, $smallColumns, $mediumColumns, $largeColumns, $flush: false, $padding: $gutterInPx, $smallBreak: breakpointSmall, $mediumBreak: breakpointMedium, $largeBreak: breakpointLarge) {
+	// this is the container
+	@include clearfix();
 
-	// IE8 fallback
-	width: divideCols($mobileColumns);
-
-	@include respond($smallBreak) {
-		width: divideCols($mobileColumns);
+	@if $flush {
+		margin: 0  -1 * $padding;
 	}
+	
+	#{unquote($selector)} {
+		// These styles apply to all shift-columns
+		@include box-sizing();
+		display: inline-block;
+		float: left;
+		padding: $padding;
 
-	@include respond($mediumBreak) {
-		width: divideCols($tabletColumns);
-	}
+		// IE8 fallback
+		width: divideCols($smallColumns);
 
-	@include respond($largeBreak) {
-		width: divideCols($desktopColumns);
+		@include respond($smallBreak) {
+			width: divideCols($smallColumns);
+		}
+
+		@include respond($mediumBreak) {
+			width: divideCols($mediumColumns);
+		}
+
+		@include respond($largeBreak) {
+			width: divideCols($largeColumns);
+		}
 	}
 }
