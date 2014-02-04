@@ -9,6 +9,7 @@
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
 	<link href="css/style.css" media="screen" rel="stylesheet" type="text/css">
 	<script src="js/angular.min.js"></script>
+	<script src="js/angular-sanitize.min.js"></script>
 	<script src="js/app.js"></script>
 	<title>FED Template Engine</title>
 </head>
@@ -146,6 +147,20 @@
 				</div>
 			</div><!-- /.responsive-tabs-content -->
 
+			<h2>Modules</h2>
+			<div class="responsive-tabs-content responsive-tabs__panel--active">
+				<div class="doc-callout" ng-repeat="module in objects.modules" ng-class="{divider: $index > 0}">
+					<h2>
+						{{module.function[0]}}
+					</h2>
+					<span class="badge-primary">{{module.source}}</span>
+					<h3 class="divider-secondary">Description</h3>
+					<p>{{module.function[1]}}</p>
+					<h3 class="divider-secondary" ng-if="module.usage.length > 0">Usage</h3>
+					<div class="doc-usage" ng-repeat="usage in module.usage" ng-if="$index > 0" ng-bind-html="usage"></div>
+				</div>
+			</div><!-- /.responsive-tabs-content -->
+
 			<h2>Variables</h2>
 			<div class="responsive-tabs-content">
 				<div class="doc-callout" ng-repeat="variableType in objects.variables" ng-class="{divider: $index > 0}">
@@ -185,9 +200,15 @@
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/tabs/jquery.responsive-tabs.js"></script>
+	<script src="js/lightboxes/jquery.fancybox.pack.js"></script>
+	<script src="js/tooltips/jquery.tipsy.js"></script>
 	<script>
 		$(function() {
+			$('.fancybox').fancybox();
 			RESPONSIVEUI.responsiveTabs();
+			$('.tooltip-tipsy').tipsy({
+				gravity: 'w'
+			});
 		});
 	</script>
 </body>
