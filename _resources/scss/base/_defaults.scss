@@ -1,3 +1,7 @@
+// @category base
+
+// @function defaults
+// Loads all of the element default styles, beginning with the html and body elements, followed by elements grouped by type.
 @import "defaults/root";
 
 @import "defaults/forms";
