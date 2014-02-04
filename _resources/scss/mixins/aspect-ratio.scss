@@ -1,0 +1,27 @@
+// @category mixins
+
+// @mixin aspect-ratio
+// Creates the necessary dimensions for an element to have a fixed aspect ratio.
+// @param $width {Number} The desired width of the element's aspect ratio.  Default value: 16.  [px|integer]
+// @param $height {Number} The desired height of the element's aspect ratio.  Default value: 9.  [px|integer]
+// @usage
+// =aspect-ratio()
+// =aspect-ratio(4, 3)
+@mixin aspect-ratio($width: 16, $height: 9) {
+	height: 0;
+	padding-bottom: percentage(parseInt($height) / parseInt($width));
+	position: relative;
+	width: 100%;
+
+	& > embed,
+	& > iframe,
+	& > object,
+	& > video,
+	& > img {
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+}
