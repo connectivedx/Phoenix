@@ -1,3 +1,8 @@
+// @category modules
+
+// @function forms
+// Custom-styled form elements, including selects, checkboxes, and radio buttons.
+
 // IE9 and newer supported; IE8 and lower will have standard form elements
 // :not() targets > IE8, #foo is just a random ID
 fieldset:not(#foo) {

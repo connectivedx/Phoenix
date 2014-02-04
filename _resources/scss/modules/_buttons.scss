@@ -1,3 +1,10 @@
+// @category modules
+
+// @function buttons
+// Class used for rendering a button-shaped element.  Can be used on any element, but is most appropriate with anchors, buttons, and spans.
+// @usage
+// <span class="btn">Button</span>
+// <span class="btn-secondary">Button-secondary</span>
 %button-config {
 	border-radius: $formElementBorderRadius;
 	border-style: none;

@@ -1,3 +1,7 @@
+// @category modules
+
+// @function video
+// Responsive video for maintaining aspect ratio on all resolutions.
 body .video {
 	@include aspect-ratio();
 }
