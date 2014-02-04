@@ -377,7 +377,7 @@ table {
 
 /* line 1, ../scss/base/defaults/_root.scss */
 html {
-  font: 100%/1.2 "Open Sans", Helvetica, Arial, sans-serif; }
+  font: 100%/1.33 "Open Sans", Helvetica, Arial, sans-serif; }
 
 /* line 5, ../scss/base/defaults/_root.scss */
 body {
@@ -406,25 +406,26 @@ fieldset {
   /* line 19, ../scss/base/defaults/_forms.scss */
   fieldset ol {
     list-style-type: none;
-    margin: 0; }
-  /* line 24, ../scss/base/defaults/_forms.scss */
+    margin: 0;
+    padding: 0; }
+  /* line 25, ../scss/base/defaults/_forms.scss */
   fieldset li {
     margin-top: 0.75em; }
-    /* line 31, ../scss/base/defaults/_forms.scss */
+    /* line 32, ../scss/base/defaults/_forms.scss */
     fieldset li:first-child {
       margin-top: 0; }
-  /* line 37, ../scss/base/defaults/_forms.scss */
+  /* line 38, ../scss/base/defaults/_forms.scss */
   fieldset label,
   fieldset label + select {
     display: block; }
-  /* line 45, ../scss/base/defaults/_forms.scss */
+  /* line 46, ../scss/base/defaults/_forms.scss */
   fieldset input[type="text"],
   fieldset input[type="number"],
   fieldset input[type="password"],
   fieldset input[type="email"],
   fieldset input[type="tel"] {
     height: 36px; }
-  /* line 55, ../scss/base/defaults/_forms.scss */
+  /* line 56, ../scss/base/defaults/_forms.scss */
   fieldset input[type="text"],
   fieldset input[type="number"],
   fieldset input[type="password"],
@@ -439,14 +440,14 @@ fieldset {
     max-width: 100%;
     padding: 0.5em;
     width: 100%; }
-  /* line 65, ../scss/base/defaults/_forms.scss */
+  /* line 66, ../scss/base/defaults/_forms.scss */
   fieldset + button {
     margin-top: 0.75em; }
-  /* line 71, ../scss/base/defaults/_forms.scss */
+  /* line 72, ../scss/base/defaults/_forms.scss */
   fieldset .radio-list > li,
   fieldset .checkbox-list > li {
     margin: 0 0 0 0.75em; }
-  /* line 79, ../scss/base/defaults/_forms.scss */
+  /* line 80, ../scss/base/defaults/_forms.scss */
   .ie8 fieldset input[type="radio"] + label,
   .ie8 fieldset input[type="checkbox"] + label {
     display: inline;
@@ -475,26 +476,25 @@ fieldset {
 
 /* line 1, ../scss/base/defaults/_lists.scss */
 ul, ol {
-  list-style-position: inside;
   margin: 0.625em 0 0;
-  padding: 0; }
-  /* line 6, ../scss/base/defaults/_lists.scss */
+  padding: 0 0 0 20px; }
+  /* line 5, ../scss/base/defaults/_lists.scss */
   ul.plain, ol.plain {
     list-style-image: none;
     list-style: none;
     margin-left: 0;
     text-align: left; }
-    /* line 12, ../scss/base/defaults/_lists.scss */
+    /* line 11, ../scss/base/defaults/_lists.scss */
     .no-svg ul.plain, .no-svg ol.plain {
       list-style-image: none;
       list-style: none;
       margin: 0; }
-  /* line 19, ../scss/base/defaults/_lists.scss */
+  /* line 18, ../scss/base/defaults/_lists.scss */
   ul ul, ol ul {
     margin-left: 1.125em;
     margin-top: 0; }
 
-/* line 24, ../scss/base/defaults/_lists.scss */
+/* line 23, ../scss/base/defaults/_lists.scss */
 dd {
   margin: 0; }
 
@@ -3666,7 +3666,7 @@ footer {
   background-color: #cc6633;
   color: white; }
 
-/* line 1, ../scss/modules/_buttons.scss */
+/* line 8, ../scss/modules/_buttons.scss */
 button,
 .btn, .btn-secondary {
   border-radius: 0px;
@@ -3679,62 +3679,62 @@ button,
   padding: 0.33333em 0.66667em;
   text-align: center;
   text-decoration: none; }
-  /* line 12, ../scss/modules/_buttons.scss */
+  /* line 19, ../scss/modules/_buttons.scss */
   button.btn-full-width,
   .btn-full-width.btn, .btn-full-width.btn-secondary {
     display: block;
     margin-right: 0;
     margin-top: 1em;
     text-align: left; }
-    /* line 18, ../scss/modules/_buttons.scss */
+    /* line 25, ../scss/modules/_buttons.scss */
     button.btn-full-width:first-child,
     .btn-full-width.btn:first-child, .btn-full-width.btn-secondary:first-child {
       margin-top: 0; }
-  /* line 23, ../scss/modules/_buttons.scss */
+  /* line 30, ../scss/modules/_buttons.scss */
   button.btn-small,
   .btn-small.btn, .btn-small.btn-secondary {
     font-size: 14px;
     font-size: 0.875rem;
     padding: 0.42857em 0.85714em; }
-  /* line 30, ../scss/modules/_buttons.scss */
+  /* line 37, ../scss/modules/_buttons.scss */
   button + button,
   .btn + button, .btn-secondary + button, button + .btn,
   .btn + .btn, .btn-secondary + .btn {
     margin-top: 0.3125em; }
     @media only screen and (min-width: 48em) {
-      /* line 30, ../scss/modules/_buttons.scss */
+      /* line 37, ../scss/modules/_buttons.scss */
       button + button,
       .btn + button, .btn-secondary + button, button + .btn,
       .btn + .btn, .btn-secondary + .btn {
         margin-top: 0; } }
 
-/* line 40, ../scss/modules/_buttons.scss */
+/* line 47, ../scss/modules/_buttons.scss */
 button,
 .btn {
   background-color: #1177bb;
   border: 1px solid #0d598c; }
-  /* line 47, ../scss/modules/_buttons.scss */
+  /* line 54, ../scss/modules/_buttons.scss */
   button:hover, button:active, button:focus,
   .btn:hover,
   .btn:active,
   .btn:focus {
     background-color: #1595ea; }
 
-/* line 52, ../scss/modules/_buttons.scss */
+/* line 59, ../scss/modules/_buttons.scss */
 .btn-secondary {
   background-color: #ffaa00;
   border: 1px solid #cc8800;
   color: black; }
-  /* line 60, ../scss/modules/_buttons.scss */
+  /* line 67, ../scss/modules/_buttons.scss */
   .btn-secondary:hover, .btn-secondary:active, .btn-secondary:focus {
     background-color: #ffbb33; }
 
-/* line 1, ../scss/modules/_callout.scss */
+/* line 5, ../scss/modules/_callout.scss */
 .callout {
   background: #eeeeee;
   margin-top: 0.625em;
   padding: 20px; }
-  /* line 6, ../scss/modules/_callout.scss */
+  /* line 10, ../scss/modules/_callout.scss */
   .callout:first-child {
     margin-top: 0; }
 
@@ -3861,14 +3861,19 @@ button,
 
 /* line 72, ../scss/modules/_documentation.scss */
 .fork-me {
+  max-width: 100px;
   position: absolute;
   right: 0;
   top: 0; }
-  /* line 77, ../scss/modules/_documentation.scss */
+  /* line 78, ../scss/modules/_documentation.scss */
   .fork-me > img {
     border: 0; }
+  @media only screen and (min-width: 48em) {
+    /* line 72, ../scss/modules/_documentation.scss */
+    .fork-me {
+      max-width: none; } }
 
-/* line 82, ../scss/modules/_documentation.scss */
+/* line 87, ../scss/modules/_documentation.scss */
 .tar-download-link, .zip-download-link {
   background-image: url("../img/css/github-download-sprite.png");
   background-repeat: no-repeat;
@@ -3879,37 +3884,37 @@ button,
   text-indent: -5000px;
   width: 90px; }
 
-/* line 93, ../scss/modules/_documentation.scss */
+/* line 98, ../scss/modules/_documentation.scss */
 .tar-download-link {
   background-position: bottom right;
   margin-left: 10px; }
-  /* line 98, ../scss/modules/_documentation.scss */
+  /* line 103, ../scss/modules/_documentation.scss */
   .tar-download-link:hover {
     background-position: top right; }
 
-/* line 103, ../scss/modules/_documentation.scss */
+/* line 108, ../scss/modules/_documentation.scss */
 .zip-download-link {
   background-position: bottom left; }
-  /* line 107, ../scss/modules/_documentation.scss */
+  /* line 112, ../scss/modules/_documentation.scss */
   .zip-download-link:hover {
     background-position: top left; }
 
-/* line 112, ../scss/modules/_documentation.scss */
+/* line 117, ../scss/modules/_documentation.scss */
 .doc-callout {
   padding: 10px; }
 
-/* line 116, ../scss/modules/_documentation.scss */
+/* line 121, ../scss/modules/_documentation.scss */
 .doc-usage {
   margin-top: 20px; }
 
-/* line 120, ../scss/modules/_documentation.scss */
+/* line 125, ../scss/modules/_documentation.scss */
 .doc-footer {
   background-color: #ffaa00;
   color: white;
   max-width: none; }
 
 /*! fancyBox v2.1.5 fancyapps.com | fancyapps.com/fancybox/#license */
-/* line 12, ../scss/modules/_fancybox.scss */
+/* line 18, ../scss/modules/_fancybox.scss */
 .fancybox-wrap,
 .fancybox-skin,
 .fancybox-outer,
@@ -3926,14 +3931,14 @@ button,
   padding: 0;
   vertical-align: top; }
 
-/* line 20, ../scss/modules/_fancybox.scss */
+/* line 26, ../scss/modules/_fancybox.scss */
 .fancybox-wrap {
   left: 0;
   position: absolute;
   top: 0;
   z-index: 8020; }
 
-/* line 27, ../scss/modules/_fancybox.scss */
+/* line 33, ../scss/modules/_fancybox.scss */
 .fancybox-skin {
   background: #f9f9f9;
   border-radius: 4px;
@@ -3941,27 +3946,27 @@ button,
   position: relative;
   text-shadow: none; }
 
-/* line 35, ../scss/modules/_fancybox.scss */
+/* line 41, ../scss/modules/_fancybox.scss */
 .fancybox-opened {
   z-index: 8030; }
 
-/* line 39, ../scss/modules/_fancybox.scss */
+/* line 45, ../scss/modules/_fancybox.scss */
 .fancybox-opened .fancybox-skin {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); }
 
-/* line 43, ../scss/modules/_fancybox.scss */
+/* line 49, ../scss/modules/_fancybox.scss */
 .fancybox-outer, .fancybox-inner {
   position: relative; }
 
-/* line 47, ../scss/modules/_fancybox.scss */
+/* line 53, ../scss/modules/_fancybox.scss */
 .fancybox-inner {
   overflow: hidden; }
 
-/* line 51, ../scss/modules/_fancybox.scss */
+/* line 57, ../scss/modules/_fancybox.scss */
 .fancybox-type-iframe .fancybox-inner {
   -webkit-overflow-scrolling: touch; }
 
-/* line 55, ../scss/modules/_fancybox.scss */
+/* line 61, ../scss/modules/_fancybox.scss */
 .fancybox-error {
   color: #444;
   font: 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -3969,22 +3974,22 @@ button,
   padding: 15px;
   white-space: nowrap; }
 
-/* line 63, ../scss/modules/_fancybox.scss */
+/* line 69, ../scss/modules/_fancybox.scss */
 .fancybox-image, .fancybox-iframe {
   display: block;
   height: 100%;
   width: 100%; }
 
-/* line 69, ../scss/modules/_fancybox.scss */
+/* line 75, ../scss/modules/_fancybox.scss */
 .fancybox-image {
   max-height: 100%;
   max-width: 100%; }
 
-/* line 74, ../scss/modules/_fancybox.scss */
+/* line 80, ../scss/modules/_fancybox.scss */
 #fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
   background-image: url("../img/css/fancybox-sprite.png"); }
 
-/* line 78, ../scss/modules/_fancybox.scss */
+/* line 84, ../scss/modules/_fancybox.scss */
 #fancybox-loading {
   background-position: 0 -108px;
   cursor: pointer;
@@ -3996,13 +4001,13 @@ button,
   top: 50%;
   z-index: 8060; }
 
-/* line 90, ../scss/modules/_fancybox.scss */
+/* line 96, ../scss/modules/_fancybox.scss */
 #fancybox-loading div {
   background: url("../img/css/fancybox-loading.gif") center center no-repeat;
   height: 44px;
   width: 44px; }
 
-/* line 96, ../scss/modules/_fancybox.scss */
+/* line 102, ../scss/modules/_fancybox.scss */
 .fancybox-close {
   cursor: pointer;
   height: 36px;
@@ -4012,7 +4017,7 @@ button,
   width: 36px;
   z-index: 8040; }
 
-/* line 106, ../scss/modules/_fancybox.scss */
+/* line 112, ../scss/modules/_fancybox.scss */
 .fancybox-nav {
   background: transparent url("../img/css/fancybox-blank.gif");
   /* helps IE */
@@ -4025,15 +4030,15 @@ button,
   width: 40%;
   z-index: 8040; }
 
-/* line 118, ../scss/modules/_fancybox.scss */
+/* line 124, ../scss/modules/_fancybox.scss */
 .fancybox-prev {
   left: 0; }
 
-/* line 122, ../scss/modules/_fancybox.scss */
+/* line 128, ../scss/modules/_fancybox.scss */
 .fancybox-next {
   right: 0; }
 
-/* line 126, ../scss/modules/_fancybox.scss */
+/* line 132, ../scss/modules/_fancybox.scss */
 .fancybox-nav span {
   cursor: pointer;
   height: 34px;
@@ -4044,21 +4049,21 @@ button,
   width: 36px;
   z-index: 8040; }
 
-/* line 137, ../scss/modules/_fancybox.scss */
+/* line 143, ../scss/modules/_fancybox.scss */
 .fancybox-prev span {
   background-position: 0 -36px;
   left: 10px; }
 
-/* line 142, ../scss/modules/_fancybox.scss */
+/* line 148, ../scss/modules/_fancybox.scss */
 .fancybox-next span {
   background-position: 0 -72px;
   right: 10px; }
 
-/* line 147, ../scss/modules/_fancybox.scss */
+/* line 153, ../scss/modules/_fancybox.scss */
 .fancybox-nav:hover span {
   visibility: visible; }
 
-/* line 151, ../scss/modules/_fancybox.scss */
+/* line 157, ../scss/modules/_fancybox.scss */
 .fancybox-tmp {
   left: -99999px;
   max-height: 99999px;
@@ -4069,20 +4074,20 @@ button,
   visibility: hidden; }
 
 /* Overlay helper */
-/* line 163, ../scss/modules/_fancybox.scss */
+/* line 169, ../scss/modules/_fancybox.scss */
 .fancybox-lock {
   overflow: hidden !important;
   width: auto; }
 
-/* line 168, ../scss/modules/_fancybox.scss */
+/* line 174, ../scss/modules/_fancybox.scss */
 .fancybox-lock body {
   overflow: hidden !important; }
 
-/* line 172, ../scss/modules/_fancybox.scss */
+/* line 178, ../scss/modules/_fancybox.scss */
 .fancybox-lock-test {
   overflow-y: hidden !important; }
 
-/* line 176, ../scss/modules/_fancybox.scss */
+/* line 182, ../scss/modules/_fancybox.scss */
 .fancybox-overlay {
   background: url("../img/css/fancybox-overlay.png");
   display: none;
@@ -4092,19 +4097,19 @@ button,
   top: 0;
   z-index: 8010; }
 
-/* line 186, ../scss/modules/_fancybox.scss */
+/* line 192, ../scss/modules/_fancybox.scss */
 .fancybox-overlay-fixed {
   bottom: 0;
   position: fixed;
   right: 0; }
 
-/* line 192, ../scss/modules/_fancybox.scss */
+/* line 198, ../scss/modules/_fancybox.scss */
 .fancybox-lock .fancybox-overlay {
   overflow: auto;
   overflow-y: scroll; }
 
 /* Title helper */
-/* line 199, ../scss/modules/_fancybox.scss */
+/* line 205, ../scss/modules/_fancybox.scss */
 .fancybox-title {
   font: normal 13px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
   position: relative;
@@ -4112,11 +4117,11 @@ button,
   visibility: hidden;
   z-index: 8050; }
 
-/* line 207, ../scss/modules/_fancybox.scss */
+/* line 213, ../scss/modules/_fancybox.scss */
 .fancybox-opened .fancybox-title {
   visibility: visible; }
 
-/* line 211, ../scss/modules/_fancybox.scss */
+/* line 217, ../scss/modules/_fancybox.scss */
 .fancybox-title-float-wrap {
   bottom: 0;
   margin-bottom: -35px;
@@ -4125,7 +4130,7 @@ button,
   text-align: center;
   z-index: 8050; }
 
-/* line 220, ../scss/modules/_fancybox.scss */
+/* line 226, ../scss/modules/_fancybox.scss */
 .fancybox-title-float-wrap .child {
   background: transparent;
   /* Fallback for web browsers that doesn't support RGBa */
@@ -4140,17 +4145,17 @@ button,
   padding: 2px 20px;
   white-space: nowrap; }
 
-/* line 234, ../scss/modules/_fancybox.scss */
+/* line 240, ../scss/modules/_fancybox.scss */
 .fancybox-title-outside-wrap {
   color: #fff;
   margin-top: 10px;
   position: relative; }
 
-/* line 240, ../scss/modules/_fancybox.scss */
+/* line 246, ../scss/modules/_fancybox.scss */
 .fancybox-title-inside-wrap {
   padding-top: 10px; }
 
-/* line 244, ../scss/modules/_fancybox.scss */
+/* line 250, ../scss/modules/_fancybox.scss */
 .fancybox-title-over-wrap {
   background: #000;
   background: rgba(0, 0, 0, 0.8);
@@ -4161,16 +4166,16 @@ button,
   padding: 10px; }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-  /* line 258, ../scss/modules/_fancybox.scss */
+  /* line 264, ../scss/modules/_fancybox.scss */
   #fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
     background-image: url("../img/css/fancybox-sprite@2x.png");
     background-size: 44px 152px; }
 
-  /* line 263, ../scss/modules/_fancybox.scss */
+  /* line 269, ../scss/modules/_fancybox.scss */
   #fancybox-loading div {
     background-image: url("../img/css/fancybox-loading@2x.gif");
     background-size: 24px 24px; } }
-/* line 5, ../scss/modules/_forms.scss */
+/* line 10, ../scss/modules/_forms.scss */
 fieldset:not(#foo) input[type="radio"],
 fieldset:not(#foo) input[type="checkbox"] {
   float: left;
@@ -4179,7 +4184,7 @@ fieldset:not(#foo) input[type="checkbox"] {
   opacity: 0;
   padding: 0;
   width: 1px; }
-  /* line 13, ../scss/modules/_forms.scss */
+  /* line 18, ../scss/modules/_forms.scss */
   fieldset:not(#foo) input[type="radio"] + label,
   fieldset:not(#foo) input[type="checkbox"] + label {
     background-image: url("../img/css/bg-form-elements.png");
@@ -4187,41 +4192,41 @@ fieldset:not(#foo) input[type="checkbox"] {
     clear: none;
     display: block;
     padding: 6px 5px 4px 27px; }
-    /* line 20, ../scss/modules/_forms.scss */
+    /* line 25, ../scss/modules/_forms.scss */
     fieldset:not(#foo) input[type="radio"] + label.inline,
     fieldset:not(#foo) input[type="checkbox"] + label.inline {
       display: inline-block; }
-/* line 30, ../scss/modules/_forms.scss */
+/* line 35, ../scss/modules/_forms.scss */
 fieldset:not(#foo) input[type="radio"] + label {
   background-position: 5px -234px; }
-/* line 34, ../scss/modules/_forms.scss */
+/* line 39, ../scss/modules/_forms.scss */
 fieldset:not(#foo) input[type="radio"]:active + label, fieldset:not(#foo) input[type="radio"]:focus + label {
   background-position: 5px -314px; }
-/* line 37, ../scss/modules/_forms.scss */
+/* line 42, ../scss/modules/_forms.scss */
 fieldset:not(#foo) input[type="radio"]:checked + label {
   background-position: 5px -394px; }
-/* line 45, ../scss/modules/_forms.scss */
+/* line 50, ../scss/modules/_forms.scss */
 fieldset:not(#foo) input[type="checkbox"] + label {
   background-position: 5px 6px; }
-/* line 49, ../scss/modules/_forms.scss */
+/* line 54, ../scss/modules/_forms.scss */
 fieldset:not(#foo) input[type="checkbox"]:active + label, fieldset:not(#foo) input[type="checkbox"]:focus + label {
   background-position: 5px -74px; }
-/* line 52, ../scss/modules/_forms.scss */
+/* line 57, ../scss/modules/_forms.scss */
 fieldset:not(#foo) input[type="checkbox"]:checked + label {
   background-position: 5px -154px; }
 
-/* line 62, ../scss/modules/_forms.scss */
+/* line 67, ../scss/modules/_forms.scss */
 .oldie fieldset input[type='radio'] + span,
 .oldie fieldset input[type='checkbox'] + span {
   margin-left: 0.25em;
   min-height: 20px; }
 
-/* line 72, ../scss/modules/_forms.scss */
+/* line 77, ../scss/modules/_forms.scss */
 fieldset label.inline {
   display: inline-block;
   padding-right: 5px; }
 
-/* line 80, ../scss/modules/_forms.scss */
+/* line 85, ../scss/modules/_forms.scss */
 .decorator-select {
   background-image: -moz-linear-gradient(top, #fbfaf9 0%, #979694 100%);
   /* FF3.6+ */
@@ -4247,7 +4252,7 @@ fieldset label.inline {
   overflow: hidden;
   position: relative;
   width: 100%; }
-  /* line 98, ../scss/modules/_forms.scss */
+  /* line 103, ../scss/modules/_forms.scss */
   .decorator-select:after {
     content: url("../img/css/bg-select-arrow.png");
     height: 34px;
@@ -4257,13 +4262,13 @@ fieldset label.inline {
     top: 3px;
     width: 25px;
     z-index: 100; }
-    /* line 108, ../scss/modules/_forms.scss */
+    /* line 113, ../scss/modules/_forms.scss */
     .ie8 .decorator-select:after {
       content: ''; }
-  /* line 112, ../scss/modules/_forms.scss */
+  /* line 117, ../scss/modules/_forms.scss */
   .decorator-select:first-child {
     margin-left: 0; }
-  /* line 115, ../scss/modules/_forms.scss */
+  /* line 120, ../scss/modules/_forms.scss */
   .decorator-select select {
     -webkit-appearance: none;
     background: transparent;
@@ -4277,16 +4282,16 @@ fieldset label.inline {
     width: 100%;
     z-index: 99; }
 
-/* line 131, ../scss/modules/_forms.scss */
+/* line 136, ../scss/modules/_forms.scss */
 .no-js .custom-file-upload {
   display: none; }
 
-/* line 137, ../scss/modules/_forms.scss */
+/* line 142, ../scss/modules/_forms.scss */
 .js input[type="file"] {
   visibility: hidden;
   width: 0px; }
 
-/* line 1, ../scss/modules/_navigation.scss */
+/* line 5, ../scss/modules/_navigation.scss */
 .nav-handle {
   background-color: black;
   color: white;
@@ -4297,11 +4302,11 @@ fieldset label.inline {
   margin: -20px -20px 0 -20px;
   padding: 0.5em; }
   @media only screen and (min-width: 48em) {
-    /* line 1, ../scss/modules/_navigation.scss */
+    /* line 5, ../scss/modules/_navigation.scss */
     .nav-handle {
       display: none; } }
 
-/* line 15, ../scss/modules/_navigation.scss */
+/* line 19, ../scss/modules/_navigation.scss */
 .brand {
   float: left;
   margin: 0;
@@ -4309,7 +4314,7 @@ fieldset label.inline {
   width: 100%;
   margin-left: 0; }
   @media only screen and (min-width: 48em) {
-    /* line 15, ../scss/modules/_navigation.scss */
+    /* line 19, ../scss/modules/_navigation.scss */
     .brand {
       margin-top: 0;
       width: 37.5%; }
@@ -4317,14 +4322,14 @@ fieldset label.inline {
       .brand:first-child {
         margin-left: 0; } }
   @media only screen and (min-width: 48em) {
-    /* line 15, ../scss/modules/_navigation.scss */
+    /* line 19, ../scss/modules/_navigation.scss */
     .brand {
       margin-left: -100%; }
       /* line 157, ../scss/layout/grid/_semantic-grid.scss */
       .brand:first-child {
         margin-left: 0; } }
 
-/* line 20, ../scss/modules/_navigation.scss */
+/* line 24, ../scss/modules/_navigation.scss */
 #nav {
   float: left;
   margin: 0;
@@ -4332,7 +4337,7 @@ fieldset label.inline {
   width: 100%;
   margin-left: 0; }
   @media only screen and (min-width: 48em) {
-    /* line 20, ../scss/modules/_navigation.scss */
+    /* line 24, ../scss/modules/_navigation.scss */
     #nav {
       margin-top: 0;
       width: 37.5%; }
@@ -4340,14 +4345,14 @@ fieldset label.inline {
       #nav:first-child {
         margin-left: 0; } }
   @media only screen and (min-width: 48em) {
-    /* line 20, ../scss/modules/_navigation.scss */
+    /* line 24, ../scss/modules/_navigation.scss */
     #nav {
       margin-left: 62.5%; }
       /* line 133, ../scss/layout/grid/_semantic-grid.scss */
       #nav:first-child {
         margin-left: 62.5%; } }
 
-/* line 25, ../scss/modules/_navigation.scss */
+/* line 29, ../scss/modules/_navigation.scss */
 .nav-list {
   background-color: black;
   list-style: none;
@@ -4356,49 +4361,49 @@ fieldset label.inline {
   overflow: hidden;
   -webkit-transition: max-height 0.5s 0s ease-in-out;
   transition: max-height 0.5s ease-in-out 0s; }
-  /* line 33, ../scss/modules/_navigation.scss */
+  /* line 37, ../scss/modules/_navigation.scss */
   .nav-list.expanded {
     max-height: 31.25rem; }
-  /* line 37, ../scss/modules/_navigation.scss */
+  /* line 41, ../scss/modules/_navigation.scss */
   .nav-list a {
     color: white;
     display: block;
     padding: 0.75em; }
-    /* line 42, ../scss/modules/_navigation.scss */
+    /* line 46, ../scss/modules/_navigation.scss */
     .nav-list a:hover {
       color: #cccccc; }
   @media only screen and (min-width: 48em) {
-    /* line 25, ../scss/modules/_navigation.scss */
+    /* line 29, ../scss/modules/_navigation.scss */
     .nav-list {
       background-color: transparent;
       max-height: none;
       padding: 1em 20px;
       text-align: right; }
-      /* line 53, ../scss/modules/_navigation.scss */
+      /* line 57, ../scss/modules/_navigation.scss */
       .nav-list li {
         display: inline-block;
         margin-left: 1em; }
-        /* line 57, ../scss/modules/_navigation.scss */
+        /* line 61, ../scss/modules/_navigation.scss */
         .nav-list li:first-child {
           margin-left: 0; }
-      /* line 62, ../scss/modules/_navigation.scss */
+      /* line 66, ../scss/modules/_navigation.scss */
       .nav-list a {
         color: black;
         padding: 0; } }
 
-/* line 19, ../scss/modules/_responsive-tabs.scss */
+/* line 24, ../scss/modules/_responsive-tabs.scss */
 .responsive-tabs-wrapper {
   clear: both;
   zoom: 1; }
-  /* line 24, ../scss/modules/_responsive-tabs.scss */
+  /* line 29, ../scss/modules/_responsive-tabs.scss */
   .responsive-tabs-wrapper:before, .responsive-tabs-wrapper:after {
     content: "";
     display: table; }
-  /* line 28, ../scss/modules/_responsive-tabs.scss */
+  /* line 33, ../scss/modules/_responsive-tabs.scss */
   .responsive-tabs-wrapper:after {
     clear: both; }
 
-/* line 33, ../scss/modules/_responsive-tabs.scss */
+/* line 38, ../scss/modules/_responsive-tabs.scss */
 .responsive-tabs__heading {
   background: #1177bb;
   border: 1px solid black;
@@ -4408,7 +4413,7 @@ fieldset label.inline {
   display: block;
   padding: 0.5em;
   position: relative; }
-  /* line 43, ../scss/modules/_responsive-tabs.scss */
+  /* line 48, ../scss/modules/_responsive-tabs.scss */
   .responsive-tabs__heading:after {
     content: "\e600";
     display: block;
@@ -4428,31 +4433,31 @@ fieldset label.inline {
     top: 3px;
     width: 20px; }
   @media only screen and (min-width: 48em) {
-    /* line 33, ../scss/modules/_responsive-tabs.scss */
+    /* line 38, ../scss/modules/_responsive-tabs.scss */
     .responsive-tabs__heading {
       display: none; } }
 
-/* line 58, ../scss/modules/_responsive-tabs.scss */
+/* line 63, ../scss/modules/_responsive-tabs.scss */
 .responsive-tabs__heading--active {
   background: #eeeeee;
   border-bottom: 1px dashed black;
   border-radius: 0px 0px 0 0;
   color: black;
   margin-bottom: 0; }
-  /* line 65, ../scss/modules/_responsive-tabs.scss */
+  /* line 70, ../scss/modules/_responsive-tabs.scss */
   .responsive-tabs__heading--active:after {
     color: black;
     content: "\e601"; }
 
-/* line 70, ../scss/modules/_responsive-tabs.scss */
+/* line 75, ../scss/modules/_responsive-tabs.scss */
 .responsive-tabs__heading:hover {
   background-color: #1595ea; }
 
-/* line 73, ../scss/modules/_responsive-tabs.scss */
+/* line 78, ../scss/modules/_responsive-tabs.scss */
 .responsive-tabs__heading--active:hover {
   background-color: white; }
 
-/* line 77, ../scss/modules/_responsive-tabs.scss */
+/* line 82, ../scss/modules/_responsive-tabs.scss */
 .responsive-tabs__panel {
   background-color: #eeeeee;
   border: 1px solid black;
@@ -4461,10 +4466,10 @@ fieldset label.inline {
   margin-bottom: 0.75em;
   padding: 1em; }
   @media only screen and (min-width: 48em) {
-    /* line 77, ../scss/modules/_responsive-tabs.scss */
+    /* line 82, ../scss/modules/_responsive-tabs.scss */
     .responsive-tabs__panel {
       margin-bottom: 0; }
-      /* line 88, ../scss/modules/_responsive-tabs.scss */
+      /* line 93, ../scss/modules/_responsive-tabs.scss */
       .responsive-tabs-vertical .responsive-tabs__panel {
         border-top: 1px solid black;
         -moz-box-sizing: border-box;
@@ -4474,26 +4479,27 @@ fieldset label.inline {
         min-height: 300px;
         width: 75%; } }
 
-/* line 98, ../scss/modules/_responsive-tabs.scss */
+/* line 103, ../scss/modules/_responsive-tabs.scss */
 .responsive-tabs__panel--closed-accordion-only {
   display: none; }
   @media only screen and (min-width: 48em) {
-    /* line 98, ../scss/modules/_responsive-tabs.scss */
+    /* line 103, ../scss/modules/_responsive-tabs.scss */
     .responsive-tabs__panel--closed-accordion-only {
       display: block; } }
 
-/* line 106, ../scss/modules/_responsive-tabs.scss */
+/* line 111, ../scss/modules/_responsive-tabs.scss */
 .responsive-tabs__list {
   display: none;
   font-size: 19px;
   font-size: 1.1875rem;
-  margin: 0; }
+  margin: 0;
+  padding: 0; }
   @media only screen and (min-width: 48em) {
-    /* line 112, ../scss/modules/_responsive-tabs.scss */
+    /* line 118, ../scss/modules/_responsive-tabs.scss */
     .responsive-tabs-horizontal .responsive-tabs__list {
       border-bottom: 1px solid black;
       display: block; }
-    /* line 117, ../scss/modules/_responsive-tabs.scss */
+    /* line 123, ../scss/modules/_responsive-tabs.scss */
     .responsive-tabs-vertical .responsive-tabs__list {
       display: inline-block;
       float: left;
@@ -4502,7 +4508,7 @@ fieldset label.inline {
       position: relative;
       width: 25%; } }
 
-/* line 128, ../scss/modules/_responsive-tabs.scss */
+/* line 134, ../scss/modules/_responsive-tabs.scss */
 .responsive-tabs__list__item {
   background: #1177bb;
   border: 1px solid black;
@@ -4512,15 +4518,15 @@ fieldset label.inline {
   color: white;
   cursor: pointer;
   padding: 0.52632em 1.05263em; }
-  /* line 138, ../scss/modules/_responsive-tabs.scss */
+  /* line 144, ../scss/modules/_responsive-tabs.scss */
   .responsive-tabs__list__item:hover {
     background: #1595ea; }
   @media only screen and (min-width: 48em) {
-    /* line 143, ../scss/modules/_responsive-tabs.scss */
+    /* line 149, ../scss/modules/_responsive-tabs.scss */
     .responsive-tabs-horizontal .responsive-tabs__list__item {
       display: inline-block;
       margin-right: 2px; }
-    /* line 148, ../scss/modules/_responsive-tabs.scss */
+    /* line 154, ../scss/modules/_responsive-tabs.scss */
     .responsive-tabs-vertical .responsive-tabs__list__item {
       border-bottom: 1px solid black;
       border-bottom-left-radius: 0px;
@@ -4528,44 +4534,44 @@ fieldset label.inline {
       display: block;
       margin-bottom: 2px; } }
 
-/* line 158, ../scss/modules/_responsive-tabs.scss */
+/* line 164, ../scss/modules/_responsive-tabs.scss */
 .responsive-tabs__list__item--active,
 .responsive-tabs__list__item--active:hover {
   background: #eeeeee;
   border-color: black;
   color: black; }
   @media only screen and (min-width: 48em) {
-    /* line 164, ../scss/modules/_responsive-tabs.scss */
+    /* line 170, ../scss/modules/_responsive-tabs.scss */
     .responsive-tabs-horizontal .responsive-tabs__list__item--active, .responsive-tabs-horizontal
     .responsive-tabs__list__item--active:hover {
       border-bottom: none;
       padding-top: 0.57895em;
       position: relative;
       top: 1px; }
-    /* line 171, ../scss/modules/_responsive-tabs.scss */
+    /* line 177, ../scss/modules/_responsive-tabs.scss */
     .responsive-tabs-vertical .responsive-tabs__list__item--active, .responsive-tabs-vertical
     .responsive-tabs__list__item--active:hover {
       border-right: none; } }
 
-/* line 180, ../scss/modules/_responsive-tabs.scss */
+/* line 186, ../scss/modules/_responsive-tabs.scss */
 .responsive-tabs__heading:focus,
 .responsive-tabs__list__item:focus,
 .responsive-tabs__heading--active:focus,
 .responsive-tabs__list__item--active:focus {
   outline: none !important; }
 
-/* line 11, ../scss/modules/_tooltips.scss */
+/* line 16, ../scss/modules/_tooltips.scss */
 .tooltip {
   cursor: help; }
-  /* line 14, ../scss/modules/_tooltips.scss */
+  /* line 19, ../scss/modules/_tooltips.scss */
   .tooltip.high-res-only {
     cursor: auto; }
     @media only screen and (min-width: 48em) {
-      /* line 14, ../scss/modules/_tooltips.scss */
+      /* line 19, ../scss/modules/_tooltips.scss */
       .tooltip.high-res-only {
         cursor: help; } }
 
-/* line 23, ../scss/modules/_tooltips.scss */
+/* line 28, ../scss/modules/_tooltips.scss */
 .tipsy {
   font-size: 14px;
   font-size: 0.875rem;
@@ -4573,7 +4579,7 @@ fieldset label.inline {
   position: absolute;
   z-index: 100000; }
 
-/* line 29, ../scss/modules/_tooltips.scss */
+/* line 34, ../scss/modules/_tooltips.scss */
 .tipsy-inner {
   background-color: #1177bb;
   border-radius: 3px;
@@ -4582,11 +4588,11 @@ fieldset label.inline {
   padding: 10px;
   text-align: center; }
 
-/* line 38, ../scss/modules/_tooltips.scss */
+/* line 43, ../scss/modules/_tooltips.scss */
 .tipsy-inner {
   box-shadow: 0 0 10px black; }
 
-/* line 42, ../scss/modules/_tooltips.scss */
+/* line 47, ../scss/modules/_tooltips.scss */
 .tipsy-arrow {
   border: 5px dashed #1177bb;
   height: 0;
@@ -4595,23 +4601,23 @@ fieldset label.inline {
   width: 0; }
 
 /* Rules to color arrows */
-/* line 51, ../scss/modules/_tooltips.scss */
+/* line 56, ../scss/modules/_tooltips.scss */
 .tipsy-arrow-n {
   border-bottom-color: #1177bb; }
 
-/* line 54, ../scss/modules/_tooltips.scss */
+/* line 59, ../scss/modules/_tooltips.scss */
 .tipsy-arrow-s {
   border-top-color: #1177bb; }
 
-/* line 57, ../scss/modules/_tooltips.scss */
+/* line 62, ../scss/modules/_tooltips.scss */
 .tipsy-arrow-e {
   border-left-color: #1177bb; }
 
-/* line 60, ../scss/modules/_tooltips.scss */
+/* line 65, ../scss/modules/_tooltips.scss */
 .tipsy-arrow-w {
   border-right-color: #1177bb; }
 
-/* line 64, ../scss/modules/_tooltips.scss */
+/* line 69, ../scss/modules/_tooltips.scss */
 .tipsy-n .tipsy-arrow {
   border-bottom-style: solid;
   border-left-color: transparent;
@@ -4621,7 +4627,7 @@ fieldset label.inline {
   margin-left: -5px;
   top: 5px; }
 
-/* line 73, ../scss/modules/_tooltips.scss */
+/* line 78, ../scss/modules/_tooltips.scss */
 .tipsy-nw .tipsy-arrow {
   border-bottom-style: solid;
   border-left-color: transparent;
@@ -4630,7 +4636,7 @@ fieldset label.inline {
   left: 10px;
   top: 5px; }
 
-/* line 81, ../scss/modules/_tooltips.scss */
+/* line 86, ../scss/modules/_tooltips.scss */
 .tipsy-ne .tipsy-arrow {
   border-bottom-style: solid;
   border-left-color: transparent;
@@ -4639,7 +4645,7 @@ fieldset label.inline {
   right: 10px;
   top: 5px; }
 
-/* line 90, ../scss/modules/_tooltips.scss */
+/* line 95, ../scss/modules/_tooltips.scss */
 .tipsy-s .tipsy-arrow {
   border-bottom: none;
   border-left-color: transparent;
@@ -4649,7 +4655,7 @@ fieldset label.inline {
   left: 50%;
   margin-left: -5px; }
 
-/* line 99, ../scss/modules/_tooltips.scss */
+/* line 104, ../scss/modules/_tooltips.scss */
 .tipsy-sw .tipsy-arrow {
   border-bottom: none;
   border-left-color: transparent;
@@ -4658,7 +4664,7 @@ fieldset label.inline {
   bottom: 5px;
   left: 10px; }
 
-/* line 107, ../scss/modules/_tooltips.scss */
+/* line 112, ../scss/modules/_tooltips.scss */
 .tipsy-se .tipsy-arrow {
   border-bottom: none;
   border-left-color: transparent;
@@ -4667,7 +4673,7 @@ fieldset label.inline {
   bottom: 5px;
   right: 10px; }
 
-/* line 115, ../scss/modules/_tooltips.scss */
+/* line 120, ../scss/modules/_tooltips.scss */
 .tipsy-e .tipsy-arrow {
   border-bottom-color: transparent;
   border-left-style: solid;
@@ -4677,7 +4683,7 @@ fieldset label.inline {
   right: 5px;
   top: 50%; }
 
-/* line 124, ../scss/modules/_tooltips.scss */
+/* line 129, ../scss/modules/_tooltips.scss */
 .tipsy-w .tipsy-arrow {
   border-bottom-color: transparent;
   border-left: none;
@@ -4687,46 +4693,46 @@ fieldset label.inline {
   margin-top: -5px;
   top: 50%; }
 
-/* line 1, ../scss/modules/_utility.scss */
+/* line 5, ../scss/modules/_utility.scss */
 .divider, .divider-secondary {
   border: none;
   margin-top: 20px;
   padding-top: 20px; }
 
-/* line 7, ../scss/modules/_utility.scss */
+/* line 11, ../scss/modules/_utility.scss */
 .divider {
   border-top: 1px solid black; }
-  /* line 11, ../scss/modules/_utility.scss */
+  /* line 15, ../scss/modules/_utility.scss */
   .divider.row {
     margin-top: 0; }
 
-/* line 16, ../scss/modules/_utility.scss */
+/* line 20, ../scss/modules/_utility.scss */
 .divider-secondary {
   border-top: 1px dashed #cccccc; }
 
-/* line 1, ../scss/modules/_utility-responsive.scss */
+/* line 5, ../scss/modules/_utility-responsive.scss */
 .rotate-device {
   display: none; }
   @media only screen and (max-width: 30em) and (orientation: portrait) {
-    /* line 1, ../scss/modules/_utility-responsive.scss */
+    /* line 5, ../scss/modules/_utility-responsive.scss */
     .rotate-device {
       display: block; } }
 
-/* line 1, ../scss/modules/_valign.scss */
+/* line 5, ../scss/modules/_valign.scss */
 .valign {
   display: table;
   width: 100%; }
-  /* line 4, ../scss/modules/_valign.scss */
+  /* line 9, ../scss/modules/_valign.scss */
   .valign > div {
     display: table-cell;
     vertical-align: middle; }
-  /* line 8, ../scss/modules/_valign.scss */
+  /* line 13, ../scss/modules/_valign.scss */
   .valign ​
   > article {
     display: table-cell;
     vertical-align: middle; }
 
-/* line 1, ../scss/modules/_video.scss */
+/* line 5, ../scss/modules/_video.scss */
 body .video {
   height: 0;
   padding-bottom: 56.25%;
