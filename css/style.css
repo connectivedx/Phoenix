@@ -3372,45 +3372,8 @@ h4 {
 .pull_left {
   float: left; }
 
-/* Tile Grid */
-/* line 273, ../scss/layout/grid/_grid.scss */
-.tiles {
-  display: block;
-  overflow: hidden; }
-  /* line 276, ../scss/layout/grid/_grid.scss */
-  .tiles > li {
-    display: block;
-    height: auto;
-    float: left;
-    padding-bottom: 0; }
-  /* line 282, ../scss/layout/grid/_grid.scss */
-  .tiles.two_up {
-    margin-left: -4%; }
-    /* line 284, ../scss/layout/grid/_grid.scss */
-    .tiles.two_up > li {
-      margin-left: 4%;
-      width: 46%; }
-  /* line 289, ../scss/layout/grid/_grid.scss */
-  .tiles.three_up, .tiles.four_up {
-    margin-left: -2%; }
-  /* line 292, ../scss/layout/grid/_grid.scss */
-  .tiles.three_up > li {
-    margin-left: 2%;
-    width: 31.3%; }
-  /* line 296, ../scss/layout/grid/_grid.scss */
-  .tiles.four_up > li {
-    margin-left: 2%;
-    width: 23%; }
-  /* line 300, ../scss/layout/grid/_grid.scss */
-  .tiles.five_up {
-    margin-left: -1.5%; }
-    /* line 302, ../scss/layout/grid/_grid.scss */
-    .tiles.five_up > li {
-      margin-left: 1.5%;
-      width: 18.5%; }
-
 /* Nicolas Gallagher's micro clearfix */
-/* line 311, ../scss/layout/grid/_grid.scss */
+/* line 273, ../scss/layout/grid/_grid.scss */
 .clearfix {
   *zoom: 1; }
   /* line 10, ../scss/mixins/_clearfix.scss */
@@ -3421,7 +3384,7 @@ h4 {
   .clearfix:after {
     clear: both; }
 
-/* line 315, ../scss/layout/grid/_grid.scss */
+/* line 277, ../scss/layout/grid/_grid.scss */
 .row {
   *zoom: 1; }
   /* line 10, ../scss/mixins/_clearfix.scss */
@@ -3431,20 +3394,6 @@ h4 {
   /* line 14, ../scss/mixins/_clearfix.scss */
   .row:after {
     clear: both; }
-
-/* line 322, ../scss/layout/grid/_grid.scss */
-.valign {
-  display: table;
-  width: 100%; }
-  /* line 325, ../scss/layout/grid/_grid.scss */
-  .valign > div {
-    display: table-cell;
-    vertical-align: middle; }
-  /* line 329, ../scss/layout/grid/_grid.scss */
-  .valign ​
-  > article {
-    display: table-cell;
-    vertical-align: middle; }
 
 /* line 170, ../scss/layout/grid/_semantic-grid.scss */
 header, .wrapper,
@@ -3600,7 +3549,35 @@ header {
       .two-up:first-child {
         margin-left: 0; } }
 
-/* line 25, ../scss/layout/_content.scss */
+/* line 23, ../scss/layout/_content.scss */
+.aspect-ratio-4-3 {
+  height: 0;
+  padding-bottom: 75%;
+  position: relative;
+  width: 100%; }
+  /* line 20, ../scss/mixins/aspect-ratio.scss */
+  .aspect-ratio-4-3 > embed, .aspect-ratio-4-3 > iframe, .aspect-ratio-4-3 > object, .aspect-ratio-4-3 > video, .aspect-ratio-4-3 > img {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%; }
+
+/* line 26, ../scss/layout/_content.scss */
+.aspect-ratio-311-204 {
+  height: 0;
+  padding-bottom: 65.59486%;
+  position: relative;
+  width: 100%; }
+  /* line 20, ../scss/mixins/aspect-ratio.scss */
+  .aspect-ratio-311-204 > embed, .aspect-ratio-311-204 > iframe, .aspect-ratio-311-204 > object, .aspect-ratio-311-204 > video, .aspect-ratio-311-204 > img {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%; }
+
+/* line 31, ../scss/layout/_content.scss */
 .nested,
 aside {
   -moz-box-sizing: border-box;
@@ -3616,7 +3593,7 @@ aside {
   aside:first-child {
     margin-top: 0; }
   @media only screen and (min-width: 48em) {
-    /* line 25, ../scss/layout/_content.scss */
+    /* line 31, ../scss/layout/_content.scss */
     .nested,
     aside {
       max-width: none;
@@ -3624,7 +3601,7 @@ aside {
       padding: 0;
       width: auto; } }
 
-/* line 29, ../scss/layout/_content.scss */
+/* line 35, ../scss/layout/_content.scss */
 .multi-grid > li {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -3633,15 +3610,15 @@ aside {
   padding: 20px;
   width: 100%; }
   @media only screen and (mobile) {
-    /* line 29, ../scss/layout/_content.scss */
+    /* line 35, ../scss/layout/_content.scss */
     .multi-grid > li {
       width: 100%; } }
   @media only screen and (min-width: 48em) {
-    /* line 29, ../scss/layout/_content.scss */
+    /* line 35, ../scss/layout/_content.scss */
     .multi-grid > li {
       width: 50%; } }
   @media only screen and (min-width: 60em) {
-    /* line 29, ../scss/layout/_content.scss */
+    /* line 35, ../scss/layout/_content.scss */
     .multi-grid > li {
       width: 33.33333%; } }
 
@@ -4752,14 +4729,28 @@ fieldset label.inline {
     .phone-landscape {
       display: block; } }
 
+/* line 1, ../scss/modules/_valign.scss */
+.valign {
+  display: table;
+  width: 100%; }
+  /* line 4, ../scss/modules/_valign.scss */
+  .valign > div {
+    display: table-cell;
+    vertical-align: middle; }
+  /* line 8, ../scss/modules/_valign.scss */
+  .valign ​
+  > article {
+    display: table-cell;
+    vertical-align: middle; }
+
 /* line 1, ../scss/modules/_video.scss */
 body .video {
   height: 0;
   padding-bottom: 56.25%;
   position: relative;
   width: 100%; }
-  /* line 10, ../scss/modules/_video.scss */
-  body .video > embed, body .video > iframe, body .video > object, body .video > video {
+  /* line 20, ../scss/mixins/aspect-ratio.scss */
+  body .video > embed, body .video > iframe, body .video > object, body .video > video, body .video > img {
     height: 100%;
     left: 0;
     position: absolute;
