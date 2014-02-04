@@ -41,7 +41,7 @@ table {
 		}
 	}
 
-	@include respond(tabletPortrait) {
+	@include respond(breakpointMedium) {
 		@include font-size(14);
 	}
 }

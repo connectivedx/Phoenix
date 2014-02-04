@@ -7,7 +7,7 @@
 	margin: (-$gutterInPx) (-$gutterInPx) 0 (-$gutterInPx);	// need parentheses around -$gutterInPx to compile correctly
 	padding: em(12, 24);
 
-	@include respond(tabletPortrait) {
+	@include respond(breakpointMedium) {
 		display: none;
 	}
 }
@@ -44,7 +44,7 @@
 		}
 	}
 
-	@include respond(tabletPortrait) {
+	@include respond(breakpointMedium) {
 		background-color: transparent;
 		max-height: none;
 		padding: em(16) $gutterInPx;

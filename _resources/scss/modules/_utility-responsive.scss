@@ -1,21 +1,7 @@
-.mobile {
-	@include respond(tabletPortrait) {
-		display: none;
-	}
-}
-
 .rotate-device {
 	display: none;
 	
 	@include respond(rotateDevice) {
-		display: block;
-	}
-}
-
-.phone-landscape {
-	display: none;
-	
-	@include respond(phoneLandscape) {
 		display: block;
 	}
 }

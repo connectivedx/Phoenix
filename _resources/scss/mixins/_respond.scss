@@ -4,13 +4,13 @@
 // Adds a media query at the pre-defined breakpoint for the given content.
 // @param $media {String} The name of the breakpoint for which the styles are to be applied.
 // @usage
-// =respond(tabletPortrait)
+// =respond(breakpointMedium)
 @mixin respond($media) {
-	@if $media == phoneLandscape {
-		@media only screen and (min-width: em($phoneLandscapeWidth)) { @content; }
+	@if $media == breakpointSmall {
+		@media only screen and (min-width: em($breakpointSmall)) { @content; }
 	}
-	@else if $media == tabletPortrait {
-		@media only screen and (min-width: em($tabletPortraitWidth)) { @content; }
+	@else if $media == breakpointMedium {
+		@media only screen and (min-width: em($breakpointMedium)) { @content; }
 	}
 	@else if $media == desktop {
 		@media only screen and (min-width: em($documentWidth)) { @content; }
@@ -19,7 +19,7 @@
 		@media print { @content; }
 	}
 	@else if $media == rotateDevice {
-		@media only screen and (max-width: em($phoneLandscapeWidth)) and (orientation: portrait) { @content; }
+		@media only screen and (max-width: em($breakpointSmall)) and (orientation: portrait) { @content; }
 	}
 	@else {
 		@media only screen and ($media) { @content; }

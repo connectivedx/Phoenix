@@ -65,12 +65,11 @@
 	}
 
 	// Tablets and up
-	@include respond(tabletPortrait) {
+	@include respond(breakpointMedium) {
 		.content,
 		.row {
 			margin: 0 auto;
 			max-width: $rowMaxWidth;
-			min-width: $minDeviceWidth;
 			width: 100%;
 
 			.row {
@@ -176,7 +175,7 @@
 						@include box-sizing();
 						width: 100%;
 
-						@include respond(tabletPortrait) {
+						@include respond(breakpointMedium) {
 							width: columns($i, true);
 						}
 					}
@@ -184,7 +183,7 @@
 						@include box-sizing();
 						width: 100%;
 
-						@include respond(tabletPortrait) {
+						@include respond(breakpointMedium) {
 							// Temp fix for Sass bug
 							// @extend .one.column
 							width: columns($i, true);
@@ -196,7 +195,7 @@
 						@include box-sizing();
 						width: 100%;
 
-						@include respond(tabletPortrait) {
+						@include respond(breakpointMedium) {
 							width: columns($i, true);
 						}
 					}
@@ -213,7 +212,7 @@
 			@for $i from 1 through $hybridCols - 1 {
 				@if ($enablePush) {
 					.push_#{number-as-word($i)} {
-						@include respond(tabletPortrait) {
+						@include respond(breakpointMedium) {
 							margin-left: push_x($i, true);
 						}
 					}
@@ -223,7 +222,7 @@
 						// pull classes need to know the width of the container being pulled
 						@for $j from 1 through $hybridCols - 1 {
 							@if $j == 1 {
-								@include respond(tabletPortrait) {
+								@include respond(breakpointMedium) {
 									&.one.column {
 										margin-left: pull_x($i, $j, true);
 										&:first-child {
@@ -233,7 +232,7 @@
 								}
 							}
 							@else {
-								@include respond(tabletPortrait) {
+								@include respond(breakpointMedium) {
 									&.#{number-as-word($j)}.columns {
 										margin-left: pull_x($i, $j, true);
 										&:first-child {

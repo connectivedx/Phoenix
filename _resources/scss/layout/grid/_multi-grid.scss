@@ -1,4 +1,4 @@
-@mixin multi-grid($mobileColumns, $tabletColumns, $desktopColumns, $padding: $gutterInPx, $smallBreak: mobile, $mediumBreak: tabletPortrait, $largeBreak: desktop) {
+@mixin multi-grid($mobileColumns, $tabletColumns, $desktopColumns, $padding: $gutterInPx, $smallBreak: mobile, $mediumBreak: breakpointMedium, $largeBreak: desktop) {
 	// These styles apply to all shift-columns
 	@include box-sizing();
 	display: inline-block;

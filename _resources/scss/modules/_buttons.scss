@@ -30,7 +30,7 @@
 	& + .btn {
 		margin-top: em(5);
 
-		@include respond(tabletPortrait) {
+		@include respond(breakpointMedium) {
 			margin-top: 0;
 		}
 	}

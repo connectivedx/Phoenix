@@ -14,7 +14,7 @@ $tooltipShadowBlurRadius: 10px;
 	&.high-res-only {
 		cursor: auto;
 
-		@include respond(tabletPortrait) {
+		@include respond(breakpointMedium) {
 			cursor: help;
 		}
 	}

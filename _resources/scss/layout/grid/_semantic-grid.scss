@@ -18,7 +18,7 @@
 		padding: $padding;
 	}
 
-	@include respond(tabletPortrait) {
+	@include respond(breakpointMedium) {
 		@if $nested == nested {
 			max-width: none;
 			min-width: 0px;
@@ -28,7 +28,6 @@
 		@else {
 			margin: 0 auto;
 			max-width: $rowMaxWidth;
-			min-width: $minDeviceWidth;
 			width: 100%;
 		}
 	}
@@ -45,7 +44,7 @@
 			margin-top: 0;
 		}
 
-		@include respond(tabletPortrait) {
+		@include respond(breakpointMedium) {
 			float: none;
 			margin-left: auto !important;
 			margin-right: auto !important;
@@ -68,7 +67,7 @@
 			}
 		}
 
-		@include respond(tabletPortrait) {
+		@include respond(breakpointMedium) {
 			margin-top: 0;
 			width: columns($columns);
 
@@ -91,7 +90,7 @@
 			margin-top: 0;
 		}
 
-		@include respond(tabletPortrait) {
+		@include respond(breakpointMedium) {
 			float: none;
 			margin-left: auto !important;
 			margin-right: auto !important;
@@ -110,7 +109,7 @@
 			margin-top: 0;
 		}
 
-		@include respond(tabletPortrait) {
+		@include respond(breakpointMedium) {
 			float: none;
 			margin-top: 0;
 			width: columns($columns, true);
@@ -122,14 +121,14 @@
 	@if $hybridGrid == hybrid {
 		margin-left: 0;
 
-		@include respond(tabletPortrait) {
+		@include respond(breakpointMedium) {
 			margin-left: push_x($columns, true);
 		}
 	}
 	@else {
 		margin-left: 0;
 		
-		@include respond(tabletPortrait) {
+		@include respond(breakpointMedium) {
 			margin-left: push_x($columns);
 			&:first-child {
 				margin-left: push_x($columns, true);
@@ -143,7 +142,7 @@
 		@if ($hybridGrid == hybrid) {
 			margin-left: 0;
 
-			@include respond(tabletPortrait) {
+			@include respond(breakpointMedium) {
 				margin-left: pull_x($columns, $width, true);
 				&:first-child {
 					margin-left: 0;
@@ -153,7 +152,7 @@
 		@else {
 			margin-left: 0;
 
-			@include respond(tabletPortrait) {
+			@include respond(breakpointMedium) {
 				margin-left: pull_x($columns, $width);
 				&:first-child {
 					margin-left: 0;
