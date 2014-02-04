@@ -1,0 +1,12 @@
+.valign {
+	display: table;
+	width: 100%;
+	> div {
+		display: table-cell;
+		vertical-align: middle;
+	}​
+	> article {
+		display: table-cell;
+		vertical-align: middle;
+	}
+}

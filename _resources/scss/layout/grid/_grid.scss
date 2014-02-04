@@ -268,44 +268,6 @@
 
 	.pull_left { float: left; }
 
-	/* Tile Grid */
-
-	.tiles {
-		display: block;
-		overflow: hidden;
-		> li {
-			display: block;
-			height: auto;
-			float: left;
-			padding-bottom:0;
-		}
-		&.two_up {
-			margin-left: -4%;
-			> li {
-				margin-left: 4%;
-				width: 46%;
-			}
-		}
-		&.three_up, &.four_up {
-			margin-left: -2%;
-		}
-		&.three_up > li {
-			margin-left: 2%;
-			width: 31.3%;
-		}
-		&.four_up > li {
-			margin-left: 2%;
-			width: 23%;
-		}
-		&.five_up {
-			margin-left: -1.5%;
-			> li {
-				margin-left: 1.5%;
-				width: 18.5%;
-			}
-		}
-	}
-
 	/* Nicolas Gallagher's micro clearfix */
 
 	.clearfix {
@@ -314,21 +276,5 @@
 
 	.row {
 		@include clearfix();
-	}
-
-
-	// vertically align stuff
-
-	.valign {
-		display: table;
-		width: 100%;
-		> div {
-			display: table-cell;
-			vertical-align: middle;
-		}​
-		> article {
-			display: table-cell;
-			vertical-align: middle;
-		}
 	}
 }
