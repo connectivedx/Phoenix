@@ -6,25 +6,12 @@
 // @usage
 // =respond(breakpointMedium)
 @mixin respond($media) {
-	@if $media == breakpointSmall {
-		@media only screen and (min-width: em($breakpointSmall)) { @content; }
+	@each $breakpoint in $breakpoints {
+		@if $media == nth($breakpoint, 1) {
+			@media only screen and (min-width: em(nth($breakpoint, 2))) { @content; }
+		}
 	}
-	@else if $media == breakpointMedium {
-		@media only screen and (min-width: em($breakpointMedium)) { @content; }
-	}
-	@else if $media == breakpointLarge {
-		@media only screen and (min-width: em($breakpointLarge)) { @content; }
-	}
-	@else if $media == desktop {
-		@media only screen and (min-width: em($documentWidth)) { @content; }
-	}
-	@else if $media == print {
-		@media print { @content; }
-	}
-	@else if $media == rotateDevice {
-		@media only screen and (max-width: em($breakpointSmall)) and (orientation: portrait) { @content; }
-	}
-	@else {
-		@media only screen and ($media) { @content; }
+	@if $media == rotateDevice {
+		@media only screen and (max-width: em(nth(nth($breakpoints, 2), 2))) and (orientation: portrait) { @content; }
 	}
 }

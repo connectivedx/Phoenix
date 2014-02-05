@@ -1,14 +1,14 @@
 // @category variables
 
 // @function breakpoints
-// @param $breakpointExtraSmall {Number} The breakpoint for the smallest resolutions.  [px]
-// @param $breakpointSmall {Number} The breakpoint for small resolutions.  [px]
-// @param $breakpointMedium {Number} The breakpoint for medium resolutions.  [px]
+// @param $breapoints {List} The breakpoints for all resolutions represented as pairs with the breakpoint name and its associated pixel width.  [String px]
 // @param $documentWidth {Number} The maximum width of documents.  This defaults to the value of $rowMaxWidth.  [px]
 // @param $maxDeviceWidth {Number} The maximum width device width supported.  [px]
-$breakpointExtraSmall: 320px;
-$breakpointSmall: 480px;
-$breakpointMedium: 768px;
-$breakpointLarge: 960px;
+$breakpoints: (
+	breakpointExtraSmall 320px,
+	breakpointSmall 480px,
+	breakpointMedium 768px,
+	breakpointLarge 960px
+);
 $documentWidth: $rowMaxWidth;
 $maxDeviceWidth: 2880px;
