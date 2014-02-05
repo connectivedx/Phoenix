@@ -6,6 +6,8 @@
 [role="banner"] {
 	@include row(false, 0);
 }
+
+// standard grid
 .layout-primary {
 	@include column(9);
 	@include push(4);
@@ -15,24 +17,61 @@
 	@include column(4);
 	@include pull(9, 4);
 	background-color: $colorSecondary;
+
+	h3 {
+		color: black;
+	}
 }
 .layout-tertiary {
 	@include column(3);
 	background-color: $colorTertiary;
 	color: white;
+
+	h3 {
+		color: white;
+	}
 }
+
+// hybrid grid
+.layout-primary-hybrid {
+	@include column(16, $gutterInPx, hybrid);
+	@include push(4, hybrid);
+	background-color: lighten($colorPrimary, 35%);
+}
+.layout-secondary-hybrid {
+	@include column(4, $gutterInPx, hybrid);
+	@include pull(16, 4, hybrid);
+	background-color: $colorSecondary;
+
+	h3 {
+		color: black;
+	}
+}
+.layout-tertiary-hybrid {
+	@include column(4, $gutterInPx, hybrid);
+	background-color: $colorTertiary;
+	color: white;
+
+	h3 {
+		color: white;
+	}
+}
+
+// supporting classes
 .two-up {
 	@include column(8, 0, nested);
 }
 .aspect-ratio-4-3 {
 	@include aspect-ratio(4, 3);
 }
-
 .nested,
 aside {
 	@include row(nested);
 }
-
 .multi-grid {
-	@include multi-grid("> li", 1, 2, 3, true);
+	background-color: lighten($colorPrimary, 35%);
+
+	@include multi-grid("> li", 1, 2, 3, flush) {
+		text-align: center;
+	}
 }

@@ -1,5 +1,8 @@
+// @category layout
+
+// @function grid
+// The natural language grid system (using class names like "columns" and "row").  This is enabled or disabled with the $enableGrid variable in /variables/_options.scss.
 @mixin grid {
-	// Base (mobile) styles
 	.container {
 		margin-left: 0;
 		margin-right: 0;
@@ -64,7 +67,6 @@
 		}
 	}
 
-	// Tablets and up
 	@include respond(breakpointMedium) {
 		.content,
 		.row {
@@ -76,8 +78,6 @@
 				min-width: 0px;
 			}
 		}
-
-		/* To fix the grid into a different size, set max-width to your desired width */
 
 		.column, .columns {
 			@include box-sizing();
@@ -92,10 +92,6 @@
 		.column.omega, .columns.omega {
 			float: $switchFloat;
 		}
-
-		// Generate the Grid
-
-		/* Column Classes */
 
 		// Generate Column Classes
 		.row {
@@ -117,8 +113,6 @@
 				}
 			}
 		}
-
-		/* Push and Pull Classes */
 
 		// Generate Push and Pull Classes
 		.row {
@@ -148,8 +142,6 @@
 			}
 		}
 
-		/* Centered Classes */
-
 		// Generate Centered Classes
 		.row {
 			@if ($enableCentered) {
@@ -161,10 +153,6 @@
 			}
 		}
 	}
-
-
-
-	/* Hybrid Grid Columns */
 
 	// Generate Hybrid Grid Column Classes
 	@if ($enableHybridGrid) {
@@ -203,8 +191,6 @@
 			}
 		}
 	}
-
-	/* Hybrid Push Classes */
 
 	// Generate Hybrid Push Classes
 	@if ($enableHybridGrid) {
@@ -248,8 +234,6 @@
 		}
 	}
 
-	/* Hybrid Centered Classes */
-
 	// Generate Centered Classes
 	@if ($enableHybridGrid) {
 		.#{number-as-word($hybridCols)}.colgrid .row {
@@ -267,13 +251,7 @@
 
 	.pull_left { float: left; }
 
-	/* Nicolas Gallagher's micro clearfix */
+	.clearfix { @include clearfix(); }
 
-	.clearfix {
-		@include clearfix();
-	}
-
-	.row {
-		@include clearfix();
-	}
+	.row { @include clearfix(); }
 }

@@ -9,10 +9,10 @@
 // @param $hybridCols {Number} The number of columns in the hybrid grid system.  [integer]
 // @param $defaultFloat {String} The default direction in which to float content.
 // @param $switchFloat {String} The opposite float of $defaultFloat.
-$gutterInPx: 20px !default;
+$gutterInPx: 16px !default;
 $secondaryGutterInPx: 20px !default;
 $rowMaxWidth: 960px !default;
 $cols: 16 !default;
-$hybridCols: 16 !default;
+$hybridCols: 24 !default;
 $defaultFloat: left;
 $switchFloat: right;

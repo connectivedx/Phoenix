@@ -28,9 +28,9 @@
 	</style>
 	
 	<?php
-		$numbers = array('one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen');
+		$numbers = array('one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty', 'twenty-one', 'twenty-two', 'twenty-three', 'twenty-four');
 		$gridSize = 16;
-		$hybridGridSize = 16;
+		$hybridGridSize = 24;
 	?>
 	<section class="content">
 		<div class="row">
@@ -118,7 +118,7 @@
 			<h2>Standard Classes</h2>
 		</div>
 
-		<div class="row sixteen colgrid">
+		<div class="twenty-four colgrid">
 		<?php
 			for ($i = 0; $i < $hybridGridSize; $i++) {
 				$firstColumnWidth = $numbers[$i];
@@ -156,7 +156,7 @@
 			<h2>Push and Pull Classes</h2>
 		</div>
 
-		<div class="row sixteen colgrid">
+		<div class="twenty-four colgrid">
 		<?php
 			for ($i = 0; $i < $hybridGridSize; $i++) {
 				$firstColumnWidth = $numbers[$i];

@@ -1,6 +1,24 @@
+// Column Configuration placeholder
+%columnconfig {
+	@include box-sizing();
+	float: $defaultFloat;
+	min-height: 1px;
+	position: relative;
+}
+
+// @category layout
+
+// @function row
+// Creates a semantic-grid row.
+// @param $nested {String} Whether or not the row will be nested within other rows.  Default value: false.
+// @param $padding {Number} A padding override to be set on the row.  Default value: $gutterInPx. [px|em]
+// @usage
+// row()
+// row(nested)
+// row(false, 0 50px 0 0)
 @mixin row($nested: false, $padding: $gutterInPx) {
 	@include box-sizing();
-	@extend %clearfix;
+	@include clearfix();
 	margin-left: 0; 
 	margin-right: 0;
 	min-width: 0;
@@ -33,11 +51,24 @@
 	}
 }
 
-@mixin column($columns: $columns, $padding: $gutterInPx, $nested: false, $alignment: false) {
+// @category layout
+
+// @function column
+// Creates a semantic-grid set of columns based on the base grid system settings.
+// @param $columns {Number} The number of columns you wish your element's width to occupy. [integer]
+// @param $padding {Number} A padding override to be set on the row.  Default value: $gutterInPx.  [px|em]
+// @param $hybrid {String} Whether or not the columns will be contained within a hybrid grid.  Default value: false.
+// @param $nested {String} Whether or not the columns will be contained within a nested row.  Default value: false.
+// @param $alignmnet {String} Whether or not the columns will be centered within a row.  Default value: false.
+// @usage
+// column(8)
+// column(8, 10px)
+// column(8, $gutterInPx, hybrid)
+@mixin column($columns, $padding: $gutterInPx, $hybrid: false, $nested: false, $alignment: false) {
 	@if $alignment == center {
 		@extend %columnconfig;
-		float: left;
 		margin: 0;
+		padding: $padding;
 		width: 100%;
 
 		&:first-child {
@@ -49,12 +80,17 @@
 			margin-left: auto !important;
 			margin-right: auto !important;
 			margin-top: 0;
-			width: columns($columns);
+
+			@if $hybrid == hybrid {
+				width: columns($columns, true);
+			}
+			@else {
+				width: columns($columns);
+			}
 		}
 	}
 	@else {
 		@extend %columnconfig;
-		float: left;
 		margin: 0;
 		padding: $padding;
 		width: 100%;
@@ -69,75 +105,57 @@
 
 		@include respond(breakpointMedium) {
 			margin-top: 0;
-			width: columns($columns);
 
-			&:first-child {
-				margin-left: 0;
+			@if $hybrid == hybrid {
+				width: columns($columns, true);
+			}
+			@else {
+				width: columns($columns);
 			}
 		}
 	}
 }
 
-@mixin hybrid($columns: $columns, $padding: $gutterInPx, $nested: false, $alignment: false) {
-	@if $alignment == center   {
-		@extend %columnconfig;
-		float: left;
-		margin-left: 0;
-		margin-top: $gutterInPx;
-		width: 100%;
+// @category layout
 
-		&:first-child {
-			margin-top: 0;
-		}
-
-		@include respond(breakpointMedium) {
-			float: none;
-			margin-left: auto !important;
-			margin-right: auto !important;
-			margin-top: 0;
-			width: columns($columns, true);
-		}
-	}
-	@else {
-		@extend %columnconfig;
-		float: left;
-		margin-top: $gutterInPx;
-		padding: $padding;
-		width: 100%;
-
-		&:first-child {
-			margin-top: 0;
-		}
-
-		@include respond(breakpointMedium) {
-			float: none;
-			margin-top: 0;
-			width: columns($columns, true);
-		}
-	}
-}
-
+// @function push
+// Pushes a semantic-grid set of columns by the number of columns specified.
+// @param $columns {Number} The number of columns to push the set of columns.  [integer]
+// @param $hybridGrid {String} Whether or not the set of columns are part of a hybrid grid.  Default value: false.
+// @usage
+// push(4)
+// push(4, hybrid)
 @mixin push($columns, $hybridGrid: false) {
-	@if $hybridGrid == hybrid {
-		margin-left: 0;
+	@if ($columns > 0) {
+		@if $hybridGrid == hybrid {
+			margin-left: 0;
 
-		@include respond(breakpointMedium) {
-			margin-left: push_x($columns, true);
-		}
-	}
-	@else {
-		margin-left: 0;
-		
-		@include respond(breakpointMedium) {
-			margin-left: push_x($columns);
-			&:first-child {
+			@include respond(breakpointMedium) {
 				margin-left: push_x($columns, true);
 			}
 		}
+		@else {
+			margin-left: 0;
+			
+			@include respond(breakpointMedium) {
+				margin-left: push_x($columns);
+			}
+		}
 	}
 }
 
-@mixin pull($columns: 0, $width: 0, $hybridGrid: false) {
+
+// @category layout
+
+// @function pull
+// Pulls a semantic-grid set of columns by the number of columns specified.
+// @param $columns {Number} The number of columns to pull the set of columns.  [integer]
+// @param $width {Number} The width, as a number of columns, of the set of columns being pulled.  [integer]
+// @param $hybridGrid {String} Whether or not the set of columns are part of a hybrid grid.  Default value: false.
+// @usage
+// pull(4, 12)
+// pull(4, 12, hybrid)
+@mixin pull($columns, $width, $hybridGrid: false) {
 	@if ($columns > 0 and $width > 0) {
 		@if ($hybridGrid == hybrid) {
 			margin-left: 0;
@@ -160,22 +178,4 @@
 			}
 		}
 	}
-}
-
-
-// Placeholders for the Semantic Grid
-
-// Clearfix placeholder
-%clearfix { @include clearfix(); }
-
-// Row placeholders
-%row { @include row(); }
-%nestedrow { @include row(nested); }
-
-// Column Configuration placeholder
-%columnconfig {
-	@include box-sizing();
-	float: $defaultFloat;
-	min-height: 1px;
-	position: relative;
 }

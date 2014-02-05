@@ -12,6 +12,9 @@
 	@else if $media == breakpointMedium {
 		@media only screen and (min-width: em($breakpointMedium)) { @content; }
 	}
+	@else if $media == breakpointLarge {
+		@media only screen and (min-width: em($breakpointLarge)) { @content; }
+	}
 	@else if $media == desktop {
 		@media only screen and (min-width: em($documentWidth)) { @content; }
 	}
