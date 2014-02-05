@@ -1,9 +1,9 @@
-// Calculate grid values
+// Calculate gutter size as a percentage
 $gutter: percentage($gutterInPx / $rowMaxWidth);
 
 // Return single column width
-@function oneCol($hybrid-grid: false) {
-	@if ($hybrid-grid == true){
+@function oneCol($hybridGrid: false) {
+	@if ($hybridGrid == hybrid){
 		@return (100% / $hybridCols);
 	}
 	@else{
@@ -11,15 +11,10 @@ $gutter: percentage($gutterInPx / $rowMaxWidth);
 	}
 }
 
-// Return single column width as a percentage of single column and single gutter
-@function oneColRatio() {
-	@return percentage( (oneCol()) / (oneCol() + $gutter) );
-}
-
 // Calculate Grid Column Widths
-@function columns($num, $hybrid-grid: false){
-	@if ($hybrid-grid == true) {
-		@return (oneCol(true) * $num);
+@function columns($num, $hybridGrid: false){
+	@if ($hybridGrid == hybrid) {
+		@return (oneCol(hybrid) * $num);
 	}
 	@else {
 		@return (oneCol() * $num);
@@ -27,9 +22,9 @@ $gutter: percentage($gutterInPx / $rowMaxWidth);
 }
 
 // Calculate Push Class Margins
-@function push_x($num, $is-hybrid: false) {
-	@if $is-hybrid {
-		@return (oneCol(true) * $num);
+@function push_x($num, $hybridGrid: false) {
+	@if $hybridGrid == hybrid {
+		@return (oneCol(hybrid) * $num);
 	}
 	@else {
 		@return (oneCol() * $num);
@@ -39,9 +34,9 @@ $gutter: percentage($gutterInPx / $rowMaxWidth);
 // Calculate Pull Class Margins
 // $num is number of columns to be pulled
 // $width is number of columns of container that is being pulled
-@function pull_x($num, $width, $is-hybrid: false) {
-	@if $is-hybrid {
-		@return -((oneCol(true) * $num) + (oneCol(true) * $width)); // Pull width + column width
+@function pull_x($num, $width, $hybridGrid: false) {
+	@if $hybridGrid == hybrid {
+		@return -((oneCol(hybrid) * $num) + (oneCol(hybrid) * $width)); // Pull width + column width
 	}
 	@else {
 		@return -((oneCol() * $num) + (oneCol() * $width)); // Pull width + column width
@@ -49,9 +44,9 @@ $gutter: percentage($gutterInPx / $rowMaxWidth);
 }
 
 // Calculate Centered Class Margins
-@function centered($num, $hybrid-grid: false) {
-	@if $hybrid-grid{
-		@return 50% - ((($num * (oneCol(true))) + (($num - 1) * $gutter)) / 2);
+@function centered($num, $hybridGrid: false) {
+	@if $hybridGrid == hybrid {
+		@return 50% - ((($num * (oneCol(hybrid))) + (($num - 1) * $gutter)) / 2);
 	}
 	@else{
 		@return 50% - ((($num * (oneCol())) + (($num - 1) * $gutter)) / 2);

@@ -57,14 +57,14 @@
 // Creates a semantic-grid set of columns based on the base grid system settings.
 // @param $columns {Number} The number of columns you wish your element's width to occupy. [integer]
 // @param $padding {Number} A padding override to be set on the row.  Default value: $gutterInPx.  [px|em]
-// @param $hybrid {String} Whether or not the columns will be contained within a hybrid grid.  Default value: false.
+// @param $hybridGrid {String} Whether or not the columns will be contained within a hybrid grid.  Default value: false.
 // @param $nested {String} Whether or not the columns will be contained within a nested row.  Default value: false.
 // @param $alignmnet {String} Whether or not the columns will be centered within a row.  Default value: false.
 // @usage
 // column(8)
 // column(8, 10px)
 // column(8, $gutterInPx, hybrid)
-@mixin column($columns, $padding: $gutterInPx, $hybrid: false, $nested: false, $alignment: false) {
+@mixin column($columns, $padding: $gutterInPx, $hybridGrid: false, $nested: false, $alignment: false) {
 	@if $alignment == center {
 		@extend %columnconfig;
 		margin: 0;
@@ -80,13 +80,7 @@
 			margin-left: auto !important;
 			margin-right: auto !important;
 			margin-top: 0;
-
-			@if $hybrid == hybrid {
-				width: columns($columns, true);
-			}
-			@else {
-				width: columns($columns);
-			}
+			width: columns($columns, $hybridGrid);
 		}
 	}
 	@else {
@@ -105,13 +99,7 @@
 
 		@include respond(breakpointMedium) {
 			margin-top: 0;
-
-			@if $hybrid == hybrid {
-				width: columns($columns, true);
-			}
-			@else {
-				width: columns($columns);
-			}
+			width: columns($columns, $hybridGrid);
 		}
 	}
 }
@@ -127,19 +115,10 @@
 // push(4, hybrid)
 @mixin push($columns, $hybridGrid: false) {
 	@if ($columns > 0) {
-		@if $hybridGrid == hybrid {
-			margin-left: 0;
+		margin-left: 0;
 
-			@include respond(breakpointMedium) {
-				margin-left: push_x($columns, true);
-			}
-		}
-		@else {
-			margin-left: 0;
-			
-			@include respond(breakpointMedium) {
-				margin-left: push_x($columns);
-			}
+		@include respond(breakpointMedium) {
+			margin-left: push_x($columns, $hybridGrid);
 		}
 	}
 }
@@ -157,24 +136,13 @@
 // pull(4, 12, hybrid)
 @mixin pull($columns, $width, $hybridGrid: false) {
 	@if ($columns > 0 and $width > 0) {
-		@if ($hybridGrid == hybrid) {
-			margin-left: 0;
+		margin-left: 0;
 
-			@include respond(breakpointMedium) {
-				margin-left: pull_x($columns, $width, true);
-				&:first-child {
-					margin-left: 0;
-				}
-			}
-		}
-		@else {
-			margin-left: 0;
-
-			@include respond(breakpointMedium) {
-				margin-left: pull_x($columns, $width);
-				&:first-child {
-					margin-left: 0;
-				}
+		@include respond(breakpointMedium) {
+			margin-left: pull_x($columns, $width, $hybridGrid);
+			
+			&:first-child {
+				margin-left: 0;
 			}
 		}
 	}

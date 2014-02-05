@@ -157,14 +157,14 @@
 	// Generate Hybrid Grid Column Classes
 	@if ($enableHybridGrid) {
 		.#{number-as-word($hybridCols)}.colgrid .row {
-			@for $i from 1 through $hybridCols{
+			@for $i from 1 through $hybridCols {
 				@if $i == 1{
 					.one.column {
 						@include box-sizing();
 						width: 100%;
 
 						@include respond(breakpointMedium) {
-							width: columns($i, true);
+							width: columns($i, hybrid);
 						}
 					}
 					.one.columns {
@@ -174,7 +174,7 @@
 						@include respond(breakpointMedium) {
 							// Temp fix for Sass bug
 							// @extend .one.column
-							width: columns($i, true);
+							width: columns($i, hybrid);
 						}
 					}
 				}
@@ -184,7 +184,7 @@
 						width: 100%;
 
 						@include respond(breakpointMedium) {
-							width: columns($i, true);
+							width: columns($i, hybrid);
 						}
 					}
 				}
@@ -199,7 +199,7 @@
 				@if ($enablePush) {
 					.push_#{number-as-word($i)} {
 						@include respond(breakpointMedium) {
-							margin-left: push_x($i, true);
+							margin-left: push_x($i, hybrid);
 						}
 					}
 				}
@@ -210,7 +210,8 @@
 							@if $j == 1 {
 								@include respond(breakpointMedium) {
 									&.one.column {
-										margin-left: pull_x($i, $j, true);
+										margin-left: pull_x($i, $j, hybrid);
+										
 										&:first-child {
 											margin-left: 0;
 										}
@@ -220,7 +221,8 @@
 							@else {
 								@include respond(breakpointMedium) {
 									&.#{number-as-word($j)}.columns {
-										margin-left: pull_x($i, $j, true);
+										margin-left: pull_x($i, $j, hybrid);
+
 										&:first-child {
 											margin-left: 0;
 										}
@@ -240,7 +242,7 @@
 			@for $i from 1 through $hybridCols - 1 {
 				@if ($enableCentered) {
 					.#{number-as-word($i)}.centered {
-						margin-left: centered($i, true);
+						margin-left: centered($i, hybrid);
 					}
 				}
 			}
