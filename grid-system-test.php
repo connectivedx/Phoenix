@@ -111,6 +111,34 @@
 		?>
 
 		<div class="row">
+			<h2>Centered classes</h2>
+		</div>
+
+		<?php
+			for ($i = 0; $i < $gridSize; $i++) {
+				$columnWidth = $numbers[$i];
+
+				echo '<div class="row">';
+
+				// adjust text
+				if ($i == 0) {
+					$columnText = 'column';
+				}
+				else {
+					$columnText = 'columns';
+				}
+				
+				// display columns
+				if ($i < $gridSize - 1) {
+					echo '<div class="' . $columnWidth . ' ' . $columnText . ' centered">' . $columnWidth . '</div>';
+				}
+
+				// end row
+				echo '</div>';
+			}
+		?>
+
+		<div class="row">
 			<h1>Hybrid Grid System</h1>
 		</div>
 
@@ -182,6 +210,36 @@
 				if ($i < $hybridGridSize - 1) {
 					echo '<div class="' . $firstColumnWidth . ' ' . $firstColumnText . ' push_' . $secondColumnWidth . '">' . $firstColumnWidth . ' push ' . $secondColumnWidth . '</div>';
 					echo '<div class="' . $secondColumnWidth . ' ' . $secondColumnText . ' pull_' . $firstColumnWidth . '">' . $secondColumnWidth . ' pull ' . $firstColumnWidth . '</div>';
+				}
+
+				// end row
+				echo '</div>';
+			}
+		?>
+		</div>
+
+		<div class="row">
+			<h2>Centered classes</h2>
+		</div>
+
+		<div class="twenty-four colgrid">
+		<?php
+			for ($i = 0; $i < $gridSize; $i++) {
+				$columnWidth = $numbers[$i];
+
+				echo '<div class="row">';
+
+				// adjust text
+				if ($i == 0) {
+					$columnText = 'column';
+				}
+				else {
+					$columnText = 'columns';
+				}
+				
+				// display columns
+				if ($i < $gridSize - 1) {
+					echo '<div class="' . $columnWidth . ' ' . $columnText . ' centered">' . $columnWidth . '</div>';
 				}
 
 				// end row

@@ -147,7 +147,9 @@
 			@if ($enableCentered) {
 				@for $i from 1 through $cols - 1 {
 					.#{number-as-word($i)}.centered {
-						margin-left: centered($i);
+						@include respond(breakpointMedium) {
+							margin-left: centered($i);
+						}
 					}
 				}
 			}
@@ -242,7 +244,9 @@
 			@for $i from 1 through $hybridCols - 1 {
 				@if ($enableCentered) {
 					.#{number-as-word($i)}.centered {
-						margin-left: centered($i, hybrid);
+						@include respond(breakpointMedium) {
+							margin-left: centered($i, hybrid);
+						}
 					}
 				}
 			}

@@ -1,6 +1,3 @@
-// Calculate gutter size as a percentage
-$gutter: percentage($gutterInPx / $rowMaxWidth);
-
 // Return single column width
 @function oneCol($hybridGrid: false) {
 	@if ($hybridGrid == hybrid){
@@ -32,8 +29,6 @@ $gutter: percentage($gutterInPx / $rowMaxWidth);
 }
 
 // Calculate Pull Class Margins
-// $num is number of columns to be pulled
-// $width is number of columns of container that is being pulled
 @function pull_x($num, $width, $hybridGrid: false) {
 	@if $hybridGrid == hybrid {
 		@return -((oneCol(hybrid) * $num) + (oneCol(hybrid) * $width)); // Pull width + column width
@@ -46,10 +41,10 @@ $gutter: percentage($gutterInPx / $rowMaxWidth);
 // Calculate Centered Class Margins
 @function centered($num, $hybridGrid: false) {
 	@if $hybridGrid == hybrid {
-		@return 50% - ((($num * (oneCol(hybrid))) + (($num - 1) * $gutter)) / 2);
+		@return 50% - (($num * (oneCol(hybrid))) / 2);
 	}
 	@else{
-		@return 50% - ((($num * (oneCol())) + (($num - 1) * $gutter)) / 2);
+		@return 50% - (($num * (oneCol())) / 2);
 	}
 }
 

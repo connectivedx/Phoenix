@@ -48,6 +48,11 @@
 			<h3>Tertiary</h3>
 			<p>This is a three column container.  It will hold tertiary content in the right rail on desktops and tablets, but will be at the bottom on mobile because it has not been pushed or pulled.</p>
 		</aside>
+
+		<div class="layout-centered">
+			<h3>Centered</h3>
+			<p>This is a centered element.</p>
+		</div>
 	</section>
 
 	<div class="row">
@@ -78,6 +83,11 @@
 			<h3>Tertiary</h3>
 			<p>This is a four column container.  It will hold tertiary content in the right rail on desktops and tablets, but will be at the bottom on mobile because it has not been pushed or pulled.</p>
 		</aside>
+
+		<div class="layout-centered-hybrid">
+			<h3>Centered</h3>
+			<p>This is a centered element.</p>
+		</div>
 	</section>
 
 	<div class="row">

@@ -65,7 +65,7 @@
 // column(8, 10px)
 // column(8, $gutterInPx, hybrid)
 @mixin column($columns, $padding: $gutterInPx, $hybridGrid: false, $nested: false, $alignment: false) {
-	@if $alignment == center {
+	@if $alignment == centered {
 		@extend %columnconfig;
 		margin: 0;
 		padding: $padding;
@@ -76,9 +76,7 @@
 		}
 
 		@include respond(breakpointMedium) {
-			float: none;
-			margin-left: auto !important;
-			margin-right: auto !important;
+			margin-left: centered($columns, $hybridGrid);
 			margin-top: 0;
 			width: columns($columns, $hybridGrid);
 		}
