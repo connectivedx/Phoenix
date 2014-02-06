@@ -19,8 +19,11 @@
 		padding: $gutterInPx;
 		width: 100%;
 
-		.oldie & {
-			max-width: $rowMaxWidth - ($gutterInPx * 2);
+		// max-width needed because border-box isn't supported for some HTML5 elements in old versions of IE
+		@if unit($rowMaxWidth) == "px" {
+			.oldie & {
+				max-width: $rowMaxWidth - ($gutterInPx * 2);
+			}
 		}
 
 		& + .row {

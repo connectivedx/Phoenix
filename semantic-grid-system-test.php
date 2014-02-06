@@ -24,6 +24,10 @@
 		<h1>Three column, semantic example (16 column grid)</h1>
 	</div>
 
+	<header>
+		Header
+	</header>
+
 	<section class="wrapper colgrid-visible">
 		<article class="layout-primary">
 			<h2>Primary</h2>
@@ -55,9 +59,17 @@
 		</div>
 	</section>
 
+	<footer>
+		Footer
+	</footer>
+
 	<div class="row">
 		<h1>Three column, semantic hybrid-grid example (24 column grid)</h1>
 	</div>
+
+	<header>
+		Header
+	</header>
 
 	<section class="wrapper colgrid-visible">
 		<article class="layout-primary-hybrid">
@@ -89,6 +101,10 @@
 			<p>This is a centered element.</p>
 		</div>
 	</section>
+
+	<footer>
+		Footer
+	</footer>
 
 	<div class="row">
 		<h1>Multi-Grid</h1>

@@ -10,12 +10,15 @@ footer {
 		margin-top: 0;
 	}
 
-	// max-width needed because border-box isn't supported for the footer element
-	.oldie & {
-		max-width: $rowMaxWidth - ($gutterInPx * 2);
+	// max-width needed because border-box isn't supported for the footer element in old versions of IE
+	@if unit($rowMaxWidth) == "px" {
+		.oldie & {
+			max-width: $rowMaxWidth - ($gutterInPx * 2);
+		}
 	}
 }
 
 .meta {
 	list-style: none;
+	padding: 0;
 }
