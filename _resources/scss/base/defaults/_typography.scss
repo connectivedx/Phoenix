@@ -36,13 +36,11 @@ h2 {
 }
 h3 {
 	@include font-size(18);
-	color: $darkGrey;
 	margin-bottom: em(8, 18);
 	margin-top: em(8, 18);
 }
 h4 {
 	@include font-size(14);
-	color: $darkGrey;
 	margin-bottom: em(8, 14);
 	margin-top: em(8, 14);
 }
