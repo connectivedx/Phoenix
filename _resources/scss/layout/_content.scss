@@ -30,6 +30,7 @@
 .layout-centered {
 	@include column(8, $gutterInPx, false, false, centered);
 	background-color: lighten($colorPrimary, 35%);
+}
 
 // hybrid grid
 .layout-primary-hybrid {
