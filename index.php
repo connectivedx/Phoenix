@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8" />
 	<title>ISITE Design | FED Template Engine v0.1 Alpha</title>
-	<link href="_resources/css/global.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="_resources/css/global.css" />
 	<script src="_resources/js/namespace.js"></script>
 	<script src="_resources/js/library.js"></script>
 </head>
@@ -324,7 +325,7 @@
 		</fieldset>
 	</form>
 	<iframe id="constructor-preview" src="constructor/htdocs/_resources/html/index-html5-elements.php"></iframe>
-	<script type="text/javascript" src="_resources/js/jquery.min.js"></script>
+	<script src="_resources/js/jquery.min.js"></script>
 	<script src="_resources/js/global.js"></script>
 </body>
 </html>

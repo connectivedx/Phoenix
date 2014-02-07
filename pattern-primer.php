@@ -10,31 +10,30 @@
 <!--<![endif]-->
 <head>
 	<title>Pattern Primer</title>
-	<meta charset="UTF-8">
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="robots" content="index, follow" />
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<meta name="author" content="ISITE Design">
-	<meta name="apple-mobile-web-app-title" content="CUSTOM SHORT NAME">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="ISITE Design" />
+	<meta name="apple-mobile-web-app-title" content="CUSTOM SHORT NAME" />
 	
 	<!-- icon and tile color in hex # for Windows phones -->
-	<meta name="msapplication-TileImage" content="/path/to/touch-icon.png">
-	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/path/to/touch-icon.png" />
+	<meta name="msapplication-TileColor" content="#ffffff" />
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" />
+	<link rel="stylesheet" href="_resources/css/style.css" />
 	
-	<script type="text/javascript" src="_resources/js/modernizr.js"></script>
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" media="all" href="_resources/css/style.css">
+	<script src="_resources/js/modernizr.js"></script>
 	<!--[if lte IE 8]>
-	<script type="text/javascript" src="_resources/js/respond.js"></script>
+	<script src="_resources/js/respond.js"></script>
 	<![endif]-->
 
 	<!-- For everything else --> 
-	<link rel="shortcut icon" href="/path/to/shortcut-icon.png"> 
+	<link rel="shortcut icon" href="/path/to/shortcut-icon.png" /> 
 	<!-- Serve one icon for all Apple devices -->
-	<link rel="apple-touch-icon-precomposed" href="/path/to/touch-icon.png"> 
+	<link rel="apple-touch-icon-precomposed" href="/path/to/touch-icon.png" /> 
 </head>
 
 <body class="">
@@ -360,7 +359,7 @@
 	<script src="_resources/js/tabs/jquery.responsive-tabs.js"></script>
 	<script src="_resources/js/lightboxes/jquery.fancybox.pack.js"></script>
 	<script src="_resources/js/tooltips/jquery.tipsy.js"></script>
-	<script type="text/javascript">
+	<script>
 		$(function() {
 			$('.nav-handle').click(function() {
 				$('.nav-list').toggleClass('expanded');

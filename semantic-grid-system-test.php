@@ -13,10 +13,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="robots" content="index, follow" />
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" media="all" href="_resources/css/style.css" />
-	<script type="text/javascript" src="_resources/js/modernizr.js"></script>
-	<script type="text/javascript" src="_resources/js/respond.js"></script>
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">
+	<link rel="stylesheet" href="_resources/css/style.css" />
+	
+	<script src="_resources/js/modernizr.js"></script>
+	<!--[if lte IE 8]>
+	<script src="_resources/js/respond.js"></script>
+	<![endif]-->
 	<title>Semantic Grid System Test</title>
 </head>
 <body>
@@ -125,6 +128,6 @@
 		</ul>
 	</div>
 
-	<script type="text/javascript" src="_resources/js/jquery.min.js"></script>
+	<script src="_resources/js/jquery.min.js"></script>
 </body>
 </html>
