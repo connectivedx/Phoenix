@@ -57,7 +57,7 @@
 // @category layout
 
 // @function column
-// Creates a semantic-grid set of columns based on the base grid system settings.
+// Creates a semantic-grid set of columns based on the base grid system settings.  On low resolutions, the columns will stack and will break at breakpointMedium to the number of columns specified.
 // @param $columns {Number} The number of columns you wish your element's width to occupy. [integer]
 // @param $padding {Number} A padding override to be set on the row.  Default value: $gutterInPx.  [px|em]
 // @param $hybridGrid {String} Whether or not the columns will be contained within a hybrid grid.  Default value: false.
