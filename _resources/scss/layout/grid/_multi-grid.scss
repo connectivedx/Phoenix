@@ -1,7 +1,7 @@
 // @category layout
 
 // @function multi-grid
-// A shortcut to creating fluid layouts with different numbers of columns at different breakpoints.
+// A shortcut to creating fluid layouts with different numbers of columns at different breakpoints.  All columns are of equal width.
 // @param $selector {String} The selector to which the styles for each column will be applied.
 // @param $smallColumns {Number} The number of columns to be displayed on small resolutions.  [integer]
 // @param $mediumColumns {Number} The number of columns to be displayed on medium resolutions.  [integer]

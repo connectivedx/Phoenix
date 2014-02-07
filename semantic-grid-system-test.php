@@ -27,11 +27,11 @@
 		<h1>Three column, semantic example (16 column grid)</h1>
 	</div>
 
-	<header>
+	<header class="row">
 		Header
 	</header>
 
-	<section class="wrapper colgrid-visible">
+	<section class="wrapper">
 		<article class="layout-primary">
 			<h2>Primary</h2>
 			<p>This is a nine column container.  It will hold your primary content.  It has been pushed to be placed in the appropriate place in the layout.</p>
@@ -62,7 +62,7 @@
 		</div>
 	</section>
 
-	<footer>
+	<footer class="row">
 		Footer
 	</footer>
 
@@ -70,11 +70,11 @@
 		<h1>Three column, semantic hybrid-grid example (24 column grid)</h1>
 	</div>
 
-	<header>
+	<header class="row">
 		Header
 	</header>
 
-	<section class="wrapper colgrid-visible">
+	<section class="wrapper">
 		<article class="layout-primary-hybrid">
 			<h2>Primary</h2>
 			<p>This is a sixteen column container.  It will hold your primary content.  It has been pushed to be placed in the appropriate place in the layout.</p>
@@ -105,7 +105,7 @@
 		</div>
 	</section>
 
-	<footer>
+	<footer class="row">
 		Footer
 	</footer>
 

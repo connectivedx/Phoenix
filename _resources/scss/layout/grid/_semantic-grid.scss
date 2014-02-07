@@ -2,8 +2,10 @@
 %columnconfig {
 	@include box-sizing();
 	float: $defaultFloat;
+	margin: 0;
 	min-height: 1px;
 	position: relative;
+	width: 100%;
 }
 
 // @category layout
@@ -12,11 +14,12 @@
 // Creates a semantic-grid row.
 // @param $nested {String} Whether or not the row will be nested within other rows.  Default value: false.
 // @param $padding {Number} A padding override to be set on the row.  Default value: $gutterInPx. [px|em]
+// @param $maxWidth {Number} A max-width override to be set on the row.  Default value: $rowMaxWidth. [px|percentage]
 // @usage
 // row()
 // row(nested)
 // row(false, 0 50px 0 0)
-@mixin row($nested: false, $padding: $gutterInPx) {
+@mixin row($nested: false, $padding: $gutterInPx, $maxWidth: $rowMaxWidth) {
 	@include box-sizing();
 	@include clearfix();
 	margin-left: 0; 
@@ -45,7 +48,7 @@
 		}
 		@else {
 			margin: 0 auto;
-			max-width: $rowMaxWidth;
+			max-width: $maxWidth;
 			width: 100%;
 		}
 	}
@@ -67,15 +70,14 @@
 @mixin column($columns, $padding: $gutterInPx, $hybridGrid: false, $nested: false, $alignment: false) {
 	@if $alignment == centered {
 		@extend %columnconfig;
-		margin: 0;
 		padding: $padding;
-		width: 100%;
 
 		&:first-child {
 			margin-top: 0;
 		}
 
 		@include respond(breakpointMedium) {
+			clear: both;
 			margin-left: centered($columns, $hybridGrid);
 			margin-top: 0;
 			width: columns($columns, $hybridGrid);
@@ -83,9 +85,7 @@
 	}
 	@else {
 		@extend %columnconfig;
-		margin: 0;
 		padding: $padding;
-		width: 100%;
 
 		@if $nested == nested {
 			margin-top: $gutterInPx;

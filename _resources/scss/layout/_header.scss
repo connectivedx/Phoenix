@@ -4,7 +4,6 @@
 // The location to define major column layouts and styles for the header.
 header {
 	background: $lightGrey;
-	@include row();
 
 	.column, .columns {
 		margin-top: 0;

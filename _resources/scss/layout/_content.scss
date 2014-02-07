@@ -57,6 +57,79 @@
 	background-color: lighten($colorPrimary, 35%);
 }
 
+// complex layout
+.layout-complex-wrapper {
+	@include row(false, 0, 100%);
+}
+.layout-complex-header {
+	@extend %columnconfig;
+	padding: $gutterInPx;
+}
+.layout-complex-primary {
+	@extend %columnconfig;
+	background-color: lighten($colorPrimary, 35%);
+	padding: $gutterInPx;
+
+	@include respond(breakpointMedium) {
+		width: columns(9);
+	}
+
+	@include respond(breakpointLarge) {
+		width: columns(8);
+	}
+
+	@include respond(breakpointExtraLarge) {
+		width: columns(8);
+	}
+}
+.layout-complex-nav {
+	@extend %columnconfig;
+	background-color: $colorSecondary;
+	padding: $gutterInPx;
+
+	@include respond(breakpointMedium) {
+		width: columns(16);
+	}
+
+	@include respond(breakpointExtraLarge) {
+		width: columns(2);
+	}
+}
+.layout-complex-tertiary {
+	@extend %columnconfig;
+	background-color: $colorTertiary;
+	color: white;
+	padding: $gutterInPx;
+
+	@include respond(breakpointMedium) {
+		width: columns(7);
+	}
+
+	@include respond(breakpointLarge) {
+		width: columns(4);
+	}
+
+	@include respond(breakpointExtraLarge) {
+		width: columns(4);
+	}
+}
+.layout-complex-footer {
+	@extend %columnconfig;
+	padding: $gutterInPx;
+
+	@include respond(breakpointMedium) {
+		width: columns(16);
+	}
+
+	@include respond(breakpointLarge) {
+		width: columns(4);
+	}
+
+	@include respond(breakpointExtraLarge) {
+		width: columns(2);
+	}
+}
+
 // supporting classes
 .two-up {
 	@include column(8, 0, nested);

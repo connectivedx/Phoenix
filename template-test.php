@@ -38,7 +38,7 @@
 </head>
 
 <body class="">
-	<header role="banner">
+	<header role="banner" class="row">
 		<nav id="nav" role="navigation">
 			<span class="nav-handle">&#x2261;</span>
 			<ul class="nav-list">
@@ -88,7 +88,7 @@
  
 	</section><!-- /.wrapper -->
 	
-	<footer role="contentinfo">
+	<footer role="contentinfo" class="row">
 		<h2>footer</h2>		
 		<ul class="meta">
 			<li>Copyright &copy; 2013 Client Name</li>
