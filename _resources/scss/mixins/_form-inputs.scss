@@ -1,0 +1,17 @@
+// @category mixins
+
+// @mixin placeholder-color
+// Adds color control ability across major browsers for placeholder attribute.
+// @param $color {HexColor} The hex color you wish to change placeholder input text into.
+// @usage
+// =
+//	[type=text]{
+//		@include placeholder-color(#999);
+//	}
+
+@mixin placeholder-color($color) {
+	&::-webkit-input-placeholder 	{ color: $color; } /* WebKit browsers */
+	&:-moz-placeholder 				{ color: $color; } /* Mozilla Firefox 4 to 18 */
+	&::-moz-placeholder 			{ color: $color; } /* Mozilla Firefox 19+ */
+	&:-ms-input-placeholder 		{ color: $color; } /* Internet Explorer 10+ */
+}
