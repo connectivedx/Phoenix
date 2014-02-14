@@ -62,11 +62,11 @@
 	@include row(false, 0, 100%);
 }
 .layout-complex-header {
-	@extend %columnconfig;
+	@extend %column-config;
 	padding: $gutterInPx;
 }
 .layout-complex-primary {
-	@extend %columnconfig;
+	@extend %column-config;
 	background-color: lighten($colorPrimary, 35%);
 	padding: $gutterInPx;
 
@@ -83,7 +83,7 @@
 	}
 }
 .layout-complex-nav {
-	@extend %columnconfig;
+	@extend %column-config;
 	background-color: $colorSecondary;
 	padding: $gutterInPx;
 
@@ -96,7 +96,7 @@
 	}
 }
 .layout-complex-tertiary {
-	@extend %columnconfig;
+	@extend %column-config;
 	background-color: $colorTertiary;
 	color: white;
 	padding: $gutterInPx;
@@ -114,7 +114,7 @@
 	}
 }
 .layout-complex-footer {
-	@extend %columnconfig;
+	@extend %column-config;
 	padding: $gutterInPx;
 
 	@include respond(breakpointMedium) {

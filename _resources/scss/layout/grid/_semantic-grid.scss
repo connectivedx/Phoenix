@@ -1,5 +1,5 @@
 // Column Configuration placeholder
-%columnconfig {
+%column-config {
 	@include box-sizing();
 	float: $defaultFloat;
 	margin: 0;
@@ -69,7 +69,7 @@
 // column(8, $gutterInPx, hybrid)
 @mixin column($columns, $padding: $gutterInPx, $hybridGrid: false, $nested: false, $alignment: false) {
 	@if $alignment == centered {
-		@extend %columnconfig;
+		@extend %column-config;
 		padding: $padding;
 
 		&:first-child {
@@ -84,7 +84,7 @@
 		}
 	}
 	@else {
-		@extend %columnconfig;
+		@extend %column-config;
 		padding: $padding;
 
 		@if $nested == nested {
