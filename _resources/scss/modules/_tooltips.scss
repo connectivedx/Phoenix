@@ -4,7 +4,7 @@
 // A tooltip system based on Tipsy.
 
 // measurements
-$tooltipArrowSize: 5px;
+$tooltipArrowSize: 5px; // note: keep this under 10px to avoid issues
 $tooltipPadding: 10px;
 
 // colors
@@ -80,7 +80,7 @@ $tooltipShadowBlurRadius: 10px;
 			border-left-color: transparent;
 			border-right-color: transparent;
 			border-top: none;
-			left: max($tooltipArrowSize, 10px);
+			left: $tooltipArrowSize;
 			top: -$tooltipArrowSize + $tooltipPadding;
 		}
 		.tipsy-ne .tipsy-arrow {
@@ -88,7 +88,7 @@ $tooltipShadowBlurRadius: 10px;
 			border-left-color: transparent;
 			border-right-color: transparent;
 			border-top: none;
-			right: max($tooltipArrowSize, 10px);
+			right: $tooltipArrowSize;
 			top: -$tooltipArrowSize + $tooltipPadding;
 		}
 
@@ -107,7 +107,7 @@ $tooltipShadowBlurRadius: 10px;
 			border-right-color: transparent;
 			border-top-style: solid;
 			bottom: -$tooltipArrowSize + $tooltipPadding;
-			left: max($tooltipArrowSize, 10px);
+			left: $tooltipArrowSize;
 		}
 		.tipsy-se .tipsy-arrow {
 			border-bottom: none;
@@ -115,7 +115,7 @@ $tooltipShadowBlurRadius: 10px;
 			border-right-color: transparent;
 			border-top-style: solid;
 			bottom: -$tooltipArrowSize + $tooltipPadding;
-			right: max($tooltipArrowSize, 10px);
+			right: $tooltipArrowSize;
 		}
 	.tipsy-e .tipsy-arrow {
 		border-bottom-color: transparent;
