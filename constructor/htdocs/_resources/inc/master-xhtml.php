@@ -16,7 +16,7 @@
     <meta name="msapplication-TileImage" content="http://fed.isitedesign.us/content/fed-template/img/apple-touch-icon-144x144.png">
 	<meta name="msapplication-TileColor" content="#911014">
 
-	<link rel="stylesheet" media="all" href="../css/global.css" type="text/css" />
+	<link rel="stylesheet" media="all" href="../css/constructor.css" type="text/css" />
 	<link rel="stylesheet" media="print" href="../css/print.css" type="text/css" />
 	
 	<!-- can be customized based on what is needed for a specific project at http://modernizr.com 
