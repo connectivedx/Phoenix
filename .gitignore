@@ -9,7 +9,6 @@ codekit-config.json
 
 # Compiled files
 _resources/*
-_resources/css/!global.css
-_resources/!src/
+!_resources/src/
 _resources/src/node_modules
 _resources/npm-debug.log
