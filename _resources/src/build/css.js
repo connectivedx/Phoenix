@@ -16,8 +16,8 @@ var bytediff = require('gulp-bytediff');
 **/
 
 var config = {
-	scssSourcePath: './scss/*.scss',
-	scssWatchGlob: 'scss/**.scss',
+	scssSourcePath: 'scss/*.scss',
+	scssWatchGlob: 'scss/**',
 	cssOutputPath: '../css',
 	
 	/* all rules by ID: https://github.com/stubbornella/csslint/wiki/Rules-by-ID */
