@@ -6,7 +6,7 @@ var watch = require('gulp-watch');
 var livereload = require('gulp-livereload');
 var browserify = require('gulp-browserify');
 var uglify = require('gulp-uglify');
-var yuidoc = require('gulp-yuidoc');
+//var yuidoc = require('gulp-yuidoc');
 var jshint = require('gulp-jshint');
 var bytediff = require('gulp-bytediff');
 
@@ -52,11 +52,14 @@ module.exports = function(gulp) {
 			.pipe(clean({force:true}));
 	});
 	
+	/* Uncomment (and add to tasks in the gulpfile) if using YUIdoc for JS
+		also add 'gulp-yuidoc' to package.json
+	
 	gulp.task('js-doc', function() {
 		gulp.src(config.jsSourcePath)
 			.pipe(yuidoc())
 			.pipe(gulp.dest('../js-docs'))
-	});
+	}); */
 	
 	gulp._watchTasks = gulp._watchTasks || [];
 	gulp._watchTasks.push(function(gulp, liveReloadServer) {

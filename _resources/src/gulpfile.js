@@ -10,10 +10,10 @@ require('./build/img')(gulp);
 require('./build/fonts')(gulp);
 
 // this is the top level default (dev) task
-gulp.task('default', ['css-dev', 'js-dev', 'js-doc', 'img-dev', 'fonts-dev'], function(){});
+gulp.task('default', ['css-dev', 'js-dev', 'img-dev', 'fonts-dev'], function(){});
 
 // this is the top level production task
-gulp.task('production', ['css-production', 'js-production', 'js-doc', 'img-production', 'fonts-production'], function() {});
+gulp.task('production', ['css-production', 'js-production', 'img-production', 'fonts-production'], function() {});
 
 // this is the top level watch task, which gets watcher delegates augmented onto it by task plugins
 gulp.task('watch', ['default'], function() {
