@@ -39,3 +39,6 @@ Once you've cloned or downloaded the project, you'll first need to install NodeJ
     ```
     $ gulp production
     ```
+
+# Documentation
+Full documentation is available at http://isitedesign.github.io/FED-Template-Engine/
