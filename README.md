@@ -29,12 +29,12 @@ Once you've cloned or downloaded the project, you'll first need to install NodeJ
     ```
     $ gulp
     ```
-2. build-watch.cmd will execute the development build and watch for file changes, automatically reloading your browser if you have LiveReload installed..  On Mac OS, execute this command:
+2. build-watch.cmd will execute the development build and watch for file changes, automatically reloading your browser if you have LiveReload installed.  On Mac OS, execute this command:
 
     ```
     $ gulp watch
     ```
-3. build-production.cmd will execute the production build, which lints, concatenates, and minifies files..  On Mac OS, execute this command:
+3. build-production.cmd will execute the production build, which lints, concatenates, and minifies files.  On Mac OS, execute this command:
 
     ```
     $ gulp production
