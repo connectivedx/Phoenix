@@ -15,7 +15,8 @@ var bytediff = require('gulp-bytediff');
 	By default this processor runs browserify, jshint, and if in prod mode uglify over a set of source JS files
 **/
 var config = {
-	jsSourcePath: 'js/*.js', /* where to read JS files to build from */
+	jsSourcePath: 'js/*.js', /* where to read JS files to build from (footer) NOTE: this should be one file most likely */
+	jsHeaderSourcePath: 'js/header.js', /* these JS files go in the header */
 	jsWatchGlob: 'js/**', /* JS file pattern to watch for changes when in watch mode */
 	jsOutputPath: '../js', /* where to emit the processed files */
 	
@@ -25,25 +26,35 @@ var config = {
 	}
 };
 
-function createJsStream(gulp, debug) {
-	return gulp.src(config.jsSourcePath)
+function createJsStream(gulp, sourcePath, debug) {
+	return gulp.src(sourcePath)
 		.pipe(plumber())
 		.pipe(browserify({debug: debug}))
 		.pipe(jshint(config.jsHintOptions))
 		.pipe(jshint.reporter('jshint-stylish'));
 }
 
+function createProductionJsStream(gulp, sourcePath, debug) {
+	return createJsStream(gulp, config.jsSourcePath, false)
+			.pipe(bytediff.start())
+			.pipe(uglify())
+			.pipe(bytediff.stop())
+}
+
 module.exports = function(gulp) {
 	gulp.task('js-dev', ['js-clean'], function() {	
-		createJsStream(gulp, true)
+		createJsStream(gulp, config.jsSourcePath, true)
+			.pipe(gulp.dest(config.jsOutputPath));
+
+		createJsStream(gulp, config.jsHeaderSourcePath, true)
 			.pipe(gulp.dest(config.jsOutputPath));
 	});
 	
 	gulp.task('js-production', ['js-clean'], function() {
-		createJsStream(gulp, false)
-			.pipe(bytediff.start())
-			.pipe(uglify())
-			.pipe(bytediff.stop())
+		createProductionJsStream(gulp, config.jsSourcePath, false)
+			.pipe(gulp.dest(config.jsOutputPath));
+
+		createProductionJsStream(gulp, config.jsHeaderSourcePath, false)
 			.pipe(gulp.dest(config.jsOutputPath));
 	});
 	
@@ -64,7 +75,11 @@ module.exports = function(gulp) {
 	gulp._watchTasks = gulp._watchTasks || [];
 	gulp._watchTasks.push(function(gulp, liveReloadServer) {
 		watch({ glob: config.jsWatchGlob, emitOnGlob:false, name: 'JSWatcher' }, function(changedFiles) {
-			createJsStream(gulp, true)
+			createJsStream(gulp, config.jsSourcePath, true)
+				.pipe(gulp.dest(config.jsOutputPath))
+				.pipe(livereload(liveReloadServer));
+
+			createJsStream(gulp, config.jsHeaderSourcePath, true)
 				.pipe(gulp.dest(config.jsOutputPath))
 				.pipe(livereload(liveReloadServer));
 		});
