@@ -24,21 +24,30 @@ Once you've cloned or downloaded the project, you'll first need to install NodeJ
 4. To build the project, execute a gulp command depending on which build you need.  The builds are listed below.
 
 # Builds
-1. build-dev.cmd will execute the development build, which include linting and debugging and does not minify files.  On Mac OS, execute this command:
 
-    ```
-    $ gulp
-    ```
-2. build-watch.cmd will execute the development build and watch for file changes, automatically reloading your browser if you have LiveReload installed.  On Mac OS, execute this command:
+Each of the builds will compile the SCSS under _resources/src/scss and place CSS, images, JavaScript, and fonts into their respective folders under _resources.  These compiled files should never be edited and are ignored by the repository.  **All code editing must take place in _resources/src.**
 
-    ```
-    $ gulp watch
-    ```
-3. build-production.cmd will execute the production build, which lints, concatenates, and minifies files.  On Mac OS, execute this command:
+1. Development
+    * Windows - build-dev.cmd will execute the development build, which includes linting and debugging and does not minify files.
+    * Mac OS - execute this command in a Terminal window under _resources/src
 
-    ```
-    $ gulp production
-    ```
+        ```
+        $ gulp
+        ```
+2. Watch
+    * Windows - build-watch.cmd will execute the development build and watch for file changes, automatically reloading your browser if you have LiveReload installed.
+    * Mac OS - execute this command in a Terminal window under _resources/src
+
+        ```
+        $ gulp watch
+        ```
+3. Production
+    * Windows - build-production.cmd will execute the production build, which lints, concatenates, and minifies files.
+    * Mac OS - execute this command in a Terminal window under _resources/src
+
+        ```
+        $ gulp production
+        ```
 
 # Documentation
 Full documentation is available at http://isitedesign.github.io/FED-Template-Engine/
