@@ -366,8 +366,6 @@
 			});
 			$('select').wrap('<div class="decorator-select"></div>');
 
-			RESPONSIVEUI.responsiveTabs();
-
 			$('.fancybox').fancybox();
 
 			$('.tooltip-tipsy').tipsy({

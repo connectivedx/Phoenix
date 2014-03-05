@@ -15,7 +15,7 @@ var bytediff = require('gulp-bytediff');
 	By default this processor runs browserify, jshint, and if in prod mode uglify over a set of source JS files
 **/
 var config = {
-	jsSourcePath: 'js/*.js', /* where to read JS files to build from (footer) NOTE: this should be one file most likely */
+	jsSourcePath: 'js/**/*.js', /* where to read JS files to build from (footer) NOTE: this should be one file most likely */
 	jsHeaderSourcePath: 'js/header.js', /* these JS files go in the header */
 	jsWatchGlob: 'js/**', /* JS file pattern to watch for changes when in watch mode */
 	jsOutputPath: '../js', /* where to emit the processed files */
