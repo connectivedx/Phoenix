@@ -1,5 +1,14 @@
+# Metadata
 *.DS_Store
 *._*
-/_resources/.sass-cache
-/_resources/css/style.css
+
+# Config and documentation
 documentation-sassdoc/*
+web.config
+codekit-config.json
+
+# Compiled files
+_resources/*
+!_resources/src/
+_resources/src/node_modules
+_resources/npm-debug.log

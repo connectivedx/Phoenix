@@ -5,7 +5,7 @@
 ?>
 /*
 Theme Name: CLIENT NAME
-Description: global.css contains a reset, font normalization and some base styles.
+Description: constructor.css contains a reset, font normalization and some base styles.
 Author: ISITE Design, Inc
 Author URL: http://www.isitedesign.com
 --------------------------------------------------------------------------------------

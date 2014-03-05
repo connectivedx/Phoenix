@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title>ISITE Design | FED Template Engine v0.1 Alpha</title>
-	<link rel="stylesheet" href="_resources/css/global.css" />
+	<link rel="stylesheet" href="_resources/css/constructor.css" />
 	<script src="_resources/js/namespace.js"></script>
 	<script src="_resources/js/library.js"></script>
 </head>
