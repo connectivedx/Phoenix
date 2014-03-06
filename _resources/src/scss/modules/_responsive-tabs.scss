@@ -22,16 +22,11 @@ $tabPanelBackgroundColor: $lightGrey;
 $tabPanelTextColor: black;
 
 .responsive-tabs-wrapper { 
-	clear: both;
-	zoom: 1;
+	@include clearfix();
+	margin-top: $gutterInPx;
 
-	&:before,
-	&:after {
-		content: "";
-		display: table;
-	}
-	&:after {
-		clear: both;
+	&:first-child {
+		margin-top: 0;
 	}
 }
 
