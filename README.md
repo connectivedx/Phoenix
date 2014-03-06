@@ -42,7 +42,7 @@ The development build includes linting and debugging, but does not minify files 
     ```
 
 ### Watch
-The watch build will execute the development build and watch for file changes, automatically reloading your browser if you have LiveReload installed.
+The watch build will execute the development build and watch for file changes, automatically compiling your source code and reloading your browser if you have LiveReload installed.
 * Windows - execute build-watch.cmd.
 * Mac OS - execute this command in a Terminal window under _resources/src
 
