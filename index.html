@@ -69,11 +69,20 @@
 		<div class="row divider">
 			<div class="sixteen columns">
 				<h1>SCSS</h1>
+				<p>Below is a breakdown of all of the SCSS files in the project.  Each tab represents a folder in the structure found in _resources/src/scss.</p>
 
 				<div ng-controller="SCSSCtrl" class="responsive-tabs responsive-tabs-horizontal">
 					<h2>Variables</h2>
 					<div class="responsive-tabs-content">
-						<div class="doc-callout" ng-repeat="variableType in objects.variables" ng-class="{divider: $index > 0}">
+						<div class="doc-callout">
+							<p>The variables folder contains variables that you will use throughout the project; they are your global reusable values, such as colors or measurements.  Below you will find a breakdown of each file, the variables contained within, and what each variable does.</p>
+							<p>Want to create your own variables?  If they'll be used across the project, the variables folder is the place to put them.  Some additional ideas for variables include:</p>
+							<ul>
+								<li>z-indexes</li>
+								<li>transition speeds, easing, and delays</li>
+							</ul>
+						</div>
+						<div class="doc-callout divider" ng-repeat="variableType in objects.variables">
 							<h2>
 								{{variableType.function[0]}}
 							</h2>
@@ -100,7 +109,10 @@
 
 					<h2>Functions</h2>
 					<div class="responsive-tabs-content">
-						<div class="doc-callout" ng-repeat="function in objects.functions" ng-class="{divider: $index > 0}">
+						<div class="doc-callout">
+							<p>The functions folder contains utility functions that allow for consistent, reusable calculations across the project.</p>
+						</div>
+						<div class="doc-callout divider" ng-repeat="function in objects.functions">
 							<h2>
 								{{function.function[0]}} (<span ng-repeat="param in function.param">{{param.name}}<span ng-if="$index < (function.param.length - 1)">, </span></span>)
 							</h2>
@@ -141,7 +153,10 @@
 
 					<h2>Mixins</h2>
 					<div class="responsive-tabs-content">
-						<div class="doc-callout" ng-repeat="mixin in objects.mixins" ng-class="{divider: $index > 0}">
+						<div class="doc-callout">
+							<p>The mixins folder contains utility mixins that allow for consistent, reusable output across the project.  Mixins can be particularly useful for writing patterns that require vendor prefixes or fallbacks for older browsers.</p>
+						</div>
+						<div class="doc-callout divider" ng-repeat="mixin in objects.mixins">
 							<h2>
 								{{mixin.mixin[0]}} (<span ng-repeat="param in mixin.param">{{param.name}}<span ng-if="$index < (mixin.param.length - 1)">, </span></span>)
 							</h2>
@@ -176,7 +191,10 @@
 
 					<h2>Base</h2>
 					<div class="responsive-tabs-content">
-						<div class="doc-callout" ng-repeat="base in objects.base" ng-class="{divider: $index > 0}">
+						<div class="doc-callout">
+							<p>The base folder contains base styles for the project for HTML elements with no classes.  In here you will find @font-face declarations, a browser reset, and fallback styles for elements.  There are some exceptions where class names are used (such as the plain classed lists), but these are due to their fundamental use in projects and are thus considered to be "base" styles.</p>
+						</div>
+						<div class="doc-callout divider" ng-repeat="base in objects.base">
 							<h2>
 								{{base.function[0]}}
 							</h2>
@@ -188,7 +206,10 @@
 
 					<h2>Layout</h2>
 					<div class="responsive-tabs-content">
-						<div class="doc-callout" ng-repeat="layout in objects.layout" ng-class="{divider: $index > 0}">
+						<div class="doc-callout">
+							<p>The layout folder contains grid mixins and all styles related to your main layout templates (such as setting up columnar layouts, e.g. two- and three-column layouts).</p>
+						</div>
+						<div class="doc-callout divider" ng-repeat="layout in objects.layout">
 							<h2>{{layout.function[0]}}</h2>
 							<span class="badge-primary">{{layout.source}}</span>
 							<h3 class="divider-secondary">Description</h3>
@@ -216,6 +237,7 @@
 					<h2>Modules</h2>
 					<div class="responsive-tabs-content">
 						<div class="doc-callout">
+							<p>The modules folder is where most of your development will take place.  It contains <q>discrete components of the page</q> that are <q>your navigation bars and your carousels and your dialogs and your widgets and so on.</q><br>- <cite><a href="http://smacss.com/book/type-module" target="_blank">SMACSS</a></cite></p>
 							<p>For examples of all modules, please see the <a href="pattern-primer.html" target="_blank">pattern primer page</a>.</p>
 						</div>
 						<div class="doc-callout divider" ng-repeat="module in objects.modules">
