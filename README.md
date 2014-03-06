@@ -33,7 +33,7 @@ Once you've cloned or downloaded the project, you'll first need to install NodeJ
 Each of the builds will compile the SCSS under _resources/src/scss and place CSS, images, JavaScript, and fonts into their respective folders under _resources.  These compiled files should never be edited and are ignored by the repository.  **All code editing must take place in _resources/src.**
 
 ### Development
-The development build include linting and debugging, but does not minify files so they are readable during development.
+The development build includes linting and debugging, but does not minify files so they are readable during development.
 * Windows - execute build-dev.cmd.
 * Mac OS - execute this command in a Terminal window under _resources/src
 
