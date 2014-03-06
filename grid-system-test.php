@@ -1,28 +1,7 @@
-<!doctype html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
-<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
-<!--[if gt IE 9]><!-->
-<html class="no-js" lang="en" itemscope itemtype="http://schema.org/Product">
-<!--<![endif]-->
-<head>
-	<meta charset="utf-8" />
-	<title>Grid System Test</title>  
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="robots" content="index, follow" />
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
-	<link rel="stylesheet" href="_resources/css/style.css" />
-	
-	<script src="_resources/js/modernizr.js"></script>
-	<!--[if lte IE 8]>
-	<script src="_resources/js/respond.js"></script>
-	<![endif]-->  
-</head>
-<body>
+<?php
+	$pageTitle = 'Grid System Test';
+	include_once 'inc/head.php';
+?>
 	<style>
 		.column, .columns {
 			border: 1px solid black;
@@ -251,7 +230,6 @@
 		?>
 		</div>
 	</section>
-
-	<script src="_resources/js/jquery.min.js"></script>
-</body>
-</html>
+<?php
+	include_once 'inc/foot.php';
+?>

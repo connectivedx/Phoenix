@@ -1,42 +1,7 @@
-<!doctype html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
-<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
-<!--[if gt IE 9]><!-->
-<html class="no-js" lang="en" itemscope itemtype="http://schema.org/Product">
-<!--<![endif]-->
-<head>
-	<title>Pattern Primer</title>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="robots" content="index, follow" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="ISITE Design" />
-	<meta name="apple-mobile-web-app-title" content="CUSTOM SHORT NAME" />
-	
-	<!-- icon and tile color in hex # for Windows phones -->
-	<meta name="msapplication-TileImage" content="/path/to/touch-icon.png" />
-	<meta name="msapplication-TileColor" content="#ffffff" />
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" />
-	<link rel="stylesheet" href="_resources/css/style.css" />
-	
-	<script src="_resources/js/modernizr.js"></script>
-	<!--[if lte IE 8]>
-	<script src="_resources/js/respond.js"></script>
-	<![endif]-->
-
-	<!-- For everything else --> 
-	<link rel="shortcut icon" href="/path/to/shortcut-icon.png" /> 
-	<!-- Serve one icon for all Apple devices -->
-	<link rel="apple-touch-icon-precomposed" href="/path/to/touch-icon.png" /> 
-</head>
-
-<body class="">
+<?php
+	$pageTitle = 'Pattern Primer';
+	include_once 'inc/head.php';
+?>
 	<section class="wrapper">
 		<div class="row">
 			<div class="sixteen columns">
@@ -354,30 +319,6 @@
 		</div>
  
 	</section><!-- /.wrapper -->
-	
-	<script src="_resources/js/jquery.min.js"></script>
-	<script src="_resources/js/tabs/jquery.responsive-tabs.js"></script>
-	<script src="_resources/js/lightboxes/jquery.fancybox.pack.js"></script>
-	<script src="_resources/js/tooltips/jquery.tipsy.js"></script>
-	<script>
-		$(function() {
-			$('.nav-handle').click(function() {
-				$('.nav-list').toggleClass('expanded');
-			});
-			$('select').wrap('<div class="decorator-select"></div>');
-
-			$('.fancybox').fancybox();
-
-			$('.tooltip-tipsy').tipsy({
-				gravity: 'w'
-			});
-
-			$('.custom-file-upload').click(function(e) {
-				e.preventDefault();
-
-				$(this).next('input[type="file"]').click();
-			});
-		});
-	</script>
-</body>
-</html>
+<?php
+	include_once 'inc/foot.php';
+?>

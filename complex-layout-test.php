@@ -1,25 +1,7 @@
-<!doctype html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
-<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
-<!--[if gt IE 9]><!-->
-<html class="no-js" lang="en" itemscope itemtype="http://schema.org/Product">
-<!--<![endif]-->
-<head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="robots" content="index, follow" />
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" media="all" href="_resources/css/style.css" />
-	<script type="text/javascript" src="_resources/js/modernizr.js"></script>
-	<script type="text/javascript" src="_resources/js/respond.js"></script>
-	<title>Complex Layout Test</title>
-</head>
-<body>
+<?php
+	$pageTitle = 'Complex Layout Test';
+	include_once 'inc/head.php';
+?>
 	<div class="row">
 		<h1>Multi-column, complex layout where containers have different widths at different breakpoints</h1>
 	</div>
@@ -84,7 +66,6 @@
 			</ul>
 		</footer>
 	</section>
-
-	<script type="text/javascript" src="_resources/js/jquery.min.js"></script>
-</body>
-</html>
+<?php
+	include_once 'inc/foot.php';
+?>
