@@ -5,6 +5,7 @@ var concat = require('gulp-concat');
 var sass = require('gulp-sass');
 var cssmin = require('gulp-minify-css');
 var csslint = require('gulp-csslint');
+var cmq = require('gulp-combine-media-queries');
 var plumber = require('gulp-plumber');
 var watch = require('gulp-watch');
 var livereload = require('gulp-livereload');
@@ -30,6 +31,7 @@ function createSassStream(gulp) {
 	return gulp.src(config.scssSourcePath)
 		.pipe(plumber())
 		.pipe(sass())
+		.pipe(cmq())
 		.pipe(csslint(config.cssLintRuleset))
 		.pipe(csslint.reporter());
 }
