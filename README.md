@@ -6,27 +6,12 @@ The FED Template Engine represents what we use at ISITE Design for the basis of 
 Full documentation is available at http://isitedesign.github.io/FED-Template-Engine/
 
 # Setup
-Once you've cloned or downloaded the project, you'll first need to install NodeJS.  It can be downloaded at http://nodejs.org/download/.  Once Node is installed, setup is dependent on platform.
+Once you've cloned or downloaded the project, you'll first need to install NodeJS.  It can be downloaded at http://nodejs.org/download/.  Once Node is installed, builds are done by executing a command file.
 
-### Windows
 1. Navigate to _resources/src
-2. Execute one of the .cmd files, depending on which build you need.  The builds are listed below.
-
-### Mac OS
-1. In a Terminal window, navigate to _resources/src of the project
-2. Execute the command:
-
-    ```
-    $ npm install
-    ```
-    This will install all of the Node package dependencies.
-3. Once complete, in the same Terminal window, execute the command
-
-    ```
-    $ sudo npm install -g gulp
-    ```
-    This will allow you to execute gulp commands system-wide.
-4. To build the project, execute a gulp command depending on which build you need.  The builds are listed below.
+2. The type and name of the command file is dependent on your platform and which build you need.
+    * Windows - execute one of the .cmd files.  The builds are listed below.  
+    * Mac OS - execute one of the .command files.  The builds are listed below.
 
 # Builds
 
@@ -35,26 +20,14 @@ Each of the builds will compile the SCSS under _resources/src/scss and place CSS
 ### Development
 The development build includes linting and debugging, but does not minify files so they are readable during development.
 * Windows - execute build-dev.cmd.
-* Mac OS - execute this command in a Terminal window under _resources/src
-
-    ```
-    $ gulp
-    ```
+* Mac OS - execute mac-build-dev.command.
 
 ### Watch
 The watch build will execute the development build and watch for file changes, automatically compiling your source code and reloading your browser if you have LiveReload installed.
 * Windows - execute build-watch.cmd.
-* Mac OS - execute this command in a Terminal window under _resources/src
-
-    ```
-    $ gulp watch
-    ```
+* Mac OS - execute mac-build-watch.command.
 
 ### Production
 The production build lints, concatenates, and minifies files.
 * Windows - execute build-production.cmd.
-* Mac OS - execute this command in a Terminal window under _resources/src
-
-    ```
-    $ gulp production
-    ```
+* Mac OS - execute mac-build-production.command.
