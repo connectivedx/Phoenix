@@ -1,3 +1,4 @@
-This readme file is here to make NPM happy.
+SRC Directory
+=============
 
--kf
+This directory is where all source code, images, and fonts should be stored.  They will be compiled by Gulp and placed in the appropriate structure directly under the _resources directory.
