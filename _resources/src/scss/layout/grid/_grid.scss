@@ -150,9 +150,7 @@
 			@if ($enableCentered) {
 				@for $i from 1 through $cols - 1 {
 					.#{number-as-word($i)}.centered {
-						@include respond(breakpointMedium) {
-							margin-left: centered($i);
-						}
+						margin-left: centered($i);
 					}
 				}
 			}
