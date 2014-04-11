@@ -23,7 +23,15 @@ var config = {
 	
 	/* see http://www.jshint.com/docs/options/ */
 	jsHintOptions: {
-		asi: true
+		asi: true,
+		camelcase: true,
+		curly: true,
+		eqeqeq: true,
+		freeze: true,
+		immed: true,
+		noarg: true,
+		unused: true,
+		jquery: true
 	}
 };
 
