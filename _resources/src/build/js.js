@@ -9,10 +9,11 @@ var uglify = require('gulp-uglify');
 //var yuidoc = require('gulp-yuidoc');
 var jshint = require('gulp-jshint');
 var bytediff = require('gulp-bytediff');
+var filter = require('gulp-filter');
 
 /**
 	JS Processor
-	By default this processor runs browserify, jshint, and if in prod mode uglify over a set of source JS files
+	By default this processor runs browserify, and if in prod mode uglify over a set of source JS files
 **/
 var config = {
 	jsSourcePath: 'js/**/*.js', /* where to read JS files to build from (footer) NOTE: this should be one file most likely */
@@ -33,8 +34,6 @@ function createJsStream(gulp, sourcePath, debug) {
 			Browserify causes problems with respond.js, so it's being disabled for now
 			.pipe(browserify({debug: debug}))
 		*/
-		.pipe(jshint(config.jsHintOptions))
-		.pipe(jshint.reporter('jshint-stylish'));
 }
 
 function createProductionJsStream(gulp, sourcePath, debug) {
@@ -59,6 +58,16 @@ module.exports = function(gulp) {
 
 		createProductionJsStream(gulp, config.jsHeaderSourcePath, false)
 			.pipe(gulp.dest(config.jsOutputPath));
+	});
+
+	gulp.task('js-analyse', ['js-dev'], function() {
+		var excludeFilter = filter('!{*,**/*}{.min,.pack,.lib}.js');
+
+		return gulp.src(config.jsSourcePath)
+		.pipe(plumber())
+		.pipe(excludeFilter)
+		.pipe(jshint(config.jsHintOptions))
+		.pipe(jshint.reporter('jshint-stylish'));
 	});
 	
 	gulp.task('js-clean', function() {

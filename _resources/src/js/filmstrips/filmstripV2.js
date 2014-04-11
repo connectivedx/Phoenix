@@ -10,7 +10,7 @@
 var $ixite = $ixite || {};
 $ixite.filmstrip = {
     init:function(target){
-        var $strip = (typeof target === 'objet')? target : $(target);
+        var $strip = (typeof target === 'object')? target : $(target);
         //template shifters, script is not class dependent
         $strip.append('<li class="right">&raquo</li>')
         .prepend('<li class="left">&laquo</li>').end()
