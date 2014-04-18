@@ -1,3 +1,4 @@
+/*global require, module */
 'use strict';
 
 var clean = require('gulp-clean');
@@ -37,7 +38,7 @@ function createSassStream(gulp) {
 }
 
 function emitCssStream(stream, gulp) {
-	return stream.pipe(gulp.dest(config.cssOutputPath))
+	return stream.pipe(gulp.dest(config.cssOutputPath));
 }
 
 module.exports = function(gulp) {
