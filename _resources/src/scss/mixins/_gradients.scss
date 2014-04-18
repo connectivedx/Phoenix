@@ -15,5 +15,5 @@
 	background-image: -o-linear-gradient(top, $from 0%, $to 100%); /* Opera 11.10+ */
 	background-image: -ms-linear-gradient(top, $from 0%, $to 100%);  /* IE10+ */
 	background-image: linear-gradient(top bottom, $from 0%, $to 100%);/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{$from}', endColorstr='{$to}',GradientType=0 ); /* IE6-9 */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$from}', endColorstr='#{$to}',GradientType=0 ); /* IE6-9 */
 }

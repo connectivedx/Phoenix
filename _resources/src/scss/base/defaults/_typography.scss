@@ -1,7 +1,9 @@
 a {
 	color: black;
 
-	&:hover {
+	&:hover,
+	&:active,
+	&:focus {
 		color: $mediumGrey;
 	}
 }

@@ -1,3 +1,4 @@
+/*global require, module */
 'use strict';
 
 var clean = require('gulp-clean');
@@ -46,11 +47,11 @@ function createProductionJsStream(gulp, sourcePath, debug) {
 	return createJsStream(gulp, config.jsSourcePath, false)
 			.pipe(bytediff.start())
 			.pipe(uglify())
-			.pipe(bytediff.stop())
+			.pipe(bytediff.stop());
 }
 
 module.exports = function(gulp) {
-	gulp.task('js-dev', ['js-clean'], function() {	
+	gulp.task('js-dev', ['js-clean'], function() {
 		createJsStream(gulp, config.jsSourcePath, true)
 			.pipe(gulp.dest(config.jsOutputPath));
 	});

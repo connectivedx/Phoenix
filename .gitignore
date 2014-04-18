@@ -6,9 +6,3 @@
 documentation-sassdoc/*
 web.config
 codekit-config.json
-
-# Compiled files
-_resources/*
-!_resources/src/
-_resources/src/node_modules
-_resources/npm-debug.log
