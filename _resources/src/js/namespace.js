@@ -85,3 +85,5 @@ IX.inherit = (function () {
 		Child.prototype.constructor = Child;
 	};
 }());
+
+global.IX = IX;

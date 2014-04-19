@@ -9,8 +9,7 @@
 // globals set for jsLint
 /*globals $,jQuery,window,setTimeout,document,console */
 
-// jquery no conflict. use $j or jQuery outside of ready function
-var $j = jQuery.noConflict();
+var jQuery = require('jquery');
 
 
 // jQuery document ready
@@ -107,5 +106,28 @@ IX.optionsResize = function(resizeWait){
 };
 // jQuery plugins
 
+require('./tabs/jquery.responsive-tabs');
+require('./lightboxes/jquery.fancybox.pack');
+require('./tooltips/jquery.tipsy');
+
 // etc
 
+// moved from inline js in foot.php
+jQuery(function($) {
+	$('.nav-handle').click(function() {
+		$('.nav-list').toggleClass('expanded');
+	});
+	$('select').wrap('<div class="decorator-select"></div>');
+
+	$('.fancybox').fancybox();
+
+	$('.tooltip-tipsy').tipsy({
+		gravity: 'w'
+	});
+
+	$('.custom-file-upload').click(function(e) {
+		e.preventDefault();
+
+		$(this).next('input[type="file"]').click();
+	});
+});
