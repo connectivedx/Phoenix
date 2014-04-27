@@ -39,7 +39,7 @@ function createSassStream(gulp) {
 	return gulp.src(config.scssSourcePath)
 		.pipe(plumber())
 		.pipe(sass())
-		.pipe(cmq())
+		.pipe(cmq());
 }
 
 function emitCssStream(stream, gulp) {

@@ -38,7 +38,7 @@ var config = {
 
 function createJsStream(gulp, sourcePath, debug) {
 	return gulp.src(sourcePath)
-		.pipe(plumber())
+		.pipe(plumber());
 		/*
 			Browserify causes problems with respond.js, so it's being disabled for now
 			.pipe(browserify({debug: debug}))
