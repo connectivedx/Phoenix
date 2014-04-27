@@ -63,9 +63,9 @@ module.exports = function(gulp) {
 
 	gulp.task('css-analyse', ['css-dev'], function() {
 		return createSassStream(gulp)
-		.pipe(csslint(config.cssLintRuleset))
-		.pipe(csslint.reporter())
-		.pipe(stylestats());
+			.pipe(csslint(config.cssLintRuleset))
+			.pipe(csslint.reporter())
+			.pipe(stylestats());
 	});
 	
 	gulp.task('css-clean', function() {

@@ -72,10 +72,10 @@ module.exports = function(gulp) {
 		var excludeFilter = filter('!{*,**/*}{.min,.pack,.lib}.js');
 
 		return gulp.src(config.jsSourcePath)
-		.pipe(plumber())
-		.pipe(excludeFilter)
-		.pipe(jshint(config.jsHintOptions))
-		.pipe(jshint.reporter('jshint-stylish'));
+			.pipe(plumber())
+			.pipe(excludeFilter)
+			.pipe(jshint(config.jsHintOptions))
+			.pipe(jshint.reporter('jshint-stylish'));
 	});
 	
 	gulp.task('js-clean', function() {

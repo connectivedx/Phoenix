@@ -27,6 +27,11 @@ The watch build will execute the development build and watch for file changes, a
 * Windows - execute build-watch.cmd.
 * Mac OS - execute mac-build-watch.command.
 
+### Analyse
+The analyse build performs linting on your CSS and JavaScript after compiling, giving you statistics and tips to improve your compiled code.
+* Windows - execute build-analyse.cmd.
+* Mac OS - execute mac-build-analyse.command.
+
 ### Production
 The production build lints, concatenates, and minifies files.
 * Windows - execute build-production.cmd.
