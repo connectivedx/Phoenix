@@ -1,3 +1,3 @@
-	<script src="_resources/js/global.js"></script>
+	<script src="_resources/js/main.js"></script>
 </body>
 </html>

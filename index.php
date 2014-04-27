@@ -4,7 +4,7 @@
 	<meta charset="utf-8" />
 	<title>ISITE Design | FED Template Engine v0.1 Alpha</title>
 	<link rel="stylesheet" href="_resources/css/constructor.css" />
-	<script src="_resources/js/header.js"></script>
+	<script src="_resources/js/head.js"></script>
 </head>
 
 <body>
@@ -324,6 +324,6 @@
 		</fieldset>
 	</form>
 	<iframe id="constructor-preview" src="constructor/htdocs/_resources/html/index-html5-elements.php"></iframe>
-	<script src="_resources/js/global.js"></script>
+	<script src="_resources/js/constructor.js"></script>
 </body>
 </html>

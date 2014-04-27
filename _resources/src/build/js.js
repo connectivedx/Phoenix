@@ -22,7 +22,7 @@ var config = {
 		should be using Browserify to manage your depenedencies. Only
 		include discrete files that you need here.
 	 */
-	jsSourcePath: ['js/global.js', 'js/header.js', 'js/oldie.js'],
+	jsSourcePath: ['js/constructor.js', 'js/main.js', 'js/head.js', 'js/oldie.js'],
 	jsWatchGlob: 'js/**', /* JS file pattern to watch for changes when in watch mode */
 	jsOutputPath: '../js', /* where to emit the processed files */
 	

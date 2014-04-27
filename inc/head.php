@@ -17,7 +17,7 @@
 	<meta name="author" content="ISITE Design">
 	<meta name="apple-mobile-web-app-title" content="CUSTOM SHORT NAME">
 	
-	<script src="_resources/js/header.js"></script>
+	<script src="_resources/js/head.js"></script>
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
 	
 	<link rel="stylesheet" media="all" href="_resources/css/style.css">
