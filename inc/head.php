@@ -22,7 +22,7 @@
 	
 	<link rel="stylesheet" media="all" href="_resources/css/style.css">
 	<!--[if lte IE 8]>
-	<script src="_resources/js/respond.js"></script>
+		<script src="_resources/js/oldie.js"></script>
 	<![endif]-->
 
 	<!-- Serve one icon for all Apple devices -->
