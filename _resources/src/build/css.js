@@ -11,10 +11,11 @@ var plumber = require('gulp-plumber');
 var watch = require('gulp-watch');
 var livereload = require('gulp-livereload');
 var bytediff = require('gulp-bytediff');
+var stylestats = require('gulp-stylestats');
 
 /**
 	CSS Processor
-	By default this processor runs sass, csslint, and if in prod mode cssmin over a set of source SCSS files
+	By default this processor runs sass, and if in prod mode cssmin over a set of source SCSS files
 **/
 
 var config = {
@@ -24,7 +25,13 @@ var config = {
 	
 	/* all rules by ID: https://github.com/stubbornella/csslint/wiki/Rules-by-ID */
 	cssLintRuleset: {
-		"adjoining-classes": false
+		"adjoining-classes": false,
+		"box-sizing": false,
+		"outline-none": false,
+		"compatible-vendor-prefixes": false,
+		"floats": false,
+		"unique-headings": false,
+		"important": false
 	}
 };
 
@@ -33,8 +40,6 @@ function createSassStream(gulp) {
 		.pipe(plumber())
 		.pipe(sass())
 		.pipe(cmq())
-		.pipe(csslint(config.cssLintRuleset))
-		.pipe(csslint.reporter());
 }
 
 function emitCssStream(stream, gulp) {
@@ -55,6 +60,13 @@ module.exports = function(gulp) {
 			.pipe(bytediff.stop());
 		
 		emitCssStream(sassStream, gulp);
+	});
+
+	gulp.task('css-analyze', ['css-dev'], function() {
+		return createSassStream(gulp)
+			.pipe(csslint(config.cssLintRuleset))
+			.pipe(csslint.reporter())
+			.pipe(stylestats());
 	});
 	
 	gulp.task('css-clean', function() {
