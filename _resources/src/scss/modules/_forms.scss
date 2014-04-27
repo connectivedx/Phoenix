@@ -82,16 +82,12 @@ fieldset {
 }
 
 // selects
+$decoratorSelectBorderSize: 1px;
+
 .decorator-select {
-	background-image: -moz-linear-gradient(top, #fbfaf9 0%, #979694 100%); /* FF3.6+ */
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fbfaf9), color-stop(100%,#979694)); /* Chrome,Safari4+ */
-	background-image: -webkit-linear-gradient(top, #fbfaf9 0%,#979694 100%); /* Chrome10+,Safari5.1+ */
-	background-image: -o-linear-gradient(top, #fbfaf9 0%,#979694 100%); /* Opera 11.10+ */
-	background-image: -ms-linear-gradient(top, #fbfaf9 0%,#979694 100%); /* IE10+ */
-	background-image: linear-gradient(to bottom, #fbfaf9 0%,#979694 100%); /* W3C */
+	@include gradient(#f5f4f2, #999896);
 	background-size: 100%;
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfaf9', endColorstr='#979694',GradientType=0 ); /* IE6-9 */
-	border: 1px solid black;
+	border: $decoratorSelectBorderSize solid black;
 	border-radius: $formElementBorderRadius;
 	@include box-sizing();
 	display: inline-block;
@@ -102,28 +98,27 @@ fieldset {
 
 	&:after {
 		content: url('#{$imagesFolder}bg-select-arrow.png');
-		height: 34px;
+		height: $inputHeight - (2 * $decoratorSelectBorderSize);	// the content image's height should fit within the confines of the input's height
 		pointer-events: none;
 		position: absolute;
-		right: 8px;
-		top: 3px;
-		width: 25px;
+		right: 0;
+		top: 0;
+		width: 31px;	// width of the content image
 		z-index: 100;
 
-		.ie8 & {
+		.oldie & {
 			content: '';
 		}
 	}
-	&:first-child {
-		margin-left: 0;
-	}
+
 	select {
 		-webkit-appearance: none;
 		background: transparent;
 		border: none;
+		@include box-sizing();
 		color: black;
 		display: block;
-		height: 34px;
+		height: $inputHeight - (2 * $decoratorSelectBorderSize);
 		outline: none;
 		padding: 6px 10px 6px 10px;
 		position: relative;
