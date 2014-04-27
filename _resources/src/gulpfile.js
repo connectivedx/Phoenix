@@ -16,7 +16,7 @@ gulp.task('default', ['css-dev', 'js-dev', 'img-dev', 'fonts-dev'], function(){}
 // this is the top level production task
 gulp.task('production', ['css-production', 'js-production', 'img-production', 'fonts-production'], function() {});
 
-gulp.task('analyse', ['css-analyse', 'js-analyse'], function() {});
+gulp.task('analyze', ['css-analyze', 'js-analyze'], function() {});
 
 // this is the top level watch task, which gets watcher delegates augmented onto it by task plugins
 gulp.task('watch', ['default'], function() {

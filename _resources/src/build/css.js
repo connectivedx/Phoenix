@@ -61,7 +61,7 @@ module.exports = function(gulp) {
 		emitCssStream(sassStream, gulp);
 	});
 
-	gulp.task('css-analyse', ['css-dev'], function() {
+	gulp.task('css-analyze', ['css-dev'], function() {
 		return createSassStream(gulp)
 			.pipe(csslint(config.cssLintRuleset))
 			.pipe(csslint.reporter())

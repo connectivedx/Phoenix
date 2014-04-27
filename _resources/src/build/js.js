@@ -68,7 +68,7 @@ module.exports = function(gulp) {
 			.pipe(gulp.dest(config.jsOutputPath));
 	});
 
-	gulp.task('js-analyse', ['js-dev'], function() {
+	gulp.task('js-analyze', ['js-dev'], function() {
 		var excludeFilter = filter('!{*,**/*}{.min,.pack,.lib}.js');
 
 		return gulp.src(config.jsSourcePath)
