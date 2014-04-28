@@ -12,7 +12,7 @@ Once you've cloned or downloaded the project, you'll first need to install NodeJ
 2. The type and name of the command file is dependent on your platform and which build you need.
     * Windows - execute one of the .cmd files.  The builds are listed below.  
     * Mac OS - execute one of the .command files.  The builds are listed below.
-    * **NOTE** - if you get an error when executing a build, make sure you have execute privileges on the file.
+    * **NOTE** - if you get an error when executing a build, make sure you have execute privileges on the file as well as the base build file in _resources/src/build.
 
 # Builds
 
