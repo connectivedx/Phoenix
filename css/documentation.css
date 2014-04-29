@@ -459,7 +459,7 @@ fieldset input[type="number"],
 fieldset input[type="password"],
 fieldset input[type="email"],
 fieldset input[type="tel"] {
-	height: 36px;
+	height: 33px;
 }
 
 fieldset input[type="text"],
@@ -487,8 +487,8 @@ fieldset .checkbox-list > li {
 	margin: 0 0 0 0.75em;
 }
 
-.ie8 fieldset input[type="radio"] + label,
-.ie8 fieldset input[type="checkbox"] + label {
+.oldie fieldset input[type="radio"] + label,
+.oldie fieldset input[type="checkbox"] + label {
 	display: inline;
 	margin-left: 0.25em;
 	min-height: 20px;
@@ -1661,14 +1661,15 @@ fieldset label.inline {
 }
 
 .decorator-select {
-	background-image: -moz-linear-gradient(top, #fbfaf9 0%, #979694 100%); /* FF3.6+ */
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fbfaf9), color-stop(100%, #979694)); /* Chrome,Safari4+ */
-	background-image: -webkit-linear-gradient(top, #fbfaf9 0%, #979694 100%); /* Chrome10+,Safari5.1+ */
-	background-image: -o-linear-gradient(top, #fbfaf9 0%, #979694 100%); /* Opera 11.10+ */
-	background-image: -ms-linear-gradient(top, #fbfaf9 0%, #979694 100%); /* IE10+ */
-	background-image: linear-gradient(to bottom, #fbfaf9 0%, #979694 100%); /* W3C */
+	background-color: #999896;
+	background-image: -moz-linear-gradient(top, #f5f4f2 0%, #999896 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f5f4f2), color-stop(100%, #999896));
+	background-image: -webkit-linear-gradient(top, #f5f4f2 0%, #999896 100%);
+	background-image: -o-linear-gradient(top, #f5f4f2 0%, #999896 100%);
+	background-image: -ms-linear-gradient(top, #f5f4f2 0%, #999896 100%);
+	background-image: linear-gradient(top bottom, #f5f4f2 0%, #999896 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f4f2', endColorstr='#999896',GradientType=0 );
 	background-size: 100%;
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfaf9', endColorstr='#979694',GradientType=0 ); /* IE6-9 */
 	border: 1px solid black;
 	border-radius: 0px;
 	-moz-box-sizing: border-box;
@@ -1682,30 +1683,28 @@ fieldset label.inline {
 
 .decorator-select:after {
 	content: url('../img/css/bg-select-arrow.png');
-	height: 34px;
+	height: 31px;
 	pointer-events: none;
 	position: absolute;
-	right: 8px;
-	top: 3px;
-	width: 25px;
+	right: 0;
+	top: 0;
+	width: 31px;
 	z-index: 100;
 }
 
-.ie8 .decorator-select:after {
+.oldie .decorator-select:after {
 	content: '';
-}
-
-.decorator-select:first-child {
-	margin-left: 0;
 }
 
 .decorator-select select {
 	-webkit-appearance: none;
 	background: transparent;
 	border: none;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 	color: black;
 	display: block;
-	height: 34px;
+	height: 31px;
 	outline: none;
 	padding: 6px 10px 6px 10px;
 	position: relative;
@@ -1855,6 +1854,7 @@ fieldset label.inline {
 	display: none;
 	font-size: 19px;
 	font-size: 1.1875rem;
+	list-style: none;
 	margin: 0;
 	padding: 0;
 }
@@ -8110,14 +8110,22 @@ button + .btn,
 	margin-bottom: 0;
 }
 
-.responsive-tabs-vertical .responsive-tabs__panel {
+.responsive-tabs-vertical-left .responsive-tabs__panel,
+.responsive-tabs-vertical-right .responsive-tabs__panel {
 	border-top: 1px solid black;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	display: inline-block;
-	float: left;
 	min-height: 300px;
 	width: 75%;
+}
+
+.responsive-tabs-vertical-left .responsive-tabs__panel {
+	float: left;
+}
+
+.responsive-tabs-vertical-right .responsive-tabs__panel {
+	float: right;
 }
 
 .responsive-tabs__panel--closed-accordion-only {
@@ -8129,13 +8137,23 @@ button + .btn,
 	display: block;
 }
 
-.responsive-tabs-vertical .responsive-tabs__list {
+.responsive-tabs-vertical-left .responsive-tabs__list,
+.responsive-tabs-vertical-right .responsive-tabs__list {
 	display: inline-block;
+	position: relative;
+	width: 25%;
+}
+
+.responsive-tabs-vertical-left .responsive-tabs__list {
 	float: left;
 	left: 1px;
 	margin-left: -1px;
-	position: relative;
-	width: 25%;
+}
+
+.responsive-tabs-vertical-right .responsive-tabs__list {
+	float: right;
+	margin-right: -1px;
+	right: 1px;
 }
 
 .responsive-tabs-horizontal .responsive-tabs__list__item {
@@ -8143,7 +8161,8 @@ button + .btn,
 	margin-right: 2px;
 }
 
-.responsive-tabs-vertical .responsive-tabs__list__item {
+.responsive-tabs-vertical-left .responsive-tabs__list__item,
+.responsive-tabs-vertical-right .responsive-tabs__list__item {
 	border-bottom: 1px solid black;
 	border-bottom-left-radius: 0px;
 	border-top-right-radius: 0;
@@ -8159,9 +8178,14 @@ button + .btn,
 	top: 1px;
 }
 
-.responsive-tabs-vertical .responsive-tabs__list__item--active,
-.responsive-tabs-vertical .responsive-tabs__list__item--active:hover {
+.responsive-tabs-vertical-left .responsive-tabs__list__item--active,
+.responsive-tabs-vertical-left .responsive-tabs__list__item--active:hover {
 	border-right: none;
+}
+
+.responsive-tabs-vertical-right .responsive-tabs__list__item--active,
+.responsive-tabs-vertical-right .responsive-tabs__list__item--active:hover {
+	border-left: none;
 }
 
 .tooltip.high-res-only {
