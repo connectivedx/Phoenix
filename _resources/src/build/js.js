@@ -45,8 +45,6 @@ function createJsStream(gulp, sourcePath, debug) {
 	return gulp.src(sourcePath)
 		.pipe(plumber())
 		.pipe(browserify({debug: debug}))
-		.pipe(jshint(config.jsHintOptions))
-		.pipe(jshint.reporter('jshint-stylish'));
 }
 
 function createProductionJsStream(gulp, sourcePath, debug) {
