@@ -45,7 +45,7 @@ fieldset {
 	input[type="email"],
 	input[type="tel"] {
 		// height is set explicitly in pixels to match the custom selects
-		height: 36px;
+		height: $inputHeight;
 	}
 
 	input[type="text"],
@@ -74,7 +74,7 @@ fieldset {
 		}
 	}
 
-	.ie8 & {
+	.oldie & {
 		input[type="radio"],
 		input[type="checkbox"] {
 			& + label {

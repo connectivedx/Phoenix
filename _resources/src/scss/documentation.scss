@@ -1,3 +1,15 @@
+@import "variables/all";
+
+@import "functions/all";
+
+@import "mixins/all";
+
+@import "base/all";
+
+@import "layout/all";
+
+@import "modules/all";
+
 .doc-header {
 	background-color: $colorPrimary;
 	color: white;

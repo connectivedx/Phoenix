@@ -85,13 +85,20 @@ $tabPanelTextColor: black;
 	@include respond(breakpointMedium) {
 		margin-bottom: 0;
 
-		.responsive-tabs-vertical & {
+		.responsive-tabs-vertical-left &,
+		.responsive-tabs-vertical-right & {
 			border-top: 1px solid $tabBorderColor;
 			@include box-sizing();
 			display: inline-block;
-			float: left;
 			min-height: 300px;
 			width: 75%;
+		}
+
+		.responsive-tabs-vertical-left & {
+			float: left;
+		}
+		.responsive-tabs-vertical-right & {
+			float: right;
 		}
 	}
 }
@@ -106,6 +113,7 @@ $tabPanelTextColor: black;
 .responsive-tabs__list {
 	display: none;
 	@include font-size(19);
+	list-style: none;
 	margin: 0;
 	padding: 0;
 
@@ -115,13 +123,23 @@ $tabPanelTextColor: black;
 			display: block;
 		}
 
-		.responsive-tabs-vertical & {
+		.responsive-tabs-vertical-left &,
+		.responsive-tabs-vertical-right & {
 			display: inline-block;
+			position: relative;
+			width: 25%;
+		}
+
+		.responsive-tabs-vertical-left & {
 			float: left;
 			left: 1px;
 			margin-left: -1px;
-			position: relative;
-			width: 25%;
+		}
+
+		.responsive-tabs-vertical-right & {
+			float: right;
+			margin-right: -1px;
+			right: 1px;
 		}
 	}
 }
@@ -146,7 +164,8 @@ $tabPanelTextColor: black;
 			margin-right: 2px;
 		}
 
-		.responsive-tabs-vertical & {
+		.responsive-tabs-vertical-left &,
+		.responsive-tabs-vertical-right & {
 			border-bottom: 1px solid $tabBorderColor;
 			border-bottom-left-radius: $tabBorderRadius;
 			border-top-right-radius: 0;
@@ -169,8 +188,12 @@ $tabPanelTextColor: black;
 				top: 1px;
 			}
 
-			.responsive-tabs-vertical & {
+			.responsive-tabs-vertical-left & {
 				border-right: none;
+			}
+
+			.responsive-tabs-vertical-right & {
+				border-left: none;
 			}
 		}
 	}

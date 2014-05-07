@@ -12,6 +12,7 @@ Once you've cloned or downloaded the project, you'll first need to install NodeJ
 2. The type and name of the command file is dependent on your platform and which build you need.
     * Windows - execute one of the .cmd files.  The builds are listed below.  
     * Mac OS - execute one of the .command files.  The builds are listed below.
+    * **NOTE** - if you get an error when executing a build, make sure you have execute privileges on the file as well as the base build file in _resources/src/build.
 
 # Builds
 
@@ -26,6 +27,11 @@ The development build includes linting and debugging, but does not minify files 
 The watch build will execute the development build and watch for file changes, automatically compiling your source code and reloading your browser if you have LiveReload installed.
 * Windows - execute build-watch.cmd.
 * Mac OS - execute mac-build-watch.command.
+
+### Analyze
+The analyze build performs linting on your CSS and JavaScript after compiling, giving you statistics and tips to improve your compiled code.
+* Windows - execute build-analyze.cmd.
+* Mac OS - execute mac-build-analyze.command.
 
 ### Production
 The production build lints, concatenates, and minifies files.

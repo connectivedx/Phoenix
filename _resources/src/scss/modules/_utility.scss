@@ -2,6 +2,14 @@
 
 // @function utility
 // The place for general utility classes.
+.accessibility {
+	height: 0;
+	left: -9999em;
+	line-height: 0;
+	position: absolute;
+	text-indent: -9999em;
+}
+
 %divider-config {
 	border: none;	// reset border to none; this allows the class to be used on horizontal rules
 	margin-top: $gutterInPx;

@@ -10,10 +10,11 @@ var uglify = require('gulp-uglify');
 //var yuidoc = require('gulp-yuidoc');
 var jshint = require('gulp-jshint');
 var bytediff = require('gulp-bytediff');
+var filter = require('gulp-filter');
 
 /**
 	JS Processor
-	By default this processor runs browserify, jshint, and if in prod mode uglify over a set of source JS files
+	By default this processor runs browserify, and if in prod mode uglify over a set of source JS files
 **/
 var config = {
 	/* 
@@ -28,7 +29,15 @@ var config = {
 	
 	/* see http://www.jshint.com/docs/options/ */
 	jsHintOptions: {
-		asi: true
+		asi: true,
+		camelcase: true,
+		curly: true,
+		eqeqeq: true,
+		freeze: true,
+		immed: true,
+		noarg: true,
+		unused: true,
+		jquery: true
 	}
 };
 
@@ -56,6 +65,16 @@ module.exports = function(gulp) {
 	gulp.task('js-production', ['js-clean'], function() {
 		createProductionJsStream(gulp, config.jsSourcePath, false)
 			.pipe(gulp.dest(config.jsOutputPath));
+	});
+
+	gulp.task('js-analyze', ['js-dev'], function() {
+		var excludeFilter = filter('!{*,**/*}{.min,.pack,.lib}.js');
+
+		return gulp.src(config.jsSourcePath)
+			.pipe(plumber())
+			.pipe(excludeFilter)
+			.pipe(jshint(config.jsHintOptions))
+			.pipe(jshint.reporter('jshint-stylish'));
 	});
 	
 	gulp.task('js-clean', function() {
