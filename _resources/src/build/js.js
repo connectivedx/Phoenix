@@ -17,8 +17,13 @@ var filter = require('gulp-filter');
 	By default this processor runs browserify, and if in prod mode uglify over a set of source JS files
 **/
 var config = {
-	jsSourcePath: 'js/**/*.js', /* where to read JS files to build from (footer) NOTE: this should be one file most likely */
-	jsHeaderSourcePath: 'js/header.js', /* these JS files go in the header */
+	/* 
+		where to read JS files to build from (can be an array)
+		NOTE: you probably do not want every single JS file here, since you
+		should be using Browserify to manage your depenedencies. Only
+		include discrete files that you need here.
+	 */
+	jsSourcePath: ['js/constructor.js', 'js/main.js', 'js/head.js', 'js/oldie.js'],
 	jsWatchGlob: 'js/**', /* JS file pattern to watch for changes when in watch mode */
 	jsOutputPath: '../js', /* where to emit the processed files */
 	
@@ -38,11 +43,8 @@ var config = {
 
 function createJsStream(gulp, sourcePath, debug) {
 	return gulp.src(sourcePath)
-		.pipe(plumber());
-		/*
-			Browserify causes problems with respond.js, so it's being disabled for now
-			.pipe(browserify({debug: debug}))
-		*/
+		.pipe(plumber())
+		.pipe(browserify({debug: debug}))
 }
 
 function createProductionJsStream(gulp, sourcePath, debug) {
@@ -56,16 +58,10 @@ module.exports = function(gulp) {
 	gulp.task('js-dev', ['js-clean'], function() {
 		createJsStream(gulp, config.jsSourcePath, true)
 			.pipe(gulp.dest(config.jsOutputPath));
-
-		createJsStream(gulp, config.jsHeaderSourcePath, true)
-			.pipe(gulp.dest(config.jsOutputPath));
 	});
 	
 	gulp.task('js-production', ['js-clean'], function() {
 		createProductionJsStream(gulp, config.jsSourcePath, false)
-			.pipe(gulp.dest(config.jsOutputPath));
-
-		createProductionJsStream(gulp, config.jsHeaderSourcePath, false)
 			.pipe(gulp.dest(config.jsOutputPath));
 	});
 
@@ -97,10 +93,6 @@ module.exports = function(gulp) {
 	gulp._watchTasks.push(function(gulp, liveReloadServer) {
 		watch({ glob: config.jsWatchGlob, emitOnGlob:false, name: 'JSWatcher' }, function(changedFiles) {
 			createJsStream(gulp, config.jsSourcePath, true)
-				.pipe(gulp.dest(config.jsOutputPath))
-				.pipe(livereload(liveReloadServer));
-
-			createJsStream(gulp, config.jsHeaderSourcePath, true)
 				.pipe(gulp.dest(config.jsOutputPath))
 				.pipe(livereload(liveReloadServer));
 		});

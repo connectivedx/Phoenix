@@ -9,8 +9,7 @@
 // globals set for jsLint
 /*globals $,jQuery,window,setTimeout,document,console */
 
-// jquery no conflict. use $j or jQuery outside of ready function
-var $j = jQuery.noConflict();
+var jQuery = require('jquery');
 
 
 // jQuery document ready
@@ -105,7 +104,3 @@ IX.optionsResize = function(resizeWait){
 		target.css('height',(jQuery(window).height()-legendHeight)+'px');
 	},65);
 };
-// jQuery plugins
-
-// etc
-
