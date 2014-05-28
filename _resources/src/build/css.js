@@ -10,7 +10,7 @@ var cmq = require('gulp-combine-media-queries');
 var plumber = require('gulp-plumber');
 var watch = require('gulp-watch');
 var livereload = require('gulp-livereload');
-var bytediff = require('gulp-bytediff');
+//var bytediff = require('gulp-bytediff');
 var stylestats = require('gulp-stylestats');
 
 /**
@@ -55,9 +55,9 @@ module.exports = function(gulp) {
 	
 	gulp.task('css-production', ['css-clean'], function() {
 		var sassStream = createSassStream(gulp)
-			.pipe(bytediff.start())
+			//.pipe(bytediff.start())
 			.pipe(cssmin())
-			.pipe(bytediff.stop());
+			//.pipe(bytediff.stop());
 		
 		emitCssStream(sassStream, gulp);
 	});
