@@ -13,12 +13,12 @@ $tabHoverBackgroundColor: lighten($tabBackgroundColor, 10%);
 $tabTextColor: white;
 
 // active tab
-$tabActiveBackgroundColor: $lightGrey;
+$tabActiveBackgroundColor: $colorGreyLight;
 $tabActiveHoverBackgroundColor: lighten($tabActiveBackgroundColor, 10%);
 $tabActiveTextColor: black;
 
 // tab panel
-$tabPanelBackgroundColor: $lightGrey;
+$tabPanelBackgroundColor: $colorGreyLight;
 $tabPanelTextColor: black;
 
 .responsive-tabs-wrapper { 
