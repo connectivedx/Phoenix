@@ -8,7 +8,7 @@ require('./build/css')(gulp);
 require('./build/js')(gulp);
 require('./build/img')(gulp);
 require('./build/fonts')(gulp);
-require('./build/php')(gulp);
+require('./build/markup')(gulp);
 
 // this is the top level default (dev) task
 gulp.task('default', ['css-dev', 'js-dev', 'img-dev', 'fonts-dev'], function(){});
