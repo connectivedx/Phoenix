@@ -13,6 +13,7 @@
 	}
 	.row {
 		@include box-sizing();
+		@include clearfix();
 		margin-left: 0;
 		margin-right: 0;
 		min-width: 0;
@@ -259,6 +260,4 @@
 	.pull_left { float: left; }
 
 	.clearfix { @include clearfix(); }
-
-	.row { @include clearfix(); }
 }

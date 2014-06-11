@@ -1,4 +1,5 @@
 table {
+	border-collapse: collapse;
 	@include font-size(12);
 	width: 100%;
 
