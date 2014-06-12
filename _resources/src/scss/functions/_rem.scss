@@ -7,5 +7,25 @@
 // @usage
 // =rem(12) will return 0.75rem if the $baseFontSize is 16
 @function rem($target) {
-	@return (parseInt($target) / $baseFontSize) * 1rem;
+	@if type-of($target) == list {
+
+		$output: ;
+
+		@each $value in $target {
+
+			$value: rem($value);
+
+			$output: append($output, $value);
+
+		}
+	
+	} @else {
+
+		$target: parseInt($target);
+
+		$output: ($target / $baseFontSize) * 1rem;
+
+	}
+
+	@return $output;
 }
