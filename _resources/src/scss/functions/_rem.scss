@@ -9,7 +9,7 @@
 @function rem($target) {
 	@if type-of($target) == list {
 
-		$output: ;
+		$output: unquote('') !default;
 
 		@each $value in $target {
 
