@@ -12,19 +12,15 @@
 		$output: unquote('') !default;
 
 		@each $value in $target {
-
 			$value: rem($value);
 
 			$output: append($output, $value);
-
 		}
-	
-	} @else {
-
+	}
+	@else {
 		$target: parseInt($target);
 
 		$output: ($target / $baseFontSize) * 1rem;
-
 	}
 
 	@return $output;

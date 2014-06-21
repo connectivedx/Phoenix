@@ -14,15 +14,12 @@
 		$output: unquote('') !default;
 
 		@each $value in $target {
-
 			$value: em($value, $context);
 
 			$output: append($output, $value);
-
 		}
-	
-	} @else {
-
+	}
+	@else {
 		$target: parseInt($target);
 		$context: parseInt($context);
 
