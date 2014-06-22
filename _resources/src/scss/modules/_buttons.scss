@@ -12,7 +12,7 @@
 	display: inline-block;
 	@include font-size(18);
 	margin-right: em(5, 18);
-	padding: em(6, 18) em(12, 18);
+	padding: em(6 12, 18);
 	text-align: center;
 	text-decoration: none;
 }
@@ -42,7 +42,7 @@ button,
 
 	&.btn-small {
 		@include font-size(14);
-		padding: em(6, 14) em(12, 14);
+		padding: em(6 12, 14);
 	}
 
 	// sibling buttons may be too wide on low resolutions and wrap to multiple lines
@@ -81,7 +81,7 @@ button,
 
 	&.btn-small {
 		@include font-size(14);
-		padding: em(6, 14) em(12, 14);
+		padding: em(6 12, 14);
 	}
 
 	// sibling buttons may be too wide on low resolutions and wrap to multiple lines

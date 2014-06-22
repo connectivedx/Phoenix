@@ -152,7 +152,7 @@ $tabPanelTextColor: black;
 	border-top-right-radius: $tabBorderRadius;
 	color: $tabTextColor;
 	cursor: pointer;
-	padding: em(10, 19) em(20, 19);
+	padding: em(10 20, 19);
 
 	&:hover {
 		background: $tabHoverBackgroundColor;
