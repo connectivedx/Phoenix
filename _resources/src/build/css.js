@@ -1,7 +1,7 @@
 /*global require, module */
 'use strict';
 
-var clean = require('gulp-clean');
+var rimraf = require('rimraf');
 var concat = require('gulp-concat');
 var sass = require('gulp-sass');
 var cssmin = require('gulp-minify-css');
@@ -10,7 +10,6 @@ var cmq = require('gulp-combine-media-queries');
 var plumber = require('gulp-plumber');
 var watch = require('gulp-watch');
 var livereload = require('gulp-livereload');
-//var bytediff = require('gulp-bytediff');
 var stylestats = require('gulp-stylestats');
 
 /**
@@ -55,9 +54,7 @@ module.exports = function(gulp) {
 	
 	gulp.task('css-production', ['css-clean'], function() {
 		var sassStream = createSassStream(gulp)
-			//.pipe(bytediff.start())
-			.pipe(cssmin())
-			//.pipe(bytediff.stop());
+			.pipe(cssmin());
 		
 		emitCssStream(sassStream, gulp);
 	});
@@ -69,9 +66,8 @@ module.exports = function(gulp) {
 			.pipe(stylestats());
 	});
 	
-	gulp.task('css-clean', function() {
-		return gulp.src(config.cssOutputPath, {read:false})
-			.pipe(clean({force:true}));
+	gulp.task('css-clean', function(cb) {
+		rimraf(config.cssOutputPath, cb);
 	});
 	
 	gulp._watchTasks = gulp._watchTasks || [];

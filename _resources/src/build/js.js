@@ -1,7 +1,7 @@
 /*global require, module */
 'use strict';
 
-var clean = require('gulp-clean');
+var rimraf = require('rimraf');
 var plumber = require('gulp-plumber');
 var watch = require('gulp-watch');
 var livereload = require('gulp-livereload');
@@ -79,9 +79,8 @@ module.exports = function(gulp) {
 			.pipe(jshint.reporter('jshint-stylish'));
 	});
 	
-	gulp.task('js-clean', function() {
-		return gulp.src(config.jsOutputPath, {read:false})
-			.pipe(clean({force:true}));
+	gulp.task('js-clean', function(cb) {
+		rimraf(config.jsOutputPath, cb);
 	});
 	
 	/* Uncomment (and add to tasks in the gulpfile) if using YUIdoc for JS
