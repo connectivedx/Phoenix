@@ -26,7 +26,6 @@
 	
 	#{unquote($selector)} {
 		// These styles apply to all shift-columns
-		@include box-sizing();
 		display: inline-block;
 		float: left;
 		padding: $padding;

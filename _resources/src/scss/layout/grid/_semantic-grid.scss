@@ -1,6 +1,5 @@
 // Column Configuration placeholder
 %column-config {
-	@include box-sizing();
 	float: $defaultFloat;
 	margin: 0;
 	min-height: 1px;
@@ -20,7 +19,6 @@
 // row(nested)
 // row(false, 0 50px 0 0)
 @mixin row($nested: false, $padding: $gutterInPx, $maxWidth: $rowMaxWidth) {
-	@include box-sizing();
 	@include clearfix();
 	margin-left: 0; 
 	margin-right: 0;
