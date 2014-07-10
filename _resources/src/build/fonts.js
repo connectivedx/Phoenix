@@ -1,7 +1,7 @@
 /*global require, module */
 'use strict';
 
-var clean = require('gulp-clean');
+var rimraf = require('rimraf');
 var plumber = require('gulp-plumber');
 var newer = require('gulp-newer');
 var imagemin = require('gulp-imagemin');
@@ -48,9 +48,8 @@ module.exports = function(gulp) {
 			.pipe(gulp.dest(config.fontOutputPath));
 	});
 
-	gulp.task('fonts-clean', function() {
-		return gulp.src(config.fontOutputPath, {read:false})
-			.pipe(clean({force:true}));
+	gulp.task('fonts-clean', function(cb) {
+		rimraf(config.fontOutputPath, cb);
 	});
 	
 	gulp._watchTasks = gulp._watchTasks || [];

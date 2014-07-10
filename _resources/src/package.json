@@ -5,9 +5,10 @@
 	"repository": "none",
 	"devDependencies": {
 		"tiny-lr": "~0.0.7",
+		"rimraf": "~2.2.8",
+		
 		"gulp": "~3.6.2",
 		"gulp-concat": "~2.2.0",
-		"gulp-clean": "~0.3.0",
 		"gulp-util": "~2.2.14",
 		"gulp-plumber": "~0.6.2",
 		"gulp-newer": "~0.3.0",
