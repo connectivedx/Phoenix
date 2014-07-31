@@ -19,7 +19,7 @@ var config = {
 	fontSourcePath: ['fonts/*.eot', 'fonts/**/*.eot', 'fonts/*.ttf', 'fonts/**/*.ttf', 'fonts/*.woff', 'fonts/**/*.woff'],
 	svgSourcePath: ['fonts/*.svg', 'fonts/**/*.svg'],
 	fontWatchGlob: 'fonts/**',
-	fontOutputPath: '../fonts'
+	fontOutputPath: '../dist/fonts'
 };
 
 function createFontStream(gulp) {

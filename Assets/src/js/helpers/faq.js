@@ -20,7 +20,7 @@ Example HTML:
 	<dd><p>Item three sub content</p></dd>
 	<dt>Item four</dt>
 	<dd>
-		<img src="_resources/img/content/fpo-tertiary.jpg" alt="FPO" />
+		<img src="Assets/img/content/fpo-tertiary.jpg" alt="FPO" />
 		<p>Item four sub content</p>
 	</dd>
 </dl>

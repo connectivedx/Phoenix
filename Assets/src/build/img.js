@@ -19,7 +19,7 @@ var config = {
 	imageSourcePath: ['img/**/*.jpg', 'img/**/*.png', 'img/**/*.gif'],
 	svgSourcePath: 'img/**/*.svg',
 	imageWatchGlob: 'img/**',
-	imageOutputPath: '../img'
+	imageOutputPath: '../dist/img'
 };
 
 function createImageStream(gulp) {

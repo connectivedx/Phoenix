@@ -23,7 +23,7 @@ jQuery.fn.or = function(s) { return $(this).length ? $(this) : $(s); };
 */
 var resetBackgrounds = function() {
 	if(!$j('#accessibility-reset-styles').length && $j('body').css("background-image") == "none") {
-		$j('head').append('<link id="accessibility-reset-styles" rel="stylesheet" type="text/css" media="all" href="_resources/css/accessibility-reset.css" />');
+		$j('head').append('<link id="accessibility-reset-styles" rel="stylesheet" type="text/css" media="all" href="Assets/css/accessibility-reset.css" />');
 	}
 };
 

@@ -77,7 +77,7 @@ IX.querySettings = function(e){
 		}
 		var url = pallet.attr('src');
 			url = url.replace(/\?(.*)/g,'');
-		pallet.attr('src','constructor/htdocs/_resources/html/'+templateType+'?'+queryValues);
+		pallet.attr('src','constructor/htdocs/Assets/html/'+templateType+'?'+queryValues);
 		setTimeout(function(){ pallet.removeClass('loading-indication').fadeIn(); },200);	
 	});	
 };
