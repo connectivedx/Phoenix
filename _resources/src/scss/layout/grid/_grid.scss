@@ -12,7 +12,6 @@
 		background-color: white;
 	}
 	.row {
-		@include box-sizing();
 		@include clearfix();
 		margin-left: 0;
 		margin-right: 0;
@@ -84,7 +83,6 @@
 		}
 
 		.column, .columns {
-			@include box-sizing();
 			float: $defaultFloat !important;
 			min-height: 1px;
 
@@ -164,7 +162,6 @@
 			@for $i from 1 through $hybridCols {
 				@if $i == 1{
 					.one.column {
-						@include box-sizing();
 						width: 100%;
 
 						@include respond(breakpointMedium) {
@@ -172,7 +169,6 @@
 						}
 					}
 					.one.columns {
-						@include box-sizing();
 						width: 100%;
 
 						@include respond(breakpointMedium) {
@@ -184,7 +180,6 @@
 				}
 				@else{
 					.#{number-as-word($i)}.columns{
-						@include box-sizing();
 						width: 100%;
 
 						@include respond(breakpointMedium) {
