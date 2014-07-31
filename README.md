@@ -1,9 +1,9 @@
-FED-Template-Engine
+Phoenix
 ===================
-The FED Template Engine represents what we use at ISITE Design for the basis of new projects. With a library of patterns ready at our fingertips, a powerful and flexible grid system, and a clean, modular organization, you don't need to reinvent the wheel. And you'll have more time to invent the next wheel.
+Phoenix represents what we use at ISITE Design for the basis of new projects. With a library of patterns ready at our fingertips, a powerful and flexible grid system, and a clean, modular organization, you don't need to reinvent the wheel. And you'll have more time to invent the next wheel.
 
 # Documentation
-Full documentation is available at http://isitedesign.github.io/FED-Template-Engine/
+Full documentation is available at http://isitedesign.github.io/Phoenix/
 
 # Setup
 Once you've cloned or downloaded the project, you'll first need to install NodeJS.  It can be downloaded at http://nodejs.org/download/.  Once Node is installed, builds are done by executing a command file.
