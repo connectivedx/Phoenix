@@ -10,7 +10,7 @@
  *
  * CSS is something like...
  *  .loader{
- *		background: transparent url(/_resources/img/css/ajax-loader.gif) 0 0 no-repeat;
+ *		background: transparent url(/Assets/img/css/ajax-loader.gif) 0 0 no-repeat;
  *		margin: 1em 240px;
  *		padding: 0;
  *		height: 35px;

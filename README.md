@@ -8,15 +8,15 @@ Full documentation is available at http://isitedesign.github.io/FED-Template-Eng
 # Setup
 Once you've cloned or downloaded the project, you'll first need to install NodeJS.  It can be downloaded at http://nodejs.org/download/.  Once Node is installed, builds are done by executing a command file.
 
-1. Navigate to _resources/src
+1. Navigate to Assets/src
 2. The type and name of the command file is dependent on your platform and which build you need.
     * Windows - execute one of the .cmd files.  The builds are listed below.  
     * Mac OS - execute one of the .command files.  The builds are listed below.
-    * **NOTE** - if you get an error when executing a build, make sure you have execute privileges on the file as well as the base build file in _resources/src/build.
+    * **NOTE** - if you get an error when executing a build, make sure you have execute privileges on the file as well as the base build file in Assets/src/build.
 
 # Builds
 
-Each of the builds will compile the SCSS under _resources/src/scss and place CSS, images, JavaScript, and fonts into their respective folders under _resources.  These compiled files should never be edited and are ignored by the repository.  **All code editing must take place in _resources/src.**
+Each of the builds will compile the SCSS under Assets/src/scss and place CSS, images, JavaScript, and fonts into their respective folders under Assets.  These compiled files should never be edited and are ignored by the repository.  **All code editing must take place in Assets/src.**
 
 ### Development
 The development build includes linting and debugging, but does not minify files so they are readable during development.

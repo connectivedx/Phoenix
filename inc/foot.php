@@ -1,7 +1,7 @@
-	<script src="_resources/js/jquery.min.js"></script>
-	<script src="_resources/js/tabs/jquery.responsive-tabs.js"></script>
-	<script src="_resources/js/lightboxes/jquery.fancybox.pack.js"></script>
-	<script src="_resources/js/tooltips/jquery.tipsy.js"></script>
+	<script src="Assets/dist/js/jquery.min.js"></script>
+	<script src="Assets/dist/js/tabs/jquery.responsive-tabs.js"></script>
+	<script src="Assets/dist/js/lightboxes/jquery.fancybox.pack.js"></script>
+	<script src="Assets/dist/js/tooltips/jquery.tipsy.js"></script>
 	<script>
 		$(function() {
 			$('.nav-handle').click(function() {

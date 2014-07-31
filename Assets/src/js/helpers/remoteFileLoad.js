@@ -17,6 +17,6 @@ loadScript.callbackIE = function(callback) {
 };
 callback = function() { $("#nav ul, some-selector").bgiframe(); };
 
-loadScript("_resources/js/jquery.bgiframe.min.js", callback);
+loadScript("Assets/js/jquery.bgiframe.min.js", callback);
 
 // remotefileload

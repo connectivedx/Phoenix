@@ -20,7 +20,7 @@ var config = {
 	jsSourcePath: 'js/**/*.js', /* where to read JS files to build from (footer) NOTE: this should be one file most likely */
 	jsHeaderSourcePath: 'js/header.js', /* these JS files go in the header */
 	jsWatchGlob: 'js/**', /* JS file pattern to watch for changes when in watch mode */
-	jsOutputPath: '../js', /* where to emit the processed files */
+	jsOutputPath: '../dist/js', /* where to emit the processed files */
 	
 	/* see http://www.jshint.com/docs/options/ */
 	jsHintOptions: {

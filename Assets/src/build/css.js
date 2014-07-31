@@ -21,7 +21,7 @@ var stylestats = require('gulp-stylestats');
 var config = {
 	scssSourcePath: 'scss/*.scss',
 	scssWatchGlob: 'scss/**',
-	cssOutputPath: '../css',
+	cssOutputPath: '../dist/css',
 	
 	/* all rules by ID: https://github.com/stubbornella/csslint/wiki/Rules-by-ID */
 	cssLintRuleset: {
