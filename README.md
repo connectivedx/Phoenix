@@ -1,4 +1,4 @@
-Phoenix
+![Phoenix](Assets/src/img/content/logo-placeholder.png)
 ===================
 Phoenix represents what we use at ISITE Design for the basis of new projects. With a library of patterns ready at our fingertips, a powerful and flexible grid system, and a clean, modular organization, you don't need to reinvent the wheel. And you'll have more time to invent the next wheel.
 
