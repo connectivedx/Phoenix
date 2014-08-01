@@ -227,7 +227,6 @@
 				<h1>Badges</h1>
 				<span class="badge-primary">Primary badge</span>
 				<span class="badge-secondary">Secondary badge</span>
-				<span class="badge-tertiary">Tertiary badge</span>
 			</div>
 		</div>
 

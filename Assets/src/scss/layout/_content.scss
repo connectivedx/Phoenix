@@ -11,7 +11,7 @@
 .layout-primary {
 	@include column(9);
 	@include push(4);
-	background-color: lighten($colorPrimary, 35%);
+	border: 1px dashed $colorPrimary;
 }
 .layout-secondary {
 	@include column(4);
@@ -20,23 +20,18 @@
 }
 .layout-tertiary {
 	@include column(3);
-	background-color: $colorTertiary;
-	color: white;
-
-	h3 {
-		color: white;
-	}
+	background-color: $colorSecondary;
 }
 .layout-centered {
 	@include column(8, $gutterInPx, false, false, centered);
-	background-color: lighten($colorPrimary, 35%);
+	border: 1px dashed $colorPrimary;
 }
 
 // hybrid grid
 .layout-primary-hybrid {
 	@include column(16, $gutterInPx, hybrid);
 	@include push(4, hybrid);
-	background-color: lighten($colorPrimary, 35%);
+	border: 1px dashed $colorPrimary;
 }
 .layout-secondary-hybrid {
 	@include column(4, $gutterInPx, hybrid);
@@ -45,16 +40,11 @@
 }
 .layout-tertiary-hybrid {
 	@include column(4, $gutterInPx, hybrid);
-	background-color: $colorTertiary;
-	color: white;
-
-	h3 {
-		color: white;
-	}
+	background-color: $colorSecondary;
 }
 .layout-centered-hybrid {
 	@include column(12, $gutterInPx, hybrid, false, centered);
-	background-color: lighten($colorPrimary, 35%);
+	border: 1px dashed $colorPrimary;
 }
 
 // complex layout
@@ -67,7 +57,7 @@
 }
 .layout-complex-primary {
 	@extend %column-config;
-	background-color: lighten($colorPrimary, 35%);
+	border: 1px dashed $colorPrimary;
 	padding: $gutterInPx;
 
 	@include respond(breakpointMedium) {
@@ -97,8 +87,7 @@
 }
 .layout-complex-tertiary {
 	@extend %column-config;
-	background-color: $colorTertiary;
-	color: white;
+	background-color: $colorSecondary;
 	padding: $gutterInPx;
 
 	@include respond(breakpointMedium) {
@@ -142,7 +131,7 @@ aside {
 	@include row(nested);
 }
 .multi-grid {
-	background-color: lighten($colorPrimary, 35%);
+	border: 1px dashed $colorPrimary;
 
 	@include multi-grid("> li", 1, 2, 3, flush) {
 		text-align: center;

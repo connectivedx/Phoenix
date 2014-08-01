@@ -17,7 +17,7 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-weight: normal;
+	font-weight: 300;
 	line-height: 1;
 	margin-top: 0;
 
@@ -27,7 +27,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1 {
 	@include font-size(36);
-	font-weight: 700;
 	margin-bottom: em(11, 36);
 	margin-top: em(11, 36);
 }

@@ -163,11 +163,19 @@ $tabPanelTextColor: black;
 			margin-right: 2px;
 		}
 
+		.responsive-tabs-vertical-left & {
+			border-bottom-left-radius: $tabBorderRadius;
+			border-top-right-radius: 0;
+		}
+
+		.responsive-tabs-vertical-right & {
+			border-bottom-right-radius: $tabBorderRadius;
+			border-top-left-radius: 0;
+		}
+
 		.responsive-tabs-vertical-left &,
 		.responsive-tabs-vertical-right & {
 			border-bottom: 1px solid $tabBorderColor;
-			border-bottom-left-radius: $tabBorderRadius;
-			border-top-right-radius: 0;
 			display: block;
 			margin-bottom: 2px;
 		}

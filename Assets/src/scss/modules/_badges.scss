@@ -27,9 +27,3 @@ $badgeBorderRadius: 8px;
 	@extend %badge-config;
 	background-color: $colorSecondary;
 }
-
-.badge-tertiary {
-	@extend %badge-config;
-	background-color: $colorTertiary;
-	color: white;
-}

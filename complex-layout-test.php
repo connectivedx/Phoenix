@@ -25,23 +25,20 @@
 				<li>List item</li>
 				<li>List item</li>
 			</ul>
-			<h3 class="divider">Tables</h3>
-			<table>
-				<thead>
-					<tr>
-						<th>Column</th>
-						<th>Column</th>
-						<th>Column</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Row</td>
-						<td>Row</td>
-						<td>Row</td>
-					</tr>
-				</tbody>
-			</table>
+			<h3 class="divider">Forms</h3>
+			<fieldset>
+				<legend>Text Input</legend>
+				<ol>
+					<li>
+						<label for="testinput">Label for the input</label>
+						<input type="text" id="testinput">
+					</li>
+					<li>
+						<label for="testtextarea">Label for the Textarea</label>
+						<textarea id="testtextarea" cols="30" rows="5">Lorem ipsum dolor sit amet, consectetuer adipiscing elit vestibulum. </textarea>
+					</li>
+				</ol>
+			</fieldset>
 		</article>
 
 		<aside class="layout-complex-tertiary">

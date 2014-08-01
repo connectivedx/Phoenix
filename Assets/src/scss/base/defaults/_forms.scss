@@ -55,7 +55,7 @@ fieldset {
 	input[type="tel"],
 	textarea {
 		background-color: $colorGreyLight;
-		border: 1px solid black;
+		border: 1px solid $colorGreyMedium;
 		border-radius: $formElementBorderRadius;
 		max-width: 100%;
 		padding: em(8);
