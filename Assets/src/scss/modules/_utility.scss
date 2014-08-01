@@ -29,3 +29,13 @@
 	@extend %divider-config;
 	border-top: 1px dashed $colorGreyMedium;
 }
+
+.img-align-center {
+	display: block;
+	margin: 0 auto;
+}
+
+.img-full-width {
+	display: block;
+	width: 100%;
+}

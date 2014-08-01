@@ -6,7 +6,7 @@
 	<meta content="chrome=1" http-equiv="X-UA-Compatible">
 	<meta content="Phoenix by ISITE Design" name="description">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet" type="text/css">
 	<link href="../Assets/dist/css/documentation.css" media="screen" rel="stylesheet" type="text/css">
 	<script src="js/angular.min.js"></script>
 	<script src="js/angular-sanitize.min.js"></script>
@@ -21,7 +21,9 @@
 		</a>
 	
 		<div class="row">
-			<img src="../Assets/dist/img/content/logo-placeholder.png" alt="Phoenix by ISITE Design">
+			<a href="/">
+				<img src="../Assets/dist/img/content/logo-placeholder.png" alt="Phoenix by ISITE Design">
+			</a>
 
 			<section class="doc-downloads">
 				<a class="zip-download-link" href="https://github.com/isitedesign/Phoenix/zipball/master" target="_blank">Download this project as a .zip file</a>
@@ -53,12 +55,37 @@
 			</div>
 		</div>
 
-		<div class="row divider">
-			<div class="sixteen columns">
-				<h1>SCSS</h1>
-				<p>Below is a breakdown of all of the SCSS files in the project.  Each tab represents a folder in the structure found in _resources/src/scss.</p>
+		<div class="row divider" ng-controller="SCSSCtrl">
+			<div class="sixteen columns" ng-show="!dataLoaded">
+				<h1 class="doc-notification-error">Error Loading SCSS Documentation</h1>
+				<div class="doc-wrapper">
+					<p>To build the SCSS documentation, please follow these steps:</p>
+					<ol>
+						<li>
+							<p><strong>Windows users:</strong> Download and install the latest version of <a href="http://rubyinstaller.org/downloads/" target="_blank">Ruby</a> (do not install Ruby 2; if you need multiple versions of Ruby, you can use <a href="http://rvm.io/rvm/basics" target="_blank">RVM</a>).  During installation, make sure to check "Add Ruby executables to your PATH"</p>
+							<p><strong>Mac OS users:</strong> Ruby comes preinstalled with Mac OSX.</p>
+						</li>
+						<li>
+							<p>Once Ruby is installed, execute the following command in your command line:</p>
+							<strong>Windows users:</strong>
+							<div class="doc-code">gem install sassdoc</div>
+							<strong>Mac OS users:</strong>
+							<div class="doc-code">sudo gem install sassdoc</div>
+						</li>
+						<li>
+							<p><strong>Windows users:</strong> execute the file Assets/src/scss/createScssDocumentation.cmd as an administrator</p>
+							<p><strong>Mac OS users:</strong> execute the file Assets/src/scss/createScssDocumentation.sh</p>
+						</li>
+						<li>Ensure your web server has a MIME-type definition for JSON files</li>
+					</ol>
+				</div>
+			</div>
 
-				<div ng-controller="SCSSCtrl" class="responsive-tabs responsive-tabs-horizontal">
+			<div class="sixteen columns" ng-show="dataLoaded">
+				<h1>SCSS</h1>
+				<p>Below is a breakdown of all of the SCSS files in the project.  Each tab represents a folder in the structure found in Assets/src/scss.</p>
+
+				<div class="responsive-tabs responsive-tabs-horizontal">
 					<h2>Variables</h2>
 					<div class="responsive-tabs-content">
 						<div class="doc-callout">
