@@ -1,1 +1,1 @@
-sassdoc -d ../../documentation-sassdoc -n "FED Template Engine Documentation"
+sassdoc -d ../../documentation-sassdoc -n "Phoenix Documentation"
