@@ -1,0 +1,86 @@
+form {
+	margin: 0;
+}
+
+fieldset {
+	border: none;
+	margin: em(12) 0 0;
+	padding: 0;
+
+	&:first-child,
+	&.flush {
+		margin-top: 0;
+	}
+
+	legend {
+		display: none;
+	}
+
+	ol {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		margin-top: em(12);
+		// ----- NOTE:  I am keeping this rule here temporarily for posterity; this has been fixed in iOS7 ------
+		// overflow is set due to an iOS6 bug related to the usage of the placeholder attribute
+		// http://stackoverflow.com/questions/12515058/ios6-safari-orientation-change-bug
+		// overflow: hidden;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	label,
+	label + select {
+		display: block;
+	}
+
+	input[type="text"],
+	input[type="number"],
+	input[type="password"],
+	input[type="email"],
+	input[type="tel"] {
+		// height is set explicitly in pixels to match the custom selects
+		height: $inputHeight;
+	}
+
+	input[type="text"],
+	input[type="number"],
+	input[type="password"],
+	input[type="email"],
+	input[type="tel"],
+	textarea {
+		background-color: $colorGreyLight;
+		border: 1px solid black;
+		border-radius: $formElementBorderRadius;
+		max-width: 100%;
+		padding: em(8);
+		width: 100%;
+	}
+
+	& + button {
+		margin-top: em(12);
+	}
+
+	.radio-list,
+	.checkbox-list {
+		> li {
+			margin: 0 0 0 em(12);
+		}
+	}
+
+	.oldie & {
+		input[type="radio"],
+		input[type="checkbox"] {
+			& + label {
+				display: inline;
+				margin-left: em(4);
+				min-height: 20px;
+			}
+		}
+	}
+}

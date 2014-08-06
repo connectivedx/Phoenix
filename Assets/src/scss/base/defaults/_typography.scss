@@ -1,0 +1,58 @@
+a {
+	color: black;
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: $colorGreyMedium;
+	}
+}
+
+p {
+	margin: em(12) 0 0;
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	line-height: 1;
+	margin-top: 0;
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+h1 {
+	@include font-size(36);
+	font-weight: 700;
+	margin-bottom: em(11, 36);
+	margin-top: em(11, 36);
+}
+h2 {
+	@include font-size(24);
+	margin-bottom: em(10, 24);
+	margin-top: em(10, 24);
+}
+h3 {
+	@include font-size(18);
+	margin-bottom: em(8, 18);
+	margin-top: em(8, 18);
+}
+h4 {
+	@include font-size(14);
+	margin-bottom: em(8, 14);
+	margin-top: em(8, 14);
+}
+// selection colors cannot be combined into one selector as per:
+// http://www.briangardner.com/tutorials/text-selection-color/
+::-moz-selection {
+	background: black;
+	color: white;
+}
+::selection {
+	background: black;
+	color: white;
+}

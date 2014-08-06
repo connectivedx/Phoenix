@@ -1,0 +1,139 @@
+// @category modules
+
+// @function forms
+// Custom-styled form elements, including selects, checkboxes, and radio buttons.
+
+// IE9 and newer supported; IE8 and lower will have standard form elements
+// :not() targets > IE8, #foo is just a random ID
+fieldset:not(#foo) {
+	input[type="radio"],
+	input[type="checkbox"] {
+		float: left;
+		height: 1px;
+		margin: 0;
+		opacity: 0;
+		padding: 0;
+		width: 1px;
+
+		& + label {
+			background-image: url('#{$imagesFolder}bg-form-elements.png');
+			background-repeat: no-repeat;
+			clear: none;
+			display: block;
+			padding: 6px 5px 4px 27px;
+
+			&.inline {
+				display: inline-block;
+			}
+		}
+	}
+
+	$horizontalDisplacement: 5px;
+	$radioImagePosition: -234px;
+
+	input[type="radio"] {
+		& + label {
+			background-position: $horizontalDisplacement $radioImagePosition;
+		}
+		&:active + label,
+		&:focus + label {
+			background-position: $horizontalDisplacement $radioImagePosition - 80px;
+		}
+		&:checked + label {
+			background-position: $horizontalDisplacement $radioImagePosition - 160px;
+		}
+	}
+
+	$checkboxImagePosition: 6px;
+
+	input[type="checkbox"] {
+		& + label {
+			background-position: $horizontalDisplacement $checkboxImagePosition;
+		}
+		&:active + label,
+		&:focus + label {
+			background-position: $horizontalDisplacement $checkboxImagePosition - 80px;
+		}
+		&:checked + label {
+			background-position: $horizontalDisplacement $checkboxImagePosition - 160px;
+		}
+	}
+}
+
+.oldie {
+	fieldset {
+		input[type='radio'],
+		input[type='checkbox'] {
+			& + span {
+				margin-left: em(4);
+				min-height: 20px;
+			}
+		}
+	}
+}
+
+fieldset {
+	label {
+		&.inline {
+			display: inline-block;
+			padding-right: 5px;
+		}
+	}
+}
+
+// selects
+$decoratorSelectBorderSize: 1px;
+
+.decorator-select {
+	@include gradient(#f5f4f2, #999896);
+	background-size: 100%;
+	border: $decoratorSelectBorderSize solid black;
+	border-radius: $formElementBorderRadius;
+	display: inline-block;
+	height: auto;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+
+	&:after {
+		content: url('#{$imagesFolder}bg-select-arrow.png');
+		height: $inputHeight - (2 * $decoratorSelectBorderSize);	// the content image's height should fit within the confines of the input's height
+		pointer-events: none;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 31px;	// width of the content image
+		z-index: 100;
+
+		.oldie & {
+			content: '';
+		}
+	}
+
+	select {
+		-webkit-appearance: none;
+		background: transparent;
+		border: none;
+		color: black;
+		display: block;
+		height: $inputHeight - (2 * $decoratorSelectBorderSize);
+		outline: none;
+		padding: 6px 10px 6px 10px;
+		position: relative;
+		width: 100%;
+		z-index: 99;
+	}
+}
+
+.custom-file-upload {
+	.no-js & {
+		display: none;
+	}
+}
+
+input[type="file"] {
+	.js & {
+		visibility: hidden;
+		width: 0px;
+	}
+}

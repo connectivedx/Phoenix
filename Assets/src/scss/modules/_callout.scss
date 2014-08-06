@@ -1,0 +1,13 @@
+// @category modules
+
+// @function callout
+// Class used for calling out a specific portion of the page.
+.callout {
+	background: $colorGreyLight;
+	margin-top: em(10);
+	padding: $secondaryGutterInPx;
+
+	&:first-child {
+		margin-top: 0;
+	}
+}

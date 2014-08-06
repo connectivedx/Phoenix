@@ -2,8 +2,8 @@
 	$pageTitle = 'Semantic Grid System Test';
 	include_once 'inc/head.php';
 ?>
-	<div class="row">
-		<h1>Three column, semantic example (16 column grid)</h1>
+	<div class="wrapper">
+		<h1 class="row">Three column, semantic example (16 column grid)</h1>
 	</div>
 
 	<header class="row">
@@ -45,8 +45,8 @@
 		Footer
 	</footer>
 
-	<div class="row">
-		<h1>Three column, semantic hybrid-grid example (24 column grid)</h1>
+	<div class="wrapper">
+		<h1 class="row">Three column, semantic hybrid-grid example (24 column grid)</h1>
 	</div>
 
 	<header class="row">
@@ -88,9 +88,9 @@
 		Footer
 	</footer>
 
-	<div class="row">
-		<h1>Multi-Grid</h1>
-		<p>The multi-grid allows you to define element widths at multiple breakpoints.  Below there are 3 columns on large resolutions, 2 on medium, and 1 on small.</p>
+	<div class="wrapper">
+		<h1 class="row">Multi-Grid</h1>
+		<p class="row">The multi-grid allows you to define element widths at multiple breakpoints.  Below there are 3 columns on large resolutions, 2 on medium, and 1 on small.</p>
 	</div>
 
 	<div class="row">
