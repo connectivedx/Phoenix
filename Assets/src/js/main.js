@@ -1,25 +1,24 @@
 // load dependencies
-var jQuery = require('jquery');
+var $ = require('jquery');
 require('./tabs/jquery.responsive-tabs');
 require('./lightboxes/jquery.fancybox.pack');
 require('./tooltips/jquery.tipsy');
 
 // etc
-jQuery(function($) {
-	$('.nav-handle').click(function() {
-		$('.nav-list').toggleClass('expanded');
-	});
-	$('select').wrap('<div class="decorator-select"></div>');
+$('.nav-handle').click(function() {
+	$('.nav-list').toggleClass('expanded');
+});
 
-	$('.fancybox').fancybox();
+$('select').wrap('<div class="decorator-select"></div>');
 
-	$('.tooltip-tipsy').tipsy({
-		gravity: 'w'
-	});
+$('.fancybox').fancybox();
 
-	$('.custom-file-upload').click(function(e) {
-		e.preventDefault();
+$('.tooltip-tipsy').tipsy({
+	gravity: 'w'
+});
 
-		$(this).next('input[type="file"]').click();
-	});
+$('.custom-file-upload').click(function(e) {
+	e.preventDefault();
+
+	$(this).next('input[type="file"]').click();
 });

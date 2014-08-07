@@ -44,7 +44,7 @@ var config = {
 function createJsStream(gulp, sourcePath, debug) {
 	return gulp.src(sourcePath)
 		.pipe(plumber())
-		.pipe(browserify({debug: debug}))
+		.pipe(browserify({debug: debug}));
 }
 
 function createProductionJsStream(gulp, sourcePath, debug) {
