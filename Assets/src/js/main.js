@@ -1,8 +1,9 @@
 // load dependencies
 var $ = require('jquery');
-require('./tabs/jquery.responsive-tabs');
-require('./lightboxes/jquery.fancybox.pack');
-require('./tooltips/jquery.tipsy');
+require('./vendor/jquery.responsive-tabs');
+require('./vendor/jquery.fancybox.pack');
+require('./vendor/jquery.tipsy');
+require('./vendor/jquery.placeholder.js');
 
 // etc
 $('.nav-handle').click(function() {
@@ -22,3 +23,5 @@ $('.custom-file-upload').click(function(e) {
 
 	$(this).next('input[type="file"]').click();
 });
+
+$('input, textarea').placeholder();

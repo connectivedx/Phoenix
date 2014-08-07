@@ -1,1 +1,1 @@
-require('./respond');
+require('./vendor/respond');

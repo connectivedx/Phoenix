@@ -1,0 +1,2 @@
+# JavaScript Directory
+This top-level js directory is where your files to be compiled exist (these will be entered in config.jsSourcePath in the file [build/js.js](../build/js.js)).  Each of these files will use Browserify's require statements to manage dependencies.
