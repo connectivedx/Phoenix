@@ -16,7 +16,7 @@ fieldset:not(#foo) {
 		width: 1px;
 
 		& + label {
-			background-image: url('#{$imagesFolder}bg-form-elements.png');
+			background-image: image('bg-form-elements.png');
 			background-repeat: no-repeat;
 			clear: none;
 			display: block;
@@ -96,7 +96,7 @@ $decoratorSelectBorderSize: 1px;
 	width: 100%;
 
 	&:after {
-		content: url('#{$imagesFolder}bg-select-arrow.png');
+		content: image('bg-select-arrow.png');
 		height: $inputHeight - (2 * $decoratorSelectBorderSize);	// the content image's height should fit within the confines of the input's height
 		pointer-events: none;
 		position: absolute;
