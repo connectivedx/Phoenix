@@ -9,7 +9,7 @@
 				<h2>Level 2 heading</h2>
 				<h3>Level 3 heading</h3>
 				<h4>Level 4 heading</h4>
-				<p>This is a paragraph of text. Some of the text may be <em>emphasised</em> and some it might even be <strong>strongly emphasised</strong>. Occasionally <q>quoted text</q> may be found within a paragraph …and of course <a href="#">a link</a> may appear at any point in the text. The average paragraph contains five or six sentences although some may contain as little or one or two while others carry on for anything up to ten sentences and beyond.</p>
+				<p>This is a paragraph of text. Some of the text may be <em>emphasized</em> and some it might even be <strong>strongly emphasized</strong>. Occasionally <q>quoted text</q> may be found within a paragraph …and of course <a href="#">a link</a> may appear at any point in the text. The average paragraph contains five or six sentences although some may contain as little or one or two while others carry on for anything up to ten sentences and beyond.</p>
 			</div>
 		</div>
 
@@ -227,7 +227,6 @@
 				<h1>Badges</h1>
 				<span class="badge-primary">Primary badge</span>
 				<span class="badge-secondary">Secondary badge</span>
-				<span class="badge-tertiary">Tertiary badge</span>
 			</div>
 		</div>
 

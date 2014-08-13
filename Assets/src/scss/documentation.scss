@@ -11,53 +11,9 @@
 @import "modules/all";
 
 .doc-header {
-	background-color: $colorPrimary;
 	color: white;
 	max-width: none;
 	padding: 0;
-	position: relative;
-}
-
-.doc-logo {
-	$logoHeight: 150px;
-	$logoWidth: 150px;
-
-	display: none;
-	height: $logoHeight;
-	width: $logoWidth;
-
-	@include respond(breakpointMedium) {
-		display: table-cell;
-	}
-
-	$logoPieces: logo-cake-plate, logo-cake-bottom, logo-cake-filling, logo-cake-top, logo-cake-frosting, logo-cake-candle;
-	$logoPieceDisplacement: 0, 10px, 16px, 24px, 28px, 38px;
-	$logoPieceHoverDisplacement: 0, 30px, 46px, 64px, 88px, 118px;
-
-	&:hover {
-		@for $i from 1 through length($logoPieces) {
-			.#{nth($logoPieces, $i)} {
-				bottom: #{nth($logoPieceHoverDisplacement, $i)};
-			}
-		}
-	}
-
-	@for $i from 1 through length($logoPieces) {
-		.#{nth($logoPieces, $i)} {
-			background: image('#{nth($logoPieces, $i)}.png') no-repeat center center;
-			bottom: #{nth($logoPieceDisplacement, $i)};;
-			height: $logoHeight;
-			position: absolute;
-			@include transition(all, 0.1s, ease-in-out);
-			width: $logoWidth;
-			z-index: $i;
-		}
-	}
-}
-
-// this inner element fixes the issue with absolutely positioned elements within a table-cell displayed element
-.doc-logo-inner {
-	height: 100%;
 	position: relative;
 }
 
@@ -128,6 +84,10 @@
 
 .doc-callout {
 	padding: $gutterInPx / 2;
+
+	&.divider {
+		padding-top: $gutterInPx * 2;
+	}
 }
 
 .doc-usage {
@@ -135,7 +95,17 @@
 }
 
 .doc-footer {
-	background-color: $colorSecondary;
+	background-color: $colorPrimary;
 	color: white;
 	max-width: none;
+
+	a {
+		color: white;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: $colorGreyMedium;
+		}
+	}
 }

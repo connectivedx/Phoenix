@@ -29,7 +29,7 @@ fieldset:not(#foo) {
 	}
 
 	$horizontalDisplacement: 5px;
-	$radioImagePosition: -234px;
+	$radioImagePosition: -229px;
 
 	input[type="radio"] {
 		& + label {
@@ -44,7 +44,7 @@ fieldset:not(#foo) {
 		}
 	}
 
-	$checkboxImagePosition: 6px;
+	$checkboxImagePosition: 11px;
 
 	input[type="checkbox"] {
 		& + label {
@@ -85,9 +85,9 @@ fieldset {
 $decoratorSelectBorderSize: 1px;
 
 .decorator-select {
-	@include gradient(#f5f4f2, #999896);
+	@include gradient($colorGreyLight, $colorGreyMedium);
 	background-size: 100%;
-	border: $decoratorSelectBorderSize solid black;
+	border: $decoratorSelectBorderSize solid $colorGreyMedium;
 	border-radius: $formElementBorderRadius;
 	display: inline-block;
 	height: auto;
@@ -102,7 +102,6 @@ $decoratorSelectBorderSize: 1px;
 		position: absolute;
 		right: 0;
 		top: 0;
-		width: 31px;	// width of the content image
 		z-index: 100;
 
 		.oldie & {

@@ -11,22 +11,12 @@
 				<li id="nav3"><a href="#">Nav3</a></li>
 			</ul>
 		</nav>
-		<a class="brand" href="#"><img src="/Assets/dist/img/content/logo-placeholder.png" alt="ISITE Design"></a>
+		<a class="brand" href="#"><img src="Assets/dist/img/content/logo-placeholder.png" alt="Phoenix by ISITE Design"></a>
 		<ul class="accessibility">
 			<li><a href="#content" tabindex="1" accesskey="2">Skip to main content</a></li>
 			<li><a href="#nav" accesskey="3">Skip to navigation</a></li>
 			<li><a href="#" accesskey="1">Return to homepage</a></li>
 		</ul>
-		<!--
-		<div class="site-utility">
-			<form id="search" method="post" action="#" role="search">
-				<fieldset>
-					<label for="search-text" style="display: none;">Search</label>
-					<input id="search-text" type="text" class="input-setter placeholdered" placeholder="Search">
-					<button type="submit">Search</button>
-				</fieldset>
-			</form>
-		</div><!-- /.site-utility -->
 	</header>
 	<section class="wrapper"> 
 		<div class="layout-primary" role="main">
@@ -55,7 +45,7 @@
 	<footer role="contentinfo" class="row">
 		<h2>footer</h2>		
 		<ul class="meta">
-			<li>Copyright &copy; 2013 Client Name</li>
+			<li>Copyright &copy; <?php echo date("Y"); ?> Client Name</li>
 		</ul>
 	</footer>
 <?php
