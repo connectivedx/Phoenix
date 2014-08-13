@@ -2,7 +2,7 @@
 
 // @mixin rgba-background-color
 // Outputs an rgba background-color with an opaque fallback. If a PNG is supplied, it will be used as a fallback for older IEs, and opaque background will be overridden.  Note: modernizr is required for the PNG fallback.
-// @param $color {Color} The desired color. 
+// @param $color {Color} The desired color.
 // @param $alpha {Number} The desired level of opacity. [Decimal]
 // @param $image {String} Filename and extension of a variable transparency fallback. Default value: false.
 // @usage
@@ -15,7 +15,7 @@
 	@if $image {
 		.oldie & {
 			background-color: transparent;
-			background-image: url('#{$imagesFolder}#{$image}.png');
+			background-image: image('#{$image}.png');
 			background-repeat: repeat;
 		}
 	}

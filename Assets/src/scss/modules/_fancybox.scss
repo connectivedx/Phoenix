@@ -78,10 +78,10 @@
 }
 
 #fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
-	background-image: url('#{$imagesFolder}fancybox-sprite.png');
+	background-image: image('fancybox-sprite.png');
 }
 
-#fancybox-loading {	
+#fancybox-loading {
 	background-position: 0 -108px;
 	cursor: pointer;
 	left: 50%;
@@ -93,15 +93,15 @@
 	z-index: 8060;
 }
 
-#fancybox-loading div {	
-	background: url('#{$imagesFolder}fancybox-loading.gif') center center no-repeat;
+#fancybox-loading div {
+	background: image('fancybox-loading.gif') center center no-repeat;
 	height: 44px;
 	width: 44px;
 }
 
 .fancybox-close {
 	cursor: pointer;
-	height: 36px;	
+	height: 36px;
 	position: absolute;
 	right: -18px;
 	top: -18px;
@@ -110,7 +110,7 @@
 }
 
 .fancybox-nav {
-	background: transparent url('#{$imagesFolder}fancybox-blank.gif'); /* helps IE */
+	background: transparent image('fancybox-blank.gif'); /* helps IE */
 	cursor: pointer;
 	height: 100%;
 	position: absolute;
@@ -180,7 +180,7 @@
 }
 
 .fancybox-overlay {
-	background: url('#{$imagesFolder}fancybox-overlay.png');
+	background: image('fancybox-overlay.png');
 	display: none;
 	left: 0;
 	overflow: hidden;
@@ -262,12 +262,12 @@
 	   only screen and (min-device-pixel-ratio: 1.5){
 
 	#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
-		background-image: url('#{$imagesFolder}fancybox-sprite@2x.png');
+		background-image: image('fancybox-sprite@2x.png');
 		background-size: 44px 152px; // The size of the normal image, half the size of the hi-res image
 	}
 
 	#fancybox-loading div {
-		background-image: url('#{$imagesFolder}fancybox-loading@2x.gif');
+		background-image: image('fancybox-loading@2x.gif');
 		background-size: 24px 24px; // The size of the normal image, half the size of the hi-res image
 	}
 }

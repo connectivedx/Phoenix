@@ -8,9 +8,9 @@
 // =svg-image(logo)
 // =svg-image(bullet-blue, list-style-image)
 @mixin svg-image($imageName, $property: background-image) {
-	#{$property}: url('#{$svgFolder}#{$imageName}.svg');
+	#{$property}: image('#{$imageName}.svg', $svgFolder);
 
 	.no-svg & {
-		#{$property}: url('#{$imagesFolder}#{$imageName}.png');
+		#{$property}: image('#{$imageName}.png');
 	}
 }

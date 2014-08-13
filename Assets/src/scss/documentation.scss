@@ -26,14 +26,14 @@
 	display: none;
 
 	@include respond(breakpointMedium) {
-		background: url('#{$imagesFolder}github-icon-download.png') no-repeat 0% 90%;
+		background: image('github-icon-download.png') no-repeat 0% 90%;
 		bottom: -40px;
 		display: block;
 		height: 70px;
 		position: absolute;
 		right: em($gutterInPx);
 		width: 210px;
-		z-index: 10;	
+		z-index: 10;
 	}
 }
 
@@ -53,7 +53,7 @@
 }
 
 %download-link-config {
-	background-image: url('#{$imagesFolder}github-download-sprite.png');
+	background-image: image('github-download-sprite.png');
 	background-repeat: no-repeat;
 	display: block;
 	float: right;
