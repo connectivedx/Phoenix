@@ -26,12 +26,12 @@
 	<![endif]-->
 
 	<!-- Serve one icon for all Apple devices -->
-	<link rel="apple-touch-icon-precomposed" href="/path/to/touch-icon.png"> 
+	<link rel="apple-touch-icon-precomposed" href="Assets/dist/img/content/touch-icon.png"> 
 	<!-- icon and tile color in hex # for Windows phones -->
-	<meta name="msapplication-TileImage" content="/path/to/touch-icon.png">
+	<meta name="msapplication-TileImage" content="Assets/dist/img/content/touch-icon.png">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<!-- For everything else -->
-	<link rel="shortcut icon" href="/path/to/shortcut-icon.png">
+	<link rel="shortcut icon" type="image/png" href="Assets/dist/img/content/favicon.png">
 </head>
 
 <body class="<?php echo $bodyClass; ?>">
