@@ -7,8 +7,8 @@
 // @return {String} The compiled url()
 // @usage
 // =image('feed.png') will return url('../img/css/feed.png')
-// =image('feed.png', 'img/css/') will return url('../img/css/feed.png')
-// =image('feed.png', 'img/css') will return url('../img/css/feed.png')
+// =image('feed.png', '../img/css/') will return url('../img/css/feed.png')
+// =image('feed.png', '../img/css') will return url('../img/css/feed.png')
 @function image($imageName, $directory: $imagesFolder) {
 	$lastChar: str_slice($directory, -1, 1);
 
