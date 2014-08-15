@@ -3,7 +3,7 @@
 var configuration = {
 	output: '../dist', // where to write output to
 	base: '.', // base path from which globs are considered relative. Usually should be .
-
+	cleanProduction: true, // if true the output directory is rimraf'd before a build when debug = false
 	
 	tasks: [
 		{
@@ -46,6 +46,7 @@ var configuration = {
 
 var gulp = require('gulp'),
 	rev = require('gulp-rev-all'),
+	rimraf = require('rimraf'),
 	watchLoader = require('./build/lib/watchLoader'),
 	streamLoader = require('./build/lib/streamLoader');
 
@@ -67,6 +68,10 @@ gulp.task('default', loader.getBuildDependencies(), function() {
 
 // this is the top level production task (minified, no sourcemaps, rev'd)
 gulp.task('production', loader.getBuildDependencies(), function() {
+	if(configuration.cleanProduction) {
+		rimraf.sync(configuration.output);
+	}
+	
 	var sLoader = new streamLoader(gulp, configuration);
 
 	sLoader.loadStreams(false);
