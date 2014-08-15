@@ -1,7 +1,7 @@
 // @category mixins
 
 // @mixin svg-image
-// Outputs an SVG image for the given property with a PNG fallback.  Notee:  modernizr is required for the PNG fallback.
+// Outputs an SVG image for the given property with a PNG fallback.  Note:  modernizr is required for the PNG fallback.
 // @param $imageName {String} The filename, without an extension, of the image file.
 // @param $property {String} The CSS property to which you wish to apply the image.  Default value: background-image.
 // @usage
