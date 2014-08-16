@@ -1,44 +1,39 @@
 <!DOCTYPE html>
 
-<html ng-app="FEDTemplateDocApp">
+<html ng-app="PhoenixDocApp">
 <head>
 	<meta charset='utf-8'>
 	<meta content="chrome=1" http-equiv="X-UA-Compatible">
-	<meta content="FED Template Engine by ISITE Design" name="description">
+	<meta content="Phoenix by ISITE Design" name="description">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
-	<link href="css/documentation.css" media="screen" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet" type="text/css">
+	<link href="Assets/dist/css/documentation.css" media="screen" rel="stylesheet" type="text/css">
 	<script src="js/angular.min.js"></script>
 	<script src="js/angular-sanitize.min.js"></script>
 	<script src="js/app.js"></script>
-	<title>FED Template Engine</title>
+	<title>Phoenix by ISITE Design</title>
+
+	<!-- Serve one icon for all Apple devices -->
+	<link rel="apple-touch-icon-precomposed" href="Assets/dist/img/content/touch-icon.png"> 
+	<!-- icon and tile color in hex # for Windows phones -->
+	<meta name="msapplication-TileImage" content="Assets/dist/img/content/touch-icon.png">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<!-- For everything else -->
+	<link rel="shortcut icon" type="image/png" href="Assets/dist/img/content/favicon.png">
 </head>
 
 <body>
 	<header class="doc-header">
-		<a href="https://github.com/isitedesign/FED-Template-Engine" class="fork-me">
-			<img src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub">
+		<a href="https://github.com/isitedesign/Phoenix" class="fork-me">
+			<img src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
 		</a>
 	
 		<div class="row">
-			<div class="doc-logo">
-				<div class="doc-logo-inner">
-					<div class="logo-cake-candle"></div>
-					<div class="logo-cake-frosting"></div>
-					<div class="logo-cake-top"></div>
-					<div class="logo-cake-filling"></div>
-					<div class="logo-cake-bottom"></div>
-					<div class="logo-cake-plate"></div>
-				</div>
-			</div>
-			<div class="doc-project-title">
-				<h1 id="project_title">FED Template Engine</h1>
-				<h2 id="project_tagline">Making websites a piece of cake</h2>
-			</div>
+			<img src="Assets/dist/img/content/logo-placeholder.png" alt="Phoenix by ISITE Design">
 
 			<section class="doc-downloads">
-				<a class="zip-download-link" href="https://github.com/isitedesign/FED-Template-Engine/zipball/master" target="_blank">Download this project as a .zip file</a>
-				<a class="tar-download-link" href="https://github.com/isitedesign/FED-Template-Engine/tarball/master" target="_blank">Download this project as a tar.gz file</a>
+				<a class="zip-download-link" href="https://github.com/isitedesign/Phoenix/zipball/master" target="_blank">Download this project as a .zip file</a>
+				<a class="tar-download-link" href="https://github.com/isitedesign/Phoenix/tarball/master" target="_blank">Download this project as a tar.gz file</a>
 			</section>
 		</div>
 	</header>
@@ -47,7 +42,7 @@
 		<div class="row">
 			<div class="eight columns">
 				<h1>What is this?</h1>
-				<p>When building websites, there is no need to reinvent the wheel.  Consistent design patterns are used to make sites easy to navigate and use, so why not have some consistent development patterns?  The FED Template Engine represents what we use at <a href="http://github.com/isitedesign" target="_blank">ISITE Design</a> for the basis of new projects.  With a library of patterns ready at our fingertips, a powerful and flexible grid system, and a clean, modular organization, you don't need to reinvent the wheel.  And you'll have more time to invent the next wheel.</p>
+				<p>When building websites, there is no need to reinvent the wheel.  Consistent design patterns are used to make sites easy to navigate and use, so why not have some consistent development patterns?  Phoenix is what we use at <a href="http://github.com/isitedesign" target="_blank">ISITE Design</a> for the basis of new projects.  With a library of patterns ready at our fingertips, a powerful and flexible grid system, and a clean, modular organization, you don't need to reinvent the wheel.  And you'll have more time to invent the next wheel.</p>
 			</div>
 
 			<div class="eight columns">
@@ -66,12 +61,37 @@
 			</div>
 		</div>
 
-		<div class="row divider">
-			<div class="sixteen columns">
-				<h1>SCSS</h1>
-				<p>Below is a breakdown of all of the SCSS files in the project.  Each tab represents a folder in the structure found in _resources/src/scss.</p>
+		<div class="row divider" ng-controller="SCSSCtrl">
+			<div class="sixteen columns" ng-show="!dataLoaded">
+				<h1 class="doc-notification-error">Error Loading SCSS Documentation</h1>
+				<div class="doc-wrapper">
+					<p>To build the SCSS documentation, please follow these steps:</p>
+					<ol>
+						<li>
+							<p><strong>Windows users:</strong> Download and install the latest version of <a href="http://rubyinstaller.org/downloads/" target="_blank">Ruby</a> (do not install Ruby 2; if you need multiple versions of Ruby, you can use <a href="http://rvm.io/rvm/basics" target="_blank">RVM</a>).  During installation, make sure to check "Add Ruby executables to your PATH"</p>
+							<p><strong>Mac OS users:</strong> Ruby comes preinstalled with Mac OSX.</p>
+						</li>
+						<li>
+							<p>Once Ruby is installed, execute the following command in your command line:</p>
+							<strong>Windows users:</strong>
+							<div class="doc-code">gem install sassdoc</div>
+							<strong>Mac OS users:</strong>
+							<div class="doc-code">sudo gem install sassdoc</div>
+						</li>
+						<li>
+							<p><strong>Windows users:</strong> execute the file Assets/src/scss/createScssDocumentation.cmd as an administrator</p>
+							<p><strong>Mac OS users:</strong> execute the file Assets/src/scss/createScssDocumentation.sh</p>
+						</li>
+						<li>Ensure your web server has a MIME-type definition for JSON files</li>
+					</ol>
+				</div>
+			</div>
 
-				<div ng-controller="SCSSCtrl" class="responsive-tabs responsive-tabs-horizontal">
+			<div class="sixteen columns" ng-show="dataLoaded">
+				<h1>SCSS</h1>
+				<p>Below is a breakdown of all of the SCSS files in the project.  Each tab represents a folder in the structure found in Assets/src/scss.</p>
+
+				<div class="responsive-tabs responsive-tabs-horizontal">
 					<h2>Variables</h2>
 					<div class="responsive-tabs-content">
 						<div class="doc-callout">
@@ -260,16 +280,16 @@
 	
 	<footer class="doc-footer">
 		<div class="row">
-			<p class="copyright">FED Template Engine maintained by <a href="https://github.com/isitedesign" target="_blank">isitedesign</a></p>
+			<p class="copyright">Phoenix maintained by <a href="https://github.com/isitedesign" target="_blank">isitedesign</a></p>
 			<p>Special thanks to <a href="http://gumbyframework.com/" target="_blank">Gumby Framework</a> and <a href="http://smacss.com/" target="_blank">SMACSS</a></p>
 			<p>Published with <a href="http://pages.github.com" target="_blank">GitHub Pages</a></p>
 		</div>
 	</footer>
 
-	<script src="js/jquery.min.js"></script>
-	<script src="js/tabs/jquery.responsive-tabs.js"></script>
-	<script src="js/lightboxes/jquery.fancybox.pack.js"></script>
-	<script src="js/tooltips/jquery.tipsy.js"></script>
+	<script src="Assets/dist/js/jquery.min.js"></script>
+	<script src="Assets/dist/js/tabs/jquery.responsive-tabs.js"></script>
+	<script src="Assets/dist/js/lightboxes/jquery.fancybox.pack.js"></script>
+	<script src="Assets/dist/js/tooltips/jquery.tipsy.js"></script>
 	<script>
 		$(function() {
 			$('.fancybox').fancybox();
