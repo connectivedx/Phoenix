@@ -1,7 +1,7 @@
 'use strict';
 
 var path = require('path');
-var gulpRimraf = require('gulp-rimraf');
+var del = require('del');
 
 // initializes and loads registered tasks
 // including:
@@ -85,10 +85,11 @@ taskLoader.prototype = {
 		var self = this;
 		var dependencies = hasClean ? [task.driver + '-clean'] : [];
 
-		this.gulp.task(task.driver + '-autoclean', dependencies, function() {
+		this.gulp.task(task.driver + '-autoclean', dependencies, function(cb) {
 			var outputPath = globalConfiguration.output;
 			var inputPaths = task.autoCleanPaths;
 
+			if(task.output) outputPath = task.output;
 			if(!inputPaths) inputPaths = task.paths;
 
 			if(!outputPath || !inputPaths) return;
@@ -101,8 +102,7 @@ taskLoader.prototype = {
 
 			console.log('Autocleaning: ', inputPaths);
 
-			return self.gulp.src(inputPaths, { read:false })
-				.pipe(gulpRimraf({ force:true }));
+			del(inputPaths, { force:true }, cb);
 		});
 
 		return true;

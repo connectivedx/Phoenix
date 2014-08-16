@@ -8,12 +8,15 @@
 		"vinyl-source-stream": "~0.1.1",
 		"glob": "~4.0.5",
 		"rimraf": "~2.2.8",
+		"multimatch": "^0.3.0",
+		"through2": "^0.5.1",
+		"del": "~0.1.2",
 
 		"gulp": "~3.8.7",
 		
 		"gulp-filter": "~1.0.0",
+		"gulp-ignore": "~1.2.0",
 		"gulp-if": "~1.2.4",
-		"gulp-rimraf": "~0.1.0",
 		"gulp-util": "~3.0.0",
 		"gulp-buffer": "~0.0.2",
 		"gulp-rev-all": "~0.6.2",

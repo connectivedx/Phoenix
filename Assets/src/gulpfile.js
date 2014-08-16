@@ -28,6 +28,13 @@ var configuration = {
 			driver: 'img',
 			paths: ['./img/**/*.{jpg,png,gif,ico}'],
 			watchPaths: ['img/**'],
+		},
+		{
+			paths: ['**/*.{php,html}'],
+			base: './templates',
+			watchPaths: ['templates/**'],
+			output: '../..',
+			autoClean: true
 		}
 		/*
 			Tasks are a unit of work. At their simplest tasks act as a simple file copy from [paths] to [output] (maintaining relative paths).
@@ -40,6 +47,7 @@ var configuration = {
 			watchPaths: // [optional] Array of paths to watch when doing file watching. Note that only simple globs (foo/**) should be used or new and renamed files cannot be watched. A change to these files triggers the task being run.
 			autoClean: // [optional] true/false. If true, the paths in the output directory will be deleted before we start the build.
 			autoCleanPaths: // [optional] Array of path globs. This overrides the autoclean behavior and specifies exactly what to clean before build. These paths are relative to the OUTPUT directory.
+			output: // [optional] Overrides the output location for this task only
 		}*/
 	]
 }
@@ -63,6 +71,8 @@ gulp.task('default', loader.getBuildDependencies(), function() {
 
 	var masterStream = sLoader.getTaskStreams();
 
+	masterStream = sLoader.executeCustomOutput(masterStream);
+
 	return masterStream.pipe(gulp.dest(configuration.output));
 });
 
@@ -78,9 +88,11 @@ gulp.task('production', loader.getBuildDependencies(), function() {
 
 	var masterStream = sLoader.getTaskStreams();
 
-	return masterStream
-		.pipe(rev())
-		.pipe(gulp.dest(configuration.output));
+	masterStream = masterStream.pipe(rev({ ignore: ['.php'] }));
+
+	masterStream = sLoader.executeCustomOutput(masterStream);
+	
+	return masterStream.pipe(gulp.dest(configuration.output));
 });
 
 gulp.task('watch', ['default'], function() {
