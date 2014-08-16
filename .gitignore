@@ -8,5 +8,5 @@ web.config
 codekit-config.json
 
 # Built templates
-./*.php
+/*.php
 inc

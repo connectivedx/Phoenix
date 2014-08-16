@@ -33,8 +33,9 @@ watchLoader.prototype = {
 
 			if(typeof task.streamFactory !== 'function') return;
 
+			var output = task.output ? task.output : self.configuration.output;
 			task.streamFactory()
-				.pipe(gulp.dest(self.configuration.output))
+				.pipe(gulp.dest(output))
 				.pipe(livereload({ auto: false }))
 		});
 
