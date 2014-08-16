@@ -30,11 +30,12 @@ var configuration = {
 			watchPaths: ['img/**'],
 		},
 		{
-			paths: ['**/*.{php,html}'],
+			paths: ['./templates/**/*.{php,html}'],
 			base: './templates',
 			watchPaths: ['templates/**'],
-			output: '../..',
-			autoClean: true
+			output: './../..',
+			autoClean: true,
+			autoCleanPaths: ['*.php', 'inc']
 		}
 		/*
 			Tasks are a unit of work. At their simplest tasks act as a simple file copy from [paths] to [output] (maintaining relative paths).
@@ -48,6 +49,7 @@ var configuration = {
 			autoClean: // [optional] true/false. If true, the paths in the output directory will be deleted before we start the build.
 			autoCleanPaths: // [optional] Array of path globs. This overrides the autoclean behavior and specifies exactly what to clean before build. These paths are relative to the OUTPUT directory.
 			output: // [optional] Overrides the output location for this task only
+			base: // [optional] Overrides the base location for this task only
 		}*/
 	]
 }
@@ -55,6 +57,7 @@ var configuration = {
 var gulp = require('gulp'),
 	rev = require('gulp-rev-all'),
 	rimraf = require('rimraf'),
+	debug = require('gulp-debug'),
 	watchLoader = require('./build/lib/watchLoader'),
 	streamLoader = require('./build/lib/streamLoader');
 

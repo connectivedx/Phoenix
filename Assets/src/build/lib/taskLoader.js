@@ -94,6 +94,12 @@ taskLoader.prototype = {
 
 			if(!outputPath || !inputPaths) return;
 
+			if(task.base && !task.autoCleanPaths) {
+				console.log('I will not autoclean a task with a custom base to avoid damage. Manually specify the autoclean paths.');
+				cb();
+				return;
+			}
+
 			inputPaths = inputPaths.slice(); // make a copy for ourselves
 
 			for(var i = 0; i < inputPaths.length; i++) {

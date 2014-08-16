@@ -4,6 +4,7 @@ var plumber = require('gulp-plumber');
 var merge = require('merge-stream');
 var filter = require('./gulp-filter.mod');
 var path = require('path');
+var gdebug = require('gulp-debug');
 
 var streamLoader = function(gulp, globalConfiguration) {
 	this.gulp = gulp;
@@ -45,8 +46,10 @@ streamLoader.prototype = {
 
 			if(task.driverInstance && task.driverInstance.createStream)
 				stream = task.driverInstance.createStream(task.paths, debug);
-			else
-			 	stream = self.gulp.src(task.paths, { base: self.globalConfiguration.base });
+			else {
+				var base = task.base ? task.base : self.globalConfiguration.base;
+			 	stream = self.gulp.src(task.paths, { base: base });
+			}
 				
 			stream = stream.pipe(plumber());
 
@@ -71,7 +74,8 @@ streamLoader.prototype = {
 			var filterInputPaths = currentTask.paths.slice();
 
 			for(var j = 0; j < filterInputPaths.length; j++) {
-				filterInputPaths[j] = path.normalize(filterInputPaths[j]); // the paths may have inverted \ and / in them; normalize that
+				var base = currentTask.base ? currentTask.base : this.globalConfiguration.base;
+				filterInputPaths[j] = path.relative(base, path.normalize(filterInputPaths[j])); // the paths may have inverted \ and / in them; normalize that, and account for bases
 			}
 
 			var currentFilter = filter(filterInputPaths);
