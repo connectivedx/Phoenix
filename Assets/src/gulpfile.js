@@ -43,65 +43,15 @@ var configuration = {
 			The task below illustrates all the options for a task:
 
 		{
-			driver: // [optional] this is the name of the driver to use. A driver is a file in /lib/drivers that transforms the task items (eg minification).
+			driver: // [optional] this is the name of the driver to use. A driver is a file in /lib/drivers that transforms the task items (eg minification). Without a driver, the task becomes a file watch/copy.
 			paths: // Required. Array of paths to include in the task. Globbing syntax is allowed. Paths are relative to this folder.
+			base: // [optional] Overrides the base location for this task only (e.g. if path = ./css/foo and base = ./css, and you write to ./lol, the files from /css/foo will go in /lol/foo not /lol/css/foo)
 			watchPaths: // [optional] Array of paths to watch when doing file watching. Note that only simple globs (foo/**) should be used or new and renamed files cannot be watched. A change to these files triggers the task being run.
 			autoClean: // [optional] true/false. If true, the paths in the output directory will be deleted before we start the build.
 			autoCleanPaths: // [optional] Array of path globs. This overrides the autoclean behavior and specifies exactly what to clean before build. These paths are relative to the OUTPUT directory.
 			output: // [optional] Overrides the output location for this task only
-			base: // [optional] Overrides the base location for this task only
 		}*/
 	]
 }
 
-var gulp = require('gulp'),
-	rev = require('gulp-rev-all'),
-	rimraf = require('rimraf'),
-	debug = require('gulp-debug'),
-	watchLoader = require('./build/lib/watchLoader'),
-	streamLoader = require('./build/lib/streamLoader');
-
-// load up autoclean tasks and drivers
-var taskLoader = require('./build/lib/taskLoader');
-var loader = new taskLoader(gulp, configuration);
-loader.loadTasks();
-
-// this is the debug build task
-gulp.task('default', loader.getBuildDependencies(), function() {
-	var sLoader = new streamLoader(gulp, configuration);
-
-	sLoader.loadStreams(true);
-
-	var masterStream = sLoader.getTaskStreams();
-
-	masterStream = sLoader.executeCustomOutput(masterStream);
-
-	return masterStream.pipe(gulp.dest(configuration.output));
-});
-
-// this is the top level production task (minified, no sourcemaps, rev'd)
-gulp.task('production', loader.getBuildDependencies(), function() {
-	if(configuration.cleanProduction) {
-		rimraf.sync(configuration.output);
-	}
-	
-	var sLoader = new streamLoader(gulp, configuration);
-
-	sLoader.loadStreams(false);
-
-	var masterStream = sLoader.getTaskStreams();
-
-	masterStream = masterStream.pipe(rev({ ignore: ['.php'] }));
-
-	masterStream = sLoader.executeCustomOutput(masterStream);
-	
-	return masterStream.pipe(gulp.dest(configuration.output));
-});
-
-gulp.task('watch', ['default'], function() {
-	var watches = new watchLoader(configuration);
-
-	watches.startWatching(configuration.tasks);
-
-	console.log('\nPress Ctrl-C to stop watching.');
-});
+require('./build/tasks')(configuration);
