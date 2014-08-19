@@ -17,11 +17,11 @@
 	#{$property}: image($imageName);
 	background-repeat: $backgroundRepeat;
 
+	@if ($backgroundSize != 'none') {
+		background-size: $backgroundSize;
+	}
+
 	@include highDPI() {
 		#{$property}: image($imageNameRetina);
-
-		@if ($backgroundSize != 'none') {
-			background-size: $backgroundSize;
-		}
 	}
 }
