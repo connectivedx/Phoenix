@@ -17,12 +17,12 @@
 	<meta name="author" content="ISITE Design">
 	<meta name="apple-mobile-web-app-title" content="CUSTOM SHORT NAME">
 	
-	<script src="Assets/dist/js/modernizr.js"></script>
+	<script src="Assets/dist/js/head.js"></script>
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
 	
 	<link rel="stylesheet" media="all" href="Assets/dist/css/style.css">
 	<!--[if lte IE 8]>
-	<script src="Assets/dist/js/respond.js"></script>
+	<script src="Assets/dist/js/oldie.js"></script>
 	<![endif]-->
 
 	<!-- Serve one icon for all Apple devices -->
