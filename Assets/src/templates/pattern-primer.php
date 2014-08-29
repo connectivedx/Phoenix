@@ -125,7 +125,6 @@
 								<ol>
 									<li>
 										<label for="options">Label for the radio options</label>
-										<p class="label-secondary">Secondary label for the radio</p>
 										<ol class="radio-list">
 											<li>
 												<input type="radio" name="options" id="radio-option-1" value="option 1">
@@ -134,6 +133,19 @@
 											<li>
 												<input type="radio" name="options" id="radio-option-2" value="option 2">
 												<label for="radio-option-2">Option 2</label>
+											</li>
+										</ol>
+									</li>
+									<li>
+										<label for="options-2" class="label-large">Large label for radio options</label>
+										<ol class="radio-list">
+											<li>
+												<input type="radio" name="options-2" id="radio-option-1-2" value="option 1">
+												<label for="radio-option-1-2" class="label-large">Large labels scale nicely and wrap properly</label>
+											</li>
+											<li>
+												<input type="radio" name="options-2" id="radio-option-2-2" value="option 2">
+												<label for="radio-option-2-2" class="label-large">Large labels scale nicely and wrap properly</label>
 											</li>
 										</ol>
 									</li>
@@ -146,7 +158,6 @@
 									<ol>
 										<li>
 											<label for="checkbox">Label for the checkbox</label>
-											<p class="label-secondary">Secondary label for the checkbox</p>
 											<ol class="checkbox-list">
 												<li>
 													<input type="checkbox" name="checkbox" id="checkbox-option-1" value="option 1">
@@ -155,6 +166,19 @@
 												<li>
 													<input type="checkbox" name="checkbox" id="checkbox-option-2" value="option 2">
 													<label for="checkbox-option-2">Option 2</label>
+												</li>
+											</ol>
+										</li>
+										<li>
+											<label for="checkbox-2" class="label-large">Large label for checkboxes</label>
+											<ol class="checkbox-list">
+												<li>
+													<input type="checkbox" name="checkbox-2" id="checkbox-option-1-2" value="option 1">
+													<label for="checkbox-option-1-2" class="label-large">Large labels scale nicely and wrap properly</label>
+												</li>
+												<li>
+													<input type="checkbox" name="checkbox-2" id="checkbox-option-2-2" value="option 2">
+													<label for="checkbox-option-2-2" class="label-large">Large labels scale nicely and wrap properly</label>
 												</li>
 											</ol>
 										</li>
@@ -167,19 +191,17 @@
 								<ol>
 									<li>
 										<label for="options">Label for the radio options</label>
-										<p class="label-secondary">Secondary label for the radio</p>
 										<ol class="radio-list">
 											<li>
 												<input type="radio" name="inline-options" id="inline-radio-option-1" value="option 1">
 												<label for="inline-radio-option-1" class="inline">Option 1</label>
 												<input type="radio" name="inline-options" id="inline-radio-option-2" value="option 2">
-												<label for="inline-radio-option-2" class="inline">Option 2</label>	
+												<label for="inline-radio-option-2" class="inline">Option 2</label>
 											</li>
 										</ol>
 									</li>
 									<li>
 										<label for="checkbox">Label for the checkbox</label>
-										<p class="label-secondary">Secondary label for the checkbox</p>
 										<ol class="checkbox-list">
 											<li>
 												<input type="checkbox" name="inline-checkbox" id="inline-checkbox-option-1" value="option 1">

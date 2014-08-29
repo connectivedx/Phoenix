@@ -18,7 +18,7 @@ fieldset:not(#foo) {
 		& + label {
 			clear: none;
 			display: block;
-			padding: 6px 5px 4px 27px;
+			padding: em(6) em(5) em(4) em(27);
 
 			&:before {
 				@include icon();
