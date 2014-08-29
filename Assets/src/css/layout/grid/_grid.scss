@@ -12,7 +12,7 @@
 		background-color: white;
 	}
 	.row {
-		@include clearfix();
+		@extend %clearfix;
 		margin-left: 0;
 		margin-right: 0;
 		min-width: 0;
@@ -253,6 +253,4 @@
 	.pull_right { float: right; }
 
 	.pull_left { float: left; }
-
-	.clearfix { @include clearfix(); }
 }

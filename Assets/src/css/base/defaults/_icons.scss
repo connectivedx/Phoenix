@@ -6,7 +6,7 @@ $iconRadioChecked: "\e604";
 $iconRadioUnchecked: "\e605";
 $iconFontFamily: 'icomoon';
 
-@mixin icon() {
+%icon-config {
 	font-family: $iconFontFamily;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -19,7 +19,7 @@ $iconFontFamily: 'icomoon';
 }
 
 [class^="icon-"], [class*=" icon-"] {
-	@include icon();
+	@extend %icon-config;
 }
 
 .icon-arrow-down:before {
