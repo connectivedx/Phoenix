@@ -21,7 +21,7 @@
 		background-size: $backgroundSize;
 	}
 
-	@include highDPI() {
+	@include high-dpi() {
 		#{$property}: image($imageNameRetina);
 	}
 }
