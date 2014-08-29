@@ -6,3 +6,8 @@
 documentation-sassdoc/*
 web.config
 codekit-config.json
+
+# Built templates
+/*.php
+/*.html
+inc
