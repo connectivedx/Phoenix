@@ -1,3 +1,4 @@
+/*global require, module, console, process */
 'use strict';
 
 var gulp = require('gulp');
@@ -36,7 +37,7 @@ watchLoader.prototype = {
 			var output = task.output ? task.output : self.configuration.output;
 			task.streamFactory()
 				.pipe(gulp.dest(output))
-				.pipe(livereload({ auto: false }))
+				.pipe(livereload({ auto: false }));
 		});
 
 		console.log('Registered watcher for ', paths);

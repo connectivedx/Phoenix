@@ -1,3 +1,4 @@
+/*global require, module */
 var gulp = require('gulp'),
 	rev = require('gulp-rev-all'),
 	rimraf = require('rimraf'),

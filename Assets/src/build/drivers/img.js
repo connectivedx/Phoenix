@@ -1,3 +1,4 @@
+/*global require, module */
 'use strict';
 
 var imagemin = require('gulp-imagemin');

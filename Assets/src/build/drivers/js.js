@@ -1,3 +1,4 @@
+/*global require, module, process */
 'use strict';
 
 var browserify = require('browserify');
@@ -32,7 +33,7 @@ var JsDriver = {
 		return pipeline
 			// note lack of browserify here - this is because that's run as part of creating the source stream
 			.pipe(gulpif(!debug, buffer())) // uglify can't handle browserify streams, so we have to buffer it first
-			.pipe(gulpif(!debug, uglify()))
+			.pipe(gulpif(!debug, uglify()));
 	}
 };
 
@@ -41,11 +42,10 @@ function createBrowserifyStream(path, debug) {
 
 	return bundler.bundle()
 		.on('error', function(error) {
-			gutil.log('Browserify error: ' + error.message); 
+			gutil.log('Browserify error: ' + error.message);
 			process.exit(1);
 		})
 		.pipe(source(path));
-
 }
 
 module.exports = JsDriver;

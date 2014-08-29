@@ -1,3 +1,4 @@
+/*global require, module, console */
 'use strict';
 
 var path = require('path');
@@ -12,7 +13,7 @@ var del = require('del');
 var taskLoader = function(gulp, globalConfiguration) {
 	this.gulp = gulp;
 	this.globalConfiguration = globalConfiguration;
-}
+};
 
 taskLoader.prototype = {
 	loadTasks: function() {

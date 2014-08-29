@@ -1,3 +1,4 @@
+/*global require, module */
 'use strict';
 
 var sass = require('gulp-sass');

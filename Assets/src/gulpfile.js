@@ -1,3 +1,4 @@
+/*global require */
 'use strict';
 
 var configuration = {
@@ -52,6 +53,6 @@ var configuration = {
 			output: // [optional] Overrides the output location for this task only
 		}*/
 	]
-}
+};
 
 require('./build/tasks')(configuration);

@@ -1,3 +1,4 @@
+/*global require, module */
 'use strict';
 
 // this is gulp-filter@1.0.0 with the 'invert' option added on line 22.

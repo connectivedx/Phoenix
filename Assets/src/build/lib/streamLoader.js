@@ -1,3 +1,4 @@
+/*global require, module */
 'use strict';
 
 var plumber = require('gulp-plumber');
@@ -48,7 +49,7 @@ streamLoader.prototype = {
 				stream = task.driverInstance.createStream(task.paths, debug);
 			else {
 				var base = task.base ? task.base : self.globalConfiguration.base;
-			 	stream = self.gulp.src(task.paths, { base: base });
+					stream = self.gulp.src(task.paths, { base: base });
 			}
 				
 			stream = stream.pipe(plumber());
@@ -57,7 +58,7 @@ streamLoader.prototype = {
 				stream = task.driverInstance.build(stream, debug);
 
 			return stream;
-		}
+		};
 	},
 
 	// runs any custom output directives on tasks
