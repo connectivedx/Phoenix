@@ -78,7 +78,7 @@
 }
 
 #fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
-	background-image: image('fancybox-sprite.png');
+	@include retina-image('fancybox-sprite.png', 44px 152px);
 }
 
 #fancybox-loading {
@@ -94,7 +94,9 @@
 }
 
 #fancybox-loading div {
-	background: image('fancybox-loading.gif') center center no-repeat;
+	@include retina-image('fancybox-loading.gif', 24px 24px);
+	background-position: center center;
+	background-repeat: no-repeat;
 	height: 44px;
 	width: 44px;
 }
@@ -254,20 +256,4 @@
 	color: #fff;
 	left: 0;
 	padding: 10px;
-}
-
-// Retina graphics
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-	   only screen and (min--moz-device-pixel-ratio: 1.5),
-	   only screen and (min-device-pixel-ratio: 1.5){
-
-	#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
-		background-image: image('fancybox-sprite@2x.png');
-		background-size: 44px 152px; // The size of the normal image, half the size of the hi-res image
-	}
-
-	#fancybox-loading div {
-		background-image: image('fancybox-loading@2x.gif');
-		background-size: 24px 24px; // The size of the normal image, half the size of the hi-res image
-	}
 }
