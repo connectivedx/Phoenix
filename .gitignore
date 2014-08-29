@@ -9,4 +9,5 @@ codekit-config.json
 
 # Built templates
 /*.php
+/*.html
 inc

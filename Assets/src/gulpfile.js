@@ -36,7 +36,7 @@ var configuration = {
 			watchPaths: ['templates/**'],
 			output: './../..',
 			autoClean: true,
-			autoCleanPaths: ['*.php', 'inc']
+			autoCleanPaths: ['*.{php,html}', 'inc']
 		}
 		/*
 			Tasks are a unit of work. At their simplest tasks act as a simple file copy from [paths] to [output] (maintaining relative paths).
