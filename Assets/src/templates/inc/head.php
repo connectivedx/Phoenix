@@ -18,7 +18,7 @@
 	<meta name="apple-mobile-web-app-title" content="CUSTOM SHORT NAME">
 	
 	<script src="Assets/dist/js/head.js"></script>
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" type="text/css">
 	
 	<link rel="stylesheet" media="all" href="Assets/dist/css/style.css">
 	<!--[if lte IE 8]>
