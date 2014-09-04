@@ -8,3 +8,6 @@
 @import "rgba-background-color";
 @import "svg-image";
 @import "transition";
+
+// the grid has dependencies on other mixins
+@import "grid/all";
