@@ -161,7 +161,7 @@ textarea {
 // Address Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet.
 button,
 input {
-	line-height: normal;
+	line-height: $lineHeight;
 }
 
 // Address inconsistent `text-transform` inheritance for `button` and `select`.
