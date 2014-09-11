@@ -45,12 +45,7 @@ h4 {
 	margin-bottom: em(8, 14);
 	margin-top: em(8, 14);
 }
-// selection colors cannot be combined into one selector as per:
-// http://www.briangardner.com/tutorials/text-selection-color/
-::-moz-selection {
-	background: black;
-	color: white;
-}
+
 ::selection {
 	background: black;
 	color: white;

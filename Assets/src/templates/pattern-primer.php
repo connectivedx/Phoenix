@@ -98,11 +98,11 @@
 						<ol>
 							<li>
 								<label for="testinput">Label for the input</label>
-								<input type="text" id="testinput">
+								<input type="text" id="testinput" placeholder="Placeholder for the input">
 							</li>
 							<li>
 								<label for="testtextarea">Label for the Textarea</label>
-								<textarea id="testtextarea" cols="30" rows="5">Lorem ipsum dolor sit amet, consectetuer adipiscing elit vestibulum. </textarea>
+								<textarea id="testtextarea" cols="30" rows="5" placeholder="Placeholder for the textarea"></textarea>
 							</li>
 							<li>
 						</ol>
