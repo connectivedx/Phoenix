@@ -105,7 +105,8 @@ $tabPanelTextColor: black;
 		display: none;
 
 		@include respond(breakpointMedium) {
-			display: block;
+			// !important to fight inline display:none set in js
+			display: block !important;
 		}
 	}
 
