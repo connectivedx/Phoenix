@@ -51,8 +51,10 @@
 		</div>
 
 		<div class="row divider">
-			<div class="eight columns">
+			<div class="sixteen columns">
 				<h1>Lists</h1>
+			</div>
+			<div class="eight columns">
 				<h2>Unordered List</h2>
 				<ul>
 					<li>Short Item in the list</li>
@@ -65,13 +67,8 @@
 					<li><a href="#">Short Item in the list</a></li>
 					<li><a href="#">Short Item in the list</a></li>
 				</ul>
-				<h2>Unordered List with Arrows</h2>
-				<ul class="list-arrow">
-					<li>Short Item in the list</li>
-					<li>Short Item in the list</li>
-					<li>Short Item in the list</li>
-					<li>Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the listReally long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list</li>
-				</ul>
+			</div>
+			<div class="eight columns">
 				<h2>Ordered List:</h2>
 				<ol>
 					<li>Short Item in the list</li>
@@ -89,8 +86,10 @@
 		</div>
 
 		<div class="row divider">
-			<div class="eight columns">
+			<div class="sixteen columns">
 				<h1>Form Styles</h1>
+			</div>
+			<div class="eight columns">
 				<form action="#">
 					<fieldset>
 						<legend>Text Input</legend>
@@ -108,6 +107,33 @@
 						</ol>
 					</fieldset>
 					<fieldset>
+						<legend>Buttons</legend>
+						<h2>Buttons</h2>
+						<ol>
+							<li>
+								<button>Primary button</button>
+								<button class="btn-small">Primary button-small</button>
+							</li>
+							<li>
+								<button class="btn-secondary">Secondary button</button>
+								<button class="btn-secondary btn-small">Secondary button-small</button>
+							</li>
+						</ol>
+					</fieldset>
+					<fieldset>
+						<legend>File Uploads</legend>
+						<h2>File Uploads</h2>
+						<ol>
+							<li>
+								<button class="custom-file-upload">Select file</button>
+								<input type="file" />
+							</li>
+						</ol>
+					</fieldset>
+				</form>
+			</div>
+			<div class="eight columns">
+				<fieldset>
 						<legend>Selects, Radios, Checkboxes</legend>
 						<h2>Selects, Radios, Checkboxes</h2>
 						<ol>
@@ -216,31 +242,6 @@
 							</li>
 						</ol>
 					</fieldset>
-					<fieldset>
-						<legend>Buttons</legend>
-						<h2>Buttons</h2>
-						<ol>
-							<li>
-								<button>Primary button</button>
-								<button class="btn-small">Primary button-small</button>
-							</li>
-							<li>
-								<button class="btn-secondary">Secondary button</button>
-								<button class="btn-secondary btn-small">Secondary button-small</button>
-							</li>
-						</ol>
-					</fieldset>
-					<fieldset>
-						<legend>File Uploads</legend>
-						<h2>File Uploads</h2>
-						<ol>
-							<li>
-								<button class="custom-file-upload">Select file</button>
-								<input type="file" />
-							</li>
-						</ol>
-					</fieldset>
-				</form>
 			</div>
 		</div>
 
