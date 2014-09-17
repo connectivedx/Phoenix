@@ -16,7 +16,7 @@ Once you've cloned or downloaded the project, you'll first need to install NodeJ
 
 # Builds
 
-Each of the builds will compile the SCSS under Assets/src/css and place CSS, images, JavaScript, and fonts into their respective folders under Assets/dist.  These compiled files should never be edited and are ignored by the repository.  **All code editing must take place in Assets/src.**
+Each of the builds will compile the SCSS under Assets/src/css and place CSS, images, JavaScript, fonts, and markup templates into their respective folders under Assets/dist (or the root for markup templates).  These compiled files should never be edited and are ignored by the repository.  **All code editing must take place in Assets/src.**
 
 ### Development
 The development build includes linting and debugging, but does not minify files so they are readable during development.
