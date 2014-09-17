@@ -51,8 +51,10 @@
 		</div>
 
 		<div class="row divider">
-			<div class="eight columns">
+			<div class="sixteen columns">
 				<h1>Lists</h1>
+			</div>
+			<div class="eight columns">
 				<h2>Unordered List</h2>
 				<ul>
 					<li>Short Item in the list</li>
@@ -65,13 +67,8 @@
 					<li><a href="#">Short Item in the list</a></li>
 					<li><a href="#">Short Item in the list</a></li>
 				</ul>
-				<h2>Unordered List with Arrows</h2>
-				<ul class="list-arrow">
-					<li>Short Item in the list</li>
-					<li>Short Item in the list</li>
-					<li>Short Item in the list</li>
-					<li>Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the listReally long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list</li>
-				</ul>
+			</div>
+			<div class="eight columns">
 				<h2>Ordered List:</h2>
 				<ol>
 					<li>Short Item in the list</li>
@@ -89,8 +86,10 @@
 		</div>
 
 		<div class="row divider">
-			<div class="eight columns">
+			<div class="sixteen columns">
 				<h1>Form Styles</h1>
+			</div>
+			<div class="eight columns">
 				<form action="#">
 					<fieldset>
 						<legend>Text Input</legend>
@@ -105,93 +104,6 @@
 								<textarea id="testtextarea" cols="30" rows="5" placeholder="Placeholder for the textarea"></textarea>
 							</li>
 							<li>
-						</ol>
-					</fieldset>
-					<fieldset>
-						<legend>Selects, Radios, Checkboxes</legend>
-						<h2>Selects, Radios, Checkboxes</h2>
-						<ol>
-							<li>
-								<label for="testselect">Label for the select</label>
-								<select id="testselect">
-									<option>First</option>
-									<option>Second</option>
-									<option>Third</option>
-								</select>
-							</li>
-							<li>
-							<fieldset>
-								<legend>Select one of the following:</legend>
-								<ol>
-									<li>
-										<label for="options">Label for the radio options</label>
-										<p class="label-secondary">Secondary label for the radio</p>
-										<ol class="radio-list">
-											<li>
-												<input type="radio" name="options" id="radio-option-1" value="option 1">
-												<label for="radio-option-1">Option 1</label>
-											</li>
-											<li>
-												<input type="radio" name="options" id="radio-option-2" value="option 2">
-												<label for="radio-option-2">Option 2</label>
-											</li>
-										</ol>
-									</li>
-								</ol>
-							</fieldset>
-							</li>
-							<li>
-								<fieldset>
-									<legend>Select at least one of the following:</legend>
-									<ol>
-										<li>
-											<label for="checkbox">Label for the checkbox</label>
-											<p class="label-secondary">Secondary label for the checkbox</p>
-											<ol class="checkbox-list">
-												<li>
-													<input type="checkbox" name="checkbox" id="checkbox-option-1" value="option 1">
-													<label for="checkbox-option-1">Option 1</label>
-												</li>
-												<li>
-													<input type="checkbox" name="checkbox" id="checkbox-option-2" value="option 2">
-													<label for="checkbox-option-2">Option 2</label>
-												</li>
-											</ol>
-										</li>
-									</ol>
-								</fieldset>
-							</li>
-							<li>
-								<fieldset>
-								<legend>Inline Checkboxes and Radio Buttons</legend>
-								<ol>
-									<li>
-										<label for="options">Label for the radio options</label>
-										<p class="label-secondary">Secondary label for the radio</p>
-										<ol class="radio-list">
-											<li>
-												<input type="radio" name="inline-options" id="inline-radio-option-1" value="option 1">
-												<label for="inline-radio-option-1" class="inline">Option 1</label>
-												<input type="radio" name="inline-options" id="inline-radio-option-2" value="option 2">
-												<label for="inline-radio-option-2" class="inline">Option 2</label>	
-											</li>
-										</ol>
-									</li>
-									<li>
-										<label for="checkbox">Label for the checkbox</label>
-										<p class="label-secondary">Secondary label for the checkbox</p>
-										<ol class="checkbox-list">
-											<li>
-												<input type="checkbox" name="inline-checkbox" id="inline-checkbox-option-1" value="option 1">
-												<label for="inline-checkbox-option-1" class="inline">Option 1</label>
-												<input type="checkbox" name="inline-checkbox" id="inline-checkbox-option-2" value="option 2">
-												<label for="inline-checkbox-option-2" class="inline">Option 2</label>
-											</li>
-										</ol>
-									</li>
-								</ol>
-								</fieldset>
-							</li>
 						</ol>
 					</fieldset>
 					<fieldset>
@@ -219,6 +131,117 @@
 						</ol>
 					</fieldset>
 				</form>
+			</div>
+			<div class="eight columns">
+				<fieldset>
+						<legend>Selects, Radios, Checkboxes</legend>
+						<h2>Selects, Radios, Checkboxes</h2>
+						<ol>
+							<li>
+								<label for="testselect">Label for the select</label>
+								<select id="testselect">
+									<option>First</option>
+									<option>Second</option>
+									<option>Third</option>
+								</select>
+							</li>
+							<li>
+							<fieldset>
+								<legend>Select one of the following:</legend>
+								<ol>
+									<li>
+										<label for="options">Label for the radio options</label>
+										<ol class="radio-list">
+											<li>
+												<input type="radio" name="options" id="radio-option-1" value="option 1">
+												<label for="radio-option-1">Option 1</label>
+											</li>
+											<li>
+												<input type="radio" name="options" id="radio-option-2" value="option 2">
+												<label for="radio-option-2">Option 2</label>
+											</li>
+										</ol>
+									</li>
+									<li>
+										<label for="options-2" class="label-large">Large label for radio options</label>
+										<ol class="radio-list">
+											<li>
+												<input type="radio" name="options-2" id="radio-option-1-2" value="option 1">
+												<label for="radio-option-1-2" class="label-large">Large labels scale nicely and wrap properly</label>
+											</li>
+											<li>
+												<input type="radio" name="options-2" id="radio-option-2-2" value="option 2">
+												<label for="radio-option-2-2" class="label-large">Large labels scale nicely and wrap properly</label>
+											</li>
+										</ol>
+									</li>
+								</ol>
+							</fieldset>
+							</li>
+							<li>
+								<fieldset>
+									<legend>Select at least one of the following:</legend>
+									<ol>
+										<li>
+											<label for="checkbox">Label for the checkbox</label>
+											<ol class="checkbox-list">
+												<li>
+													<input type="checkbox" name="checkbox" id="checkbox-option-1" value="option 1">
+													<label for="checkbox-option-1">Option 1</label>
+												</li>
+												<li>
+													<input type="checkbox" name="checkbox" id="checkbox-option-2" value="option 2">
+													<label for="checkbox-option-2">Option 2</label>
+												</li>
+											</ol>
+										</li>
+										<li>
+											<label for="checkbox-2" class="label-large">Large label for checkboxes</label>
+											<ol class="checkbox-list">
+												<li>
+													<input type="checkbox" name="checkbox-2" id="checkbox-option-1-2" value="option 1">
+													<label for="checkbox-option-1-2" class="label-large">Large labels scale nicely and wrap properly</label>
+												</li>
+												<li>
+													<input type="checkbox" name="checkbox-2" id="checkbox-option-2-2" value="option 2">
+													<label for="checkbox-option-2-2" class="label-large">Large labels scale nicely and wrap properly</label>
+												</li>
+											</ol>
+										</li>
+									</ol>
+								</fieldset>
+							</li>
+							<li>
+								<fieldset>
+								<legend>Inline Checkboxes and Radio Buttons</legend>
+								<ol>
+									<li>
+										<label for="options">Label for the radio options</label>
+										<ol class="radio-list">
+											<li>
+												<input type="radio" name="inline-options" id="inline-radio-option-1" value="option 1">
+												<label for="inline-radio-option-1" class="inline">Option 1</label>
+												<input type="radio" name="inline-options" id="inline-radio-option-2" value="option 2">
+												<label for="inline-radio-option-2" class="inline">Option 2</label>
+											</li>
+										</ol>
+									</li>
+									<li>
+										<label for="checkbox">Label for the checkbox</label>
+										<ol class="checkbox-list">
+											<li>
+												<input type="checkbox" name="inline-checkbox" id="inline-checkbox-option-1" value="option 1">
+												<label for="inline-checkbox-option-1" class="inline">Option 1</label>
+												<input type="checkbox" name="inline-checkbox" id="inline-checkbox-option-2" value="option 2">
+												<label for="inline-checkbox-option-2" class="inline">Option 2</label>
+											</li>
+										</ol>
+									</li>
+								</ol>
+								</fieldset>
+							</li>
+						</ol>
+					</fieldset>
 			</div>
 		</div>
 

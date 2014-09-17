@@ -78,6 +78,10 @@ fieldset {
 		}
 	}
 
+	.label-large {
+		@include font-size(32);
+	}
+
 	.oldie & {
 		input[type="radio"],
 		input[type="checkbox"] {

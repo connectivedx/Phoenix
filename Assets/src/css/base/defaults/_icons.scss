@@ -1,5 +1,9 @@
 $iconArrowDown: "\e600";
 $iconArrowUp: "\e601";
+$iconCheckboxChecked: "\e602";
+$iconCheckboxUnchecked: "\e603";
+$iconRadioChecked: "\e604";
+$iconRadioUnchecked: "\e605";
 $iconFontFamily: 'icomoon';
 
 @mixin icon() {
@@ -7,15 +11,24 @@ $iconFontFamily: 'icomoon';
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font-style: normal;
-	font-weight: normal;
 	font-variant: normal;
+	font-weight: normal;
 	line-height: 1;
 	speak: none;
 	text-transform: none;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+%icon-config {
 	@include icon();
+}
+
+// this version is for IE9 and up; it's used on custom radio buttons and checkboxes and must be separate from %icon-config
+%icon-config-modern-browsers {
+	@include icon();
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	@extend %icon-config;
 }
 
 .icon-arrow-down:before {

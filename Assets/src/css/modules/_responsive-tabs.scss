@@ -22,7 +22,7 @@ $tabPanelBackgroundColor: $colorGreyLight;
 $tabPanelTextColor: black;
 
 .responsive-tabs-wrapper { 
-	@include clearfix();
+	@extend %clearfix;
 	margin-top: $gutterInPx;
 
 	&:first-child {
@@ -44,7 +44,7 @@ $tabPanelTextColor: black;
 		content: $iconArrowDown;
 		display: block;
 		@include font-size(32);
-		@include icon();
+		@extend %icon-config;
 		position: absolute;
 		right: 20px;
 		top: 3px;

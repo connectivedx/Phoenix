@@ -16,11 +16,15 @@ fieldset:not(#foo) {
 		width: 1px;
 
 		& + label {
-			background-image: image('bg-form-elements.png');
-			background-repeat: no-repeat;
 			clear: none;
 			display: block;
-			padding: 6px 5px 4px 27px;
+			padding: em(6) em(5) em(4) em(27);
+
+			&:before {
+				@extend %icon-config-modern-browsers;
+				margin-left: em(-28);
+				margin-right: em(8);
+			}
 
 			&.inline {
 				display: inline-block;
@@ -28,34 +32,37 @@ fieldset:not(#foo) {
 		}
 	}
 
-	$horizontalDisplacement: 5px;
-	$radioImagePosition: -229px;
-
 	input[type="radio"] {
 		& + label {
-			background-position: $horizontalDisplacement $radioImagePosition;
+			&:before {
+				content: $iconRadioUnchecked;
+			}
 		}
 		&:active + label,
 		&:focus + label {
-			background-position: $horizontalDisplacement $radioImagePosition - 80px;
+			color: $colorPrimary;
 		}
 		&:checked + label {
-			background-position: $horizontalDisplacement $radioImagePosition - 160px;
+			&:before {
+				content: $iconRadioChecked;
+			}
 		}
 	}
 
-	$checkboxImagePosition: 11px;
-
 	input[type="checkbox"] {
 		& + label {
-			background-position: $horizontalDisplacement $checkboxImagePosition;
+			&:before {
+				content: $iconCheckboxUnchecked;
+			}
 		}
 		&:active + label,
 		&:focus + label {
-			background-position: $horizontalDisplacement $checkboxImagePosition - 80px;
+			color: $colorPrimary;
 		}
 		&:checked + label {
-			background-position: $horizontalDisplacement $checkboxImagePosition - 160px;
+			&:before {
+				content: $iconCheckboxChecked;
+			}
 		}
 	}
 }
@@ -102,7 +109,6 @@ $decoratorSelectBorderSize: 1px;
 		position: absolute;
 		right: 0;
 		top: 0;
-		z-index: 100;
 
 		.oldie & {
 			content: '';
@@ -120,7 +126,6 @@ $decoratorSelectBorderSize: 1px;
 		padding: 6px 10px 6px 10px;
 		position: relative;
 		width: 100%;
-		z-index: 99;
 	}
 }
 
