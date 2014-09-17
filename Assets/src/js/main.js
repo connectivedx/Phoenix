@@ -1,7 +1,7 @@
 // load dependencies
 var $ = require('jquery');
 require('./vendor/jquery.responsive-tabs');
-require('./vendor/jquery.fancybox.pack');
+require('./vendor/jquery.fancybox');
 require('./vendor/jquery.tipsy');
 require('./vendor/jquery.placeholder.js');
 
