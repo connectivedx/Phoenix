@@ -59,7 +59,12 @@ fieldset {
 		border-radius: $formElementBorderRadius;
 		max-width: 100%;
 		padding: em(8);
+		@include placeholder-color($colorGreyDark);
 		width: 100%;
+	}
+
+	textarea {
+		resize: vertical;
 	}
 
 	& + button {

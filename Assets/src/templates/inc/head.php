@@ -15,7 +15,7 @@
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="author" content="ISITE Design">
-	<meta name="apple-mobile-web-app-title" content="CUSTOM SHORT NAME">
+	<meta name="apple-mobile-web-app-title" content="Phoenix">
 	
 	<script src="Assets/dist/js/head.js"></script>
 	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" type="text/css">

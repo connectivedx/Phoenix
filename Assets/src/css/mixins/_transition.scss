@@ -11,6 +11,5 @@
 // =transition(background-color)
 // =transition(background-color, 0.5s, ease-in-out)
 @mixin transition($property: all, $time: 0.3s, $easing: linear, $delay: 0s) {
-	-webkit-transition: $property $time $delay $easing;
 	transition: $property $time $easing $delay;
 }
