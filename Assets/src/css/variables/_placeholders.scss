@@ -1,7 +1,8 @@
 // @category variables
 
-// @mixin placeholders
-// @param clearfix {Placeholder} Applies Nicolas Gallagher's clearfix.
+// @function placeholders
+// Global placeholders, such as clearfix, will exist here.
+// @param $clearfix {Placeholder} Applies Nicolas Gallagher's clearfix.
 %clearfix {
 	*zoom: 1;
 

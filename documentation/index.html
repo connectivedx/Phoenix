@@ -109,6 +109,8 @@
 								{{variableType.function[0]}}
 							</h2>
 							<span class="badge-primary">{{variableType.source}}</span>
+							<h3 class="divider-secondary">Description</h3>
+							<p>{{variableType.function[1]}}</p>
 							<h3 class="divider-secondary">Variables</h3>
 							<table ng-if="variableType.param.length > 0">
 								<thead>
@@ -288,18 +290,6 @@
 		</div>
 	</footer>
 
-	<script src="../Assets/dist/js/jquery.min.js"></script>
-	<script src="../Assets/dist/js/tabs/jquery.responsive-tabs.js"></script>
-	<script src="../Assets/dist/js/lightboxes/jquery.fancybox.pack.js"></script>
-	<script src="../Assets/dist/js/tooltips/jquery.tipsy.js"></script>
-	<script>
-		$(function() {
-			$('.fancybox').fancybox();
-			RESPONSIVEUI.responsiveTabs();
-			$('.tooltip-tipsy').tipsy({
-				gravity: 'w'
-			});
-		});
-	</script>
+	<script src="../Assets/dist/js/main.js"></script>
 </body>
 </html>
