@@ -27,7 +27,7 @@ var configuration = {
 		},
 		{
 			driver: 'img',
-			paths: ['./img/**/*.{jpg,png,gif,ico}'],
+			paths: ['./img/**/*.{jpg,png,gif,ico,svg}'],
 			watchPaths: ['img/**'],
 		},
 		{
