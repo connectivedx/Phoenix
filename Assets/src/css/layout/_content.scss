@@ -1,0 +1,139 @@
+// @category layout
+
+// @function content
+// The location to define major column layouts for your main content area.
+.wrapper,
+[role="banner"] {
+	@include row(false, 0);
+}
+
+// standard grid
+.layout-primary {
+	@include column(9);
+	@include push(4);
+	border: 1px dashed $colorPrimary;
+}
+.layout-secondary {
+	@include column(4);
+	@include pull(9, 4);
+	background-color: $colorSecondary;
+}
+.layout-tertiary {
+	@include column(3);
+	background-color: $colorSecondary;
+}
+.layout-centered {
+	@include column(8, $gutterInPx, false, false, centered);
+	border: 1px dashed $colorPrimary;
+}
+
+// hybrid grid
+.layout-primary-hybrid {
+	@include column(16, $gutterInPx, hybrid);
+	@include push(4, hybrid);
+	border: 1px dashed $colorPrimary;
+}
+.layout-secondary-hybrid {
+	@include column(4, $gutterInPx, hybrid);
+	@include pull(16, 4, hybrid);
+	background-color: $colorSecondary;
+}
+.layout-tertiary-hybrid {
+	@include column(4, $gutterInPx, hybrid);
+	background-color: $colorSecondary;
+}
+.layout-centered-hybrid {
+	@include column(12, $gutterInPx, hybrid, false, centered);
+	border: 1px dashed $colorPrimary;
+}
+
+// complex layout
+.layout-complex-wrapper {
+	@include row(false, 0, 100%);
+}
+.layout-complex-header {
+	@extend %column-config;
+	padding: $gutterInPx;
+}
+.layout-complex-primary {
+	@extend %column-config;
+	border: 1px dashed $colorPrimary;
+	padding: $gutterInPx;
+
+	@include respond(breakpointMedium) {
+		width: columns(9);
+	}
+
+	@include respond(breakpointLarge) {
+		width: columns(8);
+	}
+
+	@include respond(breakpointExtraLarge) {
+		width: columns(8);
+	}
+}
+.layout-complex-nav {
+	@extend %column-config;
+	background-color: $colorSecondary;
+	padding: $gutterInPx;
+
+	@include respond(breakpointMedium) {
+		width: columns(16);
+	}
+
+	@include respond(breakpointExtraLarge) {
+		width: columns(2);
+	}
+}
+.layout-complex-tertiary {
+	@extend %column-config;
+	background-color: $colorSecondary;
+	padding: $gutterInPx;
+
+	@include respond(breakpointMedium) {
+		width: columns(7);
+	}
+
+	@include respond(breakpointLarge) {
+		width: columns(4);
+	}
+
+	@include respond(breakpointExtraLarge) {
+		width: columns(4);
+	}
+}
+.layout-complex-footer {
+	@extend %column-config;
+	padding: $gutterInPx;
+
+	@include respond(breakpointMedium) {
+		width: columns(16);
+	}
+
+	@include respond(breakpointLarge) {
+		width: columns(4);
+	}
+
+	@include respond(breakpointExtraLarge) {
+		width: columns(2);
+	}
+}
+
+// supporting classes
+.two-up {
+	@include column(8, 0, nested);
+}
+.aspect-ratio-4-3 {
+	@include aspect-ratio(4, 3);
+}
+.nested,
+aside {
+	@include row(nested);
+}
+.multi-grid {
+	border: 1px dashed $colorPrimary;
+
+	@include multi-grid("> li", 1, 2, 3, flush) {
+		text-align: center;
+	}
+}

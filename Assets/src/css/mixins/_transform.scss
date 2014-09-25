@@ -1,0 +1,28 @@
+// @category mixins
+
+// @mixin transform
+// Provides a vendor-prefixed implementation of transform.
+// @param $transforms {String} The transforms to be applied to the element.  Shortcut methods are also available if you are only applying one transform type.
+// @usage
+// =transform(rotate(45deg))
+// =rotate(45)
+// =scale(1.5)
+@mixin transform($transforms) {
+	transform: $transforms;
+}
+
+@mixin rotate($deg) {
+	@include transform(rotate(#{$deg}deg));
+}
+
+@mixin scale($scale) {
+	@include transform(scale($scale));
+}
+
+@mixin translate($x, $y) {
+	@include transform(translate($x, $y));
+}
+
+@mixin skew($x, $y) {
+	@include transform(skew(#{$x}deg, #{$y}deg));
+}

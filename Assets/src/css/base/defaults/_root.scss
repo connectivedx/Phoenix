@@ -1,0 +1,30 @@
+// http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+html {
+	font: #{$baseFontPercentage}/#{$lineHeight} $baseFontFamily;
+	height: 100%;
+}
+
+body {
+	background: white;
+	color: black;
+	height: 100%;
+	margin: 0;
+	min-width: 0;
+	text-align: center;
+	-ms-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	width: 100%;
+
+	&:before {
+		content: '';
+		display: inline-block;
+		height: 100%;
+		margin-right: -0.5em;
+		vertical-align: middle;
+		width: 0;
+	}
+}

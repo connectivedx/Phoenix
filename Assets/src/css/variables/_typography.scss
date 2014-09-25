@@ -1,0 +1,12 @@
+// @category variables
+
+// @function typography
+// The base typography settings for the project.
+// @param $baseFontSize {Number} The base font-size for the root html element.  [integer]
+// @param $baseFontPercentage {Number} The percentage of the font-size to be used on the root html element, calculated based on $baseFontSize.  [percentage]
+// @param $lineHeight {Number} The base line height for the root html element.  [decimal]
+// @param $baseFontFamily {String} The base font-family for the root html element.
+$baseFontSize: 16;
+$baseFontPercentage: percentage($baseFontSize / 16);
+$lineHeight: 1.5;
+$baseFontFamily: 'Source Sans Pro', Helvetica, Arial, sans-serif;

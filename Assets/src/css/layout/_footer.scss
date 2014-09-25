@@ -1,0 +1,23 @@
+// @category layout
+
+// @function footer
+// The location to define major column layouts and styles for the footer.
+footer {
+	background: $colorGreyLight;
+
+	.column, .columns {
+		margin-top: 0;
+	}
+
+	// max-width needed because border-box isn't supported for the footer element in old versions of IE
+	@if unit($rowMaxWidth) == "px" {
+		.oldie & {
+			max-width: $rowMaxWidth - ($gutterInPx * 2);
+		}
+	}
+}
+
+.meta {
+	list-style: none;
+	padding: 0;
+}

@@ -1,0 +1,1 @@
+sassdoc -d ../../documentation-sassdoc -n "Phoenix Documentation"

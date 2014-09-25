@@ -1,0 +1,16 @@
+.logo {
+	display: inline-block;
+	max-width: 400px;
+	padding: 0 em(48);
+	position: relative;
+	vertical-align: middle;
+	width: 100%;
+
+	> img {
+		max-width: 100%;
+
+		+ * {
+			margin-top: em(24);
+		}
+	}
+}

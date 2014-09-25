@@ -1,0 +1,27 @@
+// @category mixins
+
+// @mixin retina-image
+// Outputs a retina image for the given property.
+// @param $imageName {String} The filename of the image file.
+// @param $backgroundSize {String} The size of the background image (used to scale down 2x images).  Default value: 'none'.
+// @param $retinaFileSuffix {String} The suffix to the filename that you use to denote a "retina" image.  Default value: '@2x'.
+// @param $backgroundRepeat {String} Whether to repeat the background image.  Default value: no-repeat.
+// @param $property {String} The CSS property to which you wish to apply the image.  Default value: background-image.
+// @usage
+// =retina-image(bullet-blue.png)
+// =retina-image(bullet-blue.png, 12px 12px)
+// =retina-image(bullet-blue.png, 12px 12px, '-2x')
+@mixin retina-image($imageName, $backgroundSize: 'none', $retinaFileSuffix: '@2x', $backgroundRepeat: no-repeat, $property: background-image) {
+	$imageNameRetina: str-insert($imageName, $retinaFileSuffix, -5);
+
+	#{$property}: image($imageName);
+	background-repeat: $backgroundRepeat;
+
+	@if ($backgroundSize != 'none') {
+		background-size: $backgroundSize;
+	}
+
+	@include high-dpi() {
+		#{$property}: image($imageNameRetina);
+	}
+}

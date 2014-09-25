@@ -1,0 +1,10 @@
+// @category variables
+
+// @function measurements
+// Various measurements used throughout the project.
+// @param $formElementBorderRadius {Number} The default border radius for all form elements.  [px|percentage]
+// @param $widgetBorderRadius {Number} The default border radius for all widgets.   [px|percentage]
+// @param $inputHeight {Number} The default height of inputs so they match the height of custom selects.  [px]
+$formElementBorderRadius: 0px;
+$widgetBorderRadius: 8px;
+$inputHeight: 42px;
