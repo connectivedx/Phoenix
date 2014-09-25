@@ -1,11 +1,14 @@
-// load dependencies
-var $ = require('jquery');
+// put jQuery on the global namespace to access via the console and allow plugins to be dropped-in
+global.jQuery = require('jquery');
+global.$ = global.jQuery;
+
+// load plugins
 require('./vendor/jquery.responsive-tabs');
 require('./vendor/jquery.fancybox');
 require('./vendor/jquery.tipsy');
 require('./vendor/jquery.placeholder.js');
 
-// etc
+// execute plugins and jQuery bindings
 $('.nav-handle').click(function() {
 	$('.nav-list').toggleClass('expanded');
 });

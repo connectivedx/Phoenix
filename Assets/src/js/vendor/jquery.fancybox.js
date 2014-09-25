@@ -9,7 +9,6 @@
  * Copyright 2012 Janis Skarnelis - janis@fancyapps.com
  *
  */
- var jQuery = require('jquery');
 
 (function (window, document, $, undefined) {
 	"use strict";

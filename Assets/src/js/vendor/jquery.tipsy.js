@@ -3,8 +3,6 @@
 // (c) 2008-2010 jason frame [jason@onehackoranother.com]
 // releated under the MIT license
 
-var jQuery = require('jquery');
-
 (function($) {
     
     function fixTitle($ele) {

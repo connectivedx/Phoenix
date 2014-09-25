@@ -1,5 +1,4 @@
 /*! http://mths.be/placeholder v2.0.8 by @mathias */
-var jQuery = require('jquery');
 
 ;(function(window, document, $) {
 

@@ -5,8 +5,6 @@ Version: 1.10
 ------------------- */
 
 var RESPONSIVEUI = {};
-var jQuery = require('jquery');
-var $ = jQuery;
 
 (function($) {
 
