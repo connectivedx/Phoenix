@@ -4,7 +4,7 @@
 ?>
 	<section class="wrapper">
 		<div class="row">
-			<div class="sixteen columns">
+			<div class="twelve columns">
 				<h1>Level 1 heading</h1>
 				<h2>Level 2 heading</h2>
 				<h3>Level 3 heading</h3>
@@ -14,7 +14,7 @@
 		</div>
 
 		<div class="row divider">
-			<div class="sixteen columns">
+			<div class="twelve columns">
 				<h1>Table Style</h1>
 				<table>
 					<thead>
@@ -51,10 +51,10 @@
 		</div>
 
 		<div class="row divider">
-			<div class="sixteen columns">
+			<div class="twelve columns">
 				<h1>Lists</h1>
 			</div>
-			<div class="eight columns">
+			<div class="six columns">
 				<h2>Unordered List</h2>
 				<ul>
 					<li>Short Item in the list</li>
@@ -68,7 +68,7 @@
 					<li><a href="#">Short Item in the list</a></li>
 				</ul>
 			</div>
-			<div class="eight columns">
+			<div class="six columns">
 				<h2>Ordered List:</h2>
 				<ol>
 					<li>Short Item in the list</li>
@@ -86,10 +86,10 @@
 		</div>
 
 		<div class="row divider">
-			<div class="sixteen columns">
+			<div class="twelve columns">
 				<h1>Form Styles</h1>
 			</div>
-			<div class="eight columns">
+			<div class="six columns">
 				<form action="#">
 					<fieldset>
 						<legend>Text Input</legend>
@@ -132,7 +132,7 @@
 					</fieldset>
 				</form>
 			</div>
-			<div class="eight columns">
+			<div class="six columns">
 				<fieldset>
 						<legend>Selects, Radios, Checkboxes</legend>
 						<h2>Selects, Radios, Checkboxes</h2>
@@ -246,7 +246,7 @@
 		</div>
 
 		<div class="row divider">
-			<div class="sixteen columns">
+			<div class="twelve columns">
 				<h1>Badges</h1>
 				<span class="badge-primary">Primary badge</span>
 				<span class="badge-secondary">Secondary badge</span>
@@ -254,7 +254,7 @@
 		</div>
 
 		<div class="row divider">
-			<div class="sixteen columns">
+			<div class="twelve columns">
 				<h1>Responsive Tabs</h1>
 				<h2 class="divider-secondary">Horizontal</h2>
 				<div class="responsive-tabs responsive-tabs-horizontal">
@@ -301,7 +301,7 @@
 		</div>
 
 		<div class="row divider">
-			<div class="eight columns">
+			<div class="six columns">
 				<h1>Modals</h1>
 				<ul>
 					<li>
@@ -309,7 +309,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="eight columns">
+			<div class="six columns">
 				<h1>Tooltips</h1>
 				<ul>
 					<li>
@@ -320,16 +320,16 @@
 		</div>
 
 		<div class="row divider">
-			<div class="sixteen columns">
+			<div class="twelve columns">
 				<h1>Aspect Ratios</h1>
 			</div>
-			<div class="eight columns">
+			<div class="six columns">
 				<h2>Video - 16:9</h2>
 				<div class="video">
 					<iframe src="//www.youtube.com/embed/Xz6jt_aSFg0" frameborder="0" allowfullscreen></iframe>
 				</div>
 			</div>
-			<div class="eight columns">
+			<div class="six columns">
 				<h2>Map - 4:3</h2>
 				<div class="aspect-ratio-4-3">
 					<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1397.4432998107925!2d-122.69317991642879!3d45.532487514497674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sisite+design!5e0!3m2!1sen!2sus!4v1391532768363" frameborder="0" style="border:0"></iframe>

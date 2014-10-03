@@ -11,7 +11,7 @@
 	
 	<?php
 		$numbers = array('one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty', 'twenty-one', 'twenty-two', 'twenty-three', 'twenty-four');
-		$gridSize = 16;
+		$gridSize = 12;
 		$hybridGridSize = 24;
 	?>
 	<section class="content">

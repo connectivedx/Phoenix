@@ -8,13 +8,13 @@
 
 // standard grid
 .layout-primary {
-	@include column(9);
-	@include push(4);
+	@include column(6);
+	@include push(3);
 	border: 1px dashed $colorPrimary;
 }
 .layout-secondary {
-	@include column(4);
-	@include pull(9, 4);
+	@include column(3);
+	@include pull(6, 3);
 	background-color: $colorSecondary;
 }
 .layout-tertiary {
@@ -65,15 +65,11 @@
 	padding: $gutterInPx;
 
 	@include respond(breakpointMedium) {
-		width: columns(9);
+		width: columns(7);
 	}
 
 	@include respond(breakpointLarge) {
-		width: columns(8);
-	}
-
-	@include respond(breakpointExtraLarge) {
-		width: columns(8);
+		width: columns(6);
 	}
 }
 .layout-complex-nav {
@@ -82,11 +78,11 @@
 	padding: $gutterInPx;
 
 	@include respond(breakpointMedium) {
-		width: columns(16);
+		width: columns(12);
 	}
 
 	@include respond(breakpointExtraLarge) {
-		width: columns(2);
+		width: columns(1.5);
 	}
 }
 .layout-complex-tertiary {
@@ -95,15 +91,15 @@
 	padding: $gutterInPx;
 
 	@include respond(breakpointMedium) {
-		width: columns(7);
+		width: columns(5);
 	}
 
 	@include respond(breakpointLarge) {
-		width: columns(4);
+		width: columns(3);
 	}
 
 	@include respond(breakpointExtraLarge) {
-		width: columns(4);
+		width: columns(3);
 	}
 }
 .layout-complex-footer {
@@ -111,21 +107,21 @@
 	padding: $gutterInPx;
 
 	@include respond(breakpointMedium) {
-		width: columns(16);
+		width: columns(12);
 	}
 
 	@include respond(breakpointLarge) {
-		width: columns(4);
+		width: columns(3);
 	}
 
 	@include respond(breakpointExtraLarge) {
-		width: columns(2);
+		width: columns(1.5);
 	}
 }
 
 // supporting classes
 .two-up {
-	@include column(8, 0, nested);
+	@include column(6, 0, nested);
 }
 .aspect-ratio-4-3 {
 	@include aspect-ratio(4, 3);

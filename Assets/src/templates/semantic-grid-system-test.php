@@ -3,7 +3,7 @@
 	include_once 'inc/head.php';
 ?>
 	<div class="wrapper">
-		<h1 class="row">Three column, semantic example (16 column grid)</h1>
+		<h1 class="row">Three column, semantic example (12 column grid)</h1>
 	</div>
 
 	<header class="row">
@@ -13,21 +13,21 @@
 	<section class="wrapper">
 		<article class="layout-primary">
 			<h2>Primary</h2>
-			<p>This is a nine column container.  It will hold your primary content.  It has been pushed to be placed in the appropriate place in the layout.</p>
+			<p>This is a six column container.  It will hold your primary content.  It has been pushed to be placed in the appropriate place in the layout.</p>
 
 			<section class="nested wrapper">
 				<div class="two-up">
-					This is an eight column sub-layout using a class of "two-up".
+					This is a sub-layout using a class of "two-up".
 				</div>
 				<div class="two-up">
-					This is an eight column sub-layout using a class of "two-up".
+					This is a sub-layout using a class of "two-up".
 				</div>
 			</section>
 		</article>
 
 		<nav class="layout-secondary">
 			<h3>Secondary</h3>
-			<p>This is a four column container.  It will hold navigation content.  It has been pulled to be placed in the left rail on desktops and tablets, but will be below the main content on mobile.</p>
+			<p>This is a three column container.  It will hold navigation content.  It has been pulled to be placed in the left rail on desktops and tablets, but will be below the main content on mobile.</p>
 		</nav>
 
 		<aside class="layout-tertiary">
@@ -37,7 +37,7 @@
 
 		<div class="layout-centered">
 			<h3>Centered</h3>
-			<p>This is a centered element.</p>
+			<p>This is an eight column centered container.</p>
 		</div>
 	</section>
 
@@ -60,10 +60,10 @@
 
 			<section class="nested wrapper">
 				<div class="two-up">
-					This is an eight column sub-layout using a class of "two-up".
+					This is a sub-layout using a class of "two-up".
 				</div>
 				<div class="two-up">
-					This is an eight column sub-layout using a class of "two-up".
+					This is a sub-layout using a class of "two-up".
 				</div>
 			</section>
 		</article>

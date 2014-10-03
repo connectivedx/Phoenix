@@ -17,13 +17,13 @@
 }
 
 .brand {
-	@include column(6);
-	@include pull(10, 6);
+	@include column(7);
+	@include pull(5, 7);
 }
 
 #nav {
-	@include column(6);
-	@include push(10);
+	@include column(5);
+	@include push(7);
 }
 
 .nav-list {
