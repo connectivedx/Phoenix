@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 
-<html ng-app="PhoenixDocApp">
+<html id="ng-app" ng-app="PhoenixDocApp">
 <head>
 	<meta charset='utf-8'>
 	<meta content="chrome=1" http-equiv="X-UA-Compatible">
 	<meta content="Phoenix by ISITE Design" name="description">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet" type="text/css">
+	<script src="../Assets/dist/js/head.js"></script>
 	<link href="../Assets/dist/css/documentation.css" media="screen" rel="stylesheet" type="text/css">
+	<!--[if lte IE 8]>
+	<script src="../Assets/dist/js/oldie.js"></script>
+	<![endif]-->
 	<script src="js/angular.min.js"></script>
 	<script src="js/angular-sanitize.min.js"></script>
 	<script src="js/app.js"></script>
@@ -70,7 +74,7 @@
 					<p>To build the SCSS documentation, please follow these steps:</p>
 					<ol>
 						<li>
-							<p><strong>Windows users:</strong> Download and install the latest version of <a href="http://rubyinstaller.org/downloads/" target="_blank">Ruby</a> (do not install Ruby 2; if you need multiple versions of Ruby, you can use <a href="http://rvm.io/rvm/basics" target="_blank">RVM</a>).  During installation, make sure to check "Add Ruby executables to your PATH"</p>
+							<p><strong>Windows users:</strong> Download and install version 1.9.3 of <a href="http://rubyinstaller.org/downloads/" target="_blank">Ruby</a> (do not install Ruby 2; if you need multiple versions of Ruby, you can use <a href="http://rvm.io/rvm/basics" target="_blank">RVM</a>).  During installation, make sure to check "Add Ruby executables to your PATH"</p>
 							<p><strong>Mac OS users:</strong> Ruby comes preinstalled with Mac OSX.</p>
 						</li>
 						<li>

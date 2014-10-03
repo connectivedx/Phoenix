@@ -2,8 +2,7 @@
 
 // @function content
 // The location to define major column layouts for your main content area.
-.wrapper,
-[role="banner"] {
+.wrapper {
 	@include row(false, 0);
 }
 
@@ -54,6 +53,11 @@
 .layout-complex-header {
 	@extend %column-config;
 	padding: $gutterInPx;
+
+	// max-width needed because border-box isn't supported for the footer element in old versions of IE; this overrides the default for headers
+	.oldie & {
+		max-width: none;
+	}
 }
 .layout-complex-primary {
 	@extend %column-config;
