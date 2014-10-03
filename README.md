@@ -32,3 +32,38 @@ The watch build will execute the development build and watch for file changes, a
 The production build lints, concatenates, and minifies files.
 * Windows - execute build-production.cmd.
 * Mac OS - execute mac-build-production.command.
+
+# Special Thanks
+This project would not be possible without contributions from these open-source projects:
+* [Gulp](https://github.com/gulpjs/gulp/)
+* [Gumby Framework](https://github.com/GumbyFramework/Gumby) - our grid system began as a fork of Gumby's grid system and has since morphed into the mobile-first grid system it is today
+* [Responsive Tabs](https://github.com/petelove666/Responsive-Tabs)
+* [Tipsy](https://github.com/jaz303/tipsy)
+* [Fancybox](https://github.com/fancyapps/fancyBox)
+
+# License
+## Phoenix
+Phoenix is licensed under The MIT License (MIT), unless otherwise noted below.
+
+Copyright (c) 2014 ISITE Design, Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+## Fancybox
+Fancybox is protected by a [Creative Commons Attribution-NonCommercial 3.0](http://creativecommons.org/licenses/by-nc/3.0/) license.  You are free to use it for non-commercial purposes and may pay a license fee to use it on commercial sites.  For more information, please visit http://www.fancyapps.com/fancybox/#license.

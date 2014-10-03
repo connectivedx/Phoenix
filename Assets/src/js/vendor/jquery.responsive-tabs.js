@@ -2,6 +2,7 @@
 ResponsiveTabs.js
 Author: Pete Love | www.petelove.com
 Version: 1.10
+Repository: https://github.com/petelove666/Responsive-Tabs
 ------------------- */
 
 var RESPONSIVEUI = {};
