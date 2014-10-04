@@ -12,7 +12,7 @@
 		<h1><a href="documentation/">Documentation</a></h1>
 		<h1>Sample Pages</h1>
 		<ul>
-			<li><a href="pattern-primer.php">Pattern Primer</a></li>
+			<li><a href="style-guide.php">Style Guide</a></li>
 			<li><a href="grid-system-test.php">Grid System Test</a></li>
 			<li><a href="semantic-grid-system-test.php">Semantic Grid System Test</a></li>
 			<li><a href="complex-layout-test.php">Complex Layout Test</a></li>
