@@ -359,6 +359,82 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="row divider">
+			<div class="twelve columns">
+				<h1>Quick Column Layouts</h1>
+				<p>
+					Classes are available to build quick column layouts that flow naturally on all resolutions.  The classes are two-up, three-up, and four-up.  They signify how many elements will be displayed side-by-side at the highest resolution.  As in the below examples, the classes are placed on the elements for which you wish to apply the specified number of side-by-side elements.
+				</p>
+				<p><strong>NOTE:</strong> these elements must be placed in a wrapping container for the proper spacing and flow.</p>
+				
+				<h2>.two-up</h2>
+				<div class="wrapper">
+					<div class="two-up">
+						<img src="http://fpoimg.com/700x250?text=Two-Up" alt="">
+					</div>
+					<div class="two-up">
+						<img src="http://fpoimg.com/700x250?text=Two-Up" alt="">
+					</div>
+					<div class="two-up">
+						<img src="http://fpoimg.com/700x250?text=Two-Up" alt="">
+					</div>
+					<div class="two-up">
+						<img src="http://fpoimg.com/700x250?text=Two-Up" alt="">
+					</div>
+				</div>
+
+				<h2>.three-up</h2>
+				<div class="wrapper">
+					<div class="three-up">
+						<img src="http://fpoimg.com/700x250?text=Three-Up" alt="">
+					</div>
+					<div class="three-up">
+						<img src="http://fpoimg.com/700x250?text=Three-Up" alt="">
+					</div>
+					<div class="three-up">
+						<img src="http://fpoimg.com/700x250?text=Three-Up" alt="">
+					</div>
+					<div class="three-up">
+						<img src="http://fpoimg.com/700x250?text=Three-Up" alt="">
+					</div>
+					<div class="three-up">
+						<img src="http://fpoimg.com/700x250?text=Three-Up" alt="">
+					</div>
+					<div class="three-up">
+						<img src="http://fpoimg.com/700x250?text=Three-Up" alt="">
+					</div>
+				</div>
+
+				<h2>.four-up</h2>
+				<div class="wrapper">
+					<div class="four-up">
+						<img src="http://fpoimg.com/700x250?text=Four-Up" alt="">
+					</div>
+					<div class="four-up">
+						<img src="http://fpoimg.com/700x250?text=Four-Up" alt="">
+					</div>
+					<div class="four-up">
+						<img src="http://fpoimg.com/700x250?text=Four-Up" alt="">
+					</div>
+					<div class="four-up">
+						<img src="http://fpoimg.com/700x250?text=Four-Up" alt="">
+					</div>
+					<div class="four-up">
+						<img src="http://fpoimg.com/700x250?text=Four-Up" alt="">
+					</div>
+					<div class="four-up">
+						<img src="http://fpoimg.com/700x250?text=Four-Up" alt="">
+					</div>
+					<div class="four-up">
+						<img src="http://fpoimg.com/700x250?text=Four-Up" alt="">
+					</div>
+					<div class="four-up">
+						<img src="http://fpoimg.com/700x250?text=Four-Up" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
  
 	</section><!-- /.wrapper -->
 <?php

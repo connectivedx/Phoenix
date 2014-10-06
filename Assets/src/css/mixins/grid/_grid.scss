@@ -97,7 +97,7 @@
 
 		// Generate Column Classes
 		.row {
-			@for $i from 1 through $cols{
+			@for $i from 1 through $columns{
 				@if $i == 1 and (index($enabledColumns, $i) or length($enabledColumns) == 0 ) {
 					.one.column {
 						width: columns($i);
@@ -118,7 +118,7 @@
 
 		// Generate Push and Pull Classes
 		.row {
-			@for $i from 1 through $cols - 1 {
+			@for $i from 1 through $columns - 1 {
 				@if ($enablePush) {
 					.push_#{number-as-word($i)} {
 						margin-left: push_x($i);
@@ -127,7 +127,7 @@
 				@if ($enablePull) {
 					.pull_#{number-as-word($i)} {
 						// pull classes need to know the width of the container being pulled
-						@for $j from 1 through $cols - 1 {
+						@for $j from 1 through $columns - 1 {
 							@if $j == 1 {
 								&.one.column {
 									margin-left: pull_x($i, $j);
@@ -147,7 +147,7 @@
 		// Generate Centered Classes
 		.row {
 			@if ($enableCentered) {
-				@for $i from 1 through $cols - 1 {
+				@for $i from 1 through $columns - 1 {
 					.#{number-as-word($i)}.centered {
 						margin-left: centered($i);
 					}
@@ -158,8 +158,8 @@
 
 	// Generate Hybrid Grid Column Classes
 	@if ($enableHybridGrid) {
-		.#{number-as-word($hybridCols)}.colgrid .row {
-			@for $i from 1 through $hybridCols {
+		.#{number-as-word($hybridColumns)}.colgrid .row {
+			@for $i from 1 through $hybridColumns {
 				@if $i == 1{
 					.one.column {
 						width: 100%;
@@ -193,8 +193,8 @@
 
 	// Generate Hybrid Push Classes
 	@if ($enableHybridGrid) {
-		.#{number-as-word($hybridCols)}.colgrid .row {
-			@for $i from 1 through $hybridCols - 1 {
+		.#{number-as-word($hybridColumns)}.colgrid .row {
+			@for $i from 1 through $hybridColumns - 1 {
 				@if ($enablePush) {
 					.push_#{number-as-word($i)} {
 						@include respond(breakpointMedium) {
@@ -205,7 +205,7 @@
 				@if ($enablePull) {
 					.pull_#{number-as-word($i)} {
 						// pull classes need to know the width of the container being pulled
-						@for $j from 1 through $hybridCols - 1 {
+						@for $j from 1 through $hybridColumns - 1 {
 							@if $j == 1 {
 								@include respond(breakpointMedium) {
 									&.one.column {
@@ -237,8 +237,8 @@
 
 	// Generate Centered Classes
 	@if ($enableHybridGrid) {
-		.#{number-as-word($hybridCols)}.colgrid .row {
-			@for $i from 1 through $hybridCols - 1 {
+		.#{number-as-word($hybridColumns)}.colgrid .row {
+			@for $i from 1 through $hybridColumns - 1 {
 				@if ($enableCentered) {
 					.#{number-as-word($i)}.centered {
 						@include respond(breakpointMedium) {

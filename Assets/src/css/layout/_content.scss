@@ -108,9 +108,6 @@
 }
 
 // supporting classes
-.two-up {
-	@include column(6, 0, nested);
-}
 .aspect-ratio-4-3 {
 	@include aspect-ratio(4, 3);
 }

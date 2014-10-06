@@ -39,3 +39,91 @@
 	display: block;
 	width: 100%;
 }
+
+// space, in columns, between quick column elements
+$quickColumnGapWidth: 0.3;
+
+.two-up,
+.three-up,
+.four-up {
+	display: inline-block;
+	vertical-align: top;
+	width: 100%;
+
+	// reset any potential top margin issues
+	&:first-child {
+		margin-top: 0;
+	}
+
+	// starting on the second item
+	&.nth-child-np2 {
+		margin-top: columns($quickColumnGapWidth);
+	}
+
+	@include respond(breakpointLarge) {
+		margin-left: columns($quickColumnGapWidth);
+		margin-right: -0.25em;	// eliminate whitespace created by inline-block
+
+		// starting on the second item
+		&.nth-child-np2 {
+			margin-top: 0;
+		}
+	}
+}
+
+.two-up,
+.four-up {
+	@include respond(breakpointLarge) {
+		width: columns( ($columns - $quickColumnGapWidth) / 2 );
+
+		// first of each row
+		&.nth-child-2np1 {
+			margin-left: 0;
+		}
+
+		// starting on the second row
+		&.nth-child-np3 {
+			margin-top: columns($quickColumnGapWidth);
+		}
+	}
+}
+
+.three-up {
+	@include respond(breakpointLarge) {
+		width: columns( ($columns - 2 * $quickColumnGapWidth) / 3 );
+
+		// first of each row
+		&.nth-child-3np1 {
+			margin-left: 0;
+		}
+
+		// starting on the second row
+		&.nth-child-np4 {
+			margin-top: columns($quickColumnGapWidth);
+		}
+	}
+}
+
+.four-up {
+	@include respond(breakpointExtraLarge) {
+		width: columns( ($columns - 3 * $quickColumnGapWidth) / 4 );
+
+		// first of each row (override from breakpointLarge)
+		&.nth-child-2np1 {
+			margin-left: columns($quickColumnGapWidth);
+		}
+		// first of each row
+		&.nth-child-4np1 {
+			margin-left: 0;
+		}
+
+		// starting on the second row (override from breakpointLarge)
+		&.nth-child-np3 {
+			margin-top: 0;
+		}
+		// starting on the second row
+		&.nth-child-np5 {
+			margin-top: columns($quickColumnGapWidth);
+		}
+	}
+}

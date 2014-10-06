@@ -32,18 +32,18 @@
 		@content;
 
 		// IE8 fallback
-		width: divideCols($smallColumns);
+		width: divideColumns($smallColumns);
 
 		@include respond($smallBreak) {
-			width: divideCols($smallColumns);
+			width: divideColumns($smallColumns);
 		}
 
 		@include respond($mediumBreak) {
-			width: divideCols($mediumColumns);
+			width: divideColumns($mediumColumns);
 		}
 
 		@include respond($largeBreak) {
-			width: divideCols($largeColumns);
+			width: divideColumns($largeColumns);
 		}
 	}
 }

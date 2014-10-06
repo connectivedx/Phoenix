@@ -1,0 +1,11 @@
+// @category functions
+
+// @function divideColumns
+// Returns a percentage width for columns in a layout given a number of columns the layout should be divided into.
+// @param $columns {Number} The number of columns the layout should be divided into.  [integer]
+// @return {Number} The width for each column.  [percentage]
+// @usage
+// =divideColumns(3) will return 33.3333%
+@function divideColumns($columns) {
+	@return 100% / $columns;
+}

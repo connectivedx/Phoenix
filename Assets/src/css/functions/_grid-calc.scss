@@ -1,10 +1,10 @@
 // Return single column width
 @function oneCol($hybridGrid: false) {
 	@if ($hybridGrid == hybrid){
-		@return (100% / $hybridCols);
+		@return (100% / $hybridColumns);
 	}
 	@else{
-		@return (100% / $cols);
+		@return (100% / $columns);
 	}
 }
 
