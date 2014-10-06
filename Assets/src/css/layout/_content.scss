@@ -77,10 +77,6 @@
 	background-color: $colorSecondary;
 	padding: $gutterInPx;
 
-	@include respond(breakpointMedium) {
-		width: columns(12);
-	}
-
 	@include respond(breakpointExtraLarge) {
 		width: columns(1.5);
 	}
@@ -97,18 +93,10 @@
 	@include respond(breakpointLarge) {
 		width: columns(3);
 	}
-
-	@include respond(breakpointExtraLarge) {
-		width: columns(3);
-	}
 }
 .layout-complex-footer {
 	@extend %column-config;
 	padding: $gutterInPx;
-
-	@include respond(breakpointMedium) {
-		width: columns(12);
-	}
 
 	@include respond(breakpointLarge) {
 		width: columns(3);
