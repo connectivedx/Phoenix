@@ -3,14 +3,6 @@
 // @function grid
 // The natural language grid system (using class names like "columns" and "row").  This is enabled or disabled with the $enableGrid variable in /variables/_options.scss.
 @mixin grid {
-	.container {
-		margin-left: 0;
-		margin-right: 0;
-		min-width: 0;
-	}
-	.content {
-		background-color: white;
-	}
 	.row {
 		@extend %clearfix;
 		margin-left: 0;
@@ -38,7 +30,8 @@
 				margin-top: 0;
 			}
 			
-			.column, .columns {
+			.column,
+			.columns {
 				padding: 0;
 			}
 		}
@@ -46,7 +39,8 @@
 			margin: 0;
 		}
 	}
-	.column, .columns {
+	.column,
+	.columns {
 		float: none;
 		margin: 0;
 		padding: $gutterInPx;
@@ -71,7 +65,6 @@
 	}
 
 	@include respond(breakpointMedium) {
-		.content,
 		.row {
 			margin: 0 auto;
 			max-width: $rowMaxWidth;
@@ -82,17 +75,14 @@
 			}
 		}
 
-		.column, .columns {
+		.column,
+		.columns {
 			float: $defaultFloat !important;
 			min-height: 1px;
 
 			&.flush {
 				margin-left: 0;
 			}
-		}
-
-		.column.omega, .columns.omega {
-			float: $switchFloat;
 		}
 
 		// Generate Column Classes
@@ -155,8 +145,4 @@
 			}
 		}
 	}
-
-	.pull_right { float: right; }
-
-	.pull_left { float: left; }
 }
