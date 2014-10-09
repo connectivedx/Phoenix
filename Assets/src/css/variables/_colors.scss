@@ -1,0 +1,14 @@
+// @category variables
+
+// @function colors
+// The color palette for the project.
+// @param $colorPrimary {Color} The color palette's primary color.
+// @param $colorSecondary {Color} The color palette's secondary color.
+// @param $colorGreyLight {Color} A light grey intended for use as a shaded background color.
+// @param $colorGreyMedium {Color} A medium grey intended for use as a border or accent color in conjunction with $colorGreyLight.
+// @param $colorGreyDark {Color} A dark grey intended for us as a text or border color in conjunction with $colorGreyLight or $colorGreyMedium.
+$colorPrimary: #a81e23;
+$colorSecondary: #d1d2d4;
+$colorGreyLight: #eeeeee;
+$colorGreyMedium: #cccccc;
+$colorGreyDark: #6d6d6d;

@@ -1,0 +1,49 @@
+// @category layout
+
+// @function multi-grid
+// A shortcut to creating fluid layouts with different numbers of columns at different breakpoints.  All columns are of equal width.
+// @param $selector {String} The selector to which the styles for each column will be applied.
+// @param $smallColumns {Number} The number of columns to be displayed on small resolutions.  [integer]
+// @param $mediumColumns {Number} The number of columns to be displayed on medium resolutions.  [integer]
+// @param $largeColumns {Number} The number of columns to be displayed on large resolutions.  [integer]
+// @param $flush {String} Whether or not the columns should be flush on the outside edge of their container.  This also sets the mult-grid container to act as a nested row.  Default value: false.
+// @param $padding {String} A padding override to be set on all columns in the multi-grid.  Default value: $gutterInPx. [px|em]
+// @param $smallBreak {String} The breakpoint at which to apply the number of columns defined by $smallColumns.  Default value: breakpointSmall.
+// @param $mediumBreak {String} The breakpoint at which to apply the number of columns defined by $mediumColumns.  Default value: breakpointMedium.
+// @param $largeBreak {String} The breakpoint at which to apply the number of columns defined by $largeColumns.  Default value: breakpointLarge.
+// @usage
+// multi-grid("> li", 1, 2, 3)
+// multi-grid("> li", 1, 2, 3, flush, 10px)
+@mixin multi-grid($selector, $smallColumns, $mediumColumns, $largeColumns, $flush: false, $padding: $gutterInPx, $smallBreak: breakpointSmall, $mediumBreak: breakpointMedium, $largeBreak: breakpointLarge) {
+	// this is the container
+	@if $flush == flush {
+		@include row(nested);
+		margin: 0  (-1 * $padding);
+	}
+	@else {
+		@include row();
+	}
+	
+	#{unquote($selector)} {
+		// These styles apply to all shift-columns
+		display: inline-block;
+		float: left;
+		padding: $padding;
+		@content;
+
+		// IE8 fallback
+		width: divideColumns($smallColumns);
+
+		@include respond($smallBreak) {
+			width: divideColumns($smallColumns);
+		}
+
+		@include respond($mediumBreak) {
+			width: divideColumns($mediumColumns);
+		}
+
+		@include respond($largeBreak) {
+			width: divideColumns($largeColumns);
+		}
+	}
+}

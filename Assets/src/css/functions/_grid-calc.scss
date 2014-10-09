@@ -1,0 +1,34 @@
+// Return single column width
+@function oneCol() {
+	@return (100% / $columns);
+}
+
+// Calculate Grid Column Widths
+@function columns($num){
+	@return (oneCol() * $num);
+}
+
+// Calculate Push Class Margins
+@function push_x($num) {
+	@return (oneCol() * $num);
+}
+
+// Calculate Pull Class Margins
+@function pull_x($num, $width) {
+	@return -((oneCol() * $num) + (oneCol() * $width)); // Pull width + column width
+}
+
+// Calculate Centered Class Margins
+@function centered($num) {
+	@return 50% - (($num * (oneCol())) / 2);
+}
+
+// Create class names from column count integers
+@function number-as-word($number){
+	$w: "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven",
+"twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen",
+"twenty", "twenty-one", "twenty-two", "twenty-three", "twenty-four", "twenty-five", "twenty-six", "twenty-seven",
+"twenty-eight", "twenty-nine", "thirty", "thirty-one", "thirty-two", "thirty-three",
+"thirty-four", "thirty-five", "thirty-six";
+	@return nth($w, $number);
+}

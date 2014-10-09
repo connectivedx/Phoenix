@@ -1,0 +1,16 @@
+// @category functions
+
+// @function image
+// Simplifies image import
+// @param $imageName {String} The image's filename.
+// @param $directory {String} The folder or path in which the image is found. Default value: $imagesFolder
+// @return {String} The compiled url()
+// @usage
+// =image('feed.png') will return url('../img/css/feed.png') if $imagesFolder is '../img/css/'
+// =image('feed.png', '../img/css/') will return url('../img/css/feed.png')
+@function image($imageName, $directory: $imagesFolder) {
+	$imageName: unquote($imageName);
+	$directory: unquote($directory);
+
+	@return url('#{$directory}#{$imageName}');
+}

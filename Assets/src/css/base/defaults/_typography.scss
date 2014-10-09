@@ -1,0 +1,53 @@
+a {
+	color: black;
+	@include transition(color);
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: $colorGreyMedium;
+	}
+}
+
+p {
+	margin: em(12) 0 0;
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 300;
+	line-height: 1;
+	margin-top: 0;
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+h1 {
+	@include font-size(44);
+	margin-top: em(28, 44);
+
+	small {
+		display: block;
+	}
+}
+h2 {
+	@include font-size(36);
+	margin-top: em(28, 36);
+}
+h3 {
+	@include font-size(24);
+	margin-top: em(28, 24);
+}
+h4 {
+	@include font-size(14);
+	margin-top: em(28, 14);
+}
+
+::selection {
+	background: black;
+	color: white;
+}

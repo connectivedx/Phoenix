@@ -1,0 +1,40 @@
+{
+  	"name": "Phoenix",
+  	"version": "1.0.0",
+	"description": "Build framework for Phoenix frontend framework",
+	"repository": "https://github.com/isitedesign/Phoenix",
+	"devDependencies": {
+		"merge-stream": "~0.1.5",
+		"vinyl-source-stream": "~0.1.1",
+		"glob": "~4.0.5",
+		"rimraf": "~2.2.8",
+		"multimatch": "^0.3.0",
+		"through2": "^0.5.1",
+		"del": "~0.1.2",
+
+		"gulp": "~3.8.7",
+		
+		"gulp-filter": "~1.0.0",
+		"gulp-ignore": "~1.2.0",
+		"gulp-if": "~1.2.4",
+		"gulp-util": "~3.0.0",
+		"gulp-buffer": "~0.0.2",
+		"gulp-rev-all": "~0.6.2",
+		"gulp-plumber": "~0.6.3",
+		"gulp-livereload": "~2.1.0",
+		"gulp-debug": "~1.0.0",
+
+		"gulp-sass": "0.7.1",
+		"gulp-combine-media-queries": "~0.1.0",
+		"gulp-autoprefixer": "0.0.10",
+		"gulp-minify-css": "~0.3.6",
+		
+		"browserify": "~5.10.0",
+		"gulp-uglify": "~0.3.1",
+
+		"gulp-imagemin": "~0.6.2",
+		"gulp-svgmin": "~0.4.6",
+
+		"jquery": "~1.11.1"
+  	}
+}

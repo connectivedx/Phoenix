@@ -1,0 +1,148 @@
+// @category layout
+
+// @function grid
+// The natural language grid system (using class names like "columns" and "row").  This is enabled or disabled with the $enableGrid variable in /variables/_options.scss.
+@mixin grid {
+	.row {
+		@extend %clearfix;
+		margin-left: 0;
+		margin-right: 0;
+		min-width: 0;
+		padding: $gutterInPx;
+		width: 100%;
+
+		// max-width needed because border-box isn't supported for some HTML5 elements in old versions of IE
+		@if unit($rowMaxWidth) == "px" {
+			.oldie & {
+				max-width: $rowMaxWidth - ($gutterInPx * 2);
+			}
+		}
+
+		& + .row {
+			padding-top: 0;
+		}
+
+		.row {
+			margin-top: $gutterInPx;
+			padding: 0;
+
+			&:first-child {
+				margin-top: 0;
+			}
+			
+			.column,
+			.columns {
+				padding: 0;
+			}
+		}
+		.centered {
+			margin: 0;
+		}
+	}
+	.column,
+	.columns {
+		float: none;
+		margin: 0;
+		padding: $gutterInPx;
+		width: auto;
+
+		&:last-child {
+			float: none;
+		}
+	}
+
+	[class*="column"] {
+		+ [class*="column"]:last-child {
+			float: none;
+		}
+		&:before {
+			display: table;
+		}
+		&:after {
+			clear: both;
+			display: table;
+		}
+	}
+
+	@include respond(breakpointMedium) {
+		.row {
+			margin: 0 auto;
+			max-width: $rowMaxWidth;
+			width: 100%;
+
+			.row {
+				min-width: 0px;
+			}
+		}
+
+		.column,
+		.columns {
+			float: $defaultFloat !important;
+			min-height: 1px;
+
+			&.flush {
+				margin-left: 0;
+			}
+		}
+
+		// Generate Column Classes
+		.row {
+			@for $i from 1 through $columns{
+				@if $i == 1 and (index($enabledColumns, $i) or length($enabledColumns) == 0 ) {
+					.one.column {
+						width: columns($i);
+					}
+					.one.columns {
+						// Fix for Sass bug
+						// @extend .one.column
+						width: columns($i);
+					}
+				}
+				@else if (index($enabledColumns, $i) or length($enabledColumns) == 0 ) {
+					.#{number-as-word($i)}.columns {
+						width: columns($i);
+					}
+				}
+			}
+		}
+
+		// Generate Push and Pull Classes
+		.row {
+			@for $i from 1 through $columns - 1 {
+				@if ($enablePush) and (index($enabledPushColumns, $i) or length($enabledPushColumns) == 0 ) {
+					.push_#{number-as-word($i)} {
+						margin-left: push_x($i);
+					}
+				}
+				@if ($enablePull) and (index($enabledPullColumns, $i) or length($enabledPullColumns) == 0 ) {
+					.pull_#{number-as-word($i)} {
+						// pull classes need to know the width of the container being pulled
+						@for $j from 1 through $columns - 1 {
+							@if $j == 1 and (index($enabledColumns, $j) or length($enabledColumns) == 0 ) {
+								&.one.column {
+									margin-left: pull_x($i, $j);
+								}
+							}
+							@else if (index($enabledColumns, $j) or length($enabledColumns) == 0 ) {
+								&.#{number-as-word($j)}.columns {
+									margin-left: pull_x($i, $j);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		// Generate Centered Classes
+		.row {
+			@if ($enableCentered) {
+				@for $i from 1 through $columns - 1 {
+					.#{number-as-word($i)}.centered {
+						margin-left: centered($i);
+					}
+				}
+			}
+		}
+	}
+}

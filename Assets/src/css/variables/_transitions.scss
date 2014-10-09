@@ -1,0 +1,14 @@
+// @category variables
+
+// @function transitions
+// Default transition properties to be used with the transition mixin.
+// @param $transitionDuration {Number} The amount of time for the transition to take.  Default value: 0.3s.  [time]
+// @param $transitionEasing {String} The easing function to use with the transition.  Default value: linear.
+// @param $transitionDelay {Number} The amount of time to delay the transition.  Default value: 0s.  [time]
+// @usage
+// =transition()
+// =transition(background-color)
+// =transition(background-color, 0.5s, ease-in-out)
+$transitionDuration: 0.3s;
+$transitionEasing: linear;
+$transitionDelay: 0s;

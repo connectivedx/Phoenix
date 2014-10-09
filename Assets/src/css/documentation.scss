@@ -1,0 +1,111 @@
+@import "variables/all";
+
+@import "functions/all";
+
+@import "mixins/all";
+
+@import "base/all";
+
+@import "layout/all";
+
+@import "modules/all";
+
+.doc-header {
+	color: white;
+	max-width: none;
+	padding: 0;
+	position: relative;
+}
+
+.doc-project-title {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.doc-downloads {
+	display: none;
+
+	@include respond(breakpointMedium) {
+		background: image('github-icon-download.png') no-repeat 0% 90%;
+		bottom: -40px;
+		display: block;
+		height: 70px;
+		position: absolute;
+		right: em($gutterInPx);
+		width: 210px;
+		z-index: 10;
+	}
+}
+
+.fork-me {
+	max-width: 100px;
+	position: absolute;
+	right: 0;
+	top: 0;
+
+	> img {
+		border: 0;
+	}
+
+	@include respond(breakpointMedium) {
+		max-width: none;
+	}
+}
+
+%download-link-config {
+	background-image: image('github-download-sprite.png');
+	background-repeat: no-repeat;
+	display: block;
+	float: right;
+	height: 70px;
+	overflow: hidden;
+	text-indent: -5000px;
+	width: 90px;
+}
+
+.tar-download-link {
+	@extend %download-link-config;
+	background-position: bottom right;
+	margin-left: 10px;
+
+	&:hover {
+		background-position: top right;
+	}
+}
+
+.zip-download-link {
+	@extend %download-link-config;
+	background-position: bottom left;
+
+	&:hover {
+		background-position: top left;
+	}
+}
+
+.doc-callout {
+	padding: $gutterInPx / 2;
+
+	&.divider {
+		padding-top: $gutterInPx * 2;
+	}
+}
+
+.doc-usage {
+	margin-top: $gutterInPx;
+}
+
+.doc-footer {
+	background-color: $colorPrimary;
+	color: white;
+	max-width: none;
+
+	a {
+		color: white;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: $colorGreyMedium;
+		}
+	}
+}

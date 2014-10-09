@@ -1,0 +1,20 @@
+// @category mixins
+
+// @mixin transition
+// Adds a CSS transition with the given property, duration, easing, and delay parameters.
+// @param $property {String} The CSS property to which you wish to apply the transition.  Default value: all.
+// @param $duration {Number} The amount of time for the transition to take.  Default value: $transitionDuration.  [seconds]
+// @param $easing {String} The easing function to use with the transition.  Default value: $transitionEasing.
+// @param $delay {Number} The amount of time to delay the transition.  Default value: $transitionDelay.  [seconds]
+// @usage
+// =transition()
+// =transition(background-color)
+// =transition(background-color, 0.5s, ease-in-out)
+@mixin transition($property: all, $duration: $transitionDuration, $easing: $transitionEasing, $delay: $transitionDelay) {
+	@if (parseInt($delay) > 0) {
+		transition: $property $duration $easing $delay;
+	}
+	@else {
+		transition: $property $duration $easing;
+	}
+}

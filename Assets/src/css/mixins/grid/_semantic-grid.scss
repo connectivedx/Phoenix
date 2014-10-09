@@ -1,0 +1,138 @@
+// Column Configuration placeholder
+%column-config {
+	float: $defaultFloat;
+	margin: 0;
+	min-height: 1px;
+	width: 100%;
+}
+
+// @category layout
+
+// @function row
+// Creates a semantic-grid row.
+// @param $nested {String} Whether or not the row will be nested within other rows.  Default value: false.
+// @param $padding {Number} A padding override to be set on the row.  Default value: $gutterInPx. [px|em]
+// @param $maxWidth {Number} A max-width override to be set on the row.  Default value: $rowMaxWidth. [px|percentage]
+// @usage
+// row()
+// row(nested)
+// row(false, 0 50px 0 0)
+@mixin row($nested: false, $padding: $gutterInPx, $maxWidth: $rowMaxWidth) {
+	@extend %clearfix;
+	margin-left: 0; 
+	margin-right: 0;
+	min-width: 0;
+	width: auto;
+
+	@if $nested == nested {
+		margin-top: $gutterInPx;
+		padding: 0;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+	@else {
+		padding: $padding;
+	}
+
+	@include respond(breakpointMedium) {
+		@if $nested == nested {
+			max-width: none;
+			min-width: 0px;
+			padding: 0;
+			width: auto;
+		}
+		@else {
+			margin: 0 auto;
+			max-width: $maxWidth;
+			width: 100%;
+		}
+	}
+}
+
+// @category layout
+
+// @function column
+// Creates a semantic-grid set of columns based on the base grid system settings.  On low resolutions, the columns will stack and will break at breakpointMedium to the number of columns specified.
+// @param $columns {Number} The number of columns you wish your element's width to occupy. [integer]
+// @param $padding {Number} A padding override to be set on the row.  Default value: $gutterInPx.  [px|em]
+// @param $nested {String} Whether or not the columns will be contained within a nested row.  Default value: false.
+// @param $alignmnet {String} Whether or not the columns will be centered within a row.  Default value: false.
+// @usage
+// column(8)
+// column(8, 10px)
+@mixin column($columns, $padding: $gutterInPx, $nested: false, $alignment: false) {
+	@if $alignment == centered {
+		@extend %column-config;
+		padding: $padding;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		@include respond(breakpointMedium) {
+			clear: both;
+			margin-left: centered($columns);
+			margin-top: 0;
+			width: columns($columns);
+		}
+	}
+	@else {
+		@extend %column-config;
+		padding: $padding;
+
+		@if $nested == nested {
+			margin-top: $gutterInPx;
+
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+
+		@include respond(breakpointMedium) {
+			margin-top: 0;
+			width: columns($columns);
+		}
+	}
+}
+
+// @category layout
+
+// @function push
+// Pushes a semantic-grid set of columns by the number of columns specified.
+// @param $columns {Number} The number of columns to push the set of columns.  [integer]
+// @usage
+// push(4)
+@mixin push($columns) {
+	@if ($columns > 0) {
+		margin-left: 0;
+
+		@include respond(breakpointMedium) {
+			margin-left: push_x($columns);
+		}
+	}
+}
+
+
+// @category layout
+
+// @function pull
+// Pulls a semantic-grid set of columns by the number of columns specified.
+// @param $columns {Number} The number of columns to pull the set of columns.  [integer]
+// @param $width {Number} The width, as a number of columns, of the set of columns being pulled.  [integer]
+// @usage
+// pull(4, 12)
+@mixin pull($columns, $width) {
+	@if ($columns > 0 and $width > 0) {
+		margin-left: 0;
+
+		@include respond(breakpointMedium) {
+			margin-left: pull_x($columns, $width);
+			
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+}

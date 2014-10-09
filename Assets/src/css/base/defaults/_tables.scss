@@ -1,0 +1,48 @@
+table {
+	border-collapse: collapse;
+	@include font-size(12);
+	width: 100%;
+
+	th {
+		background-color: $colorPrimary;
+		color: white;
+		font-weight: normal;
+		vertical-align: middle;
+	}
+
+	td {
+		background-color: white;
+	}
+
+	th, td {
+		border: 1px solid black;
+		padding: em(8);
+		text-align: left;
+	}
+
+	// zebra striping code needs to repeat because IE < 8 will ignore the code if an nth-child selector is in it
+	tr:nth-child(2n) {
+		> td {
+			background-color: $colorGreyLight;
+
+			&.empty,
+			&.plain {
+				background-color: transparent;
+			}
+		}
+	}
+	tr.even {
+		> td {
+			background-color: $colorGreyLight;
+
+			&.empty,
+			&.plain {
+				background-color: transparent;
+			}
+		}
+	}
+
+	@include respond(breakpointMedium) {
+		@include font-size(14);
+	}
+}

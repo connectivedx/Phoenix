@@ -1,0 +1,214 @@
+// @category modules
+
+// @function responsive-tabs
+// A tab system that works on all resolutions.  On lower resolutions, the tabs turn into an accordion.
+
+// general settings
+$tabBorderColor: black;
+$tabBorderRadius: $formElementBorderRadius;
+
+// tab
+$tabBackgroundColor: $colorPrimary;
+$tabHoverBackgroundColor: lighten($tabBackgroundColor, 10%);
+$tabTextColor: white;
+
+// active tab
+$tabActiveBackgroundColor: $colorGreyLight;
+$tabActiveHoverBackgroundColor: lighten($tabActiveBackgroundColor, 10%);
+$tabActiveTextColor: black;
+
+// tab panel
+$tabPanelBackgroundColor: $colorGreyLight;
+$tabPanelTextColor: black;
+
+.responsive-tabs-wrapper { 
+	@extend %clearfix;
+	margin-top: $gutterInPx;
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+.responsive-tabs__heading {
+	background: $tabBackgroundColor;
+	border: 1px solid $tabBorderColor;
+	border-radius: $tabBorderRadius;
+	color: $tabTextColor;
+	cursor: pointer;
+	display: block;
+	padding: em(9, 18);
+	position: relative;
+
+	&:after {
+		content: $iconArrowDown;
+		display: block;
+		@include font-size(32);
+		@extend %icon-config;
+		position: absolute;
+		right: 20px;
+		top: 3px;
+		width: 20px;
+	}
+
+	@include respond(breakpointMedium) {
+		display: none;    
+	}
+}
+	.responsive-tabs__heading--active {
+		background: $tabActiveBackgroundColor;
+		border-bottom: 1px dashed black;
+		border-radius: $tabBorderRadius $tabBorderRadius 0 0;
+		color: $tabActiveTextColor;
+		margin-bottom: 0;
+
+		&:after {
+			color: $tabActiveTextColor;
+			content: $iconArrowUp;
+		}
+	}
+	.responsive-tabs__heading:hover {
+		background-color: $tabHoverBackgroundColor;
+	}
+	.responsive-tabs__heading--active:hover {
+		background-color: $tabActiveHoverBackgroundColor;
+	}
+
+.responsive-tabs__panel {
+	background-color: $tabPanelBackgroundColor;
+	border: 1px solid $tabBorderColor;
+	border-top: none;
+	color: $tabPanelTextColor;
+	margin-bottom: em(12);
+	padding: em(16);
+
+	@include respond(breakpointMedium) {
+		margin-bottom: 0;
+
+		.responsive-tabs-vertical-left &,
+		.responsive-tabs-vertical-right & {
+			border-top: 1px solid $tabBorderColor;
+			display: inline-block;
+			min-height: 300px;
+			width: 75%;
+		}
+
+		.responsive-tabs-vertical-left & {
+			float: left;
+		}
+		.responsive-tabs-vertical-right & {
+			float: right;
+		}
+	}
+}
+	.responsive-tabs__panel--closed-accordion-only {
+		display: none;
+
+		@include respond(breakpointMedium) {
+			// !important to fight inline display:none set in js
+			display: block !important;
+		}
+	}
+
+.responsive-tabs__list {
+	display: none;
+	@include font-size(19);
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	@include respond(breakpointMedium) {
+		.responsive-tabs-horizontal & {
+			border-bottom: 1px solid $tabBorderColor;
+			display: block;
+		}
+
+		.responsive-tabs-vertical-left &,
+		.responsive-tabs-vertical-right & {
+			display: inline-block;
+			position: relative;
+			width: 25%;
+		}
+
+		.responsive-tabs-vertical-left & {
+			float: left;
+			left: 1px;
+			margin-left: -1px;
+		}
+
+		.responsive-tabs-vertical-right & {
+			float: right;
+			margin-right: -1px;
+			right: 1px;
+		}
+	}
+}
+
+.responsive-tabs__list__item {
+	background: $tabBackgroundColor;
+	border: 1px solid $tabBorderColor;
+	border-bottom: none;
+	border-top-left-radius: $tabBorderRadius;
+	border-top-right-radius: $tabBorderRadius;
+	color: $tabTextColor;
+	cursor: pointer;
+	padding: em(10 20, 19);
+
+	&:hover {
+		background: $tabHoverBackgroundColor;
+	}
+
+	@include respond(breakpointMedium) {
+		.responsive-tabs-horizontal & {
+			display: inline-block;
+			margin-right: 2px;
+		}
+
+		.responsive-tabs-vertical-left & {
+			border-bottom-left-radius: $tabBorderRadius;
+			border-top-right-radius: 0;
+		}
+
+		.responsive-tabs-vertical-right & {
+			border-bottom-right-radius: $tabBorderRadius;
+			border-top-left-radius: 0;
+		}
+
+		.responsive-tabs-vertical-left &,
+		.responsive-tabs-vertical-right & {
+			border-bottom: 1px solid $tabBorderColor;
+			display: block;
+			margin-bottom: 2px;
+		}
+	}
+}
+	.responsive-tabs__list__item--active, 
+	.responsive-tabs__list__item--active:hover {
+		background: $tabActiveBackgroundColor;
+		border-color: $tabBorderColor;
+		color: $tabActiveTextColor;
+		
+		@include respond(breakpointMedium) {
+			.responsive-tabs-horizontal & {
+				border-bottom: none;
+				padding-top: em(11, 19);
+				position: relative;
+				top: 1px;
+			}
+
+			.responsive-tabs-vertical-left & {
+				border-right: none;
+			}
+
+			.responsive-tabs-vertical-right & {
+				border-left: none;
+			}
+		}
+	}
+
+.responsive-tabs__heading:focus,
+.responsive-tabs__list__item:focus,
+.responsive-tabs__heading--active:focus,
+.responsive-tabs__list__item--active:focus {
+	outline: none !important;
+}

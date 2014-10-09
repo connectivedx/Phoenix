@@ -1,0 +1,14 @@
+// @category mixins
+
+// @mixin gradient
+// Adds background color gradient support
+// @param $from {HexColor} and $to {HexColor}. The colors from and to you would like to gradient between.
+// @usage
+// = @include gradient(#000000, #ffffff); 
+// = or even with variables and SCSS function @include gradient($link-color, darken($link-color, 5%));
+
+@mixin gradient($from: #000000, $to: #ffffff) { //#000 & #fff are default colors.
+	background-color: $to; // All else fails
+	background-image: linear-gradient(to bottom, $from 0%, $to 100%);	// W3C
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$from}', endColorstr='#{$to}',GradientType=0 );	// IE6-9
+}

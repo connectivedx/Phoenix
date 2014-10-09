@@ -1,0 +1,29 @@
+// @category modules
+
+// @function badges
+// Renders a badge that can be used as a label, notification count, or tag.
+// @usage
+// <span class="badge-primary">Badge-primary</span>
+// <span class="badge-secondary">Badge-secondary</span>
+// <span class="badge-tertiary">Badge-tertiary</span>
+$badgeBorderRadius: 8px;
+
+%badge-config {
+	border-radius: $badgeBorderRadius;
+	cursor: default;
+	display: inline-block;
+	@include font-size(12);
+	margin-right: em(6, 12);
+	padding: em(6, 12);
+}
+
+.badge-primary {
+	@extend %badge-config;
+	background-color: $colorPrimary;
+	color: white;
+}
+
+.badge-secondary {
+	@extend %badge-config;
+	background-color: $colorSecondary;
+}
