@@ -1,51 +1,26 @@
 // Return single column width
-@function oneCol($hybridGrid: false) {
-	@if ($hybridGrid == hybrid){
-		@return (100% / $hybridColumns);
-	}
-	@else{
-		@return (100% / $columns);
-	}
+@function oneCol() {
+	@return (100% / $columns);
 }
 
 // Calculate Grid Column Widths
-@function columns($num, $hybridGrid: false){
-	@if ($hybridGrid == hybrid) {
-		@return (oneCol(hybrid) * $num);
-	}
-	@else {
-		@return (oneCol() * $num);
-	}
+@function columns($num){
+	@return (oneCol() * $num);
 }
 
 // Calculate Push Class Margins
-@function push_x($num, $hybridGrid: false) {
-	@if $hybridGrid == hybrid {
-		@return (oneCol(hybrid) * $num);
-	}
-	@else {
-		@return (oneCol() * $num);
-	}
+@function push_x($num) {
+	@return (oneCol() * $num);
 }
 
 // Calculate Pull Class Margins
-@function pull_x($num, $width, $hybridGrid: false) {
-	@if $hybridGrid == hybrid {
-		@return -((oneCol(hybrid) * $num) + (oneCol(hybrid) * $width)); // Pull width + column width
-	}
-	@else {
-		@return -((oneCol() * $num) + (oneCol() * $width)); // Pull width + column width
-	}
+@function pull_x($num, $width) {
+	@return -((oneCol() * $num) + (oneCol() * $width)); // Pull width + column width
 }
 
 // Calculate Centered Class Margins
-@function centered($num, $hybridGrid: false) {
-	@if $hybridGrid == hybrid {
-		@return 50% - (($num * (oneCol(hybrid))) / 2);
-	}
-	@else{
-		@return 50% - (($num * (oneCol())) / 2);
-	}
+@function centered($num) {
+	@return 50% - (($num * (oneCol())) / 2);
 }
 
 // Create class names from column count integers

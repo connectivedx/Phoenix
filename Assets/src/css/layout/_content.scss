@@ -22,27 +22,7 @@
 	background-color: $colorSecondary;
 }
 .layout-centered {
-	@include column(8, $gutterInPx, false, false, centered);
-	border: 1px dashed $colorPrimary;
-}
-
-// hybrid grid
-.layout-primary-hybrid {
-	@include column(16, $gutterInPx, hybrid);
-	@include push(4, hybrid);
-	border: 1px dashed $colorPrimary;
-}
-.layout-secondary-hybrid {
-	@include column(4, $gutterInPx, hybrid);
-	@include pull(16, 4, hybrid);
-	background-color: $colorSecondary;
-}
-.layout-tertiary-hybrid {
-	@include column(4, $gutterInPx, hybrid);
-	background-color: $colorSecondary;
-}
-.layout-centered-hybrid {
-	@include column(12, $gutterInPx, hybrid, false, centered);
+	@include column(8, $gutterInPx, false, centered);
 	border: 1px dashed $colorPrimary;
 }
 
