@@ -57,14 +57,12 @@
 // Creates a semantic-grid set of columns based on the base grid system settings.  On low resolutions, the columns will stack and will break at breakpointMedium to the number of columns specified.
 // @param $columns {Number} The number of columns you wish your element's width to occupy. [integer]
 // @param $padding {Number} A padding override to be set on the row.  Default value: $gutterInPx.  [px|em]
-// @param $hybridGrid {String} Whether or not the columns will be contained within a hybrid grid.  Default value: false.
 // @param $nested {String} Whether or not the columns will be contained within a nested row.  Default value: false.
 // @param $alignmnet {String} Whether or not the columns will be centered within a row.  Default value: false.
 // @usage
 // column(8)
 // column(8, 10px)
-// column(8, $gutterInPx, hybrid)
-@mixin column($columns, $padding: $gutterInPx, $hybridGrid: false, $nested: false, $alignment: false) {
+@mixin column($columns, $padding: $gutterInPx, $nested: false, $alignment: false) {
 	@if $alignment == centered {
 		@extend %column-config;
 		padding: $padding;
@@ -75,9 +73,9 @@
 
 		@include respond(breakpointMedium) {
 			clear: both;
-			margin-left: centered($columns, $hybridGrid);
+			margin-left: centered($columns);
 			margin-top: 0;
-			width: columns($columns, $hybridGrid);
+			width: columns($columns);
 		}
 	}
 	@else {
@@ -94,7 +92,7 @@
 
 		@include respond(breakpointMedium) {
 			margin-top: 0;
-			width: columns($columns, $hybridGrid);
+			width: columns($columns);
 		}
 	}
 }
@@ -104,16 +102,14 @@
 // @function push
 // Pushes a semantic-grid set of columns by the number of columns specified.
 // @param $columns {Number} The number of columns to push the set of columns.  [integer]
-// @param $hybridGrid {String} Whether or not the set of columns are part of a hybrid grid.  Default value: false.
 // @usage
 // push(4)
-// push(4, hybrid)
-@mixin push($columns, $hybridGrid: false) {
+@mixin push($columns) {
 	@if ($columns > 0) {
 		margin-left: 0;
 
 		@include respond(breakpointMedium) {
-			margin-left: push_x($columns, $hybridGrid);
+			margin-left: push_x($columns);
 		}
 	}
 }
@@ -125,16 +121,14 @@
 // Pulls a semantic-grid set of columns by the number of columns specified.
 // @param $columns {Number} The number of columns to pull the set of columns.  [integer]
 // @param $width {Number} The width, as a number of columns, of the set of columns being pulled.  [integer]
-// @param $hybridGrid {String} Whether or not the set of columns are part of a hybrid grid.  Default value: false.
 // @usage
 // pull(4, 12)
-// pull(4, 12, hybrid)
-@mixin pull($columns, $width, $hybridGrid: false) {
+@mixin pull($columns, $width) {
 	@if ($columns > 0 and $width > 0) {
 		margin-left: 0;
 
 		@include respond(breakpointMedium) {
-			margin-left: pull_x($columns, $width, $hybridGrid);
+			margin-left: pull_x($columns, $width);
 			
 			&:first-child {
 				margin-left: 0;

@@ -3,14 +3,6 @@
 // @function grid
 // The natural language grid system (using class names like "columns" and "row").  This is enabled or disabled with the $enableGrid variable in /variables/_options.scss.
 @mixin grid {
-	.container {
-		margin-left: 0;
-		margin-right: 0;
-		min-width: 0;
-	}
-	.content {
-		background-color: white;
-	}
 	.row {
 		@extend %clearfix;
 		margin-left: 0;
@@ -38,7 +30,8 @@
 				margin-top: 0;
 			}
 			
-			.column, .columns {
+			.column,
+			.columns {
 				padding: 0;
 			}
 		}
@@ -46,7 +39,8 @@
 			margin: 0;
 		}
 	}
-	.column, .columns {
+	.column,
+	.columns {
 		float: none;
 		margin: 0;
 		padding: $gutterInPx;
@@ -71,7 +65,6 @@
 	}
 
 	@include respond(breakpointMedium) {
-		.content,
 		.row {
 			margin: 0 auto;
 			max-width: $rowMaxWidth;
@@ -82,17 +75,14 @@
 			}
 		}
 
-		.column, .columns {
+		.column,
+		.columns {
 			float: $defaultFloat !important;
 			min-height: 1px;
 
 			&.flush {
 				margin-left: 0;
 			}
-		}
-
-		.column.omega, .columns.omega {
-			float: $switchFloat;
 		}
 
 		// Generate Column Classes
@@ -119,21 +109,21 @@
 		// Generate Push and Pull Classes
 		.row {
 			@for $i from 1 through $columns - 1 {
-				@if ($enablePush) {
+				@if ($enablePush) and (index($enabledPushColumns, $i) or length($enabledPushColumns) == 0 ) {
 					.push_#{number-as-word($i)} {
 						margin-left: push_x($i);
 					}
 				}
-				@if ($enablePull) {
+				@if ($enablePull) and (index($enabledPullColumns, $i) or length($enabledPullColumns) == 0 ) {
 					.pull_#{number-as-word($i)} {
 						// pull classes need to know the width of the container being pulled
 						@for $j from 1 through $columns - 1 {
-							@if $j == 1 {
+							@if $j == 1 and (index($enabledColumns, $j) or length($enabledColumns) == 0 ) {
 								&.one.column {
 									margin-left: pull_x($i, $j);
 								}
 							}
-							@else {
+							@else if (index($enabledColumns, $j) or length($enabledColumns) == 0 ) {
 								&.#{number-as-word($j)}.columns {
 									margin-left: pull_x($i, $j);
 								}
@@ -155,102 +145,4 @@
 			}
 		}
 	}
-
-	// Generate Hybrid Grid Column Classes
-	@if ($enableHybridGrid) {
-		.#{number-as-word($hybridColumns)}.colgrid .row {
-			@for $i from 1 through $hybridColumns {
-				@if $i == 1{
-					.one.column {
-						width: 100%;
-
-						@include respond(breakpointMedium) {
-							width: columns($i, hybrid);
-						}
-					}
-					.one.columns {
-						width: 100%;
-
-						@include respond(breakpointMedium) {
-							// Temp fix for Sass bug
-							// @extend .one.column
-							width: columns($i, hybrid);
-						}
-					}
-				}
-				@else{
-					.#{number-as-word($i)}.columns{
-						width: 100%;
-
-						@include respond(breakpointMedium) {
-							width: columns($i, hybrid);
-						}
-					}
-				}
-			}
-		}
-	}
-
-	// Generate Hybrid Push Classes
-	@if ($enableHybridGrid) {
-		.#{number-as-word($hybridColumns)}.colgrid .row {
-			@for $i from 1 through $hybridColumns - 1 {
-				@if ($enablePush) {
-					.push_#{number-as-word($i)} {
-						@include respond(breakpointMedium) {
-							margin-left: push_x($i, hybrid);
-						}
-					}
-				}
-				@if ($enablePull) {
-					.pull_#{number-as-word($i)} {
-						// pull classes need to know the width of the container being pulled
-						@for $j from 1 through $hybridColumns - 1 {
-							@if $j == 1 {
-								@include respond(breakpointMedium) {
-									&.one.column {
-										margin-left: pull_x($i, $j, hybrid);
-										
-										&:first-child {
-											margin-left: 0;
-										}
-									}
-								}
-							}
-							@else {
-								@include respond(breakpointMedium) {
-									&.#{number-as-word($j)}.columns {
-										margin-left: pull_x($i, $j, hybrid);
-
-										&:first-child {
-											margin-left: 0;
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-
-	// Generate Centered Classes
-	@if ($enableHybridGrid) {
-		.#{number-as-word($hybridColumns)}.colgrid .row {
-			@for $i from 1 through $hybridColumns - 1 {
-				@if ($enableCentered) {
-					.#{number-as-word($i)}.centered {
-						@include respond(breakpointMedium) {
-							margin-left: centered($i, hybrid);
-						}
-					}
-				}
-			}
-		}
-	}
-
-	.pull_right { float: right; }
-
-	.pull_left { float: left; }
 }
