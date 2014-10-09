@@ -119,21 +119,21 @@
 		// Generate Push and Pull Classes
 		.row {
 			@for $i from 1 through $columns - 1 {
-				@if ($enablePush) {
+				@if ($enablePush) and (index($enabledPushColumns, $i) or length($enabledPushColumns) == 0 ) {
 					.push_#{number-as-word($i)} {
 						margin-left: push_x($i);
 					}
 				}
-				@if ($enablePull) {
+				@if ($enablePull) and (index($enabledPullColumns, $i) or length($enabledPullColumns) == 0 ) {
 					.pull_#{number-as-word($i)} {
 						// pull classes need to know the width of the container being pulled
 						@for $j from 1 through $columns - 1 {
-							@if $j == 1 {
+							@if $j == 1 and (index($enabledColumns, $j) or length($enabledColumns) == 0 ) {
 								&.one.column {
 									margin-left: pull_x($i, $j);
 								}
 							}
-							@else {
+							@else if (index($enabledColumns, $j) or length($enabledColumns) == 0 ) {
 								&.#{number-as-word($j)}.columns {
 									margin-left: pull_x($i, $j);
 								}

@@ -1,14 +1,18 @@
 // @category variables
 
 // @function options
-// Options for enabling or disabling features, including the grid system, push, and pull.
-// @param $enableGrid {Boolean} Enable or disable the grid system.  NOTE: this does not affect the semantic grid.
-// @param $enabledColumns {String} Comma separated value list of column widths you want to support in the standard grid system; set to ( ) to include all possible columns.  If enableGrid is set to false, this is a moot option since no column classes will be output.  NOTE: this does not affect the semantic grid, it only minimizes the output of classes for the grid system.  [list]
-// @param $enableCentered {Boolean} Enable or disable centering of columns.  NOTE: this does not affect the semantic grid.
-// @param $enablePush {Boolean} Enable or disable pushing of columns.  NOTE: this does not affect the semantic grid.
-// @param $enablePull {Boolean} Enable or disable pulling of columns.  NOTE: this does not affect the semantic grid.
+// Options for enabling or disabling features, including the grid system, push, and pull.  NOTE: these options do not affect the semantic grid, they only minimize the output of classes for the grid system.
+// @param $enableGrid {Boolean} Enable or disable the grid system.
+// @param $enabledColumns {String} Comma separated value list of column widths you want to support in the standard grid system; set to ( ) to include all possible columns.  If enableGrid is set to false, this is a moot option since no column classes will be output.  [list]
+// @param $enableCentered {Boolean} Enable or disable centering of columns.
+// @param $enablePush {Boolean} Enable or disable pushing of columns.
+// @param $enabledPushColumns {String} Comma separated value list of column widths you want to support in the standard grid system for pushing; set to ( ) to include all possible columns.  If enableGrid is set to false, this is a moot option since no column classes will be output.  [list]
+// @param $enablePull {Boolean} Enable or disable pulling of columns.
+// @param $enabledPullColumns {String} Comma separated value list of column widths you want to support in the standard grid system for pulling; set to ( ) to include all possible columns.  If enableGrid is set to false, this is a moot option since no column classes will be output.  [list]
 $enableGrid: true;
 $enabledColumns: ();
 $enableCentered: true;
 $enablePush: true;
+$enabledPushColumns: ();
 $enablePull: true;
+$enabledPullColumns: ();
