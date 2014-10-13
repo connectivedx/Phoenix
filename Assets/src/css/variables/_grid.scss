@@ -2,15 +2,13 @@
 
 // @function grid
 // The properties of the grid system to be used.
-// @param $gutterInPx {Number} The default gutter size in pixels.  [px]
-// @param $secondaryGutterInPx {Number} A secondary gutter size in pixels.  [px]
-// @param $rowMaxWidth {Number} The maximum width of a row on the page.  This should be a multiple of the below variable $columns or a percentage.  [px|percentage]
 // @param $columns {Number} The number of columns in the grid system.  [integer]
+// @param $columnPadding {Number} The default amount of padding for columns in pixels.  [px]
+// @param $rowMaxWidth {Number} The maximum width of a row on the page.  This should be a multiple of the below variable $columns or a percentage.  [px|percentage]
 // @param $defaultFloat {String} The default direction in which to float content.
 // @param $switchFloat {String} The opposite float of $defaultFloat.
-$gutterInPx: 16px !default;
-$secondaryGutterInPx: 20px !default;
-$rowMaxWidth: 1220px !default;
 $columns: 12 !default;
+$columnPadding: 16px !default;
+$rowMaxWidth: 1220px !default;
 $defaultFloat: left;
 $switchFloat: right;

@@ -22,7 +22,7 @@
 	background-color: $colorSecondary;
 }
 .layout-centered {
-	@include column(8, $gutterInPx, false, centered);
+	@include column(8, $columnPadding, false, centered);
 	border: 1px dashed $colorPrimary;
 }
 
@@ -32,7 +32,7 @@
 }
 .layout-complex-header {
 	@extend %column-config;
-	padding: $gutterInPx;
+	padding: $columnPadding;
 
 	// max-width needed because border-box isn't supported for the footer element in old versions of IE; this overrides the default for headers
 	.oldie & {
@@ -42,7 +42,7 @@
 .layout-complex-primary {
 	@extend %column-config;
 	border: 1px dashed $colorPrimary;
-	padding: $gutterInPx;
+	padding: $columnPadding;
 
 	@include respond(breakpointMedium) {
 		width: columns(7);
@@ -55,7 +55,7 @@
 .layout-complex-nav {
 	@extend %column-config;
 	background-color: $colorSecondary;
-	padding: $gutterInPx;
+	padding: $columnPadding;
 
 	@include respond(breakpointExtraLarge) {
 		width: columns(1.5);
@@ -64,7 +64,7 @@
 .layout-complex-tertiary {
 	@extend %column-config;
 	background-color: $colorSecondary;
-	padding: $gutterInPx;
+	padding: $columnPadding;
 
 	@include respond(breakpointMedium) {
 		width: columns(5);
@@ -76,7 +76,7 @@
 }
 .layout-complex-footer {
 	@extend %column-config;
-	padding: $gutterInPx;
+	padding: $columnPadding;
 
 	@include respond(breakpointLarge) {
 		width: columns(3);

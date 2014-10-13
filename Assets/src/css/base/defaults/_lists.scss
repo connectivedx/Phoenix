@@ -1,6 +1,6 @@
 ul, ol {
 	margin: em(10) 0 0;
-	padding: 0 0 0 $gutterInPx;
+	padding: 0 0 0 $columnPadding;
 
 	&.plain {
 		list-style-image: none;

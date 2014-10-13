@@ -8,13 +8,13 @@
 		margin-left: 0;
 		margin-right: 0;
 		min-width: 0;
-		padding: $gutterInPx;
+		padding: $columnPadding;
 		width: 100%;
 
 		// max-width needed because border-box isn't supported for some HTML5 elements in old versions of IE
 		@if unit($rowMaxWidth) == "px" {
 			.oldie & {
-				max-width: $rowMaxWidth - ($gutterInPx * 2);
+				max-width: $rowMaxWidth - ($columnPadding * 2);
 			}
 		}
 
@@ -23,7 +23,7 @@
 		}
 
 		.row {
-			margin-top: $gutterInPx;
+			margin-top: $columnPadding;
 			padding: 0;
 
 			&:first-child {
@@ -43,7 +43,7 @@
 	.columns {
 		float: none;
 		margin: 0;
-		padding: $gutterInPx;
+		padding: $columnPadding;
 		width: auto;
 
 		&:last-child {

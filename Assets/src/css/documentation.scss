@@ -31,7 +31,7 @@
 		display: block;
 		height: 70px;
 		position: absolute;
-		right: em($gutterInPx);
+		right: em($columnPadding);
 		width: 210px;
 		z-index: 10;
 	}
@@ -83,15 +83,15 @@
 }
 
 .doc-callout {
-	padding: $gutterInPx / 2;
+	padding: $columnPadding / 2;
 
 	&.divider {
-		padding-top: $gutterInPx * 2;
+		padding-top: $columnPadding * 2;
 	}
 }
 
 .doc-usage {
-	margin-top: $gutterInPx;
+	margin-top: $columnPadding;
 }
 
 .doc-footer {
