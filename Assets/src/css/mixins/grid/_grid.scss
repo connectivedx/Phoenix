@@ -63,7 +63,7 @@
 			display: table;
 		}
 	}
-
+	
 	@include respond(breakpointMedium) {
 		.row {
 			margin: 0 auto;
@@ -78,8 +78,10 @@
 		.column,
 		.columns {
 			float: $defaultFloat !important;
+			margin-left: $gutterWidth;
 			min-height: 1px;
 
+			&:first-child,
 			&.flush {
 				margin-left: 0;
 			}
@@ -112,6 +114,10 @@
 				@if ($enablePush) and (index($enabledPushColumns, $i) or length($enabledPushColumns) == 0 ) {
 					.push_#{number-as-word($i)} {
 						margin-left: push_x($i);
+
+						&:first-child {
+							margin-left: push_x($i, true);
+						}
 					}
 				}
 				@if ($enablePull) and (index($enabledPullColumns, $i) or length($enabledPullColumns) == 0 ) {

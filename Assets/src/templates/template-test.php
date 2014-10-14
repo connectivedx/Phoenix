@@ -19,7 +19,7 @@
 		</ul>
 	</header>
 	<section class="wrapper"> 
-		<div class="layout-primary" role="main">
+		<div class="layout-primary-pushed" role="main">
 			<article>
 				<h1>Main Heading</h1>
 				<h2>Subheading</h2>
@@ -32,7 +32,7 @@
 			</article>
 		</div><!-- /.layout-primary -->
 		
-		<div class="layout-secondary" role="complementary">
+		<div class="layout-secondary-pulled" role="complementary">
 			<h3>Secondary</h3>
 		</div><!-- /.layout-secondary -->
 		
