@@ -1,6 +1,10 @@
 // Change $gutterWidth to a percentage
 @if unit($gutterWidth) == 'px' {
+	$gutterWidthInPx: $gutterWidth;
 	$gutterWidth: percentage($gutterWidth / $rowMaxWidth);
+}
+@else {
+	$gutterWidthInPx: ceil( ($gutterWidth / 100%) * $rowMaxWidth);
 }
 
 // Return single column width
