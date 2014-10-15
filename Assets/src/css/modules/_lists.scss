@@ -1,12 +1,8 @@
-.plain {
-	list-style-image: none;
-	list-style: none;
-	margin-left: 0;
-	text-align: left;
+// @category modules
 
-	.no-svg & {
-		list-style-image: none;
-		list-style: none;
-		margin: 0;
-	}
+// @function lists
+// Styles related to lists.
+.list-plain {
+	list-style: none;
+	padding-left: 0;
 }
