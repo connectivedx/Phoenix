@@ -1,19 +1,6 @@
 ul, ol {
 	margin: em(10) 0 0;
-	padding: 0 0 0 $gutterInPx;
-
-	&.plain {
-		list-style-image: none;
-		list-style: none;
-		margin-left: 0;
-		text-align: left;
-
-		.no-svg & {
-			list-style-image: none;
-			list-style: none;
-			margin: 0;
-		}
-	}
+	padding: 0 0 0 em(20);
 
 	ul {
 		margin-left: em(18);
