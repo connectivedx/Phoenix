@@ -2,16 +2,11 @@
 
 // @function placeholders
 // Global placeholders, such as clearfix, will exist here.
-// @param $clearfix {Placeholder} Applies Nicolas Gallagher's clearfix.
+// @param $clearfix {Placeholder} Applies a clearfix to the applied container to combat the zero-height container problem.
 %clearfix {
-	*zoom: 1;
-
-	&:before, &:after {
-		content: "";
-		display: table;
-	}
-	
 	&:after {
 		clear: both;
+		content: "";
+		display: table;
 	}
 }
