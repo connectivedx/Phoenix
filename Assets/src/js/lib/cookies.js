@@ -29,7 +29,7 @@ function setCookie(cookie) {
 }
 
 function deleteCookie(cookieName) {
-	cookie.set({name:cookieName,expires:false});
+	setCookie({name:cookieName,expires:false});
 }
 
 exports.get = getCookie;
