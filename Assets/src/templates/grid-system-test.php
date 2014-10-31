@@ -23,7 +23,8 @@
 		</div>
 
 		<?php
-			for ($divisor = 0; $divisor < $gridSize; $divisor++) {
+			// output all column widths for divisors of your gridSize
+			for ($divisor = 1; $divisor < $gridSize; $divisor++) {
 				if ($gridSize % $divisor === 0) {
 					echo '<div class="row">';
 
@@ -36,9 +37,8 @@
 					echo '</div>';
 				}
 			}
-		?>
 
-		<?php
+			// output all classes from 1 to gridSize
 			for ($i = 0; $i < $gridSize; $i++) {
 				$firstColumnWidth = $numbers[$i];
 				$secondColumnWidth = $numbers[$gridSize - $i - 2];
