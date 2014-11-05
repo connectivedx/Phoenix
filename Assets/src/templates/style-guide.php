@@ -157,18 +157,18 @@
 			</div>
 			<div class="six columns">
 				<fieldset>
-						<legend>Selects, Radios, Checkboxes</legend>
-						<h2>Selects, Radios, Checkboxes</h2>
-						<ol>
-							<li>
-								<label for="testselect">Label for the select</label>
-								<select id="testselect">
-									<option>First</option>
-									<option>Second</option>
-									<option>Third</option>
-								</select>
-							</li>
-							<li>
+					<legend>Selects, Radios, Checkboxes</legend>
+					<h2>Selects, Radios, Checkboxes</h2>
+					<ol>
+						<li>
+							<label for="testselect">Label for the select</label>
+							<select id="testselect">
+								<option>First</option>
+								<option>Second</option>
+								<option>Third</option>
+							</select>
+						</li>
+						<li>
 							<fieldset>
 								<legend>Select one of the following:</legend>
 								<ol>
@@ -200,71 +200,71 @@
 									</li>
 								</ol>
 							</fieldset>
-							</li>
-							<li>
-								<fieldset>
-									<legend>Select at least one of the following:</legend>
-									<ol>
-										<li>
-											<label for="checkbox">Label for the checkbox</label>
-											<ol class="checkbox-list">
-												<li>
-													<input type="checkbox" name="checkbox" id="checkbox-option-1" value="option 1">
-													<label for="checkbox-option-1">Option 1</label>
-												</li>
-												<li>
-													<input type="checkbox" name="checkbox" id="checkbox-option-2" value="option 2">
-													<label for="checkbox-option-2">Option 2</label>
-												</li>
-											</ol>
-										</li>
-										<li>
-											<label for="checkbox-2" class="label-large">Large label for checkboxes</label>
-											<ol class="checkbox-list">
-												<li>
-													<input type="checkbox" name="checkbox-2" id="checkbox-option-1-2" value="option 1">
-													<label for="checkbox-option-1-2" class="label-large">Large labels scale nicely and wrap properly</label>
-												</li>
-												<li>
-													<input type="checkbox" name="checkbox-2" id="checkbox-option-2-2" value="option 2">
-													<label for="checkbox-option-2-2" class="label-large">Large labels scale nicely and wrap properly</label>
-												</li>
-											</ol>
-										</li>
-									</ol>
-								</fieldset>
-							</li>
-							<li>
-								<fieldset>
-								<legend>Inline Checkboxes and Radio Buttons</legend>
+						</li>
+						<li>
+							<fieldset>
+								<legend>Select at least one of the following:</legend>
 								<ol>
-									<li>
-										<label for="options">Label for the radio options</label>
-										<ol class="radio-list">
-											<li>
-												<input type="radio" name="inline-options" id="inline-radio-option-1" value="option 1">
-												<label for="inline-radio-option-1" class="inline">Option 1</label>
-												<input type="radio" name="inline-options" id="inline-radio-option-2" value="option 2">
-												<label for="inline-radio-option-2" class="inline">Option 2</label>
-											</li>
-										</ol>
-									</li>
 									<li>
 										<label for="checkbox">Label for the checkbox</label>
 										<ol class="checkbox-list">
 											<li>
-												<input type="checkbox" name="inline-checkbox" id="inline-checkbox-option-1" value="option 1">
-												<label for="inline-checkbox-option-1" class="inline">Option 1</label>
-												<input type="checkbox" name="inline-checkbox" id="inline-checkbox-option-2" value="option 2">
-												<label for="inline-checkbox-option-2" class="inline">Option 2</label>
+												<input type="checkbox" name="checkbox" id="checkbox-option-1" value="option 1">
+												<label for="checkbox-option-1">Option 1</label>
+											</li>
+											<li>
+												<input type="checkbox" name="checkbox" id="checkbox-option-2" value="option 2">
+												<label for="checkbox-option-2">Option 2</label>
+											</li>
+										</ol>
+									</li>
+									<li>
+										<label for="checkbox-2" class="label-large">Large label for checkboxes</label>
+										<ol class="checkbox-list">
+											<li>
+												<input type="checkbox" name="checkbox-2" id="checkbox-option-1-2" value="option 1">
+												<label for="checkbox-option-1-2" class="label-large">Large labels scale nicely and wrap properly</label>
+											</li>
+											<li>
+												<input type="checkbox" name="checkbox-2" id="checkbox-option-2-2" value="option 2">
+												<label for="checkbox-option-2-2" class="label-large">Large labels scale nicely and wrap properly</label>
 											</li>
 										</ol>
 									</li>
 								</ol>
-								</fieldset>
-							</li>
-						</ol>
-					</fieldset>
+							</fieldset>
+						</li>
+						<li>
+							<fieldset>
+							<legend>Inline Checkboxes and Radio Buttons</legend>
+							<ol>
+								<li>
+									<label for="options">Label for the radio options</label>
+									<ol class="radio-list">
+										<li>
+											<input type="radio" name="inline-options" id="inline-radio-option-1" value="option 1">
+											<label for="inline-radio-option-1" class="inline">Option 1</label>
+											<input type="radio" name="inline-options" id="inline-radio-option-2" value="option 2">
+											<label for="inline-radio-option-2" class="inline">Option 2</label>
+										</li>
+									</ol>
+								</li>
+								<li>
+									<label for="checkbox">Label for the checkbox</label>
+									<ol class="checkbox-list">
+										<li>
+											<input type="checkbox" name="inline-checkbox" id="inline-checkbox-option-1" value="option 1">
+											<label for="inline-checkbox-option-1" class="inline">Option 1</label>
+											<input type="checkbox" name="inline-checkbox" id="inline-checkbox-option-2" value="option 2">
+											<label for="inline-checkbox-option-2" class="inline">Option 2</label>
+										</li>
+									</ol>
+								</li>
+							</ol>
+							</fieldset>
+						</li>
+					</ol>
+				</fieldset>
 			</div>
 		</div>
 
