@@ -77,6 +77,8 @@
 			<div class="twelve columns">
 				<h1>Lists</h1>
 			</div>
+		</div>
+		<div class="row">
 			<div class="six columns">
 				<h2>Unordered List</h2>
 				<ul>
@@ -112,6 +114,8 @@
 			<div class="twelve columns">
 				<h1>Form Styles</h1>
 			</div>
+		</div>
+		<div class="row">
 			<div class="six columns">
 				<form action="#">
 					<fieldset>
@@ -169,37 +173,37 @@
 							</select>
 						</li>
 						<li>
-							<fieldset>
-								<legend>Select one of the following:</legend>
-								<ol>
-									<li>
-										<label for="options">Label for the radio options</label>
-										<ol class="radio-list">
-											<li>
-												<input type="radio" name="options" id="radio-option-1" value="option 1">
-												<label for="radio-option-1">Option 1</label>
-											</li>
-											<li>
-												<input type="radio" name="options" id="radio-option-2" value="option 2">
-												<label for="radio-option-2">Option 2</label>
-											</li>
-										</ol>
-									</li>
-									<li>
-										<label for="options-2" class="label-large">Large label for radio options</label>
-										<ol class="radio-list">
-											<li>
-												<input type="radio" name="options-2" id="radio-option-1-2" value="option 1">
-												<label for="radio-option-1-2" class="label-large">Large labels scale nicely and wrap properly</label>
-											</li>
-											<li>
-												<input type="radio" name="options-2" id="radio-option-2-2" value="option 2">
-												<label for="radio-option-2-2" class="label-large">Large labels scale nicely and wrap properly</label>
-											</li>
-										</ol>
-									</li>
-								</ol>
-							</fieldset>
+						<fieldset>
+							<legend>Select one of the following:</legend>
+							<ol>
+								<li>
+									<label for="options">Label for the radio options</label>
+									<ol class="radio-list">
+										<li>
+											<input type="radio" name="options" id="radio-option-1" value="option 1">
+											<label for="radio-option-1">Option 1</label>
+										</li>
+										<li>
+											<input type="radio" name="options" id="radio-option-2" value="option 2">
+											<label for="radio-option-2">Option 2</label>
+										</li>
+									</ol>
+								</li>
+								<li>
+									<label for="options-2" class="label-large">Large label for radio options</label>
+									<ol class="radio-list">
+										<li>
+											<input type="radio" name="options-2" id="radio-option-1-2" value="option 1">
+											<label for="radio-option-1-2" class="label-large">Large labels scale nicely and wrap properly</label>
+										</li>
+										<li>
+											<input type="radio" name="options-2" id="radio-option-2-2" value="option 2">
+											<label for="radio-option-2-2" class="label-large">Large labels scale nicely and wrap properly</label>
+										</li>
+									</ol>
+								</li>
+							</ol>
+						</fieldset>
 						</li>
 						<li>
 							<fieldset>
@@ -346,6 +350,8 @@
 			<div class="twelve columns">
 				<h1>Aspect Ratios</h1>
 			</div>
+		</div>
+		<div class="row">
 			<div class="six columns">
 				<h2>Video - 16:9</h2>
 				<div class="video">

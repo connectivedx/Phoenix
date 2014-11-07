@@ -5,7 +5,7 @@
 .callout {
 	background: $colorGreyLight;
 	margin-top: em(10);
-	padding: $secondaryGutterInPx;
+	padding: $columnPadding;
 
 	&:first-child {
 		margin-top: 0;
