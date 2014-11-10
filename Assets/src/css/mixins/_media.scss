@@ -11,7 +11,12 @@
 			@media only screen and (min-width: em(nth($breakpoint, 2), 16)) { @content; }
 		}
 	}
+
 	@if $query == rotateDevice {
 		@media only screen and (max-width: em(nth(nth($breakpoints, 2), 2) ,16)) and (orientation: portrait) { @content; }
+	}
+
+	@if $query == print {
+		@media print { @content; }
 	}
 }
