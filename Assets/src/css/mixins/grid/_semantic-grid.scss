@@ -19,7 +19,7 @@
 // row(false, 0 50px 0 0)
 @mixin row($nested: false, $padding: $gutterInPx, $maxWidth: $rowMaxWidth) {
 	@extend %clearfix;
-	margin-left: 0; 
+	margin-left: 0;
 	margin-right: 0;
 	min-width: 0;
 	width: auto;
@@ -36,7 +36,7 @@
 		padding: $padding;
 	}
 
-	@include respond(breakpointMedium) {
+	@include media(breakpointMedium) {
 		@if $nested == nested {
 			max-width: none;
 			min-width: 0px;
@@ -71,7 +71,7 @@
 			margin-top: 0;
 		}
 
-		@include respond(breakpointMedium) {
+		@include media(breakpointMedium) {
 			clear: both;
 			margin-left: centered($columns);
 			margin-top: 0;
@@ -90,7 +90,7 @@
 			}
 		}
 
-		@include respond(breakpointMedium) {
+		@include media(breakpointMedium) {
 			margin-top: 0;
 			width: columns($columns);
 		}
@@ -108,7 +108,7 @@
 	@if ($columns > 0) {
 		margin-left: 0;
 
-		@include respond(breakpointMedium) {
+		@include media(breakpointMedium) {
 			margin-left: push_x($columns);
 		}
 	}
@@ -127,9 +127,9 @@
 	@if ($columns > 0 and $width > 0) {
 		margin-left: 0;
 
-		@include respond(breakpointMedium) {
+		@include media(breakpointMedium) {
 			margin-left: pull_x($columns, $width);
-			
+
 			&:first-child {
 				margin-left: 0;
 			}

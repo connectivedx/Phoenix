@@ -21,7 +21,7 @@ $tabActiveTextColor: black;
 $tabPanelBackgroundColor: $colorGreyLight;
 $tabPanelTextColor: black;
 
-.responsive-tabs-wrapper { 
+.responsive-tabs-wrapper {
 	@extend %clearfix;
 	margin-top: $gutterInPx;
 
@@ -51,8 +51,22 @@ $tabPanelTextColor: black;
 		width: 20px;
 	}
 
-	@include respond(breakpointMedium) {
-		display: none;    
+	@include media(breakpointMedium) {
+		display: none;
+	}
+
+	// ensure headings use active states when printed
+	@include media(print) {
+		background: $tabActiveBackgroundColor;
+		border-bottom: 1px dashed black;
+		border-radius: $tabBorderRadius $tabBorderRadius 0 0;
+		color: $tabActiveTextColor;
+		margin-bottom: 0;
+
+		&:after {
+			color: $tabActiveTextColor;
+			content: $iconArrowUp;
+		}
 	}
 }
 	.responsive-tabs__heading--active {
@@ -82,7 +96,7 @@ $tabPanelTextColor: black;
 	margin-bottom: em(12);
 	padding: em(16);
 
-	@include respond(breakpointMedium) {
+	@include media(breakpointMedium) {
 		margin-bottom: 0;
 
 		.responsive-tabs-vertical-left &,
@@ -100,12 +114,21 @@ $tabPanelTextColor: black;
 			float: right;
 		}
 	}
+
+	// ensure accordion tabs are open when printed
+	@include media(print) {
+		display: block !important;
+	}
 }
 	.responsive-tabs__panel--closed-accordion-only {
 		display: none;
 
-		@include respond(breakpointMedium) {
+		@include media(breakpointMedium) {
 			// !important to fight inline display:none set in js
+			display: block !important;
+		}
+
+		@include media(print) {
 			display: block !important;
 		}
 	}
@@ -117,7 +140,7 @@ $tabPanelTextColor: black;
 	margin: 0;
 	padding: 0;
 
-	@include respond(breakpointMedium) {
+	@include media(breakpointMedium) {
 		.responsive-tabs-horizontal & {
 			border-bottom: 1px solid $tabBorderColor;
 			display: block;
@@ -158,7 +181,7 @@ $tabPanelTextColor: black;
 		background: $tabHoverBackgroundColor;
 	}
 
-	@include respond(breakpointMedium) {
+	@include media(breakpointMedium) {
 		.responsive-tabs-horizontal & {
 			display: inline-block;
 			margin-right: 2px;
@@ -182,13 +205,13 @@ $tabPanelTextColor: black;
 		}
 	}
 }
-	.responsive-tabs__list__item--active, 
+	.responsive-tabs__list__item--active,
 	.responsive-tabs__list__item--active:hover {
 		background: $tabActiveBackgroundColor;
 		border-color: $tabBorderColor;
 		color: $tabActiveTextColor;
-		
-		@include respond(breakpointMedium) {
+
+		@include media(breakpointMedium) {
 			.responsive-tabs-horizontal & {
 				border-bottom: none;
 				padding-top: em(11, 19);
