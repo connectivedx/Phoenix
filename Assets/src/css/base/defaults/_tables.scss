@@ -3,6 +3,12 @@ table {
 	@include font-size(12);
 	width: 100%;
 
+	thead {
+		@include media(print) {
+			display: table-header-group;
+		}
+	}
+
 	th {
 		background-color: $colorPrimary;
 		color: white;

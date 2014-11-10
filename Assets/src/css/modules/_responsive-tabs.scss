@@ -54,6 +54,20 @@ $tabPanelTextColor: black;
 	@include media(breakpointMedium) {
 		display: none;
 	}
+
+	// ensure headings use active states when printed
+	@include media(print) {
+		background: $tabActiveBackgroundColor;
+		border-bottom: 1px dashed black;
+		border-radius: $tabBorderRadius $tabBorderRadius 0 0;
+		color: $tabActiveTextColor;
+		margin-bottom: 0;
+
+		&:after {
+			color: $tabActiveTextColor;
+			content: $iconArrowUp;
+		}
+	}
 }
 	.responsive-tabs__heading--active {
 		background: $tabActiveBackgroundColor;
@@ -100,12 +114,21 @@ $tabPanelTextColor: black;
 			float: right;
 		}
 	}
+
+	// ensure accordion tabs are open when printed
+	@include media(print) {
+		display: block !important;
+	}
 }
 	.responsive-tabs__panel--closed-accordion-only {
 		display: none;
 
 		@include media(breakpointMedium) {
 			// !important to fight inline display:none set in js
+			display: block !important;
+		}
+
+		@include media(print) {
 			display: block !important;
 		}
 	}

@@ -1,6 +1,14 @@
 // http://www.paulirish.com/2012/box-sizing-border-box-ftw/
 *, *:before, *:after {
 	box-sizing: border-box;
+
+	// print defaults
+    @include media(print) {
+        background: transparent !important;
+        color: #000 !important; // black prints faster
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
 }
 
 html {

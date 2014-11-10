@@ -57,6 +57,10 @@ button,
 	&:focus {
 		background-color: lighten($colorPrimary, 10%);
 	}
+
+	@include media(print) {
+		display: none;
+	}
 }
 
 .btn-secondary {
@@ -69,5 +73,9 @@ button,
 	&:active,
 	&:focus {
 		background-color: lighten($colorSecondary, 10%);
+	}
+
+	@include media(print) {
+		display: none;
 	}
 }
