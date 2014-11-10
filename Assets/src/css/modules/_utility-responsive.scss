@@ -4,8 +4,8 @@
 // The place for utility classes specifically used for responsive purposes.
 .rotate-device {
 	display: none;
-	
-	@include respond(rotateDevice) {
+
+	@include media(rotateDevice) {
 		display: block;
 	}
 }

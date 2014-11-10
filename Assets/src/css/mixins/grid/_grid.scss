@@ -29,7 +29,7 @@
 			&:first-child {
 				margin-top: 0;
 			}
-			
+
 			.column,
 			.columns {
 				padding: 0;
@@ -64,7 +64,7 @@
 		}
 	}
 
-	@include respond(breakpointMedium) {
+	@include media(breakpointMedium) {
 		.row {
 			margin: 0 auto;
 			max-width: $rowMaxWidth;
