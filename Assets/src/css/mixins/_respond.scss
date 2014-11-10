@@ -1,17 +1,17 @@
 // @category mixins
 
-// @mixin respond
+// @mixin media
 // Adds a media query at the pre-defined breakpoint for the given content.
-// @param $media {String} The name of the breakpoint for which the styles are to be applied.
+// @param $query {String} The name of the breakpoint for which the styles are to be applied.
 // @usage
-// =respond(breakpointMedium)
-@mixin respond($media) {
+// =media(breakpointMedium)
+@mixin media($query) {
 	@each $breakpoint in $breakpoints {
-		@if $media == nth($breakpoint, 1) {
+		@if $query == nth($breakpoint, 1) {
 			@media only screen and (min-width: em(nth($breakpoint, 2), 16)) { @content; }
 		}
 	}
-	@if $media == rotateDevice {
+	@if $query == rotateDevice {
 		@media only screen and (max-width: em(nth(nth($breakpoints, 2), 2) ,16)) and (orientation: portrait) { @content; }
 	}
 }
