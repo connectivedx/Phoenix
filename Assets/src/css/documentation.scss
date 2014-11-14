@@ -50,6 +50,10 @@
 	@include media(breakpointMedium) {
 		max-width: none;
 	}
+
+	@include media(print) {
+		display: none;
+	}
 }
 
 %download-link-config {

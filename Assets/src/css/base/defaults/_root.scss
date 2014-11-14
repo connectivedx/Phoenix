@@ -5,8 +5,8 @@
 	// print defaults
     @include media(print) {
         background: transparent !important;
-        color: #000 !important; // black prints faster
         box-shadow: none !important;
+        color: #000 !important; // black prints faster
         text-shadow: none !important;
     }
 }
