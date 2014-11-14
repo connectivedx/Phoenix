@@ -11,7 +11,7 @@
 	margin: (-$columnPadding) (-$columnPadding) 0 (-$columnPadding);	// need parentheses around -$columnPadding to compile correctly
 	padding: em(12, 24);
 
-	@include respond(breakpointMedium) {
+	@include media(breakpointMedium) {
 		display: none;
 	}
 }
@@ -48,7 +48,7 @@
 		}
 	}
 
-	@include respond(breakpointMedium) {
+	@include media(breakpointMedium) {
 		background-color: transparent;
 		max-height: none;
 		padding: em(16) $columnPadding;

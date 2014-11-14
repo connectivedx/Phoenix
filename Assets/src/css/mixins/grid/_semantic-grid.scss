@@ -36,7 +36,7 @@
 		padding: $padding;
 	}
 
-	@include respond(breakpointMedium) {
+	@include media(breakpointMedium) {
 		@if $nested == nested {
 			max-width: none;
 			min-width: 0px;
@@ -72,7 +72,7 @@
 			margin-top: 0;
 		}
 
-		@include respond(breakpointMedium) {
+		@include media(breakpointMedium) {
 			clear: both;
 			margin-left: centered($columns);
 			margin-top: 0;
@@ -91,7 +91,7 @@
 			}
 		}
 
-		@include respond(breakpointMedium) {
+		@include media(breakpointMedium) {
 			@if $shifted == false {
 				margin-left: $gutterWidth;
 
@@ -117,7 +117,7 @@
 	@if ($columns > 0) {
 		margin-left: 0;
 
-		@include respond(breakpointMedium) {
+		@include media(breakpointMedium) {
 			margin-left: push_x($columns, $firstChild);
 		}
 	}
@@ -136,7 +136,7 @@
 	@if ($columns > 0 and $width > 0) {
 		margin-left: 0;
 
-		@include respond(breakpointMedium) {
+		@include media(breakpointMedium) {
 			margin-left: pull_x($columns, $width);
 			
 			&:first-child {

@@ -1,6 +1,10 @@
 img, object, embed {
 	height: auto;
 	max-width: 100%;
+
+	@include media(print) {
+		max-width: 100% !important;
+	}
 }
 
 img {

@@ -25,7 +25,7 @@
 .doc-downloads {
 	display: none;
 
-	@include respond(breakpointMedium) {
+	@include media(breakpointMedium) {
 		background: image('github-icon-download.png') no-repeat 0% 90%;
 		bottom: -40px;
 		display: block;
@@ -47,8 +47,12 @@
 		border: 0;
 	}
 
-	@include respond(breakpointMedium) {
+	@include media(breakpointMedium) {
 		max-width: none;
+	}
+
+	@include media(print) {
+		display: none;
 	}
 }
 

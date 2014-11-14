@@ -37,8 +37,8 @@
 	+ .btn {
 		margin-top: em(5);
 	}
-	// respond mixin is used here instead of inside above selector due to @extend bug of libsass
-	@include respond(breakpointMedium) {
+	// media mixin is used here instead of inside above selector due to @extend bug of libsass
+	@include media(breakpointMedium) {
 		+ button,
 		+ .btn {
 			margin-top: 0;
@@ -57,6 +57,10 @@ button,
 	&:focus {
 		background-color: lighten($colorPrimary, 10%);
 	}
+
+	@include media(print) {
+		display: none;
+	}
 }
 
 .btn-secondary {
@@ -69,5 +73,9 @@ button,
 	&:active,
 	&:focus {
 		background-color: lighten($colorSecondary, 10%);
+	}
+
+	@include media(print) {
+		display: none;
 	}
 }

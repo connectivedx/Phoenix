@@ -59,7 +59,7 @@ $quickColumnGapWidth: 0.3;
 		margin-top: columns($quickColumnGapWidth, false);
 	}
 
-	@include respond(breakpointLarge) {
+	@include media(breakpointLarge) {
 		margin-left: columns($quickColumnGapWidth, false);
 		margin-right: -0.25em;	// eliminate whitespace created by inline-block
 
@@ -72,7 +72,7 @@ $quickColumnGapWidth: 0.3;
 
 .two-up,
 .four-up {
-	@include respond(breakpointLarge) {
+	@include media(breakpointLarge) {
 		width: columns( ($columns - $quickColumnGapWidth) / 2, false);
 
 		// first of each row
@@ -88,7 +88,7 @@ $quickColumnGapWidth: 0.3;
 }
 
 .three-up {
-	@include respond(breakpointLarge) {
+	@include media(breakpointLarge) {
 		width: columns( ($columns - 2 * $quickColumnGapWidth) / 3, false );
 
 		// first of each row
@@ -104,7 +104,7 @@ $quickColumnGapWidth: 0.3;
 }
 
 .four-up {
-	@include respond(breakpointExtraLarge) {
+	@include media(breakpointExtraLarge) {
 		width: columns( ($columns - 3 * $quickColumnGapWidth) / 4, false );
 
 		// first of each row (override from breakpointLarge)

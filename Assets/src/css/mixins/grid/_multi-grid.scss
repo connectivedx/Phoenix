@@ -23,7 +23,7 @@
 	@else {
 		@include row();
 	}
-	
+
 	#{unquote($selector)} {
 		// These styles apply to all shift-columns
 		display: inline-block;
@@ -34,15 +34,15 @@
 		// IE8 fallback
 		width: divideColumns($smallColumns);
 
-		@include respond($smallBreak) {
+		@include media($smallBreak) {
 			width: divideColumns($smallColumns);
 		}
 
-		@include respond($mediumBreak) {
+		@include media($mediumBreak) {
 			width: divideColumns($mediumColumns);
 		}
 
-		@include respond($largeBreak) {
+		@include media($largeBreak) {
 			width: divideColumns($largeColumns);
 		}
 	}
