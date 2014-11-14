@@ -23,7 +23,7 @@ $tabPanelTextColor: black;
 
 .responsive-tabs-wrapper {
 	@extend %clearfix;
-	margin-top: $gutterInPx;
+	margin-top: $columnPadding;
 
 	&:first-child {
 		margin-top: 0;
