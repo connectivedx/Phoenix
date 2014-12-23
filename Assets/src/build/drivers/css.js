@@ -13,7 +13,9 @@ var CssDriver = {
 			.pipe(sass())
 			.pipe(prefix('last 2 versions', 'IE >= 8', 'Android >= 4'))
 			.pipe(cmq())
-			.pipe(gulpif(!debug, cssmin()));
+			.pipe(gulpif(!debug, cssmin({
+				noAdvanced: true
+			})));
 	}
 };
 
