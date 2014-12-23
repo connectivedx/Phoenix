@@ -1,6 +1,5 @@
 /*global require, module */
 var gulp = require('gulp'),
-	rev = require('gulp-rev-all'),
 	rimraf = require('rimraf'),
 	debug = require('gulp-debug'),
 	watchLoader = require('./lib/watchLoader'),
@@ -26,7 +25,7 @@ module.exports = function(configuration) {
 		return masterStream.pipe(gulp.dest(configuration.output));
 	});
 
-	// this is the top level production task (minified, no sourcemaps, rev'd)
+	// this is the top level production task (minified, no sourcemaps)
 	gulp.task('production', loader.getBuildDependencies(), function() {
 		if(configuration.cleanProduction) {
 			rimraf.sync(configuration.output);
@@ -37,9 +36,6 @@ module.exports = function(configuration) {
 		sLoader.loadStreams(false);
 
 		var masterStream = sLoader.getTaskStreams();
-
-		// rev stamps all files with a hash for cache-busting
-		masterStream = masterStream.pipe(rev({ ignore: ['.php'] }));
 
 		masterStream = sLoader.executeCustomOutput(masterStream);
 
