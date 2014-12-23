@@ -3,7 +3,7 @@
 
 var ExampleDriver = {
 	// Hook to allow the driver to respond to global configurations and driver-specific customizations
-	// optional. 
+	// optional.
 	// param: globalConfiguration (the configuration var in the gulpfile)
 	// param: taskConfiguration (the configuration object for this task within the configuration)
 	//init: function(globalConfiguration, taskConfiguration) {

@@ -35,7 +35,7 @@ streamLoader.prototype = {
 			if(!streams) streams = currentTask.streamFactory();
 			else streams = merge(streams, currentTask.streamFactory());
 		}
-		
+
 		return streams;
 	},
 
@@ -51,7 +51,7 @@ streamLoader.prototype = {
 				var base = task.base ? task.base : self.globalConfiguration.base;
 					stream = self.gulp.src(task.paths, { base: base });
 			}
-				
+
 			stream = stream.pipe(plumber());
 
 			if(task.driverInstance && task.driverInstance.build)

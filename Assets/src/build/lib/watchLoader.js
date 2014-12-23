@@ -13,7 +13,7 @@ watchLoader.prototype = {
 	startWatching: function(tasks) {
 		for(var i = 0; i < tasks.length; i++) {
 			var currentTask = tasks[i];
-			
+
 			this.setWatch(currentTask);
 		}
 

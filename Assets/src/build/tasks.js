@@ -31,7 +31,7 @@ module.exports = function(configuration) {
 		if(configuration.cleanProduction) {
 			rimraf.sync(configuration.output);
 		}
-		
+
 		var sLoader = new streamLoader(gulp, configuration);
 
 		sLoader.loadStreams(false);
@@ -42,7 +42,7 @@ module.exports = function(configuration) {
 		masterStream = masterStream.pipe(rev({ ignore: ['.php'] }));
 
 		masterStream = sLoader.executeCustomOutput(masterStream);
-		
+
 		return masterStream.pipe(gulp.dest(configuration.output));
 	});
 
