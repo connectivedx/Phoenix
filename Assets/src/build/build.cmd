@@ -47,7 +47,11 @@ if %errorlevel% neq 0 (
 )
 
 REM this noretry flag is used to prevent the build from retrying npm install to fix itself more than once
-SET noretry=1
+REM (except for watches, which restart infinitely)
+
+if '%1' NEQ 'watch' (
+	SET noretry=1
+)
 GOTO :run_gulp
 
 :usage
