@@ -5,7 +5,6 @@ var plumber = require('gulp-plumber');
 var merge = require('merge-stream');
 var filter = require('./gulp-filter.mod');
 var path = require('path');
-var gdebug = require('gulp-debug');
 
 var streamLoader = function(gulp, globalConfiguration) {
 	this.gulp = gulp;
