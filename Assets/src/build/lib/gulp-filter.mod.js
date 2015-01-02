@@ -1,7 +1,7 @@
 /*global require, module */
 'use strict';
 
-// this is gulp-filter@1.0.0 with the 'invert' option added on line 22.
+// this is gulp-filter@2.0.0 with the 'invert' option added on line 24.
 
 var gutil = require('gulp-util');
 var through = require('through2');
@@ -22,11 +22,12 @@ module.exports = function (pattern, options) {
 					multimatch(file.relative, pattern, options).length > 0;
 
 		if (options.invert ? !match : match) {
-			this.push(file);
-			return cb();
+			cb(null, file);
+			return;
 		}
 
-		restoreStream.write(file, cb);
+		restoreStream.write(file);
+	  	cb();
 	}, function (cb) {
 		restoreStream.end();
 		cb();
