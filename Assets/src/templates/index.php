@@ -7,7 +7,7 @@
 			<img src="Assets/dist/img/content/logo-placeholder.png" alt="Phoenix by ISITE Design" class="img-align-center">
 		</div>
 	</div>
-	
+
 	<div class="row">
 		<h1><a href="documentation/">Documentation</a></h1>
 		<h1>Sample Pages</h1>

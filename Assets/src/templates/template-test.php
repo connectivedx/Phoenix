@@ -18,7 +18,7 @@
 			<li><a href="#" accesskey="1">Return to homepage</a></li>
 		</ul>
 	</header>
-	<section class="wrapper"> 
+	<section class="wrapper">
 		<div class="layout-primary" role="main">
 			<article>
 				<h1>Main Heading</h1>
@@ -31,19 +31,19 @@
 				</aside>
 			</article>
 		</div><!-- /.layout-primary -->
-		
+
 		<div class="layout-secondary" role="complementary">
 			<h3>Secondary</h3>
 		</div><!-- /.layout-secondary -->
-		
+
 		<div class="layout-tertiary">
 			<h3>Tertiary</h3>
 		</div><!-- /.layout-tertiary -->
- 
+
 	</section><!-- /.wrapper -->
-	
+
 	<footer role="contentinfo" class="row">
-		<h2>footer</h2>		
+		<h2>footer</h2>
 		<ul class="meta">
 			<li>Copyright &copy; <?php echo date("Y"); ?> Client Name</li>
 		</ul>

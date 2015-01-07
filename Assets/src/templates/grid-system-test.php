@@ -8,7 +8,7 @@
 			text-align: center;
 		}
 	</style>
-	
+
 	<?php
 		$numbers = array('one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve');
 		$gridSize = 12;
@@ -79,7 +79,7 @@
 					$firstColumnText = 'columns';
 					$secondColumnText = 'columns';
 				}
-				
+
 				// display columns
 				if ($i < $gridSize - 1) {
 					echo '<div class="' . $firstColumnWidth . ' ' . $firstColumnText . ' push_' . $secondColumnWidth . '">' . $firstColumnWidth . ' push ' . $secondColumnWidth . '</div>';
@@ -108,7 +108,7 @@
 				else {
 					$columnText = 'columns';
 				}
-				
+
 				// display columns
 				if ($i < $gridSize - 1) {
 					echo '<div class="' . $columnWidth . ' ' . $columnText . ' centered">' . $columnWidth . '</div>';
