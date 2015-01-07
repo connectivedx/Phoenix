@@ -21,17 +21,17 @@ Each of the builds will compile the SCSS under Assets/src/css and place CSS, ima
 ### Development
 The development build includes linting and debugging, but does not minify files so they are readable during development.
 * Windows - execute build-dev.cmd.
-* Mac OS - execute mac-build-dev.command.
+* Mac OS - execute build-dev.command.
 
 ### Watch
 The watch build will execute the development build and watch for file changes, automatically compiling your source code and reloading your browser if you have LiveReload installed.
 * Windows - execute build-watch.cmd.
-* Mac OS - execute mac-build-watch.command.
+* Mac OS - execute build-watch.command.
 
 ### Production
 The production build lints, concatenates, and minifies files.
 * Windows - execute build-production.cmd.
-* Mac OS - execute mac-build-production.command.
+* Mac OS - execute build-production.command.
 
 # Special Thanks
 This project would not be possible without contributions from these open-source projects:
