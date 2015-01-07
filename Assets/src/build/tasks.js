@@ -2,7 +2,6 @@
 var gulp = require('gulp'),
 	rev = require('gulp-rev-all'),
 	rimraf = require('rimraf'),
-	debug = require('gulp-debug'),
 	watchLoader = require('./lib/watchLoader'),
 	streamLoader = require('./lib/streamLoader'),
 	taskLoader = require('./lib/taskLoader');
