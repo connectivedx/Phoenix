@@ -4,7 +4,7 @@
 ?>
 	<div class="row">
 		<div class="eight columns centered">
-			<img src="Assets/dist/img/content/logo-placeholder.png" alt="Phoenix by ISITE Design" class="img-align-center">
+			<img src="<?php echo getAsset('Assets/dist/img/content/logo-placeholder.png');?>" alt="Phoenix by ISITE Design" class="img-align-center">
 		</div>
 	</div>
 

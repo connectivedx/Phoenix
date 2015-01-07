@@ -11,7 +11,7 @@
 				<li id="nav3"><a href="#">Nav3</a></li>
 			</ul>
 		</nav>
-		<a class="brand" href="#"><img src="Assets/dist/img/content/logo-placeholder.png" alt="Phoenix by ISITE Design"></a>
+		<a class="brand" href="#"><img src="<?php echo getAsset('Assets/dist/img/content/logo-placeholder.png');?>" alt="Phoenix by ISITE Design"></a>
 		<ul class="accessibility">
 			<li><a href="#content" tabindex="1" accesskey="2">Skip to main content</a></li>
 			<li><a href="#nav" accesskey="3">Skip to navigation</a></li>
