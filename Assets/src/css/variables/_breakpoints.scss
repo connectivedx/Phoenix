@@ -1,10 +1,9 @@
 // @category variables
 
 // @function breakpoints
-// Named breakpoints that can be referenced with the respond() mixin.
+// Named breakpoints that can be referenced with the media() mixin.
 // @param $breakpoints {List} The breakpoints for all resolutions represented as pairs with the breakpoint name and its associated pixel width.  [String px]
 // @param $documentWidth {Number} The maximum width of documents.  This defaults to the value of $rowMaxWidth.  [px|percentage]
-// @param $maxDeviceWidth {Number} The maximum width device width supported.  [px]
 $breakpoints: (
 	breakpointExtraSmall 320px,
 	breakpointSmall 480px,
@@ -13,4 +12,3 @@ $breakpoints: (
 	breakpointExtraLarge 1220px
 );
 $documentWidth: $rowMaxWidth;
-$maxDeviceWidth: 2880px;

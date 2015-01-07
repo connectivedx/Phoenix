@@ -7,6 +7,26 @@ a {
 	&:focus {
 		color: $colorGreyMedium;
 	}
+
+	@include media(print) {
+		text-decoration: underline;
+
+		&[href]:after {
+			content: " (" attr(href) ")";
+		}
+
+		&[href^="#"],
+		&[href^="javascript:"] {
+			&:after {
+				content: " ";
+			}
+		}
+
+		&:visited {
+			text-decoration: underline;
+		}
+	}
+
 }
 
 p {
@@ -26,6 +46,14 @@ h1, h2, h3, h4, h5, h6 {
 		margin-top: 0;
 	}
 }
+
+p, h2, h3, h4 {
+	@include media(print) {
+		orphans: 3;
+		widows: 3;
+	}
+}
+
 h1 {
 	@include font-size(44);
 	margin-top: em(28, 44);
@@ -45,6 +73,18 @@ h3 {
 h4 {
 	@include font-size(14);
 	margin-top: em(28, 14);
+}
+
+h2, h3 {
+	@include media(print) {
+		page-break-after: avoid;
+	}
+}
+
+abbr[title]:after {
+	@include media(print) {
+		content: " (" attr(title) ")";
+	}
 }
 
 ::selection {

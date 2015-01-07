@@ -8,28 +8,28 @@
 	cursor: pointer;
 	display: block;
 	@include font-size(24);
-	margin: (-$gutterInPx) (-$gutterInPx) 0 (-$gutterInPx);	// need parentheses around -$gutterInPx to compile correctly
+	margin: (-$columnPadding) (-$columnPadding) 0 (-$columnPadding);	// need parentheses around -$columnPadding to compile correctly
 	padding: em(12, 24);
 
-	@include respond(breakpointMedium) {
+	@include media(breakpointMedium) {
 		display: none;
 	}
 }
 
 .brand {
-	@include column(7);
+	@include column(7, true);
 	@include pull(5, 7);
 }
 
 #nav {
-	@include column(5);
+	@include column(5, true);
 	@include push(7);
 }
 
 .nav-list {
 	background-color: black;
 	list-style: none;
-	margin: 0 (-$gutterInPx);
+	margin: 0 (-$columnPadding);
 	max-height: 0;
 	overflow: hidden;
 	@include transition(max-height, 0.5s, ease-in-out);
@@ -48,10 +48,10 @@
 		}
 	}
 
-	@include respond(breakpointMedium) {
+	@include media(breakpointMedium) {
 		background-color: transparent;
 		max-height: none;
-		padding: em(16) $gutterInPx;
+		padding: em(16) $columnPadding;
 		text-align: right;
 
 		li {
