@@ -63,7 +63,7 @@ streamLoader.prototype = {
 
 	// runs any custom output directives on tasks
 	// this function must be run after all build is complete and we have the final merged stream
-	// and after all other transforms are run on the stream
+	// and after all other transforms (e.g. rev) are run on the stream
 	executeCustomOutput: function(mergedOutputStream, tasks) {
 		if(!tasks) tasks = this.globalConfiguration.tasks;
 
