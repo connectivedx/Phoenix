@@ -1,34 +1,58 @@
+// Change $gutterWidth to a percentage
+@if unit($gutterWidth) == 'px' {
+	$gutterWidthInPx: $gutterWidth;
+	$gutterWidth: percentage($gutterWidth / $rowMaxWidth);
+}
+@else {
+	$gutterWidthInPx: ceil( ($gutterWidth / 100%) * $rowMaxWidth);
+}
+
 // Return single column width
-@function oneCol() {
-	@return (100% / $columns);
+@function oneColumn($includeGutterWidth: true) {
+	@if $includeGutterWidth == true {
+		@return (100% - (($columns - 1) * $gutterWidth)) / $columns;
+	}
+	@else {
+		@return 100% / $columns;
+	}
 }
 
 // Calculate Grid Column Widths
-@function columns($num){
-	@return (oneCol() * $num);
+@function columns($n, $includeGutterWidth: true){
+	@if $includeGutterWidth == true {
+		@return (oneColumn($includeGutterWidth) * $n) + ($gutterWidth * ($n - 1));
+	}
+	@else {
+		@return oneColumn($includeGutterWidth) * $n;
+	}
 }
 
 // Calculate Push Class Margins
-@function push_x($num) {
-	@return (oneCol() * $num);
+@function push_x($n, $firstChild: false) {
+	@if $firstChild == true {
+		@return columns($n) + $gutterWidth; // Column width + gutter
+	}
+	@else {
+		@return columns($n) + ($gutterWidth * 2); // Column width + (gutter * 2)
+	}
 }
 
 // Calculate Pull Class Margins
-@function pull_x($num, $width) {
-	@return -((oneCol() * $num) + (oneCol() * $width)); // Pull width + column width
+@function pull_x($n, $width) {
+	@return -(columns($n) + columns($width) + $gutterWidth); // -(Pull width + column width + gutter)
 }
 
 // Calculate Centered Class Margins
-@function centered($num) {
-	@return 50% - (($num * (oneCol())) / 2);
+@function centered($n) {
+	@return 50% - (columns($n) / 2);
 }
 
 // Create class names from column count integers
-@function number-as-word($number){
-	$w: "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven",
+@function number-as-word($n) {
+	$words: "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven",
 "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen",
 "twenty", "twenty-one", "twenty-two", "twenty-three", "twenty-four", "twenty-five", "twenty-six", "twenty-seven",
 "twenty-eight", "twenty-nine", "thirty", "thirty-one", "thirty-two", "thirty-three",
 "thirty-four", "thirty-five", "thirty-six";
-	@return nth($w, $number);
+	@return nth($words, $n);
 }

@@ -11,7 +11,7 @@
 				<li id="nav3"><a href="#">Nav3</a></li>
 			</ul>
 		</nav>
-		<a class="brand" href="#"><img src="Assets/dist/img/content/logo-placeholder.png" alt="Phoenix by ISITE Design"></a>
+		<a class="brand" href="#"><img src="<?php echo getAsset('Assets/dist/img/content/logo-placeholder.png');?>" alt="Phoenix by ISITE Design"></a>
 		<ul class="accessibility">
 			<li><a href="#content" tabindex="1" accesskey="2">Skip to main content</a></li>
 			<li><a href="#nav" accesskey="3">Skip to navigation</a></li>
@@ -19,7 +19,7 @@
 		</ul>
 	</header>
 	<section class="wrapper"> 
-		<div class="layout-primary" role="main">
+		<div class="layout-primary-pushed" role="main">
 			<article>
 				<h1>Main Heading</h1>
 				<h2>Subheading</h2>
@@ -32,18 +32,18 @@
 			</article>
 		</div><!-- /.layout-primary -->
 		
-		<div class="layout-secondary" role="complementary">
+		<div class="layout-secondary-pulled" role="complementary">
 			<h3>Secondary</h3>
 		</div><!-- /.layout-secondary -->
-		
+
 		<div class="layout-tertiary">
 			<h3>Tertiary</h3>
 		</div><!-- /.layout-tertiary -->
- 
+
 	</section><!-- /.wrapper -->
-	
+
 	<footer role="contentinfo" class="row">
-		<h2>footer</h2>		
+		<h2>footer</h2>
 		<ul class="meta">
 			<li>Copyright &copy; <?php echo date("Y"); ?> Client Name</li>
 		</ul>

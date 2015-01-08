@@ -11,13 +11,13 @@
 // @function row
 // Creates a semantic-grid row.
 // @param $nested {String} Whether or not the row will be nested within other rows.  Default value: false.
-// @param $padding {Number} A padding override to be set on the row.  Default value: $gutterInPx. [px|em]
+// @param $padding {Number} A padding override to be set on the row.  Default value: $columnPadding. [px|em]
 // @param $maxWidth {Number} A max-width override to be set on the row.  Default value: $rowMaxWidth. [px|percentage]
 // @usage
 // row()
 // row(nested)
 // row(false, 0 50px 0 0)
-@mixin row($nested: false, $padding: $gutterInPx, $maxWidth: $rowMaxWidth) {
+@mixin row($nested: false, $padding: $columnPadding, $maxWidth: $rowMaxWidth) {
 	@extend %clearfix;
 	margin-left: 0; 
 	margin-right: 0;
@@ -25,7 +25,7 @@
 	width: auto;
 
 	@if $nested == nested {
-		margin-top: $gutterInPx;
+		margin-top: $columnPadding;
 		padding: 0;
 
 		&:first-child {
@@ -36,7 +36,7 @@
 		padding: $padding;
 	}
 
-	@include respond(breakpointMedium) {
+	@include media(breakpointMedium) {
 		@if $nested == nested {
 			max-width: none;
 			min-width: 0px;
@@ -56,13 +56,14 @@
 // @function column
 // Creates a semantic-grid set of columns based on the base grid system settings.  On low resolutions, the columns will stack and will break at breakpointMedium to the number of columns specified.
 // @param $columns {Number} The number of columns you wish your element's width to occupy. [integer]
-// @param $padding {Number} A padding override to be set on the row.  Default value: $gutterInPx.  [px|em]
+// @param $shifted {Boolean} Whether you will be pushing or pulling the columns.
+// @param $padding {Number} A padding override to be set on the row.  Default value: $columnPadding.  [px|em]
 // @param $nested {String} Whether or not the columns will be contained within a nested row.  Default value: false.
 // @param $alignmnet {String} Whether or not the columns will be centered within a row.  Default value: false.
 // @usage
 // column(8)
 // column(8, 10px)
-@mixin column($columns, $padding: $gutterInPx, $nested: false, $alignment: false) {
+@mixin column($columns, $shifted: false, $padding: $columnPadding, $nested: false, $alignment: false) {
 	@if $alignment == centered {
 		@extend %column-config;
 		padding: $padding;
@@ -71,7 +72,7 @@
 			margin-top: 0;
 		}
 
-		@include respond(breakpointMedium) {
+		@include media(breakpointMedium) {
 			clear: both;
 			margin-left: centered($columns);
 			margin-top: 0;
@@ -83,14 +84,22 @@
 		padding: $padding;
 
 		@if $nested == nested {
-			margin-top: $gutterInPx;
+			margin-top: $columnPadding;
 
 			&:first-child {
 				margin-top: 0;
 			}
 		}
 
-		@include respond(breakpointMedium) {
+		@include media(breakpointMedium) {
+			@if $shifted == false {
+				margin-left: $gutterWidth;
+
+				&:first-child {
+					margin-left: 0;
+				}
+			}
+
 			margin-top: 0;
 			width: columns($columns);
 		}
@@ -104,12 +113,12 @@
 // @param $columns {Number} The number of columns to push the set of columns.  [integer]
 // @usage
 // push(4)
-@mixin push($columns) {
+@mixin push($columns, $firstChild: false) {
 	@if ($columns > 0) {
 		margin-left: 0;
 
-		@include respond(breakpointMedium) {
-			margin-left: push_x($columns);
+		@include media(breakpointMedium) {
+			margin-left: push_x($columns, $firstChild);
 		}
 	}
 }
@@ -127,7 +136,7 @@
 	@if ($columns > 0 and $width > 0) {
 		margin-left: 0;
 
-		@include respond(breakpointMedium) {
+		@include media(breakpointMedium) {
 			margin-left: pull_x($columns, $width);
 			
 			&:first-child {

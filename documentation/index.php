@@ -1,3 +1,4 @@
+<?php include_once '../inc/functions.php'; ?>
 <!DOCTYPE html>
 
 <html id="ng-app" ng-app="PhoenixDocApp">
@@ -7,10 +8,10 @@
 	<meta content="Phoenix by ISITE Design" name="description">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet" type="text/css">
-	<script src="../Assets/dist/js/head.js"></script>
-	<link href="../Assets/dist/css/documentation.css" media="screen" rel="stylesheet" type="text/css">
+	<script src="<?php echo getAsset('../Assets/dist/js/head.js'); ?>"></script>
+	<link rel="stylesheet" media="all" href="<?php echo getAsset('../Assets/dist/css/documentation.css'); ?>">
 	<!--[if lte IE 8]>
-	<script src="../Assets/dist/js/oldie.js"></script>
+	<script src="<?php echo getAsset('../Assets/dist/js/oldie.js'); ?>"></script>
 	<![endif]-->
 	<script src="js/angular.min.js"></script>
 	<script src="js/angular-sanitize.min.js"></script>
@@ -18,12 +19,12 @@
 	<title>Phoenix by ISITE Design</title>
 
 	<!-- Serve one icon for all Apple devices -->
-	<link rel="apple-touch-icon-precomposed" href="../Assets/dist/img/content/touch-icon.png"> 
+	<link rel="apple-touch-icon-precomposed" href="<?php echo getAsset('<?php echo getAsset(../Assets/dist/img/content/touch-icon.png'); ?>">
 	<!-- icon and tile color in hex # for Windows phones -->
-	<meta name="msapplication-TileImage" content="../Assets/dist/img/content/touch-icon.png">
+	<meta name="msapplication-TileImage" content="<?php echo getAsset('../Assets/dist/img/content/touch-icon.png'); ?>">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<!-- For everything else -->
-	<link rel="shortcut icon" type="image/png" href="../Assets/dist/img/content/favicon.png">
+	<link rel="shortcut icon" type="image/png" href="<?php echo getAsset('../Assets/dist/img/content/favicon.png'); ?>">
 </head>
 
 <body>
@@ -31,10 +32,10 @@
 		<a href="https://github.com/isitedesign/Phoenix" class="fork-me">
 			<img src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
 		</a>
-	
+
 		<div class="row">
 			<a href="../index.php">
-				<img src="../Assets/dist/img/content/logo-placeholder.png" alt="Phoenix by ISITE Design">
+				<img src="<?php echo getAsset('../Assets/dist/img/content/logo-placeholder.png'); ?>" alt="Phoenix by ISITE Design">
 			</a>
 
 			<section class="doc-downloads">
@@ -280,12 +281,12 @@
 						</div>
 					</div><!-- /.responsive-tabs-content -->
 
-					
+
 				</div><!-- /.responsive-tabs -->
 			</div>
 		</div>
 	</section>
-	
+
 	<footer class="doc-footer">
 		<div class="row">
 			<p class="copyright">Phoenix maintained by <a href="https://github.com/isitedesign" target="_blank">isitedesign</a></p>
@@ -294,6 +295,6 @@
 		</div>
 	</footer>
 
-	<script src="../Assets/dist/js/main.js"></script>
+	<script src="<?php echo getAsset('../Assets/dist/js/main.js'); ?>"></script>
 </body>
 </html>

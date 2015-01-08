@@ -19,7 +19,7 @@ $tooltipShadowBlurRadius: 10px;
 	&.high-res-only {
 		cursor: auto;
 
-		@include respond(breakpointMedium) {
+		@include media(breakpointMedium) {
 			cursor: help;
 		}
 	}
@@ -43,7 +43,7 @@ $tooltipShadowBlurRadius: 10px;
 	.tipsy-inner {
 		box-shadow: 0 0 $tooltipShadowBlurRadius $tooltipShadowColor;
 	}
-	
+
 	.tipsy-arrow {
 		border: $tooltipArrowSize dashed $tooltipBackgroundColor;
 		height: 0;
@@ -51,7 +51,7 @@ $tooltipShadowBlurRadius: 10px;
 		position: absolute;
 		width: 0;
 	}
-	
+
 	/* Rules to color arrows */
 	.tipsy-arrow-n {
 		border-bottom-color: $tooltipBackgroundColor;
@@ -65,7 +65,7 @@ $tooltipShadowBlurRadius: 10px;
 	.tipsy-arrow-w {
 		border-right-color: $tooltipBackgroundColor;
 	}
-	
+
 	.tipsy-n .tipsy-arrow {
 		border-bottom-style: solid;
 		border-left-color: transparent;
@@ -101,7 +101,7 @@ $tooltipShadowBlurRadius: 10px;
 		left: 50%;
 		margin-left: -$tooltipArrowSize;
 	}
-		.tipsy-sw .tipsy-arrow {            
+		.tipsy-sw .tipsy-arrow {
 			border-bottom: none;
 			border-left-color: transparent;
 			border-right-color: transparent;

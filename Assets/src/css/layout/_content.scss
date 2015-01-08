@@ -7,22 +7,41 @@
 }
 
 // standard grid
-.layout-primary {
-	@include column(6);
-	@include push(3);
+.layout-primary,
+.layout-primary-pushed {
 	border: 1px dashed $colorPrimary;
 }
-.layout-secondary {
-	@include column(3);
-	@include pull(6, 3);
+
+.layout-primary {
+	@include column(6);
+}
+
+.layout-primary-pushed {
+	@include column(6, true);
+	@include push(3, true);
+}
+
+.layout-secondary,
+.layout-secondary-pulled {
 	background-color: $colorSecondary;
 }
+
+.layout-secondary {
+	@include column(3);
+}
+
+.layout-secondary-pulled {
+	@include column(3, true);
+	@include pull(6, 3);
+}
+
 .layout-tertiary {
 	@include column(3);
 	background-color: $colorSecondary;
 }
+
 .layout-centered {
-	@include column(8, $gutterInPx, false, centered);
+	@include column(8, false, $columnPadding, false, centered);
 	border: 1px dashed $colorPrimary;
 }
 
@@ -30,60 +49,65 @@
 .layout-complex-wrapper {
 	@include row(false, 0, 100%);
 }
+
 .layout-complex-header {
 	@extend %column-config;
-	padding: $gutterInPx;
+	padding: $columnPadding;
 
 	// max-width needed because border-box isn't supported for the footer element in old versions of IE; this overrides the default for headers
 	.oldie & {
 		max-width: none;
 	}
 }
+
 .layout-complex-primary {
 	@extend %column-config;
 	border: 1px dashed $colorPrimary;
-	padding: $gutterInPx;
+	padding: $columnPadding;
 
-	@include respond(breakpointMedium) {
-		width: columns(7);
+	@include media(breakpointMedium) {
+		width: columns(7, false);
 	}
 
-	@include respond(breakpointLarge) {
-		width: columns(6);
+	@include media(breakpointLarge) {
+		width: columns(6, false);
 	}
 }
+
 .layout-complex-nav {
 	@extend %column-config;
 	background-color: $colorSecondary;
-	padding: $gutterInPx;
+	padding: $columnPadding;
 
-	@include respond(breakpointExtraLarge) {
-		width: columns(1.5);
+	@include media(breakpointExtraLarge) {
+		width: columns(1.5, false);
 	}
 }
+
 .layout-complex-tertiary {
 	@extend %column-config;
 	background-color: $colorSecondary;
-	padding: $gutterInPx;
+	padding: $columnPadding;
 
-	@include respond(breakpointMedium) {
-		width: columns(5);
+	@include media(breakpointMedium) {
+		width: columns(5, false);
 	}
 
-	@include respond(breakpointLarge) {
-		width: columns(3);
+	@include media(breakpointLarge) {
+		width: columns(3, false);
 	}
 }
+
 .layout-complex-footer {
 	@extend %column-config;
-	padding: $gutterInPx;
+	padding: $columnPadding;
 
-	@include respond(breakpointLarge) {
-		width: columns(3);
+	@include media(breakpointLarge) {
+		width: columns(3, false);
 	}
 
-	@include respond(breakpointExtraLarge) {
-		width: columns(1.5);
+	@include media(breakpointExtraLarge) {
+		width: columns(1.5, false);
 	}
 }
 
@@ -91,10 +115,12 @@
 .aspect-ratio-4-3 {
 	@include aspect-ratio(4, 3);
 }
+
 .nested,
 aside {
 	@include row(nested);
 }
+
 .multi-grid {
 	border: 1px dashed $colorPrimary;
 

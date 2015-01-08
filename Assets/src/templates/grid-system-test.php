@@ -8,7 +8,7 @@
 			text-align: center;
 		}
 	</style>
-	
+
 	<?php
 		$numbers = array('one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve');
 		$gridSize = 12;
@@ -23,6 +23,22 @@
 		</div>
 
 		<?php
+			// output all column widths for divisors of your gridSize
+			for ($divisor = 1; $divisor < $gridSize; $divisor++) {
+				if ($gridSize % $divisor === 0) {
+					echo '<div class="row">';
+
+					$columnText = ($divisor === 1) ? ' column' : ' columns';
+
+					for ($j = 0; $j < ($gridSize / $divisor); $j++) {
+						echo '<div class="' . $numbers[$divisor - 1] . $columnText . '">' . $numbers[$divisor - 1] . '</div>';
+					}
+
+					echo '</div>';
+				}
+			}
+
+			// output all classes from 1 to gridSize
 			for ($i = 0; $i < $gridSize; $i++) {
 				$firstColumnWidth = $numbers[$i];
 				$secondColumnWidth = $numbers[$gridSize - $i - 2];
@@ -79,7 +95,7 @@
 					$firstColumnText = 'columns';
 					$secondColumnText = 'columns';
 				}
-				
+
 				// display columns
 				if ($i < $gridSize - 1) {
 					echo '<div class="' . $firstColumnWidth . ' ' . $firstColumnText . ' push_' . $secondColumnWidth . '">' . $firstColumnWidth . ' push ' . $secondColumnWidth . '</div>';
@@ -108,7 +124,7 @@
 				else {
 					$columnText = 'columns';
 				}
-				
+
 				// display columns
 				if ($i < $gridSize - 1) {
 					echo '<div class="' . $columnWidth . ' ' . $columnText . ' centered">' . $columnWidth . '</div>';
