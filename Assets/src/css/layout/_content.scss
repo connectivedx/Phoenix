@@ -112,8 +112,12 @@
 }
 
 // supporting classes
-.aspect-ratio-4-3 {
+.map {
 	@include aspect-ratio(4, 3);
+
+	img {
+		max-width: none; // resets map controls
+	}
 }
 
 .nested,
