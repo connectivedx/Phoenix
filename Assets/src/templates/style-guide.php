@@ -173,37 +173,45 @@
 							</select>
 						</li>
 						<li>
-						<fieldset>
-							<legend>Select one of the following:</legend>
-							<ol>
-								<li>
-									<label for="options">Label for the radio options</label>
-									<ol class="radio-list">
-										<li>
-											<input type="radio" name="options" id="radio-option-1" value="option 1">
-											<label for="radio-option-1">Option 1</label>
-										</li>
-										<li>
-											<input type="radio" name="options" id="radio-option-2" value="option 2">
-											<label for="radio-option-2">Option 2</label>
-										</li>
-									</ol>
-								</li>
-								<li>
-									<label for="options-2" class="label-large">Large label for radio options</label>
-									<ol class="radio-list">
-										<li>
-											<input type="radio" name="options-2" id="radio-option-1-2" value="option 1">
-											<label for="radio-option-1-2" class="label-large">Large labels scale nicely and wrap properly</label>
-										</li>
-										<li>
-											<input type="radio" name="options-2" id="radio-option-2-2" value="option 2">
-											<label for="radio-option-2-2" class="label-large">Large labels scale nicely and wrap properly</label>
-										</li>
-									</ol>
-								</li>
-							</ol>
-						</fieldset>
+							<label for="testmultipleselect">Label for the multiple select</label>
+							<select id="testmultipleselect" multiple>
+								<option>First</option>
+								<option>Second</option>
+								<option>Third</option>
+							</select>
+						</li>
+						<li>
+							<fieldset>
+								<legend>Select one of the following:</legend>
+								<ol>
+									<li>
+										<label for="options">Label for the radio options</label>
+										<ol class="radio-list">
+											<li>
+												<input type="radio" name="options" id="radio-option-1" value="option 1">
+												<label for="radio-option-1">Option 1</label>
+											</li>
+											<li>
+												<input type="radio" name="options" id="radio-option-2" value="option 2">
+												<label for="radio-option-2">Option 2</label>
+											</li>
+										</ol>
+									</li>
+									<li>
+										<label for="options-2" class="label-large">Large label for radio options</label>
+										<ol class="radio-list">
+											<li>
+												<input type="radio" name="options-2" id="radio-option-1-2" value="option 1">
+												<label for="radio-option-1-2" class="label-large">Large labels scale nicely and wrap properly</label>
+											</li>
+											<li>
+												<input type="radio" name="options-2" id="radio-option-2-2" value="option 2">
+												<label for="radio-option-2-2" class="label-large">Large labels scale nicely and wrap properly</label>
+											</li>
+										</ol>
+									</li>
+								</ol>
+							</fieldset>
 						</li>
 						<li>
 							<fieldset>
