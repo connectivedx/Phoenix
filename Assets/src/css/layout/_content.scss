@@ -124,6 +124,12 @@ aside {
 .multi-grid {
 	border: 1px dashed $colorPrimary;
 
+	> li {
+		&:before {
+			display: none;
+		}
+	}
+
 	@include multi-grid("> li", 1, 2, 3, flush) {
 		text-align: center;
 	}

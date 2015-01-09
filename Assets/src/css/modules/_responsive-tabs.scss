@@ -47,7 +47,7 @@ $tabPanelTextColor: black;
 		@extend %icon-config;
 		position: absolute;
 		right: 20px;
-		top: 3px;
+		top: 8px;
 		width: 20px;
 
 		@include media(print) {
@@ -183,6 +183,10 @@ $tabPanelTextColor: black;
 
 	&:hover {
 		background: $tabHoverBackgroundColor;
+	}
+
+	&:before {
+		display: none;
 	}
 
 	@include media(breakpointMedium) {
