@@ -17,7 +17,7 @@
 @mixin multi-grid($selector, $smallColumns, $mediumColumns, $largeColumns, $flush: false, $padding: $columnPadding, $smallBreak: breakpointSmall, $mediumBreak: breakpointMedium, $largeBreak: breakpointLarge) {
 	// this is the container
 	@if $flush == flush {
-		@include row(nested);
+		@include row((nested: nested));
 		margin: 0  (-1 * $padding);
 	}
 	@else {

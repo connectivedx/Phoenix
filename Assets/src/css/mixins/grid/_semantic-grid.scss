@@ -15,11 +15,21 @@
 // @param $maxWidth {Number} A max-width override to be set on the row.  Default value: $rowMaxWidth. [px|percentage]
 // @usage
 // row()
-// row(nested)
-// row(false, 0 50px 0 0)
-@mixin row($nested: false, $padding: $columnPadding, $maxWidth: $rowMaxWidth) {
+// row((nested: nested))
+// row((padding: 0 50px 0 0))
+@mixin row($options: ()) {
+	$options: map-merge((
+		nested: false,
+		padding: $columnPadding,
+		maxWidth: $rowMaxWidth
+	), $options);
+
+	$nested: map-get($options, nested);
+	$padding: map-get($options, padding);
+	$maxWidth: map-get($options, maxWidth);
+
 	@extend %clearfix;
-	margin-left: 0; 
+	margin-left: 0;
 	margin-right: 0;
 	min-width: 0;
 	width: auto;

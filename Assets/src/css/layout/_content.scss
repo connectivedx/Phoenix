@@ -3,7 +3,7 @@
 // @function content
 // The location to define major column layouts for your main content area.
 .wrapper {
-	@include row(false, 0);
+	@include row((padding: 0));
 }
 
 // standard grid
@@ -47,7 +47,7 @@
 
 // complex layout
 .layout-complex-wrapper {
-	@include row(false, 0, 100%);
+	@include row((padding: 0, maxWidth: 100%));
 }
 
 .layout-complex-header {
@@ -118,7 +118,7 @@
 
 .nested,
 aside {
-	@include row(nested);
+	@include row((nested: nested));
 }
 
 .multi-grid {
