@@ -17,7 +17,7 @@
 }
 
 .layout-primary-pushed {
-	@include column(6, true);
+	@include column(6, (shifted: true));
 	@include push(3, true);
 }
 
@@ -31,7 +31,7 @@
 }
 
 .layout-secondary-pulled {
-	@include column(3, true);
+	@include column(3, (shifted: true));
 	@include pull(6, 3);
 }
 
@@ -41,7 +41,7 @@
 }
 
 .layout-centered {
-	@include column(8, false, $columnPadding, false, centered);
+	@include column(8, (alignment: centered));
 	border: 1px dashed $colorPrimary;
 }
 

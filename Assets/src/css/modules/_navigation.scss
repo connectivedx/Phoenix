@@ -17,12 +17,12 @@
 }
 
 .brand {
-	@include column(7, true);
+	@include column(7, (shifted: true));
 	@include pull(5, 7);
 }
 
 #nav {
-	@include column(5, true);
+	@include column(5, (shifted: true));
 	@include push(7);
 }
 
