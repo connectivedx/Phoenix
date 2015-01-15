@@ -62,7 +62,7 @@
 // @param $alignmnet {String} Whether or not the columns will be centered within a row.  Default value: false.
 // @usage
 // column(8)
-// column(8, 10px)
+// column(8, (padding: 10px))
 @mixin column($columns, $options: ()) {
 	$options: map-merge((
 		shifted: false,
