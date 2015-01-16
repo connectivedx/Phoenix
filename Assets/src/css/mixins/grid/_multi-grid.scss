@@ -31,7 +31,7 @@
 
 	// this is the container
 	@if $flush == true {
-		@include row((nested: nested));
+		@include row((nested: true));
 		margin: 0 (-1 * $padding);
 	}
 	@else {

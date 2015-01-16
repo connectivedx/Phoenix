@@ -118,7 +118,7 @@
 
 .nested,
 aside {
-	@include row((nested: nested));
+	@include row((nested: true));
 }
 
 .multi-grid {

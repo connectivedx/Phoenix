@@ -10,7 +10,7 @@
 
 // @function row
 // Creates a semantic-grid row.
-// @param $nested {String} Whether or not the row will be nested within other rows.  Default value: false.
+// @param $nested {Boolean} Whether or not the row will be nested within other rows.  Default value: false.
 // @param $padding {Number} A padding override to be set on the row.  Default value: $columnPadding. [px|em]
 // @param $maxWidth {Number} A max-width override to be set on the row.  Default value: $rowMaxWidth. [px|percentage]
 // @usage
@@ -34,7 +34,7 @@
 	min-width: 0;
 	width: auto;
 
-	@if $nested == nested {
+	@if $nested == true {
 		margin-top: $columnPadding;
 		padding: 0;
 
@@ -47,7 +47,7 @@
 	}
 
 	@include media(breakpointMedium) {
-		@if $nested == nested {
+		@if $nested == true {
 			max-width: none;
 			min-width: 0px;
 			padding: 0;
@@ -68,7 +68,7 @@
 // @param $columns {Number} The number of columns you wish your element's width to occupy. [integer]
 // @param $shifted {Boolean} Whether you will be pushing or pulling the columns.  Default value: false.
 // @param $padding {Number} A padding override to be set on the row.  Default value: $columnPadding.  [px|em]
-// @param $nested {String} Whether or not the columns will be contained within a nested row.  Default value: false.
+// @param $nested {Boolean} Whether or not the columns will be contained within a nested row.  Default value: false.
 // @param $alignmnet {String} Whether or not the columns will be centered within a row.  Default value: false.
 // @usage
 // column(8)
@@ -105,7 +105,7 @@
 		@extend %column-config;
 		padding: $padding;
 
-		@if $nested == nested {
+		@if $nested == true {
 			margin-top: $columnPadding;
 
 			&:first-child {
