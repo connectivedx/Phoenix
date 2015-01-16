@@ -2,21 +2,13 @@
 
 // @mixin gradient
 // Adds background color gradient support
-// @param $from {HexColor} The color to begin your gradient.  Default value: #000000.
-// @param $to {HexColor} The color to end your gradient.  Default value: #ffffff.
+// @param $from {HexColor} The color to begin your gradient.
+// @param $to {HexColor} The color to end your gradient.
 // @usage
-// = @include gradient((from: #000000, to: #ffffff));
-// = or even with variables and SCSS function @include gradient((from: $link-color, to: darken($link-color, 5%)));
+// = @include gradient(#000000, #ffffff);
+// = @include gradient($link-color, darken($link-color, 5%));
 
-@mixin gradient($options: ()) {
-	$options: map-merge((
-		from: #000000,
-		to: #ffffff
-	), $options);
-
-	$from: map-get($options, from);
-	$to: map-get($options, to);
-
+@mixin gradient($from, $to) {
 	background-color: $to; // All else fails
 	background-image: linear-gradient(to bottom, $from 0%, $to 100%);	// W3C
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$from}', endColorstr='#{$to}',GradientType=0 );	// IE6-9
