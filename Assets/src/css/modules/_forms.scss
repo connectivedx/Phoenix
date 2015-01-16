@@ -131,7 +131,7 @@ $decoratorSelectBorderSize: 1px;
 
 // multiple selects
 .decorator-select-multiple {
-	@include gradient($colorGreyLight, $colorGreyMedium);
+	@include gradient((from: $colorGreyLight, to: $colorGreyMedium));
 	border: $decoratorSelectBorderSize solid $colorGreyMedium;
 	border-radius: $formElementBorderRadius;
 	display: inline-block;
