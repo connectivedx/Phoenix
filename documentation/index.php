@@ -145,6 +145,7 @@
 						<div class="responsive-tabs-content">
 							<div class="doc-callout">
 								<p>The functions folder contains utility functions that allow for consistent, reusable calculations across the project.</p>
+								<p><strong>NOTE:</strong> if a parameter has a default value, it should be included in a map as the last parameter.  The key name should match that of the parameter name listed below.</p>
 							</div>
 							<div class="doc-callout divider" ng-repeat="function in objects.functions">
 								<h2>
@@ -189,6 +190,7 @@
 						<div class="responsive-tabs-content">
 							<div class="doc-callout">
 								<p>The mixins folder contains utility mixins that allow for consistent, reusable output across the project.  Mixins can be particularly useful for writing patterns that require vendor prefixes or fallbacks for older browsers.</p>
+								<p><strong>NOTE:</strong> if a parameter has a default value, it should be included in a map as the last parameter.  The key name should match that of the parameter name listed below.</p>
 							</div>
 							<div class="doc-callout divider" ng-repeat="mixin in objects.mixins">
 								<h2>
