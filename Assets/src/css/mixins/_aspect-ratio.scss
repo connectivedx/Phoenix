@@ -6,8 +6,16 @@
 // @param $height {Number} The desired height of the element's aspect ratio.  Default value: 9.  [px|integer]
 // @usage
 // =aspect-ratio()
-// =aspect-ratio(4, 3)
-@mixin aspect-ratio($width: 16, $height: 9) {
+// =aspect-ratio((width: 4, height: 3))
+@mixin aspect-ratio($options: ()) {
+	$options: map-merge((
+		width: 16,
+		height: 9
+	), $options);
+
+	$width: map-get($options, width);
+	$height: map-get($options, height);
+
 	height: 0;
 	padding-bottom: percentage(parseInt($height) / parseInt($width));
 	position: relative;
