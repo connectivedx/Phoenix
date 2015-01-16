@@ -1,6 +1,6 @@
 a {
 	color: black;
-	@include transition(color);
+	@include transition((property: color));
 
 	&:hover,
 	&:active,
