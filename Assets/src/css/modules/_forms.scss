@@ -92,7 +92,7 @@ fieldset {
 $decoratorSelectBorderSize: 1px;
 
 .decorator-select {
-	@include gradient($colorGreyLight, $colorGreyMedium);
+	@include gradient((from: $colorGreyLight, to: $colorGreyMedium));
 	background-size: 100%;
 	border: $decoratorSelectBorderSize solid $colorGreyMedium;
 	border-radius: $formElementBorderRadius;
