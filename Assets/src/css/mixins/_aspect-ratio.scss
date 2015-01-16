@@ -16,10 +16,14 @@
 	$width: map-get($options, width);
 	$height: map-get($options, height);
 
-	height: 0;
-	padding-bottom: percentage(parseInt($height) / parseInt($width));
-	position: relative;
-	width: 100%;
+	position: relative;	// context for direct descendant
+
+	// container to maintain aspect ratio
+	&:before {
+		content: '';
+		display: block;
+		padding-top: percentage(parseInt($height) / parseInt($width));
+	}
 
 	& > embed,
 	& > iframe,

@@ -129,6 +129,28 @@ $decoratorSelectBorderSize: 1px;
 	}
 }
 
+// multiple selects
+.decorator-select-multiple {
+	@include gradient($colorGreyLight, $colorGreyMedium);
+	border: $decoratorSelectBorderSize solid $colorGreyMedium;
+	border-radius: $formElementBorderRadius;
+	display: inline-block;
+	width: 100%;
+
+	select {
+		-webkit-appearance: none;
+		background: transparent;
+		border: none;
+		color: black;
+		display: block;
+		min-height: $inputHeight - (2 * $decoratorSelectBorderSize);
+		outline: none;
+		padding: 6px 10px 6px 10px;
+		position: relative;
+		width: 100%;
+	}
+}
+
 .custom-file-upload {
 	.no-js & {
 		display: none;
