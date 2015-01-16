@@ -9,7 +9,7 @@
 	display: block;
 	@include font-size(24);
 	margin: (-$columnPadding) (-$columnPadding) 0 (-$columnPadding);	// need parentheses around -$columnPadding to compile correctly
-	padding: em(12, 24);
+	padding: em(12, (context: 24));
 
 	@include media(breakpointMedium) {
 		display: none;
