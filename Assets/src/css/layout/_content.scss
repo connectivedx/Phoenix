@@ -66,11 +66,11 @@
 	padding: $columnPadding;
 
 	@include media(breakpointMedium) {
-		width: columns(7, false);
+		width: columns(7, (includeGutterWidth: false));
 	}
 
 	@include media(breakpointLarge) {
-		width: columns(6, false);
+		width: columns(6, (includeGutterWidth: false));
 	}
 }
 
@@ -80,7 +80,7 @@
 	padding: $columnPadding;
 
 	@include media(breakpointExtraLarge) {
-		width: columns(1.5, false);
+		width: columns(1.5, (includeGutterWidth: false));
 	}
 }
 
@@ -90,11 +90,11 @@
 	padding: $columnPadding;
 
 	@include media(breakpointMedium) {
-		width: columns(5, false);
+		width: columns(5, (includeGutterWidth: false));
 	}
 
 	@include media(breakpointLarge) {
-		width: columns(3, false);
+		width: columns(3, (includeGutterWidth: false));
 	}
 }
 
@@ -103,11 +103,11 @@
 	padding: $columnPadding;
 
 	@include media(breakpointLarge) {
-		width: columns(3, false);
+		width: columns(3, (includeGutterWidth: false));
 	}
 
 	@include media(breakpointExtraLarge) {
-		width: columns(1.5, false);
+		width: columns(1.5, (includeGutterWidth: false));
 	}
 }
 

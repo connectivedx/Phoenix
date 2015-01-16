@@ -148,7 +148,7 @@
 		margin-left: 0;
 
 		@include media(breakpointMedium) {
-			margin-left: push_x($columns, $firstChild);
+			margin-left: push_x($columns, (firstChild: $firstChild));
 		}
 	}
 }
