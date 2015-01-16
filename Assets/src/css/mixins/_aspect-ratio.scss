@@ -2,20 +2,11 @@
 
 // @mixin aspect-ratio
 // Creates the necessary dimensions for an element to have a fixed aspect ratio.
-// @param $width {Number} The desired width of the element's aspect ratio.  Default value: 16.  [px|integer]
-// @param $height {Number} The desired height of the element's aspect ratio.  Default value: 9.  [px|integer]
+// @param $width {Number} The desired width of the element's aspect ratio.  [px|integer]
+// @param $height {Number} The desired height of the element's aspect ratio.  [px|integer]
 // @usage
-// =aspect-ratio()
-// =aspect-ratio((width: 4, height: 3))
-@mixin aspect-ratio($options: ()) {
-	$options: map-merge((
-		width: 16,
-		height: 9
-	), $options);
-
-	$width: map-get($options, width);
-	$height: map-get($options, height);
-
+// =aspect-ratio(16, 9)
+@mixin aspect-ratio($width, $height) {
 	position: relative;	// context for direct descendant
 
 	// container to maintain aspect ratio
