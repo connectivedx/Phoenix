@@ -18,7 +18,7 @@
 
 .layout-primary-pushed {
 	@include column(6, (shifted: true));
-	@include push(3, true);
+	@include push(3, (firstChild: true));
 }
 
 .layout-secondary,

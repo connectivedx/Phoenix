@@ -133,9 +133,17 @@
 // @function push
 // Pushes a semantic-grid set of columns by the number of columns specified.
 // @param $columns {Number} The number of columns to push the set of columns.  [integer]
+// @param $firstChild {Boolean} Whether or not the element being pushed is the first-child in its container.  Default value: false.
 // @usage
 // push(4)
-@mixin push($columns, $firstChild: false) {
+// push(4, (firstChild: true))
+@mixin push($columns, $options: ()) {
+	$options: map-merge((
+		firstChild: false
+	), $options);
+
+	$firstChild: map-get($options, firstChild);
+
 	@if ($columns > 0) {
 		margin-left: 0;
 
@@ -160,7 +168,7 @@
 
 		@include media(breakpointMedium) {
 			margin-left: pull_x($columns, $width);
-			
+
 			&:first-child {
 				margin-left: 0;
 			}
