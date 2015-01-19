@@ -9,9 +9,21 @@
 // @param $property {String} The CSS property to which you wish to apply the image.  Default value: background-image.
 // @usage
 // =retina-image(bullet-blue.png)
-// =retina-image(bullet-blue.png, 12px 12px)
-// =retina-image(bullet-blue.png, 12px 12px, '-2x')
-@mixin retina-image($imageName, $backgroundSize: 'none', $retinaFileSuffix: '@2x', $backgroundRepeat: no-repeat, $property: background-image) {
+// =retina-image(bullet-blue.png, (backgroundSize: 12px 12px))
+// =retina-image(bullet-blue.png, (retinaFileSuffix: '-2x'))
+@mixin retina-image($imageName, $options: ()) {
+	$options: map-merge((
+		backgroundSize: 'none',
+		retinaFileSuffix: '@2x',
+		backgroundRepeat: no-repeat,
+		property: background-image
+	), $options);
+
+	$backgroundSize: map-get($options, backgroundSize);
+	$retinaFileSuffix: map-get($options, retinaFileSuffix);
+	$backgroundRepeat: map-get($options, backgroundRepeat);
+	$property: map-get($options, property);
+
 	$imageNameRetina: str-insert($imageName, $retinaFileSuffix, -5);
 
 	#{$property}: image($imageName);

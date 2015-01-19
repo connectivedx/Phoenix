@@ -8,7 +8,13 @@
 }
 
 // Return single column width
-@function oneColumn($includeGutterWidth: true) {
+@function oneColumn($options: ()) {
+	$options: map-merge((
+		includeGutterWidth: true
+	), $options);
+
+	$includeGutterWidth: map-get($options, includeGutterWidth);
+
 	@if $includeGutterWidth == true {
 		@return (100% - (($columns - 1) * $gutterWidth)) / $columns;
 	}
@@ -18,17 +24,29 @@
 }
 
 // Calculate Grid Column Widths
-@function columns($n, $includeGutterWidth: true){
+@function columns($n, $options: ()){
+	$options: map-merge((
+		includeGutterWidth: true
+	), $options);
+
+	$includeGutterWidth: map-get($options, includeGutterWidth);
+
 	@if $includeGutterWidth == true {
-		@return (oneColumn($includeGutterWidth) * $n) + ($gutterWidth * ($n - 1));
+		@return (oneColumn((includeGutterWidth: $includeGutterWidth)) * $n) + ($gutterWidth * ($n - 1));
 	}
 	@else {
-		@return oneColumn($includeGutterWidth) * $n;
+		@return oneColumn((includeGutterWidth: $includeGutterWidth)) * $n;
 	}
 }
 
 // Calculate Push Class Margins
-@function push_x($n, $firstChild: false) {
+@function push_x($n, $options: ()) {
+	$options: map-merge((
+		firstChild: false
+	), $options);
+
+	$firstChild: map-get($options, firstChild);
+
 	@if $firstChild == true {
 		@return columns($n) + $gutterWidth; // Column width + gutter
 	}
