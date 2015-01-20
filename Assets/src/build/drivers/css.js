@@ -14,7 +14,9 @@ var CssDriver = {
 			.pipe(gulpif(debug, sourcemaps.init()))
 			.pipe(sass())
 			.pipe(gulpif(debug, sourcemaps.write('./')))
-			.pipe(gulpif(!debug, prefix('last 2 versions', 'IE >= 8', 'Android >= 4')))
+			.pipe(gulpif(!debug, prefix({
+				browsers: ['last 2 versions', 'IE >= 8', 'Android >= 4']
+			})))
 			.pipe(gulpif(!debug, cmq()))
 			.pipe(gulpif(!debug, cssmin({
 				noAdvanced: true
