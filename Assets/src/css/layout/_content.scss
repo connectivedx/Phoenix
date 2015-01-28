@@ -3,7 +3,7 @@
 // @function content
 // The location to define major column layouts for your main content area.
 .wrapper {
-	@include row(false, 0);
+	@include row((padding: 0));
 }
 
 // standard grid
@@ -17,8 +17,8 @@
 }
 
 .layout-primary-pushed {
-	@include column(6, true);
-	@include push(3, true);
+	@include column(6, (shifted: true));
+	@include push(3, (firstChild: true));
 }
 
 .layout-secondary,
@@ -31,7 +31,7 @@
 }
 
 .layout-secondary-pulled {
-	@include column(3, true);
+	@include column(3, (shifted: true));
 	@include pull(6, 3);
 }
 
@@ -41,13 +41,13 @@
 }
 
 .layout-centered {
-	@include column(8, false, $columnPadding, false, centered);
+	@include column(8, (alignment: centered));
 	border: 1px dashed $colorPrimary;
 }
 
 // complex layout
 .layout-complex-wrapper {
-	@include row(false, 0, 100%);
+	@include row((padding: 0, maxWidth: 100%));
 }
 
 .layout-complex-header {
@@ -66,11 +66,11 @@
 	padding: $columnPadding;
 
 	@include media(breakpointMedium) {
-		width: columns(7, false);
+		width: columns(7, (includeGutterWidth: false));
 	}
 
 	@include media(breakpointLarge) {
-		width: columns(6, false);
+		width: columns(6, (includeGutterWidth: false));
 	}
 }
 
@@ -80,7 +80,7 @@
 	padding: $columnPadding;
 
 	@include media(breakpointExtraLarge) {
-		width: columns(1.5, false);
+		width: columns(1.5, (includeGutterWidth: false));
 	}
 }
 
@@ -90,11 +90,11 @@
 	padding: $columnPadding;
 
 	@include media(breakpointMedium) {
-		width: columns(5, false);
+		width: columns(5, (includeGutterWidth: false));
 	}
 
 	@include media(breakpointLarge) {
-		width: columns(3, false);
+		width: columns(3, (includeGutterWidth: false));
 	}
 }
 
@@ -103,22 +103,26 @@
 	padding: $columnPadding;
 
 	@include media(breakpointLarge) {
-		width: columns(3, false);
+		width: columns(3, (includeGutterWidth: false));
 	}
 
 	@include media(breakpointExtraLarge) {
-		width: columns(1.5, false);
+		width: columns(1.5, (includeGutterWidth: false));
 	}
 }
 
 // supporting classes
-.aspect-ratio-4-3 {
+.map {
 	@include aspect-ratio(4, 3);
+
+	img {
+		max-width: none; // resets map controls
+	}
 }
 
 .nested,
 aside {
-	@include row(nested);
+	@include row((nested: true));
 }
 
 .multi-grid {
@@ -130,7 +134,7 @@ aside {
 		}
 	}
 
-	@include multi-grid("> li", 1, 2, 3, flush) {
+	@include multi-grid("> li", 1, 2, 3, (flush: true)) {
 		text-align: center;
 	}
 }

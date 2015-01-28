@@ -2,6 +2,8 @@
 
 // @function video
 // Responsive video for maintaining aspect ratio on all resolutions.
-body .video {
-	@include aspect-ratio();
+
+// you will need to change this class if you add the video test to Modernizr
+.video {
+	@include aspect-ratio(16, 9);
 }

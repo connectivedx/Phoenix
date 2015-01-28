@@ -80,7 +80,7 @@
 }
 
 #fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
-	@include retina-image('fancybox-sprite.png', 44px 152px);
+	@include retina-image('fancybox-sprite.png', (backgroundSize: 44px 152px));
 }
 
 #fancybox-loading {
@@ -96,7 +96,7 @@
 }
 
 #fancybox-loading div {
-	@include retina-image('fancybox-loading.gif', 24px 24px);
+	@include retina-image('fancybox-loading.gif', (backgroundSize: 24px 24px));
 	background-position: center center;
 	background-repeat: no-repeat;
 	height: 44px;

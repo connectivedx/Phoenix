@@ -13,8 +13,8 @@ $badgeBorderRadius: 8px;
 	cursor: default;
 	display: inline-block;
 	@include font-size(12);
-	margin-right: em(6, 12);
-	padding: em(6, 12);
+	margin-right: em(6, (context: 12));
+	padding: em(6, (context: 12));
 }
 
 .badge-primary {
