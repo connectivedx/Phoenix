@@ -3,6 +3,11 @@
 // @function lists
 // Styles related to lists.
 .list-plain {
-	list-style: none;
 	padding-left: 0;
+
+	li {
+		&:before {
+			display: none;		// hides custom bullets
+		}
+	}
 }
