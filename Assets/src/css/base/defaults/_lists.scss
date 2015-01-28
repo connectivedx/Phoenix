@@ -1,17 +1,17 @@
 ul {
-    list-style-image: none;
-    list-style: none;
-    padding-left: em($listIndentWidth);
+	list-style-image: none;
+	list-style: none;
+	padding-left: em($listIndentWidth);
 
-    li:before {
-    	color: $colorPrimary;
-        content: "\2022";
-        display: inline-block;
-        float: left;
-        margin-left: em((-$listIndentWidth));
-        text-align: left;
-        width: em($listIndentWidth);
-    }
+	li:before {
+		color: $colorPrimary;
+		content: "\2022";
+		display: inline-block;
+		float: left;
+		margin-left: em((-$listIndentWidth));
+		text-align: left;
+		width: em($listIndentWidth);
+	}
 }
 
 ul, ol {
