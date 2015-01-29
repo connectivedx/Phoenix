@@ -16,9 +16,6 @@
 	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" type="text/css">
 
 	<link rel="stylesheet" media="all" href="<?php echo getAsset('Assets/dist/css/style.css');?>">
-	<!--[if lte IE 8]>
-	<script src="<?php echo getAsset('Assets/dist/js/oldie.js');?>"></script>
-	<![endif]-->
 
 	<!-- Serve one icon for all Apple devices -->
 	<link rel="apple-touch-icon-precomposed" href="<?php echo getAsset('Assets/dist/img/content/touch-icon.png');?>">

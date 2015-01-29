@@ -10,9 +10,6 @@
 	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet" type="text/css">
 	<script src="<?php echo getAsset('../Assets/dist/js/head.js'); ?>"></script>
 	<link rel="stylesheet" media="all" href="<?php echo getAsset('../Assets/dist/css/documentation.css'); ?>">
-	<!--[if lte IE 8]>
-	<script src="<?php echo getAsset('../Assets/dist/js/oldie.js'); ?>"></script>
-	<![endif]-->
 	<script src="js/angular.min.js"></script>
 	<script src="js/angular-sanitize.min.js"></script>
 	<script src="js/app.js"></script>
