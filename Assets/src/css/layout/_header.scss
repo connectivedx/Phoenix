@@ -8,11 +8,4 @@ header {
 	.column, .columns {
 		margin-top: 0;
 	}
-
-	// max-width needed because border-box isn't supported for the footer element in old versions of IE
-	@if unit($rowMaxWidth) == "px" {
-		.oldie & {
-			max-width: $rowMaxWidth - ($columnPadding * 2);
-		}
-	}
 }

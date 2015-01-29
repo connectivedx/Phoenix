@@ -67,18 +67,6 @@ fieldset:not(#foo) {
 	}
 }
 
-.oldie {
-	fieldset {
-		input[type='radio'],
-		input[type='checkbox'] {
-			& + span {
-				margin-left: em(4);
-				min-height: 20px;
-			}
-		}
-	}
-}
-
 fieldset {
 	label {
 		&.inline {
@@ -109,10 +97,6 @@ $decoratorSelectBorderSize: 1px;
 		position: absolute;
 		right: 0;
 		top: 0;
-
-		.oldie & {
-			content: '';
-		}
 	}
 
 	select {

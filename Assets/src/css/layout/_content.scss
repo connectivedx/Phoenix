@@ -53,11 +53,6 @@
 .layout-complex-header {
 	@extend %column-config;
 	padding: $columnPadding;
-
-	// max-width needed because border-box isn't supported for the footer element in old versions of IE; this overrides the default for headers
-	.oldie & {
-		max-width: none;
-	}
 }
 
 .layout-complex-primary {

@@ -81,15 +81,4 @@ fieldset {
 	.label-large {
 		@include font-size(32);
 	}
-
-	.oldie & {
-		input[type="radio"],
-		input[type="checkbox"] {
-			& + label {
-				display: inline;
-				margin-left: em(4);
-				min-height: 20px;
-			}
-		}
-	}
 }
