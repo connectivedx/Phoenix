@@ -13,7 +13,8 @@ $('.nav-handle').click(function() {
 	$('.nav-list').toggleClass('expanded');
 });
 
-$('select').wrap('<div class="decorator-select"></div>');
+$('select:not([multiple])').wrap('<div class="decorator-select" />');
+$('select[multiple]').wrap('<div class="decorator-select-multiple" />');
 
 $('.fancybox').fancybox();
 

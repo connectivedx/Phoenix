@@ -10,21 +10,31 @@
 
 // @function row
 // Creates a semantic-grid row.
-// @param $nested {String} Whether or not the row will be nested within other rows.  Default value: false.
+// @param $nested {Boolean} Whether or not the row will be nested within other rows.  Default value: false.
 // @param $padding {Number} A padding override to be set on the row.  Default value: $columnPadding. [px|em]
 // @param $maxWidth {Number} A max-width override to be set on the row.  Default value: $rowMaxWidth. [px|percentage]
 // @usage
 // row()
-// row(nested)
-// row(false, 0 50px 0 0)
-@mixin row($nested: false, $padding: $columnPadding, $maxWidth: $rowMaxWidth) {
+// row((nested: nested))
+// row((padding: 0 50px 0 0))
+@mixin row($options: ()) {
+	$options: map-merge((
+		nested: false,
+		padding: $columnPadding,
+		maxWidth: $rowMaxWidth
+	), $options);
+
+	$nested: map-get($options, nested);
+	$padding: map-get($options, padding);
+	$maxWidth: map-get($options, maxWidth);
+
 	@extend %clearfix;
-	margin-left: 0; 
+	margin-left: 0;
 	margin-right: 0;
 	min-width: 0;
 	width: auto;
 
-	@if $nested == nested {
+	@if $nested == true {
 		margin-top: $columnPadding;
 		padding: 0;
 
@@ -37,7 +47,7 @@
 	}
 
 	@include media(breakpointMedium) {
-		@if $nested == nested {
+		@if $nested == true {
 			max-width: none;
 			min-width: 0px;
 			padding: 0;
@@ -56,14 +66,26 @@
 // @function column
 // Creates a semantic-grid set of columns based on the base grid system settings.  On low resolutions, the columns will stack and will break at breakpointMedium to the number of columns specified.
 // @param $columns {Number} The number of columns you wish your element's width to occupy. [integer]
-// @param $shifted {Boolean} Whether you will be pushing or pulling the columns.
+// @param $shifted {Boolean} Whether you will be pushing or pulling the columns.  Default value: false.
 // @param $padding {Number} A padding override to be set on the row.  Default value: $columnPadding.  [px|em]
-// @param $nested {String} Whether or not the columns will be contained within a nested row.  Default value: false.
+// @param $nested {Boolean} Whether or not the columns will be contained within a nested row.  Default value: false.
 // @param $alignmnet {String} Whether or not the columns will be centered within a row.  Default value: false.
 // @usage
 // column(8)
-// column(8, 10px)
-@mixin column($columns, $shifted: false, $padding: $columnPadding, $nested: false, $alignment: false) {
+// column(8, (padding: 10px))
+@mixin column($columns, $options: ()) {
+	$options: map-merge((
+		shifted: false,
+		padding: $columnPadding,
+		nested: false,
+		alignment: false
+	), $options);
+
+	$shifted: map-get($options, shifted);
+	$padding: map-get($options, padding);
+	$nested: map-get($options, nested);
+	$alignment: map-get($options, alignment);
+
 	@if $alignment == centered {
 		@extend %column-config;
 		padding: $padding;
@@ -83,7 +105,7 @@
 		@extend %column-config;
 		padding: $padding;
 
-		@if $nested == nested {
+		@if $nested == true {
 			margin-top: $columnPadding;
 
 			&:first-child {
@@ -111,14 +133,22 @@
 // @function push
 // Pushes a semantic-grid set of columns by the number of columns specified.
 // @param $columns {Number} The number of columns to push the set of columns.  [integer]
+// @param $firstChild {Boolean} Whether or not the element being pushed is the first-child in its container.  Default value: false.
 // @usage
 // push(4)
-@mixin push($columns, $firstChild: false) {
+// push(4, (firstChild: true))
+@mixin push($columns, $options: ()) {
+	$options: map-merge((
+		firstChild: false
+	), $options);
+
+	$firstChild: map-get($options, firstChild);
+
 	@if ($columns > 0) {
 		margin-left: 0;
 
 		@include media(breakpointMedium) {
-			margin-left: push_x($columns, $firstChild);
+			margin-left: push_x($columns, (firstChild: $firstChild));
 		}
 	}
 }
@@ -138,7 +168,7 @@
 
 		@include media(breakpointMedium) {
 			margin-left: pull_x($columns, $width);
-			
+
 			&:first-child {
 				margin-left: 0;
 			}

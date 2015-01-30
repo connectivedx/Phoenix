@@ -6,8 +6,14 @@
 // @param $property {String} The CSS property to which you wish to apply the image.  Default value: background-image.
 // @usage
 // =svg-image(logo)
-// =svg-image(bullet-blue, list-style-image)
-@mixin svg-image($imageName, $property: background-image) {
+// =svg-image(bullet-blue, (property: list-style-image))
+@mixin svg-image($imageName, $options: ()) {
+	$options: map-merge((
+		property: background-image
+	), $options);
+
+	$property: map-get($options, property);
+
 	#{$property}: image('#{$imageName}.svg', $svgFolder);
 
 	.no-svg & {

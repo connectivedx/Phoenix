@@ -56,11 +56,11 @@ $quickColumnGapWidth: 0.3;
 
 	// starting on the second item
 	&.nth-child-np2 {
-		margin-top: columns($quickColumnGapWidth, false);
+		margin-top: columns($quickColumnGapWidth, (includeGutterWidth: false));
 	}
 
 	@include media(breakpointLarge) {
-		margin-left: columns($quickColumnGapWidth, false);
+		margin-left: columns($quickColumnGapWidth, (includeGutterWidth: false));
 		margin-right: -0.25em;	// eliminate whitespace created by inline-block
 
 		// starting on the second item
@@ -73,7 +73,7 @@ $quickColumnGapWidth: 0.3;
 .two-up,
 .four-up {
 	@include media(breakpointLarge) {
-		width: columns( ($columns - $quickColumnGapWidth) / 2, false);
+		width: columns( ($columns - $quickColumnGapWidth) / 2, (includeGutterWidth: false));
 
 		// first of each row
 		&.nth-child-2np1 {
@@ -82,14 +82,14 @@ $quickColumnGapWidth: 0.3;
 
 		// starting on the second row
 		&.nth-child-np3 {
-			margin-top: columns($quickColumnGapWidth, false);
+			margin-top: columns($quickColumnGapWidth, (includeGutterWidth: false));
 		}
 	}
 }
 
 .three-up {
 	@include media(breakpointLarge) {
-		width: columns( ($columns - 2 * $quickColumnGapWidth) / 3, false );
+		width: columns( ($columns - 2 * $quickColumnGapWidth) / 3, (includeGutterWidth: false));
 
 		// first of each row
 		&.nth-child-3np1 {
@@ -98,18 +98,18 @@ $quickColumnGapWidth: 0.3;
 
 		// starting on the second row
 		&.nth-child-np4 {
-			margin-top: columns($quickColumnGapWidth, false);
+			margin-top: columns($quickColumnGapWidth, (includeGutterWidth: false));
 		}
 	}
 }
 
 .four-up {
 	@include media(breakpointExtraLarge) {
-		width: columns( ($columns - 3 * $quickColumnGapWidth) / 4, false );
+		width: columns( ($columns - 3 * $quickColumnGapWidth) / 4, (includeGutterWidth: false));
 
 		// first of each row (override from breakpointLarge)
 		&.nth-child-2np1 {
-			margin-left: columns($quickColumnGapWidth, false);
+			margin-left: columns($quickColumnGapWidth, (includeGutterWidth: false));
 		}
 		// first of each row
 		&.nth-child-4np1 {
@@ -122,7 +122,7 @@ $quickColumnGapWidth: 0.3;
 		}
 		// starting on the second row
 		&.nth-child-np5 {
-			margin-top: columns($quickColumnGapWidth, false);
+			margin-top: columns($quickColumnGapWidth, (includeGutterWidth: false));
 		}
 	}
 }

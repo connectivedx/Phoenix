@@ -85,6 +85,7 @@
 					<li>Short Item in the list</li>
 					<li>Short Item in the list</li>
 					<li>Short Item in the list</li>
+					<li>Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the listReally long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list</li>
 				</ul>
 				<h2>Unordered List with Links</h2>
 				<ul class="links">
@@ -173,37 +174,45 @@
 							</select>
 						</li>
 						<li>
-						<fieldset>
-							<legend>Select one of the following:</legend>
-							<ol>
-								<li>
-									<label for="options">Label for the radio options</label>
-									<ol class="radio-list">
-										<li>
-											<input type="radio" name="options" id="radio-option-1" value="option 1">
-											<label for="radio-option-1">Option 1</label>
-										</li>
-										<li>
-											<input type="radio" name="options" id="radio-option-2" value="option 2">
-											<label for="radio-option-2">Option 2</label>
-										</li>
-									</ol>
-								</li>
-								<li>
-									<label for="options-2" class="label-large">Large label for radio options</label>
-									<ol class="radio-list">
-										<li>
-											<input type="radio" name="options-2" id="radio-option-1-2" value="option 1">
-											<label for="radio-option-1-2" class="label-large">Large labels scale nicely and wrap properly</label>
-										</li>
-										<li>
-											<input type="radio" name="options-2" id="radio-option-2-2" value="option 2">
-											<label for="radio-option-2-2" class="label-large">Large labels scale nicely and wrap properly</label>
-										</li>
-									</ol>
-								</li>
-							</ol>
-						</fieldset>
+							<label for="testmultipleselect">Label for the multiple select</label>
+							<select id="testmultipleselect" multiple>
+								<option>First</option>
+								<option>Second</option>
+								<option>Third</option>
+							</select>
+						</li>
+						<li>
+							<fieldset>
+								<legend>Select one of the following:</legend>
+								<ol>
+									<li>
+										<label for="options">Label for the radio options</label>
+										<ol class="radio-list">
+											<li>
+												<input type="radio" name="options" id="radio-option-1" value="option 1">
+												<label for="radio-option-1">Option 1</label>
+											</li>
+											<li>
+												<input type="radio" name="options" id="radio-option-2" value="option 2">
+												<label for="radio-option-2">Option 2</label>
+											</li>
+										</ol>
+									</li>
+									<li>
+										<label for="options-2" class="label-large">Large label for radio options</label>
+										<ol class="radio-list">
+											<li>
+												<input type="radio" name="options-2" id="radio-option-1-2" value="option 1">
+												<label for="radio-option-1-2" class="label-large">Large labels scale nicely and wrap properly</label>
+											</li>
+											<li>
+												<input type="radio" name="options-2" id="radio-option-2-2" value="option 2">
+												<label for="radio-option-2-2" class="label-large">Large labels scale nicely and wrap properly</label>
+											</li>
+										</ol>
+									</li>
+								</ol>
+							</fieldset>
 						</li>
 						<li>
 							<fieldset>
@@ -360,7 +369,7 @@
 			</div>
 			<div class="six columns">
 				<h2>Map - 4:3</h2>
-				<div class="aspect-ratio-4-3">
+				<div class="map">
 					<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1397.4432998107925!2d-122.69317991642879!3d45.532487514497674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sisite+design!5e0!3m2!1sen!2sus!4v1391532768363" frameborder="0" style="border:0"></iframe>
 				</div>
 			</div>

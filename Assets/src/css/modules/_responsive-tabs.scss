@@ -37,7 +37,7 @@ $tabPanelTextColor: black;
 	color: $tabTextColor;
 	cursor: pointer;
 	display: block;
-	padding: em(9, 18);
+	padding: em(9, (context: 18));
 	position: relative;
 
 	&:after {
@@ -47,7 +47,7 @@ $tabPanelTextColor: black;
 		@extend %icon-config;
 		position: absolute;
 		right: 20px;
-		top: 3px;
+		top: 8px;
 		width: 20px;
 
 		@include media(print) {
@@ -179,10 +179,14 @@ $tabPanelTextColor: black;
 	border-top-right-radius: $tabBorderRadius;
 	color: $tabTextColor;
 	cursor: pointer;
-	padding: em(10 20, 19);
+	padding: em(10 20, (context: 19));
 
 	&:hover {
 		background: $tabHoverBackgroundColor;
+	}
+
+	&:before {
+		display: none;
 	}
 
 	@include media(breakpointMedium) {
@@ -218,7 +222,7 @@ $tabPanelTextColor: black;
 		@include media(breakpointMedium) {
 			.responsive-tabs-horizontal & {
 				border-bottom: none;
-				padding-top: em(11, 19);
+				padding-top: em(11, (context: 19));
 				position: relative;
 				top: 1px;
 			}

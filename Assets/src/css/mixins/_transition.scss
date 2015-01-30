@@ -8,9 +8,21 @@
 // @param $delay {Number} The amount of time to delay the transition.  Default value: $transitionDelay.  [seconds]
 // @usage
 // =transition()
-// =transition(background-color)
-// =transition(background-color, 0.5s, ease-in-out)
-@mixin transition($property: all, $duration: $transitionDuration, $easing: $transitionEasing, $delay: $transitionDelay) {
+// =transition((property: background-color))
+// =transition((property: background-color, duration: 0.5s, easing: ease-in-out))
+@mixin transition($options: ()) {
+	$options: map-merge((
+		property: all,
+		duration: $transitionDuration,
+		easing: $transitionEasing,
+		delay: $transitionDelay
+	), $options);
+
+	$property: map-get($options, property);
+	$duration: map-get($options, duration);
+	$easing: map-get($options, easing);
+	$delay: map-get($options, delay);
+
 	@if (parseInt($delay) > 0) {
 		transition: $property $duration $easing $delay;
 	}

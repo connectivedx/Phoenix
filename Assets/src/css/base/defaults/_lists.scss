@@ -1,3 +1,21 @@
+ul {
+	list-style-image: none;
+	list-style: none;
+	padding-left: em($listBulletSize);
+
+	li:before {
+		color: $colorPrimary;
+		content: "\2022";
+		display: inline-block;
+		float: left;
+		font-size: em($listBulletSize);
+		line-height: ($baseFontSize / $listBulletSize) * $lineHeight;
+		margin-left: em($baseFontSize, (context: -$listBulletSize));
+		text-align: left;
+		width: em($baseFontSize, (context: $listBulletSize));
+	}
+}
+
 ul, ol {
 	margin: em(10) 0 0;
 	padding: 0 0 0 em(20);
