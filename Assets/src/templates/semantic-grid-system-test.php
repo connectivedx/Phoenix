@@ -2,8 +2,9 @@
 	$pageTitle = 'Semantic Grid System Test';
 	include_once 'inc/head.php';
 ?>
-	<div class="wrapper">
-		<h1 class="row">Three column, semantic example (12 column grid)</h1>
+	<div class="row">
+		<h1>Three column, semantic example (12 column grid)</h1>
+		<p>This example keeps gutters between columns, the default option with the semantic grid.</p>
 	</div>
 
 	<header class="row">
@@ -45,8 +46,9 @@
 		Footer
 	</footer>
 
-	<div class="wrapper">
-		<h1 class="row">Three column, semantic example (12 column grid)</h1>
+	<div class="row">
+		<h1>Three column, semantic example (12 column grid)</h1>
+		<p>This example removes gutters between columns by setting the "includeGutterWidth" flag to false for each column in the options map of the column mixin.</p>
 	</div>
 
 	<header class="row">
@@ -73,7 +75,7 @@
 			<p>This is a three column container.  It will hold navigation content.  It has been pulled to be placed in the left rail on desktops and tablets, but will be below the main content on mobile.</p>
 		</nav>
 
-		<aside class="layout-tertiary">
+		<aside class="layout-tertiary-no-gutter">
 			<h3>Tertiary</h3>
 			<p>This is a three column container.  It will hold tertiary content in the right rail on desktops and tablets, but will be at the bottom on mobile because it has not been pushed or pulled.</p>
 		</aside>

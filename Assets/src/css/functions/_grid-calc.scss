@@ -13,9 +13,7 @@
 		includeGutterWidth: true
 	), $options);
 
-	$includeGutterWidth: map-get($options, includeGutterWidth);
-
-	@if $includeGutterWidth == true {
+	@if map-get($options, includeGutterWidth) == true {
 		@return (100% - (($columns - 1) * $gutterWidth)) / $columns;
 	}
 	@else {
@@ -29,40 +27,49 @@
 		includeGutterWidth: true
 	), $options);
 
-	$includeGutterWidth: map-get($options, includeGutterWidth);
-
-	@if $includeGutterWidth == true {
-		@return (oneColumn((includeGutterWidth: $includeGutterWidth)) * $n) + ($gutterWidth * ($n - 1));
+	@if map-get($options, includeGutterWidth) == true {
+		@return (oneColumn($options) * $n) + ($gutterWidth * ($n - 1));
 	}
 	@else {
-		@return oneColumn((includeGutterWidth: $includeGutterWidth)) * $n;
+		@return oneColumn($options) * $n;
 	}
 }
 
 // Calculate Push Class Margins
 @function push_x($n, $options: ()) {
 	$options: map-merge((
-		firstChild: false
+		firstChild: false,
+		includeGutterWidth: true
 	), $options);
 
-	$firstChild: map-get($options, firstChild);
-
-	@if $firstChild == true {
-		@return columns($n) + $gutterWidth; // Column width + gutter
+	@if map-get($options, firstChild) == true and map-get($options, includeGutterWidth) == true {
+		@return columns($n, $options) + $gutterWidth; // Column width + gutter
+	}
+	@else if map-get($options, includeGutterWidth) == true {
+		@return columns($n, $options) + ($gutterWidth * 2); // Column width + (gutter * 2)
 	}
 	@else {
-		@return columns($n) + ($gutterWidth * 2); // Column width + (gutter * 2)
+		@return columns($n, $options); // Column width
 	}
 }
 
 // Calculate Pull Class Margins
-@function pull_x($n, $width) {
-	@return -(columns($n) + columns($width) + $gutterWidth); // -(Pull width + column width + gutter)
+@function pull_x($n, $width, $options: ()) {
+	$options: map-merge((
+		includeGutterWidth: true
+	), $options);
+
+	@if map-get($options, includeGutterWidth) == true {
+		@return -(columns($n, $options) + columns($width, $options) + $gutterWidth); // -(Pull width + column width + gutter)
+	}
+	@else {
+		@return -(columns($n, $options) + columns($width, $options)); // -(Pull width + column width)
+	}
 }
 
 // Calculate Centered Class Margins
-@function centered($n) {
-	@return 50% - (columns($n) / 2);
+@function centered($n, $options: ()) {
+	@return 50% - (columns($n, $options) / 2);
 }
 
 // Create class names from column count integers

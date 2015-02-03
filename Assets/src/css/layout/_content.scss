@@ -17,8 +17,8 @@
 }
 
 .layout-primary-pushed {
-	@include column(6, (shifted: true));
-	@include push(3, (firstChild: true));
+	@include column(6, (shifted: true, includeGutterWidth: false));
+	@include push(3, (firstChild: true, includeGutterWidth: false));
 }
 
 .layout-secondary,
@@ -31,8 +31,8 @@
 }
 
 .layout-secondary-pulled {
-	@include column(3, (shifted: true));
-	@include pull(6, 3);
+	@include column(3, (shifted: true, includeGutterWidth: false));
+	@include pull(6, 3, (includeGutterWidth: false));
 }
 
 .layout-tertiary {
@@ -40,8 +40,13 @@
 	background-color: $colorSecondary;
 }
 
+.layout-tertiary-no-gutter {
+	@include column(3, (includeGutterWidth: false));
+	background-color: $colorSecondary;
+}
+
 .layout-centered {
-	@include column(8, (alignment: centered));
+	@include column(8, (alignment: centered, includeGutterWidth: false));
 	border: 1px dashed $colorPrimary;
 }
 
