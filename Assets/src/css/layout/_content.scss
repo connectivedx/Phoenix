@@ -9,7 +9,7 @@
 // standard grid
 .layout-primary,
 .layout-primary-pushed {
-	border: 1px dashed $colorPrimary;
+	border: 1px dashed color(primary);
 }
 
 .layout-primary {
@@ -23,7 +23,7 @@
 
 .layout-secondary,
 .layout-secondary-pulled {
-	background-color: $colorSecondary;
+	background-color: color(secondary);
 }
 
 .layout-secondary {
@@ -37,12 +37,12 @@
 
 .layout-tertiary {
 	@include column(3);
-	background-color: $colorSecondary;
+	background-color: color(secondary);
 }
 
 .layout-centered {
 	@include column(8, (alignment: centered));
-	border: 1px dashed $colorPrimary;
+	border: 1px dashed color(primary);
 }
 
 // complex layout
@@ -62,7 +62,7 @@
 
 .layout-complex-primary {
 	@extend %column-config;
-	border: 1px dashed $colorPrimary;
+	border: 1px dashed color(primary);
 	padding: $columnPadding;
 
 	@include media(breakpointMedium) {
@@ -76,7 +76,7 @@
 
 .layout-complex-nav {
 	@extend %column-config;
-	background-color: $colorSecondary;
+	background-color: color(secondary);
 	padding: $columnPadding;
 
 	@include media(breakpointExtraLarge) {
@@ -86,7 +86,7 @@
 
 .layout-complex-tertiary {
 	@extend %column-config;
-	background-color: $colorSecondary;
+	background-color: color(secondary);
 	padding: $columnPadding;
 
 	@include media(breakpointMedium) {
@@ -126,7 +126,7 @@ aside {
 }
 
 .multi-grid {
-	border: 1px dashed $colorPrimary;
+	border: 1px dashed color(primary);
 
 	> li {
 		&:before {

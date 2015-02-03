@@ -8,17 +8,17 @@ $tabBorderColor: black;
 $tabBorderRadius: $formElementBorderRadius;
 
 // tab
-$tabBackgroundColor: $colorPrimary;
+$tabBackgroundColor: color(primary);
 $tabHoverBackgroundColor: lighten($tabBackgroundColor, 10%);
 $tabTextColor: white;
 
 // active tab
-$tabActiveBackgroundColor: $colorGreyLight;
+$tabActiveBackgroundColor: color(greyLight);
 $tabActiveHoverBackgroundColor: lighten($tabActiveBackgroundColor, 10%);
 $tabActiveTextColor: black;
 
 // tab panel
-$tabPanelBackgroundColor: $colorGreyLight;
+$tabPanelBackgroundColor: color(greyLight);
 $tabPanelTextColor: black;
 
 .responsive-tabs-wrapper {
