@@ -8,10 +8,11 @@
 // =color(primary) will return the result of map-get( $colors, primary )
 
 @function color( $key ) {
-  @if map-has-key( $colors, $key ) {
-    @return map-get( $colors, $key );
-  }
+	@if map-has-key( $colors, $key ) {
+		@return map-get( $colors, $key );
+	}
 
-  @warn "The key value `#{$key}` is not set in $colors.";
-  @return null;
+	@warn "The key value `#{$key}` is not set in $colors.";
+
+	@return null;
 }
