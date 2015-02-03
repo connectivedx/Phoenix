@@ -2,7 +2,7 @@
 
 // @function colors
 // The color palette for the project.
-// @param $colors {List} All colors needed on the project represented as pairs with a color name and its corresponding color value.  [String hex|rgb(a)|hsl(a)]
+// @param $colors {Map} All project color variables represented as pairs with a color name and its corresponding value.  [String hex|rgb(a)|hsl(a)]
 // NOTE: funtions/_color.scss uses the $colors map by default, so if this variable name changes, that function will need to be changed as well.
 
 $colors: (
