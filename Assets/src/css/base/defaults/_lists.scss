@@ -4,7 +4,7 @@ ul {
 	padding-left: em($listBulletSize);
 
 	li:before {
-		color: $colorPrimary;
+		color: color(primary);
 		content: "\2022";
 		display: inline-block;
 		float: left;

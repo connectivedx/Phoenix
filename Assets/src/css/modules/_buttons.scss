@@ -49,13 +49,13 @@
 button,
 .btn {
 	@extend %button-config;
-	background-color: $colorPrimary;
-	border: 1px solid darken($colorPrimary, 10%);
+	background-color: color(primary);
+	border: 1px solid darken(color(primary), 10%);
 
 	&:hover,
 	&:active,
 	&:focus {
-		background-color: lighten($colorPrimary, 10%);
+		background-color: lighten(color(primary), 10%);
 	}
 
 	@include media(print) {
@@ -65,14 +65,14 @@ button,
 
 .btn-secondary {
 	@extend %button-config;
-	background-color: $colorSecondary;
-	border: 1px solid darken($colorSecondary, 10%);
+	background-color: color(secondary);
+	border: 1px solid darken(color(secondary), 10%);
 	color: black;
 
 	&:hover,
 	&:active,
 	&:focus {
-		background-color: lighten($colorSecondary, 10%);
+		background-color: lighten(color(secondary), 10%);
 	}
 
 	@include media(print) {

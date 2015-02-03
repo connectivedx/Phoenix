@@ -10,7 +10,7 @@ table {
 	}
 
 	th {
-		background-color: $colorPrimary;
+		background-color: color(primary);
 		color: white;
 		font-weight: normal;
 		vertical-align: middle;
@@ -29,7 +29,7 @@ table {
 	// zebra striping code needs to repeat because IE < 8 will ignore the code if an nth-child selector is in it
 	tr:nth-child(2n) {
 		> td {
-			background-color: $colorGreyLight;
+			background-color: color(greyLight);
 
 			&.empty,
 			&.plain {
@@ -39,7 +39,7 @@ table {
 	}
 	tr.even {
 		> td {
-			background-color: $colorGreyLight;
+			background-color: color(greyLight);
 
 			&.empty,
 			&.plain {

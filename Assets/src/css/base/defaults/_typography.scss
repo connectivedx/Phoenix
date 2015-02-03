@@ -5,7 +5,7 @@ a {
 	&:hover,
 	&:active,
 	&:focus {
-		color: $colorGreyMedium;
+		color: color(greyMedium);
 	}
 
 	@include media(print) {
