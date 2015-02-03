@@ -21,7 +21,7 @@ fieldset:not(#foo) {
 			padding: em(6) em(5) em(4) em(27);
 
 			&:before {
-				@extend %icon-config-modern-browsers;
+				@extend %icon-config;
 				margin-left: em(-28);
 				margin-right: em(8);
 			}

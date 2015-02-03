@@ -6,7 +6,7 @@ $iconRadioChecked: "\e604";
 $iconRadioUnchecked: "\e605";
 $iconFontFamily: 'icomoon';
 
-@mixin icon() {
+%icon-config {
 	font-family: $iconFontFamily;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -16,15 +16,6 @@ $iconFontFamily: 'icomoon';
 	line-height: 1;
 	speak: none;
 	text-transform: none;
-}
-
-%icon-config {
-	@include icon();
-}
-
-// this version is for IE9 and up; it's used on custom radio buttons and checkboxes and must be separate from %icon-config
-%icon-config-modern-browsers {
-	@include icon();
 }
 
 [class^="icon-"], [class*=" icon-"] {
