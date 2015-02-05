@@ -1,6 +1,6 @@
 {
 	"name": "Phoenix",
-	"version": "1.0.2",
+	"version": "1.1.0",
 	"description": "Build framework for Phoenix frontend framework",
 	"repository": "https://github.com/isitedesign/Phoenix",
 	"devDependencies": {
