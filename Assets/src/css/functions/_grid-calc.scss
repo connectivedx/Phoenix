@@ -38,15 +38,11 @@
 // Calculate Push Class Margins
 @function push_x($n, $options: ()) {
 	$options: map-merge((
-		firstChild: false,
 		includeGutterWidth: true
 	), $options);
 
-	@if map-get($options, firstChild) == true and map-get($options, includeGutterWidth) == true {
+	@if map-get($options, includeGutterWidth) == true {
 		@return columns($n, $options) + $gutterWidth; // Column width + gutter
-	}
-	@else if map-get($options, includeGutterWidth) == true {
-		@return columns($n, $options) + ($gutterWidth * 2); // Column width + (gutter * 2)
 	}
 	@else {
 		@return columns($n, $options); // Column width
