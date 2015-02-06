@@ -2,16 +2,6 @@
 	$pageTitle = 'Complex Layout Test';
 	include_once 'inc/head.php';
 ?>
-	<div class="wrapper">
-		<div class="row">
-			<div class="eight columns centered">
-				<a href="index.php">
-					<img src="<?php echo getAsset('Assets/dist/img/content/logo-placeholder.png');?>" alt="Phoenix by ISITE Design" class="img-align-center">
-				</a>
-			</div>
-		</div>
-	</div>
-
 	<section class="layout-complex-wrapper">
 		<header class="layout-complex-header">
 			<h2>Header</h2>

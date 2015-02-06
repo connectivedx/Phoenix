@@ -3,18 +3,10 @@
 	$bodyClass = 'template-three-column not-shifted no-gutters';
 	include_once 'inc/head.php';
 ?>
-	<div class="wrapper">
+	<header class="wrapper">
 		<div class="row">
-			<div class="eight columns centered">
-				<a href="index.php">
-					<img src="<?php echo getAsset('Assets/dist/img/content/logo-placeholder.png');?>" alt="Phoenix by ISITE Design" class="img-align-center">
-				</a>
-			</div>
+			Header
 		</div>
-	</div>
-
-	<header class="row">
-		Header
 	</header>
 
 	<section class="wrapper">
@@ -48,8 +40,10 @@
 		</div>
 	</section>
 
-	<footer class="row">
-		Footer
+	<footer class="wrapper">
+		<div class="row">
+			Footer
+		</div>
 	</footer>
 
 	<div class="wrapper">
