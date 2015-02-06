@@ -23,7 +23,6 @@
 			</li>
 			<li><a href="multi-grid.php">Multi Grid</a></li>
 			<li><a href="complex-layout-test.php">Complex Layout Test</a></li>
-			<li><a href="template-test.php">Template Test</a></li>
 		</ul>
 	</div>
 <?php

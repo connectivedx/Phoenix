@@ -3,6 +3,14 @@
 	include_once 'inc/head.php';
 ?>
 	<section class="wrapper">
+		<div class="row">
+			<div class="eight columns centered">
+				<a href="index.php">
+					<img src="<?php echo getAsset('Assets/dist/img/content/logo-placeholder.png');?>" alt="Phoenix by ISITE Design" class="img-align-center">
+				</a>
+			</div>
+		</div>
+
 		<div class="row" id="headings">
 			<div class="twelve columns">
 				<h1>Level 1 heading</h1>

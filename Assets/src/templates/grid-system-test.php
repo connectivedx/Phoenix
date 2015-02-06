@@ -15,6 +15,14 @@
 	?>
 	<section class="content">
 		<div class="row">
+			<div class="eight columns centered" style="border: none;">
+				<a href="index.php">
+					<img src="<?php echo getAsset('Assets/dist/img/content/logo-placeholder.png');?>" alt="Phoenix by ISITE Design" class="img-align-center">
+				</a>
+			</div>
+		</div>
+
+		<div class="row">
 			<h1>Grid System Test</h1>
 		</div>
 
