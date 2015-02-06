@@ -14,7 +14,14 @@
 		<ul>
 			<li><a href="style-guide.php">Style Guide</a></li>
 			<li><a href="grid-system-test.php">Grid System Test</a></li>
-			<li><a href="semantic-grid-system-test.php">Semantic Grid System Test</a></li>
+			<li>
+				Semantic Grid System Test
+				<ul>
+					<li><a href="semantic-grid-system-test-two-column.php">Two Column</a></li>
+					<li><a href="semantic-grid-system-test-three-column.php">Three Column</a></li>
+				</ul>
+			</li>
+			<li><a href="multi-grid.php">Multi Grid</a></li>
 			<li><a href="complex-layout-test.php">Complex Layout Test</a></li>
 			<li><a href="template-test.php">Template Test</a></li>
 		</ul>

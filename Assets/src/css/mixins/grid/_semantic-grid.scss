@@ -136,12 +136,14 @@
 // @function push
 // Pushes a semantic-grid set of columns by the number of columns specified.
 // @param $columns {Number} The number of columns to push the set of columns.  [integer]
+// @param $firstChild {Boolean} Whether or not the element being pushed is the first-child in its container.  Default value: false.
 // @param $includeGutterWidth {Boolean} Whether or not the columns will have a gutter applied.  Default value: true.
 // @usage
 // push(4)
 // push(4, (includeGutterWidth: false))
 @mixin push($columns, $options: ()) {
 	$options: map-merge((
+		firstChild: false,
 		includeGutterWidth: true
 	), $options);
 

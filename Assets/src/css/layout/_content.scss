@@ -6,48 +6,135 @@
 	@include row((padding: 0));
 }
 
-// standard grid
+// semantic grid
 .layout-primary,
-.layout-primary-pushed {
+.layout-centered {
 	border: 1px dashed $colorPrimary;
 }
 
-.layout-primary {
-	@include column(6);
-}
-
-.layout-primary-pushed {
-	@include column(6, (shifted: true, includeGutterWidth: false));
-	@include push(3, (firstChild: true, includeGutterWidth: false));
-}
-
 .layout-secondary,
-.layout-secondary-pulled {
-	background-color: $colorSecondary;
-}
-
-.layout-secondary {
-	@include column(3);
-}
-
-.layout-secondary-pulled {
-	@include column(3, (shifted: true, includeGutterWidth: false));
-	@include pull(6, 3, (includeGutterWidth: false));
-}
-
 .layout-tertiary {
-	@include column(3);
-	background-color: $colorSecondary;
-}
-
-.layout-tertiary-no-gutter {
-	@include column(3, (includeGutterWidth: false));
 	background-color: $colorSecondary;
 }
 
 .layout-centered {
 	@include column(8, (alignment: centered, includeGutterWidth: false));
-	border: 1px dashed $colorPrimary;
+}
+
+.template-two-column {
+	&.not-shifted {
+		&.no-gutters {
+			.layout-primary {
+				@include column(9, (includeGutterWidth: false));
+			}
+
+			.layout-secondary {
+				@include column(3, (includeGutterWidth: false));
+			}
+		}
+
+		&.gutters {
+			.layout-primary {
+				@include column(9);
+			}
+
+			.layout-secondary {
+				@include column(3);
+			}
+		}
+	}
+
+	&.shifted {
+		&.no-gutters {
+			.layout-primary {
+				@include column(9, (includeGutterWidth: false, shifted: true));
+				@include push(3, (firstChild: true, includeGutterWidth: false));
+			}
+
+			.layout-secondary {
+				@include column(3, (includeGutterWidth: false, shifted: true));
+				@include pull(9, 3, (includeGutterWidth: false));
+			}
+		}
+
+		&.gutters {
+			.layout-primary {
+				@include column(9, (shifted: true));
+				@include push(3, (firstChild: true));
+			}
+
+			.layout-secondary {
+				@include column(3, (shifted: true));
+				@include pull(9, 3);
+			}
+		}
+	}
+}
+
+.template-three-column {
+	&.not-shifted {
+		&.no-gutters {
+			.layout-primary {
+				@include column(6, (includeGutterWidth: false));
+			}
+
+			.layout-secondary {
+				@include column(3, (includeGutterWidth: false));
+			}
+
+			.layout-tertiary {
+				@include column(3, (includeGutterWidth: false));
+			}
+		}
+
+		&.gutters {
+			.layout-primary {
+				@include column(6);
+			}
+
+			.layout-secondary {
+				@include column(3);
+			}
+
+			.layout-tertiary {
+				@include column(3);
+			}
+		}
+	}
+
+	&.shifted {
+		&.no-gutters {
+			.layout-primary {
+				@include column(6, (includeGutterWidth: false, shifted: true));
+				@include push(3, (firstChild: true, includeGutterWidth: false));
+			}
+
+			.layout-secondary {
+				@include column(3, (includeGutterWidth: false, shifted: true));
+				@include pull(6, 3, (includeGutterWidth: false));
+			}
+
+			.layout-tertiary {
+				@include column(3, (includeGutterWidth: false));
+			}
+		}
+
+		&.gutters {
+			.layout-primary {
+				@include column(6, (shifted: true));
+				@include push(3, (firstChild: true));
+			}
+
+			.layout-secondary {
+				@include column(3, (shifted: true));
+				@include pull(6, 3);
+			}
+
+			.layout-tertiary {
+				@include column(3);
+			}
+		}
+	}
 }
 
 // complex layout

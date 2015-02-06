@@ -38,6 +38,7 @@
 // Calculate Push Class Margins
 @function push_x($n, $options: ()) {
 	$options: map-merge((
+		firstChild: false,
 		includeGutterWidth: true
 	), $options);
 
