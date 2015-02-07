@@ -48,7 +48,7 @@
 		&.no-gutters {
 			.layout-primary {
 				@include column(9, (includeGutterWidth: false, shifted: true));
-				@include push(3, (firstChild: true, includeGutterWidth: false));
+				@include push(3, (includeGutterWidth: false));
 			}
 
 			.layout-secondary {
@@ -60,7 +60,7 @@
 		&.gutters {
 			.layout-primary {
 				@include column(9, (shifted: true));
-				@include push(3, (firstChild: true));
+				@include push(3);
 			}
 
 			.layout-secondary {
@@ -106,7 +106,7 @@
 		&.no-gutters {
 			.layout-primary {
 				@include column(6, (includeGutterWidth: false, shifted: true));
-				@include push(3, (firstChild: true, includeGutterWidth: false));
+				@include push(3, (includeGutterWidth: false));
 			}
 
 			.layout-secondary {
@@ -122,7 +122,7 @@
 		&.gutters {
 			.layout-primary {
 				@include column(6, (shifted: true));
-				@include push(3, (firstChild: true));
+				@include push(3);
 			}
 
 			.layout-secondary {
