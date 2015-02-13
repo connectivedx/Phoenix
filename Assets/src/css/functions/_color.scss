@@ -20,12 +20,12 @@
 		}
 	}
 	@else {
-		@warn "`#{$color}` is not in your color map.";
+		@warn "`#{$color}` is not in your color map.  If it's a CSS color, it will be applied.";
 	}
 
 	// check if it's a color
 	@if type-of($color) != color {
-		@warn "The key value `#{$color}` is not a color.";
+		@warn "`#{$color}` is not a color.";
 
 		@return null;
 	}
