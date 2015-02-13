@@ -2,17 +2,19 @@
 
 // @function color
 // Returns the requested color from the $colors map set in variables/_colors.scss
-// @param $key {String} The requested key from the $colors map.
-// @return {String} The key's value from the $colors map.
+// @param $key {String} The requested key from the color map.
+// @param $colorMap {Map} The color map from which to find the color specified.  Default value: $colors.
+// @return {String} The key's value from the color map.
 // @usage
-// =color(primary) will return the result of map-get( $colors, primary )
+// =color(primary) will return the result of map-get($colors, primary)
+// =color(action, $otherColorMap) will return the result of map-get($otherColorMap, action)
 
-@function color($key) {
-	@if map-has-key($colors, $key) {
-		@return map-get($colors, $key);
-	}
+@function color($key, $colorMap: $colors) {
+    @if map-has-key($colorMap, $key) {
+        @return map-get($colorMap, $key);
+    }
 
-	@warn "The key value `#{$key}` is not set in $colors.";
+    @warn "The key value `#{$key}` is not set in your color map.";
 
-	@return null;
+    @return null;
 }
