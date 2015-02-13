@@ -5,7 +5,7 @@
 // @param $columns {Number} The number of columns in the grid system.  [integer]
 // @param $columnPadding {Number} The default amount of padding within columns in pixels.  [px]
 // @param $gutterWidth {Number} The default gutter width between columns in pixels or percent.  If defined as pixels, it will be converted to a percentage; the pixel value will represent the gutter width at the $rowMaxWidth.  [px|percentage]
-// @param $rowMaxWidth {Number} The maximum width of a row on the page.  This should be a multiple of the below variable $columns or a percentage.  [px|percentage]
+// @param $rowMaxWidth {Number} The maximum width of a row on the page.  [px|percentage]
 // @param $defaultFloat {String} The default direction in which to float content.
 // @param $switchFloat {String} The opposite float of $defaultFloat.
 $columns: 12 !default;
