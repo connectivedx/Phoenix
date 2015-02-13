@@ -30,7 +30,7 @@
 	$columnWidth: oneColumn($options) * $n;
 
 	@if map-get($options, includeGutterWidth) == true {
-		$columnWidth: $columnWidth + ($gutterWidth * ($n - 1)); // add gutter width
+		$columnWidth: $columnWidth + ($gutterWidth * ($n - 1));
 	}
 
 	@return $columnWidth;
@@ -45,7 +45,7 @@
 	$pushAmount: columns($n, $options);
 
 	@if map-get($options, includeGutterWidth) == true {
-		$pushAmount: $pushAmount + $gutterWidth; // add gutter width
+		$pushAmount: $pushAmount + $gutterWidth;
 	}
 
 	@return $pushAmount;
@@ -60,7 +60,7 @@
 	$pullAmount: columns($n, $options) + columns($width, $options);
 
 	@if map-get($options, includeGutterWidth) == true {
-		$pullAmount: $pullAmount + $gutterWidth; // -(Pull width + column width + gutter)
+		$pullAmount: $pullAmount + $gutterWidth;
 	}
 
 	@return -($pullAmount);
