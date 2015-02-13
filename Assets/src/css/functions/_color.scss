@@ -10,11 +10,11 @@
 // =color(action, $otherColorMap) will return the result of map-get($otherColorMap, action)
 
 @function color($key, $colorMap: $colors) {
-    @if map-has-key($colorMap, $key) {
-        @return map-get($colorMap, $key);
-    }
+	@if map-has-key($colorMap, $key) {
+		@return map-get($colorMap, $key);
+	}
 
-    @warn "The key value `#{$key}` is not set in your color map.";
+	@warn "The key value `#{$key}` is not set in your color map.";
 
-    @return null;
+	@return null;
 }
