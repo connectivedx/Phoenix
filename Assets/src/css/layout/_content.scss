@@ -17,6 +17,12 @@
 	background-color: $colorSecondary;
 }
 
+.layout-primary,
+.layout-secondary,
+.layout-tertiary {
+	@include transition();
+}
+
 .layout-centered {
 	@include column(8, (alignment: centered, includeGutterWidth: false));
 }
