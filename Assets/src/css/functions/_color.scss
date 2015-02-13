@@ -1,20 +1,34 @@
 // @category functions
 
 // @function color
-// Returns the requested color from the $colors map set in variables/_colors.scss
-// @param $key {String} The requested key from the color map.
+// Returns the requested color from a color map.
+// @param $color {String} The requested key from the color map.
 // @param $colorMap {Map} The color map from which to find the color specified.  Default value: $colors.
 // @return {String} The key's value from the color map.
 // @usage
 // =color(primary) will return the result of map-get($colors, primary)
 // =color(action, $otherColorMap) will return the result of map-get($otherColorMap, action)
 
-@function color($key, $colorMap: $colors) {
-	@if map-has-key($colorMap, $key) {
-		@return map-get($colorMap, $key);
+@function color($color, $colorMap: $colors) {
+	// check if the color is in the map
+	@if map-has-key($colorMap, $color) {
+		$color: map-get($colorMap, $color);
+
+		// recursive call to double-check for semantic color references
+		@if map-has-key($colorMap, $color) {
+			$color: color($color, $colorMap);
+		}
+	}
+	@else {
+		@warn "`#{$color}` is not in your color map.";
 	}
 
-	@warn "The key value `#{$key}` is not set in your color map.";
+	// check if it's a color
+	@if type-of($color) != color {
+		@warn "The key value `#{$color}` is not a color.";
 
-	@return null;
+		@return null;
+	}
+
+	@return $color;
 }
