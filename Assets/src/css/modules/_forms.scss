@@ -40,7 +40,7 @@ fieldset:not(#foo) {
 		}
 		&:active + label,
 		&:focus + label {
-			color: $colorPrimary;
+			color: color(primary);
 		}
 		&:checked + label {
 			&:before {
@@ -57,7 +57,7 @@ fieldset:not(#foo) {
 		}
 		&:active + label,
 		&:focus + label {
-			color: $colorPrimary;
+			color: color(primary);
 		}
 		&:checked + label {
 			&:before {
@@ -92,9 +92,9 @@ fieldset {
 $decoratorSelectBorderSize: 1px;
 
 .decorator-select {
-	@include gradient($colorGreyLight, $colorGreyMedium);
+	@include gradient(color(greyLight), color(greyMedium));
 	background-size: 100%;
-	border: $decoratorSelectBorderSize solid $colorGreyMedium;
+	border: $decoratorSelectBorderSize solid color(greyMedium);
 	border-radius: $formElementBorderRadius;
 	display: inline-block;
 	height: auto;
@@ -131,8 +131,8 @@ $decoratorSelectBorderSize: 1px;
 
 // multiple selects
 .decorator-select-multiple {
-	@include gradient($colorGreyLight, $colorGreyMedium);
-	border: $decoratorSelectBorderSize solid $colorGreyMedium;
+	@include gradient(color(greyLight), color(greyMedium));
+	border: $decoratorSelectBorderSize solid color(greyMedium);
 	border-radius: $formElementBorderRadius;
 	display: inline-block;
 	width: 100%;

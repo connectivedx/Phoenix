@@ -54,12 +54,12 @@ fieldset {
 	input[type="email"],
 	input[type="tel"],
 	textarea {
-		background-color: $colorGreyLight;
-		border: 1px solid $colorGreyMedium;
+		background-color: color(greyLight);
+		border: 1px solid color(greyMedium);
 		border-radius: $formElementBorderRadius;
 		max-width: 100%;
 		padding: em(8);
-		@include placeholder-color($colorGreyDark);
+		@include placeholder-color(color(greyDark));
 		width: 100%;
 	}
 
