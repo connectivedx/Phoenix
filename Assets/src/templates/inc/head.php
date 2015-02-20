@@ -32,7 +32,8 @@
 	<meta name="msapplication-TileImage" content="<?php echo getAsset('Assets/dist/img/content/touch-icon.png');?>">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<!-- For everything else -->
-	<link rel="shortcut icon" type="image/png" href="<?php echo getAsset('Assets/dist/img/content/favicon.png');?>">
+	<link rel="icon" type="image/png" href="<?php echo getAsset('Assets/dist/img/content/favicon.png');?>">
+	<!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
 </head>
 
 <body class="<?php echo $bodyClass; ?>">
