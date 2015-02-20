@@ -9,7 +9,6 @@
 	</div>
 
 	<div class="row">
-		<h1><a href="documentation/">Documentation</a></h1>
 		<h1>Sample Pages</h1>
 		<ul>
 			<li><a href="style-guide.php">Style Guide</a></li>
