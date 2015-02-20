@@ -20,17 +20,7 @@
 		}
 	}
 	@else {
-		@if type-of($color) != color {
-			@warn "`#{$color}` is not in your color map.";
-		}
-		@else {
-			@warn "`#{$color}` is not in your color map.  Since it is a reserved CSS color keyword, `#{$color}` will be used.";
-		}
-	}
-
-	// check if it's a color
-	@if type-of($color) != color {
-		@warn "`#{$color}` is not a color.";
+		@warn "The color `#{$color}` is not a key in your color map.";
 
 		@return null;
 	}
