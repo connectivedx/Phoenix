@@ -1,0 +1,46 @@
+// Icon Mixin
+// retrieves the passed icon from an icon map
+// @uses icon() function to assign passed icon to :before content
+// usage:
+/*
+	EXAMPLE 1
+	==========
+	.icon-arrow-up {
+		@include icon(arrow-up);
+	}
+
+	RETURNS =>
+
+	.icon-arrow-up:before {
+		content: "\e601";
+	}
+
+	EXAMPLE 2
+	==========
+	.icon-arrow-up {
+		@include icon(arrow-up) {
+			font-size: rem(24);
+			color: color(colorPrimary);
+			margin-right: rem(4);
+		}
+	}
+
+	RETURNS =>
+
+	.icon-arrow-up:before {
+		color: #a81e23;
+		content: "\e601";
+		font-size: 24px;
+		font-size: 1.5rem;
+		margin-right: 4px;
+		margin-right: .25rem;
+	}
+
+*/
+
+@mixin icon($name, $pseudo: before, $iconMap: $icons) {
+	&:#{$pseudo} {
+		content: icon($name, $iconMap);
+		@content; // allows additional CSS declarations to be passed
+	}
+}
