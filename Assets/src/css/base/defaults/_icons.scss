@@ -23,11 +23,4 @@
 [class^="icon-"], [class*=" icon-"] {
 	@extend %icon-config;
 }
-
-.icon-arrow-down:before {
-	content: $iconArrowDown;
-}
-
-.icon-arrow-up:before {
-	content: $iconArrowUp;
 }

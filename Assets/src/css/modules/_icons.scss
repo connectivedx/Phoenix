@@ -1,0 +1,13 @@
+// @category modules
+
+// @function icons
+// Specific icon font declarations
+// Defaults are set in base/defaults/icons
+
+.icon-arrow-down {
+	@include icon(arrow-down);
+}
+
+.icon-arrow-up {
+	@include icon(arrow-up);
+}
