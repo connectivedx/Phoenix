@@ -9,7 +9,13 @@
 // =color(primary) will return the result of map-get($colors, primary)
 // =color(action, $otherColorMap) will return the result of map-get($otherColorMap, action)
 
-@function color($color, $colorMap: $colors) {
+@function color($color, $options: ()) {
+	$options: map-merge((
+		colorMap: $colors
+	), $options);
+
+	$colorMap: map-get($options, colorMap);
+
 	// check if the color is in the map
 	@if map-has-key($colorMap, $color) {
 		$color: map-get($colorMap, $color);
