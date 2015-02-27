@@ -1,0 +1,25 @@
+// @function Icon
+// retrieves the passed icon from a specified icon map variable
+// defaults to using the $icons map
+// makes a recursive check to allow for self-referencing map keys
+
+@function icon($icon, $iconMap: $icons) {
+	// check $icon exists in $iconMap
+	@if map-has-key($iconMap, $icon) {
+		$icon: map-get($icons, $icon);
+
+		// recursive call to check for self-referencing icon keys
+		// i.e.: $icons: ( check: "\e007", tick: check )
+		// @include icon(tick) will return check => "\e007"
+		@if map-has-key($icons, $icon) {
+			$icon: icon($icon);
+		}
+	}
+	@else {
+		@warn "The icon you called -- #{$icon} -- is not in the #{$iconMap} icon map.";
+
+		@return null;
+	}
+
+	@return $icon;
+}
