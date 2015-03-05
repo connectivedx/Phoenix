@@ -5,6 +5,7 @@ var configuration = {
 	output: '../dist', // where to write output to
 	base: '.', // base path from which globs are considered relative. Usually should be .
 	cleanProduction: true, // if true the output directory is rimraf'd before a build when debug = false
+	cacheBusting: true, // if true rev is used to add a hash to filenames in production builds
 	
 	tasks: [
 		{

@@ -37,8 +37,9 @@ module.exports = function(configuration) {
 
 		var masterStream = sLoader.getTaskStreams();
 
-		// rev stamps all files with a hash for cache-busting
-		masterStream = masterStream.pipe(rev({ ignore: ['.php'] }));
+		if (configuration.cacheBusting) { // rev stamps all files with a hash for cache-busting
+			masterStream = masterStream.pipe(rev({ ignore: ['.php'] }));
+		}
 
 		masterStream = sLoader.executeCustomOutput(masterStream);
 
