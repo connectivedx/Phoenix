@@ -1,23 +1,35 @@
-// @function Icon
-// retrieves the passed icon from a specified icon map variable
-// defaults to using the $icons map
-// makes a recursive check to allow for self-referencing map keys
+// @category functions
 
-@function icon($icon, $iconMap: $icons) {
+// @function icon
+// Returns a named icon from a specified icon map.
+// @param $icon {String} The name of the icon as defined in its icon map.
+// @param iconMap {String} The name of the icon map to retrieve the icon from. Defaults to $icons.
+// @return {String} The value for the named icon.
+// @usage
+// =icon(arrowUp) will return "\e601"
+// =icon(facebook, (iconMap: $socialIcons)) will return "\e708" from the $socialIcons map
+
+@function icon($icon, $options: ()) {
+
+	$options: map-merge((
+		iconMap: $icons
+	), $options);
+
+	$thisIcons: map-get($options, iconMap);
+
 	// check $icon exists in $iconMap
-	@if map-has-key($iconMap, $icon) {
-		$icon: map-get($icons, $icon);
+	@if map-has-key($thisIcons, $icon) {
+		$icon: map-get($thisIcons, $icon);
 
 		// recursive call to check for self-referencing icon keys
 		// i.e.: $icons: ( check: "\e007", tick: check )
 		// @include icon(tick) will return check => "\e007"
-		@if map-has-key($icons, $icon) {
+		@if map-has-key($thisIcons, $icon) {
 			$icon: icon($icon);
 		}
 	}
 	@else {
-		@warn "The icon you called -- #{$icon} -- is not in the #{$iconMap} icon map.";
-
+		@warn "The icon `#{$icon}` is not a key in your icon map.";
 		@return null;
 	}
 
