@@ -1,11 +1,14 @@
-// Icon font variables map
-// @param $icons {Map} Icon font values mapped to named keys
+// @category variables
+
+// @function icons
+// Named icons that can be referenced with the icon() mixin and icon() function.
+// @param $icons {List} The icon values represented as pairs with the icon name and its associated glyph.  [String String]
 
 $icons: (
-	arrow-down: "\e600",
-	arrow-up: "\e601",
-	checkbox-checked: "\e602",
-	checkbox-unchecked: "\e603",
-	radio-checked: "\e604",
-	radio-unchecked: "\e605",
+	arrowDown: "\e600",
+	arrowUp: "\e601",
+	checkboxChecked: "\e602",
+	checkboxUnchecked: "\e603",
+	radioChecked: "\e604",
+	radioUnchecked: "\e605",
 );
