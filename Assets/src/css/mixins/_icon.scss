@@ -1,46 +1,24 @@
-// Icon Mixin
-// retrieves the passed icon from an icon map
-// @uses icon() function to assign passed icon to :before content
-// usage:
-/*
-	EXAMPLE 1
-	==========
-	.icon-arrow-up {
-		@include icon(arrow-up);
-	}
+// @category mixins
 
-	RETURNS =>
+// @function icon
+// Adds and icon as pseudo element content as well as any passed styles
+// @param $icon {String} The name of the icon as defined in its icon map.
+// @param pseudo {String} The name of the pseduo element you want to target, either 'before' or 'after'
+// @param iconMap {String} The name of the icon map to retrieve the icon from. Defaults to $icons.
+// @usage
+// =icon(arrowUp) will return "\e601"
+// =icon(facebook, (iconMap: $socialIcons)) will return :before { content: "\e708" }
+// =icon(arrowUp, (pseudo: 'after')) { color: red; } will return :after { content: "\e601"; color: red;}
 
-	.icon-arrow-up:before {
-		content: "\e601";
-	}
+@mixin icon( $name, $options: () ) {
 
-	EXAMPLE 2
-	==========
-	.icon-arrow-up {
-		@include icon(arrow-up) {
-			font-size: rem(24);
-			color: color(colorPrimary);
-			margin-right: rem(4);
-		}
-	}
+	$options: map-merge((
+		pseudo: 'before',
+		iconMap: $icons
+	), $options);
 
-	RETURNS =>
-
-	.icon-arrow-up:before {
-		color: #a81e23;
-		content: "\e601";
-		font-size: 24px;
-		font-size: 1.5rem;
-		margin-right: 4px;
-		margin-right: .25rem;
-	}
-
-*/
-
-@mixin icon($name, $pseudo: before, $iconMap: $icons) {
-	&:#{$pseudo} {
-		content: icon($name, $iconMap);
+	&:#{map-get($options, pseudo)} {
+		content: icon($name, map-get($options, iconMap));
 		@content; // allows additional CSS declarations to be passed
 	}
 }
