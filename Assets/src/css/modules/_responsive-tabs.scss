@@ -40,7 +40,7 @@ $tabPanelTextColor: black;
 	padding: em(9, (context: 18));
 	position: relative;
 
-	@include icon(arrow-down, after) {
+	@include icon(arrowDown, (pseudo: "after")) {
 		display: block;
 		@include font-size(32);
 		@extend %icon-config;
@@ -66,7 +66,7 @@ $tabPanelTextColor: black;
 		color: $tabActiveTextColor;
 		margin-bottom: 0;
 
-		@include icon(arrow-up, after) {
+		@include icon(arrowUp, (pseudo: "after") ) {
 			color: $tabActiveTextColor;
 		}
 	}
@@ -78,7 +78,7 @@ $tabPanelTextColor: black;
 		color: $tabActiveTextColor;
 		margin-bottom: 0;
 
-		@include icon(arrow-up, after) {
+		@include icon(arrowUp, (pseudo: "after") ) {
 			color: $tabActiveTextColor;
 		}
 	}
