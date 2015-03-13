@@ -34,35 +34,27 @@ fieldset:not(#foo) {
 
 	input[type="radio"] {
 		& + label {
-			&:before {
-				content: $iconRadioUnchecked;
-			}
+			@include icon(radioUnchecked);
 		}
 		&:active + label,
 		&:focus + label {
 			color: color(primary);
 		}
 		&:checked + label {
-			&:before {
-				content: $iconRadioChecked;
-			}
+			@include icon(radioChecked);
 		}
 	}
 
 	input[type="checkbox"] {
 		& + label {
-			&:before {
-				content: $iconCheckboxUnchecked;
-			}
+			@include icon(checkboxUnchecked);
 		}
 		&:active + label,
 		&:focus + label {
 			color: color(primary);
 		}
 		&:checked + label {
-			&:before {
-				content: $iconCheckboxChecked;
-			}
+			@include icon(checkboxChecked);
 		}
 	}
 }
