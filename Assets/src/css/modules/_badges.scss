@@ -19,11 +19,11 @@ $badgeBorderRadius: 8px;
 
 .badge-primary {
 	@extend %badge-config;
-	background-color: $colorPrimary;
+	background-color: color(primary);
 	color: white;
 }
 
 .badge-secondary {
 	@extend %badge-config;
-	background-color: $colorSecondary;
+	background-color: color(secondary);
 }

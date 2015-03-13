@@ -8,17 +8,17 @@ $tabBorderColor: black;
 $tabBorderRadius: $formElementBorderRadius;
 
 // tab
-$tabBackgroundColor: $colorPrimary;
+$tabBackgroundColor: color(primary);
 $tabHoverBackgroundColor: lighten($tabBackgroundColor, 10%);
 $tabTextColor: white;
 
 // active tab
-$tabActiveBackgroundColor: $colorGreyLight;
+$tabActiveBackgroundColor: color(greyLight);
 $tabActiveHoverBackgroundColor: lighten($tabActiveBackgroundColor, 10%);
 $tabActiveTextColor: black;
 
 // tab panel
-$tabPanelBackgroundColor: $colorGreyLight;
+$tabPanelBackgroundColor: color(greyLight);
 $tabPanelTextColor: black;
 
 .responsive-tabs-wrapper {
@@ -40,8 +40,7 @@ $tabPanelTextColor: black;
 	padding: em(9, (context: 18));
 	position: relative;
 
-	&:after {
-		content: $iconArrowDown;
+	@include icon(arrowDown, (pseudo: "after")) {
 		display: block;
 		@include font-size(32);
 		@extend %icon-config;
@@ -67,9 +66,8 @@ $tabPanelTextColor: black;
 		color: $tabActiveTextColor;
 		margin-bottom: 0;
 
-		&:after {
+		@include icon(arrowUp, (pseudo: "after") ) {
 			color: $tabActiveTextColor;
-			content: $iconArrowUp;
 		}
 	}
 }
@@ -80,9 +78,8 @@ $tabPanelTextColor: black;
 		color: $tabActiveTextColor;
 		margin-bottom: 0;
 
-		&:after {
+		@include icon(arrowUp, (pseudo: "after") ) {
 			color: $tabActiveTextColor;
-			content: $iconArrowUp;
 		}
 	}
 	.responsive-tabs__heading:hover {

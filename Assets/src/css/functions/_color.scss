@@ -1,0 +1,34 @@
+// @category functions
+
+// @function color
+// Returns the requested color from a color map.
+// @param $color {String} The requested key from the color map.
+// @param $colorMap {Map} The color map from which to find the color specified.  Default value: $colors.
+// @return {String} The key's value from the color map.
+// @usage
+// =color(primary) will return the result of map-get($colors, primary)
+// =color(action, $otherColorMap) will return the result of map-get($otherColorMap, action)
+@function color($color, $options: ()) {
+	$options: map-merge((
+		colorMap: $colors
+	), $options);
+
+	$colorMap: map-get($options, colorMap);
+
+	// check if the color is in the map
+	@if map-has-key($colorMap, $color) {
+		$color: map-get($colorMap, $color);
+
+		// recursive call to double-check for semantic color references
+		@if map-has-key($colorMap, $color) {
+			$color: color($color, $colorMap);
+		}
+	}
+	@else {
+		@warn "The color `#{$color}` is not a key in your color map.";
+
+		@return null;
+	}
+
+	@return $color;
+}

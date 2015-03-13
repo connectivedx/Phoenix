@@ -17,7 +17,7 @@
 
 .divider {
 	@extend %divider-config;
-	border-top: 1px solid $colorGreyMedium;
+	border-top: 1px solid color(greyMedium);
 
 	&.row {
 		margin-top: 0;
@@ -26,7 +26,7 @@
 
 .divider-secondary {
 	@extend %divider-config;
-	border-top: 1px dashed $colorGreyMedium;
+	border-top: 1px dashed color(greyMedium);
 }
 
 .img-align-center {
