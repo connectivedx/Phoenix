@@ -99,7 +99,7 @@
 }
 
 .doc-footer {
-	background-color: $colorPrimary;
+	background-color: color(primary);
 	color: white;
 	max-width: none;
 
@@ -109,7 +109,7 @@
 		&:hover,
 		&:active,
 		&:focus {
-			color: $colorGreyMedium;
+			color: color(greyMedium);
 		}
 	}
 }

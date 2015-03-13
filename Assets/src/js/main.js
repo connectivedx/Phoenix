@@ -38,3 +38,13 @@ $('.three-up:nth-child(3n+1)').addClass('nth-child-3np1');
 $('.three-up:nth-child(n+4)').addClass('nth-child-np4');
 $('.four-up:nth-child(4n+1)').addClass('nth-child-4np1');
 $('.four-up:nth-child(n+5)').addClass('nth-child-np5');
+
+// toggle buttons for test pages
+$('.toggle-push-and-pull').on('click', function(e) {
+	e.preventDefault();
+	$('body').toggleClass('not-shifted shifted');
+});
+$('.toggle-gutters').on('click', function(e) {
+	e.preventDefault();
+	$('body').toggleClass('no-gutters gutters');
+});

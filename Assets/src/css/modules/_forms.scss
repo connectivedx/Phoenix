@@ -34,35 +34,27 @@ fieldset:not(#foo) {
 
 	input[type="radio"] {
 		& + label {
-			&:before {
-				content: $iconRadioUnchecked;
-			}
+			@include icon(radioUnchecked);
 		}
 		&:active + label,
 		&:focus + label {
-			color: $colorPrimary;
+			color: color(primary);
 		}
 		&:checked + label {
-			&:before {
-				content: $iconRadioChecked;
-			}
+			@include icon(radioChecked);
 		}
 	}
 
 	input[type="checkbox"] {
 		& + label {
-			&:before {
-				content: $iconCheckboxUnchecked;
-			}
+			@include icon(checkboxUnchecked);
 		}
 		&:active + label,
 		&:focus + label {
-			color: $colorPrimary;
+			color: color(primary);
 		}
 		&:checked + label {
-			&:before {
-				content: $iconCheckboxChecked;
-			}
+			@include icon(checkboxChecked);
 		}
 	}
 }
@@ -92,9 +84,9 @@ fieldset {
 $decoratorSelectBorderSize: 1px;
 
 .decorator-select {
-	@include gradient($colorGreyLight, $colorGreyMedium);
+	@include gradient(color(greyLight), color(greyMedium));
 	background-size: 100%;
-	border: $decoratorSelectBorderSize solid $colorGreyMedium;
+	border: $decoratorSelectBorderSize solid color(greyMedium);
 	border-radius: $formElementBorderRadius;
 	display: inline-block;
 	height: auto;
@@ -131,8 +123,8 @@ $decoratorSelectBorderSize: 1px;
 
 // multiple selects
 .decorator-select-multiple {
-	@include gradient($colorGreyLight, $colorGreyMedium);
-	border: $decoratorSelectBorderSize solid $colorGreyMedium;
+	@include gradient(color(greyLight), color(greyMedium));
+	border: $decoratorSelectBorderSize solid color(greyMedium);
 	border-radius: $formElementBorderRadius;
 	display: inline-block;
 	width: 100%;

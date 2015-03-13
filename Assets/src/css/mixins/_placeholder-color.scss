@@ -8,7 +8,6 @@
 //	[type=text]{
 //		@include placeholder-color(#999);
 //	}
-
 @mixin placeholder-color($color) {
 	&::-webkit-input-placeholder 	{ color: $color; } /* WebKit browsers */
 	&:-moz-placeholder 				{ color: $color; } /* Mozilla Firefox 4 to 18 */
