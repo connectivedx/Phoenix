@@ -8,7 +8,6 @@
 // @usage
 // =color(primary) will return the result of map-get($colors, primary)
 // =color(action, $otherColorMap) will return the result of map-get($otherColorMap, action)
-
 @function color($color, $options: ()) {
 	$options: map-merge((
 		colorMap: $colors
