@@ -9,9 +9,7 @@
 // =icon(arrowUp) will return "\e601"
 // =icon(facebook, (iconMap: $socialIcons)) will return :before { content: "\e708" }
 // =icon(arrowUp, (pseudo: 'after')) { color: red; } will return :after { content: "\e601"; color: red;}
-
-@mixin icon( $name, $options: () ) {
-
+@mixin icon($name, $options: ()) {
 	$options: map-merge((
 		pseudo: 'before',
 		iconMap: $icons

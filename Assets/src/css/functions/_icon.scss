@@ -8,9 +8,7 @@
 // @usage
 // =icon(arrowUp) will return "\e601"
 // =icon(facebook, (iconMap: $socialIcons)) will return "\e708" from the $socialIcons map
-
 @function icon($icon, $options: ()) {
-
 	$options: map-merge((
 		iconMap: $icons
 	), $options);
