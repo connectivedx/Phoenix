@@ -2,6 +2,7 @@
 'use strict';
 
 var sass = require('gulp-sass');
+var sassdoc = require('sassdoc');
 var sourcemaps = require('gulp-sourcemaps');
 var prefix = require('gulp-autoprefixer');
 var cssmin = require('gulp-minify-css');
@@ -12,6 +13,9 @@ var CssDriver = {
 	build: function(pipeline, debug) {
 		return pipeline
 			.pipe(gulpif(debug, sourcemaps.init()))
+			.pipe(sassdoc({
+				dest: '../../documentation'
+			}))
 			.pipe(sass())
 			.pipe(gulpif(debug, sourcemaps.write('./')))
 			.pipe(gulpif(!debug, prefix({

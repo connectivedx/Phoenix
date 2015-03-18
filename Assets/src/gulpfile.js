@@ -15,7 +15,7 @@ var configuration = {
 		},
 		{
 			driver: 'css',
-			paths: ['./css/*.scss'],
+			paths: ['./css/**/*.scss'],
 			watchPaths: ['css/**'],
 			autoClean: true,
 			autoCleanPaths: ['./css/*.css']

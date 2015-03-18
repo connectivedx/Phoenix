@@ -5,6 +5,7 @@
 # Config and documentation
 web.config
 codekit-config.json
+/documentation
 
 # Built templates
 /*.php
