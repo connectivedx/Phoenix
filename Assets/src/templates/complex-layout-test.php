@@ -2,10 +2,6 @@
 	$pageTitle = 'Complex Layout Test';
 	include_once 'inc/head.php';
 ?>
-	<div class="row">
-		<h1>Multi-column, complex layout where containers have different widths at different breakpoints</h1>
-	</div>
-
 	<section class="layout-complex-wrapper">
 		<header class="layout-complex-header">
 			<h2>Header</h2>

@@ -5,7 +5,7 @@ var configuration = {
 	output: '../dist', // where to write output to
 	base: '.', // base path from which globs are considered relative. Usually should be .
 	cleanProduction: true, // if true the output directory is rimraf'd before a build when debug = false
-	
+	cacheBusting: true, // if true rev is used to add a hash to filenames in production builds
 	tasks: [
 		{
 			driver: 'js',
@@ -22,7 +22,7 @@ var configuration = {
 		},
 		{
 			// fonts are just a plain ol' copy, so they do not need a driver to process them on their way.
-			paths: ['./fonts/**/*.{eot,ttf,woff,svg}'],
+			paths: ['./fonts/**/*.{eot,ttf,woff,woff2,svg}'],
 			watchPaths: ['fonts/**'],
 		},
 		{

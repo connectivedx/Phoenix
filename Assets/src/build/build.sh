@@ -23,7 +23,7 @@ then
 	fi
 fi
 
-if [ "$1" == "watch" ];
+if [ "$1" != "watch" ];
 then
 	NORETRY=1
 fi

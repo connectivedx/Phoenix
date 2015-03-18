@@ -7,7 +7,6 @@
 // @usage
 // = @include gradient(#000000, #ffffff);
 // = @include gradient($link-color, darken($link-color, 5%));
-
 @mixin gradient($from, $to) {
 	background-color: $to; // All else fails
 	background-image: linear-gradient(to bottom, $from 0%, $to 100%);	// W3C
