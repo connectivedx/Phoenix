@@ -1,12 +1,15 @@
-// @category variables
-
-// @function folders
-// Quick access to specific folders in the project.
-// @param $assetsFolder {String} Path to the parent assets folder
-// @param $imagesFolder {String} Path to the images folder, relative to the $assetsFolder
-// @param $svgFolder {String} Path to the svg folder, relative to the $imagesFolder
-// @param $fontsFolder {String} Path to the folder containing font files (e.g. .ttf, eot), relative to the $assetsFolder
+/// Path to the parent assets folder.
+/// @type String
 $assetsFolder: '../';
+
+/// Path to the images folder, relative to the `$assetsFolder`.
+/// @type String
 $imagesFolder: $assetsFolder + 'img/css/';
+
+/// Path to the svg folder, relative to the `$imagesFolder`.
+/// @type String
 $svgFolder: $imagesFolder + 'svg/';
+
+/// Path to the folder containing font files (e.g. .ttf, eot), relative to the `$assetsFolder`.
+/// @type String
 $fontsFolder: $assetsFolder + 'fonts/';

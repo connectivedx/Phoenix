@@ -8,9 +8,9 @@
 // @param $largeColumns {Number} The number of columns to be displayed on large resolutions.  [integer]
 // @param $flush {Boolean} Whether or not the columns should be flush on the outside edge of their container.  This also sets the mult-grid container to act as a nested row.  Default value: false.
 // @param $padding {String} A padding override to be set on all columns in the multi-grid.  Default value: $columnPadding. [px|em]
-// @param $smallBreak {String} The breakpoint at which to apply the number of columns defined by $smallColumns.  Default value: breakpointSmall.
-// @param $mediumBreak {String} The breakpoint at which to apply the number of columns defined by $mediumColumns.  Default value: breakpointMedium.
-// @param $largeBreak {String} The breakpoint at which to apply the number of columns defined by $largeColumns.  Default value: breakpointLarge.
+// @param $smallBreak {String} The breakpoint at which to apply the number of columns defined by $smallColumns.  Default value: small.
+// @param $mediumBreak {String} The breakpoint at which to apply the number of columns defined by $mediumColumns.  Default value: medium.
+// @param $largeBreak {String} The breakpoint at which to apply the number of columns defined by $largeColumns.  Default value: large.
 // @usage
 // multi-grid("> li", 1, 2, 3)
 // multi-grid("> li", 1, 2, 3, (flush: true, padding: 10px))
@@ -18,9 +18,9 @@
 	$options: map-merge((
 		flush: false,
 		padding: $columnPadding,
-		smallBreak: breakpointSmall,
-		mediumBreak: breakpointMedium,
-		largeBreak: breakpointLarge
+		smallBreak: small,
+		mediumBreak: medium,
+		largeBreak: large
 	), $options);
 
 	$flush: map-get($options, flush);

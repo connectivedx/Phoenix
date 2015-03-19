@@ -62,7 +62,7 @@
 		}
 	}
 
-	@include media(breakpointMedium) {
+	@include media(medium) {
 		.row {
 			margin: 0 auto;
 			max-width: $rowMaxWidth;

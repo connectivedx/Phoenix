@@ -46,7 +46,7 @@
 		padding: $padding;
 	}
 
-	@include media(breakpointMedium) {
+	@include media(medium) {
 		@if $nested == true {
 			max-width: none;
 			min-width: 0px;
@@ -64,7 +64,7 @@
 // @category layout
 
 // @function column
-// Creates a semantic-grid set of columns based on the base grid system settings.  On low resolutions, the columns will stack and will break at breakpointMedium to the number of columns specified.
+// Creates a semantic-grid set of columns based on the base grid system settings.  On low resolutions, the columns will stack and will break at medium to the number of columns specified.
 // @param $columns {Number} The number of columns you wish your element's width to occupy. [integer]
 // @param $shifted {Boolean} Whether you will be pushing or pulling the columns.  Default value: false.
 // @param $padding {Number} A padding override to be set on the row.  Default value: $columnPadding.  [px|em]
@@ -97,7 +97,7 @@
 			margin-top: 0;
 		}
 
-		@include media(breakpointMedium) {
+		@include media(medium) {
 			clear: both;
 			margin-left: centered($columns, $options);
 			margin-top: 0;
@@ -116,7 +116,7 @@
 			}
 		}
 
-		@include media(breakpointMedium) {
+		@include media(medium) {
 			@if $shifted == false and $includeGutterWidth == true {
 				margin-left: $gutterWidth;
 
@@ -148,7 +148,7 @@
 	@if ($columns > 0) {
 		margin-left: 0;
 
-		@include media(breakpointMedium) {
+		@include media(medium) {
 			margin-left: push_x($columns, $options);
 		}
 	}
@@ -172,7 +172,7 @@
 	@if ($columns > 0 and $width > 0) {
 		margin-left: 0;
 
-		@include media(breakpointMedium) {
+		@include media(medium) {
 			margin-left: pull_x($columns, $width, $options);
 
 			&:first-child {

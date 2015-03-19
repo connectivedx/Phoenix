@@ -48,7 +48,7 @@ table {
 		}
 	}
 
-	@include media(breakpointMedium) {
+	@include media(medium) {
 		@include font-size(14);
 	}
 }

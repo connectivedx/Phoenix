@@ -4,14 +4,14 @@
 // Adds a media query at the pre-defined breakpoint for the given content.
 // @param $query {String} The name of the breakpoint for which the styles are to be applied.
 // @usage
-// =media(breakpointMedium)
+// =media(medium)
 @mixin media($query) {
 	@if map-has-key($breakpoints, $query) {
 		@media only screen and (min-width: em(map-get($breakpoints, $query), (context: 16))) { @content; }
 	}
 
 	@if $query == rotateDevice {
-		@media only screen and (max-width: em(map-get($breakpoints, breakpointSmall), (context: 16))) and (orientation: portrait) { @content; }
+		@media only screen and (max-width: em(map-get($breakpoints, small), (context: 16))) and (orientation: portrait) { @content; }
 	}
 
 	@if $query == print {

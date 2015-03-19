@@ -59,7 +59,7 @@ $quickColumnGapWidth: 0.3;
 		margin-top: columns($quickColumnGapWidth, (includeGutterWidth: false));
 	}
 
-	@include media(breakpointLarge) {
+	@include media(large) {
 		margin-left: columns($quickColumnGapWidth, (includeGutterWidth: false));
 		margin-right: -0.25em;	// eliminate whitespace created by inline-block
 
@@ -72,7 +72,7 @@ $quickColumnGapWidth: 0.3;
 
 .two-up,
 .four-up {
-	@include media(breakpointLarge) {
+	@include media(large) {
 		width: columns( ($columns - $quickColumnGapWidth) / 2, (includeGutterWidth: false));
 
 		// first of each row
@@ -88,7 +88,7 @@ $quickColumnGapWidth: 0.3;
 }
 
 .three-up {
-	@include media(breakpointLarge) {
+	@include media(large) {
 		width: columns( ($columns - 2 * $quickColumnGapWidth) / 3, (includeGutterWidth: false));
 
 		// first of each row
@@ -104,10 +104,10 @@ $quickColumnGapWidth: 0.3;
 }
 
 .four-up {
-	@include media(breakpointExtraLarge) {
+	@include media(extraLarge) {
 		width: columns( ($columns - 3 * $quickColumnGapWidth) / 4, (includeGutterWidth: false));
 
-		// first of each row (override from breakpointLarge)
+		// first of each row (override from large)
 		&.nth-child-2np1 {
 			margin-left: columns($quickColumnGapWidth, (includeGutterWidth: false));
 		}
@@ -116,7 +116,7 @@ $quickColumnGapWidth: 0.3;
 			margin-left: 0;
 		}
 
-		// starting on the second row (override from breakpointLarge)
+		// starting on the second row (override from large)
 		&.nth-child-np3 {
 			margin-top: 0;
 		}
