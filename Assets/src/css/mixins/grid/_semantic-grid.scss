@@ -149,7 +149,7 @@
 		margin-left: 0;
 
 		@include media(medium) {
-			margin-left: push_x($columns, $options);
+			margin-left: push-x($columns, $options);
 		}
 	}
 }
@@ -173,7 +173,7 @@
 		margin-left: 0;
 
 		@include media(medium) {
-			margin-left: pull_x($columns, $width, $options);
+			margin-left: pull-x($columns, $width, $options);
 
 			&:first-child {
 				margin-left: 0;
