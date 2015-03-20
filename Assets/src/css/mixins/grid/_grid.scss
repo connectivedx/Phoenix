@@ -1,7 +1,5 @@
-// @category layout
-
-// @function grid
-// The natural language grid system (using class names like "columns" and "row").  This is enabled or disabled with the $enableGrid variable in /variables/_options.scss.
+/// The natural language grid system (using class names like "columns" and "row").  This is enabled or disabled with the `$enableGrid` variable in `variables/_options.scss`.
+/// @group grid
 @mixin grid {
 	.row {
 		@extend %clearfix;
