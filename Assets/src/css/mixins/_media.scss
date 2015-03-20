@@ -1,10 +1,7 @@
-// @category mixins
-
-// @mixin media
-// Adds a media query at the pre-defined breakpoint for the given content.
-// @param $query {String} The name of the breakpoint for which the styles are to be applied.
-// @usage
-// =media(medium)
+/// Adds a media query at the pre-defined breakpoint for the given content.
+/// @param {String} $query - The name of the breakpoint for which the styles are to be applied.
+/// @example
+/// media(medium)
 @mixin media($query) {
 	@if map-has-key($breakpoints, $query) {
 		@media only screen and (min-width: em(map-get($breakpoints, $query), (context: 16))) { @content; }

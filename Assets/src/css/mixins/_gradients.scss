@@ -1,12 +1,8 @@
-// @category mixins
-
-// @mixin gradient
-// Adds background color gradient support
-// @param $from {HexColor} The color to begin your gradient.
-// @param $to {HexColor} The color to end your gradient.
-// @usage
-// = @include gradient(#000000, #ffffff);
-// = @include gradient($link-color, darken($link-color, 5%));
+/// Adds background color gradient support
+/// @param {Color} $from - The color for the gradient to start from.
+/// @param {Color} $to - The color that the gradient will end with.
+/// @example
+/// gradient(#000000, #ffffff);
 @mixin gradient($from, $to) {
 	background-color: $to; // All else fails
 	background-image: linear-gradient(to bottom, $from 0%, $to 100%);	// W3C

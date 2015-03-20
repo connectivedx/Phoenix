@@ -1,9 +1,4 @@
-// @category mixins
-
-// @mixin high-dpi
-// Adds a media query to enable content specific for high DPI displays.  Based on http://css-tricks.com/snippets/css/retina-display-media-query/.
-// @usage
-// =high-dpi()
+/// Adds a media query to enable content specific for high DPI displays.
 @mixin high-dpi() {
 	@media
 	only screen and (-webkit-min-device-pixel-ratio: 2),
