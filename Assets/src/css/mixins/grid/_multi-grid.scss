@@ -41,23 +41,23 @@
 	#{unquote($selector)} {
 		// These styles apply to all shift-columns
 		display: inline-block;
-		float: left;
+		margin-right: -0.25em;
 		padding: $padding;
 		@content;
 
 		// IE8 fallback
-		width: divideColumns($smallColumns);
+		width: oneColumn((columns: $smallColumns, includeGutterWidth: false));
 
 		@include media($smallBreak) {
-			width: divideColumns($smallColumns);
+			width: oneColumn((columns: $smallColumns, includeGutterWidth: false));
 		}
 
 		@include media($mediumBreak) {
-			width: divideColumns($mediumColumns);
+			width: oneColumn((columns: $mediumColumns, includeGutterWidth: false));
 		}
 
 		@include media($largeBreak) {
-			width: divideColumns($largeColumns);
+			width: oneColumn((columns: $largeColumns, includeGutterWidth: false));
 		}
 	}
 }

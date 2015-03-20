@@ -17,14 +17,15 @@
 /// @return {Percentage} The width of a single column.
 @function oneColumn($options: ()) {
 	$options: map-merge((
+		columns: $columns,
 		includeGutterWidth: true
 	), $options);
 
 	@if map-get($options, includeGutterWidth) == true {
-		@return (100% - (($columns - 1) * $gutterWidth)) / $columns;
+		@return (100% - ((map-get($options, columns) - 1) * $gutterWidth)) / map-get($options, columns);
 	}
 	@else {
-		@return 100% / $columns;
+		@return 100% / map-get($options, columns);
 	}
 }
 
