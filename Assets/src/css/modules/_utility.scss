@@ -39,6 +39,14 @@
 	width: 100%;
 }
 
+.map {
+	@include aspect-ratio(4, 3);
+
+	img {
+		max-width: none; // resets map controls
+	}
+}
+
 // space, in columns, between quick column elements
 $quickColumnGapWidth: 0.3;
 
