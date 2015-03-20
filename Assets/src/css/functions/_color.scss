@@ -1,13 +1,12 @@
-// @category functions
-
-// @function color
-// Returns the requested color from a color map.
-// @param $color {String} The requested key from the color map.
-// @param $colorMap {Map} The color map from which to find the color specified.  Default value: $colors.
-// @return {String} The key's value from the color map.
-// @usage
-// =color(primary) will return the result of map-get($colors, primary)
-// =color(action, $otherColorMap) will return the result of map-get($otherColorMap, action)
+/// Returns the requested color from a color map.
+/// @param {String} $color - The requested key from the color map.
+/// @return {String} The key's value from the color map.
+/// @example
+/// color(primary)
+/// // returns the result of map-get($colors, primary)
+/// @example
+/// color(action, (colorMap: $otherColorMap))
+/// // returns the result of map-get($otherColorMap, action)
 @function color($color, $options: ()) {
 	$options: map-merge((
 		colorMap: $colors

@@ -1,5 +1,5 @@
 /// Converts a target value in pixels to its associated value in ems based on a context.
-/// @param {Integer | Pixels} $target - The target size in either pixels or its integer equivalent.
+/// @param {Integer | Pixels | List} $target - The target size in either pixels or its integer equivalent.
 /// @param {Map} $options [()] - Optional parameters that can be passed in as a map.
 /// @param {Map} $defaults [(context: $baseFontSize)] - Defaults for optional parameters. The context size in either pixels or its integer equivalent.
 /// @return {Number} The target's value in ems within the given context.
@@ -7,8 +7,8 @@
 /// em(12)
 /// // 0.75em
 /// @example
-/// em(12, (context: 24))
-/// // 0.5em
+/// em(12 16, (context: 24))
+/// // 0.5em 0.6666em
 @function em($target, $options: (), $defaults: (context: $baseFontSize)) {
 	$options: map-merge($defaults, $options);
 
