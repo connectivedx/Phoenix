@@ -65,7 +65,7 @@
 }
 
 /// Creates a semantic-grid set of columns based on the base grid system settings.  On low resolutions, the columns will stack and will break at breakpointMedium to the number of columns specified.
-/// @param {Integer} $columns - The number of columns you wish your element's width to occupy.
+/// @param {Number} $columns - The number of columns you wish your element's width to occupy.  Note that this can be an integer or decimal.
 /// @param {Pixels | Ems} $padding [$gutterInPx] - A padding override to be set on the row.
 /// @param {String} $nested [false] - Whether or not the columns will be contained within a nested row.
 /// @param {String} $alignmnet [false] - Whether or not the columns will be centered within a row.  Default value: false.
