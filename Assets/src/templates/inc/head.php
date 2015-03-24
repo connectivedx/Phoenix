@@ -19,7 +19,7 @@
 	<meta name="apple-mobile-web-app-title" content="Phoenix">
 
 	<script src="<?php echo getAsset('Assets/dist/js/head.js');?>"></script>
-	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet" type="text/css">
 
 	<link rel="stylesheet" media="all" href="<?php echo getAsset('Assets/dist/css/style.css');?>">
 	<!--[if lte IE 8]>
