@@ -32,7 +32,7 @@
 
 		<div class="row">
 			<a href="../index.php">
-				<img src="<?php echo getAsset('../Assets/dist/img/content/logo-placeholder.png'); ?>" alt="Phoenix by ISITE Design">
+				<img src="<?php echo getAsset('../Assets/dist/img/content/logo-placeholder.png'); ?>" srcset="<?php echo getAsset('../Assets/dist/img/content/logo-placeholder@2x.png');?> 2x" alt="Phoenix by ISITE Design">
 			</a>
 
 			<section class="doc-downloads">

@@ -22,7 +22,7 @@
 			&:first-child {
 				margin-top: 0;
 			}
-			
+
 			.column,
 			.columns {
 				padding: 0;
@@ -54,7 +54,7 @@
 			display: table;
 		}
 	}
-	
+
 	@include media(breakpointMedium) {
 		.row {
 			margin: 0 auto;
@@ -107,7 +107,7 @@
 						margin-left: push_x($i);
 
 						&:first-child {
-							margin-left: push_x($i, (firstChild: true));
+							margin-left: push_x($i);
 						}
 					}
 				}

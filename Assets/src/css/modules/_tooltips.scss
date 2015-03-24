@@ -8,7 +8,7 @@ $tooltipArrowSize: 5px; // note: keep this under 10px to avoid issues
 $tooltipPadding: 10px;
 
 // colors
-$tooltipBackgroundColor: $colorPrimary;
+$tooltipBackgroundColor: color(primary);
 $tooltipTextColor: white;
 $tooltipShadowColor: black;
 $tooltipShadowBlurRadius: 10px;

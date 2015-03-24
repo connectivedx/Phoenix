@@ -23,7 +23,15 @@
 	<meta name="msapplication-TileImage" content="<?php echo getAsset('Assets/dist/img/content/touch-icon.png');?>">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<!-- For everything else -->
-	<link rel="shortcut icon" type="image/png" href="<?php echo getAsset('Assets/dist/img/content/favicon.png');?>">
+	<link rel="icon" type="image/png" href="<?php echo getAsset('Assets/dist/img/content/favicon.png');?>">
+	<!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
 </head>
 
 <body class="<?php echo $bodyClass; ?>">
+	<div class="row">
+		<div class="eight columns centered" style="border: none;">
+			<a href="index.php">
+				<img src="<?php echo getAsset('Assets/dist/img/content/logo-placeholder.png');?>" srcset="<?php echo getAsset('Assets/dist/img/content/logo-placeholder@2x.png');?> 2x" alt="Phoenix by ISITE Design" class="img-align-center">
+			</a>
+		</div>
+	</div>

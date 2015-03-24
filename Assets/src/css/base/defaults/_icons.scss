@@ -1,12 +1,8 @@
-$iconArrowDown: "\e600";
-$iconArrowUp: "\e601";
-$iconCheckboxChecked: "\e602";
-$iconCheckboxUnchecked: "\e603";
-$iconRadioChecked: "\e604";
-$iconRadioUnchecked: "\e605";
-$iconFontFamily: 'icomoon';
-
-%icon-config {
+// Base Icon Styles Mixin
+// using a mixin rather than placeholder because we need to separate
+// modern browser from older browsers in @extend chain so as not to break
+// older browsers when used in form elememts (see modules/forms)
+@mixin icon-config() {
 	font-family: $iconFontFamily;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -18,14 +14,10 @@ $iconFontFamily: 'icomoon';
 	text-transform: none;
 }
 
+%icon-config {
+	@include icon-config();
+}
+
 [class^="icon-"], [class*=" icon-"] {
 	@extend %icon-config;
-}
-
-.icon-arrow-down:before {
-	content: $iconArrowDown;
-}
-
-.icon-arrow-up:before {
-	content: $iconArrowUp;
 }

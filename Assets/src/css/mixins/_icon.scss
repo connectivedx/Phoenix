@@ -1,0 +1,22 @@
+// @category mixins
+
+// @function icon
+// Adds and icon as pseudo element content as well as any passed styles
+// @param $icon {String} The name of the icon as defined in its icon map.
+// @param pseudo {String} The name of the pseduo element you want to target, either 'before' or 'after'
+// @param iconMap {String} The name of the icon map to retrieve the icon from. Defaults to $icons.
+// @usage
+// =icon(arrowUp) will return "\e601"
+// =icon(facebook, (iconMap: $socialIcons)) will return :before { content: "\e708" }
+// =icon(arrowUp, (pseudo: 'after')) { color: red; } will return :after { content: "\e601"; color: red;}
+@mixin icon($name, $options: ()) {
+	$options: map-merge((
+		pseudo: 'before',
+		iconMap: $icons
+	), $options);
+
+	&:#{map-get($options, pseudo)} {
+		content: icon($name, map-get($options, iconMap));
+		@content; // allows additional CSS declarations to be passed
+	}
+}

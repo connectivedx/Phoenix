@@ -198,19 +198,6 @@
 											</li>
 										</ol>
 									</li>
-									<li>
-										<label for="options-2" class="label-large">Large label for radio options</label>
-										<ol class="radio-list">
-											<li>
-												<input type="radio" name="options-2" id="radio-option-1-2" value="option 1">
-												<label for="radio-option-1-2" class="label-large">Large labels scale nicely and wrap properly</label>
-											</li>
-											<li>
-												<input type="radio" name="options-2" id="radio-option-2-2" value="option 2">
-												<label for="radio-option-2-2" class="label-large">Large labels scale nicely and wrap properly</label>
-											</li>
-										</ol>
-									</li>
 								</ol>
 							</fieldset>
 						</li>
@@ -228,19 +215,6 @@
 											<li>
 												<input type="checkbox" name="checkbox" id="checkbox-option-2" value="option 2">
 												<label for="checkbox-option-2">Option 2</label>
-											</li>
-										</ol>
-									</li>
-									<li>
-										<label for="checkbox-2" class="label-large">Large label for checkboxes</label>
-										<ol class="checkbox-list">
-											<li>
-												<input type="checkbox" name="checkbox-2" id="checkbox-option-1-2" value="option 1">
-												<label for="checkbox-option-1-2" class="label-large">Large labels scale nicely and wrap properly</label>
-											</li>
-											<li>
-												<input type="checkbox" name="checkbox-2" id="checkbox-option-2-2" value="option 2">
-												<label for="checkbox-option-2-2" class="label-large">Large labels scale nicely and wrap properly</label>
 											</li>
 										</ol>
 									</li>

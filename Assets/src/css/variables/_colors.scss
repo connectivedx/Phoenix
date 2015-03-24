@@ -2,13 +2,13 @@
 
 // @function colors
 // The color palette for the project.
-// @param $colorPrimary {Color} The color palette's primary color.
-// @param $colorSecondary {Color} The color palette's secondary color.
-// @param $colorGreyLight {Color} A light grey intended for use as a shaded background color.
-// @param $colorGreyMedium {Color} A medium grey intended for use as a border or accent color in conjunction with $colorGreyLight.
-// @param $colorGreyDark {Color} A dark grey intended for us as a text or border color in conjunction with $colorGreyLight or $colorGreyMedium.
-$colorPrimary: #a81e23;
-$colorSecondary: #d1d2d4;
-$colorGreyLight: #eeeeee;
-$colorGreyMedium: #cccccc;
-$colorGreyDark: #6d6d6d;
+// @param $colors {Map} All project color variables represented as pairs with a color name and its corresponding value.  [String hex|rgb(a)|hsl(a)]
+// NOTE: functions/_color.scss uses the $colors map by default, so if this variable name changes, that function will need to be changed as well.
+
+$colors: (
+	primary: #a81e23,
+	secondary: #d1d2d4,
+	greyLight: #eeeeee,
+	greyMedium: #cccccc,
+	greyDark: #6d6d6d
+);
