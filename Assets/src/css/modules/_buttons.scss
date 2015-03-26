@@ -1,10 +1,14 @@
-// @category modules
+/**
+ * Default Button:
+ * `%button-config`<br>Sets up default buttons styles. Applied to `button` and `.btn`. Additional button styles extend this.
+ *
+ *		@example
+ *		<div>
+ *			<button>I&rsquo;m a Button</button>
+ *			<a class="btn">I&rsquo;m a link</a>
+ *		</div>
+ */
 
-// @function buttons
-// Class used for rendering a button-shaped element.  Can be used on any element, but is most appropriate with anchors, buttons, and spans.
-// @usage
-// <span class="btn">Button</span>
-// <span class="btn-secondary">Button-secondary</span>
 %button-config {
 	border-radius: $formElementBorderRadius;
 	border-style: none;
@@ -16,6 +20,16 @@
 	text-align: center;
 	text-decoration: none;
 
+	/**
+	 * Full Width Button:
+	 * `.btn-full-width`<br>Extends `%button-config` to display the full width of its parent.
+	 *
+	 *		@example
+	 *		<div>
+ 	 *			<a class="btn btn-full-width">Full Width Primary Button</a>
+ 	 *			<a class="btn-secondary btn-full-width">Full Width Secondary Button</a>
+ 	 *		</div>
+	 */
 	&.btn-full-width {
 		display: block;
 		margin-right: 0;
@@ -27,6 +41,15 @@
 		}
 	}
 
+	/**
+	 * Button Small:
+	 * `.btn-small`
+	 *	<br> A smaller version of the default button style, used in conjunction with `.btn`.
+	 *
+	 *		@example
+ 	 *		<a class="btn btn-small">Small Primary Button</a>
+ 	 *		<a class="btn-secondary btn-small">Small Secondary Button</a>
+	 */
 	&.btn-small {
 		@include font-size(14);
 		padding: em(6 12, (context: 14));
@@ -63,6 +86,14 @@ button,
 	}
 }
 
+
+/**
+ * Button Secondary:
+ * `.btn-secondary` <br> Extends `%button-config` to use secondary color scheme
+ *
+ *     @example
+ *     <a class="btn-secondary">Click Me</a>
+ */
 .btn-secondary {
 	@extend %button-config;
 	background-color: color(secondary);
