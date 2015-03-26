@@ -25,7 +25,7 @@ var configuration = {
 			paths: ['./css/base/**/*.scss', './css/modules/**/*.scss'],
 			watchPaths: ['css/**', 'config.md'],
 			autoClean: true,
-			autoCleanPaths: ['../../documentation/styleguide/*.html']
+			autoCleanPaths: ['../../documentation/style-guide/*.html']
 		},
 		{
 			// fonts are just a plain ol' copy, so they do not need a driver to process them on their way.

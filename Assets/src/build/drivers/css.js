@@ -14,7 +14,7 @@ var CssDriver = {
 		return pipeline
 			.pipe(gulpif(debug, sourcemaps.init()))
 			.pipe(sassdoc({
-				dest: '../../documentation'
+				dest: '../../documentation/api'
 			}))
 			.pipe(sass())
 			.pipe(gulpif(debug, sourcemaps.write('./')))

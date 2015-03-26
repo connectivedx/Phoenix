@@ -3,7 +3,11 @@
 	include_once 'inc/head.php';
 ?>
 	<div class="row">
-		<h1><a href="documentation/">Documentation</a></h1>
+		<h1>Documentation</h1>
+		<ul>
+			<li><a href="documentation/api/">API</a></li>
+			<li><a href="documentation/style-guide/">Style Guide</a></li>
+		</ul>
 		<h1>Sample Pages</h1>
 		<ul>
 			<li><a href="style-guide.php">Style Guide</a></li>
