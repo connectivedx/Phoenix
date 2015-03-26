@@ -3,9 +3,9 @@
 *._*
 
 # Config and documentation
-documentation-sassdoc/*
 web.config
 codekit-config.json
+/documentation
 
 # Built templates
 /*.php

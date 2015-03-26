@@ -1,27 +1,37 @@
+////
+/// @group grid
+////
+
 // Change $gutterWidth to a percentage
 @if unit($gutterWidth) == 'px' {
 	$gutterWidthInPx: $gutterWidth;
 	$gutterWidth: percentage($gutterWidth / $rowMaxWidth);
 }
 @else {
+/// The default gutter width between columns in pixels.  It represents the gutter width at the `$rowMaxWidth`.
+/// @type Pixels
 	$gutterWidthInPx: ceil( ($gutterWidth / 100%) * $rowMaxWidth);
 }
 
-// Return single column width
+/// Calculates the width of a single column.
+/// @return {Percentage} The width of a single column.
 @function oneColumn($options: ()) {
 	$options: map-merge((
+		columns: $columns,
 		includeGutterWidth: true
 	), $options);
 
 	@if map-get($options, includeGutterWidth) == true {
-		@return (100% - (($columns - 1) * $gutterWidth)) / $columns;
+		@return (100% - ((map-get($options, columns) - 1) * $gutterWidth)) / map-get($options, columns);
 	}
 	@else {
-		@return 100% / $columns;
+		@return 100% / map-get($options, columns);
 	}
 }
 
-// Calculate Grid Column Widths
+/// Calculates the width of n columns.
+/// @param {Number} $n - The number of columns for which you wish to calculate the width.
+/// @return {Percentage} The width of n columns.
 @function columns($n, $options: ()){
 	$options: map-merge((
 		includeGutterWidth: true
@@ -36,8 +46,10 @@
 	@return $columnWidth;
 }
 
-// Calculate Push Class Margins
-@function push_x($n, $options: ()) {
+/// Calculates how far to push an element.
+/// @param {Number} $n - The number of columns you wish to push an element.
+/// @return {Percentage} The push amount.
+@function push-x($n, $options: ()) {
 	$options: map-merge((
 		includeGutterWidth: true
 	), $options);
@@ -51,8 +63,11 @@
 	@return $pushAmount;
 }
 
-// Calculate Pull Class Margins
-@function pull_x($n, $width, $options: ()) {
+/// Calculates how far to pull an element.
+/// @param {Number} $n - The number of columns you wish to pull an element.
+/// @param {Number} $width - The width (in columns) of the element being pulled.
+/// @return {Percentage} The pull amount.
+@function pull-x($n, $width, $options: ()) {
 	$options: map-merge((
 		includeGutterWidth: true
 	), $options);
@@ -66,17 +81,18 @@
 	@return -($pullAmount);
 }
 
-// Calculate Centered Class Margins
+/// Calculates the margin to properly center an element.
+/// @param {Number} $n - The width (in columns) of the element being centered.
+/// @return {Percentage} The margin necessary to center an element.
 @function centered($n, $options: ()) {
 	@return 50% - (columns($n, $options) / 2);
 }
 
-// Create class names from column count integers
+/// Create class names from column count integers.
+/// @param {Integer} $n - The number of columns.
+/// @return {String} A word representation of the number of columns requested.
 @function number-as-word($n) {
-	$words: "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven",
-"twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen",
-"twenty", "twenty-one", "twenty-two", "twenty-three", "twenty-four", "twenty-five", "twenty-six", "twenty-seven",
-"twenty-eight", "twenty-nine", "thirty", "thirty-one", "thirty-two", "thirty-three",
-"thirty-four", "thirty-five", "thirty-six";
+	$words: "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty", "twenty-one", "twenty-two", "twenty-three", "twenty-four", "twenty-five", "twenty-six", "twenty-seven", "twenty-eight", "twenty-nine", "thirty", "thirty-one", "thirty-two", "thirty-three", "thirty-four", "thirty-five", "thirty-six";
+
 	@return nth($words, $n);
 }

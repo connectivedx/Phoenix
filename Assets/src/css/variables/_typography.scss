@@ -1,15 +1,27 @@
-// @category variables
+////
+/// @group typography
+////
 
-// @function typography
-// The base typography settings for the project.
-// @param $baseFontSize {Number} The base font-size for the root html element.  [integer]
-// @param $baseFontPercentage {Number} The percentage of the font-size to be used on the root html element, calculated based on $baseFontSize.  [percentage]
-// @param $lineHeight {Number} The base line height for the root html element.  [decimal]
-// @param $baseFontFamily {String} The base font-family for the root html element.
-// @param $listBulletSize {Number} The font-size for unordered list bullets.  [integer]
+/// The base font-size for the root html element.
+/// @type Integer
 $baseFontSize: 16;
+
+/// The percentage of the font-size to be used on the root html element.
+/// @type Percentage
 $baseFontPercentage: percentage($baseFontSize / 16);
+
+/// The base line height for the root html element.
+/// @type Number
 $lineHeight: 1.5;
+
+/// The base font-family for the root html element.
+/// @type String
 $baseFontFamily: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+
+/// The base font-family for icons.
+/// @type String
 $iconFontFamily: 'icomoon';
+
+/// The font-size for unordered list bullets.
+/// @type Integer
 $listBulletSize: 24;

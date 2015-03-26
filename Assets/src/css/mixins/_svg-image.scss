@@ -1,12 +1,10 @@
-// @category mixins
-
-// @mixin svg-image
-// Outputs an SVG image for the given property with a PNG fallback.  Note:  modernizr is required for the PNG fallback.
-// @param $imageName {String} The filename, without an extension, of the image file.
-// @param $property {String} The CSS property to which you wish to apply the image.  Default value: background-image.
-// @usage
-// =svg-image(logo)
-// =svg-image(bullet-blue, (property: list-style-image))
+/// Outputs an SVG image for the given property with a PNG fallback.  Note:  modernizr is required for the PNG fallback.
+/// @param {String} $imageName - The filename, without an extension, of the image file.
+/// @param {String} $property [background-image] - The CSS property to which you wish to apply the image.
+/// @example
+/// svg-image(logo)
+/// @example
+/// svg-image(bullet-blue, (property: list-style-image))
 @mixin svg-image($imageName, $options: ()) {
 	$options: map-merge((
 		property: background-image

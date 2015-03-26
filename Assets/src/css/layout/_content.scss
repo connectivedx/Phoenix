@@ -1,7 +1,3 @@
-// @category layout
-
-// @function content
-// The location to define major column layouts for your main content area.
 .wrapper {
 	@include row((padding: 0));
 }
@@ -163,11 +159,11 @@
 	border: 1px dashed color(primary);
 	padding: $columnPadding;
 
-	@include media(breakpointMedium) {
+	@include media(medium) {
 		width: columns(7, (includeGutterWidth: false));
 	}
 
-	@include media(breakpointLarge) {
+	@include media(large) {
 		width: columns(6, (includeGutterWidth: false));
 	}
 }
@@ -177,7 +173,7 @@
 	background-color: color(secondary);
 	padding: $columnPadding;
 
-	@include media(breakpointExtraLarge) {
+	@include media(extraLarge) {
 		width: columns(1.5, (includeGutterWidth: false));
 	}
 }
@@ -187,11 +183,11 @@
 	background-color: color(secondary);
 	padding: $columnPadding;
 
-	@include media(breakpointMedium) {
+	@include media(medium) {
 		width: columns(5, (includeGutterWidth: false));
 	}
 
-	@include media(breakpointLarge) {
+	@include media(large) {
 		width: columns(3, (includeGutterWidth: false));
 	}
 }
@@ -200,21 +196,12 @@
 	@extend %column-config;
 	padding: $columnPadding;
 
-	@include media(breakpointLarge) {
+	@include media(large) {
 		width: columns(3, (includeGutterWidth: false));
 	}
 
-	@include media(breakpointExtraLarge) {
+	@include media(extraLarge) {
 		width: columns(1.5, (includeGutterWidth: false));
-	}
-}
-
-// supporting classes
-.map {
-	@include aspect-ratio(4, 3);
-
-	img {
-		max-width: none; // resets map controls
 	}
 }
 

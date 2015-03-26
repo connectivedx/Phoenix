@@ -1,7 +1,5 @@
-// @category layout
-
-// @function grid
-// The natural language grid system (using class names like "columns" and "row").  This is enabled or disabled with the $enableGrid variable in /variables/_options.scss.
+/// The natural language grid system (using class names like "columns" and "row").  This is enabled or disabled with the `$enableGrid` variable in `variables/_options.scss`.
+/// @group grid
 @mixin grid {
 	.row {
 		@extend %clearfix;
@@ -62,7 +60,7 @@
 		}
 	}
 
-	@include media(breakpointMedium) {
+	@include media(medium) {
 		.row {
 			margin: 0 auto;
 			max-width: $rowMaxWidth;
@@ -110,26 +108,26 @@
 		.row {
 			@for $i from 1 through $columns - 1 {
 				@if ($enablePush) and (index($enabledPushColumns, $i) or length($enabledPushColumns) == 0 ) {
-					.push_#{number-as-word($i)} {
-						margin-left: push_x($i);
+					.push-#{number-as-word($i)} {
+						margin-left: push-x($i);
 
 						&:first-child {
-							margin-left: push_x($i);
+							margin-left: push-x($i);
 						}
 					}
 				}
 				@if ($enablePull) and (index($enabledPullColumns, $i) or length($enabledPullColumns) == 0 ) {
-					.pull_#{number-as-word($i)} {
+					.pull-#{number-as-word($i)} {
 						// pull classes need to know the width of the container being pulled
 						@for $j from 1 through $columns - 1 {
 							@if $j == 1 and (index($enabledColumns, $j) or length($enabledColumns) == 0 ) {
 								&.one.column {
-									margin-left: pull_x($i, $j);
+									margin-left: pull-x($i, $j);
 								}
 							}
 							@else if (index($enabledColumns, $j) or length($enabledColumns) == 0 ) {
 								&.#{number-as-word($j)}.columns {
-									margin-left: pull_x($i, $j);
+									margin-left: pull-x($i, $j);
 								}
 							}
 						}

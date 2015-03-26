@@ -1,12 +1,10 @@
-// @category functions
-
-// @function parseInt
-// Returns a unitless integer equivalent a measurement.
-// @param $n {Number} A measurement of any kind.  [px|em|percentage]
-// @return {Number} Integer equivalent of $n.  [integer]
-// @usage
-// =parseInt(16px) will return 16
-// @link http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+/// Returns a unitless integer equivalent a measurement.
+/// @param {Pixels | Em | Percentage} $n - A measurement of any kind.
+/// @return {Integer} Integer equivalent of $n.
+/// @example
+/// parseInt(16px)
+/// // 16
+/// @link http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
 @function parseInt($n) {
 	@return $n / ($n * 0 + 1);
 }

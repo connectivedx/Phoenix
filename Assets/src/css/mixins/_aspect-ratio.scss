@@ -1,11 +1,8 @@
-// @category mixins
-
-// @mixin aspect-ratio
-// Creates the necessary dimensions for an element to have a fixed aspect ratio.
-// @param $width {Number} The desired width of the element's aspect ratio.  [px|integer]
-// @param $height {Number} The desired height of the element's aspect ratio.  [px|integer]
-// @usage
-// =aspect-ratio(16, 9)
+/// Creates the necessary dimensions for an element to have a fixed aspect ratio.
+/// @param {Pixels | Integer} $width - The desired width of the element's aspect ratio.
+/// @param {Pixels | Integer} $height - The desired height of the element's aspect ratio.
+/// @example
+/// aspect-ratio(4, 3)
 @mixin aspect-ratio($width, $height) {
 	position: relative;	// context for direct descendant
 

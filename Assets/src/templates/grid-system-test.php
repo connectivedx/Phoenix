@@ -98,8 +98,8 @@
 
 				// display columns
 				if ($i < $gridSize - 1) {
-					echo '<div class="' . $firstColumnWidth . ' ' . $firstColumnText . ' push_' . $secondColumnWidth . '">' . $firstColumnWidth . ' push ' . $secondColumnWidth . '</div>';
-					echo '<div class="' . $secondColumnWidth . ' ' . $secondColumnText . ' pull_' . $firstColumnWidth . '">' . $secondColumnWidth . ' pull ' . $firstColumnWidth . '</div>';
+					echo '<div class="' . $firstColumnWidth . ' ' . $firstColumnText . ' push-' . $secondColumnWidth . '">' . $firstColumnWidth . ' push ' . $secondColumnWidth . '</div>';
+					echo '<div class="' . $secondColumnWidth . ' ' . $secondColumnText . ' pull-' . $firstColumnWidth . '">' . $secondColumnWidth . ' pull ' . $firstColumnWidth . '</div>';
 				}
 
 				// end row
