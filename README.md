@@ -45,7 +45,7 @@ This project would not be possible without contributions from these open-source 
 ## Phoenix
 Phoenix is licensed under The MIT License (MIT), unless otherwise noted below.
 
-Copyright (c) 2014 ISITE Design, Inc.
+Copyright (c) 2015 ISITE Design, Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
