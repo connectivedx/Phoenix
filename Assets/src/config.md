@@ -11,9 +11,12 @@
 ### Body
 
 	section.wrapper
-		div.row
-		    h1 Phoenix Style Guide
+        div.row
+            div.eight.columns.centered
+                a(href='../../index.php')
+                    img(src='../../Assets/dist/img/content/logo-placeholder.png' srcset='../../Assets/dist/img/content/logo-placeholder@2x.png 2x').img-align-center
 
+		div.row
 		    div#styleguides(sg-content)
 
     script(src='/Assets/dist/js/main.js')
