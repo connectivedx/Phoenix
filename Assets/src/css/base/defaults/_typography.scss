@@ -1,3 +1,92 @@
+/***
+ * Typography:
+ */
+
+/**
+ *	Headings:
+ *	Default heading styles.
+ *
+ *		@example
+ *		<h1>Level 1 Heading</h1>
+ *		<h2>Level 2 Heading</h2>
+ *		<h3>Level 3 Heading</h3>
+ *		<h4>Level 4 Heading</h4>
+ *
+ */
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 300;
+	line-height: 1;
+	margin-top: 0;
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+h1 {
+	@include font-size(44);
+	margin-top: em(28, (context: 44));
+
+	small {
+		display: block;
+	}
+}
+h2 {
+	@include font-size(36);
+	margin-top: em(28, (context: 36));
+}
+h3 {
+	@include font-size(24);
+	margin-top: em(28, (context: 24));
+}
+h4 {
+	@include font-size(14);
+	margin-top: em(28, (context: 14));
+}
+
+h2, h3 {
+	@include media(print) {
+		page-break-after: avoid;
+	}
+}
+
+
+/**
+ * Paragraphs:
+ * Our default paragraph styles. Also shows default emphasis and strong styles in context.
+ *
+ *		@example
+ *		<h1>Level 1 Heading</h1>
+ *		<p>This is a paragraph of text. Some of the text may be <em>emphasized</em>&nbsp;and some it might even be <strong>strongly emphasized</strong>. Occasionally <q>quoted text</q> may be found within a paragraph …and of course <a href="#">a link</a>&nbsp;may appear at any point in the text. The average paragraph contains five or six sentences although some may contain as little or one or two while others carry on for anything up to ten sentences and beyond.</p>
+ *
+ *		<h2>Level 2 Heading</h2>
+ *		<p>This is a paragraph of text. Some of the text may be <em>emphasized</em>&nbsp;and some it might even be <strong>strongly emphasized</strong>. Occasionally <q>quoted text</q> may be found within a paragraph …and of course <a href="#">a link</a>&nbsp;may appear at any point in the text. The average paragraph contains five or six sentences although some may contain as little or one or two while others carry on for anything up to ten sentences and beyond.</p>
+ *
+ *		<h3>Level 3 Heading</h3>
+ *		<p>This is a paragraph of text. Some of the text may be <em>emphasized</em>&nbsp;and some it might even be <strong>strongly emphasized</strong>. Occasionally <q>quoted text</q> may be found within a paragraph …and of course <a href="#">a link</a>&nbsp;may appear at any point in the text. The average paragraph contains five or six sentences although some may contain as little or one or two while others carry on for anything up to ten sentences and beyond.</p>
+ *
+ *		<h4>Level 4 Heading</h4>
+ *		<p>This is a paragraph of text. Some of the text may be <em>emphasized</em>&nbsp;and some it might even be <strong>strongly emphasized</strong>. Occasionally <q>quoted text</q> may be found within a paragraph …and of course <a href="#">a link</a>&nbsp;may appear at any point in the text. The average paragraph contains five or six sentences although some may contain as little or one or two while others carry on for anything up to ten sentences and beyond.</p>
+ *
+ */
+p {
+	margin: em(12) 0 0;
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+
+/**
+ * Anchor Links:
+ * Default anchor link styles
+ *
+ *		@example
+ *		<a href="#">I'm a link.</a>
+ *		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#">I&rsquo;m a link in a paragraph.</a>&nbsp;Nisi commodi optio pariatur numquam officiis cum amet delectus, voluptatem minus laudantium cupiditate ad eum velit, et ipsa necessitatibus enim. Aliquam, facilis!</p>
+ */
 a {
 	color: black;
 	@include transition((property: color));
@@ -29,62 +118,11 @@ a {
 
 }
 
-p {
-	margin: em(12) 0 0;
-
-	&:first-child {
-		margin-top: 0;
-	}
-}
-/**
- *	Headings:
- *	Default heading styles.
- *
- *		@example
- *		<h1>Level 1 Heading</h1>
- */
-
-h1, h2, h3, h4, h5, h6 {
-	font-weight: 300;
-	line-height: 1;
-	margin-top: 0;
-
-	&:first-child {
-		margin-top: 0;
-	}
-}
 
 p, h2, h3, h4 {
 	@include media(print) {
 		orphans: 3;
 		widows: 3;
-	}
-}
-
-h1 {
-	@include font-size(44);
-	margin-top: em(28, (context: 44));
-
-	small {
-		display: block;
-	}
-}
-h2 {
-	@include font-size(36);
-	margin-top: em(28, (context: 36));
-}
-h3 {
-	@include font-size(24);
-	margin-top: em(28, (context: 24));
-}
-h4 {
-	@include font-size(14);
-	margin-top: em(28, (context: 14));
-}
-
-h2, h3 {
-	@include media(print) {
-		page-break-after: avoid;
 	}
 }
 
