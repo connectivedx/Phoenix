@@ -10,7 +10,6 @@
 		</ul>
 		<h1>Sample Pages</h1>
 		<ul>
-			<li><a href="style-guide.php">Style Guide</a></li>
 			<li><a href="grid-system-test.php">Grid System Test</a></li>
 			<li>
 				Semantic Grid System Test
