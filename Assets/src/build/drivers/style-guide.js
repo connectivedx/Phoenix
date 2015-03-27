@@ -7,7 +7,7 @@ var StyleGuideDriver = {
 	build: function(pipeline, debug) {
 		return pipeline
 			.pipe(styledown({
-				config: 'config.md',
+				config: './css/style-guide.scss',
 				filename: '../../documentation/style-guide/index.html'
 			}));
 	}
