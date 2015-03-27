@@ -33,31 +33,17 @@
 				padding: 0;
 			}
 		}
+
 		.centered {
 			margin: 0;
 		}
 	}
+
 	.column,
 	.columns {
+		@extend %clearfix;
 		margin-top: $gutterWidthInPx;
 		padding: $columnPadding;
-
-		&:last-child {
-			float: none;
-		}
-	}
-
-	[class*="column"] {
-		+ [class*="column"]:last-child {
-			float: none;
-		}
-		&:before {
-			display: table;
-		}
-		&:after {
-			clear: both;
-			display: table;
-		}
 	}
 
 	@include media(medium) {
@@ -73,9 +59,8 @@
 
 		.column,
 		.columns {
-			float: $defaultFloat !important;
+			@extend %column-config;
 			margin-left: $gutterWidth;
-			min-height: 1px;
 
 			&:first-child,
 			&.flush {
