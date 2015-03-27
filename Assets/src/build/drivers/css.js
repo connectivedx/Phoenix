@@ -14,7 +14,17 @@ var CssDriver = {
 		return pipeline
 			.pipe(gulpif(debug, sourcemaps.init()))
 			.pipe(sassdoc({
-				dest: '../../documentation/api'
+				dest: '../../documentation/api',
+				groups: {
+					"grid": "Grid System",
+					"semantic-grid": "Semantic Grid System",
+					"measurements": "Measurements",
+					"options": "Options",
+					"transitions": "Transitions",
+					"typography": "Typography",
+					"undefined": "Helper"
+				},
+				sort: ["group", "file"]
 			}))
 			.pipe(sass())
 			.pipe(gulpif(debug, sourcemaps.write('./')))
