@@ -2,14 +2,6 @@
 /// @group semantic-grid
 ////
 
-/// Defines defaults for column elements.
-%column-config {
-	float: $defaultFloat;
-	margin: 0;
-	min-height: 1px;
-	width: 100%;
-}
-
 /// Creates a semantic-grid row.
 /// @param {String} $nested [false] - Whether or not the row will be nested within other rows.
 /// @param {Pixels | Ems} $padding [$gutterInPx] - A padding override to be set on the row.
