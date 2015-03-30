@@ -1,11 +1,16 @@
-// @category modules
+/***
+ * Badges:
+ */
 
-// @function badges
-// Renders a badge that can be used as a label, notification count, or tag.
-// @usage
-// <span class="badge-primary">Badge-primary</span>
-// <span class="badge-secondary">Badge-secondary</span>
-// <span class="badge-tertiary">Badge-tertiary</span>
+/**
+ * Default Badge:
+ * `%badge-config`<br>
+ * Renders a badge that can be used as a label, notification count, or tag. Similar in style to a button, but smaller, with rounded corners.
+ *
+ *		@example
+ *		<span class="badge-primary">I&rsquo;m a badge!</span>
+ */
+
 $badgeBorderRadius: 8px;
 
 %badge-config {
@@ -17,12 +22,28 @@ $badgeBorderRadius: 8px;
 	padding: em(6, (context: 12));
 }
 
+/**
+ * Badge Primary:
+ * `.badge-primary`<br>
+ * Extends `%badge-config` and uses the primary color variable as background color.
+ *
+ *		@example
+ *		<span class="badge-primary">Badge-primary</span>
+ */
 .badge-primary {
 	@extend %badge-config;
 	background-color: color(primary);
 	color: white;
 }
 
+/**
+ * Badge Secondary:
+ * `.badge-secondary`<br>
+ * Extends `%badge-config` and uses the secondary color variable as background color.
+ *
+ *		@example
+ *		<span class="badge-secondary">Badge-primary</span>
+ */
 .badge-secondary {
 	@extend %badge-config;
 	background-color: color(secondary);
