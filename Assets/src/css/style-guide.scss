@@ -28,14 +28,14 @@
  */
 
  button.sg-expando {
- 	&:hover,
- 	&:focus,
- 	&:active {
-	 	background-color: transparent;
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: transparent;
 	}
  }
 
  .sg-section-table-of-contents .sg-code,
  .sg-section-table-of-contents .sg-expando {
- 	display: none;
+	display: none;
  }
