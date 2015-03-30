@@ -23,10 +23,8 @@
  *				div#styleguides(sg-content)
  *
  *		script(src='../../Assets/dist/js/main.js')
- *	    script.
- *			// changes title tag value because styledown doesn't have that as an option
- * 			var title = document.getElementsByTagName('title');
- *			$(title).text('Phoenix Style Guide');
+ *		script(src='../../Assets/dist/js/style-guide.js')
+ *
  */
 
  button.sg-expando {
