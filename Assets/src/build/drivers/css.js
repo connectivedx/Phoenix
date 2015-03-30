@@ -24,6 +24,7 @@ var CssDriver = {
 					"typography": "Typography",
 					"undefined": "Helper"
 				},
+				shortcutIcon: "../../Assets/dist/img/content/favicon.png",
 				sort: ["group", "file"]
 			}))
 			.pipe(sass())
