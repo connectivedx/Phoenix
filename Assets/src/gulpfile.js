@@ -23,7 +23,7 @@ var configuration = {
 		{
 			driver: 'style-guide',
 			paths: ['./css/style.scss', './css/base/**/*.scss', './css/modules/**/*.scss'],
-			watchPaths: ['css/**', './css/style-guide.css'],
+			watchPaths: ['css/**', './css/style-guide.scss'],
 			autoClean: true,
 			autoCleanPaths: ['../../documentation/style-guide/*.html']
 		},
