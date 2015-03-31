@@ -1,7 +1,16 @@
-// @category modules
+/***
+ * Callout:
+ */
 
-// @function callout
-// Class used for calling out a specific portion of the page.
+/**
+ * Callout:
+ * `.callout`<br>
+ * Class used for calling out a specific portion of the page.
+ *
+ *		@example
+ *		<div class="callout"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, pariatur, accusantium. Esse dolorum quae adipisci, fugiat vel voluptates dolorem animi sapiente quam deserunt incidunt ex eveniet, similique maiores eos, distinctio.</p></div>
+ *
+ */
 .callout {
 	background: color(greyLight);
 	margin-top: em(10);
