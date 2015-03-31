@@ -265,8 +265,8 @@ fieldset:not(#foo) {
 
 /**
  * Selects:
- * `.decorator-select`<br>
- * Unless otherwise specified, selects are wrapped with a `<div class="decorator-select" />` on page load, via JavaScript. This allows for easy and consistant cross-browser customization.
+ * `.decorator-select`
+ * <p>Unless otherwise specified, selects are wrapped with a `<div class="decorator-select" />` on page load, via JavaScript. This allows for easy and consistant cross-browser customization.</p>
  *
  *		@example
  *		<div class="two-up">

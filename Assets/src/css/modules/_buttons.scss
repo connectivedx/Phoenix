@@ -4,7 +4,8 @@
 
 /**
  * Default Button:
- * `%button-config`<br>Sets up default buttons styles. Applied to `button` and `.btn`. Additional button styles extend this.
+ * `%button-config`
+ * <p>Sets up default buttons styles. Applied to `button` and `.btn`. Additional button styles extend this.</p>
  *
  *		@example
  *		<div>
@@ -26,7 +27,8 @@
 
 	/**
 	 * Full Width Button:
-	 * `.btn-full-width`<br>Extends `%button-config` to display the full width of its parent.
+	 * `.btn-full-width`
+	 * <p>Extends `%button-config` to display the full width of its parent.</p>
 	 *
 	 *		@example
 	 *		<div>
@@ -47,7 +49,7 @@
 	/**
 	 * Button Small:
 	 * `.btn-small`
-	 *	<br> A smaller version of the default button style, used in conjunction with `.btn`.
+	 *	<p>A smaller version of the default button style, used in conjunction with `.btn`.</p>
 	 *
 	 *		@example
  	 *		<a class="btn btn-small">Small Primary Button</a>
@@ -92,7 +94,8 @@ button,
 
 /**
  * Button Secondary:
- * `.btn-secondary` <br> Extends `%button-config` to use secondary color scheme
+ * `.btn-secondary`
+ * <p>Extends `%button-config` to use secondary color scheme</p>
  *
  *     @example
  *     <a class="btn-secondary">Click Me</a>
