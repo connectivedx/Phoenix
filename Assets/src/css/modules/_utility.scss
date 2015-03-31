@@ -1,7 +1,16 @@
-// @category modules
+/***
+ * Utilities:
+ */
 
-// @function utility
-// The place for general utility classes.
+/**
+ * Accessibility:
+ * `.accessibility`
+ * <p>Visually hides content but allows it to remain accessible to screen readers and other non-visual browsing devices.</p>
+ *
+ *		@example
+ *		<p>This sentence is followed by a span with the accessibility class applied to it. <span class="accessibility">I'm visually hidden but still available for scree readers.</span></p>
+ *
+ */
 .accessibility {
     height: 0;
     left: -999em;
@@ -9,6 +18,16 @@
     position: absolute;
 }
 
+/**
+ * Dividers:
+ * `%divider-config, .divider, .divider-secondary`
+ * <p>Applies a horizontal stroke and some padding to an element&rsquo;s top edge.</p>
+ *
+ *		@example
+ *		<div class="divider"><p>Divider</p></div>
+ *		<div class="divider-secondary"><p>Divider secondary</p></div>
+ *
+ */
 %divider-config {
 	border: none;	// reset border to none; this allows the class to be used on horizontal rules
 	margin-top: $columnPadding * 2;
@@ -39,13 +58,116 @@
 	width: 100%;
 }
 
-.map {
+/**
+ * Maps:
+ * `.map-container`
+ * <p>Responsive map container for maintaining aspect ratio on all resolutions.</p>
+ *
+ *		@example
+ *		<h3>Map with 4:3 aspect ratio</h3>
+ *		<div class="map-container">
+ *			<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1397.4432998107925!2d-122.69317991642879!3d45.532487514497674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sisite+design!5e0!3m2!1sen!2sus!4v1391532768363" frameborder="0" style="border:0"></iframe>
+ *		</div>
+ *
+ */
+.map-container {
 	@include aspect-ratio(4, 3);
 
 	img {
 		max-width: none; // resets map controls
 	}
 }
+
+/**
+ * Videos:
+ * `.video-container`
+ * <p>Responsive video container for maintaining aspect ratio on all resolutions.</p>
+ *
+ *		@example
+ *		<h3>Video with 16:9 aspect ratio</h3>
+ *		<div class="video-container">
+ *			<iframe src="//www.youtube.com/embed/Xz6jt_aSFg0" frameborder="0" allowfullscreen=""></iframe>
+ *		</div>
+ *
+ */
+.video-container {
+	@include aspect-ratio(16, 9);
+}
+
+/**
+ * Quick Column Layouts:
+ * `.two-up, .three-up, .four-up`
+ * <p>Classes are available to build quick column layouts that flow naturally on all resolutions. The classes are two-up, three-up, and four-up. They signify how many elements will be displayed side-by-side at the highest resolution. As in the below examples, the classes are placed on the elements for which you wish to apply the specified number of side-by-side elements.</p>
+ * <p><strong>NOTE:</strong>&nbsp;these elements must be placed in a wrapping container for the proper spacing and flow.</p>
+ *
+ *		@example
+ *		<h2>.two-up</h2>
+ *		<div class="wrapper">
+ *			<div class="two-up">
+ *				<img src="http://fpoimg.com/700x250?text=Two-Up" alt="">
+ *			</div>
+ *			<div class="two-up">
+ *				<img src="http://fpoimg.com/700x250?text=Two-Up" alt="">
+ *			</div>
+ *			<div class="two-up">
+ *				<img src="http://fpoimg.com/700x250?text=Two-Up" alt="">
+ *			</div>
+ *			<div class="two-up">
+ *				<img src="http://fpoimg.com/700x250?text=Two-Up" alt="">
+ *			</div>
+ *		</div>
+ *
+ *		<h2>.three-up</h2>
+ *		<div class="wrapper">
+ *			<div class="three-up">
+ *				<img src="http://fpoimg.com/700x250?text=Three-Up" alt="">
+ *			</div>
+ *			<div class="three-up">
+ *				<img src="http://fpoimg.com/700x250?text=Three-Up" alt="">
+ *			</div>
+ *			<div class="three-up">
+ *				<img src="http://fpoimg.com/700x250?text=Three-Up" alt="">
+ *			</div>
+ *			<div class="three-up">
+ *				<img src="http://fpoimg.com/700x250?text=Three-Up" alt="">
+ *			</div>
+ *			<div class="three-up">
+ *				<img src="http://fpoimg.com/700x250?text=Three-Up" alt="">
+ *			</div>
+ *			<div class="three-up">
+ *				<img src="http://fpoimg.com/700x250?text=Three-Up" alt="">
+ *			</div>
+ *		</div>
+ *
+ *		<h2>.four-up</h2>
+ *		<div class="wrapper">
+ *			<div class="four-up">
+ *				<img src="http://fpoimg.com/700x250?text=Four-Up" alt="">
+ *			</div>
+ *			<div class="four-up">
+ *				<img src="http://fpoimg.com/700x250?text=Four-Up" alt="">
+ *			</div>
+ *			<div class="four-up">
+ *				<img src="http://fpoimg.com/700x250?text=Four-Up" alt="">
+ *			</div>
+ *			<div class="four-up">
+ *				<img src="http://fpoimg.com/700x250?text=Four-Up" alt="">
+ *			</div>
+ *			<div class="four-up">
+ *				<img src="http://fpoimg.com/700x250?text=Four-Up" alt="">
+ *			</div>
+ *			<div class="four-up">
+ *				<img src="http://fpoimg.com/700x250?text=Four-Up" alt="">
+ *			</div>
+ *			<div class="four-up">
+ *				<img src="http://fpoimg.com/700x250?text=Four-Up" alt="">
+ *			</div>
+ *			<div class="four-up">
+ *				<img src="http://fpoimg.com/700x250?text=Four-Up" alt="">
+ *			</div>
+ *		</div>
+ *
+ */
 
 // space, in columns, between quick column elements
 $quickColumnGapWidth: 0.3;
