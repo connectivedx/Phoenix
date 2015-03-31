@@ -1,3 +1,37 @@
+/***
+ * Lists:
+ */
+
+/**
+ * Unordered Lists:
+ * `<ul>...</ul>`
+ *
+ *		@example
+ *		<ul>
+ *			<li>Short Item in the list</li>
+ *			<li><a href="#">Short Item in the list</a></li>
+ *			<li>Short Item in the list</li>
+ *			<li><a href="#">Short Item in the list</a></li>
+ *			<li>Short Item in the list</li>
+ *			<li>Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the listReally long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list</li>
+ *		</ul>
+ */
+
+/**
+ * Ordered Lists:
+ * `<ol>...</ol>`
+ *
+ *		@example
+ *		<ol>
+ *			<li>Short Item in the list</li>
+ *			<li><a href="#">Short Item in the list</a></li>
+ *			<li>Short Item in the list</li>
+ *			<li><a href="#">Short Item in the list</a></li>
+ *			<li>Short Item in the list</li>
+ *			<li>Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the listReally long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list</li>
+ *		</ol>
+ */
+
 ul {
 	list-style-image: none;
 	list-style: none;
