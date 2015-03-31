@@ -1,7 +1,57 @@
+/***
+ * Responsive Tabs:
+ * <p>A tab system that works on all resolutions.  On lower resolutions, the tabs turn into an accordion.</p>
+ */
+
+/**
+ * Horizontal Tabs:
+ *
+ *		@example
+ *		<div class="responsive-tabs responsive-tabs-horizontal">
+ *			<h3>Tab 1</h3>
+ *			<div>Tab 1 content</div>
+ *			<h3>Tab 2</h3>
+ *			<div>Tab 2 content</div>
+ *			<h3>Tab 3</h3>
+ *			<div class="responsive-tabs__panel--active">Tab 3 content</div>
+ *		</div>
+ *
+ */
+
+ /**
+ * Vertical Tabs&mdash;Left:
+ *
+ *		@example
+ *		<div class="responsive-tabs responsive-tabs-vertical-left">
+ *			<h3>Tab 1</h3>
+ *			<div>Tab 1 content</div>
+ *			<h3>Tab 2</h3>
+ *			<div class="responsive-tabs__panel--active">Tab 2 content</div>
+ *			<h3>Tab 3</h3>
+ *			<div>Tab 3 content</div>
+ *		</div>
+ *
+ */
+
+  /**
+ * Vertical Tabs&mdash;Right:
+ *
+ *		@example
+ *		<div class="responsive-tabs responsive-tabs-vertical-right">
+ *			<h3>Tab 1</h3>
+ *			<div>Tab 1 content</div>
+ *			<h3>Tab 2</h3>
+ *			<div class="responsive-tabs__panel--active">Tab 2 content</div>
+ *			<h3>Tab 3</h3>
+ *			<div>Tab 3 content</div>
+ *		</div>
+ *
+ */
+
 // @category modules
 
 // @function responsive-tabs
-// A tab system that works on all resolutions.  On lower resolutions, the tabs turn into an accordion.
+// 
 
 // general settings
 $tabBorderColor: black;
