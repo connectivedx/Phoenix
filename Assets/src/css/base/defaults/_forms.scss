@@ -1,5 +1,6 @@
 /***
  * Forms:
+ * <p>All forms fields should be contained within a `fieldset`. If there are multiple fields, those should be defined within an ordered list.</p>
  */
 
 form {
@@ -8,8 +9,7 @@ form {
 
 
 /**
- * Form Fields:
- * All forms fields should be contained within a `fieldset`. If there are multiple fields, those should be defined within an ordered list.
+ * Standard Form Fields:
  *
  *		@example
  *		<form action="#">
@@ -17,11 +17,11 @@ form {
  *				<legend>Text Input</legend>
  *				<h3>Text Inputs</h3>
  *				<ol>
- *					<li class="two-up">
+ *					<li>
  *						<label for="testinput">Label for the input</label>
  *						<input type="text" id="testinput" placeholder="Placeholder for the input">
  *					</li>
- *					<li class="two-up">
+ *					<li>
  *						<label for="testtextarea">Label for the Textarea</label>
  *						<textarea id="testtextarea" cols="30" rows="5" placeholder="Placeholder for the textarea"></textarea>
  *					</li>
@@ -31,7 +31,7 @@ form {
  *				<legend>Selects, Radios, Checkboxes</legend>
  *				<h3>Selects, Radios, Checkboxes</h3>
  *				<ol>
- *					<li class="two-up">
+ *					<li>
  *						<fieldset>
  *							<legend>Select one of the following:</legend>
  *							<ol>
@@ -51,7 +51,7 @@ form {
  *							</ol>
  *						</fieldset>
  *					</li>
- *					<li class="two-up">
+ *					<li>
  *						<fieldset>
  *							<legend>Select at least one of the following:</legend>
  *							<ol>
