@@ -42,7 +42,7 @@ $badgeBorderRadius: 8px;
  * <p>Extends `%badge-config` and uses the secondary color variable as background color.</p>
  *
  *		@example
- *		<span class="badge-secondary">Badge-primary</span>
+ *		<span class="badge-secondary">Badge-secondary</span>
  */
 .badge-secondary {
 	@extend %badge-config;
