@@ -5,14 +5,10 @@
 /**
  * Tooltips:
  * `.tooltip | .tipsy`
- * <p>A tooltip system based on <a href="http://onehackoranother.com/projects/jquery/tipsy/">Tipsy</a>.</p>
+ * <p>A tooltip system based on <a href="http://onehackoranother.com/projects/jquery/tipsy/">Tipsy</a>. Can only be used on anchor links.</p>
  *
  *		@example
- *		<ul>
- *			<li>
- *				<a href="#" class="tooltip-tipsy" original-title="This is a tooltip">Tipsy</a>
- *			</li>
- *		</ul>
+ *		<p><a href="#" class="tooltip-tipsy" original-title="This is a tooltip">Hover over me&hellip;</a></p>
  *
  */
 
