@@ -1,7 +1,113 @@
+/***
+ * Forms:
+ */
+
 form {
 	margin: 0;
 }
 
+
+/**
+ * Form Fields:
+ * All forms fields should be contained within a `fieldset`. If there are multiple fields, those should be defined within an ordered list.
+ *
+ *		@example
+ *		<form action="#">
+ *			<fieldset>
+ *				<legend>Text Input</legend>
+ *				<h3>Text Inputs</h3>
+ *				<ol>
+ *					<li class="two-up">
+ *						<label for="testinput">Label for the input</label>
+ *						<input type="text" id="testinput" placeholder="Placeholder for the input">
+ *					</li>
+ *					<li class="two-up">
+ *						<label for="testtextarea">Label for the Textarea</label>
+ *						<textarea id="testtextarea" cols="30" rows="5" placeholder="Placeholder for the textarea"></textarea>
+ *					</li>
+ *				</ol>
+ *			</fieldset>
+ *			<fieldset>
+ *				<legend>Selects, Radios, Checkboxes</legend>
+ *				<h3>Selects, Radios, Checkboxes</h3>
+ *				<ol>
+ *					<li class="two-up">
+ *						<fieldset>
+ *							<legend>Select one of the following:</legend>
+ *							<ol>
+ *								<li>
+ *									<label for="options">Label for the radio options</label>
+ *									<ol class="radio-list">
+ *										<li>
+ *											<input type="radio" name="options" id="radio-option-1" value="option 1">
+ *											<label for="radio-option-1">Option 1</label>
+ *										</li>
+ *										<li>
+ *											<input type="radio" name="options" id="radio-option-2" value="option 2">
+ *											<label for="radio-option-2">Option 2</label>
+ *										</li>
+ *									</ol>
+ *								</li>
+ *							</ol>
+ *						</fieldset>
+ *					</li>
+ *					<li class="two-up">
+ *						<fieldset>
+ *							<legend>Select at least one of the following:</legend>
+ *							<ol>
+ *								<li>
+ *									<label for="checkbox">Label for the checkbox</label>
+ *									<ol class="checkbox-list">
+ *										<li>
+ *											<input type="checkbox" name="checkbox" id="checkbox-option-1" value="option 1">
+ *											<label for="checkbox-option-1">Option 1</label>
+ *										</li>
+ *										<li>
+ *											<input type="checkbox" name="checkbox" id="checkbox-option-2" value="option 2">
+ *											<label for="checkbox-option-2">Option 2</label>
+ *										</li>
+ *									</ol>
+ *								</li>
+ *							</ol>
+ *						</fieldset>
+ *					</li>
+ *					<li>
+ *						<fieldset>
+ *						<legend>Inline Checkboxes and Radio Buttons</legend>
+ *						<h3>Inline Checkboxes and Radio Buttons</h3>
+ *						<ol>
+ *							<li>
+ *								<label for="options">Label for the radio options</label>
+ *								<ol class="radio-list">
+ *									<li>
+ *										<input type="radio" name="inline-options" id="inline-radio-option-1" value="option 1">
+ *										<label for="inline-radio-option-1" class="inline">Option 1</label>
+ *										<input type="radio" name="inline-options" id="inline-radio-option-2" value="option 2">
+ *										<label for="inline-radio-option-2" class="inline">Option 2</label>
+ *									</li>
+ *								</ol>
+ *							</li>
+ *							<li>
+ *								<label for="checkbox">Label for the checkbox</label>
+ *								<ol class="checkbox-list">
+ *									<li>
+ *										<input type="checkbox" name="inline-checkbox" id="inline-checkbox-option-1" value="option 1">
+ *										<label for="inline-checkbox-option-1" class="inline">Option 1</label>
+ *										<input type="checkbox" name="inline-checkbox" id="inline-checkbox-option-2" value="option 2">
+ *										<label for="inline-checkbox-option-2" class="inline">Option 2</label>
+ *									</li>
+ *								</ol>
+ *							</li>
+ *						</ol>
+ *						</fieldset>
+ *					</li>
+ *				</ol>
+ *			</fieldset>
+ *		</form>
+ *
+ */
+
+ // default styles, applied to all browsers
 fieldset {
 	border: none;
 	margin: em(12) 0 0;
@@ -37,6 +143,11 @@ fieldset {
 	label,
 	label + select {
 		display: block;
+	}
+
+	label.inline {
+		display: inline-block;
+		padding-right: 5px;
 	}
 
 	input[type="text"],
@@ -86,6 +197,191 @@ fieldset {
 				margin-left: em(4);
 				min-height: 20px;
 			}
+			& + span {
+				margin-left: em(4);
+				min-height: 20px;
+			}
 		}
+	}
+}
+
+// modern browser styles
+// IE9 and newer supported; IE8 and lower will have standard form elements
+// :not() targets > IE8, #foo is just a random ID
+fieldset:not(#foo) {
+	input[type="radio"],
+	input[type="checkbox"] {
+		float: left;
+		height: 1px;
+		margin: 0;
+		opacity: 0;
+		padding: 0;
+		width: 1px;
+
+		& + label {
+			clear: none;
+			display: block;
+			padding: em(6) em(5) em(4) em(27);
+
+			&:before {
+				@extend %icon-config-modern-browsers;
+				margin-left: em(-28);
+				margin-right: em(8);
+			}
+
+			&.inline {
+				display: inline-block;
+			}
+		}
+	}
+
+	input[type="radio"] {
+		& + label {
+			@include icon(radioUnchecked);
+		}
+		&:active + label,
+		&:focus + label {
+			color: color(primary);
+		}
+		&:checked + label {
+			@include icon(radioChecked);
+		}
+	}
+
+	input[type="checkbox"] {
+		& + label {
+			@include icon(checkboxUnchecked);
+		}
+		&:active + label,
+		&:focus + label {
+			color: color(primary);
+		}
+		&:checked + label {
+			@include icon(checkboxChecked);
+		}
+	}
+}
+
+
+/**
+ * Selects:
+ * `.decorator-select`<br>
+ * Unless otherwise specified, selects are wrapped with a `<div class="decorator-select" />` on page load, via JavaScript. This allows for easy and consistant cross-browser customization.
+ *
+ *		@example
+ *		<div class="two-up">
+ *			<select id="testselect">
+ *				<option>First</option>
+ *				<option>Second</option>
+ *				<option>Third</option>
+ *			</select>
+ *		</div>
+ *
+ */
+$decoratorSelectBorderSize: 1px;
+
+.decorator-select {
+	@include gradient(color(greyLight), color(greyMedium));
+	background-size: 100%;
+	border: $decoratorSelectBorderSize solid color(greyMedium);
+	border-radius: $formElementBorderRadius;
+	display: inline-block;
+	height: auto;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+
+	&:after {
+		content: image('bg-select-arrow.png');
+		height: $inputHeight - (2 * $decoratorSelectBorderSize);	// the content image's height should fit within the confines of the input's height
+		pointer-events: none;
+		position: absolute;
+		right: 0;
+		top: 0;
+
+		.oldie & {
+			content: '';
+		}
+	}
+
+	select {
+		-webkit-appearance: none;
+		background: transparent;
+		border: none;
+		color: black;
+		display: block;
+		height: $inputHeight - (2 * $decoratorSelectBorderSize);
+		outline: none;
+		padding: 6px 10px 6px 10px;
+		position: relative;
+		width: 100%;
+	}
+}
+
+
+/**
+ * Multiple Selects:
+ * `.decorator-select-multiple`
+ *
+ *		@example
+ *		<div class="two-up">
+ *			<select id="testmultipleselect" multiple>
+ *				<option>First</option>
+ *				<option>Second</option>
+ *				<option>Third</option>
+ *			</select>
+ *		</div>
+ *
+ */
+.decorator-select-multiple {
+	@include gradient(color(greyLight), color(greyMedium));
+	border: $decoratorSelectBorderSize solid color(greyMedium);
+	border-radius: $formElementBorderRadius;
+	display: inline-block;
+	width: 100%;
+
+	select {
+		-webkit-appearance: none;
+		background: transparent;
+		border: none;
+		color: black;
+		display: block;
+		min-height: $inputHeight - (2 * $decoratorSelectBorderSize);
+		outline: none;
+		padding: 6px 10px 6px 10px;
+		position: relative;
+		width: 100%;
+	}
+}
+
+/**
+ * Custom File Upload:
+ * `.custom-file-upload`
+ *
+ *		@example
+ *		<form action="#">
+ *			<fieldset>
+ *				<legend>File Uploads</legend>
+ *				<h3>File Uploads</h3>
+ *				<ol>
+ *					<li>
+ *						<button class="custom-file-upload">Select file</button>
+ *						<input type="file">
+ *					</li>
+ *				</ol>
+ *			</fieldset>
+ *		</form>
+ *
+ */
+.custom-file-upload {
+	.no-js & {
+		display: none;
+	}
+}
+
+input[type="file"] {
+	.js & {
+		visibility: hidden;
+		width: 0px;
 	}
 }
