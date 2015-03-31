@@ -9,6 +9,7 @@
  *		link(rel="stylesheet" href="../../Assets/dist/css/style-guide.css")
  *		link(rel='icon' type='image/png' href='../../Assets/dist/img/content/favicon.png')
  *		script(src='../../Assets/dist/js/head.js')
+ *		link(rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700")
  *		script(src='https://cdn.rawgit.com/styledown/styledown/v1.0.0/data/styledown.js')
  *
  * ### Body
@@ -27,15 +28,22 @@
  *
  */
 
- button.sg-expando {
+button.sg-expando {
 	&:hover,
 	&:focus,
 	&:active {
 		background-color: transparent;
 	}
- }
+}
 
- .sg-section-table-of-contents .sg-code,
- .sg-section-table-of-contents .sg-expando {
+.sg-section-table-of-contents .sg-code,
+.sg-section-table-of-contents .sg-expando {
 	display: none;
- }
+}
+
+code.sg:first-child,
+code.sg {
+	background-color: #f0f0f0;
+	border: 1px solid #e0e0e0;
+	color: #555;
+}

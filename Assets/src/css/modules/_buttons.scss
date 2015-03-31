@@ -24,6 +24,7 @@
 	padding: em(6 12, (context: 18));
 	text-align: center;
 	text-decoration: none;
+	@include transition((property: background-color));
 
 	/**
 	 * Full Width Button:
@@ -49,7 +50,7 @@
 	/**
 	 * Button Small:
 	 * `.btn-small`
-	 *	<p>A smaller version of the default button style, used in conjunction with `.btn`.</p>
+	 *	<p>A smaller version of the default button style, used in conjunction with `%button-config`.</p>
 	 *
 	 *		@example
  	 *		<a class="btn btn-small">Small Primary Button</a>
@@ -84,6 +85,7 @@ button,
 	&:active,
 	&:focus {
 		background-color: lighten(color(primary), 10%);
+		color: white;
 	}
 
 	@include media(print) {
@@ -95,7 +97,7 @@ button,
 /**
  * Button Secondary:
  * `.btn-secondary`
- * <p>Extends `%button-config` to use secondary color scheme</p>
+ * <p>Extends `%button-config` to use secondary color scheme.</p>
  *
  *     @example
  *     <a class="btn-secondary">Click Me</a>
@@ -110,6 +112,7 @@ button,
 	&:active,
 	&:focus {
 		background-color: lighten(color(secondary), 10%);
+		color: black;
 	}
 
 	@include media(print) {

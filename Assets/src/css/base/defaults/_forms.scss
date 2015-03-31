@@ -1,12 +1,7 @@
 /***
  * Forms:
- * <p>All forms fields should be contained within a `fieldset`. If there are multiple fields, those should be defined within an ordered list.</p>
+ * <p>All forms fields are contained within a `fieldset`. Each field is defined within an ordered list item.</p>
  */
-
-form {
-	margin: 0;
-}
-
 
 /**
  * Standard Form Fields:
@@ -22,7 +17,7 @@ form {
  *						<input type="text" id="testinput" placeholder="Placeholder for the input">
  *					</li>
  *					<li>
- *						<label for="testtextarea">Label for the Textarea</label>
+ *						<label for="testtextarea">Label for the textarea</label>
  *						<textarea id="testtextarea" cols="30" rows="5" placeholder="Placeholder for the textarea"></textarea>
  *					</li>
  *				</ol>
@@ -107,7 +102,11 @@ form {
  *
  */
 
- // default styles, applied to all browsers
+form {
+	margin: 0;
+}
+
+// default styles, applied to all browsers
 fieldset {
 	border: none;
 	margin: em(12) 0 0;
@@ -266,7 +265,7 @@ fieldset:not(#foo) {
 /**
  * Selects:
  * `.decorator-select`
- * <p>Unless otherwise specified, selects are wrapped with a `<div class="decorator-select" />` on page load, via JavaScript. This allows for easy and consistant cross-browser customization.</p>
+ * <p>Unless otherwise specified, selects are wrapped with a `<div class="decorator-select" />` on page load, via JavaScript. This allows for easy and consistent cross-browser customization.</p>
  *
  *		@example
  *		<div class="two-up">
@@ -322,6 +321,7 @@ $decoratorSelectBorderSize: 1px;
 /**
  * Multiple Selects:
  * `.decorator-select-multiple`
+ * <p>Selects with the "multiple" attribute are wrapped with a `<div class="decorator-select-multiple" />`.</p>
  *
  *		@example
  *		<div class="two-up">
