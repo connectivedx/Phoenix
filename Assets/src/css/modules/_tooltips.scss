@@ -1,7 +1,20 @@
-// @category modules
+/***
+ * Tooltips:
+ */
 
-// @function tooltips
-// A tooltip system based on Tipsy.
+/**
+ * Tooltips:
+ * `.tooltip | .tipsy`<br>
+ * A tooltip system based on <a href="http://onehackoranother.com/projects/jquery/tipsy/">Tipsy</a>.
+ *
+ *		@example
+ *		<ul>
+ *			<li>
+ *				<a href="#" class="tooltip-tipsy" original-title="This is a tooltip">Tipsy</a>
+ *			</li>
+ *		</ul>
+ *
+ */
 
 // measurements
 $tooltipArrowSize: 5px; // note: keep this under 10px to avoid issues
