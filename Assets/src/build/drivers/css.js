@@ -14,6 +14,7 @@ var CssDriver = {
 		return pipeline
 			.pipe(gulpif(debug, sourcemaps.init()))
 			.pipe(sassdoc({
+				basePath: 'https://github.com/isitedesign/Phoenix/tree/master/Assets/src',
 				dest: '../../documentation/api',
 				groups: {
 					"grid": "Grid System",
@@ -24,7 +25,7 @@ var CssDriver = {
 					"typography": "Typography",
 					"undefined": "Helper"
 				},
-				shortcutIcon: "../../Assets/dist/img/content/favicon.png",
+				shortcutIcon: "../dist/img/content/favicon.png",
 				sort: ["group", "file"]
 			}))
 			.pipe(sass())
