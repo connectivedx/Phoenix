@@ -10,14 +10,30 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "$DIR/.."
 
 # check for a missing node_modules folder, which definitely means we need to npm install
-# in production we want to always use npm install; this will prevent CI builds from failing due to missing deps
+# in production we want to always use npm install on the src directory, but not for the Sassdoc theme; this will prevent CI builds from failing due to missing deps
+if [ ! -d sassdoc-theme/node_modules ];
+then
+	echo "Running npm install for Sassdoc theme"
+	NORETRY=1
+
+	cd sassdoc-theme
+
+	if ! npm install;
+		then
+		echo "npm failed for Sassdoc theme. Exiting."
+		exit 1;
+	else
+		cd ..
+	fi
+fi
+
 if [ ! -d node_modules ] || [ "$1" == "production" ];
-then 
+then
 	echo "Running npm install"
 	NORETRY=1
 
-	if ! npm install; 
-		then 
+	if ! npm install;
+		then
 		echo "npm failed. Exiting."
 		exit 1;
 	fi
@@ -35,8 +51,8 @@ then
 		then
 		echo "Retrying after an npm install in case of new dependencies"
 
-		if ! npm install; 
-			then 
+		if ! npm install;
+			then
 			echo "npm failed. Exiting."
 			exit 1;
 		fi

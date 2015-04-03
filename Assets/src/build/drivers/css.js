@@ -26,7 +26,8 @@ var CssDriver = {
 					"undefined": "Helper"
 				},
 				shortcutIcon: "../dist/img/content/favicon.png",
-				sort: ["group", "file"]
+				sort: ["group", "file"],
+				theme: "./sassdoc-theme"
 			}))
 			.pipe(sass())
 			.pipe(gulpif(debug, sourcemaps.write('./')))

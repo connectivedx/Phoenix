@@ -17,6 +17,7 @@ if not defined FOUND (
 cd /d "%~dp0\.."
 
 REM check for a missing node_modules folder, which definitely means we need to npm install
+if not exist sassdoc-theme/node_modules GOTO :sassdoc_theme_npm_install
 if not exist node_modules GOTO :npm_install
 
 REM in production we want to always use npm install; this will prevent CI builds from failing due to missing deps
@@ -36,6 +37,15 @@ if %errorlevel% neq 0 (
 )
 
 exit /b 0
+
+:sassdoc_theme_npm_install
+REM don't ask why you need to cmd /c this, but if you don't the script exits thereafter without running gulp!
+echo Running npm install for Sassdoc theme
+cmd /c "cd sassdoc-theme && npm install"
+if %errorlevel% neq 0 (
+	echo npm install exited with code %errorlevel%
+	exit /b %errorlevel%
+)
 
 :npm_install
 REM don't ask why you need to cmd /c this, but if you don't the script exits thereafter without running gulp!
