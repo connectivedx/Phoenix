@@ -57,6 +57,16 @@ then
 			exit 1;
 		fi
 
+		cd sassdoc-theme
+
+		if ! npm install;
+			then
+			echo "npm failed for Sassdoc theme. Exiting."
+			exit 1;
+		else
+			cd ..
+		fi
+
 		node node_modules/gulp/bin/gulp.js $1
 	fi
 fi

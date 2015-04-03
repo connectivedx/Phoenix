@@ -29,6 +29,7 @@ node node_modules\gulp\bin\gulp.js %1
 if %errorlevel% neq 0 (
 	if [%noretry%] == [] (
 		echo Build failed - exit %errorlevel%. Attempting npm install in case of out of date or new dependencies.
+		GOTO :sassdoc_theme_npm_install
 		GOTO :npm_install
 	)
 
