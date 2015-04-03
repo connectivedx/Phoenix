@@ -1,6 +1,6 @@
 ![Phoenix](Assets/src/img/content/logo-placeholder.png)
 ===================
-Phoenix represents what we use at ISITE Design for the basis of new projects. With a library of patterns ready at our fingertips, a powerful and flexible grid system, and a clean, modular organization, you don't need to reinvent the wheel. And you'll have more time to invent the next wheel.
+Phoenix represents what we use at Connective DX for the basis of new projects. With a library of patterns ready at our fingertips, a powerful and flexible grid system, and a clean, modular organization, you don't need to reinvent the wheel. And you'll have more time to invent the next wheel.
 
 # Documentation
 Full documentation is available in the documentation directory.  It will require the setup and build processes below to be followed; additional instructions can be found on the documentation page once loaded.
@@ -45,7 +45,7 @@ This project would not be possible without contributions from these open-source 
 ## Phoenix
 Phoenix is licensed under The MIT License (MIT), unless otherwise noted below.
 
-Copyright (c) 2015 ISITE Design, Inc.
+Copyright (c) 2015 Connective DX, Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
