@@ -15,17 +15,22 @@ var configuration = {
 		},
 		{
 			driver: 'css',
-			paths: ['./css/**/*.scss'],
+			paths: ['./css/*.scss'],
 			watchPaths: ['css/**'],
 			autoClean: true,
 			autoCleanPaths: ['./css/*.css']
 		},
 		{
+			driver: 'css-api',
+			paths: ['./css/**/*.scss'],
+			watchPaths: ['css/**']
+		},
+		{
 			driver: 'style-guide',
 			paths: ['./css/style.scss', './css/base/**/*.scss', './css/modules/**/*.scss'],
-			watchPaths: ['css/**', './css/style-guide.scss'],
+			watchPaths: ['css/**'],
 			autoClean: true,
-			autoCleanPaths: ['../../documentation/style-guide/*.html']
+			autoCleanPaths: ['../../documentation']
 		},
 		{
 			// fonts are just a plain ol' copy, so they do not need a driver to process them on their way.
