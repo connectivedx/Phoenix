@@ -1,6 +1,8 @@
 <div class="sidebar__header text-center">
   <h1 class="sidebar__title">
-    <img src="assets/images/logo-horizontal.png" alt="Phoenix by ISITE Design" class="logo">
+    <a href="../../index.php">
+      <img src="assets/images/logo-horizontal.png" alt="Phoenix by ISITE Design" class="logo">
+    </a>
     {% if package.homepage %}
       <a href="{{ package.homepage }}">{{ project_title }}{% if package.version %} - v{{ package.version }}{% endif %}</a>
     {% else %}
