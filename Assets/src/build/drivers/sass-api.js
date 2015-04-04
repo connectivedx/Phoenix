@@ -4,12 +4,12 @@
 var sassdoc = require('sassdoc');
 var gulpif = require('gulp-if');
 
-var CssApiDriver = {
+var SassApiDriver = {
 	build: function(pipeline, debug) {
 		return pipeline
 			.pipe(gulpif(debug, sassdoc({
 				basePath: 'https://github.com/isitedesign/Phoenix/tree/master/Assets/src',
-				dest: '../../documentation/css-api',
+				dest: '../../documentation/sass-api',
 				groups: {
 					"grid": "Grid System",
 					"semantic-grid": "Semantic Grid System",
@@ -26,4 +26,4 @@ var CssApiDriver = {
 	}
 };
 
-module.exports = CssApiDriver;
+module.exports = SassApiDriver;

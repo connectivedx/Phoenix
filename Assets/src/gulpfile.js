@@ -21,7 +21,7 @@ var configuration = {
 			autoCleanPaths: ['./css/*.css']
 		},
 		{
-			driver: 'css-api',
+			driver: 'sass-api',
 			paths: ['./css/**/*.scss'],
 			watchPaths: ['css/**']
 		},
