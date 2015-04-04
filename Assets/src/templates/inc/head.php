@@ -9,7 +9,7 @@
 	<meta name="robots" content="index, follow">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
-	<meta name="author" content="ISITE Design">
+	<meta name="author" content="Connective DX">
 	<meta name="apple-mobile-web-app-title" content="Phoenix">
 
 	<script src="<?php echo getAsset('Assets/dist/js/head.js');?>"></script>
@@ -31,7 +31,7 @@
 	<div class="row">
 		<div class="eight columns centered" style="border: none;">
 			<a href="index.php">
-				<img src="<?php echo getAsset('Assets/dist/img/content/logo-placeholder.png');?>" srcset="<?php echo getAsset('Assets/dist/img/content/logo-placeholder@2x.png');?> 2x" alt="Phoenix by ISITE Design" class="img-align-center">
+				<img src="<?php echo getAsset('Assets/dist/img/content/logo-placeholder.png');?>" srcset="<?php echo getAsset('Assets/dist/img/content/logo-placeholder@2x.png');?> 2x" alt="Phoenix by Connective DX" class="img-align-center">
 			</a>
 		</div>
 	</div>

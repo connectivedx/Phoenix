@@ -1,5 +1,5 @@
 <?php
-	$pageTitle = 'Phoenix by ISITE Design';
+	$pageTitle = 'Phoenix by Connective DX';
 	include_once 'inc/head.php';
 ?>
 	<div class="row">
