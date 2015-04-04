@@ -5,25 +5,14 @@ var configuration = {
 	output: '../dist', // where to write output to
 	base: '.', // base path from which globs are considered relative. Usually should be .
 	cleanProduction: true, // if true the output directory is rimraf'd before a build when debug = false
-	
+
 	tasks: [
-		{
-			driver: 'js',
-			paths: ['./js/*.js'],
-			watchPaths: ['js/**'],
-			autoClean: true
-		},
 		{
 			driver: 'css',
 			paths: ['./css/*.scss'],
 			watchPaths: ['css/**'],
 			autoClean: true,
 			autoCleanPaths: ['./css/*.css']
-		},
-		{
-			// fonts are just a plain ol' copy, so they do not need a driver to process them on their way.
-			paths: ['./fonts/**/*.{eot,ttf,woff,svg}'],
-			watchPaths: ['fonts/**'],
 		},
 		{
 			driver: 'img',
