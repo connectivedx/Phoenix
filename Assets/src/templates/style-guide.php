@@ -344,7 +344,7 @@
 			<div class="six columns">
 				<h2>Map - 4:3</h2>
 				<div class="map">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1397.4432998107925!2d-122.69317991642879!3d45.532487514497674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sisite+design!5e0!3m2!1sen!2sus!4v1391532768363" frameborder="0" style="border:0"></iframe>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1397.4527187648691!2d-122.69309834046989!3d45.532108444257446!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549509fb37a063b5%3A0x9737d6d4271c1fae!2s2030+NW+Pettygrove+St%2C+Portland%2C+OR+97209!5e0!3m2!1sen!2sus!4v1428075466309" width="600" height="450" frameborder="0" style="border:0"></iframe>
 				</div>
 			</div>
 		</div>

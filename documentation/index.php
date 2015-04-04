@@ -5,7 +5,7 @@
 <head>
 	<meta charset='utf-8'>
 	<meta content="chrome=1" http-equiv="X-UA-Compatible">
-	<meta content="Phoenix by ISITE Design" name="description">
+	<meta content="Phoenix by Connective DX" name="description">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet" type="text/css">
 	<script src="<?php echo getAsset('../Assets/dist/js/head.js'); ?>"></script>
@@ -16,7 +16,7 @@
 	<script src="js/angular.min.js"></script>
 	<script src="js/angular-sanitize.min.js"></script>
 	<script src="js/app.js"></script>
-	<title>Phoenix by ISITE Design</title>
+	<title>Phoenix by Connective DX</title>
 
 	<!-- Serve one icon for all Apple devices -->
 	<link rel="apple-touch-icon-precomposed" href="<?php echo getAsset('<?php echo getAsset(../Assets/dist/img/content/touch-icon.png'); ?>">
@@ -29,18 +29,18 @@
 
 <body>
 	<header class="doc-header">
-		<a href="https://github.com/isitedesign/Phoenix" class="fork-me">
+		<a href="https://github.com/connectivedx/Phoenix" class="fork-me">
 			<img src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
 		</a>
 
 		<div class="row">
 			<a href="../index.php">
-				<img src="<?php echo getAsset('../Assets/dist/img/content/logo-placeholder.png'); ?>" srcset="<?php echo getAsset('../Assets/dist/img/content/logo-placeholder@2x.png');?> 2x" alt="Phoenix by ISITE Design">
+				<img src="<?php echo getAsset('../Assets/dist/img/content/logo-placeholder.png'); ?>" srcset="<?php echo getAsset('../Assets/dist/img/content/logo-placeholder@2x.png');?> 2x" alt="Phoenix by Connective DX">
 			</a>
 
 			<section class="doc-downloads">
-				<a class="zip-download-link" href="https://github.com/isitedesign/Phoenix/zipball/master" target="_blank">Download this project as a .zip file</a>
-				<a class="tar-download-link" href="https://github.com/isitedesign/Phoenix/tarball/master" target="_blank">Download this project as a tar.gz file</a>
+				<a class="zip-download-link" href="https://github.com/connectivedx/Phoenix/zipball/master" target="_blank">Download this project as a .zip file</a>
+				<a class="tar-download-link" href="https://github.com/connectivedx/Phoenix/tarball/master" target="_blank">Download this project as a tar.gz file</a>
 			</section>
 		</div>
 	</header>
@@ -49,7 +49,7 @@
 		<div class="row">
 			<div class="six columns">
 				<h1>What is this?</h1>
-				<p>When building websites, there is no need to reinvent the wheel.  Consistent design patterns are used to make sites easy to navigate and use, so why not have some consistent development patterns?  Phoenix is what we use at <a href="http://github.com/isitedesign" target="_blank">ISITE Design</a> for the basis of new projects.  With a library of patterns ready at our fingertips, a powerful and flexible grid system, and a clean, modular organization, you don't need to reinvent the wheel.  And you'll have more time to invent the next wheel.</p>
+				<p>When building websites, there is no need to reinvent the wheel.  Consistent design patterns are used to make sites easy to navigate and use, so why not have some consistent development patterns?  Phoenix is what we use at <a href="http://github.com/connectivedx" target="_blank">Connective DX</a> for the basis of new projects.  With a library of patterns ready at our fingertips, a powerful and flexible grid system, and a clean, modular organization, you don't need to reinvent the wheel.  And you'll have more time to invent the next wheel.</p>
 			</div>
 
 			<div class="six columns">
@@ -297,9 +297,8 @@
 
 	<footer class="doc-footer">
 		<div class="row">
-			<p class="copyright">Phoenix maintained by <a href="https://github.com/isitedesign" target="_blank">isitedesign</a></p>
+			<p class="copyright">Phoenix maintained by <a href="https://github.com/connectivedx" target="_blank">Connective DX</a></p>
 			<p>Special thanks to <a href="http://gumbyframework.com/" target="_blank">Gumby Framework</a> and <a href="http://smacss.com/" target="_blank">SMACSS</a></p>
-			<p>Published with <a href="http://pages.github.com" target="_blank">GitHub Pages</a></p>
 		</div>
 	</footer>
 
