@@ -26,6 +26,14 @@ var configuration = {
 			watchPaths: ['fonts/**'],
 		},
 		{
+			/* sprite's SCSS variables (see: src/css/variables/_sprites.scss) and it's image (see: src/img/css/compiled-sprite.png) 
+				are auto compiled from chagnes to your loose image files under src/img/css/sprite-files/.
+			*/
+			driver: 'sprite',
+			paths: ['img/css/sprite-files/*.*'],
+			watchPaths: ['img/css/sprite-files/**'],
+		},		
+		{
 			driver: 'img',
 			paths: ['./img/**/*.{jpg,png,gif,ico,svg}'],
 			watchPaths: ['img/**'],
