@@ -7,10 +7,13 @@ var SpriteDrive = {
 	build: function(pipeline, debug) {
 		var sprite = pipeline.pipe(
 						spritesmith({
-							imgName: 'compiled-sprite.png',
-							cssName: '_sprites.scss',
 							algorithm: 'alt-diagonal',
-							imgPath: '#{$imagesFolder}compiled-sprite.png'															
+							cssName: '_sprites.scss',
+							cssOpts: {
+								functions: false
+							},
+							imgName: 'compiled-sprite.png',
+							imgPath: '#{$imagesFolder}compiled-sprite.png'
 						})
 					);
 		sprite.img.pipe(gulp.dest('img/css'));
