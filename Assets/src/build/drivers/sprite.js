@@ -9,17 +9,10 @@ var SpriteDrive = {
 						spritesmith({
 							imgName: 'compiled-sprite.png',
 							cssName: '_sprites.scss',
-							cssOpts: {
-								cssSelector: function (item) {
-									//@ within file names of sprite images is not allowed
-									item.name.replace("@","_"); 
-									return '.' + item.name + ':before';
-								}
-							},
-							algorithm: 'alt-diagonal'							
+							algorithm: 'alt-diagonal',
+							imgPath: '#{$imagesFolder}compiled-sprite.png'															
 						})
 					);
-
 		sprite.img.pipe(gulp.dest('img/css'));
 		sprite.css.pipe(gulp.dest('css/variables'));
 		return pipeline;			

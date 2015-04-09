@@ -26,7 +26,7 @@
 	display: none;
 
 	@include media(breakpointMedium) {
-		background: image('github-icon-download.png') no-repeat 0% 90%;
+		@include sprite($github-icon-download);
 		bottom: -40px;
 		display: block;
 		height: 70px;
@@ -57,8 +57,6 @@
 }
 
 %download-link-config {
-	background-image: image('github-download-sprite.png');
-	background-repeat: no-repeat;
 	display: block;
 	float: right;
 	height: 70px;
@@ -69,20 +67,20 @@
 
 .tar-download-link {
 	@extend %download-link-config;
-	background-position: bottom right;
+	@include sprite($github-download-tar-red);
 	margin-left: 10px;
 
 	&:hover {
-		background-position: top right;
+		@include sprite($github-download-tar-grey);
 	}
 }
 
 .zip-download-link {
 	@extend %download-link-config;
-	background-position: bottom left;
+	@include sprite($github-download-zip-red);
 
 	&:hover {
-		background-position: top left;
+		@include sprite($github-download-zip-grey);
 	}
 }
 
