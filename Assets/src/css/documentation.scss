@@ -24,9 +24,13 @@
 
 .doc-downloads {
 	display: none;
-
-	@include media(breakpointMedium) {
+	&:before {
+		content: "";
+		display: block;
 		@include sprite($github-icon-download);
+		position: absolute;
+	}
+	@include media(breakpointMedium) {
 		bottom: -40px;
 		display: block;
 		height: 70px;

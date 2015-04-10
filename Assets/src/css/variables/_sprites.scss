@@ -11,65 +11,79 @@ $icon-home: x y offset_x offset_y width height total_width total_height image_pa
 At the bottom of this section, we provide information about the spritesheet itself
 $spritesheet: width height image $spritesheet-sprites;
 */
-$github-download-tar-grey-name: 'github-download-tar-grey';
-$github-download-tar-grey-x: 255px;
-$github-download-tar-grey-y: 30px;
-$github-download-tar-grey-offset-x: -255px;
-$github-download-tar-grey-offset-y: -30px;
-$github-download-tar-grey-width: 85px;
-$github-download-tar-grey-height: 65px;
-$github-download-tar-grey-total-width: 370px;
-$github-download-tar-grey-total-height: 290px;
-$github-download-tar-grey-image: '#{$imagesFolder}compiled-sprite.png';
-$github-download-tar-grey: (255px, 30px, -255px, -30px, 85px, 65px, 370px, 290px, '#{$imagesFolder}compiled-sprite.png', 'github-download-tar-grey', );
-$github-download-tar-red-name: 'github-download-tar-red';
-$github-download-tar-red-x: 170px;
-$github-download-tar-red-y: 95px;
-$github-download-tar-red-offset-x: -170px;
-$github-download-tar-red-offset-y: -95px;
-$github-download-tar-red-width: 85px;
-$github-download-tar-red-height: 65px;
-$github-download-tar-red-total-width: 370px;
-$github-download-tar-red-total-height: 290px;
-$github-download-tar-red-image: '#{$imagesFolder}compiled-sprite.png';
-$github-download-tar-red: (170px, 95px, -170px, -95px, 85px, 65px, 370px, 290px, '#{$imagesFolder}compiled-sprite.png', 'github-download-tar-red', );
-$github-download-zip-grey-name: 'github-download-zip-grey';
-$github-download-zip-grey-x: 85px;
-$github-download-zip-grey-y: 160px;
-$github-download-zip-grey-offset-x: -85px;
-$github-download-zip-grey-offset-y: -160px;
-$github-download-zip-grey-width: 85px;
-$github-download-zip-grey-height: 65px;
-$github-download-zip-grey-total-width: 370px;
-$github-download-zip-grey-total-height: 290px;
-$github-download-zip-grey-image: '#{$imagesFolder}compiled-sprite.png';
-$github-download-zip-grey: (85px, 160px, -85px, -160px, 85px, 65px, 370px, 290px, '#{$imagesFolder}compiled-sprite.png', 'github-download-zip-grey', );
-$github-download-zip-red-name: 'github-download-zip-red';
-$github-download-zip-red-x: 0px;
-$github-download-zip-red-y: 225px;
-$github-download-zip-red-offset-x: 0px;
-$github-download-zip-red-offset-y: -225px;
-$github-download-zip-red-width: 85px;
-$github-download-zip-red-height: 65px;
-$github-download-zip-red-total-width: 370px;
-$github-download-zip-red-total-height: 290px;
-$github-download-zip-red-image: '#{$imagesFolder}compiled-sprite.png';
-$github-download-zip-red: (0px, 225px, 0px, -225px, 85px, 65px, 370px, 290px, '#{$imagesFolder}compiled-sprite.png', 'github-download-zip-red', );
-$github-icon-download-name: 'github-icon-download';
-$github-icon-download-x: 340px;
-$github-icon-download-y: 0px;
-$github-icon-download-offset-x: -340px;
-$github-icon-download-offset-y: 0px;
-$github-icon-download-width: 30px;
-$github-icon-download-height: 30px;
-$github-icon-download-total-width: 370px;
-$github-icon-download-total-height: 290px;
-$github-icon-download-image: '#{$imagesFolder}compiled-sprite.png';
-$github-icon-download: (340px, 0px, -340px, 0px, 30px, 30px, 370px, 290px, '#{$imagesFolder}compiled-sprite.png', 'github-icon-download', );
-$spritesheet-width: 370px;
-$spritesheet-height: 290px;
-$spritesheet-image: '#{$imagesFolder}compiled-sprite.png';
-$spritesheet-sprites: ($github-download-tar-grey, $github-download-tar-red, $github-download-zip-grey, $github-download-zip-red, $github-icon-download, );
-$spritesheet: (370px, 290px, '#{$imagesFolder}compiled-sprite.png', $spritesheet-sprites, );
+$github-download-tar-grey: map-merge((
+	x: 0px, 
+	y: 0px, 
+	offsetX: 0px, 
+	offsetY: 0px, 
+	width: 85px, 
+	height: 65px, 
+	totalWidth: 175px, 
+	totalHeight: 170px, 
+	src: '#{$imagesFolder}main-sprite.png', 
+	name: 'github-download-tar-grey'
+),());
+$github-download-tar-red: map-merge((
+	x: 90px, 
+	y: 0px, 
+	offsetX: -90px, 
+	offsetY: 0px, 
+	width: 85px, 
+	height: 65px, 
+	totalWidth: 175px, 
+	totalHeight: 170px, 
+	src: '#{$imagesFolder}main-sprite.png', 
+	name: 'github-download-tar-red'
+),());
+$github-download-zip-grey: map-merge((
+	x: 0px, 
+	y: 70px, 
+	offsetX: 0px, 
+	offsetY: -70px, 
+	width: 85px, 
+	height: 65px, 
+	totalWidth: 175px, 
+	totalHeight: 170px, 
+	src: '#{$imagesFolder}main-sprite.png', 
+	name: 'github-download-zip-grey'
+),());
+$github-download-zip-red: map-merge((
+	x: 90px, 
+	y: 70px, 
+	offsetX: -90px, 
+	offsetY: -70px, 
+	width: 85px, 
+	height: 65px, 
+	totalWidth: 175px, 
+	totalHeight: 170px, 
+	src: '#{$imagesFolder}main-sprite.png', 
+	name: 'github-download-zip-red'
+),());
+$github-icon-download: map-merge((
+	x: 0px, 
+	y: 140px, 
+	offsetX: 0px, 
+	offsetY: -140px, 
+	width: 30px, 
+	height: 30px, 
+	totalWidth: 175px, 
+	totalHeight: 170px, 
+	src: '#{$imagesFolder}main-sprite.png', 
+	name: 'github-icon-download'
+),());
+$main-sheet-sprites: (
+	$github-download-tar-grey,
+	$github-download-tar-red,
+	$github-download-zip-grey,
+	$github-download-zip-red,
+	$github-icon-download,
+);
+
+$main-sheet: map-merge((
+	width: 175px, 
+	height: 170px, 
+	src: '#{$imagesFolder}main-sprite.png', 
+	name: $main-sheet-sprites
+),());
 
 

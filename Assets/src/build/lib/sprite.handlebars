@@ -1,0 +1,42 @@
+{
+  // Default options
+  'functions': false,
+  'variableNameTransforms': ['dasherize']
+}
+
+{{#extend "scss"}}
+
+{{#content "sprites"}}
+{{#each sprites}}
+${{strings.name}}: map-merge((
+	x: {{px.x}}, 
+	y: {{px.y}}, 
+	offsetX: {{px.offset_x}}, 
+	offsetY: {{px.offset_y}}, 
+	width: {{px.width}}, 
+	height: {{px.height}}, 
+	totalWidth: {{px.total_width}}, 
+	totalHeight: {{px.total_height}}, 
+	src: '{{{escaped_image}}}', 
+	name: '{{name}}'
+),());
+{{/each}}
+{{/content}}
+
+
+{{#content "spritesheet"}}
+${{spritesheet_info.strings.name_sprites}}: (
+{{#each sprites}}
+	${{strings.name}},
+{{/each}}
+);
+
+${{spritesheet_info.strings.name}}: map-merge((
+	width: {{spritesheet.px.width}}, 
+	height: {{spritesheet.px.height}}, 
+	src: '{{{spritesheet.escaped_image}}}', 
+	name: ${{spritesheet_info.strings.name_sprites}}
+),());
+{{/content}}
+
+{{/extend}}

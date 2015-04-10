@@ -14,21 +14,21 @@
 }
 
 	@mixin sprite-width($sprite) {
-		width: nth($sprite, 5);
+		width: map-get($sprite, width);
 	}
 
 	@mixin sprite-height($sprite) {
-		height: nth($sprite, 6);
+		height: map-get($sprite, height);
 	}
 
 	@mixin sprite-position($sprite) {
-		$sprite-offset-x: nth($sprite, 3);
-		$sprite-offset-y: nth($sprite, 4);
+		$sprite-offset-x: map-get($sprite, offsetX);
+		$sprite-offset-y: map-get($sprite, offsetY);
 		background-position: $sprite-offset-x  $sprite-offset-y;
 	}
 
 	@mixin sprite-image($sprite) {
-		$sprite-image: nth($sprite, 9);
+		$sprite-image: map-get($sprite, src);
 		background-image: url(#{$sprite-image});
 	}
 
@@ -38,7 +38,7 @@
 
 @mixin sprites($sprites) {
   @each $sprite in $sprites {
-	$sprite-name: nth($sprite, 10);
+	$sprite-name: map-get($sprite, name);
 	.#{$sprite-name} {
 	  @include sprite($sprite);
 	}
