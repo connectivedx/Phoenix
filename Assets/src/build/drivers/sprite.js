@@ -1,4 +1,4 @@
-/*global require, module, process */
+/* global require, module, process */
 //algorithm types = top-down | left-right | diagonal | alt-diagonal | binary-tree (default)
 
 'use strict';
@@ -9,7 +9,7 @@ var SpriteDrive = {
 	build: function(pipeline, debug) {
 		var sprites = pipeline.pipe(
 			spritesmith({
-				//algorithm: 'binary-tree', 
+				//algorithm: 'left-right', 
 				cssTemplate: './build/lib/sprite.handlebars', //SCSS variables template
 				padding: 5, //Spacing between sprite images
 				cssSpritesheetName: 'main-sheet',
@@ -19,7 +19,7 @@ var SpriteDrive = {
 			})			
 		);
 		sprites.img.pipe(gulp.dest('img/css'));
-		sprites.css.pipe(gulp.dest('css/variables/tmp'));
+		sprites.css.pipe(gulp.dest('css/variables'));
 
 		return pipeline;
 	}
