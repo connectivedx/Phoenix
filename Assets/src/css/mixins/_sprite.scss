@@ -29,7 +29,7 @@
 }
 
 @mixin sprite-background-size($sprite) {
-	$sprite-total-width: map-get($sprite, width);
-	$sprite-total-height: map-get($sprite, height);
+	$sprite-total-width: map-get($sprite, totalWidth);
+	$sprite-total-height: map-get($sprite, totalHeight);
 	background-size: $sprite-total-width $sprite-total-height;
 }

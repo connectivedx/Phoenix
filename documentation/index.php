@@ -297,6 +297,11 @@
 
 	<footer class="doc-footer">
 		<div class="row">
+			<div class="social-icons">
+				<a href="#" class="facebook"></a>
+				<a href="#" class="twitter"></a>
+				<a href="#" class="youtube"></a>
+			</div>			
 			<p class="copyright">Phoenix maintained by <a href="https://github.com/connectivedx" target="_blank">Connective DX</a></p>
 			<p>Special thanks to <a href="http://gumbyframework.com/" target="_blank">Gumby Framework</a> and <a href="http://smacss.com/" target="_blank">SMACSS</a></p>
 		</div>

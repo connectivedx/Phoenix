@@ -24,13 +24,9 @@
 
 .doc-downloads {
 	display: none;
-	&:before {
-		content: "";
-		display: block;
-		@include sprite($github-icon-download);
-		position: absolute;
-	}
+
 	@include media(breakpointMedium) {
+		background: image('github-icon-download.png') no-repeat 0% 90%;
 		bottom: -40px;
 		display: block;
 		height: 70px;
@@ -61,6 +57,8 @@
 }
 
 %download-link-config {
+	background-image: image('github-download-sprite.png');
+	background-repeat: no-repeat;
 	display: block;
 	float: right;
 	height: 70px;
@@ -71,20 +69,20 @@
 
 .tar-download-link {
 	@extend %download-link-config;
-	@include sprite($github-download-tar-red);
+	background-position: bottom right;
 	margin-left: 10px;
 
 	&:hover {
-		@include sprite($github-download-tar-grey);
+		background-position: top right;
 	}
 }
 
 .zip-download-link {
 	@extend %download-link-config;
-	@include sprite($github-download-zip-red);
+	background-position: bottom left;
 
 	&:hover {
-		@include sprite($github-download-zip-grey);
+		background-position: top left;
 	}
 }
 
@@ -113,5 +111,22 @@
 		&:focus {
 			color: color(greyMedium);
 		}
+
+	}
+	p { 
+		display: inline-block; 
+		width: columns(10);
+	}
+}
+
+.social-icons {
+	float: right;
+	width: columns(2);
+
+	a {
+		display: inline-block;
+		&.facebook { @include sprite($facebook); }
+		&.twitter { @include sprite($twitter); }
+		&.youtube { @include sprite($youtube); }
 	}
 }

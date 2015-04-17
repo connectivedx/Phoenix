@@ -11,107 +11,165 @@ $icon-home: x y offset_x offset_y width height total_width total_height image_pa
 At the bottom of this section, we provide information about the spritesheet itself
 $spritesheet: width height image $spritesheet-sprites;
 */
-$github-download-tar-grey:map-merge((
+$blog: map-merge((
 	low_res:(
 		offsetX: 0px, 
 		offsetY: 0px, 
-		width: 85px, 
-		height: 65px, 
-		totalWidth: 175px, 
-		totalHeight: 170px, 
+		width: 50px, 
+		height: 50px, 
+		totalWidth: 160px, 
+		totalHeight: 160px, 
 		src: '#{$imagesFolder}main-sprite.png'
 	),
 	hi_res:(
 		offsetX: 0px, 
 		offsetY: 0px, 
-		width: 170px, 
-		height: 130px, 
-		totalWidth: 350px, 
-		totalHeight: 340px, 
+		width: 100px, 
+		height: 100px, 
+		totalWidth: 320px, 
+		totalHeight: 320px, 
 		src: '#{$imagesFolder}main-sprite-2x.png'
 	)
 ),());
-$github-download-tar-red:map-merge((
+$facebook: map-merge((
 	low_res:(
-		offsetX: -90px, 
+		offsetX: -55px, 
 		offsetY: 0px, 
-		width: 85px, 
-		height: 65px, 
-		totalWidth: 175px, 
-		totalHeight: 170px, 
+		width: 50px, 
+		height: 50px, 
+		totalWidth: 160px, 
+		totalHeight: 160px, 
 		src: '#{$imagesFolder}main-sprite.png'
 	),
 	hi_res:(
-		offsetX: -180px, 
+		offsetX: -110px, 
 		offsetY: 0px, 
-		width: 170px, 
-		height: 130px, 
-		totalWidth: 350px, 
-		totalHeight: 340px, 
+		width: 100px, 
+		height: 100px, 
+		totalWidth: 320px, 
+		totalHeight: 320px, 
 		src: '#{$imagesFolder}main-sprite-2x.png'
 	)
 ),());
-$github-download-zip-grey:map-merge((
+$flickr: map-merge((
 	low_res:(
 		offsetX: 0px, 
-		offsetY: -70px, 
-		width: 85px, 
-		height: 65px, 
-		totalWidth: 175px, 
-		totalHeight: 170px, 
+		offsetY: -55px, 
+		width: 50px, 
+		height: 50px, 
+		totalWidth: 160px, 
+		totalHeight: 160px, 
 		src: '#{$imagesFolder}main-sprite.png'
 	),
 	hi_res:(
 		offsetX: 0px, 
-		offsetY: -140px, 
-		width: 170px, 
-		height: 130px, 
-		totalWidth: 350px, 
-		totalHeight: 340px, 
+		offsetY: -110px, 
+		width: 100px, 
+		height: 100px, 
+		totalWidth: 320px, 
+		totalHeight: 320px, 
 		src: '#{$imagesFolder}main-sprite-2x.png'
 	)
 ),());
-$github-download-zip-red:map-merge((
+$linkedin: map-merge((
 	low_res:(
-		offsetX: -90px, 
-		offsetY: -70px, 
-		width: 85px, 
-		height: 65px, 
-		totalWidth: 175px, 
-		totalHeight: 170px, 
+		offsetX: -55px, 
+		offsetY: -55px, 
+		width: 50px, 
+		height: 50px, 
+		totalWidth: 160px, 
+		totalHeight: 160px, 
 		src: '#{$imagesFolder}main-sprite.png'
 	),
 	hi_res:(
-		offsetX: -180px, 
-		offsetY: -140px, 
-		width: 170px, 
-		height: 130px, 
-		totalWidth: 350px, 
-		totalHeight: 340px, 
+		offsetX: -110px, 
+		offsetY: -110px, 
+		width: 100px, 
+		height: 100px, 
+		totalWidth: 320px, 
+		totalHeight: 320px, 
 		src: '#{$imagesFolder}main-sprite-2x.png'
 	)
 ),());
-$github-icon-download:map-merge((
+$rss: map-merge((
+	low_res:(
+		offsetX: -110px, 
+		offsetY: 0px, 
+		width: 50px, 
+		height: 50px, 
+		totalWidth: 160px, 
+		totalHeight: 160px, 
+		src: '#{$imagesFolder}main-sprite.png'
+	),
+	hi_res:(
+		offsetX: -220px, 
+		offsetY: 0px, 
+		width: 100px, 
+		height: 100px, 
+		totalWidth: 320px, 
+		totalHeight: 320px, 
+		src: '#{$imagesFolder}main-sprite-2x.png'
+	)
+),());
+$twitter: map-merge((
+	low_res:(
+		offsetX: -110px, 
+		offsetY: -55px, 
+		width: 50px, 
+		height: 50px, 
+		totalWidth: 160px, 
+		totalHeight: 160px, 
+		src: '#{$imagesFolder}main-sprite.png'
+	),
+	hi_res:(
+		offsetX: -220px, 
+		offsetY: -110px, 
+		width: 100px, 
+		height: 100px, 
+		totalWidth: 320px, 
+		totalHeight: 320px, 
+		src: '#{$imagesFolder}main-sprite-2x.png'
+	)
+),());
+$vimeo: map-merge((
 	low_res:(
 		offsetX: 0px, 
-		offsetY: -140px, 
-		width: 30px, 
-		height: 30px, 
-		totalWidth: 175px, 
-		totalHeight: 170px, 
+		offsetY: -110px, 
+		width: 50px, 
+		height: 50px, 
+		totalWidth: 160px, 
+		totalHeight: 160px, 
 		src: '#{$imagesFolder}main-sprite.png'
 	),
 	hi_res:(
 		offsetX: 0px, 
-		offsetY: -280px, 
-		width: 60px, 
-		height: 60px, 
-		totalWidth: 350px, 
-		totalHeight: 340px, 
+		offsetY: -220px, 
+		width: 100px, 
+		height: 100px, 
+		totalWidth: 320px, 
+		totalHeight: 320px, 
 		src: '#{$imagesFolder}main-sprite-2x.png'
 	)
 ),());
-
-
+$youtube: map-merge((
+	low_res:(
+		offsetX: -55px, 
+		offsetY: -110px, 
+		width: 50px, 
+		height: 50px, 
+		totalWidth: 160px, 
+		totalHeight: 160px, 
+		src: '#{$imagesFolder}main-sprite.png'
+	),
+	hi_res:(
+		offsetX: -110px, 
+		offsetY: -220px, 
+		width: 100px, 
+		height: 100px, 
+		totalWidth: 320px, 
+		totalHeight: 320px, 
+		src: '#{$imagesFolder}main-sprite-2x.png'
+	)
+),());
 
 
