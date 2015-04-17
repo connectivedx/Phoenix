@@ -6,7 +6,7 @@ var configuration = {
 	base: '.', // base path from which globs are considered relative. Usually should be .
 	cleanProduction: true, // if true the output directory is rimraf'd before a build when debug = false
 	cacheBusting: true, // if true rev is used to add a hash to filenames in production builds
-	tasks: [
+	tasks: [	
 		{
 			driver: 'js',
 			paths: ['./js/*.js'],
@@ -24,14 +24,6 @@ var configuration = {
 			// fonts are just a plain ol' copy, so they do not need a driver to process them on their way.
 			paths: ['./fonts/**/*.{eot,ttf,woff,woff2,svg}'],
 			watchPaths: ['fonts/**'],
-		},
-		{
-			/* sprite's SCSS variables (see: src/css/variables/_sprites.scss) and it's image (see: src/img/css/compiled-sprite.png) 
-				are auto compiled from chagnes to your loose image files under src/img/css/sprite-files/.
-			*/
-			driver: 'sprite',
-			paths: ['img/css/sprite-files/*.*'],
-			watchPaths: ['img/css/sprite-files/**'],
 		},		
 		{
 			driver: 'img',
@@ -45,7 +37,15 @@ var configuration = {
 			output: './../..',
 			autoClean: true,
 			autoCleanPaths: ['*.{php,html}', 'inc']
-		}
+		},
+		{
+			/* sprite's SCSS variables (see: src/css/variables/_sprites.scss) and it's image (see: src/img/css/compiled-sprite.png) 
+				are auto compiled from chagnes to your loose image files under src/img/css/sprite-files/.
+			*/
+			driver: 'sprite',
+			paths: ['./img/css/sprite-files/*.*'],
+			watchPaths: ['img/css/sprite-files/**']
+		}		
 		/*
 			Tasks are a unit of work. At their simplest tasks act as a simple file copy from [paths] to [output] (maintaining relative paths).
 			By adding a driver your can intercept the sources the task gets and do things to them before they get to the output.

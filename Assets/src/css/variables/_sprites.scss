@@ -11,79 +11,107 @@ $icon-home: x y offset_x offset_y width height total_width total_height image_pa
 At the bottom of this section, we provide information about the spritesheet itself
 $spritesheet: width height image $spritesheet-sprites;
 */
-$github-download-tar-grey: map-merge((
-	x: 0px, 
-	y: 0px, 
-	offsetX: 0px, 
-	offsetY: 0px, 
-	width: 85px, 
-	height: 65px, 
-	totalWidth: 175px, 
-	totalHeight: 170px, 
-	src: '#{$imagesFolder}main-sprite.png', 
-	name: 'github-download-tar-grey'
+$github-download-tar-grey:map-merge((
+	low_res:(
+		offsetX: 0px, 
+		offsetY: 0px, 
+		width: 85px, 
+		height: 65px, 
+		totalWidth: 175px, 
+		totalHeight: 170px, 
+		src: '#{$imagesFolder}main-sprite.png'
+	),
+	hi_res:(
+		offsetX: 0px, 
+		offsetY: 0px, 
+		width: 170px, 
+		height: 130px, 
+		totalWidth: 350px, 
+		totalHeight: 340px, 
+		src: '#{$imagesFolder}main-sprite-2x.png'
+	)
 ),());
-$github-download-tar-red: map-merge((
-	x: 90px, 
-	y: 0px, 
-	offsetX: -90px, 
-	offsetY: 0px, 
-	width: 85px, 
-	height: 65px, 
-	totalWidth: 175px, 
-	totalHeight: 170px, 
-	src: '#{$imagesFolder}main-sprite.png', 
-	name: 'github-download-tar-red'
+$github-download-tar-red:map-merge((
+	low_res:(
+		offsetX: -90px, 
+		offsetY: 0px, 
+		width: 85px, 
+		height: 65px, 
+		totalWidth: 175px, 
+		totalHeight: 170px, 
+		src: '#{$imagesFolder}main-sprite.png'
+	),
+	hi_res:(
+		offsetX: -180px, 
+		offsetY: 0px, 
+		width: 170px, 
+		height: 130px, 
+		totalWidth: 350px, 
+		totalHeight: 340px, 
+		src: '#{$imagesFolder}main-sprite-2x.png'
+	)
 ),());
-$github-download-zip-grey: map-merge((
-	x: 0px, 
-	y: 70px, 
-	offsetX: 0px, 
-	offsetY: -70px, 
-	width: 85px, 
-	height: 65px, 
-	totalWidth: 175px, 
-	totalHeight: 170px, 
-	src: '#{$imagesFolder}main-sprite.png', 
-	name: 'github-download-zip-grey'
+$github-download-zip-grey:map-merge((
+	low_res:(
+		offsetX: 0px, 
+		offsetY: -70px, 
+		width: 85px, 
+		height: 65px, 
+		totalWidth: 175px, 
+		totalHeight: 170px, 
+		src: '#{$imagesFolder}main-sprite.png'
+	),
+	hi_res:(
+		offsetX: 0px, 
+		offsetY: -140px, 
+		width: 170px, 
+		height: 130px, 
+		totalWidth: 350px, 
+		totalHeight: 340px, 
+		src: '#{$imagesFolder}main-sprite-2x.png'
+	)
 ),());
-$github-download-zip-red: map-merge((
-	x: 90px, 
-	y: 70px, 
-	offsetX: -90px, 
-	offsetY: -70px, 
-	width: 85px, 
-	height: 65px, 
-	totalWidth: 175px, 
-	totalHeight: 170px, 
-	src: '#{$imagesFolder}main-sprite.png', 
-	name: 'github-download-zip-red'
+$github-download-zip-red:map-merge((
+	low_res:(
+		offsetX: -90px, 
+		offsetY: -70px, 
+		width: 85px, 
+		height: 65px, 
+		totalWidth: 175px, 
+		totalHeight: 170px, 
+		src: '#{$imagesFolder}main-sprite.png'
+	),
+	hi_res:(
+		offsetX: -180px, 
+		offsetY: -140px, 
+		width: 170px, 
+		height: 130px, 
+		totalWidth: 350px, 
+		totalHeight: 340px, 
+		src: '#{$imagesFolder}main-sprite-2x.png'
+	)
 ),());
-$github-icon-download: map-merge((
-	x: 0px, 
-	y: 140px, 
-	offsetX: 0px, 
-	offsetY: -140px, 
-	width: 30px, 
-	height: 30px, 
-	totalWidth: 175px, 
-	totalHeight: 170px, 
-	src: '#{$imagesFolder}main-sprite.png', 
-	name: 'github-icon-download'
+$github-icon-download:map-merge((
+	low_res:(
+		offsetX: 0px, 
+		offsetY: -140px, 
+		width: 30px, 
+		height: 30px, 
+		totalWidth: 175px, 
+		totalHeight: 170px, 
+		src: '#{$imagesFolder}main-sprite.png'
+	),
+	hi_res:(
+		offsetX: 0px, 
+		offsetY: -280px, 
+		width: 60px, 
+		height: 60px, 
+		totalWidth: 350px, 
+		totalHeight: 340px, 
+		src: '#{$imagesFolder}main-sprite-2x.png'
+	)
 ),());
-$main-sheet-sprites: (
-	$github-download-tar-grey,
-	$github-download-tar-red,
-	$github-download-zip-grey,
-	$github-download-zip-red,
-	$github-icon-download,
-);
 
-$main-sheet: map-merge((
-	width: 175px, 
-	height: 170px, 
-	src: '#{$imagesFolder}main-sprite.png', 
-	name: $main-sheet-sprites
-),());
+
 
 

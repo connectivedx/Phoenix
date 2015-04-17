@@ -6,41 +6,41 @@
 // @usage
 // =sprite($image-file-name)
 
-@mixin sprite($sprite) {
-	@include sprite-image($sprite);
-	@include sprite-position($sprite);
-	@include sprite-width($sprite);
-	@include sprite-height($sprite);
+@mixin sprite($sprite) {		
+	@include sprite-image(map-get($sprite, low_res));
+	@include sprite-position(map-get($sprite, low_res));
+	width: map-get(map-get($sprite, low_res), width);
+	height: map-get(map-get($sprite, low_res), height);
+	@include high-dpi() {
+		@include sprite-image(map-get($sprite, hi_res));
+		@include sprite-background-size(map-get($sprite, low_res)); 
+	}
 }
 
-	@mixin sprite-width($sprite) {
-		width: map-get($sprite, width);
-	}
-
-	@mixin sprite-height($sprite) {
-		height: map-get($sprite, height);
-	}
-
-	@mixin sprite-position($sprite) {
-		$sprite-offset-x: map-get($sprite, offsetX);
-		$sprite-offset-y: map-get($sprite, offsetY);
-		background-position: $sprite-offset-x  $sprite-offset-y;
-	}
-
-	@mixin sprite-image($sprite) {
-		$sprite-image: map-get($sprite, src);
-		background-image: url(#{$sprite-image});
-	}
-
-//The 'sprites' mixin generates identical output to the CSS template
-//  but can be overridden inside of SCSS
-//@include sprites($spritesheet-sprites);
-
-@mixin sprites($sprites) {
-  @each $sprite in $sprites {
-	$sprite-name: map-get($sprite, name);
-	.#{$sprite-name} {
-	  @include sprite($sprite);
-	}
-  }
+@mixin sprite-position($sprite) {
+	$sprite-offset-x: map-get($sprite, offsetX);
+	$sprite-offset-y: map-get($sprite, offsetY);
+	background-position: $sprite-offset-x  $sprite-offset-y;
 }
+
+@mixin sprite-image($sprite) {
+	$sprite-image: map-get($sprite, src);
+	background-image: url(#{$sprite-image});
+}
+
+@mixin sprite-background-size($sprite) {
+	$sprite-total-width: map-get($sprite, width);
+	$sprite-total-height: map-get($sprite, height);
+	background-size: $sprite-total-width $sprite-total-height;
+}
+
+//@mixin retina-sprite($retina-group) {
+//	$normal-sprite: nth($retina-group, 2);
+//	$retina-sprite: nth($retina-group, 3);
+//	@include sprite($normal-sprite);
+
+//	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+//		@include sprite-image($retina-sprite);
+//		@include sprite-background-size($normal-sprite);
+//	}
+//}
