@@ -4,7 +4,6 @@
 'use strict';
 var gulp = require('gulp');
 var spritesmith = require('gulp.spritesmith');
-var wrench = require('wrench');
 
 var SpriteDrive = {
 	init: function(globalConfiguration, taskConfiguration){

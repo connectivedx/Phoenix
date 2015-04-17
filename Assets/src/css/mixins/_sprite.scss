@@ -33,14 +33,3 @@
 	$sprite-total-height: map-get($sprite, height);
 	background-size: $sprite-total-width $sprite-total-height;
 }
-
-//@mixin retina-sprite($retina-group) {
-//	$normal-sprite: nth($retina-group, 2);
-//	$retina-sprite: nth($retina-group, 3);
-//	@include sprite($normal-sprite);
-
-//	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-//		@include sprite-image($retina-sprite);
-//		@include sprite-background-size($normal-sprite);
-//	}
-//}

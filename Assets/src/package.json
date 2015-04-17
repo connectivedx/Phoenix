@@ -35,7 +35,6 @@
 		"gulp-imagemin": "~2.2.1",
 		"gulp.spritesmith": "~3.5.3",
 
-		"jquery": "~1.11.2",
-		"wrench": "~1.5.8"
+		"jquery": "~1.11.2"
 	}
 }

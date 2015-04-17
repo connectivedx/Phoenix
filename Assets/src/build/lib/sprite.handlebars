@@ -5,7 +5,6 @@
 }
 
 {{#extend "scss"}}
-
 {{#content "sprites"}}
 {{#each retina_groups}}
 ${{strings.name}}:map-merge((
@@ -29,10 +28,6 @@ ${{strings.name}}:map-merge((
 	)
 ),());
 {{/each}}
-
-
 {{/content}}
-
 {{#content "spritesheet"}}{{/content}}
-
 {{/extend}}
