@@ -24,7 +24,15 @@ var configuration = {
 			// fonts are just a plain ol' copy, so they do not need a driver to process them on their way.
 			paths: ['./fonts/**/*.{eot,ttf,woff,woff2,svg}'],
 			watchPaths: ['fonts/**'],
-		},		
+		},
+		{
+			/* sprite's SCSS variables (see: src/css/variables/_sprites.scss) and it's image (see: src/img/css/compiled-sprite.png) 
+				are auto compiled from chagnes to your loose image files under src/img/css/sprite-files/.
+			*/
+			driver: 'sprite',
+			paths: ['./img/css/sprite-files/*.{png,jpg}'],
+			watchPaths: ['img/css/sprite-files/**']
+		},			
 		{
 			driver: 'img',
 			paths: ['./img/**/*.{jpg,png,gif,ico,svg}'],
@@ -37,14 +45,6 @@ var configuration = {
 			output: './../..',
 			autoClean: true,
 			autoCleanPaths: ['*.{php,html}', 'inc']
-		},
-		{
-			/* sprite's SCSS variables (see: src/css/variables/_sprites.scss) and it's image (see: src/img/css/compiled-sprite.png) 
-				are auto compiled from chagnes to your loose image files under src/img/css/sprite-files/.
-			*/
-			driver: 'sprite',
-			paths: ['./img/css/sprite-files/*.*'],
-			watchPaths: ['img/css/sprite-files/**']
 		}		
 		/*
 			Tasks are a unit of work. At their simplest tasks act as a simple file copy from [paths] to [output] (maintaining relative paths).

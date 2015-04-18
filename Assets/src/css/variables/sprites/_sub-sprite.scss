@@ -1,0 +1,115 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$github-download-tar-grey: map-merge((
+	low_res:(
+		offsetX: 0px, 
+		offsetY: 0px, 
+		width: 85px, 
+		height: 65px, 
+		totalWidth: 175px, 
+		totalHeight: 170px, 
+		src: '#{$imagesFolder}sub-sprite.png'
+	),
+	hi_res:(
+		offsetX: 0px, 
+		offsetY: 0px, 
+		width: 85px, 
+		height: 65px, 
+		totalWidth: 180px, 
+		totalHeight: 180px, 
+		src: '#{$imagesFolder}sub-sprite-2x.png'
+	)
+),());
+$github-download-tar-red: map-merge((
+	low_res:(
+		offsetX: -90px, 
+		offsetY: 0px, 
+		width: 85px, 
+		height: 65px, 
+		totalWidth: 175px, 
+		totalHeight: 170px, 
+		src: '#{$imagesFolder}sub-sprite.png'
+	),
+	hi_res:(
+		offsetX: -95px, 
+		offsetY: 0px, 
+		width: 85px, 
+		height: 65px, 
+		totalWidth: 180px, 
+		totalHeight: 180px, 
+		src: '#{$imagesFolder}sub-sprite-2x.png'
+	)
+),());
+$github-download-zip-grey: map-merge((
+	low_res:(
+		offsetX: 0px, 
+		offsetY: -70px, 
+		width: 85px, 
+		height: 65px, 
+		totalWidth: 175px, 
+		totalHeight: 170px, 
+		src: '#{$imagesFolder}sub-sprite.png'
+	),
+	hi_res:(
+		offsetX: 0px, 
+		offsetY: -75px, 
+		width: 85px, 
+		height: 65px, 
+		totalWidth: 180px, 
+		totalHeight: 180px, 
+		src: '#{$imagesFolder}sub-sprite-2x.png'
+	)
+),());
+$github-download-zip-red: map-merge((
+	low_res:(
+		offsetX: -90px, 
+		offsetY: -70px, 
+		width: 85px, 
+		height: 65px, 
+		totalWidth: 175px, 
+		totalHeight: 170px, 
+		src: '#{$imagesFolder}sub-sprite.png'
+	),
+	hi_res:(
+		offsetX: -95px, 
+		offsetY: -75px, 
+		width: 85px, 
+		height: 65px, 
+		totalWidth: 180px, 
+		totalHeight: 180px, 
+		src: '#{$imagesFolder}sub-sprite-2x.png'
+	)
+),());
+$github-icon-download: map-merge((
+	low_res:(
+		offsetX: 0px, 
+		offsetY: -140px, 
+		width: 30px, 
+		height: 30px, 
+		totalWidth: 175px, 
+		totalHeight: 170px, 
+		src: '#{$imagesFolder}sub-sprite.png'
+	),
+	hi_res:(
+		offsetX: 0px, 
+		offsetY: -150px, 
+		width: 30px, 
+		height: 30px, 
+		totalWidth: 180px, 
+		totalHeight: 180px, 
+		src: '#{$imagesFolder}sub-sprite-2x.png'
+	)
+),());
+
+
