@@ -9,6 +9,18 @@
     position: absolute;
 }
 
+.browser-alert {
+	background-color: color(primary);
+	color: white;
+	@include font-size(24);
+	padding: em(16);
+	text-align: center;
+
+	a {
+		color: color(greyLight);
+	}
+}
+
 %divider-config {
 	border: none;	// reset border to none; this allows the class to be used on horizontal rules
 	margin-top: $columnPadding * 2;
