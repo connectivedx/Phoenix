@@ -29,7 +29,7 @@ $tooltipShadowBlurRadius: 10px;
 	@include font-size(14);
 	padding: $tooltipPadding;
 	position: absolute;
-	z-index: 100000;
+	z-index: z(tooltip);
 }
 	.tipsy-inner {
 		background-color: $tooltipBackgroundColor;
