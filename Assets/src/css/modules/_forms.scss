@@ -82,20 +82,35 @@ fieldset {
 
 // selects
 $decoratorSelectBorderSize: 1px;
+$decoratorSelectHeight: $inputHeight - (2 * $decoratorSelectBorderSize);
 
-.decorator-select {
+%decorator-select {
 	@include gradient(color(greyLight), color(greyMedium));
-	background-size: 100%;
 	border: $decoratorSelectBorderSize solid color(greyMedium);
 	border-radius: $formElementBorderRadius;
 	display: inline-block;
-	height: auto;
-	position: relative;
 	width: 100%;
+
+	select {
+		-webkit-appearance: none;
+		background: transparent;
+		border: none;
+		color: black;
+		display: block;
+		outline: none;
+		padding: 6px 10px 6px 10px;
+		position: relative;
+		width: 100%;
+	}
+}
+
+.decorator-select {
+	@extend %decorator-select;
+	position: relative;
 
 	&:after {
 		content: image('bg-select-arrow.png');
-		height: $inputHeight - (2 * $decoratorSelectBorderSize);	// the content image's height should fit within the confines of the input's height
+		height: $decoratorSelectHeight;	// the content image's height should fit within the confines of the input's height
 		pointer-events: none;
 		position: absolute;
 		right: 0;
@@ -107,38 +122,16 @@ $decoratorSelectBorderSize: 1px;
 	}
 
 	select {
-		-webkit-appearance: none;
-		background: transparent;
-		border: none;
-		color: black;
-		display: block;
-		height: $inputHeight - (2 * $decoratorSelectBorderSize);
-		outline: none;
-		padding: 6px 10px 6px 10px;
-		position: relative;
-		width: 100%;
+		height: $decoratorSelectHeight;
 	}
 }
 
 // multiple selects
 .decorator-select-multiple {
-	@include gradient(color(greyLight), color(greyMedium));
-	border: $decoratorSelectBorderSize solid color(greyMedium);
-	border-radius: $formElementBorderRadius;
-	display: inline-block;
-	width: 100%;
+	@extend %decorator-select;
 
 	select {
-		-webkit-appearance: none;
-		background: transparent;
-		border: none;
-		color: black;
-		display: block;
-		min-height: $inputHeight - (2 * $decoratorSelectBorderSize);
-		outline: none;
-		padding: 6px 10px 6px 10px;
-		position: relative;
-		width: 100%;
+		min-height: $decoratorSelectHeight;
 	}
 }
 
