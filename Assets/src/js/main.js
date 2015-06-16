@@ -40,7 +40,7 @@ $('.four-up:nth-child(4n+1)').addClass('nth-child-4np1');
 $('.four-up:nth-child(n+5)').addClass('nth-child-np5');
 
 // toggle buttons for test pages
-$('.toggle-push-and-pull').on('click', function(e) {
+$('.toggle-position').on('click', function(e) {
 	e.preventDefault();
 	$('body').toggleClass('not-shifted shifted');
 });

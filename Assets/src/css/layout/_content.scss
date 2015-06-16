@@ -53,25 +53,21 @@
 	&.shifted {
 		&.no-gutters {
 			.layout-primary {
-				@include column(9, (includeGutterWidth: false, shifted: true));
-				@include push(3, (includeGutterWidth: false));
+				@include column(9, (includeGutterWidth: false, position: 4));
 			}
 
 			.layout-secondary {
-				@include column(3, (includeGutterWidth: false, shifted: true));
-				@include pull(9, 3, (includeGutterWidth: false));
+				@include column(3, (includeGutterWidth: false, position: 1));
 			}
 		}
 
 		&.gutters {
 			.layout-primary {
-				@include column(9, (shifted: true));
-				@include push(3);
+				@include column(9, (position: 4));
 			}
 
 			.layout-secondary {
-				@include column(3, (shifted: true));
-				@include pull(9, 3);
+				@include column(3, (position: 1));
 			}
 		}
 	}
@@ -111,33 +107,29 @@
 	&.shifted {
 		&.no-gutters {
 			.layout-primary {
-				@include column(6, (includeGutterWidth: false, shifted: true));
-				@include push(3, (includeGutterWidth: false));
+				@include column(6, (includeGutterWidth: false, position: 4));
 			}
 
 			.layout-secondary {
-				@include column(3, (includeGutterWidth: false, shifted: true));
-				@include pull(6, 3, (includeGutterWidth: false));
+				@include column(3, (includeGutterWidth: false, position: 1));
 			}
 
 			.layout-tertiary {
-				@include column(3, (includeGutterWidth: false));
+				@include column(3, (includeGutterWidth: false, position: 10));
 			}
 		}
 
 		&.gutters {
 			.layout-primary {
-				@include column(6, (shifted: true));
-				@include push(3);
+				@include column(6, (position: 4));
 			}
 
 			.layout-secondary {
-				@include column(3, (shifted: true));
-				@include pull(6, 3);
+				@include column(3, (position: 1));
 			}
 
 			.layout-tertiary {
-				@include column(3);
+				@include column(3, (position: 10));
 			}
 		}
 	}

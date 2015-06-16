@@ -66,7 +66,7 @@
 // @function column
 // Creates a semantic-grid set of columns based on the base grid system settings.  On low resolutions, the columns will stack and will break at breakpointMedium to the number of columns specified.
 // @param $columns {Number} The number of columns you wish your element's width to occupy. [integer]
-// @param $shifted {Boolean} Whether you will be pushing or pulling the columns.  Default value: false.
+// @param $position {Number} In what column do you want your element to begin.  Default value: false.
 // @param $padding {Number} A padding override to be set on the row.  Default value: $columnPadding.  [px|em]
 // @param $nested {Boolean} Whether or not the columns will be contained within a nested row.  Default value: false.
 // @param $alignmnet {String} Whether or not the columns will be centered within a row.  Default value: false.
@@ -76,14 +76,14 @@
 // column(8, (padding: 10px))
 @mixin column($columns, $options: ()) {
 	$options: map-merge((
-		shifted: false,
+		position: false,
 		padding: $columnPadding,
 		nested: false,
 		alignment: false,
 		includeGutterWidth: true
 	), $options);
 
-	$shifted: map-get($options, shifted);
+	$position: map-get($options, position);
 	$padding: map-get($options, padding);
 	$nested: map-get($options, nested);
 	$alignment: map-get($options, alignment);
@@ -117,7 +117,11 @@
 		}
 
 		@include media(breakpointMedium) {
-			@if $shifted == false and $includeGutterWidth == true {
+			@if $position != false {
+				margin-left: columnPosition($position, $options);
+				margin-right: -100%;
+			}
+			@else if $includeGutterWidth == true {
 				margin-left: $gutterWidth;
 
 				&:first-child {
@@ -127,57 +131,6 @@
 
 			margin-top: 0;
 			width: columns($columns, $options);
-		}
-	}
-}
-
-// @category layout
-
-// @function push
-// Pushes a semantic-grid set of columns by the number of columns specified.
-// @param $columns {Number} The number of columns to push the set of columns.  [integer]
-// @param $includeGutterWidth {Boolean} Whether or not the columns will have a gutter applied.  Default value: true.
-// @usage
-// push(4)
-// push(4, (includeGutterWidth: false))
-@mixin push($columns, $options: ()) {
-	$options: map-merge((
-		includeGutterWidth: true
-	), $options);
-
-	@if ($columns > 0) {
-		margin-left: 0;
-
-		@include media(breakpointMedium) {
-			margin-left: push_x($columns, $options);
-		}
-	}
-}
-
-
-// @category layout
-
-// @function pull
-// Pulls a semantic-grid set of columns by the number of columns specified.
-// @param $columns {Number} The number of columns to pull the set of columns.  [integer]
-// @param $width {Number} The width, as a number of columns, of the set of columns being pulled.  [integer]
-// @param $includeGutterWidth {Boolean} Whether or not the columns will have a gutter applied.  Default value: true.
-// @usage
-// pull(4, 12)
-@mixin pull($columns, $width, $options: ()) {
-	$options: map-merge((
-		includeGutterWidth: true
-	), $options);
-
-	@if ($columns > 0 and $width > 0) {
-		margin-left: 0;
-
-		@include media(breakpointMedium) {
-			margin-left: pull_x($columns, $width, $options);
-
-			&:first-child {
-				margin-left: 0;
-			}
 		}
 	}
 }
