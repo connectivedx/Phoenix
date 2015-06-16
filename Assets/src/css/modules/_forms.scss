@@ -20,10 +20,11 @@ fieldset:not(#foo) {
 			display: block;
 			padding: em(6) em(5) em(4) em(27);
 
-			&:before {
-				@extend %icon-config-modern-browsers;
-				margin-left: em(-28);
+			&::before {
+				display: inline-block;
+				margin-left: em(-26);
 				margin-right: em(8);
+				vertical-align: middle;
 			}
 
 			&.inline {
@@ -34,27 +35,33 @@ fieldset:not(#foo) {
 
 	input[type="radio"] {
 		& + label {
-			@include icon(radioUnchecked);
+			&::before {
+				content: image('radio-unchecked.svg');
+			}
 		}
-		&:active + label,
 		&:focus + label {
 			color: color(primary);
 		}
 		&:checked + label {
-			@include icon(radioChecked);
+			&::before {
+				content: image('radio-checked.svg');
+			}
 		}
 	}
 
 	input[type="checkbox"] {
 		& + label {
-			@include icon(checkboxUnchecked);
+			&::before {
+				content: image('checkbox-unchecked.svg');
+			}
 		}
-		&:active + label,
 		&:focus + label {
 			color: color(primary);
 		}
 		&:checked + label {
-			@include icon(checkboxChecked);
+			&::before {
+				content: image('checkbox-checked.svg');
+			}
 		}
 	}
 }
