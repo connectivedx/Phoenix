@@ -19,6 +19,7 @@ var CssDriver = {
 				browsers: ['last 2 versions', 'IE >= 8', 'Android >= 4']
 			})))
 			.pipe(base64({
+				exclude: [/\icomoon/],
 				extensions: ['svg']
 			}))
 			.pipe(gulpif(!debug, cmq()))
