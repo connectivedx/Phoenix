@@ -66,7 +66,7 @@
 // @function column
 // Creates a semantic-grid set of columns based on the base grid system settings.  On low resolutions, the columns will stack and will break at breakpointMedium to the number of columns specified.
 // @param $columns {Number} The number of columns you wish your element's width to occupy. [integer]
-// @param $position {Number} In what column do you want your element to begin.  Default value: false.
+// @param $position {Number} In what column do you want your element to be positioned.  This is 1-indexed, so possible values are 1 through $columns defined in variables/_grid.scss.  Default value: false.
 // @param $padding {Number} A padding override to be set on the row.  Default value: $columnPadding.  [px|em]
 // @param $nested {Boolean} Whether or not the columns will be contained within a nested row.  Default value: false.
 // @param $alignmnet {String} Whether or not the columns will be centered within a row.  Default value: false.
