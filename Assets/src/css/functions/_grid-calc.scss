@@ -8,6 +8,8 @@
 }
 
 /// Calculates the width of a single column.
+/// @param {String} $columns [$columns] - The total number of columns in the grid to use as the basis of a single column width.
+/// @param {Boolean} $includeGutterWidth [true] - Whether or not the column width will include the gutter width in its calculation.
 /// @return {Percentage} The width of a single column.
 @function oneColumn($options: ()) {
 	$options: map-merge((
@@ -15,16 +17,19 @@
 		includeGutterWidth: true
 	), $options);
 
+	$columns: map-get($options, columns);
+
 	@if map-get($options, includeGutterWidth) == true {
-		@return (100% - ((map-get($options, columns) - 1) * $gutterWidth)) / map-get($options, columns);
+		@return (100% - ($columns - 1) * $gutterWidth) / $columns;
 	}
 	@else {
-		@return 100% / map-get($options, columns);
+		@return 100% / $columns;
 	}
 }
 
 /// Calculates the width of n columns.
 /// @param {Number} $n - The number of columns for which you wish to calculate the width.
+/// @param {Boolean} $includeGutterWidth [true] - Whether or not the column width will include the gutter width in its calculation.
 /// @return {Percentage} The width of n columns.
 @function columns($n, $options: ()){
 	$options: map-merge((
@@ -42,7 +47,8 @@
 
 /// Calculates margin to position column within the grid system.
 /// @param {Number} $n - The column position in which you wish to position an element.
-/// @return {Percentage} The position in percentage width of the parent.
+/// @param {Boolean} $includeGutterWidth [true] - Whether or not the column will include the gutter width in its position.
+/// @return {Percentage} The position in percentage width of the parent container.
 @function columnPosition($n, $options: ()) {
 	$options: map-merge((
 		includeGutterWidth: true
