@@ -1,7 +1,7 @@
 /// Adds and icon as pseudo element content as well as any passed styles
-/// @param {String} icon - The name of the icon as defined in its icon map.
-/// @param {String} pseudo ["before"] - The name of the pseduo element you want to target, either "before" or "after".
-/// @param {String} iconMap [$icons] - The name of the icon map to retrieve the icon from.
+/// @param {String} $icon - The name of the icon as defined in its icon map.
+/// @param {String} $pseudo ["before"] - The name of the pseduo element you want to target, either "before" or "after".
+/// @param {String} $iconMap [$icons] - The name of the icon map to retrieve the icon from.
 /// @example
 /// icon(arrowUp)
 /// // returns "\e601"
