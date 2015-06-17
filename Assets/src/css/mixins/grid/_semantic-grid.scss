@@ -62,7 +62,8 @@
 /// @param {Pixels | Ems} $padding [$gutterInPx] - A padding override to be set on the row.
 // @param {String} $breakpoint [$columnBreakpoint] - The breakpoint at which the element's width changes from 100% to the column width specified.
 /// @param {String} $nested [false] - Whether or not the columns will be contained within a nested row.
-/// @param {String} $alignmnet [false] - Whether or not the columns will be centered within a row.  Default value: false.
+/// @param {String} $alignment [false] - Whether or not the columns will be centered within a row.
+/// @param {String} $includeGutterWidth [true] - Whether or not the columns will include the gutter width in its layout calculations.
 /// @example
 /// column(8)
 /// @example

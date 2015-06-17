@@ -1,6 +1,6 @@
 /// Adds a CSS transition with the given property, time, easing, and delay parameters.
 /// @param {String} $property [all] - The CSS property to which you wish to apply the transition.
-/// @param {Time} $time [0.3s] - The amount of time for the transition to take.
+/// @param {Time} $duration [0.3s] - The amount of time for the transition to take.
 /// @param {String} $easing [linear] - The easing function to use with the transition.
 /// @param {Time} $delay [0s] - The amount of time to delay the transition.
 /// @example
