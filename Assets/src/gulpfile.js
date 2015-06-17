@@ -21,13 +21,6 @@ var configuration = {
 			autoCleanPaths: ['./css/*.css']
 		},
 		{
-			driver: 'style-guide',
-			paths: ['./css/style.scss', './css/base/**/*.scss', './css/modules/**/*.scss'],
-			watchPaths: ['css/**'],
-			autoClean: true,
-			autoCleanPaths: ['../../documentation']
-		},
-		{
 			// fonts are just a plain ol' copy, so they do not need a driver to process them on their way.
 			paths: ['./fonts/**/*.{eot,ttf,woff,woff2,svg}'],
 			watchPaths: ['fonts/**'],

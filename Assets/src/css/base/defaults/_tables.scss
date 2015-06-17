@@ -1,47 +1,3 @@
-/***
- * Tables:
- */
-
-/**
- * Tables:
- * `<table>...</table>`
- * <p>Standard table markup is expected: `<thead>, <tfoot>, <tbody>`, etc. Zebra striping is applied by default.</p>
- *
- *		@example
- *		<table>
- *			<thead>
- *				<tr>
- *					<th>Lorem Ipsum dolor</th>
- *					<th>Lorem Ipsum dolor</th>
- *					<th>Lorem Ipsum dolor</th>
- *				</tr>
- *			</thead>
- *			<tbody>
- *				<tr>
- *					<td>Mauris vestibulum auctor</td>
- *					<td>Mauris vestibulum auctor</td>
- *					<td>Mauris vestibulum auctor</td>
- *				</tr>
- *				<tr>
- *					<td>Mauris vestibulum auctor</td>
- *					<td>Mauris vestibulum auctor</td>
- *					<td>Mauris vestibulum auctor</td>
- *				</tr>
- *				<tr>
- *					<td>Mauris vestibulum auctor</td>
- *					<td>Mauris vestibulum auctor</td>
- *					<td>Mauris vestibulum auctor</td>
- *				</tr>
- *				<tr>
- *					<td>Mauris vestibulum auctor</td>
- *					<td>Mauris vestibulum auctor</td>
- *					<td>Mauris vestibulum auctor</td>
- *				</tr>
- *			</tbody>
- *		</table>
- *
- */
-
 table {
 	border-collapse: collapse;
 	@include font-size(12);
@@ -70,7 +26,6 @@ table {
 		text-align: left;
 	}
 
-	// zebra striping code needs to repeat because IE < 8 will ignore the code if an nth-child selector is in it
 	tr:nth-child(2n) {
 		> td {
 			background-color: color(greyLight);

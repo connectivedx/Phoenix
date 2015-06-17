@@ -1,19 +1,3 @@
-/***
- * Dividers:
- */
-
-/**
- * Divider Classes:
- * `%divider-config`
- * <br>`.divider`
- * <br>`.divider-secondary`
- * <p>Applies a horizontal stroke and some padding to an element&rsquo;s top edge.</p>
- *
- *		@example
- *		<div class="divider"><p>Divider</p></div>
- *		<div class="divider-secondary"><p>Divider secondary</p></div>
- *
- */
 %divider-config {
 	border: none;	// reset border to none; this allows the class to be used on horizontal rules
 	margin-top: $columnPadding * 2;

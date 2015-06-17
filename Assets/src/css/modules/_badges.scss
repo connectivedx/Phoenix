@@ -1,16 +1,3 @@
-/***
- * Badges:
- */
-
-/**
- * Default Badge:
- * `%badge-config`
- * <p>Renders a badge that can be used as a label, notification count, or tag. Similar in style to a button, but smaller, with rounded corners.</p>
- *
- *		@example
- *		<span class="badge-primary">I&rsquo;m a badge!</span>
- */
-
 $badgeBorderRadius: 8px;
 
 %badge-config {
@@ -22,28 +9,12 @@ $badgeBorderRadius: 8px;
 	padding: em(6, (context: 12));
 }
 
-/**
- * Badge Primary:
- * `.badge-primary`
- * <p>Extends `%badge-config` and uses the primary color variable as background color.</p>
- *
- *		@example
- *		<span class="badge-primary">Badge-primary</span>
- */
 .badge-primary {
 	@extend %badge-config;
 	background-color: color(primary);
 	color: white;
 }
 
-/**
- * Badge Secondary:
- * `.badge-secondary`
- * <p>Extends `%badge-config` and uses the secondary color variable as background color.</p>
- *
- *		@example
- *		<span class="badge-secondary">Badge-secondary</span>
- */
 .badge-secondary {
 	@extend %badge-config;
 	background-color: color(secondary);

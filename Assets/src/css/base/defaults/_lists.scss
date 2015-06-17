@@ -1,39 +1,3 @@
-/***
- * Lists:
- */
-
-/**
- * Unordered Lists:
- * `<ul>...</ul>`
- * <p>Bullets on unordered lists are generated as `:before` pseudo elements, using a unicode bullet (`content: "\2022"`). This normalizes the appearance of bullets across platforms.</p>
- * <p><strong>NOTE:</strong>&nbsp;Bullets on nested lists (e.g.: `ul > ul`) will appear the same as their parent&mdash;no switching to disc, etc., as is standard in user agent stylesheets. If this is desired, those styles will need to be overridden for nested lists. For most applications, however, indentation seems to provide enough of a visual cue to convey the sense of &lsquo;nested-ness&rsquo;.</p>
- *
- *		@example
- *		<ul>
- *			<li>Short Item in the list</li>
- *			<li><a href="#">Short Item in the list</a></li>
- *			<li>Short Item in the list</li>
- *			<li><a href="#">Short Item in the list</a></li>
- *			<li>Short Item in the list</li>
- *			<li>Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the listReally long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list</li>
- *		</ul>
- */
-
-/**
- * Ordered Lists:
- * `<ol>...</ol>`
- *
- *		@example
- *		<ol>
- *			<li>Short Item in the list</li>
- *			<li><a href="#">Short Item in the list</a></li>
- *			<li>Short Item in the list</li>
- *			<li><a href="#">Short Item in the list</a></li>
- *			<li>Short Item in the list</li>
- *			<li>Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the listReally long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list, Really long item in the list</li>
- *		</ol>
- */
-
 ul {
 	list-style-image: none;
 	list-style: none;
