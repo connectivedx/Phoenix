@@ -1,7 +1,7 @@
 /// Applies a clearfix to the applied container to combat the zero-height container problem.
 /// @link https://css-tricks.com/snippets/css/clear-fix/
 %clearfix {
-	&:after {
+	&::after {
 		clear: both;
 		content: "";
 		display: table;

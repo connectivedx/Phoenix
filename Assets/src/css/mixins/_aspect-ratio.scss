@@ -7,7 +7,7 @@
 	position: relative;	// context for direct descendant
 
 	// container to maintain aspect ratio
-	&:before {
+	&::before {
 		content: '';
 		display: block;
 		padding-top: percentage(parseInt($height) / parseInt($width));

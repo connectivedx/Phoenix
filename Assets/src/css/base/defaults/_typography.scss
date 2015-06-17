@@ -59,13 +59,13 @@ a {
 	@include media(print) {
 		text-decoration: underline;
 
-		&[href]:after {
+		&[href]::after {
 			content: " (" attr(href) ")";
 		}
 
 		&[href^="#"],
 		&[href^="javascript:"] {
-			&:after {
+			&::after {
 				content: " ";
 			}
 		}
@@ -84,7 +84,7 @@ p, h2, h3, h4 {
 	}
 }
 
-abbr[title]:after {
+abbr[title]::after {
 	@include media(print) {
 		content: " (" attr(title) ")";
 	}

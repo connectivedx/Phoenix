@@ -201,7 +201,7 @@ aside {
 	border: 1px dashed color(primary);
 
 	> li {
-		&:before {
+		&::before {
 			display: none;
 		}
 	}

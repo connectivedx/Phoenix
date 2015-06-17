@@ -2,7 +2,7 @@
 	padding-left: 0;
 
 	li {
-		&:before {
+		&::before {
 			display: none;		// hides custom bullets
 		}
 	}

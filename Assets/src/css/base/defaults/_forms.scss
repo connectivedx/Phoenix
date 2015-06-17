@@ -196,7 +196,7 @@ $decoratorSelectHeight: $inputHeight - (2 * $decoratorSelectBorderSize);
 	@extend %decorator-select;
 	position: relative;
 
-	&:after {
+	&::after {
 		content: image('bg-select-arrow.png');
 		height: $decoratorSelectHeight;	// the content image's height should fit within the confines of the input's height
 		pointer-events: none;

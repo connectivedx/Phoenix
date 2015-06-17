@@ -177,7 +177,7 @@ $tabPanelTextColor: black;
 		background: $tabHoverBackgroundColor;
 	}
 
-	&:before {
+	&::before {
 		display: none;
 	}
 

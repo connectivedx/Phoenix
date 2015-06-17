@@ -7,10 +7,10 @@
 /// // returns "\e601"
 /// @example
 /// icon(facebook, (iconMap: $socialIcons))
-/// // returns :before { content: "\e708" }
+/// // returns ::before { content: "\e708" }
 /// @example
 /// icon(arrowUp, (pseudo: 'after')) { color: red; }
-/// // returns :after { content: "\e601"; color: red;}
+/// // returns ::after { content: "\e601"; color: red;}
 @mixin icon($name, $options: ()) {
 	$options: map-merge((
 		pseudo: 'before',
