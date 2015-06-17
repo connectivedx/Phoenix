@@ -44,9 +44,6 @@
 		padding: $padding;
 		@content;
 
-		// IE8 fallback
-		width: oneColumn((columns: $smallColumns, includeGutterWidth: false));
-
 		@include media($smallBreak) {
 			width: oneColumn((columns: $smallColumns, includeGutterWidth: false));
 		}

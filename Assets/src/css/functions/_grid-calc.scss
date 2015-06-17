@@ -46,39 +46,24 @@
 	@return $columnWidth;
 }
 
-/// Calculates how far to push an element.
-/// @param {Number} $n - The number of columns you wish to push an element.
-/// @return {Percentage} The push amount.
-@function push-x($n, $options: ()) {
+/// Calculates margin to position column within the grid system.
+/// @param {Number} $n - The column position in which you wish to position an element.
+/// @return {Percentage} The position in percentage width of the parent.
+@function columnPosition($n, $options: ()) {
 	$options: map-merge((
 		includeGutterWidth: true
 	), $options);
 
-	$pushAmount: columns($n, $options);
+	// re-index to 0-based for proper margin calculations
+	$n: $n - 1;
+
+	$position: columns($n, $options);
 
 	@if map-get($options, includeGutterWidth) == true {
-		$pushAmount: $pushAmount + $gutterWidth;
+		$position: $position + $gutterWidth;
 	}
 
-	@return $pushAmount;
-}
-
-/// Calculates how far to pull an element.
-/// @param {Number} $n - The number of columns you wish to pull an element.
-/// @param {Number} $width - The width (in columns) of the element being pulled.
-/// @return {Percentage} The pull amount.
-@function pull-x($n, $width, $options: ()) {
-	$options: map-merge((
-		includeGutterWidth: true
-	), $options);
-
-	$pullAmount: columns($n, $options) + columns($width, $options);
-
-	@if map-get($options, includeGutterWidth) == true {
-		$pullAmount: $pullAmount + $gutterWidth;
-	}
-
-	@return -($pullAmount);
+	@return $position;
 }
 
 /// Calculates the margin to properly center an element.

@@ -81,16 +81,6 @@ table {
 			}
 		}
 	}
-	tr.even {
-		> td {
-			background-color: color(greyLight);
-
-			&.empty,
-			&.plain {
-				background-color: transparent;
-			}
-		}
-	}
 
 	@include media(medium) {
 		@include font-size(14);

@@ -9,13 +9,6 @@
 		padding: $gutterWidthInPx;
 		width: 100%;
 
-		// max-width needed because border-box isn't supported for some HTML5 elements in old versions of IE
-		@if unit($rowMaxWidth) == "px" {
-			.oldie & {
-				max-width: $rowMaxWidth - ($columnPadding * 2);
-			}
-		}
-
 		& + .row {
 			padding-top: 0;
 		}
@@ -46,7 +39,7 @@
 		padding: $columnPadding;
 	}
 
-	@include media(medium) {
+	@include media($columnBreakpoint) {
 		.row {
 			margin: 0 auto;
 			max-width: $rowMaxWidth;
@@ -89,33 +82,13 @@
 			}
 		}
 
-		// Generate Push and Pull Classes
+		// Generate Position Classes
 		.row {
-			@for $i from 1 through $columns - 1 {
-				@if ($enablePush) and (index($enabledPushColumns, $i) or length($enabledPushColumns) == 0 ) {
-					.push-#{number-as-word($i)} {
-						margin-left: push-x($i);
-
-						&:first-child {
-							margin-left: push-x($i);
-						}
-					}
-				}
-				@if ($enablePull) and (index($enabledPullColumns, $i) or length($enabledPullColumns) == 0 ) {
-					.pull-#{number-as-word($i)} {
-						// pull classes need to know the width of the container being pulled
-						@for $j from 1 through $columns - 1 {
-							@if $j == 1 and (index($enabledColumns, $j) or length($enabledColumns) == 0 ) {
-								&.one.column {
-									margin-left: pull-x($i, $j);
-								}
-							}
-							@else if (index($enabledColumns, $j) or length($enabledColumns) == 0 ) {
-								&.#{number-as-word($j)}.columns {
-									margin-left: pull-x($i, $j);
-								}
-							}
-						}
+			@for $i from 1 through $columns {
+				@if ($enablePosition) and (index($enabledPositions, $i) or length($enabledPositions) == 0 ) {
+					.position-#{number-as-word($i)} {
+						margin-left: columnPosition($i);
+						margin-right: -100%;
 					}
 				}
 			}

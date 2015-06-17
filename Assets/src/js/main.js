@@ -10,5 +10,4 @@ require('./vendor/jquery.placeholder.js');
 
 // execute plugins and jQuery bindings
 require('./lib/documentReady.js');
-require('./lib/applyClassnames.js');
 require('./lib/triggerPlugins.js');

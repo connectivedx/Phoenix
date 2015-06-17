@@ -40,7 +40,7 @@
 	left: 0;
 	position: absolute;
 	top: 0;
-	z-index: 8020;
+	z-index: z(modal) + 20;
 }
 
 .fancybox-skin {
@@ -52,7 +52,7 @@
 }
 
 .fancybox-opened {
-	z-index: 8030;
+	z-index: z(modal) + 30;
 }
 
 .fancybox-opened .fancybox-skin {
@@ -103,7 +103,7 @@
 	opacity: 0.8;
 	position: fixed;
 	top: 50%;
-	z-index: 8060;
+	z-index: z(modal) + 60;
 }
 
 #fancybox-loading div {
@@ -121,7 +121,7 @@
 	right: -18px;
 	top: -18px;
 	width: 36px;
-	z-index: 8040;
+	z-index: z(modal) + 40;
 }
 
 .fancybox-nav {
@@ -133,7 +133,7 @@
 	top: 0;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	width: 40%;
-	z-index: 8040;
+	z-index: z(modal) + 40;
 }
 
 .fancybox-prev {
@@ -152,7 +152,7 @@
 	top: 50%;
 	visibility: hidden;
 	width: 36px;
-	z-index: 8040;
+	z-index: z(modal) + 40;
 }
 
 .fancybox-prev span {
@@ -201,7 +201,7 @@
 	overflow: hidden;
 	position: absolute;
 	top: 0;
-	z-index: 8010;
+	z-index: z(modal) + 10;
 }
 
 .fancybox-overlay-fixed {
@@ -222,7 +222,7 @@
 	position: relative;
 	text-shadow: none;
 	visibility: hidden;
-	z-index: 8050;
+	z-index: z(modal) + 50;
 }
 
 .fancybox-opened .fancybox-title {
@@ -235,7 +235,7 @@
 	position: absolute;
 	right: 50%;
 	text-align: center;
-	z-index: 8050;
+	z-index: z(modal) + 50;
 }
 
 .fancybox-title-float-wrap .child {

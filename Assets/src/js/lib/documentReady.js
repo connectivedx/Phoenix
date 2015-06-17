@@ -6,3 +6,13 @@ $('.custom-file-upload').click(function(e) {
 
 	$(this).next('input[type="file"]').click();
 });
+
+// toggle buttons for test pages
+$('.toggle-position').on('click', function(e) {
+	e.preventDefault();
+	$('body').toggleClass('not-shifted shifted');
+});
+$('.toggle-gutters').on('click', function(e) {
+	e.preventDefault();
+	$('body').toggleClass('no-gutters gutters');
+});

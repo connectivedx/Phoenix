@@ -15,18 +15,10 @@ $enabledColumns: ();
 /// @type Boolean
 $enableCentered: true;
 
-/// Enable or disable pushing of columns in the standard grid system.
+/// Enable or disable positioning of columns.
 /// @type Boolean
-$enablePush: true;
+$enablePosition: true;
 
-/// Comma separated value list of column widths you want to support in the standard grid system for pushing; set to () to include all possible columns.  If `enableGrid` is set to false, this is a moot option since no column classes will be output.
+/// Comma separated value list of positions you want to support in the standard grid system; set to ( ) to include all possible positions.  If enableGrid is set to false, this is a moot option since no position classes will be output.
 /// @type List
-$enabledPushColumns: ();
-
-/// Enable or disable pulling of columns in the standard grid system.
-/// @type Boolean
-$enablePull: true;
-
-/// Comma separated value list of column widths you want to support in the standard grid system for pulling; set to () to include all possible columns.  If `enableGrid` is set to false, this is a moot option since no column classes will be output.
-/// @type List
-$enabledPullColumns: ();
+$enabledPositions: ();

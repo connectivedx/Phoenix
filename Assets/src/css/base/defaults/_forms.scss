@@ -204,9 +204,6 @@ fieldset {
 	}
 }
 
-// modern browser styles
-// IE9 and newer supported; IE8 and lower will have standard form elements
-// :not() targets > IE8, #foo is just a random ID
 fieldset:not(#foo) {
 	input[type="radio"],
 	input[type="checkbox"] {
@@ -222,10 +219,11 @@ fieldset:not(#foo) {
 			display: block;
 			padding: em(6) em(5) em(4) em(27);
 
-			&:before {
-				@extend %icon-config-modern-browsers;
-				margin-left: em(-28);
+			&::before {
+				display: inline-block;
+				margin-left: em(-26);
 				margin-right: em(8);
+				vertical-align: middle;
 			}
 
 			&.inline {
@@ -236,31 +234,45 @@ fieldset:not(#foo) {
 
 	input[type="radio"] {
 		& + label {
-			@include icon(radioUnchecked);
+			&::before {
+				content: image('radio-unchecked.svg');
+			}
 		}
-		&:active + label,
 		&:focus + label {
 			color: color(primary);
 		}
 		&:checked + label {
-			@include icon(radioChecked);
+			&::before {
+				content: image('radio-checked.svg');
+			}
 		}
 	}
 
 	input[type="checkbox"] {
 		& + label {
-			@include icon(checkboxUnchecked);
+			&::before {
+				content: image('checkbox-unchecked.svg');
+			}
 		}
-		&:active + label,
 		&:focus + label {
 			color: color(primary);
 		}
 		&:checked + label {
-			@include icon(checkboxChecked);
+			&::before {
+				content: image('checkbox-checked.svg');
+			}
 		}
 	}
 }
 
+fieldset {
+	label {
+		&.inline {
+			display: inline-block;
+			padding-right: 5px;
+		}
+	}
+}
 
 /**
  * Selects:
@@ -278,30 +290,14 @@ fieldset:not(#foo) {
  *
  */
 $decoratorSelectBorderSize: 1px;
+$decoratorSelectHeight: $inputHeight - (2 * $decoratorSelectBorderSize);
 
-.decorator-select {
+%decorator-select {
 	@include gradient(color(greyLight), color(greyMedium));
-	background-size: 100%;
 	border: $decoratorSelectBorderSize solid color(greyMedium);
 	border-radius: $formElementBorderRadius;
 	display: inline-block;
-	height: auto;
-	overflow: hidden;
-	position: relative;
 	width: 100%;
-
-	&:after {
-		content: image('bg-select-arrow.png');
-		height: $inputHeight - (2 * $decoratorSelectBorderSize);	// the content image's height should fit within the confines of the input's height
-		pointer-events: none;
-		position: absolute;
-		right: 0;
-		top: 0;
-
-		.oldie & {
-			content: '';
-		}
-	}
 
 	select {
 		-webkit-appearance: none;
@@ -309,7 +305,6 @@ $decoratorSelectBorderSize: 1px;
 		border: none;
 		color: black;
 		display: block;
-		height: $inputHeight - (2 * $decoratorSelectBorderSize);
 		outline: none;
 		padding: 6px 10px 6px 10px;
 		position: relative;
@@ -317,6 +312,23 @@ $decoratorSelectBorderSize: 1px;
 	}
 }
 
+.decorator-select {
+	@extend %decorator-select;
+	position: relative;
+
+	&:after {
+		content: image('bg-select-arrow.png');
+		height: $decoratorSelectHeight;	// the content image's height should fit within the confines of the input's height
+		pointer-events: none;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	select {
+		height: $decoratorSelectHeight;
+	}
+}
 
 /**
  * Multiple Selects:
@@ -334,23 +346,10 @@ $decoratorSelectBorderSize: 1px;
  *
  */
 .decorator-select-multiple {
-	@include gradient(color(greyLight), color(greyMedium));
-	border: $decoratorSelectBorderSize solid color(greyMedium);
-	border-radius: $formElementBorderRadius;
-	display: inline-block;
-	width: 100%;
+	@extend %decorator-select;
 
 	select {
-		-webkit-appearance: none;
-		background: transparent;
-		border: none;
-		color: black;
-		display: block;
-		min-height: $inputHeight - (2 * $decoratorSelectBorderSize);
-		outline: none;
-		padding: 6px 10px 6px 10px;
-		position: relative;
-		width: 100%;
+		min-height: $decoratorSelectHeight;
 	}
 }
 

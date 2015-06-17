@@ -72,13 +72,14 @@
 		?>
 
 		<div class="row">
-			<h2>Push and pull classes</h2>
+			<h2>Position classes</h2>
 		</div>
 
 		<?php
 			for ($i = 0; $i < $gridSize; $i++) {
 				$firstColumnWidth = $numbers[$i];
 				$secondColumnWidth = $numbers[$gridSize - $i - 2];
+				$secondColumnPosition = $numbers[$gridSize - $i - 1];
 
 				echo '<div class="row">';
 
@@ -98,8 +99,8 @@
 
 				// display columns
 				if ($i < $gridSize - 1) {
-					echo '<div class="' . $firstColumnWidth . ' ' . $firstColumnText . ' push-' . $secondColumnWidth . '">' . $firstColumnWidth . ' push ' . $secondColumnWidth . '</div>';
-					echo '<div class="' . $secondColumnWidth . ' ' . $secondColumnText . ' pull-' . $firstColumnWidth . '">' . $secondColumnWidth . ' pull ' . $firstColumnWidth . '</div>';
+					echo '<div class="' . $firstColumnWidth . ' ' . $firstColumnText . ' position-' . $secondColumnPosition . '">' . $firstColumnWidth . ' position ' . $secondColumnPosition . '</div>';
+					echo '<div class="' . $secondColumnWidth . ' ' . $secondColumnText . ' position-one">' . $secondColumnWidth . ' position one</div>';
 				}
 
 				// end row

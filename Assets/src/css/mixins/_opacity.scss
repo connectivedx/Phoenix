@@ -1,9 +1,0 @@
-/// Provides a cross-browser implementation of opacity.
-/// @param {Number} $opacity - The value of the opacity to apply to the element. Accepted values:  decimals between 0 and 1.
-/// @example
-/// opacity(0.5)
-@mixin opacity($opacity) {
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})";	// IE8
-	filter: unquote("alpha(opacity=#{round($opacity * 100)})"); // IE5-7
-	opacity: $opacity;
-}
