@@ -1,4 +1,4 @@
-/// Outputs an rgba background-color with an opaque fallback. If a PNG is supplied, it will be used as a fallback for older IEs, and opaque background will be overridden.  Note: modernizr is required for the PNG fallback.
+/// Outputs an rgba background-color with an opaque fallback.
 /// @param {Color} $color - The desired color.
 /// @param {Number} $alpha - The desired level of opacity.
 /// @example

@@ -28,7 +28,7 @@
 }
 
 .map-container {
-	@include aspect-ratio(4, 3);
+	@include aspect-ratio(4, 3, (selector: iframe));
 
 	img {
 		max-width: none; // resets map controls
@@ -36,5 +36,5 @@
 }
 
 .video-container {
-	@include aspect-ratio(16, 9);
+	@include aspect-ratio(16, 9, (selector: iframe));
 }

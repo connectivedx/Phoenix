@@ -1,19 +1,16 @@
-/// Adds and icon as pseudo element content as well as any passed styles
+/// Adds an icon as pseudo element content as well as any passed styles
 /// @param {String} $icon - The name of the icon as defined in its icon map.
-/// @param {String} $pseudo ["before"] - The name of the pseduo element you want to target, either "before" or "after".
+/// @param {String} $pseudo [before] - The name of the pseduo element you want to target, either before or after.
 /// @param {String} $iconMap [$icons] - The name of the icon map to retrieve the icon from.
 /// @example
 /// icon(arrowUp)
-/// // returns "\e601"
+/// // ::before { content: "\e601" }
 /// @example
-/// icon(facebook, (iconMap: $socialIcons))
-/// // returns ::before { content: "\e708" }
-/// @example
-/// icon(arrowUp, (pseudo: "after")) { color: red; }
-/// // returns ::after { content: "\e601"; color: red;}
+/// icon(arrowUp, (pseudo: after)) { color: red; }
+/// // ::after { content: "\e601"; color: red;}
 @mixin icon($name, $options: ()) {
 	$options: map-merge((
-		pseudo: "before",
+		pseudo: before,
 		iconMap: $icons
 	), $options);
 

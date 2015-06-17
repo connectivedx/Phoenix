@@ -1,6 +1,6 @@
-/// Returns a unitless integer equivalent a measurement.
+/// Returns a unitless integer equivalent of a measurement.
 /// @param {Pixels | Em | Percentage} $n - A measurement of any kind.
-/// @return {Integer} Integer equivalent of $n.
+/// @return {Integer} Integer equivalent of `$n`.
 /// @example
 /// parseInt(16px)
 /// // 16

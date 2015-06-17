@@ -1,6 +1,6 @@
 /// Converts a target value in pixels to its associated value in rems based on the $baseFontSize.
 /// @param {Integer | Pixels | List} $target - The target size in either pixels or its integer equivalent.
-/// @return {Rem} The target's value in rems based on the $baseFontSize.
+/// @return {Rem} The target's value in rems based on the `$baseFontSize`.
 /// @example
 /// rem(12)
 /// // 0.75em

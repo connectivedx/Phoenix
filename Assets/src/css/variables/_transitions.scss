@@ -3,14 +3,14 @@
 /// @group transitions
 ////
 
-/// The amount of time for the transition to take.
+/// The amount of time for transitions to take.
 /// @type Time
 $transitionDuration: 0.3s;
 
-/// The easing function to use with the transition.
+/// The easing function to use with transitions.
 /// @type String
 $transitionEasing: linear;
 
-/// The amount of time to delay the transition.
+/// The amount of time to delay transitions.
 /// @type Time
 $transitionDelay: 0s;

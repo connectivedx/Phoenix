@@ -27,7 +27,7 @@
 	}
 }
 
-/// Calculates the width of n columns.
+/// Calculates the width of `$n` columns.
 /// @param {Number} $n - The number of columns for which you wish to calculate the width.
 /// @param {Boolean} $includeGutterWidth [true] - Whether or not the column width will include the gutter width in its calculation.
 /// @return {Percentage} The width of n columns.
@@ -45,7 +45,7 @@
 	@return $columnWidth;
 }
 
-/// Calculates margin to position column within the grid system.
+/// Calculates margin to position an element within the grid system.
 /// @param {Number} $n - The column position in which you wish to position an element.
 /// @param {Boolean} $includeGutterWidth [true] - Whether or not the column will include the gutter width in its position.
 /// @return {Percentage} The position in percentage width of the parent container.
@@ -73,7 +73,7 @@
 	@return 50% - (columns($n, $options) / 2);
 }
 
-/// Create class names from column count integers.
+/// Changes a numeric value `$n` into its English word representation.
 /// @param {Integer} $n - The number of columns.
 /// @return {String} A word representation of the number of columns requested.
 @function number-as-word($n) {

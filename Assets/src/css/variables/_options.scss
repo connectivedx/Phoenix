@@ -7,18 +7,18 @@
 /// @type Boolean
 $enableGrid: true;
 
-/// Comma separated value list of column widths you want to support in the standard grid system; set to () to include all possible columns.  If `enableGrid` is set to false, this is a moot option since no column classes will be output.
+/// Comma separated value list of column widths you want to support in the standard grid system; set to () to include all possible columns.  If `$enableGrid` is set to false, this is a moot option since no column classes will be output.
 /// @type List
 $enabledColumns: ();
 
-/// Enable or disable centering of columns in the standard grid system.
+/// Enable or disable centering of columns in the standard grid system.  If `$enableGrid` is set to false, this is a moot option since no position classes will be output.
 /// @type Boolean
 $enableCentered: true;
 
-/// Enable or disable positioning of columns.
+/// Enable or disable positioning of columns in the standard grid system.  If `$enableGrid` is set to false, this is a moot option since no position classes will be output.
 /// @type Boolean
 $enablePosition: true;
 
-/// Comma separated value list of positions you want to support in the standard grid system; set to ( ) to include all possible positions.  If enableGrid is set to false, this is a moot option since no position classes will be output.
+/// Comma separated value list of positions you want to support in the standard grid system; set to ( ) to include all possible positions.  If `$enableGrid` is set to false, this is a moot option since no position classes will be output.
 /// @type List
 $enabledPositions: ();

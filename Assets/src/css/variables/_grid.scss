@@ -14,7 +14,7 @@ $columnBreakpoint: medium !default;
 /// @type Pixels
 $columnPadding: 16px !default;
 
-/// The default gutter width between columns in pixels or percent.  If defined as pixels, it will be converted to a percentage; the pixel value will represent the gutter width at `$rowMaxWidth`.
+/// The default gutter width between columns in pixels or percent.  If defined as pixels, it will be converted to a percentage and will represent the gutter width at `$rowMaxWidth`.
 /// @type Pixels | Percentage
 $gutterWidth: 16px !default;
 

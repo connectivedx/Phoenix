@@ -1,6 +1,6 @@
 /// Simplifies image import.
 /// @param {String} $imageName - The image's filename.
-/// @param {String} $imageName [$imagesFolder] - The directory containing the image.
+/// @param {String} $directory [$imagesFolder] - The directory containing the image.
 /// @return {String} The compiled url()
 /// @example
 /// image('feed.png')

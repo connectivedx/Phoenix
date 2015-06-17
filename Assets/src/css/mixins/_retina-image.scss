@@ -1,4 +1,4 @@
-/// Outputs a retina image for the given property with a PNG fallback.  Note:  modernizr is required for the PNG fallback.
+/// Outputs a high DPI "retina" image for the given property with a low DPI fallback.
 /// @param {String} $imageName - The filename, without an extension, of the image file.
 /// @param {String} $backgroundSize ['none'] - The size of the background image (used to scale down 2x images).
 /// @param {String} $retinaFileSuffix ['@2x'] - The filename suffix used for the "retina" version of the image.
