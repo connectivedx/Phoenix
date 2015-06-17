@@ -6,7 +6,7 @@
 		margin-left: 0;
 		margin-right: 0;
 		min-width: 0;
-		padding: $gutterWidthInPx;
+		padding: $columnPadding;
 		width: 100%;
 
 		& + .row {
@@ -14,7 +14,7 @@
 		}
 
 		.row {
-			margin-top: $gutterWidthInPx;
+			margin-top: $columnPadding;
 			padding: 0;
 
 			&:first-child {
@@ -35,7 +35,7 @@
 	.column,
 	.columns {
 		@extend %clearfix;
-		margin-top: $gutterWidthInPx;
+		margin-top: $columnPadding;
 		padding: $columnPadding;
 	}
 

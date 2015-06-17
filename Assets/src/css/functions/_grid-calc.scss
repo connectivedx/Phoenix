@@ -4,13 +4,7 @@
 
 // Change $gutterWidth to a percentage
 @if unit($gutterWidth) == 'px' {
-	$gutterWidthInPx: $gutterWidth;
 	$gutterWidth: percentage($gutterWidth / $rowMaxWidth);
-}
-@else {
-/// The default gutter width between columns in pixels.  It represents the gutter width at the `$rowMaxWidth`.
-/// @type Pixels
-	$gutterWidthInPx: ceil( ($gutterWidth / 100%) * $rowMaxWidth);
 }
 
 /// Calculates the width of a single column.
