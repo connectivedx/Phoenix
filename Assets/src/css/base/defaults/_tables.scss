@@ -37,16 +37,6 @@ table {
 			}
 		}
 	}
-	tr.even {
-		> td {
-			background-color: color(greyLight);
-
-			&.empty,
-			&.plain {
-				background-color: transparent;
-			}
-		}
-	}
 
 	@include media(breakpointMedium) {
 		@include font-size(14);

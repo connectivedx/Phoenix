@@ -16,7 +16,7 @@ var CssDriver = {
 			.pipe(sass())
 			.pipe(gulpif(debug, sourcemaps.write('./')))
 			.pipe(gulpif(!debug, prefix({
-				browsers: ['last 2 versions', 'IE >= 8', 'Android >= 4']
+				browsers: ['last 2 versions', 'IE >= 9', 'Android >= 4']
 			})))
 			.pipe(base64({
 				exclude: [/\icomoon/],

@@ -9,6 +9,18 @@
     position: absolute;
 }
 
+.browser-alert {
+	background-color: color(primary);
+	color: white;
+	@include font-size(24);
+	padding: em(16);
+	text-align: center;
+
+	a {
+		color: color(greyLight);
+	}
+}
+
 %divider-config {
 	border: none;	// reset border to none; this allows the class to be used on horizontal rules
 	margin-top: $columnPadding * 2;
@@ -55,7 +67,7 @@ $quickColumnGapWidth: 0.3;
 	}
 
 	// starting on the second item
-	&.nth-child-np2 {
+	&:nth-child(n+2) {
 		margin-top: columns($quickColumnGapWidth, (includeGutterWidth: false));
 	}
 
@@ -64,7 +76,7 @@ $quickColumnGapWidth: 0.3;
 		margin-right: -0.25em;	// eliminate whitespace created by inline-block
 
 		// starting on the second item
-		&.nth-child-np2 {
+		&:nth-child(n+2) {
 			margin-top: 0;
 		}
 	}
@@ -76,12 +88,12 @@ $quickColumnGapWidth: 0.3;
 		width: columns( ($columns - $quickColumnGapWidth) / 2, (includeGutterWidth: false));
 
 		// first of each row
-		&.nth-child-2np1 {
+		&:nth-child(2n+1) {
 			margin-left: 0;
 		}
 
 		// starting on the second row
-		&.nth-child-np3 {
+		&:nth-child(n+3) {
 			margin-top: columns($quickColumnGapWidth, (includeGutterWidth: false));
 		}
 	}
@@ -92,12 +104,12 @@ $quickColumnGapWidth: 0.3;
 		width: columns( ($columns - 2 * $quickColumnGapWidth) / 3, (includeGutterWidth: false));
 
 		// first of each row
-		&.nth-child-3np1 {
+		&:nth-child(3n+1) {
 			margin-left: 0;
 		}
 
 		// starting on the second row
-		&.nth-child-np4 {
+		&:nth-child(n+4) {
 			margin-top: columns($quickColumnGapWidth, (includeGutterWidth: false));
 		}
 	}
@@ -108,20 +120,20 @@ $quickColumnGapWidth: 0.3;
 		width: columns( ($columns - 3 * $quickColumnGapWidth) / 4, (includeGutterWidth: false));
 
 		// first of each row (override from breakpointLarge)
-		&.nth-child-2np1 {
+		&:nth-child(2n+1) {
 			margin-left: columns($quickColumnGapWidth, (includeGutterWidth: false));
 		}
 		// first of each row
-		&.nth-child-4np1 {
+		&:nth-child(4n+1) {
 			margin-left: 0;
 		}
 
 		// starting on the second row (override from breakpointLarge)
-		&.nth-child-np3 {
+		&:nth-child(n+3) {
 			margin-top: 0;
 		}
 		// starting on the second row
-		&.nth-child-np5 {
+		&:nth-child(n+5) {
 			margin-top: columns($quickColumnGapWidth, (includeGutterWidth: false));
 		}
 	}

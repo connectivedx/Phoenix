@@ -77,15 +77,4 @@ fieldset {
 			margin: 0 0 0 em(12);
 		}
 	}
-
-	.oldie & {
-		input[type="radio"],
-		input[type="checkbox"] {
-			& + label {
-				display: inline;
-				margin-left: em(4);
-				min-height: 20px;
-			}
-		}
-	}
 }
