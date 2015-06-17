@@ -6,6 +6,7 @@
 		<h1>Documentation</h1>
 		<ul>
 			<li><a href="documentation/sass-api/">Sass API</a></li>
+			<li><a href="style-guide.php">Style Guide</a></li>
 		</ul>
 		<h1>Sample Pages</h1>
 		<ul>
