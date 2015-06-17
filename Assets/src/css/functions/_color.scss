@@ -1,5 +1,6 @@
 /// Returns the requested color from a color map.
 /// @param {String} $color - The requested key from the color map.
+/// @param {String} $colorMap [$colors] - The map containing your colors.
 /// @return {String} The key's value from the color map.
 /// @example
 /// color(primary)
