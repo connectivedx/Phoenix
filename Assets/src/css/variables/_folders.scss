@@ -6,10 +6,6 @@ $assetsFolder: '../';
 /// @type String
 $imagesFolder: $assetsFolder + 'img/css/';
 
-/// Path to the svg folder, relative to the `$imagesFolder`.
-/// @type String
-$svgFolder: $imagesFolder + 'svg/';
-
 /// Path to the folder containing font files (e.g. .ttf, eot), relative to the `$assetsFolder`.
 /// @type String
 $fontsFolder: $assetsFolder + 'fonts/';
