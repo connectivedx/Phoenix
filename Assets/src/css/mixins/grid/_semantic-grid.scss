@@ -64,10 +64,11 @@
 // @category layout
 
 // @function column
-// Creates a semantic-grid set of columns based on the base grid system settings.  On low resolutions, the columns will stack and will break at breakpointMedium to the number of columns specified.
+// Creates a semantic-grid set of columns based on the base grid system settings.  On low resolutions, the columns will stack and will break at the breakpoint provided (defaulting to $columnBreakpoint) to the number of columns specified.
 // @param $columns {Number} The number of columns you wish your element's width to occupy. [integer]
 // @param $position {Number} The column you want your element's positioned to begin.  This is 1-indexed, so possible values are 1 through $columns defined in variables/_grid.scss.  Default value: false.
 // @param $padding {Number} A padding override to be set on the row.  Default value: $columnPadding.  [px|em]
+// @param $breakpoint {String} The breakpoint at which the element's width changes from 100% to the column width specified.  Default value: $columnBreakpoint.
 // @param $nested {Boolean} Whether or not the columns will be contained within a nested row.  Default value: false.
 // @param $alignmnet {String} Whether or not the columns will be centered within a row.  Default value: false.
 // @param $includeGutterWidth {Boolean} Whether or not the columns will have a gutter applied.  Default value: true.
@@ -78,6 +79,7 @@
 	$options: map-merge((
 		position: false,
 		padding: $columnPadding,
+		breakpoint: $columnBreakpoint,
 		nested: false,
 		alignment: false,
 		includeGutterWidth: true
@@ -85,6 +87,7 @@
 
 	$position: map-get($options, position);
 	$padding: map-get($options, padding);
+	$breakpoint: map-get($options, breakpoint);
 	$nested: map-get($options, nested);
 	$alignment: map-get($options, alignment);
 	$includeGutterWidth: map-get($options, includeGutterWidth);
@@ -97,7 +100,7 @@
 			margin-top: 0;
 		}
 
-		@include media(breakpointMedium) {
+		@include media($breakpoint) {
 			clear: both;
 			margin-left: centered($columns, $options);
 			margin-top: 0;
@@ -116,7 +119,7 @@
 			}
 		}
 
-		@include media(breakpointMedium) {
+		@include media($breakpoint) {
 			@if $position != false {
 				margin-left: columnPosition($position, $options);
 				margin-right: -100%;

@@ -4,12 +4,14 @@
 // The properties of the grid system to be used.
 // @param $columns {Number} The number of columns in the grid system.  [integer]
 // @param $columnPadding {Number} The default amount of padding within columns in pixels.  [px]
+// @param $columnBreakpoint {String} The default breakpoint at which columns in the grid and semantic grid systems change from 100% to the column width specified.
 // @param $gutterWidth {Number} The default gutter width between columns in pixels or percent.  If defined as pixels, it will be converted to a percentage; the pixel value will represent the gutter width at the $rowMaxWidth.  [px|percentage]
 // @param $rowMaxWidth {Number} The maximum width of a row on the page.  [px|percentage]
 // @param $defaultFloat {String} The default direction in which to float content.
 // @param $switchFloat {String} The opposite float of $defaultFloat.
 $columns: 12 !default;
 $columnPadding: 16px !default;
+$columnBreakpoint: breakpointMedium !default;
 $gutterWidth: 16px !default;
 $rowMaxWidth: 1220px !default;
 $defaultFloat: left;
