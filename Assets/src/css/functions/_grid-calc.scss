@@ -36,6 +36,24 @@
 	@return $columnWidth;
 }
 
+// Calculates column position.
+@function columnPosition($n, $options: ()) {
+	$options: map-merge((
+		includeGutterWidth: true
+	), $options);
+
+	// re-index to 0-based for proper margin calculations
+	$n: $n - 1;
+
+	$position: columns($n, $options);
+
+	@if map-get($options, includeGutterWidth) == true {
+		$position: $position + $gutterWidth;
+	}
+
+	@return $position;
+}
+
 // Calculate Push Class Margins
 @function push_x($n, $options: ()) {
 	$options: map-merge((
