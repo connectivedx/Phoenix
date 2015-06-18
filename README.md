@@ -35,6 +35,10 @@ The production build lints, concatenates, and minifies files.
 * Windows - execute build-production.cmd.
 * Mac OS - execute build-production.command.
 
+# Node Packages
+
+The Node packages defined in Phoenix are [shrinkwrapped](https://docs.npmjs.com/cli/shrinkwrap) when we create a new release to make sure that builds are predictable no matter when they are executed.  If you want to add, change, or remove packages, make sure you also run `npm shrinkwrap --dev` in order to shrinkwrap the changes.
+
 # Special Thanks
 This project would not be possible without contributions from these open-source projects:
 * [Gulp](https://github.com/gulpjs/gulp/)
