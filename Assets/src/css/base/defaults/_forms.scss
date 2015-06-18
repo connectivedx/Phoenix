@@ -39,9 +39,11 @@ fieldset {
 		display: block;
 	}
 
-	label.inline {
-		display: inline-block;
-		padding-right: 5px;
+	label {
+		&.inline {
+			display: inline-block;
+			padding-right: 5px;
+		}
 	}
 
 	input[type="text"],
@@ -72,34 +74,6 @@ fieldset {
 		resize: vertical;
 	}
 
-	& + button {
-		margin-top: em(12);
-	}
-
-	.radio-list,
-	.checkbox-list {
-		> li {
-			margin: 0 0 0 em(12);
-		}
-	}
-
-	.oldie & {
-		input[type="radio"],
-		input[type="checkbox"] {
-			& + label {
-				display: inline;
-				margin-left: em(4);
-				min-height: 20px;
-			}
-			& + span {
-				margin-left: em(4);
-				min-height: 20px;
-			}
-		}
-	}
-}
-
-fieldset:not(#foo) {
 	input[type="radio"],
 	input[type="checkbox"] {
 		float: left;
@@ -158,13 +132,15 @@ fieldset:not(#foo) {
 			}
 		}
 	}
-}
 
-fieldset {
-	label {
-		&.inline {
-			display: inline-block;
-			padding-right: 5px;
+	& + button {
+		margin-top: em(12);
+	}
+
+	.radio-list,
+	.checkbox-list {
+		> li {
+			margin: 0 0 0 em(12);
 		}
 	}
 }
