@@ -1,3 +1,51 @@
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 300;
+	line-height: 1;
+	margin-top: 0;
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+h1 {
+	@include font-size(44);
+	margin-top: em(28, (context: 44));
+
+	small {
+		display: block;
+	}
+}
+
+h2 {
+	@include font-size(36);
+	margin-top: em(28, (context: 36));
+}
+
+h3 {
+	@include font-size(24);
+	margin-top: em(28, (context: 24));
+}
+
+h4 {
+	@include font-size(14);
+	margin-top: em(28, (context: 14));
+}
+
+h2, h3 {
+	@include media(print) {
+		page-break-after: avoid;
+	}
+}
+
+p {
+	margin: em(12) 0 0;
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
 a {
 	color: black;
 	@include transition((property: color));
@@ -11,13 +59,13 @@ a {
 	@include media(print) {
 		text-decoration: underline;
 
-		&[href]:after {
+		&[href]::after {
 			content: " (" attr(href) ")";
 		}
 
 		&[href^="#"],
 		&[href^="javascript:"] {
-			&:after {
+			&::after {
 				content: " ";
 			}
 		}
@@ -29,24 +77,6 @@ a {
 
 }
 
-p {
-	margin: em(12) 0 0;
-
-	&:first-child {
-		margin-top: 0;
-	}
-}
-
-h1, h2, h3, h4, h5, h6 {
-	font-weight: 300;
-	line-height: 1;
-	margin-top: 0;
-
-	&:first-child {
-		margin-top: 0;
-	}
-}
-
 p, h2, h3, h4 {
 	@include media(print) {
 		orphans: 3;
@@ -54,34 +84,7 @@ p, h2, h3, h4 {
 	}
 }
 
-h1 {
-	@include font-size(44);
-	margin-top: em(28, (context: 44));
-
-	small {
-		display: block;
-	}
-}
-h2 {
-	@include font-size(36);
-	margin-top: em(28, (context: 36));
-}
-h3 {
-	@include font-size(24);
-	margin-top: em(28, (context: 24));
-}
-h4 {
-	@include font-size(14);
-	margin-top: em(28, (context: 14));
-}
-
-h2, h3 {
-	@include media(print) {
-		page-break-after: avoid;
-	}
-}
-
-abbr[title]:after {
+abbr[title]::after {
 	@include media(print) {
 		content: " (" attr(title) ")";
 	}

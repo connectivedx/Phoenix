@@ -1,14 +1,12 @@
-// @category layout
-
-// @function grid
-// The natural language grid system (using class names like "columns" and "row").  This is enabled or disabled with the $enableGrid variable in /variables/_options.scss.
+/// The natural language grid system (using class names like "columns" and "row").  This is enabled or disabled with the `$enableGrid` variable in `variables/_options.scss`.
+/// @group grid
 @mixin grid {
 	.row {
 		@extend %clearfix;
 		margin-left: 0;
 		margin-right: 0;
 		min-width: 0;
-		padding: $gutterWidthInPx;
+		padding: $columnPadding;
 		width: 100%;
 
 		& + .row {
@@ -16,7 +14,7 @@
 		}
 
 		.row {
-			margin-top: $gutterWidthInPx;
+			margin-top: $columnPadding;
 			padding: 0;
 
 			&:first-child {
@@ -28,31 +26,17 @@
 				padding: 0;
 			}
 		}
+
 		.centered {
 			margin: 0;
 		}
 	}
+
 	.column,
 	.columns {
-		margin-top: $gutterWidthInPx;
+		@extend %clearfix;
+		margin-top: $columnPadding;
 		padding: $columnPadding;
-
-		&:last-child {
-			float: none;
-		}
-	}
-
-	[class*="column"] {
-		+ [class*="column"]:last-child {
-			float: none;
-		}
-		&:before {
-			display: table;
-		}
-		&:after {
-			clear: both;
-			display: table;
-		}
 	}
 
 	@include media($columnBreakpoint) {
@@ -68,9 +52,8 @@
 
 		.column,
 		.columns {
-			float: $defaultFloat !important;
+			@extend %column-config;
 			margin-left: $gutterWidth;
-			min-height: 1px;
 
 			&:first-child,
 			&.flush {

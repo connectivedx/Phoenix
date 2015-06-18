@@ -6,7 +6,7 @@
 /// @prop {Number} nav [50] - The navigation layer, which should sit above content but below any modals.
 /// @prop {Number} tooltip [1000] - For tooltips which should sit above content and the nav.  In the case of a fixed header, the tooltip should appear on top of nav.
 /// @prop {Number} modal [8000] - The modal layer, which should sit above everything else on the page.
-$z-index: (
+$zIndex: (
     hidden: -100,
     base: 1,
     content: 10,

@@ -1,0 +1,87 @@
+// space, in columns, between quick column elements
+$quickColumnGapWidth: 0.3;
+
+.two-up,
+.three-up,
+.four-up {
+	display: inline-block;
+	vertical-align: top;
+	width: 100%;
+
+	// reset any potential top margin issues
+	&:first-child {
+		margin-top: 0;
+	}
+
+	// starting on the second item
+	&:nth-child(n+2) {
+		margin-top: columns($quickColumnGapWidth, (includeGutterWidth: false));
+	}
+
+	@include media(large) {
+		margin-left: columns($quickColumnGapWidth, (includeGutterWidth: false));
+		margin-right: -0.25em;	// eliminate whitespace created by inline-block
+
+		// starting on the second item
+		&:nth-child(n+2) {
+			margin-top: 0;
+		}
+	}
+}
+
+.two-up,
+.four-up {
+	@include media(large) {
+		width: columns( ($columns - $quickColumnGapWidth) / 2, (includeGutterWidth: false));
+
+		// first of each row
+		&:nth-child(2n+1) {
+			margin-left: 0;
+		}
+
+		// starting on the second row
+		&:nth-child(n+3) {
+			margin-top: columns($quickColumnGapWidth, (includeGutterWidth: false));
+		}
+	}
+}
+
+.three-up {
+	@include media(large) {
+		width: columns( ($columns - 2 * $quickColumnGapWidth) / 3, (includeGutterWidth: false));
+
+		// first of each row
+		&:nth-child(3n+1) {
+			margin-left: 0;
+		}
+
+		// starting on the second row
+		&:nth-child(n+4) {
+			margin-top: columns($quickColumnGapWidth, (includeGutterWidth: false));
+		}
+	}
+}
+
+.four-up {
+	@include media(extraLarge) {
+		width: columns( ($columns - 3 * $quickColumnGapWidth) / 4, (includeGutterWidth: false));
+
+		// first of each row (override from large)
+		&:nth-child(2n+1) {
+			margin-left: columns($quickColumnGapWidth, (includeGutterWidth: false));
+		}
+		// first of each row
+		&:nth-child(4n+1) {
+			margin-left: 0;
+		}
+
+		// starting on the second row (override from large)
+		&:nth-child(n+3) {
+			margin-top: 0;
+		}
+		// starting on the second row
+		&:nth-child(n+5) {
+			margin-top: columns($quickColumnGapWidth, (includeGutterWidth: false));
+		}
+	}
+}

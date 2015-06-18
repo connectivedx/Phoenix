@@ -1,0 +1,36 @@
+{
+  "name": "sassdoc-theme-phoenix",
+  "description": "A fork of SassDoc's default theme built for Phoenix",
+  "title": "Phoenix Default Theme",
+  "author": "ISITE Design",
+  "version": "1.0.0",
+  "keywords": [
+    "sassdoc-theme"
+  ],
+  "files": [
+    "assets",
+    "views",
+    "dist",
+    "default.json",
+    "index.js",
+    "LICENSE.md",
+    "README.md"
+  ],
+  "main": "dist",
+  "dependencies": {
+    "chroma-js": "^0.6.3",
+    "es6-denodeify": "^0.1.0",
+    "es6-promise": "^2.0.1",
+    "extend": "^2.0.0",
+    "fs-extra": "^0.16.3",
+    "html-minifier": "^0.7.0",
+    "sassdoc-extras": "^2.2.0",
+    "swig": "1.4.0",
+    "swig-extras": "^0.0.1"
+  },
+  "devDependencies": {
+    "babel": "^4.4.0",
+    "jshint": "^2.6.0",
+    "uglify-js": "^2.4.15"
+  }
+}

@@ -1,8 +1,7 @@
-// @category variables
-
-// @function icons
-// Named icons that can be referenced with the icon() mixin and icon() function.
-// @param $icons {List} The icon values represented as pairs with the icon name and its associated glyph.  [String String]
+/// Named icons that can be referenced with the icon() mixin and icon() function.
+/// @type Map
+/// @prop {String} arrowDown ["\e600"]
+/// @prop {String} arrowUp ["\e601"]
 $icons: (
 	arrowDown: "\e600",
 	arrowUp: "\e601"

@@ -337,13 +337,13 @@
 		<div class="row">
 			<div class="six columns">
 				<h2>Video - 16:9</h2>
-				<div class="video">
+				<div class="video-container">
 					<iframe src="//www.youtube.com/embed/Xz6jt_aSFg0" frameborder="0" allowfullscreen></iframe>
 				</div>
 			</div>
 			<div class="six columns">
 				<h2>Map - 4:3</h2>
-				<div class="map">
+				<div class="map-container">
 					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1397.4527187648691!2d-122.69309834046989!3d45.532108444257446!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549509fb37a063b5%3A0x9737d6d4271c1fae!2s2030+NW+Pettygrove+St%2C+Portland%2C+OR+97209!5e0!3m2!1sen!2sus!4v1428075466309" width="600" height="450" frameborder="0" style="border:0"></iframe>
 				</div>
 			</div>

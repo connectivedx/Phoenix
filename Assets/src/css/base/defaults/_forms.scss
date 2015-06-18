@@ -39,6 +39,11 @@ fieldset {
 		display: block;
 	}
 
+	label.inline {
+		display: inline-block;
+		padding-right: 5px;
+	}
+
 	input[type="text"],
 	input[type="number"],
 	input[type="password"],
@@ -76,5 +81,152 @@ fieldset {
 		> li {
 			margin: 0 0 0 em(12);
 		}
+	}
+
+	.oldie & {
+		input[type="radio"],
+		input[type="checkbox"] {
+			& + label {
+				display: inline;
+				margin-left: em(4);
+				min-height: 20px;
+			}
+			& + span {
+				margin-left: em(4);
+				min-height: 20px;
+			}
+		}
+	}
+}
+
+fieldset:not(#foo) {
+	input[type="radio"],
+	input[type="checkbox"] {
+		float: left;
+		height: 1px;
+		margin: 0;
+		opacity: 0;
+		padding: 0;
+		width: 1px;
+
+		& + label {
+			clear: none;
+			display: block;
+			padding: em(6) em(5) em(4) em(27);
+
+			&::before {
+				display: inline-block;
+				margin-left: em(-26);
+				margin-right: em(8);
+				vertical-align: middle;
+			}
+
+			&.inline {
+				display: inline-block;
+			}
+		}
+	}
+
+	input[type="radio"] {
+		& + label {
+			&::before {
+				content: image('radio-unchecked.svg');
+			}
+		}
+		&:focus + label {
+			color: color(primary);
+		}
+		&:checked + label {
+			&::before {
+				content: image('radio-checked.svg');
+			}
+		}
+	}
+
+	input[type="checkbox"] {
+		& + label {
+			&::before {
+				content: image('checkbox-unchecked.svg');
+			}
+		}
+		&:focus + label {
+			color: color(primary);
+		}
+		&:checked + label {
+			&::before {
+				content: image('checkbox-checked.svg');
+			}
+		}
+	}
+}
+
+fieldset {
+	label {
+		&.inline {
+			display: inline-block;
+			padding-right: 5px;
+		}
+	}
+}
+
+$decoratorSelectBorderSize: 1px;
+$decoratorSelectHeight: $inputHeight - (2 * $decoratorSelectBorderSize);
+
+%decorator-select {
+	@include gradient(color(greyLight), color(greyMedium));
+	border: $decoratorSelectBorderSize solid color(greyMedium);
+	border-radius: $formElementBorderRadius;
+	display: inline-block;
+	width: 100%;
+
+	select {
+		-webkit-appearance: none;
+		background: transparent;
+		border: none;
+		color: black;
+		display: block;
+		outline: none;
+		padding: 6px 10px 6px 10px;
+		position: relative;
+		width: 100%;
+	}
+}
+
+.decorator-select {
+	@extend %decorator-select;
+	position: relative;
+
+	&::after {
+		content: image('bg-select-arrow.png');
+		height: $decoratorSelectHeight;	// the content image's height should fit within the confines of the input's height
+		pointer-events: none;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	select {
+		height: $decoratorSelectHeight;
+	}
+}
+
+.decorator-select-multiple {
+	@extend %decorator-select;
+
+	select {
+		min-height: $decoratorSelectHeight;
+	}
+}
+
+.custom-file-upload {
+	.no-js & {
+		display: none;
+	}
+}
+
+input[type="file"] {
+	.js & {
+		visibility: hidden;
+		width: 0px;
 	}
 }

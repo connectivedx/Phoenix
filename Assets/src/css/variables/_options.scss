@@ -1,14 +1,24 @@
-// @category variables
+////
+/// Options for enabling or disabling features, including the grid system, push, and pull.  NOTE: these options do not affect the semantic grid, they only minimize the output of classes for the grid system.
+/// @group options
+////
 
-// @function options
-// Options for enabling or disabling features, including the grid system, push, and pull.  NOTE: these options do not affect the semantic grid, they only minimize the output of classes for the grid system.
-// @param $enableGrid {Boolean} Enable or disable the grid system.
-// @param $enabledColumns {String} Comma separated value list of column widths you want to support in the standard grid system; set to ( ) to include all possible columns.  If enableGrid is set to false, this is a moot option since no column classes will be output.  [list]
-// @param $enableCentered {Boolean} Enable or disable centering of columns.
-// @param $enablePosition {Boolean} Enable or disable positioning of columns.
-// @param $enabledPositions {String} Comma separated value list of positions you want to support in the standard grid system; set to ( ) to include all possible positions.  If enableGrid is set to false, this is a moot option since no position classes will be output.  [list]
+/// Enable or disable the standard grid system.
+/// @type Boolean
 $enableGrid: true;
+
+/// Comma separated value list of column widths you want to support in the standard grid system; set to () to include all possible columns.  If `$enableGrid` is set to false, this is a moot option since no column classes will be output.
+/// @type List
 $enabledColumns: ();
+
+/// Enable or disable centering of columns in the standard grid system.  If `$enableGrid` is set to false, this is a moot option since no position classes will be output.
+/// @type Boolean
 $enableCentered: true;
+
+/// Enable or disable positioning of columns in the standard grid system.  If `$enableGrid` is set to false, this is a moot option since no position classes will be output.
+/// @type Boolean
 $enablePosition: true;
+
+/// Comma separated value list of positions you want to support in the standard grid system; set to ( ) to include all possible positions.  If `$enableGrid` is set to false, this is a moot option since no position classes will be output.
+/// @type List
 $enabledPositions: ();

@@ -1,13 +1,13 @@
-// @category functions
-
-// @function image
-// Simplifies image import
-// @param $imageName {String} The image's filename.
-// @param $directory {String} The folder or path in which the image is found. Default value: $imagesFolder.
-// @return {String} The compiled url()
-// @usage
-// =image('feed.png') will return url('../img/css/feed.png') if $imagesFolder is '../img/css/'
-// =image('feed.png', (directory: '../img/css/')) will return url('../img/css/feed.png')
+/// Simplifies image import.
+/// @param {String} $imageName - The image's filename.
+/// @param {String} $directory [$imagesFolder] - The directory containing the image.
+/// @return {String} The compiled url()
+/// @example
+/// image('feed.png')
+/// // url('../img/css/feed.png')
+/// @example
+/// image('feed.png', 'img/css/')
+/// // url('img/css/feed.png')
 @function image($imageName, $options: ()) {
 	$options: map-merge((
 		directory: $imagesFolder

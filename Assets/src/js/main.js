@@ -9,33 +9,5 @@ require('./vendor/jquery.tipsy');
 require('./vendor/jquery.placeholder.js');
 
 // execute plugins and jQuery bindings
-$('.nav-handle').click(function() {
-	$('.nav-list').toggleClass('expanded');
-});
-
-$('select:not([multiple])').wrap('<div class="decorator-select" />');
-$('select[multiple]').wrap('<div class="decorator-select-multiple" />');
-
-$('.fancybox').fancybox();
-
-$('.tooltip-tipsy').tipsy({
-	gravity: 'w'
-});
-
-$('.custom-file-upload').click(function(e) {
-	e.preventDefault();
-
-	$(this).next('input[type="file"]').click();
-});
-
-$('input, textarea').placeholder();
-
-// toggle buttons for test pages
-$('.toggle-position').on('click', function(e) {
-	e.preventDefault();
-	$('body').toggleClass('not-shifted shifted');
-});
-$('.toggle-gutters').on('click', function(e) {
-	e.preventDefault();
-	$('body').toggleClass('no-gutters gutters');
-});
+require('./lib/documentReady.js');
+require('./lib/triggerPlugins.js');
