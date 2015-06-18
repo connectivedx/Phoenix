@@ -1,0 +1,28 @@
+/// Returns the requested z-index from a map of z-indexes.
+/// @param {String} $z - The requested key from the z-index map.
+/// @param {String} $zMap [$zIndex] - The z-index map.
+/// @return {String} The key's value from the z-index map.
+/// @example
+/// z(base)
+/// // returns the result of map-get($zIndex, base)
+/// @example
+/// z(modal, (zMap: $otherZMap))
+/// // returns the result of map-get($otherZMap, modal)
+@function z($z, $options: ()) {
+	$options: map-merge((
+		zMap: $zIndex
+	), $options);
+
+	$zMap: map-get($options, zMap);
+
+	// check $icon exists in $iconMap
+	@if map-has-key($zMap, $z) {
+		$z: map-get($zMap, $z);
+	}
+	@else {
+		@warn "The z-index `#{$z}` is not a key in your z-index map.";
+		@return null;
+	}
+
+	@return $z;
+}

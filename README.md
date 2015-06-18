@@ -5,6 +5,8 @@ Phoenix represents what we use at Connective DX for the basis of new projects. W
 # Documentation
 Full documentation is available in the documentation directory.  It will require the setup and build processes below to be followed; additional instructions can be found on the documentation page once loaded.
 
+**NOTE**: Optional parameters for functions and mixins are all passed in together as keys in a map as the last parameter for the function or mixin.  The documentation for these is sub-optimal, but [Sassdoc is working on a method for better documenting maps as parameters](https://github.com/SassDoc/sassdoc/issues/386).
+
 # Setup
 Once you've cloned or downloaded the project, you'll first need to install NodeJS.  It can be downloaded at http://nodejs.org/download/.  Once Node is installed, builds are done by executing a command file.
 
@@ -32,6 +34,10 @@ The watch build will execute the development build and watch for file changes, a
 The production build lints, concatenates, and minifies files.
 * Windows - execute build-production.cmd.
 * Mac OS - execute build-production.command.
+
+# Node Packages
+
+The Node packages defined in Phoenix are [shrinkwrapped](https://docs.npmjs.com/cli/shrinkwrap) when we create a new release to make sure that builds are predictable no matter when they are executed.  If you want to add, change, or remove packages, make sure you also run `npm shrinkwrap --dev` in order to shrinkwrap the changes.
 
 # Special Thanks
 This project would not be possible without contributions from these open-source projects:

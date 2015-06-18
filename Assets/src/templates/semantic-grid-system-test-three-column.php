@@ -48,7 +48,7 @@
 
 	<div class="wrapper">
 		<div class="row">
-			<button class="toggle-push-and-pull">Toggle Push and Pull</button>
+			<button class="toggle-position">Toggle Position</button>
 			<button class="toggle-gutters">Toggle Gutters</button>
 		</div>
 	</div>

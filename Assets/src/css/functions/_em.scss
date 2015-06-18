@@ -1,14 +1,13 @@
-// @category functions
-
-// @function em
-// Converts a target value in pixels to its associated value in ems based on a context.
-// @param $target {Number} The target size in either pixels or its integer equivalent.  This parameter can also be a list of values to use property shortcuts.  [px|integer]
-// @param $context {Number} The context size in either pixels or its integer equivalent.  Default value: $baseFontSize.  [px|integer]
-// @return {Number} The target's value in ems within the given context.  [em]
-// @usage
-// =em(12) will return 0.75em
-// =em(12, 24) will return 0.5em
-// =em(12 18, 24) will return 0.5em 0.75em
+/// Converts a target value in pixels to its associated value in ems based on a context.
+/// @param {Integer | Pixels | List} $target - The target size in either pixels or its integer equivalent.
+/// @param {Map} $context [$baseFontSize] - The context size in either pixels or its integer equivalent.
+/// @return {Number} The target's value in ems within the given context.
+/// @example
+/// em(12)
+/// // 0.75em
+/// @example
+/// em(12 16, (context: 24))
+/// // 0.5em 0.6666em
 @function em($target, $options: ()) {
 	$options: map-merge((
 		context: $baseFontSize

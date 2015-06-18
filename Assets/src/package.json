@@ -1,7 +1,7 @@
 {
 	"name": "Phoenix",
-	"version": "1.2.1",
-	"description": "Build framework for Phoenix front-end framework",
+	"version": "1.3.0",
+	"description": "A scalable, modular front-end framework for the modern web.",
 	"repository": "https://github.com/connectivedx/Phoenix",
 	"devDependencies": {
 		"merge-stream": "~0.1.6",
@@ -24,7 +24,9 @@
 		"gulp-livereload": "~3.8.0",
 
 		"gulp-sass": "1.3.3",
+		"sassdoc": "~2.1.8",
 		"gulp-sourcemaps": "~1.5.0",
+		"gulp-base64": "~0.1.3",
 		"gulp-combine-media-queries": "~0.2.0",
 		"gulp-autoprefixer": "~2.1.0",
 		"gulp-minify-css": "~0.4.6",
@@ -34,6 +36,6 @@
 
 		"gulp-imagemin": "~2.2.1",
 
-		"jquery": "~1.11.2"
+		"jquery": "~2.1.3"
 	}
 }

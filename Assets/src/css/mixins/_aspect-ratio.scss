@@ -1,30 +1,47 @@
-// @category mixins
+%aspect-ratio-content {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
 
-// @mixin aspect-ratio
-// Creates the necessary dimensions for an element to have a fixed aspect ratio.
-// @param $width {Number} The desired width of the element's aspect ratio.  [px|integer]
-// @param $height {Number} The desired height of the element's aspect ratio.  [px|integer]
-// @usage
-// =aspect-ratio(16, 9)
-@mixin aspect-ratio($width, $height) {
+/// Creates the necessary dimensions for an element to have a fixed aspect ratio.
+/// @param {Pixels | Integer} $width - The desired width of the element's aspect ratio.
+/// @param {Pixels | Integer} $height - The desired height of the element's aspect ratio.
+/// @param {String} $selector [false] - The selector of the child.
+/// @example
+/// aspect-ratio(4, 3)
+/// @example
+/// aspect-ratio(4, 3, (selector: iframe))
+@mixin aspect-ratio($width, $height, $options: ()) {
+	$options: map-merge((
+		selector: false
+	), $options);
+
+	$selector: map-get($options, selector);
+
 	position: relative;	// context for direct descendant
 
 	// container to maintain aspect ratio
-	&:before {
+	&::before {
 		content: '';
 		display: block;
 		padding-top: percentage(parseInt($height) / parseInt($width));
 	}
 
-	& > embed,
-	& > iframe,
-	& > object,
-	& > video,
-	& > img {
-		height: 100%;
-		left: 0;
-		position: absolute;
-		top: 0;
-		width: 100%;
+	@if $selector == false {
+		& > embed,
+		& > iframe,
+		& > object,
+		& > video,
+		& > img {
+			@extend %aspect-ratio-content;
+		}
+	}
+	@else if $selector != none {
+		& > #{$selector} {
+			@extend %aspect-ratio-content;
+		}
 	}
 }

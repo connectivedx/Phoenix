@@ -1,42 +1,3 @@
-a {
-	color: black;
-	@include transition((property: color));
-
-	&:hover,
-	&:active,
-	&:focus {
-		color: color(greyMedium);
-	}
-
-	@include media(print) {
-		text-decoration: underline;
-
-		&[href]:after {
-			content: " (" attr(href) ")";
-		}
-
-		&[href^="#"],
-		&[href^="javascript:"] {
-			&:after {
-				content: " ";
-			}
-		}
-
-		&:visited {
-			text-decoration: underline;
-		}
-	}
-
-}
-
-p {
-	margin: em(12) 0 0;
-
-	&:first-child {
-		margin-top: 0;
-	}
-}
-
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 300;
 	line-height: 1;
@@ -44,13 +5,6 @@ h1, h2, h3, h4, h5, h6 {
 
 	&:first-child {
 		margin-top: 0;
-	}
-}
-
-p, h2, h3, h4 {
-	@include media(print) {
-		orphans: 3;
-		widows: 3;
 	}
 }
 
@@ -62,14 +16,17 @@ h1 {
 		display: block;
 	}
 }
+
 h2 {
 	@include font-size(36);
 	margin-top: em(28, (context: 36));
 }
+
 h3 {
 	@include font-size(24);
 	margin-top: em(28, (context: 24));
 }
+
 h4 {
 	@include font-size(14);
 	margin-top: em(28, (context: 14));
@@ -81,7 +38,52 @@ h2, h3 {
 	}
 }
 
-abbr[title]:after {
+p {
+	margin: em(12) 0 0;
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+a {
+	color: black;
+	@include transition((property: color));
+
+	@include media(print) {
+		text-decoration: underline;
+
+		&[href]::after {
+			content: " (" attr(href) ")";
+		}
+
+		&[href^="#"],
+		&[href^="javascript:"] {
+			&::after {
+				content: " ";
+			}
+		}
+
+		&:visited {
+			text-decoration: underline;
+		}
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: color(greyMedium);
+	}
+}
+
+p, h2, h3, h4 {
+	@include media(print) {
+		orphans: 3;
+		widows: 3;
+	}
+}
+
+abbr[title]::after {
 	@include media(print) {
 		content: " (" attr(title) ")";
 	}

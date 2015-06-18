@@ -3,7 +3,7 @@ ul {
 	list-style: none;
 	padding-left: em($listBulletSize);
 
-	li:before {
+	li::before {
 		color: color(primary);
 		content: "\2022";
 		display: inline-block;
@@ -25,6 +25,7 @@ ul, ol {
 		margin-top: 0;
 	}
 }
+
 dd {
 	margin: 0;
 }

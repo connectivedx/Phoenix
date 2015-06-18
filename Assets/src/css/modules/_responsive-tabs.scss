@@ -1,8 +1,3 @@
-// @category modules
-
-// @function responsive-tabs
-// A tab system that works on all resolutions.  On lower resolutions, the tabs turn into an accordion.
-
 // general settings
 $tabBorderColor: black;
 $tabBorderRadius: $formElementBorderRadius;
@@ -40,7 +35,7 @@ $tabPanelTextColor: black;
 	padding: em(9, (context: 18));
 	position: relative;
 
-	@include icon(arrowDown, (pseudo: "after")) {
+	@include icon(arrowDown, (pseudo: after)) {
 		display: block;
 		@include font-size(32);
 		@extend %icon-config;
@@ -54,7 +49,7 @@ $tabPanelTextColor: black;
 		}
 	}
 
-	@include media(breakpointMedium) {
+	@include media(medium) {
 		display: none;
 	}
 
@@ -66,7 +61,7 @@ $tabPanelTextColor: black;
 		color: $tabActiveTextColor;
 		margin-bottom: 0;
 
-		@include icon(arrowUp, (pseudo: "after") ) {
+		@include icon(arrowUp, (pseudo: after) ) {
 			color: $tabActiveTextColor;
 		}
 	}
@@ -78,7 +73,7 @@ $tabPanelTextColor: black;
 		color: $tabActiveTextColor;
 		margin-bottom: 0;
 
-		@include icon(arrowUp, (pseudo: "after") ) {
+		@include icon(arrowUp, (pseudo: after) ) {
 			color: $tabActiveTextColor;
 		}
 	}
@@ -97,7 +92,7 @@ $tabPanelTextColor: black;
 	margin-bottom: em(12);
 	padding: em(16);
 
-	@include media(breakpointMedium) {
+	@include media(medium) {
 		margin-bottom: 0;
 
 		.responsive-tabs-vertical-left &,
@@ -124,7 +119,7 @@ $tabPanelTextColor: black;
 	.responsive-tabs__panel--closed-accordion-only {
 		display: none;
 
-		@include media(breakpointMedium) {
+		@include media(medium) {
 			// !important to fight inline display:none set in js
 			display: block !important;
 		}
@@ -141,7 +136,7 @@ $tabPanelTextColor: black;
 	margin: 0;
 	padding: 0;
 
-	@include media(breakpointMedium) {
+	@include media(medium) {
 		.responsive-tabs-horizontal & {
 			border-bottom: 1px solid $tabBorderColor;
 			display: block;
@@ -178,15 +173,7 @@ $tabPanelTextColor: black;
 	cursor: pointer;
 	padding: em(10 20, (context: 19));
 
-	&:hover {
-		background: $tabHoverBackgroundColor;
-	}
-
-	&:before {
-		display: none;
-	}
-
-	@include media(breakpointMedium) {
+	@include media(medium) {
 		.responsive-tabs-horizontal & {
 			display: inline-block;
 			margin-right: 2px;
@@ -209,6 +196,14 @@ $tabPanelTextColor: black;
 			margin-bottom: 2px;
 		}
 	}
+
+	&:hover {
+		background: $tabHoverBackgroundColor;
+	}
+
+	&::before {
+		display: none;
+	}
 }
 	.responsive-tabs__list__item--active,
 	.responsive-tabs__list__item--active:hover {
@@ -216,7 +211,7 @@ $tabPanelTextColor: black;
 		border-color: $tabBorderColor;
 		color: $tabActiveTextColor;
 
-		@include media(breakpointMedium) {
+		@include media(medium) {
 			.responsive-tabs-horizontal & {
 				border-bottom: none;
 				padding-top: em(11, (context: 19));

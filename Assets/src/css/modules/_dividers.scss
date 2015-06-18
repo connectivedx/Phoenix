@@ -1,0 +1,19 @@
+%divider-config {
+	border: none;	// reset border to none; this allows the class to be used on horizontal rules
+	margin-top: $columnPadding * 2;
+	padding-top: $columnPadding * 2;
+}
+
+.divider {
+	@extend %divider-config;
+	border-top: 1px solid color(greyMedium);
+
+	&.row {
+		margin-top: 0;
+	}
+}
+
+.divider-secondary {
+	@extend %divider-config;
+	border-top: 1px dashed color(greyMedium);
+}

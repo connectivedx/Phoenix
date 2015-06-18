@@ -1,14 +1,15 @@
-// @category variables
-
-// @function breakpoints
-// Named breakpoints that can be referenced with the media() mixin.
-// @param $breakpoints {List} The breakpoints for all resolutions represented as pairs with the breakpoint name and its associated pixel width.  [String px]
-// @param $documentWidth {Number} The maximum width of documents.  This defaults to the value of $rowMaxWidth.  [px|percentage]
+/// The breakpoints for all resolutions represented as pairs with the breakpoint name and its associated pixel width.
+/// @group grid
+/// @type Map
+/// @prop {Pixels} extraSmall [320px]
+/// @prop {Pixels} small [480px]
+/// @prop {Pixels} medium [768px]
+/// @prop {Pixels} large [960px]
+/// @prop {Pixels} extraLarge [1220px]
 $breakpoints: (
-	breakpointExtraSmall: 320px,
-	breakpointSmall: 480px,
-	breakpointMedium: 768px,
-	breakpointLarge: 960px,
-	breakpointExtraLarge: 1220px
+	extraSmall: 320px,
+	small: 480px,
+	medium: 768px,
+	large: 960px,
+	extraLarge: 1220px
 );
-$documentWidth: $rowMaxWidth;

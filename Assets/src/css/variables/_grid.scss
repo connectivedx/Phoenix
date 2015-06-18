@@ -1,16 +1,31 @@
-// @category variables
+////
+/// @group grid
+////
 
-// @function grid
-// The properties of the grid system to be used.
-// @param $columns {Number} The number of columns in the grid system.  [integer]
-// @param $columnPadding {Number} The default amount of padding within columns in pixels.  [px]
-// @param $gutterWidth {Number} The default gutter width between columns in pixels or percent.  If defined as pixels, it will be converted to a percentage; the pixel value will represent the gutter width at the $rowMaxWidth.  [px|percentage]
-// @param $rowMaxWidth {Number} The maximum width of a row on the page.  [px|percentage]
-// @param $defaultFloat {String} The default direction in which to float content.
-// @param $switchFloat {String} The opposite float of $defaultFloat.
+/// The number of columns in the grid system.
+/// @type Integer
 $columns: 12 !default;
+
+/// The default breakpoint at which columns in the grid and semantic grid systems change from 100% to the column width specified.
+/// @type String
+$columnBreakpoint: medium !default;
+
+/// The default amount of padding within columns in pixels.
+/// @type Pixels
 $columnPadding: 16px !default;
+
+/// The default gutter width between columns in pixels or percent.  If defined as pixels, it will be converted to a percentage and will represent the gutter width at `$rowMaxWidth`.
+/// @type Pixels | Percentage
 $gutterWidth: 16px !default;
+
+/// The maximum width of a row on the page.<p>**NOTE**: if `$gutterWidth` is in pixels, `$rowMaxWidth` must be in pixels.</p>
+/// @type Pixels | Percentage
 $rowMaxWidth: 1220px !default;
+
+/// The default direction in which to float content.
+/// @type String
 $defaultFloat: left;
+
+/// The opposite float of `$defaultFloat`.
+/// @type String
 $switchFloat: right;
