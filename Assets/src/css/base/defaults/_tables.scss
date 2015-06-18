@@ -3,6 +3,10 @@ table {
 	@include font-size(12);
 	width: 100%;
 
+	@include media(medium) {
+		@include font-size(14);
+	}
+
 	thead {
 		@include media(print) {
 			display: table-header-group;
@@ -35,9 +39,5 @@ table {
 				background-color: transparent;
 			}
 		}
-	}
-
-	@include media(medium) {
-		@include font-size(14);
 	}
 }

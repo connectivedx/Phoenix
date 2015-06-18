@@ -173,14 +173,6 @@ $tabPanelTextColor: black;
 	cursor: pointer;
 	padding: em(10 20, (context: 19));
 
-	&:hover {
-		background: $tabHoverBackgroundColor;
-	}
-
-	&::before {
-		display: none;
-	}
-
 	@include media(medium) {
 		.responsive-tabs-horizontal & {
 			display: inline-block;
@@ -203,6 +195,14 @@ $tabPanelTextColor: black;
 			display: block;
 			margin-bottom: 2px;
 		}
+	}
+
+	&:hover {
+		background: $tabHoverBackgroundColor;
+	}
+
+	&::before {
+		display: none;
 	}
 }
 	.responsive-tabs__list__item--active,

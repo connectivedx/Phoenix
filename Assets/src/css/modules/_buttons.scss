@@ -10,6 +10,14 @@
 	text-decoration: none;
 	@include transition((property: background-color));
 
+	// media mixin is used here instead of inside above selector due to @extend bug of libsass
+	@include media(medium) {
+		+ button,
+		+ .btn {
+			margin-top: 0;
+		}
+	}
+
 	&.btn-full-width {
 		display: block;
 		margin-right: 0;
@@ -30,13 +38,6 @@
 	+ .btn {
 		margin-top: em(5);
 	}
-	// media mixin is used here instead of inside above selector due to @extend bug of libsass
-	@include media(medium) {
-		+ button,
-		+ .btn {
-			margin-top: 0;
-		}
-	}
 }
 
 button,
@@ -45,15 +46,15 @@ button,
 	background-color: color(primary);
 	border: 1px solid darken(color(primary), 10%);
 
+	@include media(print) {
+		display: none;
+	}
+
 	&:hover,
 	&:active,
 	&:focus {
 		background-color: lighten(color(primary), 10%);
 		color: white;
-	}
-
-	@include media(print) {
-		display: none;
 	}
 }
 
@@ -63,14 +64,14 @@ button,
 	border: 1px solid darken(color(secondary), 10%);
 	color: black;
 
+	@include media(print) {
+		display: none;
+	}
+
 	&:hover,
 	&:active,
 	&:focus {
 		background-color: lighten(color(secondary), 10%);
 		color: black;
-	}
-
-	@include media(print) {
-		display: none;
 	}
 }

@@ -89,15 +89,15 @@
 		@extend %column-config;
 		padding: $padding;
 
-		&:first-child {
-			margin-top: 0;
-		}
-
 		@include media($breakpoint) {
 			clear: both;
 			margin-left: centered($columns, $options);
 			margin-top: 0;
 			width: columns($columns, $options);
+		}
+
+		&:first-child {
+			margin-top: 0;
 		}
 	}
 	@else {

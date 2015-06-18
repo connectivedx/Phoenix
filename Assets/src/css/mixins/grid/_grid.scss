@@ -9,6 +9,12 @@
 		padding: $columnPadding;
 		width: 100%;
 
+		@include media($columnBreakpoint) {
+			margin: 0 auto;
+			max-width: $rowMaxWidth;
+			width: 100%;
+		}
+
 		& + .row {
 			padding-top: 0;
 		}
@@ -16,6 +22,10 @@
 		.row {
 			margin-top: $columnPadding;
 			padding: 0;
+
+			@include media($columnBreakpoint) {
+				min-width: 0px;
+			}
 
 			&:first-child {
 				margin-top: 0;
@@ -30,52 +40,44 @@
 		.centered {
 			margin: 0;
 		}
-	}
-
-	.column,
-	.columns {
-		@extend %clearfix;
-		margin-top: $columnPadding;
-		padding: $columnPadding;
-	}
-
-	@include media($columnBreakpoint) {
-		.row {
-			margin: 0 auto;
-			max-width: $rowMaxWidth;
-			width: 100%;
-
-			.row {
-				min-width: 0px;
-			}
-		}
 
 		.column,
 		.columns {
-			@extend %column-config;
-			margin-left: $gutterWidth;
+			@extend %clearfix;
+			margin-top: $columnPadding;
+			padding: $columnPadding;
 
-			&:first-child,
-			&.flush {
-				margin-left: 0;
+			@include media($columnBreakpoint) {
+				@extend %column-config;
+				margin-left: $gutterWidth;
+			}
+
+			&:first-child {
+				@include media($columnBreakpoint) {
+					margin-left: 0;
+				}
 			}
 		}
 
 		// Generate Column Classes
-		.row {
-			@for $i from 1 through $columns{
-				@if $i == 1 and (index($enabledColumns, $i) or length($enabledColumns) == 0 ) {
-					.one.column {
-						width: columns($i);
-					}
-					.one.columns {
-						// Fix for Sass bug
-						// @extend .one.column
+		@for $i from 1 through $columns{
+			@if $i == 1 and (index($enabledColumns, $i) or length($enabledColumns) == 0 ) {
+				.one.column {
+					@include media($columnBreakpoint) {
 						width: columns($i);
 					}
 				}
-				@else if (index($enabledColumns, $i) or length($enabledColumns) == 0 ) {
-					.#{number-as-word($i)}.columns {
+				.one.columns {
+					// Fix for Sass bug
+					// @extend .one.column
+					@include media($columnBreakpoint) {
+						width: columns($i);
+					}
+				}
+			}
+			@else if (index($enabledColumns, $i) or length($enabledColumns) == 0 ) {
+				.#{number-as-word($i)}.columns {
+					@include media($columnBreakpoint) {
 						width: columns($i);
 					}
 				}
@@ -83,11 +85,11 @@
 		}
 
 		// Generate Position Classes
-		.row {
-			@for $i from 1 through $columns {
-				@if ($enablePosition) and (index($enabledPositions, $i) or length($enabledPositions) == 0 ) {
-					.position-#{number-as-word($i)} {
-						margin-left: columnPosition($i);
+		@for $i from 1 through $columns {
+			@if ($enablePosition) and (index($enabledPositions, $i) or length($enabledPositions) == 0 ) {
+				.position-#{number-as-word($i)} {
+					@include media($columnBreakpoint) {
+						margin-left: columnPosition($i) !important;	// override :first-child rule
 						margin-right: -100%;
 					}
 				}
@@ -95,10 +97,10 @@
 		}
 
 		// Generate Centered Classes
-		.row {
-			@if ($enableCentered) {
-				@for $i from 1 through $columns - 1 {
-					.#{number-as-word($i)}.centered {
+		@if ($enableCentered) {
+			@for $i from 1 through $columns - 1 {
+				.#{number-as-word($i)}.centered {
+					@include media($columnBreakpoint) {
 						margin-left: centered($i);
 					}
 				}

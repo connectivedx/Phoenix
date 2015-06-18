@@ -50,12 +50,6 @@ a {
 	color: black;
 	@include transition((property: color));
 
-	&:hover,
-	&:active,
-	&:focus {
-		color: color(greyMedium);
-	}
-
 	@include media(print) {
 		text-decoration: underline;
 
@@ -75,6 +69,11 @@ a {
 		}
 	}
 
+	&:hover,
+	&:active,
+	&:focus {
+		color: color(greyMedium);
+	}
 }
 
 p, h2, h3, h4 {
