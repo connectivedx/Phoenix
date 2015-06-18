@@ -1,5 +1,5 @@
 /* Modernizr 2.8.3 (Custom Build) | MIT & BSD
- * Build: http://modernizr.com/download/#-printshiv-cssclasses-teststyles-prefixes-load
+ * Build: http://modernizr.com/download/#-printshiv-mq-cssclasses-teststyles-prefixes-load
  */
 ;
 
@@ -77,6 +77,25 @@ window.Modernizr = (function( window, document, undefined ) {
       return !!ret;
 
     },
+
+    testMediaQuery = function( mq ) {
+
+      var matchMedia = window.matchMedia || window.msMatchMedia;
+      if ( matchMedia ) {
+        return matchMedia(mq) && matchMedia(mq).matches || false;
+      }
+
+      var bool;
+
+      injectElementWithStyles('@media ' + mq + ' { #' + mod + ' { position: absolute; } }', function( node ) {
+        bool = (window.getComputedStyle ?
+                  getComputedStyle(node, null) :
+                  node.currentStyle)['position'] == 'absolute';
+      });
+
+      return bool;
+
+     },
     _hasOwnProperty = ({}).hasOwnProperty, hasOwnProp;
 
     if ( !is(_hasOwnProperty, 'undefined') && !is(_hasOwnProperty.call, 'undefined') ) {
@@ -213,6 +232,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
     Modernizr._prefixes     = prefixes;
 
+    Modernizr.mq            = testMediaQuery;
     Modernizr.testStyles    = injectElementWithStyles;    docElement.className = docElement.className.replace(/(^|\s)no-js(\s|$)/, '$1$2') +
 
                                                     (enableClasses ? ' js ' + classes.join(' ') : '');
