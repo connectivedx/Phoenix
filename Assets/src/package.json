@@ -1,6 +1,6 @@
 {
 	"name": "Phoenix",
-	"version": "1.3.0",
+	"version": "2.0.0",
 	"description": "A scalable, modular front-end framework for the modern web.",
 	"repository": "https://github.com/connectivedx/Phoenix",
 	"devDependencies": {
