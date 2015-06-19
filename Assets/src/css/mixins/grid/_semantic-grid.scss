@@ -27,10 +27,11 @@
 	margin-left: 0;
 	margin-right: 0;
 	min-width: 0;
-	width: auto;
+	width: 100%;
 
 	@if $nested == true {
 		margin-top: $columnPadding;
+		max-width: none;
 		padding: 0;
 
 		&:first-child {
@@ -38,21 +39,9 @@
 		}
 	}
 	@else {
+		margin: 0 auto;
+		max-width: $maxWidth;
 		padding: $padding;
-	}
-
-	@include media(medium) {
-		@if $nested == true {
-			max-width: none;
-			min-width: 0px;
-			padding: 0;
-			width: auto;
-		}
-		@else {
-			margin: 0 auto;
-			max-width: $maxWidth;
-			width: 100%;
-		}
 	}
 }
 
