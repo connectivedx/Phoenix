@@ -3,12 +3,6 @@
 	$bodyClass = 'template-three-column not-shifted no-gutters';
 	include_once 'inc/head.php';
 ?>
-	<header class="wrapper">
-		<div class="row">
-			Header
-		</div>
-	</header>
-
 	<section class="wrapper">
 		<article class="layout-primary">
 			<h2>Primary</h2>

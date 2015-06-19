@@ -181,10 +181,6 @@
 	@include row((padding: 0, maxWidth: 100%));
 }
 
-.layout-complex-header {
-	@include column(12, (includeGutterWidth: false));
-}
-
 .layout-complex-primary {
 	@include column(12, (includeGutterWidth: false));
 	border: 1px dashed color(primary);

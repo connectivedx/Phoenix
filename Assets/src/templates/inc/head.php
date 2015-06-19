@@ -33,10 +33,12 @@
 			You&rsquo;re using an older web browser version that may make your computer unsafe. <a href="http://browsehappy.com/">Download the latest version</a> to keep your information safe and improve your experience.
 		</div>
 	<![endif]-->
-	<div class="row">
-		<div class="eight columns centered" style="border: none;">
-			<a href="index.php">
-				<img src="<?php echo getAsset('Assets/dist/img/content/logo-placeholder.png');?>" srcset="<?php echo getAsset('Assets/dist/img/content/logo-placeholder@2x.png');?> 2x" alt="Phoenix by Connective DX" class="img-align-center">
-			</a>
+	<header>
+		<div class="row">
+			<div class="eight columns centered" style="border: none;">
+				<a href="index.php">
+					<img src="<?php echo getAsset('Assets/dist/img/content/logo-placeholder.png');?>" srcset="<?php echo getAsset('Assets/dist/img/content/logo-placeholder@2x.png');?> 2x" alt="Phoenix by Connective DX" class="img-align-center">
+				</a>
+			</div>
 		</div>
-	</div>
+	</header>
