@@ -1,148 +1,82 @@
-// @category layout
-
-// @function grid
-// The natural language grid system (using class names like "columns" and "row").  This is enabled or disabled with the $enableGrid variable in /variables/_options.scss.
+/// The natural language grid system (using class names like "columns" and "row").  This is enabled or disabled with the `$enableGrid` variable in `variables/_options.scss`.
+/// @group grid
 @mixin grid {
 	.row {
-		@extend %clearfix;
-		margin-left: 0;
-		margin-right: 0;
-		min-width: 0;
-		padding: $gutterWidthInPx;
-		width: 100%;
-
-		// max-width needed because border-box isn't supported for some HTML5 elements in old versions of IE
-		@if unit($rowMaxWidth) == "px" {
-			.oldie & {
-				max-width: $rowMaxWidth - ($columnPadding * 2);
-			}
-		}
+		@include row();
 
 		& + .row {
 			padding-top: 0;
 		}
 
 		.row {
-			margin-top: $gutterWidthInPx;
-			padding: 0;
-
-			&:first-child {
-				margin-top: 0;
-			}
+			@include row((nested: true));
 
 			.column,
 			.columns {
 				padding: 0;
 			}
 		}
-		.centered {
-			margin: 0;
-		}
-	}
-	.column,
-	.columns {
-		margin-top: $gutterWidthInPx;
-		padding: $columnPadding;
-
-		&:last-child {
-			float: none;
-		}
-	}
-
-	[class*="column"] {
-		+ [class*="column"]:last-child {
-			float: none;
-		}
-		&:before {
-			display: table;
-		}
-		&:after {
-			clear: both;
-			display: table;
-		}
-	}
-
-	@include media(breakpointMedium) {
-		.row {
-			margin: 0 auto;
-			max-width: $rowMaxWidth;
-			width: 100%;
-
-			.row {
-				min-width: 0px;
-			}
-		}
 
 		.column,
 		.columns {
-			float: $defaultFloat !important;
-			margin-left: $gutterWidth;
-			min-height: 1px;
+			@include column($columns, (includeGutterWidth: false));
 
-			&:first-child,
-			&.flush {
-				margin-left: 0;
+			@include media($columnBreakpoint) {
+				margin-left: $gutterWidth;
+			}
+
+			&:first-child {
+				@include media($columnBreakpoint) {
+					margin-left: 0;
+				}
+			}
+
+			+ .column,
+			+ .columns {
+				margin-top: $columnPadding;
+
+				@include media($columnBreakpoint) {
+					margin-top: 0;
+				}
 			}
 		}
 
 		// Generate Column Classes
-		.row {
-			@for $i from 1 through $columns{
-				@if $i == 1 and (index($enabledColumns, $i) or length($enabledColumns) == 0 ) {
-					.one.column {
-						width: columns($i);
-					}
-					.one.columns {
-						// Fix for Sass bug
-						// @extend .one.column
+		@for $i from 1 through $columns{
+			@if $i == 1 and (index($enabledColumns, $i) or length($enabledColumns) == 0 ) {
+				.one.column,
+				.one.columns {
+					@include media($columnBreakpoint) {
 						width: columns($i);
 					}
 				}
-				@else if (index($enabledColumns, $i) or length($enabledColumns) == 0 ) {
-					.#{number-as-word($i)}.columns {
+			}
+			@else if (index($enabledColumns, $i) or length($enabledColumns) == 0 ) {
+				.#{number-as-word($i)}.columns {
+					@include media($columnBreakpoint) {
 						width: columns($i);
 					}
 				}
 			}
 		}
 
-		// Generate Push and Pull Classes
-		.row {
-			@for $i from 1 through $columns - 1 {
-				@if ($enablePush) and (index($enabledPushColumns, $i) or length($enabledPushColumns) == 0 ) {
-					.push_#{number-as-word($i)} {
-						margin-left: push_x($i);
-
-						&:first-child {
-							margin-left: push_x($i);
-						}
-					}
-				}
-				@if ($enablePull) and (index($enabledPullColumns, $i) or length($enabledPullColumns) == 0 ) {
-					.pull_#{number-as-word($i)} {
-						// pull classes need to know the width of the container being pulled
-						@for $j from 1 through $columns - 1 {
-							@if $j == 1 and (index($enabledColumns, $j) or length($enabledColumns) == 0 ) {
-								&.one.column {
-									margin-left: pull_x($i, $j);
-								}
-							}
-							@else if (index($enabledColumns, $j) or length($enabledColumns) == 0 ) {
-								&.#{number-as-word($j)}.columns {
-									margin-left: pull_x($i, $j);
-								}
-							}
-						}
+		// Generate Position Classes
+		@for $i from 1 through $columns {
+			@if ($enablePosition) and (index($enabledPositions, $i) or length($enabledPositions) == 0 ) {
+				.position-#{number-as-word($i)} {
+					@include media($columnBreakpoint) {
+						margin-left: columnPosition($i) !important;	// override :first-child rule
+						margin-right: -100%;
 					}
 				}
 			}
 		}
 
 		// Generate Centered Classes
-		.row {
-			@if ($enableCentered) {
-				@for $i from 1 through $columns - 1 {
-					.#{number-as-word($i)}.centered {
+		@if ($enableCentered) {
+			@for $i from 1 through $columns - 1 {
+				.#{number-as-word($i)}.centered {
+					@include media($columnBreakpoint) {
 						margin-left: centered($i);
 					}
 				}

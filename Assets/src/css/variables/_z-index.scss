@@ -1,0 +1,16 @@
+/// The z-indexes for the project.
+/// @type Map
+/// @prop {Number} hidden [-100] - For content that sits below content on the main content layer.
+/// @prop {Number} base [1] - A non-zero default.
+/// @prop {Number} content [10] - For content that sits between the main navigation and any modals.
+/// @prop {Number} nav [50] - The navigation layer, which should sit above content but below any modals.
+/// @prop {Number} tooltip [1000] - For tooltips which should sit above content and the nav.  In the case of a fixed header, the tooltip should appear on top of nav.
+/// @prop {Number} modal [8000] - The modal layer, which should sit above everything else on the page.
+$zIndex: (
+    hidden: -100,
+    base: 1,
+    content: 10,
+    nav: 50,
+    tooltip: 1000,
+    modal: 8000
+);

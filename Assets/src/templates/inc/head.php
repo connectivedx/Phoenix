@@ -1,12 +1,6 @@
 <?php include_once 'functions.php'; ?>
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7" manifest="default.appcache?v=1"><![endif]-->
-<!--[if lt IE 7 ]><html class="no-js oldie ie6" lang="en"><![endif]-->
-<!--[if IE 7 ]><html class="no-js oldie ie7" lang="en"><![endif]-->
-<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"><![endif]-->
-<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!-->
 <html class="no-js" lang="en">
-<!--<![endif]-->
 <head>
 	<title><?php echo $pageTitle; ?></title>
 	<meta charset="utf-8">
@@ -19,12 +13,9 @@
 	<meta name="apple-mobile-web-app-title" content="Phoenix">
 
 	<script src="<?php echo getAsset('Assets/dist/js/head.js');?>"></script>
-	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet" type="text/css">
 
 	<link rel="stylesheet" media="all" href="<?php echo getAsset('Assets/dist/css/style.css');?>">
-	<!--[if lte IE 8]>
-	<script src="<?php echo getAsset('Assets/dist/js/oldie.js');?>"></script>
-	<![endif]-->
 
 	<!-- Serve one icon for all Apple devices -->
 	<link rel="apple-touch-icon-precomposed" href="<?php echo getAsset('Assets/dist/img/content/touch-icon.png');?>">
@@ -37,10 +28,17 @@
 </head>
 
 <body class="<?php echo $bodyClass; ?>">
-	<div class="row">
-		<div class="eight columns centered" style="border: none;">
-			<a href="index.php">
-				<img src="<?php echo getAsset('Assets/dist/img/content/logo-placeholder.png');?>" srcset="<?php echo getAsset('Assets/dist/img/content/logo-placeholder@2x.png');?> 2x" alt="Phoenix by Connective DX" class="img-align-center">
-			</a>
+	<!--[if lte IE 8]>
+		<div class="browser-alert">
+			You&rsquo;re using an older web browser version that may make your computer unsafe. <a href="http://browsehappy.com/">Download the latest version</a> to keep your information safe and improve your experience.
 		</div>
-	</div>
+	<![endif]-->
+	<header>
+		<div class="row">
+			<div class="eight columns centered" style="border: none;">
+				<a href="index.php">
+					<img src="<?php echo getAsset('Assets/dist/img/content/logo-placeholder.png');?>" srcset="<?php echo getAsset('Assets/dist/img/content/logo-placeholder@2x.png');?> 2x" alt="Phoenix by Connective DX" class="img-align-center">
+				</a>
+			</div>
+		</div>
+	</header>

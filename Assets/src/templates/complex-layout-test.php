@@ -3,9 +3,6 @@
 	include_once 'inc/head.php';
 ?>
 	<section class="layout-complex-wrapper">
-		<header class="layout-complex-header">
-			<h2>Header</h2>
-		</header>
 		<nav class="layout-complex-nav">
 			<h3>Nav</h3>
 			<p>This is where your primary navigation items will be.</p>

@@ -10,14 +10,14 @@
 	</style>
 
 	<?php
-		$numbers = array('one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve');
+		$numbers = array("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty", "twenty-one", "twenty-two", "twenty-three", "twenty-four", "twenty-five", "twenty-six", "twenty-seven", "twenty-eight", "twenty-nine", "thirty", "thirty-one", "thirty-two", "thirty-three", "thirty-four", "thirty-five", "thirty-six");
 		$gridSize = 12;
 	?>
-	<section class="content">
+
+	<section>
 		<div class="row">
 			<h1>Grid System Test</h1>
 		</div>
-
 		<div class="row">
 			<h2>Standard classes</h2>
 		</div>
@@ -70,15 +70,18 @@
 				echo '</div>';
 			}
 		?>
+	</section>
 
+	<section>
 		<div class="row">
-			<h2>Push and pull classes</h2>
+			<h2>Position classes</h2>
 		</div>
 
 		<?php
 			for ($i = 0; $i < $gridSize; $i++) {
 				$firstColumnWidth = $numbers[$i];
 				$secondColumnWidth = $numbers[$gridSize - $i - 2];
+				$secondColumnPosition = $numbers[$gridSize - $i - 1];
 
 				echo '<div class="row">';
 
@@ -98,15 +101,17 @@
 
 				// display columns
 				if ($i < $gridSize - 1) {
-					echo '<div class="' . $firstColumnWidth . ' ' . $firstColumnText . ' push_' . $secondColumnWidth . '">' . $firstColumnWidth . ' push ' . $secondColumnWidth . '</div>';
-					echo '<div class="' . $secondColumnWidth . ' ' . $secondColumnText . ' pull_' . $firstColumnWidth . '">' . $secondColumnWidth . ' pull ' . $firstColumnWidth . '</div>';
+					echo '<div class="' . $firstColumnWidth . ' ' . $firstColumnText . ' position-' . $secondColumnPosition . '">' . $firstColumnWidth . ' position ' . $secondColumnPosition . '</div>';
+					echo '<div class="' . $secondColumnWidth . ' ' . $secondColumnText . ' position-one">' . $secondColumnWidth . ' position one</div>';
 				}
 
 				// end row
 				echo '</div>';
 			}
 		?>
+	</section>
 
+	<section>
 		<div class="row">
 			<h2>Centered classes</h2>
 		</div>

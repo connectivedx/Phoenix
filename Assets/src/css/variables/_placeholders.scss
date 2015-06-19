@@ -1,12 +1,17 @@
-// @category variables
-
-// @function placeholders
-// Global placeholders, such as clearfix, will exist here.
-// @param $clearfix {Placeholder} Applies a clearfix to the applied container to combat the zero-height container problem.
+/// Applies a clearfix to the applied container to combat the zero-height container problem.
+/// @link https://css-tricks.com/snippets/css/clear-fix/
 %clearfix {
-	&:after {
+	&::after {
 		clear: both;
 		content: "";
 		display: table;
 	}
+}
+
+/// Defines defaults for column elements.
+/// @group grid
+%column-config {
+	float: $defaultFloat;
+	margin: 0;
+	min-height: 1px;
 }

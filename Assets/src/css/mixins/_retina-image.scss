@@ -1,16 +1,13 @@
-// @category mixins
-
-// @mixin retina-image
-// Outputs a retina image for the given property.
-// @param $imageName {String} The filename of the image file.
-// @param $backgroundSize {String} The size of the background image (used to scale down 2x images).  Default value: 'none'.
-// @param $retinaFileSuffix {String} The suffix to the filename that you use to denote a "retina" image.  Default value: '@2x'.
-// @param $backgroundRepeat {String} Whether to repeat the background image.  Default value: no-repeat.
-// @param $property {String} The CSS property to which you wish to apply the image.  Default value: background-image.
-// @usage
-// =retina-image(bullet-blue.png)
-// =retina-image(bullet-blue.png, (backgroundSize: 12px 12px))
-// =retina-image(bullet-blue.png, (retinaFileSuffix: '-2x'))
+/// Outputs a high DPI "retina" image for the given property with a low DPI fallback.
+/// @param {String} $imageName - The filename, without an extension, of the image file.
+/// @param {String} $backgroundSize ['none'] - The size of the background image (used to scale down 2x images).
+/// @param {String} $retinaFileSuffix ['@2x'] - The filename suffix used for the "retina" version of the image.
+/// @param {String} $backgroundRepeat [no-repeat] - Whether to repeat the background image.
+/// @param {String} $property [background-image] - The CSS property to which you wish to apply the image.
+/// @example
+/// retina-image(logo)
+/// @example
+/// retina-image(bullet-blue, (property: list-style-image))
 @mixin retina-image($imageName, $options: ()) {
 	$options: map-merge((
 		backgroundSize: 'none',

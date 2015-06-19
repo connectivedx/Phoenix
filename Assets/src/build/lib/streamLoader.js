@@ -34,7 +34,7 @@ streamLoader.prototype = {
 			if(!streams) streams = currentTask.streamFactory();
 			else streams = merge(streams, currentTask.streamFactory());
 		}
-		
+
 		return streams;
 	},
 
@@ -50,7 +50,7 @@ streamLoader.prototype = {
 				var base = task.base ? task.base : self.globalConfiguration.base;
 					stream = self.gulp.src(task.paths, { base: base });
 			}
-		
+
 			if(!stream) throw "Stream from driver '" + task.driver + "' was falsy! This may mean the files or directories do not exist, or other error condition.";
 
 			stream = stream.pipe(plumber());

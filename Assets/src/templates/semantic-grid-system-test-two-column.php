@@ -3,12 +3,6 @@
 	$bodyClass = 'template-two-column not-shifted no-gutters';
 	include_once 'inc/head.php';
 ?>
-	<header class="wrapper">
-		<div class="row">
-			Header
-		</div>
-	</header>
-
 	<section class="wrapper">
 		<article class="layout-primary">
 			<h2>Primary</h2>
@@ -43,7 +37,7 @@
 
 	<div class="wrapper">
 		<div class="row">
-			<button class="toggle-push-and-pull">Toggle Push and Pull</button>
+			<button class="toggle-position">Toggle Position</button>
 			<button class="toggle-gutters">Toggle Gutters</button>
 		</div>
 	</div>

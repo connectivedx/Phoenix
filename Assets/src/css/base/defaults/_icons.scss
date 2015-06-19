@@ -1,10 +1,4 @@
-// Base Icon Styles Mixin
-// using a mixin rather than placeholder because we need to separate
-// modern browser from older browsers in @extend chain so as not to break
-// older browsers when used in form elememts (see modules/forms)
-// once IE8 support is dropped, this should become a placeholder
-// and %icon-config/%icon-config-modern-browsers can be removed
-@mixin icon-config() {
+%icon-config {
 	font-family: $iconFontFamily;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -14,15 +8,6 @@
 	line-height: 1;
 	speak: none;
 	text-transform: none;
-}
-
-%icon-config {
-	@include icon-config();
-}
-
-// this version is for IE9 and up; it's used on custom radio buttons and checkboxes and must be separate from %icon-config
-%icon-config-modern-browsers {
-	@include icon-config();
 }
 
 [class^="icon-"], [class*=" icon-"] {
