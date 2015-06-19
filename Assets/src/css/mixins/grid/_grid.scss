@@ -2,34 +2,14 @@
 /// @group grid
 @mixin grid {
 	.row {
-		@extend %clearfix;
-		margin-left: 0;
-		margin-right: 0;
-		min-width: 0;
-		padding: $columnPadding;
-		width: 100%;
-
-		@include media($columnBreakpoint) {
-			margin: 0 auto;
-			max-width: $rowMaxWidth;
-			width: 100%;
-		}
+		@include row();
 
 		& + .row {
 			padding-top: 0;
 		}
 
 		.row {
-			margin-top: $columnPadding;
-			padding: 0;
-
-			@include media($columnBreakpoint) {
-				min-width: 0px;
-			}
-
-			&:first-child {
-				margin-top: 0;
-			}
+			@include row((nested: true));
 
 			.column,
 			.columns {
@@ -37,18 +17,11 @@
 			}
 		}
 
-		.centered {
-			margin: 0;
-		}
-
 		.column,
 		.columns {
-			@extend %clearfix;
-			margin-top: $columnPadding;
-			padding: $columnPadding;
+			@include column($columns, (includeGutterWidth: false));
 
 			@include media($columnBreakpoint) {
-				@extend %column-config;
 				margin-left: $gutterWidth;
 			}
 
@@ -57,19 +30,22 @@
 					margin-left: 0;
 				}
 			}
+
+			+ .column,
+			+ .columns {
+				margin-top: $columnPadding;
+
+				@include media($columnBreakpoint) {
+					margin-top: 0;
+				}
+			}
 		}
 
 		// Generate Column Classes
 		@for $i from 1 through $columns{
 			@if $i == 1 and (index($enabledColumns, $i) or length($enabledColumns) == 0 ) {
-				.one.column {
-					@include media($columnBreakpoint) {
-						width: columns($i);
-					}
-				}
+				.one.column,
 				.one.columns {
-					// Fix for Sass bug
-					// @extend .one.column
 					@include media($columnBreakpoint) {
 						width: columns($i);
 					}

@@ -13,11 +13,11 @@
 		$numbers = array("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty", "twenty-one", "twenty-two", "twenty-three", "twenty-four", "twenty-five", "twenty-six", "twenty-seven", "twenty-eight", "twenty-nine", "thirty", "thirty-one", "thirty-two", "thirty-three", "thirty-four", "thirty-five", "thirty-six");
 		$gridSize = 12;
 	?>
-	<section class="content">
+
+	<section>
 		<div class="row">
 			<h1>Grid System Test</h1>
 		</div>
-
 		<div class="row">
 			<h2>Standard classes</h2>
 		</div>
@@ -70,7 +70,9 @@
 				echo '</div>';
 			}
 		?>
+	</section>
 
+	<section>
 		<div class="row">
 			<h2>Position classes</h2>
 		</div>
@@ -107,7 +109,9 @@
 				echo '</div>';
 			}
 		?>
+	</section>
 
+	<section>
 		<div class="row">
 			<h2>Centered classes</h2>
 		</div>
