@@ -17,31 +17,44 @@
 .layout-secondary,
 .layout-tertiary {
 	@include transition();
+	@include column(12, (includeGutterWidth: false));
 }
 
 .layout-centered {
-	@include column(8, (alignment: centered, includeGutterWidth: false));
+	@include column(12, (includeGutterWidth: false));
+
+	@include media(medium) {
+		@include column(8, (centered: true, includeGutterWidth: false));
+	}
 }
 
 .template-two-column {
 	&.not-shifted {
 		&.no-gutters {
 			.layout-primary {
-				@include column(9, (includeGutterWidth: false));
+				@include media(medium) {
+					@include column(9, (includeGutterWidth: false));
+				}
 			}
 
 			.layout-secondary {
-				@include column(3, (includeGutterWidth: false));
+				@include media(medium) {
+					@include column(3, (includeGutterWidth: false));
+				}
 			}
 		}
 
 		&.gutters {
 			.layout-primary {
-				@include column(9);
+				@include media(medium) {
+					@include column(9);
+				}
 			}
 
 			.layout-secondary {
-				@include column(3);
+				@include media(medium) {
+					@include column(3);
+				}
 			}
 		}
 	}
@@ -49,21 +62,29 @@
 	&.shifted {
 		&.no-gutters {
 			.layout-primary {
-				@include column(9, (includeGutterWidth: false, position: 4));
+				@include media(medium) {
+					@include column(9, (includeGutterWidth: false, position: 4));
+				}
 			}
 
 			.layout-secondary {
-				@include column(3, (includeGutterWidth: false, position: 1));
+				@include media(medium) {
+					@include column(3, (includeGutterWidth: false, position: 1));
+				}
 			}
 		}
 
 		&.gutters {
 			.layout-primary {
-				@include column(9, (position: 4));
+				@include media(medium) {
+					@include column(9, (position: 4));
+				}
 			}
 
 			.layout-secondary {
-				@include column(3, (position: 1));
+				@include media(medium) {
+					@include column(3, (position: 1));
+				}
 			}
 		}
 	}
@@ -73,29 +94,41 @@
 	&.not-shifted {
 		&.no-gutters {
 			.layout-primary {
-				@include column(6, (includeGutterWidth: false));
+				@include media(medium) {
+					@include column(6, (includeGutterWidth: false));
+				}
 			}
 
 			.layout-secondary {
-				@include column(3, (includeGutterWidth: false));
+				@include media(medium) {
+					@include column(3, (includeGutterWidth: false));
+				}
 			}
 
 			.layout-tertiary {
-				@include column(3, (includeGutterWidth: false));
+				@include media(medium) {
+					@include column(3, (includeGutterWidth: false));
+				}
 			}
 		}
 
 		&.gutters {
 			.layout-primary {
-				@include column(6);
+				@include media(medium) {
+					@include column(6);
+				}
 			}
 
 			.layout-secondary {
-				@include column(3);
+				@include media(medium) {
+					@include column(3);
+				}
 			}
 
 			.layout-tertiary {
-				@include column(3);
+				@include media(medium) {
+					@include column(3);
+				}
 			}
 		}
 	}
@@ -103,29 +136,41 @@
 	&.shifted {
 		&.no-gutters {
 			.layout-primary {
-				@include column(6, (includeGutterWidth: false, position: 4));
+				@include media(medium) {
+					@include column(6, (includeGutterWidth: false, position: 4));
+				}
 			}
 
 			.layout-secondary {
-				@include column(3, (includeGutterWidth: false, position: 1));
+				@include media(medium) {
+					@include column(3, (includeGutterWidth: false, position: 1));
+				}
 			}
 
 			.layout-tertiary {
-				@include column(3, (includeGutterWidth: false, position: 10));
+				@include media(medium) {
+					@include column(3, (includeGutterWidth: false, position: 10));
+				}
 			}
 		}
 
 		&.gutters {
 			.layout-primary {
-				@include column(6, (position: 4));
+				@include media(medium) {
+					@include column(6, (position: 4));
+				}
 			}
 
 			.layout-secondary {
-				@include column(3, (position: 1));
+				@include media(medium) {
+					@include column(3, (position: 1));
+				}
 			}
 
 			.layout-tertiary {
-				@include column(3, (position: 10));
+				@include media(medium) {
+					@include column(3, (position: 10));
+				}
 			}
 		}
 	}
@@ -137,58 +182,53 @@
 }
 
 .layout-complex-header {
-	@extend %column-config;
-	padding: $columnPadding;
+	@include column(12, (includeGutterWidth: false));
 }
 
 .layout-complex-primary {
-	@extend %column-config;
+	@include column(12, (includeGutterWidth: false));
 	border: 1px dashed color(primary);
-	padding: $columnPadding;
 
 	@include media(medium) {
-		width: columns(7, (includeGutterWidth: false));
+		@include column(7, (includeGutterWidth: false));
 	}
 
 	@include media(large) {
-		width: columns(6, (includeGutterWidth: false));
+		@include column(6, (includeGutterWidth: false));
 	}
 }
 
 .layout-complex-nav {
-	@extend %column-config;
+	@include column(12, (includeGutterWidth: false));
 	background-color: color(secondary);
-	padding: $columnPadding;
 
 	@include media(extraLarge) {
-		width: columns(1.5, (includeGutterWidth: false));
+		@include column(1.5, (includeGutterWidth: false));
 	}
 }
 
 .layout-complex-tertiary {
-	@extend %column-config;
+	@include column(12, (includeGutterWidth: false));
 	background-color: color(secondary);
-	padding: $columnPadding;
 
 	@include media(medium) {
-		width: columns(5, (includeGutterWidth: false));
+		@include column(5, (includeGutterWidth: false));
 	}
 
 	@include media(large) {
-		width: columns(3, (includeGutterWidth: false));
+		@include column(3, (includeGutterWidth: false));
 	}
 }
 
 .layout-complex-footer {
-	@extend %column-config;
-	padding: $columnPadding;
+	@include column(12, (includeGutterWidth: false));
 
 	@include media(large) {
-		width: columns(3, (includeGutterWidth: false));
+		@include column(3, (includeGutterWidth: false));
 	}
 
 	@include media(extraLarge) {
-		width: columns(1.5, (includeGutterWidth: false));
+		@include column(1.5, (includeGutterWidth: false));
 	}
 }
 
