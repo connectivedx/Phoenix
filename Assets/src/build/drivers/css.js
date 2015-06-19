@@ -31,10 +31,10 @@ var CssDriver = {
 				theme: "./sassdoc-theme"
 			})))
 			.pipe(sass())
-			.pipe(gulpif(debug, sourcemaps.write('./')))
-			.pipe(gulpif(!debug, prefix({
+			.pipe(prefix({
 				browsers: ['last 2 versions', 'IE >= 9', 'Android >= 4']
-			})))
+			}))
+			.pipe(gulpif(debug, sourcemaps.write('./')))
 			.pipe(base64({
 				exclude: [/\icomoon/],
 				extensions: ['svg']
