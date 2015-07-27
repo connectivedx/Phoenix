@@ -14,7 +14,7 @@
 		direction: bottom
 	), $options);
 
-	//"to" prefix, for keyword direcitons
+	//"to" prefix, for keyword directions
 	$directions: (top, right, bottom, left);
 	$direction: map-get($options, direction);
 	@if index($directions, $direction){ $direction: to $direction; }
