@@ -1,10 +1,29 @@
-/// Adds a background color gradient.
-/// @param {Color} $from - The top color of the gradient.
-/// @param {Color} $to - The bottom color of the gradient.
-/// @example
-/// gradient(#000000, #ffffff);
-@mixin gradient($from, $to) {
+// @category mixins
+
+// @mixin gradient
+// Adds background color gradient support
+// @param $from {HexColor} - The color to begin your gradient.
+// @param $to {HexColor} - The color to end your gradient.
+// @param $direction {String} - The direction of $from gradient color (Eg: top, bottom, left, right, 45deg).
+// @usage
+// = @include gradient(#000000, #ffffff);
+// = @include gradient(transparent, $link-color, (direction: right));
+// = @include gradient($link-color, darken($link-color, 5%), (direction: 45deg));
+@mixin gradient($from, $to, $options: ()) {
+	$options: map-merge((
+		direction: bottom
+	), $options);
+
+	//"to" prefix, for keyword direcitons
+	$directions: (top, right, bottom, left);
+	$direction: map-get($options, direction);
+	@if index($directions, $direction){ $direction: to $direction; }
+
+	//Styles
 	background-color: $to; // All else fails
-	background-image: linear-gradient(to bottom, $from 0%, $to 100%);	// W3C
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$from}', endColorstr='#{$to}',GradientType=0 );	// IE6-9
+	background-image: linear-gradient($direction, $from 0%, $to 100%);	// W3C
+	
+	// IE6-9 simi-fallback (degrees not supported)
+	@if $direction == 'left' or $direction == 'right' { $type:1; } @else { $type:0; }	
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$from}', endColorstr='#{$to}', GradientType=$type );	
 }
