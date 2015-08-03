@@ -1,14 +1,11 @@
-// @category mixins
-
-// @mixin gradient
-// Adds background color gradient support
-// @param $from {HexColor} - The color to begin your gradient.
-// @param $to {HexColor} - The color to end your gradient.
-// @param $direction {String} - The direction of $from gradient color (Eg: top, bottom, left, right, 45deg).
-// @usage
-// = @include gradient(#000000, #ffffff);
-// = @include gradient(transparent, $link-color, (direction: right));
-// = @include gradient($link-color, darken($link-color, 5%), (direction: 45deg));
+/// Adds a background color gradient.
+/// @param {Color} $from - The top color of the gradient.
+/// @param {Color} $to - The bottom color of the gradient.
+/// @param {String} $direction - The position the gradient starts `$from` (e.g.: top, bottom, left, right, 45deg).
+/// @example
+/// gradient(#000, #fff);
+/// gradient(transparent, $primary, (direction: right));
+/// gradient(color(greyLight), darken(color($greyLight), 5%), (direction: 45deg));
 @mixin gradient($from, $to, $options: ()) {
 	$options: map-merge((
 		direction: bottom
