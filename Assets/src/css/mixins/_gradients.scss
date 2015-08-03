@@ -1,26 +1,33 @@
 /// Adds a background color gradient.
-/// @param {Color} $from - The top color of the gradient.
-/// @param {Color} $to - The bottom color of the gradient.
-/// @param {String} $direction - The position the gradient starts `$from` (e.g.: top, bottom, left, right, 45deg).
+/// @param {String} $direction - The position the gradient starts from (e.g.: top, bottom, left, right, 45deg).
+/// @param {List | String} $colorStops - Variable length list of color stops.
+/// @require {function} is-direction - Uses the `is-direction` function internally.
 /// @example
 /// gradient(#000, #fff);
-/// gradient(transparent, $primary, (direction: right));
-/// gradient(color(greyLight), darken(color($greyLight), 5%), (direction: 45deg));
-@mixin gradient($from, $to, $options: ()) {
-	$options: map-merge((
-		direction: bottom
-	), $options);
+/// gradient(right, transparent, color($primary));
+/// gradient(45deg, color(greyLight), darken(color($greyLight), 5%));
+@mixin gradient($direction, $colorStops...) {
 
-	//"to" prefix, for keyword directions
-	$directions: (top, right, bottom, left);
-	$direction: map-get($options, direction);
-	@if index($directions, $direction){ $direction: to $direction; }
+	// add "to" prefix on valid $directions and set default fallback
+	@if is-direction($direction) {
+		$direction: to $direction;
+	}
+	@else {
+		$colorStops: join($direction, $colorStops); // ensure colors are passed if no direction is passed
+		$direction: to bottom; // set default direction
+	}
 
 	//Styles
-	background-color: $to; // All else fails
-	background-image: linear-gradient($direction, $from 0%, $to 100%);	// W3C
-	
-	// IE6-9 simi-fallback (degrees not supported)
-	@if $direction == 'left' or $direction == 'right' { $type:1; } @else { $type:0; }	
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$from}', endColorstr='#{$to}', GradientType=$type );	
+	background-color: nth(nth($colorStops, 1), 1); // All else fails
+	background-image: linear-gradient($direction, $colorStops);	// W3C
+
+	// IE6-9 semi-fallback (degrees not supported)
+	@if $direction == 'left' or $direction == 'right' {
+		$type: 1;
+	}
+	@else {
+		$type: 0;
+	}
+
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{nth(nth($colorStops, length($colorStops)), 1)}', endColorstr='#{nth($colorStops, 1)}', GradientType=$type );
 }
