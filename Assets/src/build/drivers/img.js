@@ -14,7 +14,7 @@ var ImageDriver = {
 		return pipeline
 			.pipe(imageFilter)
 			.pipe(imagemin({ progressive: true, interlaced: true }))
-			.pipe(imageFilter.restore())
+			.pipe(imageFilter.restore());
 	}
 };
 
