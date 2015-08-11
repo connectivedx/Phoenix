@@ -5,9 +5,9 @@
 var gulp = require('gulp'),
 	rev = require('gulp-rev-all'),
 	rimraf = require('rimraf'),
-	StreamLoader = require('./lib/streamLoader'),
-	TaskLoader = require('./lib/taskLoader'),
-	WatchLoader = require('./lib/watchLoader');
+	StreamLoader = require('./lib/StreamLoader'),
+	TaskLoader = require('./lib/TaskLoader'),
+	WatchLoader = require('./lib/WatchLoader');
 
 
 module.exports = function(configuration) {
