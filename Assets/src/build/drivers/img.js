@@ -1,20 +1,21 @@
-/*global require, module */
+/*jshint strict: true, node: true */
+/*global console */
 'use strict';
 
-var imagemin = require('gulp-imagemin');
-var gulpFilter = require('gulp-filter');
+var GulpFilter = require('gulp-filter'),
+	imagemin = require('gulp-imagemin');
 
-var ImageDriver = {
+var imageDriver = {
 	build: function(pipeline, debug) {
 		if(debug) return pipeline; // in debug we do no image processing
 
-		var imageFilter = new gulpFilter(['**/*.jpg', '**/*.png', '**/*.gif', '**/*.svg']);
+		var imageFilter = new GulpFilter(['**/*.jpg', '**/*.png', '**/*.gif', '**/*.svg']);
 
 		return pipeline
 			.pipe(imageFilter)
 			.pipe(imagemin({ progressive: true, interlaced: true }))
-			.pipe(imageFilter.restore())
+			.pipe(imageFilter.restore());
 	}
 };
 
-module.exports = ImageDriver;
+module.exports = imageDriver;

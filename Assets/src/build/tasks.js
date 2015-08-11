@@ -1,24 +1,28 @@
-/*global require, module */
+/*jshint strict: true, node: true */
+/*global console */
+'use strict';
+
 var gulp = require('gulp'),
 	rev = require('gulp-rev-all'),
 	rimraf = require('rimraf'),
-	watchLoader = require('./lib/watchLoader'),
-	streamLoader = require('./lib/streamLoader'),
-	taskLoader = require('./lib/taskLoader');
+	StreamLoader = require('./lib/StreamLoader'),
+	TaskLoader = require('./lib/TaskLoader'),
+	WatchLoader = require('./lib/WatchLoader');
 
 
 module.exports = function(configuration) {
 	// load up autoclean tasks and drivers
-	var loader = new taskLoader(gulp, configuration);
+	var loader = new TaskLoader(gulp, configuration);
 	loader.loadTasks();
 
 	// this is the debug build task
 	gulp.task('default', loader.getBuildDependencies(), function() {
-		var sLoader = new streamLoader(gulp, configuration);
+		var masterStream,
+			sLoader = new StreamLoader(gulp, configuration);
 
 		sLoader.loadStreams(true);
 
-		var masterStream = sLoader.getTaskStreams();
+		masterStream = sLoader.getTaskStreams();
 
 		masterStream = sLoader.executeCustomOutput(masterStream);
 
@@ -27,15 +31,16 @@ module.exports = function(configuration) {
 
 	// this is the top level production task (minified, no sourcemaps, rev'd)
 	gulp.task('production', loader.getBuildDependencies(), function() {
+		var masterStream,
+			sLoader = new StreamLoader(gulp, configuration);
+
 		if(configuration.cleanProduction) {
 			rimraf.sync(configuration.output);
 		}
 
-		var sLoader = new streamLoader(gulp, configuration);
-
 		sLoader.loadStreams(false);
 
-		var masterStream = sLoader.getTaskStreams();
+		masterStream = sLoader.getTaskStreams();
 
 		if (configuration.cacheBusting) {
 			// rev stamps all files with a hash for cache-busting
@@ -49,7 +54,7 @@ module.exports = function(configuration) {
 	});
 
 	gulp.task('watch', ['default'], function() {
-		var watches = new watchLoader(configuration);
+		var watches = new WatchLoader(configuration);
 
 		watches.startWatching(configuration.tasks);
 
