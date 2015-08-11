@@ -6,11 +6,11 @@ var gulp = require('gulp'),
 	livereload = require('gulp-livereload'),
 	path = require('path');
 
-var watchLoader = function(globalConfiguration) {
+var WatchLoader = function(globalConfiguration) {
 	this.configuration = globalConfiguration;
 };
 
-watchLoader.prototype = {
+WatchLoader.prototype = {
 	startWatching: function(tasks) {
 		var currentTask,
 			i;
@@ -49,4 +49,4 @@ watchLoader.prototype = {
 	}
 };
 
-module.exports = watchLoader;
+module.exports = WatchLoader;

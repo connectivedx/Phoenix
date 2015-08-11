@@ -7,12 +7,12 @@ var filter = require('./gulp-filter.mod'),
 	path = require('path'),
 	plumber = require('gulp-plumber');
 
-var streamLoader = function(gulp, globalConfiguration) {
+var StreamLoader = function(gulp, globalConfiguration) {
 	this.gulp = gulp;
 	this.globalConfiguration = globalConfiguration;
 };
 
-streamLoader.prototype = {
+StreamLoader.prototype = {
 	// augments the streams with stream factories that can later be used to create real result streams
 	// (useful so we don't always create every stream, say for watches)
 	loadStreams: function(debug) {
@@ -108,4 +108,4 @@ streamLoader.prototype = {
 	}
 };
 
-module.exports = streamLoader;
+module.exports = StreamLoader;

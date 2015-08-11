@@ -11,12 +11,12 @@ var del = require('del'),
 // * registration of clean and autoclean tasks with Gulp
 // * calculating build dependencies
 
-var taskLoader = function(gulp, globalConfiguration) {
+var TaskLoader = function(gulp, globalConfiguration) {
 	this.gulp = gulp;
 	this.globalConfiguration = globalConfiguration;
 };
 
-taskLoader.prototype = {
+TaskLoader.prototype = {
 	loadTasks: function() {
 		var currentTask,
 			hasAutoClean,
@@ -127,4 +127,4 @@ taskLoader.prototype = {
 	}
 };
 
-module.exports = taskLoader;
+module.exports = TaskLoader;
