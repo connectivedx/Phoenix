@@ -5,20 +5,20 @@
 var gulp = require('gulp'),
 	rev = require('gulp-rev-all'),
 	rimraf = require('rimraf'),
-	streamLoader = require('./lib/streamLoader'),
-	taskLoader = require('./lib/taskLoader'),
-	watchLoader = require('./lib/watchLoader');
+	StreamLoader = require('./lib/streamLoader'),
+	TaskLoader = require('./lib/taskLoader'),
+	WatchLoader = require('./lib/watchLoader');
 
 
 module.exports = function(configuration) {
 	// load up autoclean tasks and drivers
-	var loader = new taskLoader(gulp, configuration);
+	var loader = new TaskLoader(gulp, configuration);
 	loader.loadTasks();
 
 	// this is the debug build task
 	gulp.task('default', loader.getBuildDependencies(), function() {
 		var masterStream,
-			sLoader = new streamLoader(gulp, configuration);
+			sLoader = new StreamLoader(gulp, configuration);
 
 		sLoader.loadStreams(true);
 
@@ -32,7 +32,7 @@ module.exports = function(configuration) {
 	// this is the top level production task (minified, no sourcemaps, rev'd)
 	gulp.task('production', loader.getBuildDependencies(), function() {
 		var masterStream,
-			sLoader = new streamLoader(gulp, configuration);
+			sLoader = new StreamLoader(gulp, configuration);
 
 		if(configuration.cleanProduction) {
 			rimraf.sync(configuration.output);
@@ -54,7 +54,7 @@ module.exports = function(configuration) {
 	});
 
 	gulp.task('watch', ['default'], function() {
-		var watches = new watchLoader(configuration);
+		var watches = new WatchLoader(configuration);
 
 		watches.startWatching(configuration.tasks);
 
