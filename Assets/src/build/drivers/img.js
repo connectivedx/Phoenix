@@ -1,4 +1,5 @@
-/*global require, module */
+/*jshint strict: true, node: true */
+/*global console */
 'use strict';
 
 var gulpFilter = require('gulp-filter'),

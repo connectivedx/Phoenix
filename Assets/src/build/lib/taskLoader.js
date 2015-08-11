@@ -1,4 +1,5 @@
-/*global require, module, console */
+/*jshint strict: true, node: true */
+/*global console */
 'use strict';
 
 var del = require('del'),

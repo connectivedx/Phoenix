@@ -1,4 +1,5 @@
-/*global require, module, console, process */
+/*jshint strict: true, node: true */
+/*global console */
 'use strict';
 
 var gulp = require('gulp'),

@@ -1,4 +1,5 @@
-/*global module */
+/*jshint strict: true, node: true */
+/*global console */
 'use strict';
 
 var ExampleDriver = {

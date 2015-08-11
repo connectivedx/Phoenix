@@ -1,4 +1,7 @@
-/*global require, module */
+/*jshint strict: true, node: true */
+/*global console */
+'use strict';
+
 var gulp = require('gulp'),
 	rev = require('gulp-rev-all'),
 	rimraf = require('rimraf'),

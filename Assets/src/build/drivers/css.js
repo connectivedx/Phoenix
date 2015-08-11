@@ -1,4 +1,5 @@
-/*global require, module */
+/*jshint strict: true, node: true */
+/*global console */
 'use strict';
 
 var base64 = require('gulp-base64'),

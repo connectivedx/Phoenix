@@ -1,4 +1,5 @@
-/*global require, module, process */
+/*jshint strict: true, node: true */
+/*global console */
 'use strict';
 
 var browserify = require('browserify'),

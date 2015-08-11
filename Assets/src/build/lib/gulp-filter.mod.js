@@ -1,4 +1,5 @@
-/*global require, module */
+/*jshint strict: true, node: true */
+/*global console */
 'use strict';
 
 // this is gulp-filter@2.0.0 with the 'invert' option added on line 24.
