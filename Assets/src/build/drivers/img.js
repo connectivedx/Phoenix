@@ -5,7 +5,7 @@
 var gulpFilter = require('gulp-filter'),
 	imagemin = require('gulp-imagemin');
 
-var ImageDriver = {
+var imageDriver = {
 	build: function(pipeline, debug) {
 		if(debug) return pipeline; // in debug we do no image processing
 
@@ -18,4 +18,4 @@ var ImageDriver = {
 	}
 };
 
-module.exports = ImageDriver;
+module.exports = imageDriver;

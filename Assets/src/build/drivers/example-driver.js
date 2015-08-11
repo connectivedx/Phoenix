@@ -2,7 +2,7 @@
 /*global console */
 'use strict';
 
-var ExampleDriver = {
+var exampleDriver = {
 	// Hook to allow the driver to respond to global configurations and driver-specific customizations
 	// optional.
 	// param: globalConfiguration (the configuration var in the gulpfile)
@@ -42,4 +42,4 @@ var ExampleDriver = {
 	}
 };
 
-module.exports = ExampleDriver;
+module.exports = exampleDriver;

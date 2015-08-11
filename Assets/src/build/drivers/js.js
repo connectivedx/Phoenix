@@ -11,7 +11,7 @@ var browserify = require('browserify'),
 	source = require('vinyl-source-stream'),
 	uglify = require('gulp-uglify');
 
-var JsDriver = {
+var jsDriver = {
 	// browserify creates its own streams, so we need to src for ourselves here
 	createStream: function(paths, debug) {
 		var browserifyStream,
@@ -53,4 +53,4 @@ function createBrowserifyStream(path, debug) {
 		.pipe(source(path));
 }
 
-module.exports = JsDriver;
+module.exports = jsDriver;

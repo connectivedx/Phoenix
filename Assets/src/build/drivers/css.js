@@ -11,7 +11,7 @@ var base64 = require('gulp-base64'),
 	sassdoc = require('sassdoc'),
 	sourcemaps = require('gulp-sourcemaps');
 
-var CssDriver = {
+var cssDriver = {
 	build: function(pipeline, debug) {
 		return pipeline
 			.pipe(gulpif(debug, sourcemaps.init()))
@@ -47,4 +47,4 @@ var CssDriver = {
 	}
 };
 
-module.exports = CssDriver;
+module.exports = cssDriver;
