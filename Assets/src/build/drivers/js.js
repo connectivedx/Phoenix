@@ -1,26 +1,30 @@
 /*global require, module, process */
 'use strict';
 
-var browserify = require('browserify');
-var uglify = require('gulp-uglify');
-var gulpif = require('gulp-if');
-var glob = require('glob');
-var merge = require('merge-stream');
-var source = require('vinyl-source-stream');
-var gutil = require('gulp-util');
-var buffer = require('gulp-buffer');
+var browserify = require('browserify'),
+	buffer = require('gulp-buffer'),
+	glob = require('glob'),
+	gulpif = require('gulp-if'),
+	gutil = require('gulp-util'),
+	merge = require('merge-stream'),
+	source = require('vinyl-source-stream'),
+	uglify = require('gulp-uglify');
 
 var JsDriver = {
 	// browserify creates its own streams, so we need to src for ourselves here
 	createStream: function(paths, debug) {
-		var streams = false;
+		var browserifyStream,
+			files,
+			i,
+			j,
+			streams = false;
 
-		for(var i = 0; i < paths.length; i++) {
-			var files = glob.sync(paths[i]); // unglob all paths from config (browserify does one file at a time)
+		for(i = 0; i < paths.length; i++) {
+			files = glob.sync(paths[i]); // unglob all paths from config (browserify does one file at a time)
 
-			for(var j = 0; j < files.length; j++) {
+			for(j = 0; j < files.length; j++) {
 				// create the individual browserify stream, and concat the results to any other browserify streams
-				var browserifyStream = createBrowserifyStream(files[j], debug);
+				browserifyStream = createBrowserifyStream(files[j], debug);
 				if(!streams) streams = browserifyStream;
 				else streams = merge(streams, browserifyStream);
 			}

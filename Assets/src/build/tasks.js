@@ -2,9 +2,9 @@
 var gulp = require('gulp'),
 	rev = require('gulp-rev-all'),
 	rimraf = require('rimraf'),
-	watchLoader = require('./lib/watchLoader'),
 	streamLoader = require('./lib/streamLoader'),
-	taskLoader = require('./lib/taskLoader');
+	taskLoader = require('./lib/taskLoader'),
+	watchLoader = require('./lib/watchLoader');
 
 
 module.exports = function(configuration) {
@@ -14,11 +14,12 @@ module.exports = function(configuration) {
 
 	// this is the debug build task
 	gulp.task('default', loader.getBuildDependencies(), function() {
-		var sLoader = new streamLoader(gulp, configuration);
+		var masterStream,
+			sLoader = new streamLoader(gulp, configuration);
 
 		sLoader.loadStreams(true);
 
-		var masterStream = sLoader.getTaskStreams();
+		masterStream = sLoader.getTaskStreams();
 
 		masterStream = sLoader.executeCustomOutput(masterStream);
 
@@ -27,15 +28,16 @@ module.exports = function(configuration) {
 
 	// this is the top level production task (minified, no sourcemaps, rev'd)
 	gulp.task('production', loader.getBuildDependencies(), function() {
+		var masterStream,
+			sLoader = new streamLoader(gulp, configuration);
+
 		if(configuration.cleanProduction) {
 			rimraf.sync(configuration.output);
 		}
 
-		var sLoader = new streamLoader(gulp, configuration);
-
 		sLoader.loadStreams(false);
 
-		var masterStream = sLoader.getTaskStreams();
+		masterStream = sLoader.getTaskStreams();
 
 		if (configuration.cacheBusting) {
 			// rev stamps all files with a hash for cache-busting

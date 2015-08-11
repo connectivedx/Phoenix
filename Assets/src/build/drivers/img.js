@@ -1,8 +1,8 @@
 /*global require, module */
 'use strict';
 
-var imagemin = require('gulp-imagemin');
-var gulpFilter = require('gulp-filter');
+var gulpFilter = require('gulp-filter'),
+	imagemin = require('gulp-imagemin');
 
 var ImageDriver = {
 	build: function(pipeline, debug) {

@@ -1,8 +1,8 @@
 /*global require, module, console */
 'use strict';
 
-var path = require('path');
-var del = require('del');
+var del = require('del'),
+	path = require('path');
 
 // initializes and loads registered tasks
 // including:
@@ -17,28 +17,35 @@ var taskLoader = function(gulp, globalConfiguration) {
 
 taskLoader.prototype = {
 	loadTasks: function() {
+		var currentTask,
+			hasAutoClean,
+			hasClean,
+			i;
+
 		this.loadDrivers(this.globalConfiguration);
 
-		for(var i = 0; i < this.globalConfiguration.tasks.length; i++) {
-			var currentTask = this.globalConfiguration.tasks[i];
+		for(i = 0; i < this.globalConfiguration.tasks.length; i++) {
+			currentTask = this.globalConfiguration.tasks[i];
 
-			var hasClean = this.registerCleanTask(currentTask, this.globalConfiguration);
+			hasClean = this.registerCleanTask(currentTask, this.globalConfiguration);
 
-			var hasAutoClean = this.registerAutoCleanTask(currentTask, this.globalConfiguration, hasClean);
+			hasAutoClean = this.registerAutoCleanTask(currentTask, this.globalConfiguration, hasClean);
 
 			currentTask.buildDependencies = hasAutoClean ? [currentTask.driver + '-autoclean'] : (hasClean ? [currentTask.driver + '-clean'] : []);
 		}
 	},
 
 	getBuildDependencies: function(tasks) {
+		var deps = [],
+			i,
+			j;
+
 		if(!tasks) tasks = this.globalConfiguration.tasks;
 
-		var deps = [];
-
-		for(var i = 0; i < tasks.length; i++) {
+		for(i = 0; i < tasks.length; i++) {
 			if(!tasks[i].buildDependencies) continue;
 
-			for(var j = 0; j < tasks[i].buildDependencies.length; j++) {
+			for(j = 0; j < tasks[i].buildDependencies.length; j++) {
 				deps.push(tasks[i].buildDependencies[j]);
 			}
 		}
@@ -47,10 +54,12 @@ taskLoader.prototype = {
 	},
 
 	loadDrivers: function(globalConfiguration) {
-		var tasksConfiguration = globalConfiguration.tasks;
+		var currentTask,
+			i,
+			tasksConfiguration = globalConfiguration.tasks;
 
-		for(var i = 0; i < tasksConfiguration.length; i++) {
-			var currentTask = tasksConfiguration[i];
+		for(i = 0; i < tasksConfiguration.length; i++) {
+			currentTask = tasksConfiguration[i];
 
 			// load the driver instance (class)
 			currentTask.driverInstance = this.getDriver(currentTask);
@@ -81,10 +90,11 @@ taskLoader.prototype = {
 	},
 
 	registerAutoCleanTask : function(task, globalConfiguration, hasClean) {
-		if(!task.autoClean) return false;
+		var dependencies = hasClean ? [task.driver + '-clean'] : [],
+			i,
+			self = this;
 
-		var self = this;
-		var dependencies = hasClean ? [task.driver + '-clean'] : [];
+		if(!task.autoClean) return false;
 
 		this.gulp.task(task.driver + '-autoclean', dependencies, function(cb) {
 			var outputPath = globalConfiguration.output;
