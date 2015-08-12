@@ -23,7 +23,7 @@
 .layout-centered {
 	@include column(12, (includeGutterWidth: false));
 
-	@include media(medium) {
+	@include media(breakpoint768) {
 		@include column(8, (centered: true, includeGutterWidth: false));
 	}
 }
@@ -32,13 +32,13 @@
 	&.not-shifted {
 		&.no-gutters {
 			.layout-primary {
-				@include media(medium) {
+				@include media(breakpoint768) {
 					@include column(9, (includeGutterWidth: false));
 				}
 			}
 
 			.layout-secondary {
-				@include media(medium) {
+				@include media(breakpoint768) {
 					@include column(3, (includeGutterWidth: false));
 				}
 			}
@@ -46,13 +46,13 @@
 
 		&.gutters {
 			.layout-primary {
-				@include media(medium) {
+				@include media(breakpoint768) {
 					@include column(9);
 				}
 			}
 
 			.layout-secondary {
-				@include media(medium) {
+				@include media(breakpoint768) {
 					@include column(3);
 				}
 			}
@@ -62,13 +62,13 @@
 	&.shifted {
 		&.no-gutters {
 			.layout-primary {
-				@include media(medium) {
+				@include media(breakpoint768) {
 					@include column(9, (includeGutterWidth: false, position: 4));
 				}
 			}
 
 			.layout-secondary {
-				@include media(medium) {
+				@include media(breakpoint768) {
 					@include column(3, (includeGutterWidth: false, position: 1));
 				}
 			}
@@ -76,13 +76,13 @@
 
 		&.gutters {
 			.layout-primary {
-				@include media(medium) {
+				@include media(breakpoint768) {
 					@include column(9, (position: 4));
 				}
 			}
 
 			.layout-secondary {
-				@include media(medium) {
+				@include media(breakpoint768) {
 					@include column(3, (position: 1));
 				}
 			}
@@ -94,19 +94,19 @@
 	&.not-shifted {
 		&.no-gutters {
 			.layout-primary {
-				@include media(medium) {
+				@include media(breakpoint768) {
 					@include column(6, (includeGutterWidth: false));
 				}
 			}
 
 			.layout-secondary {
-				@include media(medium) {
+				@include media(breakpoint768) {
 					@include column(3, (includeGutterWidth: false));
 				}
 			}
 
 			.layout-tertiary {
-				@include media(medium) {
+				@include media(breakpoint768) {
 					@include column(3, (includeGutterWidth: false));
 				}
 			}
@@ -114,19 +114,19 @@
 
 		&.gutters {
 			.layout-primary {
-				@include media(medium) {
+				@include media(breakpoint768) {
 					@include column(6);
 				}
 			}
 
 			.layout-secondary {
-				@include media(medium) {
+				@include media(breakpoint768) {
 					@include column(3);
 				}
 			}
 
 			.layout-tertiary {
-				@include media(medium) {
+				@include media(breakpoint768) {
 					@include column(3);
 				}
 			}
@@ -136,19 +136,19 @@
 	&.shifted {
 		&.no-gutters {
 			.layout-primary {
-				@include media(medium) {
+				@include media(breakpoint768) {
 					@include column(6, (includeGutterWidth: false, position: 4));
 				}
 			}
 
 			.layout-secondary {
-				@include media(medium) {
+				@include media(breakpoint768) {
 					@include column(3, (includeGutterWidth: false, position: 1));
 				}
 			}
 
 			.layout-tertiary {
-				@include media(medium) {
+				@include media(breakpoint768) {
 					@include column(3, (includeGutterWidth: false, position: 10));
 				}
 			}
@@ -156,19 +156,19 @@
 
 		&.gutters {
 			.layout-primary {
-				@include media(medium) {
+				@include media(breakpoint768) {
 					@include column(6, (position: 4));
 				}
 			}
 
 			.layout-secondary {
-				@include media(medium) {
+				@include media(breakpoint768) {
 					@include column(3, (position: 1));
 				}
 			}
 
 			.layout-tertiary {
-				@include media(medium) {
+				@include media(breakpoint768) {
 					@include column(3, (position: 10));
 				}
 			}
@@ -185,11 +185,11 @@
 	@include column(12, (includeGutterWidth: false));
 	border: 1px dashed color(primary);
 
-	@include media(medium) {
+	@include media(breakpoint768) {
 		@include column(7, (includeGutterWidth: false));
 	}
 
-	@include media(large) {
+	@include media(breakpoint960) {
 		@include column(6, (includeGutterWidth: false));
 	}
 }
@@ -198,7 +198,7 @@
 	@include column(12, (includeGutterWidth: false));
 	background-color: color(secondary);
 
-	@include media(extraLarge) {
+	@include media(breakpoint1220) {
 		@include column(1.5, (includeGutterWidth: false));
 	}
 }
@@ -207,11 +207,11 @@
 	@include column(12, (includeGutterWidth: false));
 	background-color: color(secondary);
 
-	@include media(medium) {
+	@include media(breakpoint768) {
 		@include column(5, (includeGutterWidth: false));
 	}
 
-	@include media(large) {
+	@include media(breakpoint960) {
 		@include column(3, (includeGutterWidth: false));
 	}
 }
@@ -219,11 +219,11 @@
 .layout-complex-footer {
 	@include column(12, (includeGutterWidth: false));
 
-	@include media(large) {
+	@include media(breakpoint960) {
 		@include column(3, (includeGutterWidth: false));
 	}
 
-	@include media(extraLarge) {
+	@include media(breakpoint1220) {
 		@include column(1.5, (includeGutterWidth: false));
 	}
 }

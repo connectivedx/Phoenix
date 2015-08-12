@@ -1,10 +1,10 @@
 function breakpoint(breakpointName) {
 	var breakpoints = {
-		"extraSmall": 320,
-		"small": 480,
-		"medium": 768,
-		"large": 960,
-		"extraLarge": 1220
+		"breakpoint320": 320,
+		"breakpoint480": 480,
+		"breakpoint768": 768,
+		"breakpoint960": 960,
+		"breakpoint1220": 1220
 	};
 
 	// use the Modernizr function if available; it's more accurate

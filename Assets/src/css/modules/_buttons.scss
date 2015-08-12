@@ -11,7 +11,7 @@
 	@include transition((property: background-color));
 
 	// media mixin is used here instead of inside above selector due to @extend bug of libsass
-	@include media(medium) {
+	@include media(breakpoint768) {
 		+ button,
 		+ .btn {
 			margin-top: 0;

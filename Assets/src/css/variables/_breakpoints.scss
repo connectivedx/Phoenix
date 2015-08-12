@@ -7,9 +7,9 @@
 /// @prop {Pixels} large [960px]
 /// @prop {Pixels} extraLarge [1220px]
 $breakpoints: (
-	extraSmall: 320px,
-	small: 480px,
-	medium: 768px,
-	large: 960px,
-	extraLarge: 1220px
+	breakpoint320: 320px,
+	breakpoint480: 480px,
+	breakpoint768: 768px,
+	breakpoint960: 960px,
+	breakpoint1220: 1220px
 );

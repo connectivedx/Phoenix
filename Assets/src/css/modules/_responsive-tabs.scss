@@ -49,7 +49,7 @@ $tabPanelTextColor: black;
 		}
 	}
 
-	@include media(medium) {
+	@include media(breakpoint768) {
 		display: none;
 	}
 
@@ -92,7 +92,7 @@ $tabPanelTextColor: black;
 	margin-bottom: em(12);
 	padding: em(16);
 
-	@include media(medium) {
+	@include media(breakpoint768) {
 		margin-bottom: 0;
 
 		.responsive-tabs-vertical-left &,
@@ -119,7 +119,7 @@ $tabPanelTextColor: black;
 	.responsive-tabs__panel--closed-accordion-only {
 		display: none;
 
-		@include media(medium) {
+		@include media(breakpoint768) {
 			// !important to fight inline display:none set in js
 			display: block !important;
 		}
@@ -136,7 +136,7 @@ $tabPanelTextColor: black;
 	margin: 0;
 	padding: 0;
 
-	@include media(medium) {
+	@include media(breakpoint768) {
 		.responsive-tabs-horizontal & {
 			border-bottom: 1px solid $tabBorderColor;
 			display: block;
@@ -173,7 +173,7 @@ $tabPanelTextColor: black;
 	cursor: pointer;
 	padding: em(10 20, (context: 19));
 
-	@include media(medium) {
+	@include media(breakpoint768) {
 		.responsive-tabs-horizontal & {
 			display: inline-block;
 			margin-right: 2px;
@@ -211,7 +211,7 @@ $tabPanelTextColor: black;
 		border-color: $tabBorderColor;
 		color: $tabActiveTextColor;
 
-		@include media(medium) {
+		@include media(breakpoint768) {
 			.responsive-tabs-horizontal & {
 				border-bottom: none;
 				padding-top: em(11, (context: 19));

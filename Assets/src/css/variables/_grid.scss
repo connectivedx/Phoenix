@@ -8,7 +8,7 @@ $columns: 12 !default;
 
 /// The default breakpoint at which columns in the grid and semantic grid systems change from 100% to the column width specified.
 /// @type String
-$columnBreakpoint: medium !default;
+$columnBreakpoint: breakpoint768 !default;
 
 /// The default amount of padding within columns in pixels.
 /// @type Pixels
