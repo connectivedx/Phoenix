@@ -3,7 +3,7 @@ table {
 	@include font-size(12);
 	width: 100%;
 
-	@include media(medium) {
+	@include media(breakpoint768) {
 		@include font-size(14);
 	}
 

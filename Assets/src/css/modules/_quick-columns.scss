@@ -8,7 +8,7 @@ $quickColumnGapWidth: 0.3;
 	vertical-align: top;
 	width: 100%;
 
-	@include media(large) {
+	@include media(breakpoint960) {
 		margin-left: columns($quickColumnGapWidth, (includeGutterWidth: false));
 		margin-right: -0.25em;	// eliminate whitespace created by inline-block
 	}
@@ -22,7 +22,7 @@ $quickColumnGapWidth: 0.3;
 	&:nth-child(n+2) {
 		margin-top: columns($quickColumnGapWidth, (includeGutterWidth: false));
 
-		@include media(large) {
+		@include media(breakpoint960) {
 			margin-top: 0;
 		}
 	}
@@ -30,74 +30,74 @@ $quickColumnGapWidth: 0.3;
 
 .two-up,
 .four-up {
-	@include media(large) {
+	@include media(breakpoint960) {
 		width: columns( ($columns - $quickColumnGapWidth) / 2, (includeGutterWidth: false));
 	}
 
 	// first of each row
 	&:nth-child(2n+1) {
-		@include media(large) {
+		@include media(breakpoint960) {
 			margin-left: 0;
 		}
 	}
 
 	// starting on the second row
 	&:nth-child(n+3) {
-		@include media(large) {
+		@include media(breakpoint960) {
 			margin-top: columns($quickColumnGapWidth, (includeGutterWidth: false));
 		}
 	}
 }
 
 .three-up {
-	@include media(large) {
+	@include media(breakpoint960) {
 		width: columns( ($columns - 2 * $quickColumnGapWidth) / 3, (includeGutterWidth: false));
 	}
 
 	// first of each row
 	&:nth-child(3n+1) {
-		@include media(large) {
+		@include media(breakpoint960) {
 			margin-left: 0;
 		}
 	}
 
 	// starting on the second row
 	&:nth-child(n+4) {
-		@include media(large) {
+		@include media(breakpoint960) {
 			margin-top: columns($quickColumnGapWidth, (includeGutterWidth: false));
 		}
 	}
 }
 
 .four-up {
-	@include media(extraLarge) {
+	@include media(breakpoint1220) {
 		width: columns( ($columns - 3 * $quickColumnGapWidth) / 4, (includeGutterWidth: false));
 	}
 
-	// first of each row (override from large)
+	// first of each row (override from breakpoint960)
 	&:nth-child(2n+1) {
-		@include media(extraLarge) {
+		@include media(breakpoint1220) {
 			margin-left: columns($quickColumnGapWidth, (includeGutterWidth: false));
 		}
 	}
 
 	// first of each row
 	&:nth-child(4n+1) {
-		@include media(extraLarge) {
+		@include media(breakpoint1220) {
 			margin-left: 0;
 		}
 	}
 
-	// starting on the second row (override from large)
+	// starting on the second row (override from breakpoint960)
 	&:nth-child(n+3) {
-		@include media(extraLarge) {
+		@include media(breakpoint1220) {
 			margin-top: 0;
 		}
 	}
 
 	// starting on the second row
 	&:nth-child(n+5) {
-		@include media(extraLarge) {
+		@include media(breakpoint1220) {
 			margin-top: columns($quickColumnGapWidth, (includeGutterWidth: false));
 		}
 	}

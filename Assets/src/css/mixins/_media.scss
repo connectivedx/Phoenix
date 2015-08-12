@@ -8,7 +8,7 @@
 	}
 
 	@if $query == rotateDevice {
-		@media only screen and (max-width: em(map-get($breakpoints, small), (context: 16))) and (orientation: portrait) { @content; }
+		@media only screen and (max-width: em(map-get($breakpoints, breakpoint320), (context: 16))) and (orientation: portrait) { @content; }
 	}
 
 	@if $query == print {
