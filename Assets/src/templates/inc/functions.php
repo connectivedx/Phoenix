@@ -14,3 +14,10 @@
 			return $productionAssets[0];
 		}
 	}
+
+	function setBodyClass() {
+		global $bodyClass;
+		if (isset($bodyClass)) {
+			echo ' class="'.$bodyClass.'"';
+		}
+	}
