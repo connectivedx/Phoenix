@@ -27,7 +27,7 @@
 	<!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
 </head>
 
-<body class="<?php echo $bodyClass; ?>">
+<body<?php getBodyClass(); ?>>
 	<!--[if lte IE 8]>
 		<div class="browser-alert">
 			You&rsquo;re using an older web browser version that may make your computer unsafe. <a href="http://browsehappy.com/">Download the latest version</a> to keep your information safe and improve your experience.
