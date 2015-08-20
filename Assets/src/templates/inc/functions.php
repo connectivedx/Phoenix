@@ -15,7 +15,7 @@
 		}
 	}
 
-	function setBodyClass() {
+	function getBodyClass() {
 		global $bodyClass;
 		if (isset($bodyClass)) {
 			echo ' class="'.$bodyClass.'"';
