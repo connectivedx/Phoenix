@@ -1,10 +1,33 @@
 /// Adds a background color gradient.
-/// @param {Color} $from - The top color of the gradient.
-/// @param {Color} $to - The bottom color of the gradient.
+/// @param {String} $direction - The position the gradient starts from (e.g.: top, bottom, left, right, 45deg).
+/// @param {List | String} $colorStops - Variable length list of color stops.
+/// @require {function} is-direction - Uses the `is-direction` function internally.
 /// @example
-/// gradient(#000000, #ffffff);
-@mixin gradient($from, $to) {
-	background-color: $to; // All else fails
-	background-image: linear-gradient(to bottom, $from 0%, $to 100%);	// W3C
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$from}', endColorstr='#{$to}',GradientType=0 );	// IE6-9
+/// gradient(#000, #fff);
+/// gradient(right, transparent, color($primary));
+/// gradient(45deg, color(greyLight), darken(color($greyLight), 5%));
+@mixin gradient($direction, $colorStops...) {
+
+	// add "to" prefix on valid $directions and set default fallback
+	@if is-direction($direction) {
+		$direction: to $direction;
+	}
+	@else {
+		$colorStops: join($direction, $colorStops, comma); // ensure colors are passed if no direction is passed
+		$direction: to bottom; // set default direction
+	}
+
+	//Styles
+	background-color: nth(nth($colorStops, 1), 1); // All else fails
+	background-image: linear-gradient($direction, $colorStops);	// W3C
+
+	// IE6-9 semi-fallback (degrees not supported)
+	@if $direction == 'left' or $direction == 'right' {
+		$type: 1;
+	}
+	@else {
+		$type: 0;
+	}
+
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{nth(nth($colorStops, length($colorStops)), 1)}', endColorstr='#{nth($colorStops, 1)}', GradientType=$type );
 }
