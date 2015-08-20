@@ -13,7 +13,7 @@
 		$direction: to $direction;
 	}
 	@else {
-		$colorStops: join($direction, $colorStops); // ensure colors are passed if no direction is passed
+		$colorStops: join($direction, $colorStops, comma); // ensure colors are passed if no direction is passed
 		$direction: to bottom; // set default direction
 	}
 
