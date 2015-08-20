@@ -1,18 +1,22 @@
-/*global require, module, console, process */
+/*jshint strict: true, node: true */
+/*global console */
 'use strict';
 
-var gulp = require('gulp');
-var livereload = require('gulp-livereload');
-var path = require('path');
+var gulp = require('gulp'),
+	livereload = require('gulp-livereload'),
+	path = require('path');
 
-var watchLoader = function(globalConfiguration) {
+var WatchLoader = function(globalConfiguration) {
 	this.configuration = globalConfiguration;
 };
 
-watchLoader.prototype = {
+WatchLoader.prototype = {
 	startWatching: function(tasks) {
-		for(var i = 0; i < tasks.length; i++) {
-			var currentTask = tasks[i];
+		var currentTask,
+			i;
+
+		for(i = 0; i < tasks.length; i++) {
+			currentTask = tasks[i];
 
 			this.setWatch(currentTask);
 		}
@@ -21,8 +25,8 @@ watchLoader.prototype = {
 	},
 
 	setWatch : function(task) {
-		var self = this;
-		var paths;
+		var paths,
+			self = this;
 
 		if(task.watchPaths) paths = task.watchPaths;
 		else if(task.paths) paths = task.paths;
@@ -30,11 +34,12 @@ watchLoader.prototype = {
 		if(typeof paths === 'undefined') return;
 
 		gulp.watch(paths, function(event) {
+			var output = task.output ? task.output : self.configuration.output;
+			
 			console.log('WATCH > ' + path.relative(process.cwd(), event.path) + ' ' + event.type);
 
 			if(typeof task.streamFactory !== 'function') return;
 
-			var output = task.output ? task.output : self.configuration.output;
 			task.streamFactory()
 				.pipe(gulp.dest(output))
 				.pipe(livereload({ auto: false }));
@@ -44,4 +49,4 @@ watchLoader.prototype = {
 	}
 };
 
-module.exports = watchLoader;
+module.exports = WatchLoader;

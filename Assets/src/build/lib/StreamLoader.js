@@ -1,22 +1,25 @@
-/*global require, module */
+/*jshint strict: true, node: true */
+/*global console */
 'use strict';
 
-var plumber = require('gulp-plumber');
-var merge = require('merge-stream');
-var filter = require('./gulp-filter.mod');
-var path = require('path');
+var filter = require('./gulp-filter.mod'),
+	merge = require('merge-stream'),
+	path = require('path'),
+	plumber = require('gulp-plumber');
 
-var streamLoader = function(gulp, globalConfiguration) {
+var StreamLoader = function(gulp, globalConfiguration) {
 	this.gulp = gulp;
 	this.globalConfiguration = globalConfiguration;
 };
 
-streamLoader.prototype = {
+StreamLoader.prototype = {
 	// augments the streams with stream factories that can later be used to create real result streams
 	// (useful so we don't always create every stream, say for watches)
 	loadStreams: function(debug) {
-		for(var i = 0; i < this.globalConfiguration.tasks.length; i++) {
-			var currentTask = this.globalConfiguration.tasks[i];
+		var currentTask,
+			i;
+		for(i = 0; i < this.globalConfiguration.tasks.length; i++) {
+			currentTask = this.globalConfiguration.tasks[i];
 
 			this.generateBuildStreamFactory(currentTask, debug);
 		}
@@ -24,12 +27,14 @@ streamLoader.prototype = {
 
 	// gets one or more tasks' result streams, merged into a superstream
 	getTaskStreams: function(tasks) {
+		var currentTask,
+			i,
+			streams = false;
+
 		if(!tasks) tasks = this.globalConfiguration.tasks;
 
-		var streams = false;
-
-		for(var i = 0; i < tasks.length; i++) {
-			var currentTask = tasks[i];
+		for(i = 0; i < tasks.length; i++) {
+			currentTask = tasks[i];
 
 			if(!streams) streams = currentTask.streamFactory();
 			else streams = merge(streams, currentTask.streamFactory());
@@ -42,13 +47,14 @@ streamLoader.prototype = {
 	generateBuildStreamFactory: function(task, debug) {
 		var self = this;
 		task.streamFactory = function() {
-			var stream;
+			var base,
+				stream;
 
 			if(task.driverInstance && task.driverInstance.createStream)
 				stream = task.driverInstance.createStream(task.paths, debug);
 			else {
-				var base = task.base ? task.base : self.globalConfiguration.base;
-					stream = self.gulp.src(task.paths, { base: base });
+				base = task.base ? task.base : self.globalConfiguration.base;
+				stream = self.gulp.src(task.paths, { base: base });
 			}
 
 			if(!stream) throw "Stream from driver '" + task.driver + "' was falsy! This may mean the files or directories do not exist, or other error condition.";
@@ -66,22 +72,30 @@ streamLoader.prototype = {
 	// this function must be run after all build is complete and we have the final merged stream
 	// and after all other transforms (e.g. rev) are run on the stream
 	executeCustomOutput: function(mergedOutputStream, tasks) {
+		var base,
+			currentFilter,
+			currentTask,
+			excludeFilter,
+			filterInputPaths,
+			i,
+			j;
+
 		if(!tasks) tasks = this.globalConfiguration.tasks;
 
-		for(var i = 0; i < tasks.length; i++) {
-			var currentTask = tasks[i];
+		for(i = 0; i < tasks.length; i++) {
+			currentTask = tasks[i];
 
 			if(!currentTask.output) continue;
 
-			var filterInputPaths = currentTask.paths.slice();
+			filterInputPaths = currentTask.paths.slice();
 
-			for(var j = 0; j < filterInputPaths.length; j++) {
-				var base = currentTask.base ? currentTask.base : this.globalConfiguration.base;
+			for(j = 0; j < filterInputPaths.length; j++) {
+				base = currentTask.base ? currentTask.base : this.globalConfiguration.base;
 				filterInputPaths[j] = path.relative(base, path.normalize(filterInputPaths[j])); // the paths may have inverted \ and / in them; normalize that, and account for bases
 			}
 
-			var currentFilter = filter(filterInputPaths);
-			var excludeFilter = filter(filterInputPaths, { invert: true });
+			currentFilter = filter(filterInputPaths);
+			excludeFilter = filter(filterInputPaths, { invert: true });
 
 			// take the whole stream, filter it to just this task, output the items, restore everything, then set this task's files to be ignored henceforth
 			mergedOutputStream = mergedOutputStream.pipe(currentFilter)
@@ -94,4 +108,4 @@ streamLoader.prototype = {
 	}
 };
 
-module.exports = streamLoader;
+module.exports = StreamLoader;

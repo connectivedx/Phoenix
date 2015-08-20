@@ -1,16 +1,17 @@
-/*global require, module */
+/*jshint strict: true, node: true */
+/*global console */
 'use strict';
 
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
-var sassdoc = require('sassdoc');
-var prefix = require('gulp-autoprefixer');
-var base64 = require('gulp-base64');
-var cssmin = require('gulp-minify-css');
-var cmq = require('gulp-combine-media-queries');
-var gulpif = require('gulp-if');
+var base64 = require('gulp-base64'),
+	cmq = require('gulp-combine-media-queries'),
+	cssmin = require('gulp-minify-css'),
+	gulpif = require('gulp-if'),
+	prefix = require('gulp-autoprefixer'),
+	sass = require('gulp-sass'),
+	sassdoc = require('sassdoc'),
+	sourcemaps = require('gulp-sourcemaps');
 
-var CssDriver = {
+var cssDriver = {
 	build: function(pipeline, debug) {
 		return pipeline
 			.pipe(gulpif(debug, sourcemaps.init()))
@@ -46,4 +47,4 @@ var CssDriver = {
 	}
 };
 
-module.exports = CssDriver;
+module.exports = cssDriver;
