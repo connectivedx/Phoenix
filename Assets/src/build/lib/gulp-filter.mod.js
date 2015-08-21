@@ -1,13 +1,16 @@
-/*global require, module */
+/*jshint strict: true, node: true */
+/*global console */
 'use strict';
 
 // this is gulp-filter@2.0.0 with the 'invert' option added on line 24.
 
-var gutil = require('gulp-util');
-var through = require('through2');
-var multimatch = require('multimatch');
+var gutil = require('gulp-util'),
+	multimatch = require('multimatch'),
+	through = require('through2');
 
 module.exports = function (pattern, options) {
+	var restoreStream = through.obj(),
+		stream;
 	pattern = typeof pattern === 'string' ? [pattern] : pattern;
 	options = options || {};
 
@@ -15,9 +18,7 @@ module.exports = function (pattern, options) {
 		throw new gutil.PluginError('gulp-filter', '`pattern` should be a string, array, or function');
 	}
 
-	var restoreStream = through.obj();
-
-	var stream = through.obj(function (file, enc, cb) {
+	stream = through.obj(function (file, enc, cb) {
 		var match = typeof pattern === 'function' ? pattern(file) :
 					multimatch(file.relative, pattern, options).length > 0;
 
@@ -27,7 +28,7 @@ module.exports = function (pattern, options) {
 		}
 
 		restoreStream.write(file);
-	  	cb();
+		cb();
 	}, function (cb) {
 		restoreStream.end();
 		cb();

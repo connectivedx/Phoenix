@@ -40,8 +40,13 @@
 
 			// output all classes from 1 to gridSize
 			for ($i = 0; $i < $gridSize; $i++) {
-				$firstColumnWidth = $numbers[$i];
-				$secondColumnWidth = $numbers[$gridSize - $i - 2];
+				if (array_key_exists($i, $numbers)) {
+					$firstColumnWidth = $numbers[$i];
+				}
+
+				if (array_key_exists(($gridSize - $i - 2), $numbers)) {
+					$secondColumnWidth = $numbers[$gridSize - $i - 2];
+				}
 
 				echo '<div class="row">';
 
@@ -79,9 +84,17 @@
 
 		<?php
 			for ($i = 0; $i < $gridSize; $i++) {
-				$firstColumnWidth = $numbers[$i];
-				$secondColumnWidth = $numbers[$gridSize - $i - 2];
-				$secondColumnPosition = $numbers[$gridSize - $i - 1];
+				if (array_key_exists($i, $numbers)) {
+					$firstColumnWidth = $numbers[$i];
+				}
+
+				if (array_key_exists(($gridSize - $i - 2), $numbers)) {
+					$secondColumnWidth = $numbers[$gridSize - $i - 2];
+				}
+
+				if (array_key_exists(($gridSize - $i - 1), $numbers)) {
+					$secondColumnPosition = $numbers[$gridSize - $i - 1];
+				}
 
 				echo '<div class="row">';
 

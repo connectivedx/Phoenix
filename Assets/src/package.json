@@ -3,6 +3,7 @@
 	"version": "2.0.0",
 	"description": "A scalable, modular front-end framework for the modern web.",
 	"repository": "https://github.com/connectivedx/Phoenix",
+	"license": "MIT",
 	"devDependencies": {
 		"merge-stream": "~0.1.6",
 		"vinyl-source-stream": "~1.0.0",

@@ -1,0 +1,24 @@
+/// Test if `$value` is a valid gradient angle
+/// @param {*} $value - Value to test
+/// @return {Bool}
+/// @see {mixin} gradient
+@function is-direction($value) {
+  $is-direction: index((
+    top,
+    top right,
+    right top,
+    right,
+    bottom right,
+    right bottom,
+    bottom,
+    bottom left,
+    left bottom,
+    left,
+    left top,
+    top left
+  ), $value);
+
+  $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
+
+  @return $is-direction or $is-angle;
+}

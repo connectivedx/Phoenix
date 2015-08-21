@@ -4,6 +4,7 @@
   "title": "Phoenix Default Theme",
   "author": "Connective DX",
   "version": "1.0.0",
+  "license": "MIT",
   "keywords": [
     "sassdoc-theme"
   ],
