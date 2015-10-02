@@ -51,6 +51,7 @@ if %errorlevel% neq 0 (
 :npm_install
 REM don't ask why you need to cmd /c this, but if you don't the script exits thereafter without running gulp!
 echo Running npm install
+cmd /c "npm set strict-ssl false"
 cmd /c "npm install"
 if %errorlevel% neq 0 (
 	echo npm install exited with code %errorlevel%
