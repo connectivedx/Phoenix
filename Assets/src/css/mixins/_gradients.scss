@@ -1,4 +1,4 @@
-/// Adds a background color gradient.
+/// Adds a background color gradient. *Note:* Only supports IE10+ syntax. IE9 and below will fallback to a single background color.
 /// @param {String} $direction - The position the gradient starts from (e.g.: top, bottom, left, right, 45deg).
 /// @param {List | String} $colorStops - Variable length list of color stops.
 /// @require {function} is-direction - Uses the `is-direction` function internally.
@@ -21,13 +21,4 @@
 	background-color: nth(nth($colorStops, 1), 1); // All else fails
 	background-image: linear-gradient($direction, $colorStops);	// W3C
 
-	// IE6-9 semi-fallback (degrees not supported)
-	@if $direction == 'left' or $direction == 'right' {
-		$type: 1;
-	}
-	@else {
-		$type: 0;
-	}
-
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{nth(nth($colorStops, length($colorStops)), 1)}', endColorstr='#{nth($colorStops, 1)}', GradientType=$type );
 }
