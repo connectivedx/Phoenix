@@ -31,6 +31,15 @@ var configuration = {
 			watchPaths: ['img/**'],
 		},
 		{
+			driver: 'templates',
+			paths: ['./nunjucks-templates/**/*.html'],
+			base: './nunjucks-templates',
+			watchPaths: ['nunjucks-templates/**'],
+			output: './../../nunjucks-templates',
+			autoClean: true,
+			autoCleanPaths: ['**/*.html']
+		},
+		{
 			paths: ['./templates/**/*.{php,html}'],
 			base: './templates',
 			watchPaths: ['templates/**'],

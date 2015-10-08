@@ -7,10 +7,14 @@ var gulp = require('gulp'),
 	rimraf = require('rimraf'),
 	StreamLoader = require('./lib/StreamLoader'),
 	TaskLoader = require('./lib/TaskLoader'),
-	WatchLoader = require('./lib/WatchLoader');
+	WatchLoader = require('./lib/WatchLoader'),
+	nunjucksRender = require('gulp-nunjucks-render');
 
 
 module.exports = function(configuration) {
+
+	nunjucksRender.nunjucks.configure('nunjucks-templates', {watch: false});
+
 	// load up autoclean tasks and drivers
 	var loader = new TaskLoader(gulp, configuration);
 	loader.loadTasks();
