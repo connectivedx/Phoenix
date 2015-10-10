@@ -3,7 +3,6 @@
 'use strict';
 
 var base64 = require('gulp-base64'),
-	cmq = require('gulp-combine-media-queries'),
 	cssmin = require('gulp-minify-css'),
 	gulpif = require('gulp-if'),
 	prefix = require('gulp-autoprefixer'),
@@ -40,7 +39,6 @@ var cssDriver = {
 				exclude: [/\icomoon/],
 				extensions: ['svg']
 			}))
-			.pipe(gulpif(!debug, cmq()))
 			.pipe(gulpif(!debug, cssmin({
 				advanced: false
 			})));

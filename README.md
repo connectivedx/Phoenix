@@ -37,7 +37,7 @@ The production build lints, concatenates, and minifies files.
 
 # Node Packages
 
-The Node packages defined in Phoenix are [shrinkwrapped](https://docs.npmjs.com/cli/shrinkwrap) when we create a new release to make sure that builds are predictable no matter when they are executed.  If you want to add, change, or remove packages, make sure you also run `npm shrinkwrap --dev` in order to shrinkwrap the changes.
+As of 2.2.0, the Node packages defined in Phoenix are no longer [shrinkwrapped](https://docs.npmjs.com/cli/shrinkwrap) by default at each release. However, we do recommend you shrinkwrap the dependencies at the outset of any new projects in order to ensure that builds are predictable no matter when they are executed. To do this, after your initial `npm install`, also run `npm shrinkwrap --dev`.
 
 # Special Thanks
 This project would not be possible without contributions from these open-source projects:

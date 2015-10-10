@@ -9,7 +9,7 @@ var configuration = {
 	tasks: [
 		{
 			driver: 'js',
-			paths: ['./js/*.js'],
+			paths: ['./js/**/*.js'],
 			watchPaths: ['js/**'],
 			autoClean: true
 		},
