@@ -1,7 +1,14 @@
-{% extends "global/head.html" %}
+---
+title: FM Title
+---
 
-<main>
-	{% block content %}{% endblock %}
-</main>
+{% block content %}
+	<h1>{{ title }}</h1>
+	<p>Thing: {{ thing }}</p>
 
-{% include "global/foot.html" %}
+	<ol>
+	{% for number in numbers %}
+		<li>{{ number }}</li>
+	{% endfor %}
+	</ol>
+{% endblock %}

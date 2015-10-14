@@ -2,23 +2,38 @@
 /*global console */
 'use strict';
 
-var nunjucksRender = require('gulp-nunjucks-render'),
+var fs = require('fs'),
+	gulpif = require('gulp-if'),
+	nunjucks = require('gulp-nunjucks-html'),
 	data = require('gulp-data'),
-	path = require('path');
+	path = require('path'),
+	dataMatter = require("gulp-data-matter");
 
 
 var templatesDriver = {
-
-	// var getData = function(file) {
-	// 	var dataPath = path.resolve();
-	// 	return JSON.parse(fs.readFileSync(dataPath, 'utf8'))
-	// };
-
-	build: function(pipeline, debug) {
+	build: function(pipeline) {
 		return pipeline
-			// .pipe(data(getData))
-			.pipe(nunjucksRender());
+			.pipe(data(function(file) {
+				var jsonCheck = './data/' + path.basename(file.path, '.html') + '.json',
+					jsonFile = '../../data/' + path.basename(file.path, '.html') + '.json';
+
+				return fileExistsSync(jsonCheck) ? require(jsonFile) : {};
+			}))
+			.pipe(dataMatter())
+			.pipe(nunjucks({
+				searchPaths: ['../nunjucks-templates/**/*.html']
+			}));
 	}
 };
+
+// essentially replicates the now deprecated fs.existsSync()
+function fileExistsSync(file) {
+	try {
+		fs.accessSync(file);
+		return true;
+	} catch(ex) {
+		return false;
+	}
+}
 
 module.exports = templatesDriver;

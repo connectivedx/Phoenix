@@ -8,12 +8,13 @@ var gulp = require('gulp'),
 	StreamLoader = require('./lib/StreamLoader'),
 	TaskLoader = require('./lib/TaskLoader'),
 	WatchLoader = require('./lib/WatchLoader'),
-	nunjucksRender = require('gulp-nunjucks-render');
+	nunjucks = require('gulp-nunjucks-html');
 
 
 module.exports = function(configuration) {
 
-	nunjucksRender.nunjucks.configure('nunjucks-templates', {watch: false});
+	// console.log(nunjucks.options);
+	// nunjucks.nunjucks.configure(['nunjucks-templates/'], {watch: false});
 
 	// load up autoclean tasks and drivers
 	var loader = new TaskLoader(gulp, configuration);

@@ -37,7 +37,7 @@ var configuration = {
 			watchPaths: ['nunjucks-templates/**'],
 			output: './../../nunjucks-templates',
 			autoClean: true,
-			autoCleanPaths: ['**/*.html']
+			autoCleanPaths: ['**/*']
 		},
 		{
 			paths: ['./templates/**/*.{php,html}'],

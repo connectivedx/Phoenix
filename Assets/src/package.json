@@ -23,8 +23,9 @@
 		"gulp-rev-all": "~0.7.6",
 		"gulp-plumber": "~0.6.6",
 		"gulp-livereload": "~3.8.0",
-		"gulp-nunjucks-render": "~1.0.0",
+		"gulp-nunjucks-html": "~2.0.0",
 		"gulp-data": "^1.2.0",
+		"gulp-data-matter": "~0.1.1",
 
 		"gulp-sass": "~2.0.4",
 		"sassdoc": "~2.1.8",
