@@ -21,7 +21,7 @@
 	<link rel="apple-touch-icon-precomposed" href="<?php echo getAsset('Assets/dist/img/content/touch-icon.png');?>">
 	<!-- icon and tile color in hex # for Windows phones -->
 	<meta name="msapplication-TileImage" content="<?php echo getAsset('Assets/dist/img/content/touch-icon.png');?>">
-	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileColor" content="#e55030">
 	<!-- For everything else -->
 	<link rel="icon" type="image/png" href="<?php echo getAsset('Assets/dist/img/content/favicon.png');?>">
 	<!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
