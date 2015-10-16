@@ -9,11 +9,11 @@
   background: $primary-color;
   color: $light-grey;
   z-index: z('dropdown');
-  
+
   @include respond-to('small') {
 	left: 0;
   }
-  
+
   @include respond-to('medium') {
 	transition: .2s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
