@@ -8,6 +8,9 @@
 /// rem(12 16)
 /// // 0.75em 1em
 @function rem($target) {
+
+	$output: null;
+
 	@if type-of($target) == list {
 
 		$output: unquote('') !default;
