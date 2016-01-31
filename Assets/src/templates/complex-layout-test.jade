@@ -1,0 +1,55 @@
+//- Document vars
+block options
+	- docTitle = 'Phoenix by Connective DX';
+
+block content
+	section(class="layout-complex-wrapper")
+		nav(class="layout-complex-nav")
+			h3 Nav
+			p This is where your primary navigation items will be.
+
+		article(class="layout-complex-primary")
+			h2 Primary content
+			p This container will hold your primary site content.  Things like:
+			h3(class="divider") Lists
+			ul
+				li List item
+				li List item
+				li List item
+				li List item
+			
+			h3(class="divider") Forms
+			fieldset
+				legend Text Input
+				ol
+					li
+						label(for="testinput") Label for the input
+						input(type="text" id="testinput")
+
+					li
+						label(for="testtextarea") Label for the Textarea
+						textarea(id="testtextarea" cols="30" rows="5") Lorem ipsum dolor sit amet, consectetuer adipiscing elit vestibulum.
+
+		aside(class="layout-complex-tertiary")
+			h3 Aside
+			p This will contain content related to your primary content.  Things like:
+			h3(class="divider") Related links
+			ul
+				li
+					a(href="#") Link
+				li
+					a(href="#") Link
+				li
+					a(href="#") Link
+				li
+					a(href="#") Link
+
+		footer(class="layout-complex-footer")
+			h2 Footer
+			ul(class="meta")
+				li Meta item
+				li Meta item
+				li Meta item
+				li Meta item
+
+extend ./layouts/one-column.jade

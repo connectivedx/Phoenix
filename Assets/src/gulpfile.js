@@ -31,13 +31,19 @@ var configuration = {
 			watchPaths: ['img/**'],
 		},
 		{
-			paths: ['./templates/**/*.{php,html}'],
+			driver: 'html',
+			config: { //see: http://jade-lang.com/api/ for all config options
+				cache: false,
+				docType: '<!DOCTYPE html>',
+				pretty: '	'
+			},
+			paths: ['./templates/*.jade'],
 			base: './templates',
 			watchPaths: ['templates/**'],
 			output: './../..',
 			autoClean: true,
-			autoCleanPaths: ['*.{php,html}', 'inc']
-		}
+			autoCleanPaths: ['./templates/**']
+		}		
 		/*
 			Tasks are a unit of work. At their simplest tasks act as a simple file copy from [paths] to [output] (maintaining relative paths).
 			By adding a driver your can intercept the sources the task gets and do things to them before they get to the output.
@@ -46,6 +52,7 @@ var configuration = {
 		{
 			driver: // [optional] this is the name of the driver to use. A driver is a file in /lib/drivers that transforms the task items (eg minification). Without a driver, the task becomes a file watch/copy.
 			paths: // Required. Array of paths to include in the task. Globbing syntax is allowed. Paths are relative to this folder.
+			pretty: // [optional] Adds whitespace to the resulting html to make it easier for a human to read using '  ' as indentation. If a string is specified, that will be used as indentation instead.
 			base: // [optional] Overrides the base location for this task only (e.g. if path = ./css/foo and base = ./css, and you write to ./lol, the files from /css/foo will go in /lol/foo not /lol/css/foo)
 			watchPaths: // [optional] Array of paths to watch when doing file watching. Note that only simple globs (foo/**) should be used or new and renamed files cannot be watched. A change to these files triggers the task being run.
 			autoClean: // [optional] true/false. If true, the paths in the output directory will be deleted before we start the build.

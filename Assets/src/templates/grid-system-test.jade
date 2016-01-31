@@ -1,0 +1,96 @@
+//- Document vars
+block options
+	- docTitle = 'Grid System Test';
+	
+	- gridSize = 12;
+	- i = j = k = 0;
+	- numbers = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty", "twenty-one", "twenty-two", "twenty-three", "twenty-four", "twenty-five", "twenty-six", "twenty-seven", "twenty-eight", "twenty-nine", "thirty", "thirty-one", "thirty-two", "thirty-three", "thirty-four", "thirty-five", "thirty-six"];
+
+block content
+	style.
+		.column, .columns {
+			border: 1px solid black;
+			text-align: center;
+		}
+
+	section
+		div(class="row")
+			h1 Grid System Test
+
+		div(class="row")
+			h2 Standard classes
+
+		each divisor, index in numbers
+			if gridSize % index === 0
+				- columnText = (index === 1)? 'column' : 'columns';
+				- ij = gridSize / index;
+				- ik = 0;
+				div(class="row")
+					while ik < ij
+						div(class="#{numbers[index - 1]} #{columnText}")
+							| #{numbers[index - 1]}
+							- ik++
+
+		while i < gridSize
+			if numbers[i]
+				- firstColumnWidth = numbers[i];
+			if numbers[gridSize - i - 2]
+				- secondColumnWidth = numbers[gridSize - i - 2];
+			div(class="row")
+				if i == 0
+					- firstColumnText = 'column';
+					- secondColumnText = 'columns';
+				else if i == gridSize - 1
+					- firstColumnText = 'columns';
+					- secondColumnText = 'column';
+				else
+					- firstColumnText = 'columns';
+					- secondColumnText = 'columns';					
+
+				div(class="#{firstColumnWidth} #{firstColumnText}") #{firstColumnWidth}
+				if i < gridSize - 1
+					div(class="#{secondColumnWidth} #{secondColumnText}") #{secondColumnWidth}
+				- i++
+
+	section
+		div(class="row")
+			h2 Position classes		
+		while j < gridSize
+			if numbers[j]
+				- firstColumnWidth = numbers[j];
+			if numbers[gridSize - j -2]
+				- secondColumnWidth = numbers[gridSize - j - 2];
+			if gridSize - j - 1
+				- secondColumnPosition = numbers[gridSize - j - 1];
+			div(class="row")
+				if j == 0
+					- firstColumnText = 'column';
+					- secondColumnText = 'columns';
+				else if j == gridSize - 2
+					- firstColumnText = 'columns';
+					- secondColumnText = 'column';
+				else
+					- firstColumnText = 'columns';
+					- secondColumnText = 'columns';						
+
+				if j < gridSize - 1
+					div(class="#{firstColumnWidth} #{firstColumnText} position-#{secondColumnPosition}") #{firstColumnWidth} position #{secondColumnPosition}
+					div(class="#{secondColumnWidth} #{secondColumnText} position-one") #{secondColumnWidth} position one
+			- j++					
+
+	section
+		div(class="row")
+			h2 Centered classes
+		while k < gridSize
+			- columnWidth = numbers[k];
+			div(class="row")
+				if k == 0
+					- columnText = 'column';
+				else
+					- columnText = 'columns';
+
+				if k < gridSize - 1
+					div(class="#{columnWidth} #{columnText} centered") #{columnWidth}
+			- k++
+
+extend ./layouts/one-column.jade
