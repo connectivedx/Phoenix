@@ -34,7 +34,6 @@ var configuration = {
 			driver: 'html',
 			config: { //see: http://jade-lang.com/api/ for all config options
 				cache: false,
-				docType: '<!DOCTYPE html>',
 				pretty: '	'
 			},
 			paths: ['./templates/*.jade', './templates/inc/**/*.jade'],
