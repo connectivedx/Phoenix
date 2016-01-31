@@ -1,7 +1,3 @@
-//- Document vars
-block options
-	- docTitle = 'Phoenix by Connective DX';
-
 block content
 	div(class='row')
 		h1 Documentation
@@ -10,19 +6,25 @@ block content
 				a(href='documentation/sass-api/') Sass API
 			li
 				a(href='style-guide.html') Style Guide
-
-		h1 Sample Pages
+		
+		h1 Simple Layouts
 		ul
 			li
-				a(href='grid-system-test.html') Grid System Test
-
-			li Semantic Grid System Test
-				ul
-					li
-						a(href='semantic-grid-system-test-two-column.html') Two Column
-					li
-						a(href='semantic-grid-system-test-three-column.html') Three Column
+				a(href='simple-one-column.html') One Column
 			li
-				a(href='complex-layout-test.html') Complex Layout Test
+				a(href='simple-two-column.html') Two Column
+			li
+				a(href='simple-three-column.html') Three Column			
+
+		h1 Complex Layouts
+		ul
+			li
+				a(href='grid-system-test.html') Grid System Test			
+			li
+				a(href='complex-layout-test.html') Complex Layout Test			
+			li
+				a(href='semantic-grid-system-test-two-column.html') Semantic Two Column				
+			li
+				a(href='semantic-grid-system-test-three-column.html') Semantic Three Column
 
 extend ./layouts/one-column.jade

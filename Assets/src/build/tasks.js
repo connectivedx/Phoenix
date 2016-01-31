@@ -45,7 +45,7 @@ module.exports = function(configuration) {
 		if (configuration.cacheBusting) {
 			// rev stamps all files with a hash for cache-busting
 			// ignores php files and contents of /img/content directory.
-			masterStream = masterStream.pipe(rev({ ignore: ['.php', /img\/content/] }));
+			masterStream = masterStream.pipe(rev({ ignore: ['.html', /img\/content/] }));
 		}
 
 		masterStream = sLoader.executeCustomOutput(masterStream);

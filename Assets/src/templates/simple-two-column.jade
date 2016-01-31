@@ -1,0 +1,28 @@
+//- Document vars
+block options
+	- docTitle = 'Simple Layouts';
+	- bodyClass = 'not-shifted no-gutters';
+
+block primary
+	h1 Primary Column
+
+	img(src='http://fpoimg.com/620x220?text=Simple Three Column' alt='')
+	p Suspendisse aliquet tempus volutpat. Cras ut molestie libero. Curabitur nec mauris cursus, finibus leo et, porttitor nisi. Sed iaculis urna sit amet bibendum volutpat. Mauris ac lacus magna. Donec bibendum sapien vitae vulputate venenatis. Sed pharetra, eros quis placerat scelerisque, quam sem congue tellus, eget ornare eros nisi eu eros. Morbi sed enim dui. Praesent sit amet justo dui. Fusce aliquet lectus nisl, at ornare tellus vestibulum vel. Sed iaculis urna sit amet bibendum volutpat.
+
+	p Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut in urna finibus, ullamcorper ligula eu, luctus lacus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam id lacus sit amet lacus rutrum tempor a id nisi. In lobortis quam eu justo imperdiet, ut molestie nibh tempus. Fusce luctus at est et porttitor. Aenean pretium justo in quam luctus bibendum a sed metus. Nunc vel justo ligula. Maecenas non vehicula nisi, ac tristique elit. Donec bibendum sapien vitae vulputate venenatis. Sed pharetra, eros quis placerat scelerisque, quam sem congue tellus, eget ornare eros nisi eu eros.
+	
+	p Sed sodales, metus eu rhoncus ornare, elit eros consequat metus, sit amet gravida mi magna in dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla cursus sapien lacus, sed ultrices lorem mollis vel.
+
+	include inc/components/layout-toggle.jade
+
+block secondary
+	h3 Secondary Column
+
+	p 
+		img(src='http://fpoimg.com/280x160?text=Simple Three Column' alt='')
+
+	p Sed sodales, metus eu rhoncus ornare, elit eros consequat metus, sit amet gravida mi magna in dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla cursus sapien lacus, sed ultrices lorem mollis vel.  Mauris tincidunt fringilla quam nec condimentum.
+
+	p In ut magna lacinia, imperdiet diam quis, dapibus justo. Mauris sit amet dignissim magna. In tristique vestibulum elit, in porta lorem elementum vitae. Pellentesque sed consectetur odio. Nulla in viverra nunc, quis malesuada leo. Maecenas eget malesuada odio.
+
+extend ./layouts/two-column.jade

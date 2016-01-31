@@ -1,6 +1,6 @@
 //- Document vars
 block options
-	- docTitle = 'Phoenix by Connective DX';
+	- docTitle = 'Phoenix Style Guide';
 
 block content	
 		div(class='row' id='headings')
@@ -114,12 +114,10 @@ block content
 						h2 Text Input
 						ol
 							li
-								label(for='testinput') Label for the input
-								input(type='text' id='testinput' placeholder='Placeholder for the input')
+								+input('text','Label for input')(type='text' id='testinput' placeholder='Placeholder for the input')
 
 							li
-								label(for='testtextarea') Label for the Textarea
-								textarea(id='testtextarea' cols='30' rows='5' placeholder='Placeholder for the textarea')
+								+textarea('Label for the Textarea')(id='testtextarea' cols='30' rows='5' placeholder='Placeholder for the textarea')
 
 					fieldset
 						legend Buttons
@@ -136,8 +134,7 @@ block content
 						h2 File Uploads
 						ol
 							li
-								button(class='custom-file-upload' Select file)
-								input(type='file')/
+								+input('file', 'Select File')
 
 			div(class='six columns')
 				fieldset
@@ -145,17 +142,9 @@ block content
 					h2 Selects, Radios, Checkboxes
 					ol
 						li
-							label(for='testselect') Label for the select
-							select(id='testselect')
-								option First
-								option Second
-								option Third
+							+select('Label for the select', ['First', 'Second', 'Third'])(id='testselect')
 						li
-							label(for='testmultipleselect') Label for the multiple select
-							select(id='testmultipleselect') multiple
-								option First
-								option Second
-								option Third
+							+select('Label for the multiple select', ['First', 'Second', 'Third'])(id='testmultipleselect' multiple)
 						li
 							fieldset
 								legend Select one of the following:
@@ -164,11 +153,9 @@ block content
 										label(for='options') Label for the radio options
 										ol(class='radio-list')
 											li
-												input(type='radio' name='options' id='radio-option-1' value='option 1')
-												label(for='radio-option-1') Option 1
+												+input('radio','Option 1')(name='options' id='radio-option-1' value='option 1')
 											li
-												input(type='radio' name='options' id='radio-option-2' value='option 2')
-												label(for='radio-option-2') Option 2
+												+input('radio','Option 2')(name='options' id='radio-option-2' value='option 2')
 
 						li
 							fieldset
@@ -178,11 +165,9 @@ block content
 										label(for='checkbox') Label for the checkbox
 										ol(class='checkbox-list')
 											li
-												input(type='checkbox' name='checkbox' id='checkbox-option-1' value='option 1')
-												label(for='checkbox-option-1') Option 1
+												+input('checkbox','Option 1')(name='checkbox' id='checkbox-option-1' value='option 1')
 											li
-												input(type='checkbox' name='checkbox' id='checkbox-option-2' value='option 2')
-												label(for='checkbox-option-2') Option 2
+												+input('checkbox','Option 2')(name='checkbox' id='checkbox-option-2' value='option 2')
 
 						li
 							fieldset
@@ -192,18 +177,14 @@ block content
 									label(for='options') Label for the radio options
 									ol(class='radio-list')
 										li
-											input(type='radio' name='inline-options' id='inline-radio-option-1' value='option 1')
-											label(for='inline-radio-option-1' class='inline') Option 1
-											input(type='radio' name='inline-options' id='inline-radio-option-2' value='option 2')
-											label(for='inline-radio-option-2' class='inline') Option 2
+											+radio('Option 2')(name='inline-options' id='inline-radio-option-1' value='option 1')
+											+radio('Option 2')(name='inline-options' id='inline-radio-option-2' value='option 2')
 								li
 									label(for='checkbox') Label for the checkbox
 									ol(class='checkbox-list')
 										li
-											input(type='checkbox' name='inline-checkbox' id='inline-checkbox-option-1' value='option 1')
-											label(for='inline-checkbox-option-1' class='inline') Option 1
-											input(type='checkbox' name='inline-checkbox' id='inline-checkbox-option-2' value='option 2')
-											label(for='inline-checkbox-option-2' class='inline') Option 2
+											+checkbox('Option 1')(name='inline-checkbox' id='inline-checkbox-option-1' value='option 1')
+											+checkbox('Option 2')(name='inline-checkbox' id='inline-checkbox-option-2' value='option 2')
 
 		div(class='row divider')
 			div(class='twelve columns')
@@ -284,65 +265,24 @@ block content
 
 				p
 					strong NOTE:. these elements must be placed in a wrapping container for the proper spacing and flow.</p>
-
+				
 				h2 .two-up
+
+				mixin quickColumns(type, text, count)
+					while count--
+						div(class='#{type}')
+							img(src='http://fpoimg.com/750x250?text=#{text}')
+
 				div(class='wrapper')
-					div(class='two-up')
-						img(src='http://fpoimg.com/700x250?text=Two-Up' alt='')
-
-					div(class='two-up')
-						img(src='http://fpoimg.com/700x250?text=Two-Up' alt='')
-
-					div(class='two-up')
-						img(src='http://fpoimg.com/700x250?text=Two-Up' alt='')
-
-					div(class='two-up')
-						img(src='http://fpoimg.com/700x250?text=Two-Up' alt='')
+					+quickColumns('two-up', 'Two Up', 4)
 
 				h2 .three-up
 				div(class='wrapper')
-					div(class='three-up')
-						img(src='http://fpoimg.com/700x250?text=Three-Up' alt='')
-
-					div(class='three-up')
-						img(src='http://fpoimg.com/700x250?text=Three-Up' alt='')
-
-					div(class='three-up')
-						img(src='http://fpoimg.com/700x250?text=Three-Up' alt='')
-
-					div(class='three-up')
-						img(src='http://fpoimg.com/700x250?text=Three-Up' alt='')
-
-					div(class='three-up')
-						img(src='http://fpoimg.com/700x250?text=Three-Up' alt='')
-
-					div(class='three-up')
-						img(src='http://fpoimg.com/700x250?text=Three-Up' alt='')
+					+quickColumns('three-up', 'Three Up', 6)
 
 				h2 .four-up
 				div(class='wrapper')
-					div(class='four-up')
-						img(src='http://fpoimg.com/700x250?text=Four-Up' alt='')
-
-					div(class='four-up')
-						img(src='http://fpoimg.com/700x250?text=Four-Up' alt='')
-
-					div(class='four-up')
-						img(src='http://fpoimg.com/700x250?text=Four-Up' alt='')
-
-					div(class='four-up')
-						img(src='http://fpoimg.com/700x250?text=Four-Up' alt='')
-
-					div(class='four-up')
-						img(src='http://fpoimg.com/700x250?text=Four-Up' alt='')
-
-					div(class='four-up')
-						img(src='http://fpoimg.com/700x250?text=Four-Up' alt='')
-
-					div(class='four-up')
-						img(src='http://fpoimg.com/700x250?text=Four-Up' alt='')
-
-					div(class='four-up')
-						img(src='http://fpoimg.com/700x250?text=Four-Up' alt='')
+					+quickColumns('four-up', 'Four Up', 8)
 
 extend ./layouts/one-column.jade
+

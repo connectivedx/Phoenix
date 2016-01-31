@@ -1,0 +1,48 @@
+//- Form mixins to create field, attributes and labels
+//- Inputs
+mixin input(type, label, attributes)
+	if type == 'file'
+		button(class='custom-file-upload') #{label}
+		input(type='#{type}')&attributes(attributes)
+	else if type != 'checkbox' && type != 'radio'
+		if label
+			+fieldLabel(label, attributes.id)
+		input(type='#{type}')&attributes(attributes)
+	else
+		input(type='#{type}')&attributes(attributes)
+		if label
+			+fieldLabel(label, attributes.id)
+
+	//- Used for inline Checkboxes and Radios 
+	//- Inline Checkboxes
+	mixin checkbox(label, attributes)
+		input(type='checkbox')&attributes(attributes)
+		if label
+			+fieldLabel(label, attributes.id, 'inline')
+
+	//- Inline Radios
+	mixin radio(label, attributes)
+		input(type='radio')&attributes(attributes)
+		if label
+			+fieldLabel(label, attributes.id, 'inline')
+
+
+//- Selects
+mixin select(label, options, attributes)
+	if label
+		+fieldLabel(label, attributes.id)
+
+	select()&attributes(attributes)
+		each option, index in options
+			option(value='#{index}') #{option}
+
+//- Textareas
+mixin textarea(label, attributes)
+	if label
+		+fieldLabel(label, attributes.id)
+
+	textarea()&attributes(attributes)
+
+//-Form Field Labels
+mixin fieldLabel(text, id, blockType)
+	label(for='#{id}' class='#{blockType}') #{text}
