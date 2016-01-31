@@ -37,7 +37,7 @@ var configuration = {
 				docType: '<!DOCTYPE html>',
 				pretty: '	'
 			},
-			paths: ['./templates/*.jade'],
+			paths: ['./templates/*.jade', './templates/inc/**/*.jade'],
 			base: './templates',
 			watchPaths: ['templates/**'],
 			output: './../..',
