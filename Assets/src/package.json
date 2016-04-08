@@ -1,6 +1,6 @@
 {
 	"name": "Phoenix",
-	"version": "2.2.1",
+	"version": "2.2.3",
 	"description": "A scalable, modular front-end framework for the modern web.",
 	"repository": "https://github.com/connectivedx/Phoenix",
 	"license": "MIT",
@@ -24,7 +24,7 @@
 		"gulp-plumber": "~0.6.6",
 		"gulp-livereload": "~3.8.0",
 
-		"gulp-sass": "~2.0.4",
+		"gulp-sass": "^2.2.0",
 		"sassdoc": "~2.1.8",
 		"gulp-sourcemaps": "~1.5.2",
 		"gulp-base64": "~0.1.3",
