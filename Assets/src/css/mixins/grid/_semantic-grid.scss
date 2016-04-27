@@ -72,8 +72,11 @@
 	$centered: map-get($options, centered);
 	$includeGutterWidth: map-get($options, includeGutterWidth);
 
+	float: $defaultFloat;
+	margin: 0;
+	min-height: 1px;
+
 	@if $centered == true {
-		@extend %column-config;
 		clear: both;
 		margin-left: centered($columns, $options);
 		margin-top: 0;
@@ -85,7 +88,6 @@
 		}
 	}
 	@else {
-		@extend %column-config;
 		padding: $padding;
 		margin-top: 0;
 		width: columns($columns, $options);
