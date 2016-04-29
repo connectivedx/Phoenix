@@ -1,6 +1,6 @@
 {
 	"name": "Phoenix",
-	"version": "2.2.3",
+	"version": "2.2.4",
 	"description": "A scalable, modular front-end framework for the modern web.",
 	"repository": "https://github.com/connectivedx/Phoenix",
 	"license": "MIT",
