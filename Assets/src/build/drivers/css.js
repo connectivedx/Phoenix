@@ -2,13 +2,14 @@
 /*global console */
 'use strict';
 
-var base64 = require('gulp-base64'),
-	cssmin = require('gulp-minify-css'),
-	gulpif = require('gulp-if'),
-	prefix = require('gulp-autoprefixer'),
-	sass = require('gulp-sass'),
-	sassdoc = require('sassdoc'),
-	sourcemaps = require('gulp-sourcemaps');
+var	 base64 = require('gulp-base64'),
+		cssmin = require('gulp-minify-css'),
+		gulpif = require('gulp-if'),
+		sass = require('gulp-sass'),
+		postcss = require('gulp-postcss'),
+		prefix = require('autoprefixer'),
+		sourcemaps = require('gulp-sourcemaps'),
+		sassdoc = require('sassdoc');
 
 var cssDriver = {
 	build: function(pipeline, debug) {
@@ -31,13 +32,12 @@ var cssDriver = {
 				theme: "./sassdoc-theme"
 			})))
 			.pipe(sass())
-			.pipe(prefix({
-				browsers: ['last 2 versions', 'IE >= 9', 'Android >= 4']
-			}))
+			.pipe(postcss([ prefix({
+				browsers: ['last 2 versions', 'IE >= 9', 'Android >= 4'] })
+			]))
 			.pipe(gulpif(debug, sourcemaps.write('./')))
 			.pipe(base64({
-				exclude: [/\icomoon/],
-				extensions: ['svg']
+				exclude: [/\icomoon/]
 			}))
 			.pipe(gulpif(!debug, cssmin({
 				advanced: false
