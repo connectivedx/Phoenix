@@ -1,5 +1,9 @@
+# **This project is no longer being actively maintained. If you have some fixes, please feel free to open a PR.**
+   
+   
 ![Phoenix](Assets/src/img/content/logo-placeholder.png)
 ===================
+
 Phoenix represents what we use at Connective DX for the basis of new projects. With a library of patterns ready at our fingertips, a powerful and flexible grid system, and a clean, modular organization, you don't need to reinvent the wheel. And you'll have more time to invent the next wheel.
 
 # Documentation
